@@ -1,1 +1,1 @@
-# was it raining at the open'er festival
+# Was it raining at the open'er festival?
