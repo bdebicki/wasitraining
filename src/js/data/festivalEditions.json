@@ -1,0 +1,290 @@
+{
+	"2002": {
+		"place": {
+			"city": "Warsaw",
+			"object": "Stegny Track"
+		},
+		"dates": [
+			{
+				"day": "2nd July",
+				"rain": false
+			}
+		]
+	},
+	"2003": {
+		"place": {
+			"city": "Gdynia",
+			"object": "Kościuszki Square"
+		},
+		"dates": [
+			{
+				"day": "26th July",
+				"rain": false
+			}
+		]
+	},
+	"2004": {
+		"place": {
+			"place": "Gdynia",
+			"object": "Kościuszki Square"
+		},
+		"dates": [
+			{
+				"day": "2nd July",
+				"rain": false
+			}, {
+				"day": "3rd July",
+				"rain": false
+			}
+		]
+	},
+	"2005": {
+		"place": {
+			"place": "Gdynia",
+			"object": "Kościuszki Square"
+		},
+		"dates": ["8th July", "9th July"]
+	},
+	"2006": {
+		"place": {
+			"place": "Gdynia",
+			"object": "Babie Doły Airport"
+		},
+		"dates": [
+			{
+				"day": "6th July",
+				"rain": false
+			}, {
+				"day": "7th July",
+				"rain": false
+			}, {
+				"day": "8th July",
+				"rain": false
+			}]
+	},
+	"2007": {
+		"place": {
+			"place": "Gdynia",
+			"object": "Babie Doły Airport"
+		},
+		"dates": [
+			{
+				"day": "29th June",
+				"rain": false
+			}, {
+				"day": "30th June",
+				"rain": false
+			}, {
+				"day": "1st July",
+				"rain": false
+			}
+		]
+	},
+	"2008": {
+		"place": {
+			"place": "Gdynia",
+			"object": "Babie Doły Airport"
+		},
+		"dates": [
+			{
+				"day": "4th July",
+				"rain": false
+			}, {
+				"day": "5th July",
+				"rain": false
+			}, {
+				"day": "6th July",
+				"rain": false
+			}
+		]
+	},
+	"2009": {
+		"place": {
+			"place": "Gdynia",
+			"object": "Babie Doły Airport"
+		},
+		"dates": [
+			{
+				"day": "2nd July",
+				"rain": false
+			}, {
+				"day": "3rd July",
+				"rain":false
+			}, {
+				"day": "4th July",
+				"rain": false
+			}, {
+				"day": "5th July",
+				"rain": false
+			}
+		]
+	},
+	"2010": {
+		"place": {
+			"place": "Gdynia",
+			"object": "Babie Doły Airport"
+		},
+		"dates": [
+			{
+				"day": "1st July",
+				"rain": false
+			}, {
+				"day": "2nd July",
+				"rain": false
+			}, {
+				"day": "3rd July",
+				"rain": false
+			}, {
+				"day": "4th July",
+				"rain": false
+			}
+		]
+	},
+	"2011": {
+		"place": {
+			"place": "Gdynia",
+			"object": "Babie Doły Airport"
+		},
+		"dates": [
+			{
+				"day": "30th June",
+				"rain": false
+			}, {
+				"day": "1st July",
+				"rain": false
+			}, {
+				"day": "2nd July",
+				"rain": false
+			}, {
+				"day": "3rd July",
+				"rain": false
+			}
+		]
+	},
+	"2012": {
+		"place": {
+			"place": "Gdynia",
+			"object": "Babie Doły Airport"
+		},
+		"dates": [
+			{
+				"day": "4th July",
+				"rain": false
+			}, {
+				"day": "5th July",
+				"rain": false
+			}, {
+				"day": "6th July",
+				"rain": false
+			}, {
+				"day": "7th July",
+				"rain": false
+			}
+		]
+	}
+	"2013": {
+		"place": {
+			"place": "Gdynia",
+			"object": "Babie Doły Airport"
+		},
+		"dates": [
+			{
+				"day": "3rd July",
+				"rain": false
+			}, {
+				"day": "4th July",
+				"rain": false
+			}, {
+				"day": "5th July",
+				"rain": false
+			}, {
+				"day": "6th July",
+				"rain": false
+			}
+		]
+	,
+	"2014": {
+		"place": {
+			"place": "Gdynia",
+			"object": "Babie Doły Airport"
+		}
+		"dates": [
+			{
+				"day": "2nd July",
+				"rain": false
+			}, {
+				"day": "3rd July",
+				"rain": false
+			}, {
+				"day": "4th July",
+				"rain": false
+			}, {
+				"day": "5th July",
+				"rain": false
+			}
+		]
+	},
+	"2015": {
+		"place": {
+			"place": "Gdynia",
+			"object": "Babie Doły Airport"
+		},
+		"dates": [
+			{
+				"day": "1st July",
+				"rain": false
+			}, {
+				"day": "2nd July",
+				"rain": false
+			}, {
+				"day": "3rd July",
+				"rain": false
+			}, {
+				"day": "4th July",
+				"rain": false
+			}
+		]
+	},
+	"2016": {
+		"place": {
+			"place": "Gdynia",
+			"object": "Babie Doły Airport"
+		},
+		"dates": [
+			{
+				"day": "29th June",
+				"rain": false
+			}, {
+				"day": "30th June",
+				"rain": false
+			}, {
+				"day": "1st July",
+				"rain": false
+			}, {
+				"day": "2nd July",
+				"rain": false
+			}
+		]
+	},
+	"2017": {
+		"place": {
+			"place": "Gdynia",
+			"object": "Babie Doły Airport"
+		},
+		"dates": [
+			{
+				"day": "28th June",
+				"rain": false
+			}, {
+				"day": "29th June",
+				"rain": false
+			}, {
+				"day": "30th June",
+				"rain": false
+			}, {
+				"day": "1st July",
+				"rain": false
+			}
+		]
+	}
+}
