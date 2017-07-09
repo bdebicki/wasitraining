@@ -101,8 +101,13 @@ gulp.task('watch:js', function() {
     return gulp.watch(jsSrcFiles, ['js'])
 });
 
+// js watch task
+gulp.task('watch:json', function() {
+    return gulp.watch(jsonSrcFiles, ['json'])
+});
+
 // global watch task
-gulp.task('watch', ['watch:less', 'watch:js'], function () {});
+gulp.task('watch', ['watch:less', 'watch:js', 'watch:json'], function () {});
 
 // global build task
 gulp.task('build', ['clean:public', 'less', 'js'], function () {
