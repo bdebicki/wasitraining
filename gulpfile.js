@@ -4,6 +4,7 @@ var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCss = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
+var jsonMinify = require('gulp-json-minify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
@@ -17,6 +18,7 @@ var cssDestFolder = publicFolder + 'css/';
 var lessSrcPackageFiles = srcFolder + 'less/*.less';
 var lessSrcFiles = srcFolder + 'less/**/*.less';
 var jsPackageFile = 'wiraof.js';
+var jsonSrcFiles = srcFolder + 'js/data/*.json';
 var jsDestFolder = publicFolder + 'js/';
 var jsSrcFiles = srcFolder + 'js/**/*.js';
 var jsSrcPackageFile = srcFolder + 'js/' + jsPackageFile;
@@ -58,7 +60,7 @@ gulp.task('less:minify', function() {
 });
 
 // build js file task
-gulp.task('js', function() {
+gulp.task('js', ['json'], function() {
     bundler.bundle()
            .on('error', function(error) { console.log(error.toString()); this.emit('end'); })
            .pipe(source(jsPackageFile))
@@ -67,13 +69,26 @@ gulp.task('js', function() {
 });
 
 // build minified js file task
-gulp.task('js:minify', function() {
+gulp.task('js:minify', ['json:minify'], function() {
     bundler.bundle()
            .on('error', function(error) { console.log(error.toString()); this.emit('end'); })
            .pipe(source(jsPackageFile))
            .pipe(buffer())
            .pipe(uglify())
            .pipe(gulp.dest(jsDestFolder));
+});
+
+gulp.task('json', function () {
+   return gulp.src(jsonSrcFiles)
+              .on('error', function(error) { console.log(error.toString()); this.emit('end'); })
+	          .pipe(gulp.dest(jsDestFolder));
+});
+
+gulp.task('json:minify', function () {
+   return gulp.src(jsonSrcFiles)
+              .on('error', function(error) { console.log(error.toString()); this.emit('end'); })
+              .pipe(jsonMinify())
+	          .pipe(gulp.dest(jsDestFolder));
 });
 
 // css watch task
@@ -86,8 +101,13 @@ gulp.task('watch:js', function() {
     return gulp.watch(jsSrcFiles, ['js'])
 });
 
+// js watch task
+gulp.task('watch:json', function() {
+    return gulp.watch(jsonSrcFiles, ['json'])
+});
+
 // global watch task
-gulp.task('watch', ['watch:less', 'watch:js'], function () {});
+gulp.task('watch', ['watch:less', 'watch:js', 'watch:json'], function () {});
 
 // global build task
 gulp.task('build', ['clean:public', 'less', 'js'], function () {
