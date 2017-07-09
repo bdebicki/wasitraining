@@ -43,7 +43,15 @@
 			"place": "Gdynia",
 			"object": "Kościuszki Square"
 		},
-		"dates": ["8th July", "9th July"]
+		"dates": [
+			{
+				"day": "8th July",
+				"rain": false
+			}, {
+				"day":  "9th July",
+				"rain": false
+			}
+		]
 	},
 	"2006": {
 		"place": {
@@ -60,7 +68,8 @@
 			}, {
 				"day": "8th July",
 				"rain": false
-			}]
+			}
+		]
 	},
 	"2007": {
 		"place": {
@@ -181,7 +190,7 @@
 				"rain": false
 			}
 		]
-	}
+	},
 	"2013": {
 		"place": {
 			"place": "Gdynia",
@@ -191,18 +200,21 @@
 			{
 				"day": "3rd July",
 				"rain": false
-			}, {
+			},
+			{
 				"day": "4th July",
 				"rain": false
-			}, {
+			},
+			{
 				"day": "5th July",
 				"rain": false
-			}, {
+			},
+			{
 				"day": "6th July",
 				"rain": false
 			}
 		]
-	,
+	},
 	"2014": {
 		"place": {
 			"place": "Gdynia",
@@ -280,10 +292,10 @@
 				"rain": false
 			}, {
 				"day": "30th June",
-				"rain": false
+				"rain": true
 			}, {
 				"day": "1st July",
-				"rain": false
+				"rain": true
 			}
 		]
 	}
