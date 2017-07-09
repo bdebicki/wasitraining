@@ -1,0 +1,32 @@
+#timeline {
+	.editions {
+		display: flex;
+		flex-direction: row;
+
+		.edition {
+			display: flex;
+
+			&.active {
+				.daysList {
+					display: flex;
+				}
+			}
+
+			+ .edition {
+				margin-left: 10px;
+			}
+		}
+	}
+
+	.daysList {
+		display: none;
+		margin: 0 10px;
+		flex-direction: row;
+
+		li {
+			+ li {
+				margin-left: 10px;
+			}
+		}
+	}
+}
