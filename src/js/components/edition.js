@@ -2,26 +2,26 @@
 
 export class edition {
 	constructor(data) {
-		this.id = data.id;
-		this.edition = data.edition;
-		this.place = data.place;
-		this.dates = data.dates;
+		this._id = data.id;
+		this._edition = data.edition;
+		this._place = data.place;
+		this._dates = data.dates;
 	}
 
 	get editionId() {
-		return this.id;
+		return this._id;
 	}
 
 	get editionName() {
-		return this.edition;
+		return this._edition;
 	}
 
 	get editionPlace() {
-		return this.place;
+		return this._place;
 	}
 
 	get editionLength() {
-		return this.dates.length;
+		return this._dates.length;
 	}
 
 	get editionDates() {
@@ -31,6 +31,6 @@ export class edition {
 	}
 
 	get editionDays() {
-		return this.dates;
+		return this._dates;
 	}
 }
