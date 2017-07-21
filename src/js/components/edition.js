@@ -24,13 +24,13 @@ export class edition {
 		return this._dates.length;
 	}
 
-	get editionDates() {
-		const firstDay = this.editionDates()[0].day;
-		const lastDay =  this.editionDates()[this.editionLength - 1].day;
-		return {firstDay, lastDay};
-	}
-
 	get editionDays() {
 		return this._dates;
+	}
+
+	get editionDates() {
+		const firstDay = this.editionDays[0].day;
+		const lastDay =  this.editionDays[this.editionLength - 1].day;
+		return {firstDay, lastDay};
 	}
 }
