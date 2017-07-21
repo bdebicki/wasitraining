@@ -1,14 +1,26 @@
 'use strict';
 
+import { LAYOUT, TIMELINE } from '../enums/classes';
 import { timelineEvent } from './timelineEvent';
-// import { edition } from './edition';
 
 export function renderTimeline(data) {
 	const timelineContainer = document.createElement('nav');
+	const editionsListContainer = document.createElement('ul');
 
-	for(let editionData of data) {
+	timelineContainer.id = TIMELINE.TIMELINE_ID;
+	editionsListContainer.classList.add(TIMELINE.EDITIONS_CLASS);
+
+	for(let [i, editionData] of data.entries()) {
 		let edition = new timelineEvent(editionData);
-		edition.render();
+
+		if(i === 0) {
+			edition.render(editionsListContainer, true);
+		} else {
+			edition.render(editionsListContainer);
+		}
 	}
+
+	timelineContainer.appendChild(editionsListContainer);
+	document.getElementById(LAYOUT.TOP_ID).appendChild(timelineContainer);
 }
 

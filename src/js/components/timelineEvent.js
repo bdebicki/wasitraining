@@ -1,6 +1,6 @@
 'use strict';
 
-import { TIMELINE } from '../enums/classes';
+import { TIMELINE, ACTIVE_CLASS } from '../enums/classes';
 import { edition } from './edition';
 
 export class timelineEvent extends edition {
@@ -29,20 +29,23 @@ export class timelineEvent extends edition {
 		return ul;
 	}
 
-	renderEditionContainer() {
+	renderEditionContainer(isActive) {
 		const li = document.createElement('li');
 		const a = document.createElement('a');
 
 		a.textContent = this.editionName;
 		a.href = `#${this.editionName}`;
 		li.classList.add(TIMELINE.EDITION_CLASS);
+		if(isActive) {
+			li.classList.add(ACTIVE_CLASS);
+		}
 		li.appendChild(a);
 		li.appendChild(this.renderEditionDays());
 
 		return li
 	}
 
-	render() {
-		document.querySelector('#timeline .editions').appendChild(this.renderEditionContainer());
+	render(target, isActive) {
+		target.appendChild(this.renderEditionContainer(isActive));
 	}
 }
