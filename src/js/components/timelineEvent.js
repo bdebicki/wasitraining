@@ -1,5 +1,6 @@
 'use strict';
 
+import { TIMELINE} from '../enums/classes';
 import { edition } from './edition';
 
 export class timelineEvent extends edition {
@@ -11,7 +12,7 @@ export class timelineEvent extends edition {
 		const fragment = document.createDocumentFragment();
 		const ul = document.createElement('ul');
 
-		ul.classList.add('daysList');
+		ul.classList.add(TIMELINE.EDITION_DETAILS_CLASS);
 
 		for(let [i, day] of this.editionDays.entries()) {
 			const li = document.createElement('li');
@@ -32,7 +33,7 @@ export class timelineEvent extends edition {
 
 		a.textContent = this.edition;
 		a.href = "#`${this.edition}`";
-		li.classList.add('edition');
+		li.classList.add(TIMELINE.EDITION_CLASS);
 		li.appendChild(a);
 		li.appendChild(this.renderEditionDays());
 
