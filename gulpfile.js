@@ -21,7 +21,7 @@ var jsPackageFile = 'wiraof.js';
 var jsonSrcFiles = srcFolder + 'js/data/*.json';
 var jsDestFolder = publicFolder + 'js/';
 var jsSrcFiles = srcFolder + 'js/**/*.js';
-var jsSrcPackageFile = srcFolder + 'js/' + jsPackageFile;
+var jsSrcPackageFile = srcFolder + 'js/app.js';
 var symlinkSrcList = [srcFolder + 'fonts',
                       srcFolder + 'images',
                       srcFolder + 'views/index.html'];
