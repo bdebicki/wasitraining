@@ -1,5 +1,7 @@
-{
-	"2002": {
+[
+	{
+		"id": "1",
+		"edition": "2002",
 		"place": {
 			"city": "Warsaw",
 			"object": "Stegny Track"
@@ -10,8 +12,9 @@
 				"rain": false
 			}
 		]
-	},
-	"2003": {
+	}, {
+		"id": "2",
+		"edition": "2003",
 		"place": {
 			"city": "Gdynia",
 			"object": "Kościuszki Square"
@@ -22,8 +25,9 @@
 				"rain": false
 			}
 		]
-	},
-	"2004": {
+	}, {
+		"id": "3",
+		"edition": "2004",
 		"place": {
 			"place": "Gdynia",
 			"object": "Kościuszki Square"
@@ -37,8 +41,9 @@
 				"rain": false
 			}
 		]
-	},
-	"2005": {
+	}, {
+		"id": "4",
+		"edition": "2005",
 		"place": {
 			"place": "Gdynia",
 			"object": "Kościuszki Square"
@@ -52,8 +57,9 @@
 				"rain": false
 			}
 		]
-	},
-	"2006": {
+	}, {
+		"id": "5",
+		"edition": "2006",
 		"place": {
 			"place": "Gdynia",
 			"object": "Babie Doły Airport"
@@ -70,8 +76,9 @@
 				"rain": false
 			}
 		]
-	},
-	"2007": {
+	}, {
+		"id": "6",
+		"edition": "2007",
 		"place": {
 			"place": "Gdynia",
 			"object": "Babie Doły Airport"
@@ -88,8 +95,9 @@
 				"rain": false
 			}
 		]
-	},
-	"2008": {
+	}, {
+		"id": "7",
+		"edition": "2008",
 		"place": {
 			"place": "Gdynia",
 			"object": "Babie Doły Airport"
@@ -106,8 +114,9 @@
 				"rain": false
 			}
 		]
-	},
-	"2009": {
+	}, {
+		"id": "8",
+		"edition": "2009",
 		"place": {
 			"place": "Gdynia",
 			"object": "Babie Doły Airport"
@@ -127,8 +136,9 @@
 				"rain": false
 			}
 		]
-	},
-	"2010": {
+	}, {
+		"id": "9",
+		"edition": "2010",
 		"place": {
 			"place": "Gdynia",
 			"object": "Babie Doły Airport"
@@ -148,8 +158,9 @@
 				"rain": false
 			}
 		]
-	},
-	"2011": {
+	}, {
+		"id": "10",
+		"edition": "2011",
 		"place": {
 			"place": "Gdynia",
 			"object": "Babie Doły Airport"
@@ -169,8 +180,9 @@
 				"rain": false
 			}
 		]
-	},
-	"2012": {
+	}, {
+		"id": "11",
+		"edition": "2012",
 		"place": {
 			"place": "Gdynia",
 			"object": "Babie Doły Airport"
@@ -190,8 +202,9 @@
 				"rain": false
 			}
 		]
-	},
-	"2013": {
+	}, {
+		"id": "12",
+		"edition": "2013",
 		"place": {
 			"place": "Gdynia",
 			"object": "Babie Doły Airport"
@@ -214,12 +227,13 @@
 				"rain": false
 			}
 		]
-	},
-	"2014": {
+	}, {
+		"id": "13",
+		"edition": "2014",
 		"place": {
 			"place": "Gdynia",
 			"object": "Babie Doły Airport"
-		}
+		},
 		"dates": [
 			{
 				"day": "2nd July",
@@ -235,8 +249,9 @@
 				"rain": false
 			}
 		]
-	},
-	"2015": {
+	}, {
+		"id": "14",
+		"edition": "2015",
 		"place": {
 			"place": "Gdynia",
 			"object": "Babie Doły Airport"
@@ -256,8 +271,9 @@
 				"rain": false
 			}
 		]
-	},
-	"2016": {
+	}, {
+		"id": "15",
+		"edition": "2016",
 		"place": {
 			"place": "Gdynia",
 			"object": "Babie Doły Airport"
@@ -277,8 +293,9 @@
 				"rain": false
 			}
 		]
-	},
-	"2017": {
+	}, {
+		"id": "16",
+		"edition": "2017",
 		"place": {
 			"place": "Gdynia",
 			"object": "Babie Doły Airport"
@@ -299,4 +316,4 @@
 			}
 		]
 	}
-}
+]
