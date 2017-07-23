@@ -20,7 +20,7 @@ export class timelineEvent extends edition {
 			const dayCount = i + 1;
 
 			a.textContent = day.day;
-			a.href = `#${this.editionName}day${dayCount}`;
+			a.href = `#${this.editionYear}day${dayCount}`;
 			li.appendChild(a);
 			fragment.appendChild(li);
 		}
@@ -33,8 +33,8 @@ export class timelineEvent extends edition {
 		const li = document.createElement('li');
 		const a = document.createElement('a');
 
-		a.textContent = this.editionName;
-		a.href = `#${this.editionName}`;
+		a.textContent = this.editionYear;
+		a.href = `#${this.editionYear}`;
 		li.classList.add(TIMELINE.EDITION_CLASS);
 		if(isActive) {
 			li.classList.add(ACTIVE_CLASS);

@@ -12,7 +12,7 @@ export class edition {
 		return this._id;
 	}
 
-	get editionName() {
+	get editionYear() {
 		return this._edition;
 	}
 
@@ -28,9 +28,17 @@ export class edition {
 		return this._dates;
 	}
 
-	get editionDates() {
+	get editionDate() {
 		const firstDay = this.editionDays[0].day;
 		const lastDay =  this.editionDays[this.editionLength - 1].day;
 		return {firstDay, lastDay};
+	}
+
+	get editionRain() {
+		return 'rain';
+	}
+
+	get editionDaysRain() {
+		return 'days rain';
 	}
 }
