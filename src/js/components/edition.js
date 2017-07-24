@@ -1,11 +1,11 @@
 'use strict';
 
 export class edition {
-	constructor(data) {
-		this._id = data.id;
-		this._edition = data.edition;
-		this._place = data.place;
-		this._dates = data.dates;
+	constructor(editionData) {
+		this._id = editionData.id;
+		this._year = editionData.edition;
+		this._place = editionData.place;
+		this._dates = editionData.dates;
 	}
 
 	get editionId() {
@@ -13,7 +13,7 @@ export class edition {
 	}
 
 	get editionYear() {
-		return this._edition;
+		return this._year;
 	}
 
 	get editionPlace() {
@@ -30,8 +30,13 @@ export class edition {
 
 	get editionDate() {
 		const firstDay = this.editionDays[0].day;
-		const lastDay =  this.editionDays[this.editionLength - 1].day;
-		return {firstDay, lastDay};
+
+		if(this.editionLength > 1) {
+			const lastDay =  this.editionDays[this.editionLength - 1].day;
+			return {firstDay, lastDay};
+		} else {
+			return {firstDay};
+		}
 	}
 
 	get editionRain() {

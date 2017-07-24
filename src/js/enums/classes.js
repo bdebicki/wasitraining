@@ -11,5 +11,10 @@ export const TIMELINE = {
 	EDITION_CLASS: 'edition',
 	EDITION_DETAILS_CLASS: 'daysList'
 };
+export const DETAILS = {
+	FULL_NAME_CLASS: 'fullName',
+	DATES_CLASS: 'date',
+	RAIN_CLASS: 'rain'
+};
 export const ACTIVE_CLASS = 'active';
 export const SELECTED_CLASS = 'selected';
