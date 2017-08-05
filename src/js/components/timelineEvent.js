@@ -8,27 +8,6 @@ export class timelineEvent extends edition {
 		super(data);
 	}
 
-	renderEditionDays() {
-		const fragment = document.createDocumentFragment();
-		const ul = document.createElement('ul');
-
-		ul.classList.add(TIMELINE.EDITION_DETAILS_CLASS);
-
-		for(let [i, day] of this.editionDays.entries()) {
-			const li = document.createElement('li');
-			const a = document.createElement('a');
-			const dayCount = i + 1;
-
-			a.textContent = day.day;
-			a.href = `#${this.editionYear}day${dayCount}`;
-			li.appendChild(a);
-			fragment.appendChild(li);
-		}
-		ul.appendChild(fragment);
-
-		return ul;
-	}
-
 	renderEditionContainer(isActive) {
 		const li = document.createElement('li');
 		const a = document.createElement('a');
@@ -40,7 +19,6 @@ export class timelineEvent extends edition {
 			li.classList.add(ACTIVE_CLASS);
 		}
 		li.appendChild(a);
-		li.appendChild(this.renderEditionDays());
 
 		return li
 	}
