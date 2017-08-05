@@ -10,10 +10,10 @@ export function renderTimeline(data) {
 	timelineContainer.id = TIMELINE.TIMELINE_ID;
 	editionsListContainer.classList.add(TIMELINE.EDITIONS_CLASS);
 
-	for(let [i, editionData] of data.entries()) {
-		let edition = new timelineEvent(editionData);
+	for(let editionId in data) {
+		let edition = new timelineEvent(data[editionId]);
 
-		if(i === 0) {
+		if(Object.keys(data).indexOf(editionId) === 0) {
 			edition.render(editionsListContainer, true);
 		} else {
 			edition.render(editionsListContainer);
@@ -23,4 +23,3 @@ export function renderTimeline(data) {
 	timelineContainer.appendChild(editionsListContainer);
 	document.getElementById(LAYOUT.TOP_ID).appendChild(timelineContainer);
 }
-

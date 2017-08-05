@@ -1,6 +1,5 @@
-[
-	{
-		"id": "1",
+{
+	"1": {
 		"edition": "2002",
 		"place": {
 			"city": "Warsaw",
@@ -12,8 +11,8 @@
 				"rain": false
 			}
 		]
-	}, {
-		"id": "2",
+	},
+	"2": {
 		"edition": "2003",
 		"place": {
 			"city": "Gdynia",
@@ -25,8 +24,8 @@
 				"rain": false
 			}
 		]
-	}, {
-		"id": "3",
+	},
+	"3": {
 		"edition": "2004",
 		"place": {
 			"place": "Gdynia",
@@ -41,8 +40,8 @@
 				"rain": false
 			}
 		]
-	}, {
-		"id": "4",
+	},
+	"4": {
 		"edition": "2005",
 		"place": {
 			"place": "Gdynia",
@@ -57,8 +56,8 @@
 				"rain": false
 			}
 		]
-	}, {
-		"id": "5",
+	},
+	"5": {
 		"edition": "2006",
 		"place": {
 			"place": "Gdynia",
@@ -76,8 +75,8 @@
 				"rain": false
 			}
 		]
-	}, {
-		"id": "6",
+	},
+	"6": {
 		"edition": "2007",
 		"place": {
 			"place": "Gdynia",
@@ -95,8 +94,8 @@
 				"rain": false
 			}
 		]
-	}, {
-		"id": "7",
+	},
+	"7": {
 		"edition": "2008",
 		"place": {
 			"place": "Gdynia",
@@ -114,8 +113,8 @@
 				"rain": false
 			}
 		]
-	}, {
-		"id": "8",
+	},
+	"8": {
 		"edition": "2009",
 		"place": {
 			"place": "Gdynia",
@@ -136,8 +135,8 @@
 				"rain": false
 			}
 		]
-	}, {
-		"id": "9",
+	},
+	"9": {
 		"edition": "2010",
 		"place": {
 			"place": "Gdynia",
@@ -158,8 +157,8 @@
 				"rain": false
 			}
 		]
-	}, {
-		"id": "10",
+	},
+	"10": {
 		"edition": "2011",
 		"place": {
 			"place": "Gdynia",
@@ -180,8 +179,8 @@
 				"rain": false
 			}
 		]
-	}, {
-		"id": "11",
+	},
+	"11": {
 		"edition": "2012",
 		"place": {
 			"place": "Gdynia",
@@ -202,8 +201,8 @@
 				"rain": false
 			}
 		]
-	}, {
-		"id": "12",
+	},
+	"12": {
 		"edition": "2013",
 		"place": {
 			"place": "Gdynia",
@@ -227,8 +226,8 @@
 				"rain": false
 			}
 		]
-	}, {
-		"id": "13",
+	},
+	"13": {
 		"edition": "2014",
 		"place": {
 			"place": "Gdynia",
@@ -249,8 +248,8 @@
 				"rain": false
 			}
 		]
-	}, {
-		"id": "14",
+	},
+	"14": {
 		"edition": "2015",
 		"place": {
 			"place": "Gdynia",
@@ -271,8 +270,8 @@
 				"rain": false
 			}
 		]
-	}, {
-		"id": "15",
+	},
+	"15": {
 		"edition": "2016",
 		"place": {
 			"place": "Gdynia",
@@ -293,8 +292,8 @@
 				"rain": false
 			}
 		]
-	}, {
-		"id": "16",
+	},
+	"16": {
 		"edition": "2017",
 		"place": {
 			"place": "Gdynia",
@@ -316,4 +315,4 @@
 			}
 		]
 	}
-]
+}

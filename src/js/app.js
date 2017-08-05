@@ -8,7 +8,8 @@ function app() {
 		.then(response => response.json())
 		.then((data) => {
 			renderTimeline(data);
-			renderEditionDetails(data[0]);
+			renderEditionDetails(data[1], data);
+
 		})
 		.catch((error) => {
 			console.log(error);
