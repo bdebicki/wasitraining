@@ -1,7 +1,7 @@
 'use strict';
 
-import { editionDetails } from './editionDetails';
 import { LAYOUT } from '../enums/classes';
+import { editionDetails } from '../classes/editionDetails';
 
 export function renderEditionDetails(editionId) {
 	let details = new editionDetails(editionId);

@@ -10,6 +10,7 @@ export class timelineEvent extends edition {
 
 	switchEdition(e) {
 		e.preventDefault();
+		console.log(this);
 
 		console.log('toggle edition');
 	}

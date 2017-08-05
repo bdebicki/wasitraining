@@ -1,7 +1,7 @@
 'use strict';
 
-import { renderTimeline } from './components/renderTimeline';
-import { renderEditionDetails } from './components/renderEditionDetails';
+import { renderTimeline } from './actions/renderTimeline';
+import { renderEditionDetails } from './actions/renderEditionDetails';
 
 function app() {
 	fetch('./js/festivalEditions.json')

@@ -1,7 +1,7 @@
 'use strict';
 
 import { LAYOUT, TIMELINE } from '../enums/classes';
-import { timelineEvent } from './timelineEvent';
+import { timelineEvent } from '../classes/timelineEvent';
 
 export function renderTimeline(data) {
 	const timelineContainer = document.createElement('nav');

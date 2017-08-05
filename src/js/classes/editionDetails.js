@@ -1,7 +1,7 @@
 'use strict';
 
-import { edition } from './edition';
 import { DETAILS } from '../enums/classes';
+import { edition } from './edition';
 
 export class editionDetails extends edition {
 	constructor(editionId) {
