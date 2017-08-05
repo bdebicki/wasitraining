@@ -8,22 +8,35 @@ export class timelineEvent extends edition {
 		super(data);
 	}
 
-	renderEditionContainer(isActive) {
-		const li = document.createElement('li');
+	switchEdition(e) {
+		e.preventDefault();
+
+		console.log('toggle edition');
+	}
+
+	renderLink() {
 		const a = document.createElement('a');
 
 		a.textContent = this.editionYear;
-		a.href = `#${this.editionYear}`;
+		a.href = `#edition${this.editionId}`;
+		a.addEventListener('click', this.switchEdition, null);
+
+		return a;
+	}
+
+	renderEdition(isActive) {
+		const li = document.createElement('li');
+
 		li.classList.add(TIMELINE.EDITION_CLASS);
 		if(isActive) {
 			li.classList.add(ACTIVE_CLASS);
 		}
-		li.appendChild(a);
+		li.appendChild(this.renderLink());
 
 		return li
 	}
 
 	render(target, isActive) {
-		target.appendChild(this.renderEditionContainer(isActive));
+		target.appendChild(this.renderEdition(isActive));
 	}
 }
