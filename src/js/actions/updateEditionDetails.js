@@ -1,5 +1,8 @@
 'use strict';
 
+import { DETAILS } from '../enums/classes';
+import { edition } from '../classes/edition';
+
 export function decorateEditionDates(dates) {
 	if (Object.keys(dates).length === 1) {
 		return dates.firstDay;
@@ -8,8 +11,10 @@ export function decorateEditionDates(dates) {
 	}
 }
 
-export function updateDetails(year, dates, rain) {
-	document.querySelector(`.${DETAILS.FULL_NAME_CLASS}`).textContent = year;
-	document.querySelector(`.${DETAILS.DATES_CLASS}`).textContent = decorateEditionDates(dates);
-	document.querySelector(`.${DETAILS.RAIN_CLASS}`).textContent = rain;
+export function updateDetails(data) {
+	const newEdition = new edition(data);
+
+	document.querySelector(`.${DETAILS.FULL_NAME_CLASS}`).textContent = newEdition.editionYear;
+	document.querySelector(`.${DETAILS.DATES_CLASS}`).textContent = decorateEditionDates(newEdition.editionDate);
+	document.querySelector(`.${DETAILS.RAIN_CLASS}`).textContent = newEdition.editionRain;
 }

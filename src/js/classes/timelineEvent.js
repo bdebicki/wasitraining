@@ -1,7 +1,9 @@
 'use strict';
 
 import { TIMELINE, ACTIVE_CLASS } from '../enums/classes';
+import { DATA_URL } from '../enums/data';
 import { edition } from './edition';
+import { updateDetails } from '../actions/updateEditionDetails';
 
 export class timelineEvent extends edition {
 	constructor(data) {
@@ -10,9 +12,17 @@ export class timelineEvent extends edition {
 
 	switchEdition(e) {
 		e.preventDefault();
-		console.log(this);
 
-		console.log('toggle edition');
+		const id = this.getAttribute('href').replace('#edition', '');
+
+		fetch(DATA_URL)
+			.then(response => response.json())
+			.then((data) => {
+				updateDetails(data[id]);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	}
 
 	renderLink() {
