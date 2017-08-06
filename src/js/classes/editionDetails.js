@@ -2,24 +2,11 @@
 
 import { DETAILS } from '../enums/classes';
 import { edition } from './edition';
+import { decorateEditionDates } from '../actions/updateEditionDetails';
 
 export class editionDetails extends edition {
 	constructor(editionId) {
 		super(editionId);
-	};
-
-	updateDates(start, end) {
-		if(end) {
-			return `${start} - ${end}`;
-		} else {
-			return start;
-		}
-	};
-
-	updateDetails() {
-		document.querySelector(`.${DETAILS.FULL_NAME_CLASS}`).textContent = this.editionYear;
-		document.querySelector(`.${DETAILS.DATES_CLASS}`).textContent = this.updateDates(this.editionDate.firstDay);
-		document.querySelector(`.${DETAILS.RAIN_CLASS}`).textContent = this.editionRain;
 	};
 
 	render(target) {
@@ -33,7 +20,7 @@ export class editionDetails extends edition {
 		rain.classList.add(DETAILS.RAIN_CLASS);
 
 		name.textContent = this.editionYear;
-		dates.textContent = this.updateDates(this.editionDate.firstDay, this.editionDate.lastDay);
+		dates.textContent = decorateEditionDates(this.editionDate);
 		rain.textContent = this.editionRain;
 
 		fragment.appendChild(name);
