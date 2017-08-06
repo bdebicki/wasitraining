@@ -3,7 +3,7 @@
 import { LAYOUT, TIMELINE } from '../enums/classes';
 import { timelineEvent } from '../classes/timelineEvent';
 
-export function renderTimeline(data) {
+export function renderTimeline(data, activeId) {
 	const timelineContainer = document.createElement('nav');
 	const editionsListContainer = document.createElement('ul');
 
@@ -13,7 +13,7 @@ export function renderTimeline(data) {
 	for(let editionId in data) {
 		let edition = new timelineEvent(data[editionId]);
 
-		if(Object.keys(data).indexOf(editionId) === 0) {
+		if(edition.editionId == activeId) {
 			edition.render(editionsListContainer, true);
 		} else {
 			edition.render(editionsListContainer);

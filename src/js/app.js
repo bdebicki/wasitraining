@@ -8,9 +8,10 @@ function app() {
 	fetch(DATA_URL)
 		.then(response => response.json())
 		.then((data) => {
-			renderTimeline(data);
-			renderEditionDetails(data[1], data);
+			const activeEdition = Object.keys(data).length;
 
+			renderTimeline(data, activeEdition);
+			renderEditionDetails(data[activeEdition]);
 		})
 		.catch((error) => {
 			console.log(error);
