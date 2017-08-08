@@ -24,7 +24,8 @@ export class editionDetails extends edition {
 		this.editionDetails.map((item) => {
 			const li = document.createElement('li');
 
-			li.textContent = item.day;
+			const rain = item.rain ? 'rain' : 'no rain';
+			li.textContent = `${item.day}: ${rain}`;
 
 			fragment.appendChild(li);
 		});
