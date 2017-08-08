@@ -9,6 +9,23 @@ export class editionDetails extends edition {
 		super(editionId);
 	};
 
+	displayDetails(e) {
+		e.preventDefault();
+
+		console.log('display details')
+	}
+
+	renderDetailsLink() {
+		const a = document.createElement('a');
+
+		a.classList.add(DETAILS.DETAILS_LINK_CLASS);
+		a.href = `#details${this.editionYear}`;
+		a.textContent = 'display edition details';
+		a.addEventListener('click', this.displayDetails, null);
+
+		return a;
+	}
+
 	render(target) {
 		const fragment = document.createDocumentFragment();
 		const name = document.createElement('h2');
@@ -26,6 +43,7 @@ export class editionDetails extends edition {
 		fragment.appendChild(name);
 		fragment.appendChild(dates);
 		fragment.appendChild(rain);
+		fragment.appendChild(this.renderDetailsLink());
 
 		target.appendChild(fragment);
 	};

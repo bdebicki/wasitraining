@@ -14,7 +14,8 @@ export const TIMELINE = {
 export const DETAILS = {
 	FULL_NAME_CLASS: 'fullName',
 	DATES_CLASS: 'date',
-	RAIN_CLASS: 'rain'
+	RAIN_CLASS: 'rain',
+	DETAILS_LINK_CLASS: 'details'
 };
 export const ACTIVE_CLASS = 'active';
 export const SELECTED_CLASS = 'selected';
