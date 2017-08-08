@@ -1,6 +1,6 @@
 'use strict';
 
-import { LAYOUT } from '../enums/classes';
+import { LAYOUT } from '../enums/elementHandlers';
 import { editionDetails } from '../classes/editionDetails';
 
 export function renderEditionDetails(editionId) {

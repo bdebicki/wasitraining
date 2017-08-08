@@ -2,11 +2,12 @@
 	"1": {
 		"id": "1",
 		"edition": "2002",
+		"fullName": "Open Air Festival",
 		"place": {
 			"city": "Warsaw",
 			"object": "Stegny Track"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "2nd July",
 				"rain": false
@@ -16,11 +17,12 @@
 	"2": {
 		"id": "2",
 		"edition": "2003",
+		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
 			"city": "Gdynia",
 			"object": "Kościuszki Square"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "26th July",
 				"rain": false
@@ -30,11 +32,12 @@
 	"3": {
 		"id": "3",
 		"edition": "2004",
+		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
-			"place": "Gdynia",
+			"city": "Gdynia",
 			"object": "Kościuszki Square"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "2nd July",
 				"rain": false
@@ -47,11 +50,12 @@
 	"4": {
 		"id": "4",
 		"edition": "2005",
+		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
-			"place": "Gdynia",
+			"city": "Gdynia",
 			"object": "Kościuszki Square"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "8th July",
 				"rain": false
@@ -64,11 +68,12 @@
 	"5": {
 		"id": "5",
 		"edition": "2006",
+		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
-			"place": "Gdynia",
+			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "6th July",
 				"rain": false
@@ -84,11 +89,12 @@
 	"6": {
 		"id": "6",
 		"edition": "2007",
+		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
-			"place": "Gdynia",
+			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "29th June",
 				"rain": false
@@ -104,11 +110,12 @@
 	"7": {
 		"id": "7",
 		"edition": "2008",
+		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
-			"place": "Gdynia",
+			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "4th July",
 				"rain": false
@@ -124,11 +131,12 @@
 	"8": {
 		"id": "8",
 		"edition": "2009",
+		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
-			"place": "Gdynia",
+			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "2nd July",
 				"rain": false
@@ -147,11 +155,12 @@
 	"9": {
 		"id": "9",
 		"edition": "2010",
+		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
-			"place": "Gdynia",
+			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "1st July",
 				"rain": false
@@ -170,11 +179,12 @@
 	"10": {
 		"id": "10",
 		"edition": "2011",
+		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
-			"place": "Gdynia",
+			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "30th June",
 				"rain": false
@@ -193,11 +203,12 @@
 	"11": {
 		"id": "11",
 		"edition": "2012",
+		"fullName": "Heineken sponsors Open'er Festival",
 		"place": {
-			"place": "Gdynia",
+			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "4th July",
 				"rain": false
@@ -216,37 +227,39 @@
 	"12": {
 		"id": "12",
 		"edition": "2013",
+		"fullName": "Heineken sponsors Open'er Festival",
 		"place": {
-			"place": "Gdynia",
+			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "3rd July",
-				"rain": false
+				"rain": true
 			},
 			{
 				"day": "4th July",
-				"rain": false
+				"rain": true
 			},
 			{
 				"day": "5th July",
-				"rain": false
+				"rain": true
 			},
 			{
 				"day": "6th July",
-				"rain": false
+				"rain": true
 			}
 		]
 	},
 	"13": {
 		"id": "13",
 		"edition": "2014",
+		"fullName": "Heineken sponsors Open'er Festival",
 		"place": {
-			"place": "Gdynia",
+			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "2nd July",
 				"rain": false
@@ -265,11 +278,12 @@
 	"14": {
 		"id": "14",
 		"edition": "2015",
+		"fullName": "Open'er Festival",
 		"place": {
-			"place": "Gdynia",
+			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "1st July",
 				"rain": false
@@ -288,11 +302,12 @@
 	"15": {
 		"id": "15",
 		"edition": "2016",
+		"fullName": "Open'er Festival",
 		"place": {
-			"place": "Gdynia",
+			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "29th June",
 				"rain": false
@@ -304,18 +319,19 @@
 				"rain": false
 			}, {
 				"day": "2nd July",
-				"rain": false
+				"rain": true
 			}
 		]
 	},
 	"16": {
 		"id": "16",
 		"edition": "2017",
+		"fullName": "Open'er Festival powered by Orange",
 		"place": {
-			"place": "Gdynia",
+			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "28th June",
 				"rain": false

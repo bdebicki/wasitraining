@@ -5,7 +5,8 @@ export class edition {
 		this._id = editionData.id;
 		this._year = editionData.edition;
 		this._place = editionData.place;
-		this._dates = editionData.dates;
+		this._name = editionData.fullName;
+		this._details = editionData.details;
 	}
 
 	get editionId() {
@@ -16,23 +17,27 @@ export class edition {
 		return this._year;
 	}
 
+	get editionFullName() {
+		return this._name;
+	}
+
 	get editionPlace() {
-		return this._place;
+		return `${this._place.object}, ${this._place.city}`;
+	}
+
+	get editionDetails() {
+		return this._details;
 	}
 
 	get editionLength() {
-		return this._dates.length;
-	}
-
-	get editionDays() {
-		return this._dates;
+		return this.editionDetails.length;
 	}
 
 	get editionDate() {
-		const firstDay = this.editionDays[0].day;
+		const firstDay = this.editionDetails[0].day;
 
 		if(this.editionLength > 1) {
-			const lastDay =  this.editionDays[this.editionLength - 1].day;
+			const lastDay =  this.editionDetails[this.editionLength - 1].day;
 			return {firstDay, lastDay};
 		} else {
 			return {firstDay};
@@ -40,10 +45,12 @@ export class edition {
 	}
 
 	get editionRain() {
-		return 'rain';
-	}
+		for(let day of this.editionDetails) {
+			if(day.rain === true) {
+				return 'rain';
+			}
+		}
 
-	get editionDaysRain() {
-		return 'days rain';
+		return 'no rain';
 	}
 }
