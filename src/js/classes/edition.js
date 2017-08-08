@@ -22,7 +22,7 @@ export class edition {
 	}
 
 	get editionPlace() {
-		return `${this._place['object']}, ${this._place['city']}`;
+		return `${this._place.object}, ${this._place.city}`;
 	}
 
 	get editionDetails() {
@@ -46,7 +46,7 @@ export class edition {
 
 	get editionRain() {
 		for(let day of this.editionDetails) {
-			if(day['rain'] === true) {
+			if(day.rain === true) {
 				return 'rain';
 			}
 		}
