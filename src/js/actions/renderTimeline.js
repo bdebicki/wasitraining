@@ -1,26 +1,30 @@
 'use strict';
 
 import { LAYOUT, TIMELINE } from '../enums/classes';
-import { timelineEvent } from './timelineEvent';
+import { timelineEvent } from '../classes/timelineEvent';
 
-export function renderTimeline(data) {
+function sortEditions(list) {
+	return Object.keys(list).reverse();
+}
+
+export function renderTimeline(data, activeId) {
 	const timelineContainer = document.createElement('nav');
 	const editionsListContainer = document.createElement('ul');
+	const revertedEditionsOrder = () => sortEditions(data);
 
 	timelineContainer.id = TIMELINE.TIMELINE_ID;
 	editionsListContainer.classList.add(TIMELINE.EDITIONS_CLASS);
 
-	for(let [i, editionData] of data.entries()) {
-		let edition = new timelineEvent(editionData);
+	revertedEditionsOrder().map((item) => {
+		let edition = new timelineEvent(data[item]);
 
-		if(i === 0) {
+		if(edition.editionId == activeId) {
 			edition.render(editionsListContainer, true);
 		} else {
 			edition.render(editionsListContainer);
 		}
-	}
+	});
 
 	timelineContainer.appendChild(editionsListContainer);
 	document.getElementById(LAYOUT.TOP_ID).appendChild(timelineContainer);
 }
-
