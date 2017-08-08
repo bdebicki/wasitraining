@@ -17,7 +17,8 @@ export const DETAILS = {
 	YEAR_CLASS: 'editionYear',
 	DATES_CLASS: 'date',
 	RAIN_CLASS: 'rain',
-	DETAILS_LINK_CLASS: 'details'
+	DETAILS_LINK_CLASS: 'details',
+	DETAILS_CLASS: 'editionDetails'
 };
 export const ACTIVE_CLASS = 'active';
 export const SELECTED_CLASS = 'selected';

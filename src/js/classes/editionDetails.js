@@ -15,6 +15,25 @@ export class editionDetails extends edition {
 		console.log('display details')
 	}
 
+	renderDetailsContainer() {
+		const fragment = document.createDocumentFragment();
+		const ul = document.createElement('ul');
+
+		ul.classList.add(DETAILS.DETAILS_CLASS);
+
+		this.editionDetails.map((item) => {
+			const li = document.createElement('li');
+
+			li.textContent = item.day;
+
+			fragment.appendChild(li);
+		});
+
+		ul.appendChild(fragment);
+
+		return ul;
+	}
+
 	renderDetailsLink() {
 		const a = document.createElement('a');
 
@@ -52,6 +71,7 @@ export class editionDetails extends edition {
 		fragment.appendChild(place);
 		fragment.appendChild(rain);
 		fragment.appendChild(this.renderDetailsLink());
+		fragment.appendChild(this.renderDetailsContainer());
 
 		target.appendChild(fragment);
 	};

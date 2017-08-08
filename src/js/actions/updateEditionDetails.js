@@ -3,6 +3,22 @@
 import { DETAILS } from '../enums/classes';
 import { edition } from '../classes/edition';
 
+function decorateDetails(details) {
+	const fragment = document.createDocumentFragment();
+
+	document.querySelector(`.${DETAILS.DETAILS_CLASS}`).textContent ='';
+
+	details.map((item) => {
+		const li = document.createElement('li');
+
+		li.textContent = item.day;
+
+		fragment.appendChild(li);
+	});
+
+	return fragment;
+}
+
 export function decorateEditionDates(dates) {
 	if (Object.keys(dates).length === 1) {
 		return dates.firstDay;
@@ -19,4 +35,5 @@ export function updateDetails(data) {
 	document.querySelector(`.${DETAILS.FULL_NAME_CLASS}`).textContent = newEdition.editionFullName;
 	document.querySelector(`.${DETAILS.PLACE_CLASS}`).textContent = newEdition.editionPlace;
 	document.querySelector(`.${DETAILS.RAIN_CLASS}`).textContent = newEdition.editionRain;
+	document.querySelector(`.${DETAILS.DETAILS_CLASS}`).appendChild(decorateDetails(newEdition.editionDetails));
 }
