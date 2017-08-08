@@ -14,7 +14,8 @@ export function decorateEditionDates(dates) {
 export function updateDetails(data) {
 	const newEdition = new edition(data);
 
-	document.querySelector(`.${DETAILS.FULL_NAME_CLASS}`).textContent = newEdition.editionYear;
+	document.querySelector(`.${DETAILS.YEAR_CLASS}`).textContent = newEdition.editionYear;
 	document.querySelector(`.${DETAILS.DATES_CLASS}`).textContent = decorateEditionDates(newEdition.editionDate);
+	document.querySelector(`.${DETAILS.PLACE_CLASS}`).textContent = newEdition.editionPlace;
 	document.querySelector(`.${DETAILS.RAIN_CLASS}`).textContent = newEdition.editionRain;
 }

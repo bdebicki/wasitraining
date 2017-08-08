@@ -17,7 +17,7 @@ export class edition {
 	}
 
 	get editionPlace() {
-		return this._place;
+		return `${this._place['object']}, ${this._place['city']}`;
 	}
 
 	get editionLength() {

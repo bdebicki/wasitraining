@@ -13,6 +13,8 @@ export const TIMELINE = {
 };
 export const DETAILS = {
 	FULL_NAME_CLASS: 'fullName',
+	PLACE_CLASS: 'place',
+	YEAR_CLASS: 'editionYear',
 	DATES_CLASS: 'date',
 	RAIN_CLASS: 'rain',
 	DETAILS_LINK_CLASS: 'details'

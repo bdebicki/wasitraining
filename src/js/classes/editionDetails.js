@@ -28,20 +28,24 @@ export class editionDetails extends edition {
 
 	render(target) {
 		const fragment = document.createDocumentFragment();
-		const name = document.createElement('h2');
+		const editionYear = document.createElement('h2');
 		const dates = document.createElement('p');
+		const place = document.createElement('p');
 		const rain = document.createElement('p');
 
-		name.classList.add(DETAILS.FULL_NAME_CLASS);
+		editionYear.classList.add(DETAILS.YEAR_CLASS);
 		dates.classList.add(DETAILS.DATES_CLASS);
+		place.classList.add(DETAILS.PLACE_CLASS);
 		rain.classList.add(DETAILS.RAIN_CLASS);
 
-		name.textContent = this.editionYear;
+		editionYear.textContent = this.editionYear;
 		dates.textContent = decorateEditionDates(this.editionDate);
+		place.textContent = this.editionPlace;
 		rain.textContent = this.editionRain;
 
-		fragment.appendChild(name);
+		fragment.appendChild(editionYear);
 		fragment.appendChild(dates);
+		fragment.appendChild(place);
 		fragment.appendChild(rain);
 		fragment.appendChild(this.renderDetailsLink());
 
