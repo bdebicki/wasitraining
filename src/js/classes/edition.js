@@ -5,6 +5,7 @@ export class edition {
 		this._id = editionData.id;
 		this._year = editionData.edition;
 		this._place = editionData.place;
+		this._name = editionData.fullName;
 		this._dates = editionData.dates;
 	}
 
@@ -14,6 +15,10 @@ export class edition {
 
 	get editionYear() {
 		return this._year;
+	}
+
+	get editionFullName() {
+		return this._name;
 	}
 
 	get editionPlace() {

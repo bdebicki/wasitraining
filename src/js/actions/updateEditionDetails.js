@@ -16,6 +16,7 @@ export function updateDetails(data) {
 
 	document.querySelector(`.${DETAILS.YEAR_CLASS}`).textContent = newEdition.editionYear;
 	document.querySelector(`.${DETAILS.DATES_CLASS}`).textContent = decorateEditionDates(newEdition.editionDate);
+	document.querySelector(`.${DETAILS.FULL_NAME_CLASS}`).textContent = newEdition.editionFullName;
 	document.querySelector(`.${DETAILS.PLACE_CLASS}`).textContent = newEdition.editionPlace;
 	document.querySelector(`.${DETAILS.RAIN_CLASS}`).textContent = newEdition.editionRain;
 }
