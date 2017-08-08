@@ -7,7 +7,7 @@
 			"city": "Warsaw",
 			"object": "Stegny Track"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "2nd July",
 				"rain": false
@@ -22,7 +22,7 @@
 			"city": "Gdynia",
 			"object": "Kościuszki Square"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "26th July",
 				"rain": false
@@ -37,7 +37,7 @@
 			"city": "Gdynia",
 			"object": "Kościuszki Square"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "2nd July",
 				"rain": false
@@ -55,7 +55,7 @@
 			"city": "Gdynia",
 			"object": "Kościuszki Square"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "8th July",
 				"rain": false
@@ -73,7 +73,7 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "6th July",
 				"rain": false
@@ -94,7 +94,7 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "29th June",
 				"rain": false
@@ -115,7 +115,7 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "4th July",
 				"rain": false
@@ -136,7 +136,7 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "2nd July",
 				"rain": false
@@ -160,7 +160,7 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "1st July",
 				"rain": false
@@ -184,7 +184,7 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "30th June",
 				"rain": false
@@ -208,7 +208,7 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "4th July",
 				"rain": false
@@ -232,7 +232,7 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "3rd July",
 				"rain": true
@@ -259,7 +259,7 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "2nd July",
 				"rain": false
@@ -283,7 +283,7 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "1st July",
 				"rain": false
@@ -307,7 +307,7 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "29th June",
 				"rain": false
@@ -331,7 +331,7 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"dates": [
+		"details": [
 			{
 				"day": "28th June",
 				"rain": false
