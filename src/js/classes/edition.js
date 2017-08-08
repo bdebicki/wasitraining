@@ -40,7 +40,13 @@ export class edition {
 	}
 
 	get editionRain() {
-		return 'rain';
+		for(let day of this.editionDays) {
+			if(day['rain'] === true) {
+				return 'rain';
+			}
+		}
+
+		return 'no rain';
 	}
 
 	get editionDaysRain() {
