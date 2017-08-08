@@ -1,12 +1,12 @@
 'use strict';
 
-import { DETAILS } from '../enums/classes';
+import { DETAILS } from '../enums/elementHandlers';
 import { edition } from '../classes/edition';
 
-function decorateDetails(details) {
+function decorateRainDetails(details) {
 	const fragment = document.createDocumentFragment();
 
-	document.querySelector(`.${DETAILS.DETAILS_CLASS}`).textContent ='';
+	document.getElementById(DETAILS.RAIN_DETAILS_ID).textContent ='';
 
 	details.map((item) => {
 		const li = document.createElement('li');
@@ -35,5 +35,5 @@ export function updateDetails(data) {
 	document.querySelector(`.${DETAILS.FULL_NAME_CLASS}`).textContent = newEdition.editionFullName;
 	document.querySelector(`.${DETAILS.PLACE_CLASS}`).textContent = newEdition.editionPlace;
 	document.querySelector(`.${DETAILS.RAIN_CLASS}`).textContent = newEdition.editionRain;
-	document.querySelector(`.${DETAILS.DETAILS_CLASS}`).appendChild(decorateDetails(newEdition.editionDetails));
+	document.getElementById(DETAILS.RAIN_DETAILS_ID).appendChild(decorateRainDetails(newEdition.editionDetails));
 }

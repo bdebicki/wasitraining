@@ -1,6 +1,6 @@
 'use strict';
 
-import { LAYOUT, TIMELINE } from '../enums/classes';
+import { LAYOUT, TIMELINE } from '../enums/elementHandlers';
 import { timelineEvent } from '../classes/timelineEvent';
 
 function sortEditions(list) {

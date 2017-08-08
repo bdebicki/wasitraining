@@ -1,6 +1,6 @@
 'use strict';
 
-import { DETAILS, VISIBILITY_CLASS } from '../enums/classes';
+import { DETAILS, VISIBILITY_CLASS } from '../enums/elementHandlers';
 import { edition } from './edition';
 import { decorateEditionDates } from '../actions/updateEditionDetails';
 
@@ -12,12 +12,13 @@ export class editionDetails extends edition {
 	toggleDetails(e) {
 		e.preventDefault();
 
-		const details = document.querySelector(`.${DETAILS.DETAILS_CLASS}`);
+		const target = this.getAttribute('href').replace('#', '');
+		const targetEl = document.getElementById(target);
 
-		if(details.classList.contains(VISIBILITY_CLASS)) {
-			details.classList.remove(VISIBILITY_CLASS);
+		if(targetEl.classList.contains(VISIBILITY_CLASS)) {
+			targetEl.classList.remove(VISIBILITY_CLASS);
 		} else {
-			details.classList.add(VISIBILITY_CLASS);
+			targetEl.classList.add(VISIBILITY_CLASS);
 		}
 	}
 
@@ -25,7 +26,7 @@ export class editionDetails extends edition {
 		const fragment = document.createDocumentFragment();
 		const ul = document.createElement('ul');
 
-		ul.classList.add(DETAILS.DETAILS_CLASS);
+		ul.id = DETAILS.RAIN_DETAILS_ID;
 
 		this.editionDetails.map((item) => {
 			const li = document.createElement('li');
@@ -45,7 +46,7 @@ export class editionDetails extends edition {
 		const a = document.createElement('a');
 
 		a.classList.add(DETAILS.DETAILS_LINK_CLASS);
-		a.href = `#details${this.editionYear}`;
+		a.href = '#rainDetails';
 		a.textContent = 'display edition details';
 		a.addEventListener('click', this.toggleDetails, null);
 
