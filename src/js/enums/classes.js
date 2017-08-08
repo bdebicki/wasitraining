@@ -21,4 +21,5 @@ export const DETAILS = {
 	DETAILS_CLASS: 'editionDetails'
 };
 export const ACTIVE_CLASS = 'active';
+export const VISIBILITY_CLASS = 'visible';
 export const SELECTED_CLASS = 'selected';

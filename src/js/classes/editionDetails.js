@@ -1,6 +1,6 @@
 'use strict';
 
-import { DETAILS } from '../enums/classes';
+import { DETAILS, VISIBILITY_CLASS } from '../enums/classes';
 import { edition } from './edition';
 import { decorateEditionDates } from '../actions/updateEditionDetails';
 
@@ -9,10 +9,16 @@ export class editionDetails extends edition {
 		super(editionId);
 	};
 
-	displayDetails(e) {
+	toggleDetails(e) {
 		e.preventDefault();
 
-		console.log('display details')
+		const details = document.querySelector(`.${DETAILS.DETAILS_CLASS}`);
+
+		if(details.classList.contains(VISIBILITY_CLASS)) {
+			details.classList.remove(VISIBILITY_CLASS);
+		} else {
+			details.classList.add(VISIBILITY_CLASS);
+		}
 	}
 
 	renderDetailsContainer() {
@@ -41,7 +47,7 @@ export class editionDetails extends edition {
 		a.classList.add(DETAILS.DETAILS_LINK_CLASS);
 		a.href = `#details${this.editionYear}`;
 		a.textContent = 'display edition details';
-		a.addEventListener('click', this.displayDetails, null);
+		a.addEventListener('click', this.toggleDetails, null);
 
 		return a;
 	}
