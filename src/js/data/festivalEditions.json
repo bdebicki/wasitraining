@@ -223,19 +223,19 @@
 		"dates": [
 			{
 				"day": "3rd July",
-				"rain": false
+				"rain": true
 			},
 			{
 				"day": "4th July",
-				"rain": false
+				"rain": true
 			},
 			{
 				"day": "5th July",
-				"rain": false
+				"rain": true
 			},
 			{
 				"day": "6th July",
-				"rain": false
+				"rain": true
 			}
 		]
 	},
@@ -304,7 +304,7 @@
 				"rain": false
 			}, {
 				"day": "2nd July",
-				"rain": false
+				"rain": true
 			}
 		]
 	},
