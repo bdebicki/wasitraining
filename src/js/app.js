@@ -4,6 +4,7 @@ import { DATA_URL } from './enums/data';
 import { renderTimeline } from './actions/renderTimeline';
 import { renderEditionDetails } from './actions/renderEditionDetails';
 
+import '../data/festivalEditions.json';
 import '../less/app.less';
 
 function app() {

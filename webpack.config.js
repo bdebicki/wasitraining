@@ -21,7 +21,14 @@ const config = {
         use: ExtractTextPlugin.extract({
           use: ['css-loader', 'less-loader']
         })
-      }
+      },
+      {
+		test: /\.json$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].json'
+        }
+	  }
     ]
   },
   plugins: [
