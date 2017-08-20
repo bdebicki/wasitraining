@@ -1,3 +1,3 @@
 'use strict';
 
-export const DATA_URL = './js/festivalEditions.json';
+export const DATA_URL = './festivalEditions.json';

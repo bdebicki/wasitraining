@@ -4,6 +4,8 @@ import { DATA_URL } from './enums/data';
 import { renderTimeline } from './actions/renderTimeline';
 import { renderEditionDetails } from './actions/renderEditionDetails';
 
+import '../less/app.less';
+
 function app() {
 	fetch(DATA_URL)
 		.then(response => response.json())
