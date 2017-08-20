@@ -7,6 +7,10 @@
     "url": "git://github.com/bdebicki/wasitraining"
   },
   "description": "Was it raining at Open'er festival?",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack-dev-server --content-base public"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -14,6 +18,7 @@
     "css-loader": "^0.28.5",
     "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^2.30.1",
+    "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.5",
