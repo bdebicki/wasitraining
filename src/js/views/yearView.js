@@ -1,5 +1,4 @@
 import { header } from '../components/header/header';
-import { renderTimeline } from '../actions/renderTimeline';
 import { renderEditionDetails } from '../actions/renderEditionDetails';
 
 export class yearView {
@@ -9,11 +8,10 @@ export class yearView {
 
 	render() {
 		const activeEdition = Object.keys(this.data).length;
-		const headerBlock = new header(this.data);
+		const headerBlock = new header(this.data, activeEdition);
 
 		headerBlock.render();
 
-		// renderTimeline(this.data, activeEdition);
 		renderEditionDetails(this.data[activeEdition]);
 	}
 }

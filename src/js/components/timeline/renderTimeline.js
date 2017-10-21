@@ -1,13 +1,13 @@
 'use strict';
 
-import { LAYOUT, TIMELINE } from '../enums/elementHandlers';
-import { timelineEvent } from '../classes/timelineEvent';
+import { LAYOUT, TIMELINE } from '../../enums/elementHandlers';
+import { timelineEvent } from './timelineEvent';
 
 function sortEditions(list) {
 	return Object.keys(list).reverse();
 }
 
-export function renderTimeline(data, activeId) {
+export function renderTimeline(target, data, activeId) {
 	const timelineContainer = document.createElement('nav');
 	const editionsListContainer = document.createElement('ul');
 	const revertedEditionsOrder = () => sortEditions(data);
@@ -26,5 +26,5 @@ export function renderTimeline(data, activeId) {
 	});
 
 	timelineContainer.appendChild(editionsListContainer);
-	document.getElementById(LAYOUT.TOP_ID).appendChild(timelineContainer);
+	target.appendChild(timelineContainer);
 }
