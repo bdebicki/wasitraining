@@ -9,7 +9,7 @@ function app() {
 	fetch(DATA_URL)
 		.then(response => response.json())
 		.then((data) => {
-			let yearDetailsView = new yearView(data);
+			const yearDetailsView = new yearView(data);
 
 			yearDetailsView.render();
 		})

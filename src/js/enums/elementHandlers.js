@@ -1,8 +1,9 @@
 'use strict';
 
 export const LAYOUT = {
+	MAIN_CONTAINER_ID: 'wiraof',
 	TOP_ID: 'top',
-	MAIN_CONTAINER_ID: 'editionDetails',
+	MAIN_DETAILS_CONTAINER_ID: 'editionDetails',
 	FOOTER_ID: 'footer'
 };
 export const TIMELINE = {
