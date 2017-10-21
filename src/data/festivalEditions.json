@@ -10,7 +10,8 @@
 		"details": [
 			{
 				"day": "2nd July",
-				"rain": true, // small
+				"rain": true,
+				"rainSize": "small",
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPWA/2002/7/2/DailyHistory.html?req_city=Warszawa",
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=57321&date=2009-07-02&citynameWarsaw%2C+Masovian+Voivodeship%2C+Poland"
@@ -29,7 +30,8 @@
 		"details": [
 			{
 				"day": "26th July",
-				"rain": true, // small
+				"rain": true,
+				"rainSize": "small",
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2003/7/26/DailyHistory.html?req_city=Gdynia",
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2003-07-26&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
@@ -48,7 +50,8 @@
 		"details": [
 			{
 				"day": "2nd July",
-				"rain": true, // small
+				"rain": true,
+				"rainSize": "small",
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2004/7/2/DailyHistory.html?req_city=Gdynia",
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2004-07-2&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
@@ -114,7 +117,8 @@
 				]
 			}, {
 				"day": "8th July",
-				"rain": true, // small
+				"rain": true,
+				"rainSize": "small",
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2006/7/8/DailyHistory.html?req_city=Gdynia",
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2006-07-8&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
@@ -140,14 +144,16 @@
 				]
 			}, {
 				"day": "30th June",
-				"rain": true, // small
+				"rain": true,
+				"rainSize": "small",
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2007/6/30/DailyHistory.html?req_city=Gdynia",
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2007-06-30&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				]
 			}, {
 				"day": "1st July",
-				"rain": true, // small
+				"rain": true,
+				"rainSize": "small",
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2007/7/1/DailyHistory.html?req_city=Gdynia",
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2007-07-1&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
@@ -173,7 +179,8 @@
 				]
 			}, {
 				"day": "5th July",
-				"rain": true, // small
+				"rain": true,
+				"rainSize": "small",
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2008/7/5/DailyHistory.html?req_city=Gdynia",
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2008-07-5&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
@@ -213,7 +220,8 @@
 				]
 			}, {
 				"day": "4th July",
-				"rain": true, // small
+				"rain": true,
+				"rainSize": "small",
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2009/7/4/DailyHistory.html?req_city=Gdynia",
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2009-07-4&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
@@ -307,7 +315,8 @@
 				]
 			}, {
 				"day": "3rd July",
-				"rain": true, // small
+				"rain": true,
+				"rainSize": "small",
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2011/7/3/DailyHistory.html?req_city=Gdynia",
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2011-07-3&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland",
@@ -418,7 +427,8 @@
 		"details": [
 			{
 				"day": "2nd July",
-				"rain": true, // small
+				"rain": true,
+				"rainSize": "small",
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2014/7/2/DailyHistory.html?req_city=Gdynia",
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2014-07-2&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland",
@@ -426,7 +436,8 @@
 				]
 			}, {
 				"day": "3rd July",
-				"rain": true, // small
+				"rain": true,
+				"rainSize": "small",
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2014/7/3/DailyHistory.html?req_city=Gdynia",
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2014-07-3&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland",
@@ -506,14 +517,16 @@
 		"details": [
 			{
 				"day": "29th June",
-				"rain": true, // small
+				"rain": true,
+				"rainSize": "small",
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2016/6/29/DailyHistory.html?req_city=Gdynia",
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2016"
 				]
 			}, {
 				"day": "30th June",
-				"rain": true, // small
+				"rain": true,
+				"rainSize": "small",
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2016/6/30/DailyHistory.html?req_city=Gdynia",
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2016"
