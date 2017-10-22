@@ -6,5 +6,5 @@ import { editionDetails } from '../classes/editionDetails';
 export function renderEditionDetails(editionId) {
 	let details = new editionDetails(editionId);
 
-	details.render(document.getElementById(LAYOUT.MAIN_DETAILS_CONTAINER_ID));
+	details.render(document.getElementById(LAYOUT.MAIN_CONTAINER_ID));
 }

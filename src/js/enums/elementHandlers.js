@@ -1,13 +1,9 @@
 'use strict';
 
 export const LAYOUT = {
-	MAIN_CONTAINER_ID: 'wiraof',
 	TOP_ID: 'top',
-	MAIN_DETAILS_CONTAINER_ID: 'editionDetails',
+	MAIN_CONTAINER_ID: 'editionDetails',
 	FOOTER_ID: 'footer'
-};
-export const HEADER = {
-	TITLE_CLASS: 'pageName'
 };
 export const TIMELINE = {
 	TIMELINE_ID: 'timeline',

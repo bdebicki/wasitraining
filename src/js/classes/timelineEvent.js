@@ -1,11 +1,11 @@
 'use strict';
 
-import { TIMELINE, ACTIVE_CLASS } from '../../enums/elementHandlers';
-import { DATA_URL } from '../../enums/data';
-import { edition } from '../../classes/edition';
-import { updateDetails } from '../../actions/updateEditionDetails';
+import { TIMELINE, ACTIVE_CLASS } from '../enums/elementHandlers';
+import { DATA_URL } from '../enums/data';
+import { edition } from './edition';
+import { updateDetails } from '../actions/updateEditionDetails';
 
-export class timelineItem extends edition {
+export class timelineEvent extends edition {
 	constructor(data) {
 		super(data);
 	}
