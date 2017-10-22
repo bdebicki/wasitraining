@@ -1,7 +1,7 @@
 'use strict';
 
 import { LAYOUT, TIMELINE } from '../../enums/elementHandlers';
-import { timelineEvent } from './timelineEvent';
+import { timelineItem } from './timelineItem';
 
 function sortEditions(list) {
 	return Object.keys(list).reverse();
@@ -16,7 +16,7 @@ export function renderTimeline(target, data, activeId) {
 	editionsListContainer.classList.add(TIMELINE.EDITIONS_CLASS);
 
 	revertedEditionsOrder().map((item) => {
-		let edition = new timelineEvent(data[item]);
+		let edition = new timelineItem(data[item]);
 
 		if(edition.editionId == activeId) {
 			edition.render(editionsListContainer, true);
