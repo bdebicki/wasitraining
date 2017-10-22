@@ -5,7 +5,7 @@ import { DATA_URL } from '../../enums/data';
 import { edition } from '../../classes/edition';
 import { updateDetails } from '../../actions/updateEditionDetails';
 
-export class timelineEvent extends edition {
+export class timelineItem extends edition {
 	constructor(data) {
 		super(data);
 	}

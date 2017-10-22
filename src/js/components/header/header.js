@@ -2,7 +2,7 @@
 
 import { LAYOUT } from '../../enums/elementHandlers';
 import { title } from './title'
-import { renderTimeline } from '../timeline/renderTimeline';
+import { timeline } from '../timeline/timeline';
 
 export class header {
 	constructor(data, activeEdition) {
@@ -19,10 +19,11 @@ export class header {
 
 	render() {
 		const pageTitle = new title();
+		const festivalTimeline = new timeline(this.data, this.activeEdition);
 		let header = this.createHeaderContainer();
 
 		header.appendChild(pageTitle.render());
-		renderTimeline(header, this.data, this.activeEdition);
+		header.appendChild(festivalTimeline.render());
 
 		document.getElementById(LAYOUT.MAIN_CONTAINER_ID).appendChild(header);
 	}
