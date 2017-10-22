@@ -8,10 +8,10 @@ export class footer {
 	}
 
 	createFooterContainer() {
-		let header = document.createElement('footer');
-		header.id = LAYOUT.FOOTER_ID;
+		let footer = document.createElement('footer');
+		footer.id = LAYOUT.FOOTER_ID;
 
-		return header;
+		return footer;
 	}
 
 	render() {
