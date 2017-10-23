@@ -3,7 +3,7 @@
 export const LAYOUT = {
 	MAIN_CONTAINER_ID: 'wiraof',
 	TOP_ID: 'top',
-	MAIN_DETAILS_CONTAINER_ID: 'editionDetails',
+	YEAR_CONTAINER_ID: 'yearDetails',
 	FOOTER_ID: 'footer'
 };
 export const HEADER = {
@@ -20,14 +20,20 @@ export const TIMELINE = {
 	EDITION_CLASS: 'edition',
 	EDITION_DETAILS_CLASS: 'daysList'
 };
-export const DETAILS = {
+export const EDITION = {
+	EDITION_DETAILS_ID: 'editionDetails',
 	FULL_NAME_CLASS: 'fullName',
 	PLACE_CLASS: 'place',
 	YEAR_CLASS: 'editionYear',
 	DATES_CLASS: 'date',
+	HEADLINERS_CLASS: 'headliners',
+	LINEUP_LINK_CLASS: 'lineupDetailsLink'
+};
+export const RAIN = {
+	RAIN_DETAILS_ID: 'rainDetails',
 	RAIN_CLASS: 'rain',
-	DETAILS_LINK_CLASS: 'details',
-	RAIN_DETAILS_ID: 'rainDetails'
+	DETAILS_LINK_CLASS: 'rainDetailsLink',
+	EDITION_RAIN_DETAILS_ID: 'rainEditionDetails'
 };
 export const ACTIVE_CLASS = 'active';
 export const VISIBILITY_CLASS = 'visible';

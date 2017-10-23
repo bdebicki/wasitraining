@@ -1,18 +1,33 @@
 'use strict';
 
-import { DETAILS } from '../enums/elementHandlers';
+import { EDITION, RAIN } from '../enums/elementHandlers';
 import { edition } from '../classes/edition';
 
 function decorateRainDetails(details) {
-	const fragment = document.createDocumentFragment();
+	let fragment = document.createDocumentFragment();
 
-	document.getElementById(DETAILS.RAIN_DETAILS_ID).textContent ='';
+	document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).textContent =''; // to clear rain details list
 
 	details.map((item) => {
 		const li = document.createElement('li');
 		const rain = item.rain ? 'rain' : 'no rain';
-		li.textContent = `${item.day}: ${rain}`;
+		li.textContent = `${item.day} ${rain}`;
 
+		fragment.appendChild(li);
+	});
+
+	return fragment;
+}
+
+function decorateEditionHeadliners(headliners) {
+	let fragment = document.createDocumentFragment();
+
+	document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent =''; // to clear rain details list
+
+	headliners.map((item) => {
+		const li = document.createElement('li');
+
+		li.textContent = item;
 		fragment.appendChild(li);
 	});
 
@@ -30,10 +45,11 @@ export function decorateEditionDates(dates) {
 export function updateDetails(data) {
 	const newEdition = new edition(data);
 
-	document.querySelector(`.${DETAILS.YEAR_CLASS}`).textContent = newEdition.editionYear;
-	document.querySelector(`.${DETAILS.DATES_CLASS}`).textContent = decorateEditionDates(newEdition.editionDate);
-	document.querySelector(`.${DETAILS.FULL_NAME_CLASS}`).textContent = newEdition.editionFullName;
-	document.querySelector(`.${DETAILS.PLACE_CLASS}`).textContent = newEdition.editionPlace;
-	document.querySelector(`.${DETAILS.RAIN_CLASS}`).textContent = newEdition.editionRain;
-	document.getElementById(DETAILS.RAIN_DETAILS_ID).appendChild(decorateRainDetails(newEdition.editionDetails));
+	document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent = newEdition.editionYear;
+	document.querySelector(`.${EDITION.DATES_CLASS}`).textContent = decorateEditionDates(newEdition.editionDate);
+	document.querySelector(`.${EDITION.FULL_NAME_CLASS}`).textContent = newEdition.editionFullName;
+	document.querySelector(`.${EDITION.PLACE_CLASS}`).textContent = newEdition.editionPlace;
+	document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(decorateEditionHeadliners(newEdition.headliners));
+	document.querySelector(`.${RAIN.RAIN_CLASS}`).textContent = newEdition.editionRain;
+	document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).appendChild(decorateRainDetails(newEdition.editionDetails));
 }
