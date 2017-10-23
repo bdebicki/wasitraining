@@ -11,6 +11,7 @@ export class timeline {
 
 	createTimelineContainer() {
 		let timelineContainer = document.createElement('nav');
+
 		timelineContainer.id = TIMELINE.TIMELINE_ID;
 
 		return timelineContainer;
@@ -29,6 +30,7 @@ export class timeline {
 
 	render() {
 		const revertedEditionsOrder = () => this.reverseSortEditions(this.data);
+
 		let timelineContainer = this.createTimelineContainer();
 		let editionsListContainer = this.createEditionsListContainer();
 

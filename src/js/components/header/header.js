@@ -13,6 +13,7 @@ export class header {
 
 	createHeaderContainer() {
 		let header = document.createElement('header');
+
 		header.id = LAYOUT.TOP_ID;
 
 		return header;
