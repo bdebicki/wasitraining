@@ -26,11 +26,13 @@ export const EDITION = {
 	PLACE_CLASS: 'place',
 	YEAR_CLASS: 'editionYear',
 	DATES_CLASS: 'date',
+	HEADLINES_CLASS: 'headlines',
+	LINEUP_LINK_CLASS: 'lineupDetailsLink'
 };
 export const RAIN = {
 	RAIN_DETAILS_ID: 'rainDetails',
 	RAIN_CLASS: 'rain',
-	DETAILS_LINK_CLASS: 'details',
+	DETAILS_LINK_CLASS: 'rainDetailsLink',
 	EDITION_RAIN_DETAILS_ID: 'rainEditionDetails'
 };
 export const ACTIVE_CLASS = 'active';

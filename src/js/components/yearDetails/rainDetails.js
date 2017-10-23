@@ -66,8 +66,7 @@ export class rainDetails extends edition {
 			const li = document.createElement('li');
 			const rain = item.rain ? 'yes' : 'no';
 
-			li.textContent = `${item.day}: ${rain}`;
-
+			li.textContent = `${item.day} ${rain}`;
 			fragment.appendChild(li);
 		});
 

@@ -9,6 +9,12 @@ export class editionDetails extends edition {
 		super(editionId);
 	};
 
+	toggleLineup(e) {
+		e.preventDefault();
+
+		console.log('display lineup');
+	}
+
 	renderEditionContainer() {
 		const section = document.createElement('section');
 
@@ -42,11 +48,44 @@ export class editionDetails extends edition {
 		return fragment;
 	};
 
+	renderHeadlines() {
+		let fragment = document.createDocumentFragment();
+		const ul = document.createElement('ul');
+
+		ul.classList.add(EDITION.HEADLINES_CLASS);
+
+		this.headlines.map((item) => {
+			const li = document.createElement('li');
+
+			li.textContent = item;
+			fragment.appendChild(li);
+		});
+
+		ul.appendChild(fragment);
+
+		return ul;
+	}
+
+	renderLineupLink() {
+		let a = document.createElement('a');
+
+		a.classList.add(EDITION.LINEUP_LINK_CLASS);
+		a.href = `#lineup${this.editionYear}`;
+		a.textContent = 'see full lineup';
+		a.addEventListener('click', this.toggleLineup, null);
+
+		return a;
+	}
+
 	render() {
 		let editionContainer = this.renderEditionContainer();
 		const editionDetails = this.renderEditionDetails();
+		const headlines = this.renderHeadlines();
+		const lineupLink = this.renderLineupLink();
 
 		editionContainer.appendChild(editionDetails);
+		editionContainer.appendChild(headlines);
+		editionContainer.appendChild(lineupLink);
 
 		return editionContainer;
 	}
