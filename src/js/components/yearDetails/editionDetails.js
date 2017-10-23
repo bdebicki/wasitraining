@@ -20,8 +20,8 @@ export class editionDetails extends edition {
 	renderEditionDetails() {
 		let fragment = document.createDocumentFragment();
 		const editionYear = document.createElement('h2');
-		const dates = document.createElement('p');
 		const name = document.createElement('h3');
+		const dates = document.createElement('p');
 		const place = document.createElement('p');
 
 		editionYear.classList.add(EDITION.YEAR_CLASS);
@@ -35,8 +35,8 @@ export class editionDetails extends edition {
 		place.textContent = this.editionPlace;
 
 		fragment.appendChild(editionYear);
-		fragment.appendChild(dates);
 		fragment.appendChild(name);
+		fragment.appendChild(dates);
 		fragment.appendChild(place);
 
 		return fragment;
