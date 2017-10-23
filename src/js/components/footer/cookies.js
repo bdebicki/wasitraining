@@ -3,7 +3,6 @@
 import { FOOTER } from '../../enums/elementHandlers';
 
 export class cookiesInfo {
-
 	showCookiesDetails(e) {
 		e.preventDefault();
 

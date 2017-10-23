@@ -2,6 +2,7 @@
 
 import { LAYOUT } from '../../enums/elementHandlers';
 import { cookiesInfo } from './cookies';
+import { moreInfo } from './moreInformation';
 
 export class footer {
 	constructor(target) {
@@ -18,9 +19,11 @@ export class footer {
 
 	render() {
 		const cookies = new cookiesInfo();
+		const more = new moreInfo();
 		let footer = this.createFooterContainer();
 
 		footer.appendChild(cookies.render());
+		footer.appendChild(more.render());
 
 		document.getElementById(this.target).appendChild(footer);
 	}
