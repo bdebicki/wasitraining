@@ -3,7 +3,7 @@
 export const LAYOUT = {
 	MAIN_CONTAINER_ID: 'wiraof',
 	TOP_ID: 'top',
-	MAIN_DETAILS_CONTAINER_ID: 'editionDetails',
+	YEAR_CONTAINER_ID: 'yearDetails',
 	FOOTER_ID: 'footer'
 };
 export const HEADER = {
@@ -20,11 +20,14 @@ export const TIMELINE = {
 	EDITION_CLASS: 'edition',
 	EDITION_DETAILS_CLASS: 'daysList'
 };
-export const DETAILS = {
+export const EDITION = {
+	EDITION_DETAILS_ID: 'editionDetails',
 	FULL_NAME_CLASS: 'fullName',
 	PLACE_CLASS: 'place',
 	YEAR_CLASS: 'editionYear',
 	DATES_CLASS: 'date',
+};
+export const RAIN = {
 	RAIN_CLASS: 'rain',
 	DETAILS_LINK_CLASS: 'details',
 	RAIN_DETAILS_ID: 'rainDetails'
