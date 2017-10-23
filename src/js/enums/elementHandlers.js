@@ -26,7 +26,7 @@ export const EDITION = {
 	PLACE_CLASS: 'place',
 	YEAR_CLASS: 'editionYear',
 	DATES_CLASS: 'date',
-	HEADLINES_CLASS: 'headlines',
+	HEADLINERS_CLASS: 'headliners',
 	LINEUP_LINK_CLASS: 'lineupDetailsLink'
 };
 export const RAIN = {
