@@ -21,10 +21,28 @@ export class rainDetails extends edition {
 		}
 	}
 
+	renderRainDetailsLink() {
+		const a = document.createElement('a');
+
+		a.classList.add(RAIN.DETAILS_LINK_CLASS);
+		a.href = `#${RAIN.EDITION_RAIN_DETAILS_ID}`;
+		a.textContent = 'more';
+		a.addEventListener('click', this.toggleDetails, null);
+
+		return a;
+	}
+
 	renderRainContainer() {
-		const section = document.createElement('section');
+		let section = document.createElement('section');
+		let header = document.createElement('header');
+		const rainHeadline = document.createElement('h3');
+		const moreLink = this.renderRainDetailsLink();
 
 		section.id = RAIN.RAIN_DETAILS_ID;
+		rainHeadline.textContent = 'rain';
+		header.appendChild(rainHeadline);
+		header.appendChild(moreLink);
+		section.appendChild(header);
 
 		return section;
 	}
@@ -58,26 +76,13 @@ export class rainDetails extends edition {
 		return ul;
 	}
 
-	renderRainDetailsLink() {
-		const a = document.createElement('a');
-
-		a.classList.add(RAIN.DETAILS_LINK_CLASS);
-		a.href = `#${RAIN.EDITION_RAIN_DETAILS_ID}`;
-		a.textContent = 'more';
-		a.addEventListener('click', this.toggleDetails, null);
-
-		return a;
-	}
-
 	render() {
 		let fragment = document.createDocumentFragment();
 		let rainContainer = this.renderRainContainer();
 		const rainInfo = this.renderRainInfo();
-		const rainDetailsLink = this.renderRainDetailsLink();
 		const rainDetails = this.renderRainDetails();
 
 		fragment.appendChild(rainInfo);
-		fragment.appendChild(rainDetailsLink);
 		fragment.appendChild(rainDetails);
 		rainContainer.appendChild(fragment);
 

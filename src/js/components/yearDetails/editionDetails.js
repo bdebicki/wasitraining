@@ -21,7 +21,7 @@ export class editionDetails extends edition {
 		let fragment = document.createDocumentFragment();
 		const editionYear = document.createElement('h2');
 		const dates = document.createElement('p');
-		const name = document.createElement('p');
+		const name = document.createElement('h3');
 		const place = document.createElement('p');
 
 		editionYear.classList.add(EDITION.YEAR_CLASS);
