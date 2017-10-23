@@ -4,9 +4,9 @@ import { EDITION, RAIN } from '../enums/elementHandlers';
 import { edition } from '../classes/edition';
 
 function decorateRainDetails(details) {
-	const fragment = document.createDocumentFragment();
+	let fragment = document.createDocumentFragment();
 
-	document.getElementById(DETAILS.RAIN_DETAILS_ID).textContent ='';
+	document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).textContent =''; // to clear rain details list
 
 	details.map((item) => {
 		const li = document.createElement('li');

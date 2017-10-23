@@ -28,9 +28,10 @@ export const EDITION = {
 	DATES_CLASS: 'date',
 };
 export const RAIN = {
+	RAIN_DETAILS_ID: 'rainDetails',
 	RAIN_CLASS: 'rain',
 	DETAILS_LINK_CLASS: 'details',
-	RAIN_DETAILS_ID: 'rainDetails'
+	EDITION_RAIN_DETAILS_ID: 'rainEditionDetails'
 };
 export const ACTIVE_CLASS = 'active';
 export const VISIBILITY_CLASS = 'visible';

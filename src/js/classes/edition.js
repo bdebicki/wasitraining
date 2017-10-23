@@ -47,10 +47,10 @@ export class edition {
 	get editionRain() {
 		for(let day of this.editionDetails) {
 			if(day.rain === true) {
-				return 'rain';
+				return 'yes';
 			}
 		}
 
-		return 'no rain';
+		return 'no';
 	}
 }

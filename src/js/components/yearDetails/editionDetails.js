@@ -18,7 +18,7 @@ export class editionDetails extends edition {
 	}
 
 	renderEditionDetails() {
-		const fragment = document.createDocumentFragment();
+		let fragment = document.createDocumentFragment();
 		const editionYear = document.createElement('h2');
 		const dates = document.createElement('p');
 		const name = document.createElement('p');

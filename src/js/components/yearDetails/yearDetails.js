@@ -2,6 +2,7 @@
 
 import { LAYOUT } from '../../enums/elementHandlers';
 import { editionDetails } from './editionDetails';
+import { rainDetails } from './rainDetails';
 
 export class yearDetails {
 	constructor(editionId, target) {
@@ -17,15 +18,14 @@ export class yearDetails {
 		return section;
 	}
 
-	renderRainDetails() {
-
-	}
-
 	render() {
 		let yearBlock = this.renderYearContainer();
-		const editionBlock = new editionDetails(this.editionId);
+		const editionId = this.editionId;
+		const editionBlock = new editionDetails(editionId);
+		const rainBlock = new rainDetails(editionId);
 
 		yearBlock.appendChild(editionBlock.render());
+		yearBlock.appendChild(rainBlock.render());
 		document.getElementById(this.target).appendChild(yearBlock);
 	}
 }
