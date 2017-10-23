@@ -9,7 +9,7 @@ export class cookiesInfo {
 		console.log('cookies policy');
 	}
 
-	createCookiesLnk() {
+	renderCookiesLnk() {
 		let link = document.createElement('a');
 
 		link.href = '#cookies-policy';
@@ -24,7 +24,7 @@ export class cookiesInfo {
 
 		cookiesInfo.classList.add(FOOTER.COOKIES_CLASS);
 		cookiesInfo.textContent = 'yep. this site use cookies. click ';
-		cookiesInfo.appendChild(this.createCookiesLnk());
+		cookiesInfo.appendChild(this.renderCookiesLnk());
 		cookiesInfo.append(' for more.'); // textContent parse link to string, innerHtml += clear eventListener from link
 
 		return cookiesInfo;

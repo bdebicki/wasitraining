@@ -10,9 +10,6 @@ export class moreInfo {
 		console.log('about dialogbox');
 	}
 
-	renderMoreInfoContainer() {
-	}
-
 	renderCopyrights() {
 		let copyrights = document.createElement('p');
 

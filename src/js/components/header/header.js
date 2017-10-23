@@ -11,7 +11,7 @@ export class header {
 		this.target = target;
 	}
 
-	createHeaderContainer() {
+	renderHeaderContainer() {
 		let header = document.createElement('header');
 
 		header.id = LAYOUT.TOP_ID;
@@ -22,7 +22,7 @@ export class header {
 	render() {
 		const pageTitle = new title();
 		const festivalTimeline = new timeline(this.data, this.activeEdition);
-		let header = this.createHeaderContainer();
+		let header = this.renderHeaderContainer();
 
 		header.appendChild(pageTitle.render());
 		header.appendChild(festivalTimeline.render());

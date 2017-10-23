@@ -9,7 +9,7 @@ export class footer {
 		this.target = target;
 	}
 
-	createFooterContainer() {
+	renderFooterContainer() {
 		let footer = document.createElement('footer');
 
 		footer.id = LAYOUT.FOOTER_ID;
@@ -20,7 +20,7 @@ export class footer {
 	render() {
 		const cookies = new cookiesInfo();
 		const more = new moreInfo();
-		let footer = this.createFooterContainer();
+		let footer = this.renderFooterContainer();
 
 		footer.appendChild(cookies.render());
 		footer.appendChild(more.render());
