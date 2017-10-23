@@ -11,8 +11,23 @@ function decorateRainDetails(details) {
 	details.map((item) => {
 		const li = document.createElement('li');
 		const rain = item.rain ? 'rain' : 'no rain';
-		li.textContent = `${item.day}: ${rain}`;
+		li.textContent = `${item.day} ${rain}`;
 
+		fragment.appendChild(li);
+	});
+
+	return fragment;
+}
+
+function decorateEditionHeadliners(headliners) {
+	let fragment = document.createDocumentFragment();
+
+	document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent =''; // to clear rain details list
+
+	headliners.map((item) => {
+		const li = document.createElement('li');
+
+		li.textContent = item;
 		fragment.appendChild(li);
 	});
 
@@ -34,6 +49,7 @@ export function updateDetails(data) {
 	document.querySelector(`.${EDITION.DATES_CLASS}`).textContent = decorateEditionDates(newEdition.editionDate);
 	document.querySelector(`.${EDITION.FULL_NAME_CLASS}`).textContent = newEdition.editionFullName;
 	document.querySelector(`.${EDITION.PLACE_CLASS}`).textContent = newEdition.editionPlace;
+	document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(decorateEditionHeadliners(newEdition.headliners));
 	document.querySelector(`.${RAIN.RAIN_CLASS}`).textContent = newEdition.editionRain;
-	document.getElementById(RAIN.RAIN_DETAILS_ID).appendChild(decorateRainDetails(newEdition.editionDetails));
+	document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).appendChild(decorateRainDetails(newEdition.editionDetails));
 }
