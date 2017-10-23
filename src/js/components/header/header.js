@@ -5,13 +5,15 @@ import { title } from './title'
 import { timeline } from '../timeline/timeline';
 
 export class header {
-	constructor(data, activeEdition) {
+	constructor(data, activeEdition, target) {
 		this.data = data;
 		this.activeEdition = activeEdition;
+		this.target = target;
 	}
 
-	createHeaderContainer() {
+	renderHeaderContainer() {
 		let header = document.createElement('header');
+
 		header.id = LAYOUT.TOP_ID;
 
 		return header;
@@ -20,11 +22,11 @@ export class header {
 	render() {
 		const pageTitle = new title();
 		const festivalTimeline = new timeline(this.data, this.activeEdition);
-		let header = this.createHeaderContainer();
+		let header = this.renderHeaderContainer();
 
 		header.appendChild(pageTitle.render());
 		header.appendChild(festivalTimeline.render());
 
-		document.getElementById(LAYOUT.MAIN_CONTAINER_ID).appendChild(header);
+		document.getElementById(this.target).appendChild(header);
 	}
 }

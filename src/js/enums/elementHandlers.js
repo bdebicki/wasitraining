@@ -9,6 +9,11 @@ export const LAYOUT = {
 export const HEADER = {
 	TITLE_CLASS: 'pageName'
 };
+export const FOOTER = {
+	COOKIES_CLASS: 'cookiesInfo',
+	ABOUT_SECTION_CLASS: 'aboutSection',
+	COPYRIGHTS_CLASS: 'copyrights'
+};
 export const TIMELINE = {
 	TIMELINE_ID: 'timeline',
 	EDITIONS_CLASS: 'editions',
