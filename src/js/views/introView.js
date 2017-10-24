@@ -1,10 +1,11 @@
 'use strict';
 
 import { LAYOUT } from '../enums/elementHandlers';
+import { VIEW_TYPES } from '../enums/viewTypes';
 import { header } from '../components/header/header';
 import { timeline } from '../components/timeline/timeline';
 import { footer } from '../components/footer/footer';
-import { updateView } from '../utils/updateView';
+import { updateViewType } from '../utils/updateView';
 
 export class introView {
 	constructor(data) {
@@ -17,7 +18,7 @@ export class introView {
 		const timelineBlock = new timeline(this.data, body);
 		const footerBlock = new footer(body);
 
-		updateView('intro');
+		updateViewType(VIEW_TYPES.INTRO);
 
 		headerBlock.render();
 		timelineBlock.render();

@@ -10,6 +10,10 @@ export class yearView {
 		this.data = data
 	}
 
+	switchToYearView() {
+		console.log('update view to year')
+	}
+
 	render() {
 		const body = LAYOUT.MAIN_CONTAINER_ID;
 		const activeEdition = Object.keys(this.data).length;

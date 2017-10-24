@@ -1,5 +1,8 @@
 'use strict';
 
-export function updateView(viewType) {
+export function updateViewType(viewType) {
 	document.querySelector('html').dataset.view = viewType;
+}
+export function getViewType() {
+	return document.querySelector('html').dataset.view;
 }
