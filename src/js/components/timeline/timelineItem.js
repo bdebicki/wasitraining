@@ -3,7 +3,7 @@
 import { TIMELINE, ACTIVE_CLASS } from '../../enums/elementHandlers';
 import { DATA_URL } from '../../enums/data';
 import { edition } from '../../classes/edition';
-import { updateDetails } from '../../actions/updateEditionDetails';
+import { updateDetails } from '../../utils/updateEditionDetails';
 
 export class timelineItem extends edition {
 	constructor(data) {

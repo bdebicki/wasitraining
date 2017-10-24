@@ -2,7 +2,7 @@
 
 import { EDITION } from '../../enums/elementHandlers';
 import { edition } from '../../classes/edition';
-import { decorateEditionDates } from '../../actions/updateEditionDetails';
+import { decorateEditionDates } from '../../utils/updateEditionDetails';
 
 export class editionDetails extends edition {
 	constructor(editionId) {
