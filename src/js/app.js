@@ -1,7 +1,7 @@
 'use strict';
 
 import { DATA_URL } from './enums/data';
-import { yearView } from './views/yearView'
+import { introView } from './views/introView'
 
 import '../less/app.less';
 
@@ -9,9 +9,9 @@ function app() {
 	fetch(DATA_URL)
 		.then(response => response.json())
 		.then((data) => {
-			const yearDetailsView = new yearView(data);
+			const intro = new introView(data);
 
-			yearDetailsView.render();
+			intro.render();
 		})
 		.catch((error) => {
 			console.log(error);

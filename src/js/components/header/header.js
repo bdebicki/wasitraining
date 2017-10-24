@@ -2,12 +2,10 @@
 
 import { LAYOUT } from '../../enums/elementHandlers';
 import { title } from './title'
-import { timeline } from '../timeline/timeline';
 
 export class header {
-	constructor(data, activeEdition, target) {
+	constructor(data, target) {
 		this.data = data;
-		this.activeEdition = activeEdition;
 		this.target = target;
 	}
 
@@ -21,11 +19,9 @@ export class header {
 
 	render() {
 		const pageTitle = new title();
-		const festivalTimeline = new timeline(this.data, this.activeEdition);
 		let header = this.renderHeaderContainer();
 
 		header.appendChild(pageTitle.render());
-		header.appendChild(festivalTimeline.render());
 
 		document.getElementById(this.target).appendChild(header);
 	}
