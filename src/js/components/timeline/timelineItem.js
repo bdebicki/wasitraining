@@ -23,7 +23,7 @@ export class timelineItem extends edition {
 			.then(response => response.json())
 			.then((data) => {
 				if(viewType() === VIEW_TYPES.INTRO) {
-					const year = new yearView(data[id]);
+					const year = new yearView(data, id);
 					year.switchToYearView();
 				} else {
 					updateDetails(data[id]);
