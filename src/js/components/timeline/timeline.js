@@ -1,5 +1,6 @@
 'use strict';
 
+import { LAYOUT } from '../../enums/elementHandlers';
 import { TIMELINE } from '../../enums/elementHandlers';
 import { timelineItem } from './timelineItem';
 
@@ -12,7 +13,7 @@ export class timeline {
 	createTimelineContainer() {
 		let timelineContainer = document.createElement('nav');
 
-		timelineContainer.id = TIMELINE.TIMELINE_ID;
+		timelineContainer.id = LAYOUT.TIMELINE_ID;
 
 		return timelineContainer;
 	}
