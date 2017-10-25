@@ -14,17 +14,15 @@ export class yearView {
 		this.activeId = activeId;
 	}
 
-	updateViewToYear() {
+	updateViewTypeToYear() {
 		updateViewType(VIEW_TYPES.YEAR);
 	}
 
 	switchToYearView() {
 		const body = LAYOUT.MAIN_CONTAINER_ID;
-		const headerBlock = document.getElementById(LAYOUT.TOP_ID);
-		const timelineBlock = document.getElementById(LAYOUT.TIMELINE_ID);
 
-		this.updateViewToYear();
-		headerBlock.appendChild(timelineBlock);
+		this.updateViewTypeToYear();
+		document.getElementById(LAYOUT.TOP_ID).appendChild(document.getElementById(LAYOUT.TIMELINE_ID));
 	}
 
 	render() {
@@ -35,7 +33,7 @@ export class yearView {
 		const yearBlock = new yearDetails(this.data[activeEdition], body);
 		const footerBlock = new footer(body);
 
-		this.updateViewToYear();
+		this.updateViewTypeToYear();
 
 		headerBlock.render();
 		timelineBlock.render();

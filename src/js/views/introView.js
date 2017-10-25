@@ -12,13 +12,21 @@ export class introView {
 		this.data = data
 	}
 
+	updateViewTypeToIntro() {
+		updateViewType(VIEW_TYPES.INTRO);
+	}
+
+	switchToIntoView() {
+		this.updateViewTypeToIntro();
+	}
+
 	render() {
 		const body = LAYOUT.MAIN_CONTAINER_ID;
 		const headerBlock = new header(this.data, body);
 		const timelineBlock = new timeline(this.data, body);
 		const footerBlock = new footer(body);
 
-		updateViewType(VIEW_TYPES.INTRO);
+		this.updateViewTypeToIntro();
 
 		headerBlock.render();
 		timelineBlock.render();
