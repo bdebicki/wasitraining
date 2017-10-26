@@ -1,6 +1,6 @@
 'use strict';
 
-import { LAYOUT } from '../enums/elementHandlers';
+import { LAYOUT, EDITION, RAIN } from '../enums/elementHandlers';
 import { VIEW_TYPES } from '../enums/viewTypes';
 import { edition } from '../classes/edition';
 import { header } from '../components/header/header';
@@ -17,14 +17,6 @@ export class yearView {
 
 	updateViewTypeToYear() {
 		updateViewType(VIEW_TYPES.YEAR);
-	}
-
-	switchToYearView() {
-		const yearBlock = new yearDetails(this.data[this.editionId], LAYOUT.MAIN_CONTAINER_ID);
-
-		this.updateViewTypeToYear();
-		document.getElementById(LAYOUT.TOP_ID).appendChild(document.getElementById(LAYOUT.TIMELINE_ID));
-		yearBlock.render();
 	}
 
 	decorateRainDetails(details) {
@@ -67,7 +59,7 @@ export class yearView {
 	}
 
 	updateDetails() {
-		const newEdition = new edition(this.data);
+		const newEdition = new edition(this.data[this.editionId]);
 
 		document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent = newEdition.editionYear;
 		document.querySelector(`.${EDITION.DATES_CLASS}`).textContent = this.decorateEditionDates(newEdition.editionDate);
@@ -76,6 +68,14 @@ export class yearView {
 		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(this.decorateEditionHeadliners(newEdition.headliners));
 		document.querySelector(`.${RAIN.RAIN_CLASS}`).textContent = newEdition.editionRain;
 		document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).appendChild(this.decorateRainDetails(newEdition.editionDetails));
+	}
+
+	switchToYearView() {
+		const yearBlock = new yearDetails(this.data[this.editionId], LAYOUT.MAIN_CONTAINER_ID);
+
+		this.updateViewTypeToYear();
+		document.getElementById(LAYOUT.TOP_ID).appendChild(document.getElementById(LAYOUT.TIMELINE_ID));
+		yearBlock.render();
 	}
 
 	render() {

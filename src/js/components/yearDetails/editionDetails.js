@@ -2,7 +2,7 @@
 
 import { EDITION } from '../../enums/elementHandlers';
 import { edition } from '../../classes/edition';
-import { decorateEditionDates } from '../../utils/updateEditionDetails';
+import { yearView } from '../../views/yearView';
 
 export class editionDetails extends edition {
 	constructor(editionId) {
@@ -25,6 +25,7 @@ export class editionDetails extends edition {
 
 	renderEditionDetails() {
 		let fragment = document.createDocumentFragment();
+		const yearBlock = new yearView(this.editionId);
 		const editionYear = document.createElement('h2');
 		const name = document.createElement('h3');
 		const dates = document.createElement('p');
@@ -36,7 +37,7 @@ export class editionDetails extends edition {
 		place.classList.add(EDITION.PLACE_CLASS);
 
 		editionYear.textContent = this.editionYear;
-		dates.textContent = decorateEditionDates(this.editionDate);
+		dates.textContent = yearBlock.decorateEditionDates(this.editionDate);
 		name.textContent = this.editionFullName;
 		place.textContent = this.editionPlace;
 

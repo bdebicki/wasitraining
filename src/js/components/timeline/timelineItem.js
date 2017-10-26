@@ -3,7 +3,6 @@
 import { DATA_URL } from '../../enums/data';
 import { TIMELINE, ACTIVE_CLASS } from '../../enums/elementHandlers';
 import { VIEW_TYPES } from '../../enums/viewTypes';
-import { updateDetails } from '../../utils/updateEditionDetails';
 import { getViewType } from '../../utils/updateView';
 import { edition } from '../../classes/edition';
 import { yearView } from '../../views/yearView';
@@ -22,11 +21,12 @@ export class timelineItem extends edition {
 		fetch(DATA_URL)
 			.then(response => response.json())
 			.then((data) => {
+				const year = new yearView(data, id);
+
 				if(viewType() === VIEW_TYPES.INTRO) {
-					const year = new yearView(data, id);
 					year.switchToYearView();
 				} else {
-					updateDetails(data[id]);
+					year.updateDetails();
 				}
 			})
 			.catch((error) => {
