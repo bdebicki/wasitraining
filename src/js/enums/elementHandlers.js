@@ -3,6 +3,7 @@
 export const LAYOUT = {
 	MAIN_CONTAINER_ID: 'wiraof',
 	TOP_ID: 'top',
+	TIMELINE_ID: 'timeline',
 	YEAR_CONTAINER_ID: 'yearDetails',
 	FOOTER_ID: 'footer'
 };
@@ -15,7 +16,6 @@ export const FOOTER = {
 	COPYRIGHTS_CLASS: 'copyrights'
 };
 export const TIMELINE = {
-	TIMELINE_ID: 'timeline',
 	EDITIONS_CLASS: 'editions',
 	EDITION_CLASS: 'edition',
 	EDITION_DETAILS_CLASS: 'daysList'

@@ -1,9 +1,12 @@
 'use strict';
 
-import { TIMELINE, ACTIVE_CLASS } from '../../enums/elementHandlers';
 import { DATA_URL } from '../../enums/data';
+import { TIMELINE, ACTIVE_CLASS } from '../../enums/elementHandlers';
+import { VIEW_TYPES } from '../../enums/viewTypes';
+import { updateDetails } from '../../utils/updateEditionDetails';
+import { getViewType } from '../../utils/updateView';
 import { edition } from '../../classes/edition';
-import { updateDetails } from '../../actions/updateEditionDetails';
+import { yearView } from '../../views/yearView';
 
 export class timelineItem extends edition {
 	constructor(data) {
@@ -14,11 +17,17 @@ export class timelineItem extends edition {
 		e.preventDefault();
 
 		const id = this.getAttribute('href').replace('#edition', '');
+		const viewType = () => getViewType();
 
 		fetch(DATA_URL)
 			.then(response => response.json())
 			.then((data) => {
-				updateDetails(data[id]);
+				if(viewType() === VIEW_TYPES.INTRO) {
+					const year = new yearView(data, id);
+					year.switchToYearView();
+				} else {
+					updateDetails(data[id]);
+				}
 			})
 			.catch((error) => {
 				console.log(error);
