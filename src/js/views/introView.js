@@ -18,6 +18,8 @@ export class introView {
 
 	switchToIntoView() {
 		this.updateViewTypeToIntro();
+		document.getElementById(LAYOUT.MAIN_CONTAINER_ID).appendChild(document.getElementById(LAYOUT.TIMELINE_ID));
+		document.getElementById(LAYOUT.YEAR_CONTAINER_ID).remove();
 	}
 
 	render() {

@@ -1,18 +1,17 @@
 'use strict';
 
 import { TITLE } from '../../enums/content';
-import { LAYOUT, HEADER } from '../../enums/elementHandlers';
+import { HEADER } from '../../enums/elementHandlers';
 import { VIEW_TYPES } from '../../enums/viewTypes';
-import { updateViewType } from '../../utils/updateView';
+import { introView } from '../../views/introView';
 
 export class title {
 	backToHome(e) {
 		e.preventDefault();
 
 		if(document.querySelector('html').dataset.view === VIEW_TYPES.YEAR) {
-			updateViewType(VIEW_TYPES.INTRO);
-			document.getElementById(LAYOUT.MAIN_CONTAINER_ID).appendChild(document.getElementById(LAYOUT.TIMELINE_ID));
-			document.getElementById(LAYOUT.YEAR_CONTAINER_ID).remove();
+			const intro = new introView();
+			intro.switchToIntoView();
 		}
 	}
 
