@@ -9,9 +9,9 @@ import { footer } from '../components/footer/footer';
 import { updateViewType } from '../utils/updateView';
 
 export class yearView {
-	constructor(data, activeId) {
+	constructor(data, editionId) {
 		this.data = data;
-		this.activeId = activeId;
+		this.editionId = editionId;
 	}
 
 	updateViewTypeToYear() {
@@ -19,18 +19,19 @@ export class yearView {
 	}
 
 	switchToYearView() {
-		const body = LAYOUT.MAIN_CONTAINER_ID;
+		const yearBlock = new yearDetails(this.data[this.editionId], LAYOUT.MAIN_CONTAINER_ID);
 
 		this.updateViewTypeToYear();
 		document.getElementById(LAYOUT.TOP_ID).appendChild(document.getElementById(LAYOUT.TIMELINE_ID));
+		yearBlock.render();
 	}
 
 	render() {
 		const body = LAYOUT.MAIN_CONTAINER_ID;
-		const activeEdition = Object.keys(this.data).length;
-		const headerBlock = new header(this.data, body);
-		const timelineBlock = new timeline(this.data, LAYOUT.TOP_ID);
-		const yearBlock = new yearDetails(this.data[activeEdition], body);
+		const data = this.data;
+		const headerBlock = new header(data, body);
+		const timelineBlock = new timeline(data, LAYOUT.TOP_ID);
+		const yearBlock = new yearDetails(data[this.activeId], body);
 		const footerBlock = new footer(body);
 
 		this.updateViewTypeToYear();
