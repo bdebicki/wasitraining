@@ -26,7 +26,7 @@ export class yearView {
 
 		details.map((item) => {
 			const li = document.createElement('li');
-			const rain = item.rain ? 'rain' : 'no rain';
+			const rain = item.rain ? 'yes' : 'no';
 			li.textContent = `${item.day} ${rain}`;
 
 			fragment.appendChild(li);
