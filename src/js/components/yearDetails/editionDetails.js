@@ -2,12 +2,21 @@
 
 import { EDITION } from '../../enums/elementHandlers';
 import { edition } from '../../classes/edition';
-import { yearView } from '../../views/yearView';
 
 export class editionDetails extends edition {
 	constructor(editionId) {
 		super(editionId);
 	};
+
+	decorateEditionDates() {
+		const editionDate = this.editionDate;
+
+		if (Object.keys(editionDate).length === 1) {
+			return editionDate.firstDay;
+		} else {
+			return `${editionDate.firstDay} - ${editionDate.lastDay}`;
+		}
+	}
 
 	toggleLineup(e) {
 		e.preventDefault();
@@ -25,7 +34,6 @@ export class editionDetails extends edition {
 
 	renderEditionDetails() {
 		let fragment = document.createDocumentFragment();
-		const yearBlock = new yearView(this.editionId);
 		const editionYear = document.createElement('h2');
 		const name = document.createElement('h3');
 		const dates = document.createElement('p');
@@ -37,7 +45,7 @@ export class editionDetails extends edition {
 		place.classList.add(EDITION.PLACE_CLASS);
 
 		editionYear.textContent = this.editionYear;
-		dates.textContent = yearBlock.decorateEditionDates(this.editionDate);
+		dates.textContent = this.decorateEditionDates();
 		name.textContent = this.editionFullName;
 		place.textContent = this.editionPlace;
 

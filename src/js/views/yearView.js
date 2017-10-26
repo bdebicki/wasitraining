@@ -5,6 +5,7 @@ import { VIEW_TYPES } from '../enums/viewTypes';
 import { edition } from '../classes/edition';
 import { header } from '../components/header/header';
 import { timeline } from '../components/timeline/timeline';
+import { editionDetails } from '../components/yearDetails/editionDetails';
 import { yearDetails } from '../components/yearDetails/yearDetails'
 import { footer } from '../components/footer/footer';
 import { updateViewType } from '../utils/updateView';
@@ -50,19 +51,13 @@ export class yearView {
 		return fragment;
 	}
 
-	decorateEditionDates(dates) {
-		if (Object.keys(dates).length === 1) {
-			return dates.firstDay;
-		} else {
-			return `${dates.firstDay} - ${dates.lastDay}`;
-		}
-	}
-
 	updateDetails() {
-		const newEdition = new edition(this.data[this.editionId]);
+		const newEditionId = this.data[this.editionId];
+		const newEdition = new edition(newEditionId);
+		const newEditionDetails = new editionDetails(newEditionId);
 
 		document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent = newEdition.editionYear;
-		document.querySelector(`.${EDITION.DATES_CLASS}`).textContent = this.decorateEditionDates(newEdition.editionDate);
+		document.querySelector(`.${EDITION.DATES_CLASS}`).textContent = newEditionDetails.decorateEditionDates();
 		document.querySelector(`.${EDITION.FULL_NAME_CLASS}`).textContent = newEdition.editionFullName;
 		document.querySelector(`.${EDITION.PLACE_CLASS}`).textContent = newEdition.editionPlace;
 		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(this.decorateEditionHeadliners(newEdition.headliners));
