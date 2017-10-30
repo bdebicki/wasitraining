@@ -3,9 +3,10 @@
 export class edition {
 	constructor(editionData) {
 		this._id = editionData.id;
-		this._year = editionData.edition;
+		this._year = editionData.editionYear;
 		this._place = editionData.place;
 		this._name = editionData.fullName;
+		this._headliners = editionData.headliners;
 		this._details = editionData.details;
 	}
 
@@ -33,6 +34,10 @@ export class edition {
 		return this.editionDetails.length;
 	}
 
+	get headliners() {
+		return this._headliners;
+	}
+
 	get editionDate() {
 		const firstDay = this.editionDetails[0].day;
 
@@ -47,10 +52,10 @@ export class edition {
 	get editionRain() {
 		for(let day of this.editionDetails) {
 			if(day.rain === true) {
-				return 'rain';
+				return 'yes';
 			}
 		}
 
-		return 'no rain';
+		return 'no';
 	}
 }

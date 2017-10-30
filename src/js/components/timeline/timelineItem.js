@@ -1,11 +1,13 @@
 'use strict';
 
-import { TIMELINE, ACTIVE_CLASS } from '../enums/elementHandlers';
-import { DATA_URL } from '../enums/data';
-import { edition } from './edition';
-import { updateDetails } from '../actions/updateEditionDetails';
+import { DATA_URL } from '../../enums/data';
+import { TIMELINE, ACTIVE_CLASS } from '../../enums/elementHandlers';
+import { VIEW_TYPES } from '../../enums/viewTypes';
+import { getViewType } from '../../utils/updateView';
+import { edition } from '../../classes/edition';
+import { yearView } from '../../views/yearView';
 
-export class timelineEvent extends edition {
+export class timelineItem extends edition {
 	constructor(data) {
 		super(data);
 	}
@@ -14,11 +16,18 @@ export class timelineEvent extends edition {
 		e.preventDefault();
 
 		const id = this.getAttribute('href').replace('#edition', '');
+		const viewType = () => getViewType();
 
 		fetch(DATA_URL)
 			.then(response => response.json())
 			.then((data) => {
-				updateDetails(data[id]);
+				const year = new yearView(data, id);
+
+				if(viewType() === VIEW_TYPES.INTRO) {
+					year.switchToYearView();
+				} else {
+					year.updateDetails();
+				}
 			})
 			.catch((error) => {
 				console.log(error);
@@ -26,7 +35,7 @@ export class timelineEvent extends edition {
 	}
 
 	renderLink() {
-		const a = document.createElement('a');
+		let a = document.createElement('a');
 
 		a.textContent = this.editionYear;
 		a.href = `#edition${this.editionId}`;
@@ -36,7 +45,7 @@ export class timelineEvent extends edition {
 	}
 
 	renderEdition(isActive) {
-		const li = document.createElement('li');
+		let li = document.createElement('li');
 
 		li.classList.add(TIMELINE.EDITION_CLASS);
 		if(isActive) {
