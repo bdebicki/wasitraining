@@ -96,6 +96,14 @@ export class editionDetails extends edition {
 		return a;
 	}
 
+	updateEditionDetails() {
+		document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent = this.editionYear;
+		document.querySelector(`.${EDITION.DATES_CLASS}`).textContent = this.decorateEditionDates();
+		document.querySelector(`.${EDITION.FULL_NAME_CLASS}`).textContent = this.editionFullName;
+		document.querySelector(`.${EDITION.PLACE_CLASS}`).textContent = this.editionPlace;
+		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(this.updateHeadliners());
+	}
+
 	render() {
 		let editionContainer = this.renderEditionContainer();
 		const editionDetails = this.renderEditionDetails();

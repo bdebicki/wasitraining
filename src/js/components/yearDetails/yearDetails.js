@@ -1,7 +1,6 @@
 'use strict';
 
-import { LAYOUT, EDITION, RAIN } from '../../enums/elementHandlers';
-import { edition } from '../../classes/edition';
+import { LAYOUT } from '../../enums/elementHandlers';
 import { editionDetails } from './editionDetails';
 import { rainDetails } from './rainDetails';
 
@@ -21,17 +20,11 @@ export class yearDetails {
 
 	updateYearDetails() {
 		const editionId = this.editionId;
-		const newEdition = new edition(editionId);
-		const newEditionDetails = new editionDetails(editionId);
-		const newRainDetails = new rainDetails(editionId);
+		const editionBlock = new editionDetails(editionId);
+		const rainBlock = new rainDetails(editionId);
 
-		document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent = newEdition.editionYear;
-		document.querySelector(`.${EDITION.DATES_CLASS}`).textContent = newEditionDetails.decorateEditionDates();
-		document.querySelector(`.${EDITION.FULL_NAME_CLASS}`).textContent = newEdition.editionFullName;
-		document.querySelector(`.${EDITION.PLACE_CLASS}`).textContent = newEdition.editionPlace;
-		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(newEditionDetails.updateHeadliners());
-		document.querySelector(`.${RAIN.RAIN_CLASS}`).textContent = newEdition.editionRain;
-		document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).appendChild(newRainDetails.updateRainDetails());
+		editionBlock.updateEditionDetails();
+		rainBlock.updateRainDetails();
 	}
 
 	render() {
