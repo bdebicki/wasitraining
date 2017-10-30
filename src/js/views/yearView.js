@@ -26,12 +26,19 @@ export class yearView {
 		yearBlock.render();
 	}
 
+	updateDetails() {
+		const newEditionId = this.data[this.editionId];
+		const yearBlock = new yearDetails(newEditionId);
+
+		yearBlock.updateYearDetails();
+	}
+
 	render() {
 		const body = LAYOUT.MAIN_CONTAINER_ID;
 		const data = this.data;
 		const headerBlock = new header(data, body);
 		const timelineBlock = new timeline(data, LAYOUT.TOP_ID);
-		const yearBlock = new yearDetails(data[this.activeId], body);
+		const yearBlock = new yearDetails(data[this.editionId], body);
 		const footerBlock = new footer(body);
 
 		this.updateViewTypeToYear();

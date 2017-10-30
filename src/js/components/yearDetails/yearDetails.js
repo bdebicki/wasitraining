@@ -18,6 +18,15 @@ export class yearDetails {
 		return section;
 	}
 
+	updateYearDetails() {
+		const editionId = this.editionId;
+		const editionBlock = new editionDetails(editionId);
+		const rainBlock = new rainDetails(editionId);
+
+		editionBlock.updateEditionDetails();
+		rainBlock.updateRainDetails();
+	}
+
 	render() {
 		let yearBlock = this.renderYearContainer();
 		const editionId = this.editionId;

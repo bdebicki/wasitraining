@@ -2,12 +2,34 @@
 
 import { EDITION } from '../../enums/elementHandlers';
 import { edition } from '../../classes/edition';
-import { decorateEditionDates } from '../../utils/updateEditionDetails';
 
 export class editionDetails extends edition {
 	constructor(editionId) {
 		super(editionId);
 	};
+
+	decorateEditionDates() {
+		const editionDate = this.editionDate;
+
+		if (Object.keys(editionDate).length === 1) {
+			return editionDate.firstDay;
+		} else {
+			return `${editionDate.firstDay} - ${editionDate.lastDay}`;
+		}
+	}
+
+	decorateEditionHeadliners() {
+		let fragment = document.createDocumentFragment();
+
+		this.headliners.map((item) => {
+			const li = document.createElement('li');
+
+			li.textContent = item;
+			fragment.appendChild(li);
+		});
+
+		return fragment;
+	}
 
 	toggleLineup(e) {
 		e.preventDefault();
@@ -16,7 +38,7 @@ export class editionDetails extends edition {
 	}
 
 	renderEditionContainer() {
-		const section = document.createElement('section');
+		let section = document.createElement('section');
 
 		section.id = EDITION.EDITION_DETAILS_ID;
 
@@ -25,10 +47,10 @@ export class editionDetails extends edition {
 
 	renderEditionDetails() {
 		let fragment = document.createDocumentFragment();
-		const editionYear = document.createElement('h2');
-		const name = document.createElement('h3');
-		const dates = document.createElement('p');
-		const place = document.createElement('p');
+		let editionYear = document.createElement('h2');
+		let name = document.createElement('h3');
+		let dates = document.createElement('p');
+		let place = document.createElement('p');
 
 		editionYear.classList.add(EDITION.YEAR_CLASS);
 		dates.classList.add(EDITION.DATES_CLASS);
@@ -36,7 +58,7 @@ export class editionDetails extends edition {
 		place.classList.add(EDITION.PLACE_CLASS);
 
 		editionYear.textContent = this.editionYear;
-		dates.textContent = decorateEditionDates(this.editionDate);
+		dates.textContent = this.decorateEditionDates();
 		name.textContent = this.editionFullName;
 		place.textContent = this.editionPlace;
 
@@ -48,20 +70,17 @@ export class editionDetails extends edition {
 		return fragment;
 	};
 
+	updateHeadliners() {
+		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent =''; // to clear rain details list
+
+		return this.decorateEditionHeadliners();
+	}
+
 	renderHeadliners() {
-		let fragment = document.createDocumentFragment();
-		const ul = document.createElement('ul');
+		let ul = document.createElement('ul');
 
 		ul.classList.add(EDITION.HEADLINERS_CLASS);
-
-		this.headliners.map((item) => {
-			const li = document.createElement('li');
-
-			li.textContent = item;
-			fragment.appendChild(li);
-		});
-
-		ul.appendChild(fragment);
+		ul.appendChild(this.decorateEditionHeadliners());
 
 		return ul;
 	}
@@ -75,6 +94,14 @@ export class editionDetails extends edition {
 		a.addEventListener('click', this.toggleLineup, null);
 
 		return a;
+	}
+
+	updateEditionDetails() {
+		document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent = this.editionYear;
+		document.querySelector(`.${EDITION.DATES_CLASS}`).textContent = this.decorateEditionDates();
+		document.querySelector(`.${EDITION.FULL_NAME_CLASS}`).textContent = this.editionFullName;
+		document.querySelector(`.${EDITION.PLACE_CLASS}`).textContent = this.editionPlace;
+		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(this.updateHeadliners());
 	}
 
 	render() {

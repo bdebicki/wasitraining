@@ -3,7 +3,7 @@
 export class edition {
 	constructor(editionData) {
 		this._id = editionData.id;
-		this._year = editionData.edition;
+		this._year = editionData.editionYear;
 		this._place = editionData.place;
 		this._name = editionData.fullName;
 		this._headliners = editionData.headliners;
