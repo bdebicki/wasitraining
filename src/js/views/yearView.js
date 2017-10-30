@@ -1,6 +1,6 @@
 'use strict';
 
-import { LAYOUT, EDITION, RAIN } from '../enums/elementHandlers';
+import { LAYOUT } from '../enums/elementHandlers';
 import { VIEW_TYPES } from '../enums/viewTypes';
 import { header } from '../components/header/header';
 import { timeline } from '../components/timeline/timeline';
