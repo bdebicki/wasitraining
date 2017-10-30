@@ -1,7 +1,7 @@
 {
 	"1": {
 		"id": "1",
-		"edition": "2002",
+		"editionYear": "2002",
 		"fullName": "Open Air Festival",
 		"place": {
 			"city": "Warsaw",
@@ -22,7 +22,7 @@
 	},
 	"2": {
 		"id": "2",
-		"edition": "2003",
+		"editionYear": "2003",
 		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
 			"city": "Gdynia",
@@ -43,7 +43,7 @@
 	},
 	"3": {
 		"id": "3",
-		"edition": "2004",
+		"editionYear": "2004",
 		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
 			"city": "Gdynia",
@@ -71,7 +71,7 @@
 	},
 	"4": {
 		"id": "4",
-		"edition": "2005",
+		"editionYear": "2005",
 		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
 			"city": "Gdynia",
@@ -98,7 +98,7 @@
 	},
 	"5": {
 		"id": "5",
-		"edition": "2006",
+		"editionYear": "2006",
 		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
 			"city": "Gdynia",
@@ -133,7 +133,7 @@
 	},
 	"6": {
 		"id": "6",
-		"edition": "2007",
+		"editionYear": "2007",
 		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
 			"city": "Gdynia",
@@ -169,7 +169,7 @@
 	},
 	"7": {
 		"id": "7",
-		"edition": "2008",
+		"editionYear": "2008",
 		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
 			"city": "Gdynia",
@@ -204,7 +204,7 @@
 	},
 	"8": {
 		"id": "8",
-		"edition": "2009",
+		"editionYear": "2009",
 		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
 			"city": "Gdynia",
@@ -246,7 +246,7 @@
 	},
 	"9": {
 		"id": "9",
-		"edition": "2010",
+		"editionYear": "2010",
 		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
 			"city": "Gdynia",
@@ -291,7 +291,7 @@
 	},
 	"10": {
 		"id": "10",
-		"edition": "2011",
+		"editionYear": "2011",
 		"fullName": "Heineken Music sponsors Open'er Festival",
 		"place": {
 			"city": "Gdynia",
@@ -337,7 +337,7 @@
 	},
 	"11": {
 		"id": "11",
-		"edition": "2012",
+		"editionYear": "2012",
 		"fullName": "Heineken sponsors Open'er Festival",
 		"place": {
 			"city": "Gdynia",
@@ -382,7 +382,7 @@
 	},
 	"12": {
 		"id": "12",
-		"edition": "2013",
+		"editionYear": "2013",
 		"fullName": "Heineken sponsors Open'er Festival",
 		"place": {
 			"city": "Gdynia",
@@ -430,7 +430,7 @@
 	},
 	"13": {
 		"id": "13",
-		"edition": "2014",
+		"editionYear": "2014",
 		"fullName": "Heineken sponsors Open'er Festival",
 		"place": {
 			"city": "Gdynia",
@@ -477,7 +477,7 @@
 	},
 	"14": {
 		"id": "14",
-		"edition": "2015",
+		"editionYear": "2015",
 		"fullName": "Open'er Festival",
 		"place": {
 			"city": "Gdynia",
@@ -522,7 +522,7 @@
 	},
 	"15": {
 		"id": "15",
-		"edition": "2016",
+		"editionYear": "2016",
 		"fullName": "Open'er Festival",
 		"place": {
 			"city": "Gdynia",
@@ -565,7 +565,7 @@
 	},
 	"16": {
 		"id": "16",
-		"edition": "2017",
+		"editionYear": "2017",
 		"fullName": "Open'er Festival powered by Orange",
 		"place": {
 			"city": "Gdynia",
