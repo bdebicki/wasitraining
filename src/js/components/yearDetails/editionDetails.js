@@ -38,7 +38,7 @@ export class editionDetails extends edition {
 	}
 
 	renderEditionContainer() {
-		const section = document.createElement('section');
+		let section = document.createElement('section');
 
 		section.id = EDITION.EDITION_DETAILS_ID;
 
@@ -47,10 +47,10 @@ export class editionDetails extends edition {
 
 	renderEditionDetails() {
 		let fragment = document.createDocumentFragment();
-		const editionYear = document.createElement('h2');
-		const name = document.createElement('h3');
-		const dates = document.createElement('p');
-		const place = document.createElement('p');
+		let editionYear = document.createElement('h2');
+		let name = document.createElement('h3');
+		let dates = document.createElement('p');
+		let place = document.createElement('p');
 
 		editionYear.classList.add(EDITION.YEAR_CLASS);
 		dates.classList.add(EDITION.DATES_CLASS);

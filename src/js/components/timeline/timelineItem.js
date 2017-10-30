@@ -35,7 +35,7 @@ export class timelineItem extends edition {
 	}
 
 	renderLink() {
-		const a = document.createElement('a');
+		let a = document.createElement('a');
 
 		a.textContent = this.editionYear;
 		a.href = `#edition${this.editionId}`;
@@ -45,7 +45,7 @@ export class timelineItem extends edition {
 	}
 
 	renderEdition(isActive) {
-		const li = document.createElement('li');
+		let li = document.createElement('li');
 
 		li.classList.add(TIMELINE.EDITION_CLASS);
 		if(isActive) {
