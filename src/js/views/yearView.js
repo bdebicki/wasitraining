@@ -33,7 +33,7 @@ export class yearView {
 		document.querySelector(`.${EDITION.PLACE_CLASS}`).textContent = newEdition.editionPlace;
 		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(newEditionDetails.updateHeadliners());
 		document.querySelector(`.${RAIN.RAIN_CLASS}`).textContent = newEdition.editionRain;
-		document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).appendChild(newRainDetails.decorateRainDetails());
+		document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).appendChild(newRainDetails.updateRainDetails());
 	}
 
 	switchToYearView() {

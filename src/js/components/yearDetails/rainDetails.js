@@ -23,11 +23,8 @@ export class rainDetails extends edition {
 
 	decorateRainDetails() {
 		let fragment = document.createDocumentFragment();
-		const details = this.editionDetails;
 
-		document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).textContent =''; // to clear rain details list
-
-		details.map((item) => {
+		this.editionDetails.map((item) => {
 			const li = document.createElement('li');
 			const rain = item.rain ? 'yes' : 'no';
 			li.textContent = `${item.day} ${rain}`;
@@ -73,21 +70,17 @@ export class rainDetails extends edition {
 		return p;
 	}
 
+	updateRainDetails() {
+		document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).textContent =''; // to clear rain details list
+
+		return this.decorateRainDetails();
+	}
+
 	renderRainDetails() {
-		let fragment = document.createDocumentFragment();
 		const ul = document.createElement('ul');
 
 		ul.id = RAIN.EDITION_RAIN_DETAILS_ID;
-
-		this.editionDetails.map((item) => {
-			const li = document.createElement('li');
-			const rain = item.rain ? 'yes' : 'no';
-
-			li.textContent = `${item.day} ${rain}`;
-			fragment.appendChild(li);
-		});
-
-		ul.appendChild(fragment);
+		ul.appendChild(this.decorateRainDetails());
 
 		return ul;
 	}
