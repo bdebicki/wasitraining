@@ -11,8 +11,8 @@ export class rainDetails extends edition {
 	toggleDetails(e) {
 		e.preventDefault();
 
-		let targetEl = document.getElementById(target);
 		const target = this.getAttribute('href').replace('#', '');
+		let targetEl = document.getElementById(target);
 
 		if(targetEl.classList.contains(VISIBILITY_CLASS)) {
 			targetEl.classList.remove(VISIBILITY_CLASS);
