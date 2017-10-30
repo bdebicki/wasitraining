@@ -18,13 +18,10 @@ export class editionDetails extends edition {
 		}
 	}
 
-	decorateEditionHeadliners() { // exported
+	decorateEditionHeadliners() {
 		let fragment = document.createDocumentFragment();
-		const headliners = this.headliners;
 
-		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent =''; // to clear rain details list
-
-		headliners.map((item) => {
+		this.headliners.map((item) => {
 			const li = document.createElement('li');
 
 			li.textContent = item;
@@ -73,20 +70,17 @@ export class editionDetails extends edition {
 		return fragment;
 	};
 
+	updateHeadliners() {
+		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent =''; // to clear rain details list
+
+		return this.decorateEditionHeadliners();
+	}
+
 	renderHeadliners() {
-		let fragment = document.createDocumentFragment();
-		const ul = document.createElement('ul');
+		let ul = document.createElement('ul');
 
 		ul.classList.add(EDITION.HEADLINERS_CLASS);
-
-		this.headliners.map((item) => {
-			const li = document.createElement('li');
-
-			li.textContent = item;
-			fragment.appendChild(li);
-		});
-
-		ul.appendChild(fragment);
+		ul.appendChild(this.decorateEditionHeadliners());
 
 		return ul;
 	}

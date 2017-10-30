@@ -31,7 +31,7 @@ export class yearView {
 		document.querySelector(`.${EDITION.DATES_CLASS}`).textContent = newEditionDetails.decorateEditionDates();
 		document.querySelector(`.${EDITION.FULL_NAME_CLASS}`).textContent = newEdition.editionFullName;
 		document.querySelector(`.${EDITION.PLACE_CLASS}`).textContent = newEdition.editionPlace;
-		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(newEditionDetails.decorateEditionHeadliners());
+		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(newEditionDetails.updateHeadliners());
 		document.querySelector(`.${RAIN.RAIN_CLASS}`).textContent = newEdition.editionRain;
 		document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).appendChild(newRainDetails.decorateRainDetails());
 	}
