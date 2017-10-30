@@ -6,6 +6,7 @@ import { edition } from '../classes/edition';
 import { header } from '../components/header/header';
 import { timeline } from '../components/timeline/timeline';
 import { editionDetails } from '../components/yearDetails/editionDetails';
+import { rainDetails } from '../components/yearDetails/rainDetails';
 import { yearDetails } from '../components/yearDetails/yearDetails'
 import { footer } from '../components/footer/footer';
 import { updateViewType } from '../utils/updateView';
@@ -20,49 +21,19 @@ export class yearView {
 		updateViewType(VIEW_TYPES.YEAR);
 	}
 
-	decorateRainDetails(details) {
-		let fragment = document.createDocumentFragment();
-
-		document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).textContent =''; // to clear rain details list
-
-		details.map((item) => {
-			const li = document.createElement('li');
-			const rain = item.rain ? 'yes' : 'no';
-			li.textContent = `${item.day} ${rain}`;
-
-			fragment.appendChild(li);
-		});
-
-		return fragment;
-	}
-
-	decorateEditionHeadliners(headliners) { // exported
-		let fragment = document.createDocumentFragment();
-
-		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent =''; // to clear rain details list
-
-		headliners.map((item) => {
-			const li = document.createElement('li');
-
-			li.textContent = item;
-			fragment.appendChild(li);
-		});
-
-		return fragment;
-	}
-
 	updateDetails() {
 		const newEditionId = this.data[this.editionId];
 		const newEdition = new edition(newEditionId);
 		const newEditionDetails = new editionDetails(newEditionId);
+		const newRainDetails = new rainDetails(newEditionId);
 
 		document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent = newEdition.editionYear;
 		document.querySelector(`.${EDITION.DATES_CLASS}`).textContent = newEditionDetails.decorateEditionDates();
 		document.querySelector(`.${EDITION.FULL_NAME_CLASS}`).textContent = newEdition.editionFullName;
 		document.querySelector(`.${EDITION.PLACE_CLASS}`).textContent = newEdition.editionPlace;
-		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(this.decorateEditionHeadliners(newEdition.headliners));
+		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(newEditionDetails.decorateEditionHeadliners());
 		document.querySelector(`.${RAIN.RAIN_CLASS}`).textContent = newEdition.editionRain;
-		document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).appendChild(this.decorateRainDetails(newEdition.editionDetails));
+		document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).appendChild(newRainDetails.decorateRainDetails());
 	}
 
 	switchToYearView() {

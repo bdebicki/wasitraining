@@ -18,6 +18,22 @@ export class editionDetails extends edition {
 		}
 	}
 
+	decorateEditionHeadliners() { // exported
+		let fragment = document.createDocumentFragment();
+		const headliners = this.headliners;
+
+		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent =''; // to clear rain details list
+
+		headliners.map((item) => {
+			const li = document.createElement('li');
+
+			li.textContent = item;
+			fragment.appendChild(li);
+		});
+
+		return fragment;
+	}
+
 	toggleLineup(e) {
 		e.preventDefault();
 

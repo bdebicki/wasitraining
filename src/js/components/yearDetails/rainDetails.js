@@ -21,6 +21,23 @@ export class rainDetails extends edition {
 		}
 	}
 
+	decorateRainDetails() {
+		let fragment = document.createDocumentFragment();
+		const details = this.editionDetails;
+
+		document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).textContent =''; // to clear rain details list
+
+		details.map((item) => {
+			const li = document.createElement('li');
+			const rain = item.rain ? 'yes' : 'no';
+			li.textContent = `${item.day} ${rain}`;
+
+			fragment.appendChild(li);
+		});
+
+		return fragment;
+	}
+
 	renderRainDetailsLink() {
 		const a = document.createElement('a');
 
