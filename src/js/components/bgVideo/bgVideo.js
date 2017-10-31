@@ -21,6 +21,8 @@ export class bgVideo {
 		video.classList.add(VIDEO.VIDEO_CLASS);
 		video.setAttribute('src', '/videos/bg-video.webm');
 		video.setAttribute('poster', '/images/bg-img.png');
+		video.width = '1366';
+		video.height = '768';
 		video.setAttribute('autoplay', '');
 		video.setAttribute('loop', '');
 
