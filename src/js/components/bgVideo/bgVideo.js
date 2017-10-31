@@ -29,10 +29,21 @@ export class bgVideo {
 		return video;
 	}
 
+	renderImg() {
+		let img = document.createElement('img');
+
+		img.classList.add(VIDEO.VIDEO_CLASS);
+		img.src = '/images/bg-img.png';
+		img.width = '1366';
+		img.height = '768';
+
+		return img;
+	}
+
 	render() {
 		let videoBlock = this.renderVideoContainer();
 
-		videoBlock.appendChild(this.renderVideo());
+		videoBlock.appendChild(this.renderImg());
 
 		document.getElementById(this.target).appendChild(videoBlock);
 	}
