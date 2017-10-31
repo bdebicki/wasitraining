@@ -42,8 +42,14 @@ const config = {
     new CopyWebpackPlugin([
 	  { from: 'src/videos/*.webm', to: 'videos/[name].webm' }
     ]),
+    new CopyWebpackPlugin([
+	  { from: 'src/fonts/*.woff', to: 'fonts/[name].woff' }
+    ]),
+    new CopyWebpackPlugin([
+	  { from: 'src/fonts/*.woff2', to: 'fonts/[name].woff2' }
+    ]),
 	new WriteFilePlugin({
-		test: /\.(json|png|webm)$/,
+		test: /\.(json|png|webm|woff|woff2)$/,
     })
   ]
 };
