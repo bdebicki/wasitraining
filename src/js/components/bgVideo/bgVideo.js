@@ -22,6 +22,7 @@ export class bgVideo {
 		video.setAttribute('src', '/videos/bg-video.webm');
 		video.setAttribute('poster', '/images/bg-img.png');
 		video.setAttribute('autoplay', '');
+		video.setAttribute('loop', '');
 
 		return video;
 	}
