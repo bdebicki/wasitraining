@@ -36,8 +36,11 @@ const config = {
     new CopyWebpackPlugin([
 	  { from: 'src/data/*.json', to: '[name].json' }
     ]),
+    new CopyWebpackPlugin([
+	  { from: 'src/images/*.png', to: 'images/[name].png' }
+    ]),
 	new WriteFilePlugin({
-		test: /\.json$/,
+		test: /\.(json|png)$/,
     })
   ]
 };
