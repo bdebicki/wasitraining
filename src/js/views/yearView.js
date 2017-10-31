@@ -5,6 +5,7 @@ import { VIEW_TYPES } from '../enums/viewTypes';
 import { header } from '../components/header/header';
 import { timeline } from '../components/timeline/timeline';
 import { yearDetails } from '../components/yearDetails/yearDetails'
+import { bgVideo } from '../components/bgVideo/bgVideo';
 import { footer } from '../components/footer/footer';
 import { updateViewType } from '../utils/updateView';
 
@@ -39,6 +40,7 @@ export class yearView {
 		const headerBlock = new header(data, body);
 		const timelineBlock = new timeline(data, LAYOUT.TOP_ID);
 		const yearBlock = new yearDetails(data[this.editionId], body);
+		const bgBlock = new bgVideo(body);
 		const footerBlock = new footer(body);
 
 		this.updateViewTypeToYear();
@@ -46,6 +48,7 @@ export class yearView {
 		headerBlock.render();
 		timelineBlock.render();
 		yearBlock.render();
+		bgBlock.render();
 		footerBlock.render();
 	}
 }

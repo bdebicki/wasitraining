@@ -4,6 +4,7 @@ import { LAYOUT } from '../enums/elementHandlers';
 import { VIEW_TYPES } from '../enums/viewTypes';
 import { header } from '../components/header/header';
 import { timeline } from '../components/timeline/timeline';
+import { bgVideo } from '../components/bgVideo/bgVideo';
 import { footer } from '../components/footer/footer';
 import { updateViewType } from '../utils/updateView';
 
@@ -26,12 +27,14 @@ export class introView {
 		const body = LAYOUT.MAIN_CONTAINER_ID;
 		const headerBlock = new header(this.data, body);
 		const timelineBlock = new timeline(this.data, body);
+		const bgBlock = new bgVideo(body);
 		const footerBlock = new footer(body);
 
 		this.updateViewTypeToIntro();
 
 		headerBlock.render();
 		timelineBlock.render();
+		bgBlock.render();
 		footerBlock.render();
 	}
 }
