@@ -39,8 +39,11 @@ const config = {
     new CopyWebpackPlugin([
 	  { from: 'src/images/*.png', to: 'images/[name].png' }
     ]),
+    new CopyWebpackPlugin([
+	  { from: 'src/videos/*.webm', to: 'videos/[name].webm' }
+    ]),
 	new WriteFilePlugin({
-		test: /\.(json|png)$/,
+		test: /\.(json|png|webm)$/,
     })
   ]
 };
