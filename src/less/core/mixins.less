@@ -80,38 +80,3 @@
 	left: @offsetX;
 	transform: translate(-@offsetX, -@offsetY);
 }
-
-
-// css triangle
-.css-triangle(@direction: up, @width: 10px, @height: 10px, @color: #a6a6a6) {
-	content: '';
-	display: block;
-
-	// Up / Bottom
-	& when (@direction = up) {
-		border-bottom: @height solid @color;
-	}
-	& when (@direction = down) {
-		border-top: @height solid @color;
-	}
-	& when (@direction = up), (@direction = down)  {
-		margin-top: -@height / 2;
-		margin-left: -@width / 2;
-		border-left: (@width / 2) solid transparent;
-		border-right: (@width / 2) solid transparent;
-	}
-
-	// Left / Right
-	& when (@direction = left) {
-		border-right: @height solid @color;
-	}
-	& when (@direction = right) {
-		border-left: @height solid @color;
-	}
-	& when (@direction = left), (@direction = right)  {
-		margin-top: -@width / 2;
-		margin-left: -@height / 2;
-		border-top: (@width / 2) solid transparent;
-		border-bottom: (@width / 2) solid transparent;
-	}
-}
