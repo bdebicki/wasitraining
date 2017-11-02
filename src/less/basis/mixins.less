@@ -33,12 +33,15 @@
 
 
 // strech element
-.strechPosition(@type: absolute, @value: 0) {
-	position: @type;
+.strechPosition(@type: absolute, @value: 0, @offset: false) {
 	top: @value;
 	right: @value;
 	bottom: @value;
 	left: @value;
+
+	& when (@offset = false) {
+		position: @type;
+	}
 }
 
 

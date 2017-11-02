@@ -1,4 +1,7 @@
+@bodyOffset: 20px;
+
 #wiraof {
+	.strechPosition();
 	display: grid;
 	grid-template-columns: auto 1100px auto;
 	grid-template-rows: @topHeight auto @footerHeight;
@@ -7,4 +10,10 @@
 						 ". footer .";
 	grid-column-gap: 0;
 	grid-row-gap: 0;
+
+	[data-view='year'] & {
+		.strechPosition(@value: @bodyOffset, @offset: true);
+		height: auto;
+		background-color: #fff;
+	}
 }

@@ -5,6 +5,11 @@
 	background-size: cover;
 	overflow: hidden;
 
+	[data-view='year'] & {
+		.strechPosition(@value: -@bodyOffset, @offset: true);
+
+	}
+	
 	@supports (object-fit: cover) {
 		.bgVideo__video {
 			display: none; // temporary hide video for development
