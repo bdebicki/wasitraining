@@ -43,7 +43,7 @@ export class bgVideo {
 	render() {
 		let videoBlock = this.renderVideoContainer();
 
-		videoBlock.appendChild(this.renderImg());
+		videoBlock.appendChild(this.renderVideo());
 
 		document.getElementById(this.target).appendChild(videoBlock);
 	}
