@@ -1,6 +1,10 @@
-body {
-	display: flex;
-	padding: @topHeight 0 @footerHeight;
-	align-items: center;
-	justify-content: center;
+#wiraof {
+	display: grid;
+	grid-template-columns: auto 1100px auto;
+	grid-template-rows: @topHeight auto @footerHeight;
+	grid-template-areas: ". top ."
+						 ". details ."
+						 ". footer .";
+	grid-column-gap: 0;
+	grid-row-gap: 0;
 }
