@@ -5,6 +5,7 @@ export const LAYOUT = {
 	TOP_ID: 'top',
 	TIMELINE_ID: 'timeline',
 	YEAR_CONTAINER_ID: 'yearDetails',
+	BG_VIDEO_ID: 'bgVideo',
 	FOOTER_ID: 'footer'
 };
 export const HEADER = {
@@ -34,6 +35,9 @@ export const RAIN = {
 	RAIN_CLASS: 'rain',
 	DETAILS_LINK_CLASS: 'rainDetailsLink',
 	EDITION_RAIN_DETAILS_ID: 'rainEditionDetails'
+};
+export const VIDEO = {
+	VIDEO_CLASS: `${LAYOUT.BG_VIDEO_ID}__video`
 };
 export const ACTIVE_CLASS = 'active';
 export const VISIBILITY_CLASS = 'visible';

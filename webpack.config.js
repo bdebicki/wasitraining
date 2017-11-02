@@ -36,8 +36,20 @@ const config = {
     new CopyWebpackPlugin([
 	  { from: 'src/data/*.json', to: '[name].json' }
     ]),
+    new CopyWebpackPlugin([
+	  { from: 'src/images/*.png', to: 'images/[name].png' }
+    ]),
+    new CopyWebpackPlugin([
+	  { from: 'src/videos/*.webm', to: 'videos/[name].webm' }
+    ]),
+    new CopyWebpackPlugin([
+	  { from: 'src/fonts/*.woff', to: 'fonts/[name].woff' }
+    ]),
+    new CopyWebpackPlugin([
+	  { from: 'src/fonts/*.woff2', to: 'fonts/[name].woff2' }
+    ]),
 	new WriteFilePlugin({
-		test: /\.json$/,
+		test: /\.(json|png|webm|woff|woff2)$/,
     })
   ]
 };
