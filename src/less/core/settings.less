@@ -1,27 +1,30 @@
 /* CORE: global styles */
 
 //local vars
-@defaultFontColor: @baseColor;
-@selectionColor: @defaultFontColor;
-@selectionFontColor: @lightGray;
-@linkColor: #1161BC;
-@h1color: @lightGray;
-@h2color: @defaultFontColor;
-@h3color: @defaultFontColor;
-@h4color: @defaultFontColor;
-@h5color: @defaultFontColor;
+@defaultFontColor: @gray-darken10;
+@selectionColor: @gray-lighten65;
+@selectionFontColor: @gray-darken10;
+@linkColor: @gray-darken15;
+
+@h1color: inherit;
+@h2color: inherit;
+@h3color: inherit;
+@h4color: inherit;
+@h5color: inherit;
+
 @defaultFontSize: @fontSize-base;
-@h1fontSize: 32px;
-@h2fontSize: 24px;
-@h3fontSize: 18px;
-@h4fontSize: @defaultFontSize;
-@h5fontSize: 12px;
-@defaultLineHeight: 18px;
-@h1lineHeight: 40px;
-@h2lineHeight: 28px;
-@h3lineHeight: 22px;
-@h4lineHeight: @defaultLineHeight;
-@h5lineHeight: 14px;
+@h1fontSize: @fontSize-xxxl;
+@h2fontSize: @fontSize-xxxxl;
+@h3fontSize: @fontSize-base;
+@h4fontSize: @fontSize-xs;
+@h5fontSize: @fontSize-xxs;
+
+@defaultLineHeight: @lineHeight-base;
+@h1lineHeight: @lineHeight-xxxl;
+@h2lineHeight: @lineHeight-xxxxl;
+@h3lineHeight: @lineHeight-base;
+@h4lineHeight: @lineHeight-xs;
+@h5lineHeight: @lineHeight-xxs;
 
 
 html {
@@ -33,7 +36,7 @@ html {
 body {
 	min-width: 320px;
 	height: 100%;
-	font-family: 'Lato', Helvetica, Arial, sans-serif;
+	font-family: @fontFamily-base;
 	font-size: @defaultFontSize;
 	line-height: @defaultLineHeight;
 }
@@ -93,11 +96,9 @@ nav {
 
 a {
 	color: @linkColor;
-	font-weight: bold;
 	text-decoration: none;
 
 	&:hover {
-		color: @defaultFontColor;
 		text-decoration: underline;
 	}
 }
