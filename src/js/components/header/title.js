@@ -19,6 +19,7 @@ export class title {
 		let a = document.createElement('a');
 
 		a.href = '#home';
+		a.classList.add(HEADER.TITLE_LINK_CLASS);
 		a.addEventListener('click', this.backToHome, null);
 
 		return a;

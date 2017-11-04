@@ -8,8 +8,12 @@ export const LAYOUT = {
 	BG_VIDEO_ID: 'bgVideo',
 	FOOTER_ID: 'footer'
 };
+export const VIEWS = {
+	INTRO_ID: 'introView'
+};
 export const HEADER = {
-	TITLE_CLASS: 'pageName'
+	TITLE_CLASS: 'pageName',
+	TITLE_LINK_CLASS: 'pageName__link'
 };
 export const FOOTER = {
 	COOKIES_CLASS: 'cookiesInfo',
@@ -17,9 +21,9 @@ export const FOOTER = {
 	COPYRIGHTS_CLASS: 'copyrights'
 };
 export const TIMELINE = {
-	EDITIONS_CLASS: 'editions',
+	EDITIONS_CLASS: 'editionsList',
 	EDITION_CLASS: 'edition',
-	EDITION_DETAILS_CLASS: 'daysList'
+	EDITION_LINK_CLASS: 'edition__link'
 };
 export const EDITION = {
 	EDITION_DETAILS_ID: 'editionDetails',
