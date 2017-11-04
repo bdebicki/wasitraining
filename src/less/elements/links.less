@@ -1,0 +1,37 @@
+.link {
+	.underline(@opacity: 0.2) {
+		content: '';
+		opacity: @opacity;
+		width: 100%;
+		height: 1px;
+		position: absolute;
+		top: 90%;
+		background: currentColor;
+		color: inherit;
+	}
+
+	position: relative;
+	color: inherit;
+
+	&:not(.link--inverted) {
+		&:before {
+			.underline();
+		}
+
+		&:hover {
+			&:before {
+				opacity: 0.7;
+			}
+		}
+	}
+	&--inverted {
+		&:hover {
+			&:before {
+				.underline(0.8);
+			}
+		}
+	}
+	&--hasSkip {
+		text-shadow: -1px 0 #fff, 1px 0 #fff; //simulate text-decoration-skip
+	}
+}

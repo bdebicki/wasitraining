@@ -1,6 +1,6 @@
 'use strict';
 
-import { FOOTER } from '../../enums/elementHandlers';
+import { FOOTER, LINK } from '../../enums/elementHandlers';
 import { COPYRIGHTS } from '../../enums/content';
 
 export class moreInfo {
@@ -22,8 +22,9 @@ export class moreInfo {
 	renderAboutLink() {
 		let link = document.createElement('a');
 
-		link.href = '#about';
 		link.textContent = 'about';
+		link.href = '#about';
+		link.classList.add(LINK.BASIC_CLASS, LINK.INVERTED_STYLE_CLASS);
 		link.addEventListener('click', this.showAboutDetails, null);
 
 		return link;

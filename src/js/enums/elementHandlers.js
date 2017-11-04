@@ -43,6 +43,10 @@ export const RAIN = {
 export const VIDEO = {
 	VIDEO_CLASS: `${LAYOUT.BG_VIDEO_ID}__video`
 };
+export const LINK = {
+	BASIC_CLASS: 'link',
+	INVERTED_STYLE_CLASS: 'link--inverted'
+};
 export const ACTIVE_CLASS = 'active';
 export const VISIBILITY_CLASS = 'visible';
 export const SELECTED_CLASS = 'selected';

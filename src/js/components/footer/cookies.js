@@ -1,6 +1,6 @@
 'use strict';
 
-import { FOOTER } from '../../enums/elementHandlers';
+import { FOOTER, LINK } from '../../enums/elementHandlers';
 
 export class cookiesInfo {
 	showCookiesDetails(e) {
@@ -12,8 +12,9 @@ export class cookiesInfo {
 	renderCookiesLnk() {
 		let link = document.createElement('a');
 
-		link.href = '#cookies-policy';
 		link.textContent = 'here';
+		link.href = '#cookies-policy';
+		link.classList.add(LINK.BASIC_CLASS);
 		link.addEventListener('click', this.showCookiesDetails, null);
 
 		return link;
@@ -22,8 +23,8 @@ export class cookiesInfo {
 	render() {
 		let cookiesInfo = document.createElement('p');
 
-		cookiesInfo.classList.add(FOOTER.COOKIES_CLASS);
 		cookiesInfo.textContent = 'yep. this site use cookies. click ';
+		cookiesInfo.classList.add(FOOTER.COOKIES_CLASS);
 		cookiesInfo.appendChild(this.renderCookiesLnk());
 		cookiesInfo.append(' for more.'); // textContent parse link to string, innerHtml += clear eventListener from link
 
