@@ -38,8 +38,8 @@ export class timelineItem extends edition {
 		let a = document.createElement('a');
 
 		a.textContent = this.editionYear;
-		a.classList.add(TIMELINE.EDITION_LINK_CLASS);
 		a.href = `#edition${this.editionId}`;
+		a.classList.add(TIMELINE.EDITION_LINK_CLASS);
 		a.addEventListener('click', this.switchEdition, null);
 
 		return a;
