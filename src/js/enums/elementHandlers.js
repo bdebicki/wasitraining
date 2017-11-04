@@ -16,9 +16,10 @@ export const HEADER = {
 	TITLE_LINK_CLASS: 'pageName__link'
 };
 export const FOOTER = {
-	COOKIES_CLASS: 'cookiesInfo',
+	COOKIES_CLASS: 'cookiesSection',
 	ABOUT_SECTION_CLASS: 'aboutSection',
-	COPYRIGHTS_CLASS: 'copyrights'
+	COPYRIGHTS_CLASS: 'aboutSection__copyrights',
+	ABOUT_LINK_CLASS: 'aboutSection__aboutLink'
 };
 export const TIMELINE = {
 	EDITIONS_CLASS: 'editionsList',

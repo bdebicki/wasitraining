@@ -1,12 +1,42 @@
-@footerHeight: 50px;
+@footerHeight: 31px;
+@footerSectionsHeight: @lineHeight-xxs;
 
 #footer {
 	display: flex;
 	height: @footerHeight;
 	grid-area: footer;
 	justify-content: space-between;
+	font-size: @fontSize-xxs;
+	line-height: @lineHeight-xxs;
 
 	#introView & {
 		color: #fff;
+	}
+}
+
+.cookiesSection {
+	height: @footerSectionsHeight;
+}
+
+.aboutSection {
+	display: flex;
+	height: @footerSectionsHeight;
+	align-items: center;
+
+	&:after {
+		.separateBorder(@size: 15px);
+		margin: 0 5px 0;
+		order: 2;
+
+		#introView & {
+			background: fade(#fff, 22%);
+		}
+	}
+
+	&__copyrights {
+		order: 1;
+	}
+	&__aboutLink {
+		order: 3;
 	}
 }
