@@ -39,6 +39,7 @@ export class timelineItem extends edition {
 
 		a.textContent = this.editionYear;
 		a.href = `#edition${this.editionId}`;
+		a.classList.add(TIMELINE.EDITION_LINK_CLASS);
 		a.addEventListener('click', this.switchEdition, null);
 
 		return a;

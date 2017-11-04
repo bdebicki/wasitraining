@@ -1,6 +1,15 @@
-body {
-	display: flex;
-	padding: @topHeight 0 @footerHeight;
-	align-items: center;
-	justify-content: center;
+@bodyOffset: 20px;
+
+#wiraof {
+	.strechPosition();
+	display: grid;
+	grid-template-columns: @bodyOffset auto 1100px auto @bodyOffset;
+	grid-template-rows: @bodyOffset @topHeight auto @footerHeight @bodyOffset;
+	grid-template-areas: ". . . . ."
+						 ". . top . ."
+						 ". . details . ."
+						 ". . footer . ."
+						 ". . . . .";
+	grid-column-gap: 0;
+	grid-row-gap: 0;
 }

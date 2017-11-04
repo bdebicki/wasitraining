@@ -3,9 +3,10 @@
 #footer {
 	display: flex;
 	height: @footerHeight;
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	grid-area: footer;
 	justify-content: space-between;
+
+	#introView & {
+		color: #fff;
+	}
 }

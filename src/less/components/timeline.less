@@ -1,5 +1,9 @@
 #timeline {
-	.editions {
+	[data-view='intro'] & {
+		grid-area: details;
+	}
+
+	.editionsList {
 		display: flex;
 		flex-direction: row;
 
@@ -8,6 +12,12 @@
 
 			+ .edition {
 				margin-left: 10px;
+			}
+
+			&__link {
+				#introView & {
+					color: #fff;
+				}
 			}
 		}
 	}
