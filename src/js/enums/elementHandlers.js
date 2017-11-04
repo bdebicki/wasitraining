@@ -16,9 +16,10 @@ export const HEADER = {
 	TITLE_LINK_CLASS: 'pageName__link'
 };
 export const FOOTER = {
-	COOKIES_CLASS: 'cookiesInfo',
+	COOKIES_CLASS: 'cookiesSection',
 	ABOUT_SECTION_CLASS: 'aboutSection',
-	COPYRIGHTS_CLASS: 'copyrights'
+	COPYRIGHTS_CLASS: 'aboutSection__copyrights',
+	ABOUT_LINK_CLASS: 'aboutSection__aboutLink'
 };
 export const TIMELINE = {
 	EDITIONS_CLASS: 'editionsList',
@@ -42,6 +43,10 @@ export const RAIN = {
 };
 export const VIDEO = {
 	VIDEO_CLASS: `${LAYOUT.BG_VIDEO_ID}__video`
+};
+export const LINK = {
+	BASIC_CLASS: 'link',
+	INVERTED_STYLE_CLASS: 'link--inverted'
 };
 export const ACTIVE_CLASS = 'active';
 export const VISIBILITY_CLASS = 'visible';

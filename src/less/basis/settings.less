@@ -67,25 +67,28 @@ h5 {
 	line-height: @h5lineHeight;
 }
 
-p,
-ul,
-ol,
-address {
-	margin-bottom: @defaultLineHeight;
-}
-p {
+.textContainer {
+	p,
 	ul,
-    ol {
-		margin-top: -@defaultLineHeight;
+	ol,
+	address {
+		margin-bottom: @defaultLineHeight;
 	}
-}
-ol {
-	padding-left: 22px;
+	p {
+		ul,
+		ol {
+			margin-top: -@defaultLineHeight;
+		}
+	}
+	ol {
+		padding-left: 22px;
 
-	li {
-		list-style: decimal;
+		li {
+			list-style: decimal;
+		}
 	}
 }
+
 ol,
 ul,
 nav {
@@ -97,10 +100,6 @@ nav {
 a {
 	color: @linkColor;
 	text-decoration: none;
-
-	&:hover {
-		text-decoration: underline;
-	}
 }
 
 ::selection {
