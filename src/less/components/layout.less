@@ -3,11 +3,13 @@
 #wiraof {
 	.strechPosition();
 	display: grid;
-	grid-template-columns: auto 1100px auto;
-	grid-template-rows: @topHeight auto @footerHeight;
-	grid-template-areas: ". top ."
-						 ". details ."
-						 ". footer .";
+	grid-template-columns: @bodyOffset auto 1100px auto @bodyOffset;
+	grid-template-rows: @bodyOffset @topHeight auto @footerHeight @bodyOffset;
+	grid-template-areas: ". . . . ."
+						 ". . top . ."
+						 ". . details . ."
+						 ". . footer . ."
+						 ". . . . .";
 	grid-column-gap: 0;
 	grid-row-gap: 0;
 }
