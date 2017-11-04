@@ -6,8 +6,12 @@
 	overflow: hidden;
 
 	[data-view='year'] & {
-		.strechPosition(@value: -@bodyOffset, @offset: true);
-
+		&:before {
+			.strechPosition(@offset: @bodyOffset);
+			content: '';
+			z-index: 2;
+			background: #fff;
+		}
 	}
 	
 	@supports (object-fit: cover) {
