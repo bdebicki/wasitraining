@@ -2,7 +2,7 @@
 
 export const LAYOUT = {
 	MAIN_CONTAINER_ID: 'wiraof',
-	TOP_ID: 'top',
+	HEADER_ID: 'header',
 	TIMELINE_ID: 'timeline',
 	YEAR_CONTAINER_ID: 'yearDetails',
 	BG_VIDEO_ID: 'bgVideo',

@@ -12,7 +12,7 @@ export class header {
 	renderHeaderContainer() {
 		let header = document.createElement('header');
 
-		header.id = LAYOUT.TOP_ID;
+		header.id = LAYOUT.HEADER_ID;
 
 		return header;
 	}

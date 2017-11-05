@@ -23,7 +23,7 @@ export class yearView {
 		const yearBlock = new yearDetails(this.data[this.editionId], LAYOUT.MAIN_CONTAINER_ID);
 
 		this.updateViewTypeToYear();
-		document.getElementById(LAYOUT.TOP_ID).appendChild(document.getElementById(LAYOUT.TIMELINE_ID));
+		document.getElementById(LAYOUT.HEADER_ID).appendChild(document.getElementById(LAYOUT.TIMELINE_ID));
 		yearBlock.render();
 	}
 
@@ -38,7 +38,7 @@ export class yearView {
 		const body = LAYOUT.MAIN_CONTAINER_ID;
 		const data = this.data;
 		const headerBlock = new header(data, body);
-		const timelineBlock = new timeline(data, LAYOUT.TOP_ID);
+		const timelineBlock = new timeline(data, LAYOUT.HEADER_ID);
 		const yearBlock = new yearDetails(data[this.editionId], body);
 		const bgBlock = new bgVideo(body);
 		const footerBlock = new footer(body);
