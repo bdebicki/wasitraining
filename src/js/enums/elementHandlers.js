@@ -14,6 +14,7 @@ export const VIEWS = {
 export const HEADER = {
 	INTRO_HEADER_CLASS: `${LAYOUT.HEADER_ID}--introHeader`,
 	TITLE_CLASS: 'pageName',
+	TITLE_HEADER_CLASS: 'pageName--introHeader',
 	TITLE_LINK_CLASS: 'pageName__link'
 };
 export const FOOTER = {
