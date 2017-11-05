@@ -21,9 +21,14 @@ export class yearView {
 
 	switchToYearView() {
 		const yearBlock = new yearDetails(this.data[this.editionId], LAYOUT.MAIN_CONTAINER_ID);
+		const headerBlock = new header();
+		const timelineBlock = new timeline();
 
 		this.updateViewTypeToYear();
+		headerBlock.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
+		timelineBlock.updateTimelineLocation(document.getElementById(LAYOUT.TIMELINE_ID));
 		document.getElementById(LAYOUT.HEADER_ID).appendChild(document.getElementById(LAYOUT.TIMELINE_ID));
+
 		yearBlock.render();
 	}
 

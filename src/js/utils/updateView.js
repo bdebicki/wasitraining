@@ -15,3 +15,14 @@ export function updateViewType(viewType) {
 export function getViewType() {
 	return document.querySelector('html').dataset.view;
 }
+export function updateComponentByViewType(el, modifierClass) {
+	const viewType = () => getViewType();
+
+	console.log(el);
+
+	if(viewType() === VIEW_TYPES.INTRO) {
+		el.classList.add(modifierClass);
+	} else {
+		el.classList.remove(modifierClass);
+	}
+}

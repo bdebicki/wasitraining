@@ -18,7 +18,12 @@ export class introView {
 	}
 
 	switchToIntoView() {
+		const headerBlock = new header();
+		const timelineBlock = new timeline();
+
 		this.updateViewTypeToIntro();
+		headerBlock.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
+		timelineBlock.updateTimelineLocation(document.getElementById(LAYOUT.TIMELINE_ID));
 		document.getElementById(LAYOUT.MAIN_CONTAINER_ID).appendChild(document.getElementById(LAYOUT.TIMELINE_ID));
 		document.getElementById(LAYOUT.YEAR_CONTAINER_ID).remove();
 	}

@@ -12,6 +12,7 @@ export const VIEWS = {
 	INTRO_CLASS: `${LAYOUT.MAIN_CONTAINER_ID}--introView`
 };
 export const HEADER = {
+	INTRO_HEADER_CLASS: `${LAYOUT.HEADER_ID}--introHeader`,
 	TITLE_CLASS: 'pageName',
 	TITLE_LINK_CLASS: 'pageName__link'
 };
@@ -22,6 +23,7 @@ export const FOOTER = {
 	ABOUT_LINK_CLASS: 'aboutSection__aboutLink'
 };
 export const TIMELINE = {
+	MAIN_TIMELINE_CLASS: `${LAYOUT.TIMELINE_ID}--mainNavigation`,
 	EDITIONS_CLASS: 'editionsList',
 	EDITION_CLASS: 'edition',
 	EDITION_LINK_CLASS: 'edition__link'
