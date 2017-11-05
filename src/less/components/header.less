@@ -6,9 +6,12 @@
 	flex-direction: row;
 	grid-area: header;
 
+	#introView & {
+		grid-area: intro;
+	}
+
 	.pageName {
 		margin-right: 10px;
-		font-size: @defaultFontSize;
 
 		&__link {
 			#introView & {

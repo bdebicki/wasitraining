@@ -9,7 +9,7 @@ export const LAYOUT = {
 	FOOTER_ID: 'footer'
 };
 export const VIEWS = {
-	INTRO_ID: 'introView'
+	INTRO_CLASS: `${LAYOUT.MAIN_CONTAINER_ID}--introView`
 };
 export const HEADER = {
 	TITLE_CLASS: 'pageName',

@@ -12,4 +12,13 @@
 						 ". . . . .";
 	grid-column-gap: 0;
 	grid-row-gap: 0;
+
+	#introView & {
+		grid-template-columns: @bodyOffset auto 1100px auto @bodyOffset;
+		grid-template-rows: @bodyOffset auto @footerHeight @bodyOffset;
+		grid-template-areas: ". . . . ."
+						 	 ". . intro . ."
+						 	 ". . footer . ."
+						 	 ". . . . .";
+	}
 }

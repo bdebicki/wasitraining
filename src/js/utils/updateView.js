@@ -1,16 +1,15 @@
 'use strict';
 
 import { VIEW_TYPES } from  '../enums/viewTypes';
-import { VIEWS } from  '../enums/elementHandlers';
+import { LAYOUT, VIEWS } from  '../enums/elementHandlers';
 
 export function updateViewType(viewType) {
-	const htmlEl = document.querySelector('html');
+	document.querySelector('html').dataset.view = viewType;
 
-	htmlEl.dataset.view = viewType;
 	if (viewType === VIEW_TYPES.INTRO) {
-		htmlEl.id = VIEWS.INTRO_ID;
+		document.getElementById(LAYOUT.MAIN_CONTAINER_ID).classList.add(VIEWS.INTRO_CLASS);
 	} else {
-		htmlEl.id = '';
+		document.getElementById(LAYOUT.MAIN_CONTAINER_ID).classList.remove(VIEWS.INTRO_CLASS);
 	}
 }
 export function getViewType() {
