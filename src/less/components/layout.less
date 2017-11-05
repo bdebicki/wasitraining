@@ -2,17 +2,19 @@
 
 #wiraof {
 	display: grid;
-	grid-template-columns: @bodyOffset auto 1100px auto @bodyOffset;
-	grid-template-rows: @bodyOffset @topHeight auto @footerHeight @bodyOffset;
-	grid-template-areas: ". . . . ."
-						 ". . header . ."
-						 ". . details . ."
-						 ". . footer . ."
-						 ". . . . .";
 	grid-column-gap: 0;
 	grid-row-gap: 0;
 
-	.wiraof--introView& {
+	&:not(.wiraof--introView) {
+		grid-template-columns: @bodyOffset auto 1100px auto @bodyOffset;
+		grid-template-rows: @bodyOffset @topHeight auto @footerHeight @bodyOffset;
+		grid-template-areas: ". . . . ."
+						 	 ". . header . ."
+						 	 ". . details . ."
+						 	 ". . footer . ."
+						 	 ". . . . .";
+	}
+	&.wiraof--introView {
 		grid-template-columns: @bodyOffset auto 1100px auto @bodyOffset;
 		grid-template-rows: @bodyOffset auto @footerHeight @bodyOffset;
 		grid-template-areas: ". . . . ."
