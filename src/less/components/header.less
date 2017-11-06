@@ -1,17 +1,29 @@
 @topHeight: 40px;
 
 #header {
-	display: flex;
-	height: @topHeight;
-	flex-direction: row;
-	grid-area: header;
+	&:not(.header--introHeader) {
+		display: flex;
+		height: @topHeight;
+		flex-direction: row;
+		grid-area: header;
+	}
 
-	.wiraof--introView & {
+	&.header--introHeader {
 		grid-area: intro;
+		position: absolute;
+		top: ~'calc(33.51% + @{bodyOffset})';
+		right: 0;
+		left: 0;
 	}
 
 	.pageName {
-		margin-right: 10px;
+		:not(.header--introHeader)& {
+			margin-right: 10px;
+		}
+
+		.header--introHeader& {
+			text-align: center;
+		}
 
 		&__link {
 			.wiraof--introView & {
