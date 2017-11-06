@@ -1,5 +1,6 @@
 'use strict';
 
+import { TITLE } from '../../enums/content';
 import { LAYOUT, HEADER } from '../../enums/elementHandlers';
 import { updateComponentByViewType } from '../../utils/updateView';
 import { title } from './title'
@@ -18,6 +19,7 @@ export class header {
 		let header = document.createElement('header');
 
 		header.id = LAYOUT.HEADER_ID;
+		header.dataset.bgText = TITLE;
 		this.updateHeaderLocation(header);
 
 		return header;

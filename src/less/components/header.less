@@ -16,6 +16,24 @@
 		left: 0;
 	}
 
+	&:before {
+		content: attr(data-bg-text);
+		position: absolute;
+		top: 6px;
+		left: 50%;
+		z-index: 0;
+		transform: translateX(-50%) translateX(100px);
+		font-size: 160px;
+		font-weight: bold;
+		white-space: nowrap;
+		pointer-events: none;
+
+		.wiraof--introView & {
+			opacity: 0.05;
+			color: #fff;
+		}
+	}
+
 	.pageName {
 		:not(.header--introHeader)& {
 			margin-right: 10px;
