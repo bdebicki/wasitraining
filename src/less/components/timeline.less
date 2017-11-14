@@ -4,8 +4,10 @@
 
 	.wiraof--introView & {
 		grid-area: intro;
-		margin-top: -@bodyOffset;
-		margin-bottom: -@footerHeight - @bodyOffset;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: @bodyOffset;
 	}
 
 	.editionsList {
@@ -28,6 +30,7 @@
 
 		.edition {
 			width: @navTimelineSize + @navTimelineBorderSize;
+			height: 100%;
 			flex-grow: 1;
 			flex-shrink: 0;
 			border-right: 1px solid fade(#fff, 40%);
@@ -47,6 +50,31 @@
 				align-items: center;
 				justify-content: center;
 				color: #fff;
+			}
+			&__mask {
+				width: 100%;
+				height: 100%;
+			}
+
+			&:hover {
+				.mask__bg {
+					fill: #fff;
+				}
+			}
+		}
+		.mask {
+			&__rect {
+				width: 100%;
+				height: 100%;
+				fill: #fff;
+			}
+			&__text {
+				text-anchor: middle;
+			}
+			&__bg {
+				width: 100%;
+				height: 100%;
+				fill: transparent;
 			}
 		}
 	}

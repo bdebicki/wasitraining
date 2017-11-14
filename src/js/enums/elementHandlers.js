@@ -27,7 +27,12 @@ export const TIMELINE = {
 	MAIN_TIMELINE_CLASS: `${LAYOUT.TIMELINE_ID}--mainNavigation`,
 	EDITIONS_CLASS: 'editionsList',
 	EDITION_CLASS: 'edition',
-	EDITION_LINK_CLASS: 'edition__link'
+	EDITION_LINK_CLASS: 'edition__link',
+	EDITION_MASK: 'edition__mask',
+	EDITION_MASK_RECT: 'mask__rect',
+	EDITION_MASK_TEXT: 'mask__text',
+	EDITION_MASK_BG: 'mask__bg',
+
 };
 export const EDITION = {
 	EDITION_DETAILS_ID: 'editionDetails',
