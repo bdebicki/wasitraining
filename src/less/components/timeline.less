@@ -47,9 +47,16 @@
 			&__link {
 				display: flex;
 				height: 100%;
-				align-items: center;
-				justify-content: center;
-				color: #fff;
+				position: relative;
+
+				&:before {
+					.strechPosition();
+					content: attr(data-year);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					color: #fff;
+				}
 			}
 			&__mask {
 				width: 100%;
@@ -57,6 +64,11 @@
 			}
 
 			&:hover {
+				.edition__link {
+					&:before {
+						display: none;
+					}
+				}
 				.mask__bg {
 					fill: #fff;
 				}
@@ -70,6 +82,7 @@
 			}
 			&__text {
 				text-anchor: middle;
+				transform: translateY(20px); // ¯\_(ツ)_/¯ svg + grid + 100% height = 💥
 			}
 			&__bg {
 				width: 100%;

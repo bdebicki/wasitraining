@@ -71,9 +71,9 @@ export class timelineItem extends edition {
 		let a = document.createElement('a');
 		const mask = this.renderYearMask();
 
-		// a.textContent = this.editionYear;
 		a.href = `#edition${this.editionId}`;
 		a.classList.add(TIMELINE.EDITION_LINK_CLASS);
+		a.dataset.year = this.editionYear;
 		a.addEventListener('click', this.switchEdition, null);
 		a.appendChild(mask);
 
