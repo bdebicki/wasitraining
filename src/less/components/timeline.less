@@ -3,11 +3,17 @@
 	@navTimelineBorderSize: 1px;
 
 	.wiraof--introView & {
+		margin-left: -@mainContentWidth/2;
 		grid-area: intro;
 		position: absolute;
 		top: 0;
 		bottom: 0;
-		left: @bodyOffset;
+		left: 50%;
+
+		@media screen and (max-width: (@mainContentWidth + (2 * @bodyOffset))) {
+			margin-left: 0;
+			left: @bodyOffset;
+		}
 	}
 
 	.editionsList {

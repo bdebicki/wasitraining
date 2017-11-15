@@ -1,4 +1,5 @@
 @bodyOffset: 20px;
+@mainContentWidth: 1100px;
 
 #wiraof {
 	display: grid;
@@ -7,7 +8,7 @@
 	overflow: hidden;
 
 	&:not(.wiraof--introView) {
-		grid-template-columns: @bodyOffset auto 1100px auto @bodyOffset;
+		grid-template-columns: @bodyOffset auto @mainContentWidth auto @bodyOffset;
 		grid-template-rows: @bodyOffset @topHeight auto @footerHeight @bodyOffset;
 		grid-template-areas: ". . . . ."
 						 	 ". . header . ."
@@ -16,7 +17,7 @@
 						 	 ". . . . .";
 	}
 	&.wiraof--introView {
-		grid-template-columns: @bodyOffset auto 1100px auto @bodyOffset;
+		grid-template-columns: @bodyOffset auto @mainContentWidth auto @bodyOffset;
 		grid-template-rows: @bodyOffset auto @footerHeight @bodyOffset;
 		grid-template-areas: ". . . . ."
 						 	 ". . intro . ."
