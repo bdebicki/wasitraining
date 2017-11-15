@@ -29,10 +29,10 @@ export const TIMELINE = {
 	EDITION_CLASS: 'edition',
 	EDITION_LINK_CLASS: 'edition__link',
 	EDITION_YEAR_CLASS: 'edition__year',
-	EDITION_MASK: 'edition__mask',
-	EDITION_MASK_RECT: 'mask__rect',
-	EDITION_MASK_TEXT: 'mask__text',
-	EDITION_MASK_BG: 'mask__bg',
+	EDITION_MASK_CLASS: 'edition__mask',
+	EDITION_MASK_RECT_CLASS: 'mask__rect',
+	EDITION_MASK_TEXT_CLASS: 'mask__text',
+	EDITION_MASK_BG_CLASS: 'mask__bg',
 
 };
 export const EDITION = {

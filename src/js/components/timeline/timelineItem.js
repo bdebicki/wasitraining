@@ -46,15 +46,15 @@ export class timelineItem extends edition {
 		let textMask = document.createElementNS(xmlns, 'text');
 		let rectBg = document.createElementNS(xmlns, 'rect');
 
-		svg.classList.add(TIMELINE.EDITION_MASK);
+		svg.classList.add(TIMELINE.EDITION_MASK_CLASS);
 		mask.id = maskId;
 		mask.setAttributeNS(null, 'maskUnits', 'userSpaceOnUse');
-		rectMask.classList.add(TIMELINE.EDITION_MASK_RECT);
-		textMask.classList.add(TIMELINE.EDITION_MASK_TEXT);
+		rectMask.classList.add(TIMELINE.EDITION_MASK_RECT_CLASS);
+		textMask.classList.add(TIMELINE.EDITION_MASK_TEXT_CLASS);
 		textMask.setAttributeNS(null, 'x', '50%');
 		textMask.setAttributeNS(null, 'y', '50%');
 		textMask.textContent = editionYear;
-		rectBg.classList.add(TIMELINE.EDITION_MASK_BG);
+		rectBg.classList.add(TIMELINE.EDITION_MASK_BG_CLASS);
 		rectBg.setAttributeNS(null, 'mask', `url(#${maskId})`);
 
 		mask.appendChild(rectMask);
