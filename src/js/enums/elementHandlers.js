@@ -28,6 +28,7 @@ export const TIMELINE = {
 	EDITIONS_CLASS: 'editionsList',
 	EDITION_CLASS: 'edition',
 	EDITION_LINK_CLASS: 'edition__link',
+	EDITION_YEAR_CLASS: 'edition__year',
 	EDITION_MASK: 'edition__mask',
 	EDITION_MASK_RECT: 'mask__rect',
 	EDITION_MASK_TEXT: 'mask__text',
