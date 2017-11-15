@@ -17,7 +17,7 @@ export class timeline {
 	createTimelineContainer() {
 		let timelineContainer = document.createElement('nav');
 
-		timelineContainer.id = LAYOUT.TIMELINE_ID;
+		timelineContainer.id = LAYOUT.MAIN_TIMELINE_ID;
 		this.updateTimelineLocation(timelineContainer);
 
 		return timelineContainer;
