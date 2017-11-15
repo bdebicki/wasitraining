@@ -4,6 +4,7 @@
 	&:not(.header--introHeader) {
 		display: flex;
 		height: @topHeight;
+		padding-top: 19px;
 		flex-direction: row;
 		grid-area: header;
 	}
@@ -19,24 +20,32 @@
 	&:before {
 		content: attr(data-bg-text);
 		position: absolute;
-		top: 6px;
 		left: 50%;
 		z-index: 0;
-		transform: translateX(-50%) translateX(100px);
 		font-size: 160px;
 		font-weight: bold;
 		white-space: nowrap;
 		pointer-events: none;
 
-		.wiraof--introView & {
+		.header--introHeader& {
 			opacity: 0.05;
+			top: 6px;
+			transform: translateX(-50%) translateX(100px);
 			color: #fff;
+		}
+		:not(.header--introHeader)& {
+			opacity: 0.03;
+			top: 30px;
+			transform: translateX(-50%) translateX(135px);
 		}
 	}
 
 	.pageName {
 		:not(.header--introHeader)& {
 			margin-right: 10px;
+			font-size: @fontSize-base;
+			line-height: @lineHeight-base;
+			white-space: nowrap;
 		}
 
 		.header--introHeader& {
