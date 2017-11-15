@@ -2,17 +2,19 @@
 
 export const LAYOUT = {
 	MAIN_CONTAINER_ID: 'wiraof',
-	TOP_ID: 'top',
+	HEADER_ID: 'header',
 	TIMELINE_ID: 'timeline',
 	YEAR_CONTAINER_ID: 'yearDetails',
 	BG_VIDEO_ID: 'bgVideo',
 	FOOTER_ID: 'footer'
 };
 export const VIEWS = {
-	INTRO_ID: 'introView'
+	INTRO_CLASS: `${LAYOUT.MAIN_CONTAINER_ID}--introView`
 };
 export const HEADER = {
+	INTRO_HEADER_CLASS: `${LAYOUT.HEADER_ID}--introHeader`,
 	TITLE_CLASS: 'pageName',
+	TITLE_HEADER_CLASS: 'pageName--introHeader',
 	TITLE_LINK_CLASS: 'pageName__link'
 };
 export const FOOTER = {
@@ -22,9 +24,16 @@ export const FOOTER = {
 	ABOUT_LINK_CLASS: 'aboutSection__aboutLink'
 };
 export const TIMELINE = {
+	MAIN_TIMELINE_CLASS: `${LAYOUT.TIMELINE_ID}--mainNavigation`,
 	EDITIONS_CLASS: 'editionsList',
 	EDITION_CLASS: 'edition',
-	EDITION_LINK_CLASS: 'edition__link'
+	EDITION_LINK_CLASS: 'edition__link',
+	EDITION_YEAR_CLASS: 'edition__year',
+	EDITION_MASK_CLASS: 'edition__mask',
+	EDITION_MASK_RECT_CLASS: 'mask__rect',
+	EDITION_MASK_TEXT_CLASS: 'mask__text',
+	EDITION_MASK_BG_CLASS: 'mask__bg',
+
 };
 export const EDITION = {
 	EDITION_DETAILS_ID: 'editionDetails',

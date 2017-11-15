@@ -4,8 +4,13 @@ import { TITLE } from '../../enums/content';
 import { HEADER } from '../../enums/elementHandlers';
 import { VIEW_TYPES } from '../../enums/viewTypes';
 import { introView } from '../../views/introView';
+import { updateComponentByViewType } from '../../utils/updateView';
 
 export class title {
+	updateTitleLocation(el) {
+		updateComponentByViewType(el, HEADER.TITLE_HEADER_CLASS);
+	}
+
 	backToHome(e) {
 		e.preventDefault();
 
@@ -29,9 +34,10 @@ export class title {
 		let title = document.createElement('h1');
 		let link = this.renderTitleLink();
 
+		link.textContent = TITLE;
 		title.classList.add(HEADER.TITLE_CLASS);
 		title.appendChild(link);
-		link.textContent = TITLE;
+		this.updateTitleLocation(title);
 
 		return title;
 	}

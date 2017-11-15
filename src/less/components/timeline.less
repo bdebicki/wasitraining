@@ -1,23 +1,95 @@
 #timeline {
-	[data-view='intro'] & {
-		grid-area: details;
+	@navTimelineSize: 215px;
+	@navTimelineBorderSize: 1px;
+
+	.wiraof--introView & {
+		margin-left: -@mainContentWidth/2;
+		grid-area: intro;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+
+		@media screen and (max-width: (@mainContentWidth + (2 * @bodyOffset))) {
+			margin-left: 0;
+			left: @bodyOffset;
+		}
 	}
 
 	.editionsList {
 		display: flex;
 		flex-direction: row;
+	}
 
+	&:not(.timeline--mainNavigation) {
 		.edition {
-			display: flex;
-
 			+ .edition {
 				margin-left: 10px;
 			}
+		}
+	}
+
+	&.timeline--mainNavigation {
+		.editionsList {
+			height: 100%;
+		}
+
+		.edition {
+			width: @navTimelineSize + @navTimelineBorderSize;
+			height: 100%;
+			flex-grow: 1;
+			flex-shrink: 0;
+			border-right: 1px solid fade(#fff, 40%);
+			font-size: @fontSize-xxxxl;
+			font-weight: 900;
+			line-height: @lineHeight-xxxxl;
+
+
+			&:first-child {
+				width: @navTimelineSize + 2 * @navTimelineBorderSize;
+				border-left: 1px solid fade(#fff, 40%);
+			}
 
 			&__link {
-				#introView & {
-					color: #fff;
+				display: flex;
+				height: 100%;
+				position: relative;
+			}
+			&__year {
+				.strechPosition();
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #fff;
+			}
+			&__mask {
+				width: 100%;
+				height: 100%;
+			}
+
+			&:hover {
+				.edition__year {
+					display: none;
 				}
+				.mask__bg {
+					fill: #fff;
+				}
+			}
+		}
+		.mask {
+			&__rect {
+				width: 100%;
+				height: 100%;
+				fill: #fff;
+			}
+			&__text {
+				text-anchor: middle;
+				transform: translateY(20px); // ¯\_(ツ)_/¯ svg + grid + 100% height = 💥
+			}
+			&__bg {
+				width: 100%;
+				height: 100%;
+				fill: transparent;
 			}
 		}
 	}

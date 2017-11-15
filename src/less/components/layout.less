@@ -1,15 +1,27 @@
 @bodyOffset: 20px;
+@mainContentWidth: 1100px;
 
 #wiraof {
-	.strechPosition();
 	display: grid;
-	grid-template-columns: @bodyOffset auto 1100px auto @bodyOffset;
-	grid-template-rows: @bodyOffset @topHeight auto @footerHeight @bodyOffset;
-	grid-template-areas: ". . . . ."
-						 ". . top . ."
-						 ". . details . ."
-						 ". . footer . ."
-						 ". . . . .";
 	grid-column-gap: 0;
 	grid-row-gap: 0;
+	overflow: hidden;
+
+	&:not(.wiraof--introView) {
+		grid-template-columns: @bodyOffset auto @mainContentWidth auto @bodyOffset;
+		grid-template-rows: @bodyOffset @topHeight auto @footerHeight @bodyOffset;
+		grid-template-areas: ". . . . ."
+						 	 ". . header . ."
+						 	 ". . details . ."
+						 	 ". . footer . ."
+						 	 ". . . . .";
+	}
+	&.wiraof--introView {
+		grid-template-columns: @bodyOffset auto @mainContentWidth auto @bodyOffset;
+		grid-template-rows: @bodyOffset auto @footerHeight @bodyOffset;
+		grid-template-areas: ". . . . ."
+						 	 ". . intro . ."
+						 	 ". . footer . ."
+						 	 ". . . . .";
+	}
 }

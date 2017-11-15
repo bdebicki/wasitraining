@@ -1,8 +1,9 @@
 'use strict';
 
-import { LAYOUT } from '../enums/elementHandlers';
+import { LAYOUT, HEADER } from '../enums/elementHandlers';
 import { VIEW_TYPES } from '../enums/viewTypes';
 import { header } from '../components/header/header';
+import { title } from '../components/header/title';
 import { timeline } from '../components/timeline/timeline';
 import { yearDetails } from '../components/yearDetails/yearDetails'
 import { bgVideo } from '../components/bgVideo/bgVideo';
@@ -21,9 +22,16 @@ export class yearView {
 
 	switchToYearView() {
 		const yearBlock = new yearDetails(this.data[this.editionId], LAYOUT.MAIN_CONTAINER_ID);
+		const titleBlock = new title();
+		const headerBlock = new header();
+		const timelineBlock = new timeline();
 
 		this.updateViewTypeToYear();
-		document.getElementById(LAYOUT.TOP_ID).appendChild(document.getElementById(LAYOUT.TIMELINE_ID));
+		titleBlock.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
+		headerBlock.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
+		timelineBlock.updateTimelineLocation(document.getElementById(LAYOUT.TIMELINE_ID));
+		document.getElementById(LAYOUT.HEADER_ID).appendChild(document.getElementById(LAYOUT.TIMELINE_ID));
+
 		yearBlock.render();
 	}
 
@@ -38,7 +46,7 @@ export class yearView {
 		const body = LAYOUT.MAIN_CONTAINER_ID;
 		const data = this.data;
 		const headerBlock = new header(data, body);
-		const timelineBlock = new timeline(data, LAYOUT.TOP_ID);
+		const timelineBlock = new timeline(data, LAYOUT.HEADER_ID);
 		const yearBlock = new yearDetails(data[this.editionId], body);
 		const bgBlock = new bgVideo(body);
 		const footerBlock = new footer(body);
