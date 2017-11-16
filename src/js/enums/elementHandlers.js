@@ -25,14 +25,14 @@ export const FOOTER = {
 	ABOUT_LINK_CLASS: 'aboutSection__aboutLink'
 };
 export const TIMELINE = {
-	EDITIONS_CLASS: 'editionsList',
-	EDITION_CLASS: 'edition',
-	EDITION_LINK_CLASS: 'edition__link',
-	EDITION_YEAR_CLASS: 'edition__year',
-	EDITION_MASK_CLASS: 'edition__mask',
-	EDITION_MASK_RECT_CLASS: 'mask__rect',
-	EDITION_MASK_TEXT_CLASS: 'mask__text',
-	EDITION_MASK_BG_CLASS: 'mask__bg',
+	MAIN_EDITIONS_CLASS: 'mainEditionsList',
+	MAIN_EDITION_CLASS: 'mainEdition',
+	MAIN_EDITION_LINK_CLASS: 'mainEdition__link',
+	MAIN_EDITION_YEAR_CLASS: 'mainEdition__year',
+	MAIN_EDITION_MASK_CLASS: 'mainEdition__mask',
+	MAIN_EDITION_MASK_RECT_CLASS: 'mainEditionMask__rect',
+	MAIN_EDITION_MASK_TEXT_CLASS: 'mainEditionMask__text',
+	MAIN_EDITION_MASK_BG_CLASS: 'mainEditionMask__bg',
 
 };
 export const EDITION = {

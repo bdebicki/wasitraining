@@ -20,7 +20,7 @@ export class mainTimeline {
 	createEditionsListContainer() {
 		let editionsListContainer = document.createElement('ul');
 
-		editionsListContainer.classList.add(TIMELINE.EDITIONS_CLASS);
+		editionsListContainer.classList.add(TIMELINE.MAIN_EDITIONS_CLASS);
 
 		return editionsListContainer;
 	}
@@ -37,7 +37,7 @@ export class mainTimeline {
 		revertedEditionsOrder().map((item) => {
 			let edition = new timelineItem(this.data[item]);
 
-			edition.render(editionsListContainer);
+			editionsListContainer.appendChild(edition.renderMainEdition());
 		});
 
 		timelineContainer.appendChild(editionsListContainer);

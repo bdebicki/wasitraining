@@ -46,15 +46,15 @@ export class timelineItem extends edition {
 		let textMask = document.createElementNS(xmlns, 'text');
 		let rectBg = document.createElementNS(xmlns, 'rect');
 
-		svg.classList.add(TIMELINE.EDITION_MASK_CLASS);
+		svg.classList.add(TIMELINE.MAIN_EDITION_MASK_CLASS);
 		mask.id = maskId;
 		mask.setAttributeNS(null, 'maskUnits', 'userSpaceOnUse');
-		rectMask.classList.add(TIMELINE.EDITION_MASK_RECT_CLASS);
-		textMask.classList.add(TIMELINE.EDITION_MASK_TEXT_CLASS);
+		rectMask.classList.add(TIMELINE.MAIN_EDITION_MASK_RECT_CLASS);
+		textMask.classList.add(TIMELINE.MAIN_EDITION_MASK_TEXT_CLASS);
 		textMask.setAttributeNS(null, 'x', '50%');
 		textMask.setAttributeNS(null, 'y', '50%');
 		textMask.textContent = editionYear;
-		rectBg.classList.add(TIMELINE.EDITION_MASK_BG_CLASS);
+		rectBg.classList.add(TIMELINE.MAIN_EDITION_MASK_BG_CLASS);
 		rectBg.setAttributeNS(null, 'mask', `url(#${maskId})`);
 
 		mask.appendChild(rectMask);
@@ -70,19 +70,19 @@ export class timelineItem extends edition {
 	renderYear() {
 		let span = document.createElement('span');
 
-		span.classList.add(TIMELINE.EDITION_YEAR_CLASS);
+		span.classList.add(TIMELINE.MAIN_EDITION_YEAR_CLASS);
 		span.textContent = this.editionYear;
 
 		return span;
 	}
 
-	renderLink() {
+	renderMainLink() {
 		let a = document.createElement('a');
 		const year = this.renderYear();
 		const mask = this.renderYearMask();
 
 		a.href = `#edition${this.editionId}`;
-		a.classList.add(TIMELINE.EDITION_LINK_CLASS);
+		a.classList.add(TIMELINE.MAIN_EDITION_LINK_CLASS);
 		a.addEventListener('click', this.switchEdition, null);
 		a.appendChild(year);
 		a.appendChild(mask);
@@ -90,19 +90,12 @@ export class timelineItem extends edition {
 		return a;
 	}
 
-	renderEdition(isActive) {
+	renderMainEdition() {
 		let li = document.createElement('li');
 
-		li.classList.add(TIMELINE.EDITION_CLASS);
-		if(isActive) {
-			li.classList.add(ACTIVE_CLASS);
-		}
-		li.appendChild(this.renderLink());
+		li.classList.add(TIMELINE.MAIN_EDITION_CLASS);
+		li.appendChild(this.renderMainLink());
 
 		return li
-	}
-
-	render(target, isActive) {
-		target.appendChild(this.renderEdition(isActive));
 	}
 }
