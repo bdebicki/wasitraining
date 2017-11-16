@@ -10,7 +10,7 @@ function app() {
 	fetch(DATA_URL)
 		.then(response => response.json())
 		.then((data) => {
-			const year = new yearView(data, 16);
+			const year = new yearView(data, '16');
 
 			year.render();
 			// const intro = new introView(data);

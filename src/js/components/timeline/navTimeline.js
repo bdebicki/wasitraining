@@ -5,8 +5,9 @@ import { reverseSortEditions } from '../../utils/sortEditions';
 import { timelineItem } from './timelineItem';
 
 export class navTimeline {
-	constructor(data, target) {
+	constructor(data, editionId, target) {
 		this.data = data;
+		this.editionId = editionId;
 		this.target = target;
 	}
 
@@ -32,9 +33,13 @@ export class navTimeline {
 		let editionsListContainer = this.createEditionsListContainer();
 
 		revertedEditionsOrder().map((item) => {
-			let edition = new timelineItem(this.data[item]);
+			const edition = new timelineItem(this.data[item]);
 
-			editionsListContainer.appendChild(edition.renderNavEdition());
+			if(this.data[item].id === this.editionId) {
+				editionsListContainer.appendChild(edition.renderNavEdition(true));
+			} else {
+				editionsListContainer.appendChild(edition.renderNavEdition());
+			}
 		});
 
 		timelineContainer.appendChild(editionsListContainer);

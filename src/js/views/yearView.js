@@ -31,7 +31,7 @@ export class yearView {
 		const yearBlock = new yearDetails(this.data[this.editionId], LAYOUT.MAIN_CONTAINER_ID);
 		const titleBlock = new title();
 		const headerBlock = new header();
-		const navTimelineBlock = new navTimeline(this.data, LAYOUT.HEADER_ID);
+		const navTimelineBlock = new navTimeline(this.data, this.editionId, LAYOUT.HEADER_ID);
 
 		this.updateViewTypeToYear();
 		titleBlock.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
@@ -44,9 +44,10 @@ export class yearView {
 	render() {
 		const body = LAYOUT.MAIN_CONTAINER_ID;
 		const data = this.data;
+		const editionId = this.editionId;
 		const headerBlock = new header(data, body);
-		const navTimelineBlock = new navTimeline(data, LAYOUT.HEADER_ID);
-		const yearBlock = new yearDetails(data[this.editionId], body);
+		const navTimelineBlock = new navTimeline(data, editionId, LAYOUT.HEADER_ID);
+		const yearBlock = new yearDetails(data[editionId], body);
 		const bgBlock = new bgVideo(body);
 		const footerBlock = new footer(body);
 
