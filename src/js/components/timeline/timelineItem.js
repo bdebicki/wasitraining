@@ -2,8 +2,6 @@
 
 import { DATA_URL } from '../../enums/data';
 import { TIMELINE, ACTIVE_CLASS } from '../../enums/elementHandlers';
-import { VIEW_TYPES } from '../../enums/viewTypes';
-import { getViewType } from '../../utils/updateView';
 import { edition } from '../../classes/edition';
 import { yearView } from '../../views/yearView';
 
@@ -12,22 +10,34 @@ export class timelineItem extends edition {
 		super(data);
 	}
 
-	switchEdition(e) {
-		e.preventDefault();
-
+	switchView(e) {
 		const id = this.getAttribute('href').replace('#edition', '');
-		const viewType = () => getViewType();
+
+		e.preventDefault();
 
 		fetch(DATA_URL)
 			.then(response => response.json())
 			.then((data) => {
 				const year = new yearView(data, id);
 
-				if(viewType() === VIEW_TYPES.INTRO) {
-					year.switchToYearView();
-				} else {
-					year.updateDetails();
-				}
+				year.switchToYearView();
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	}
+
+	switchEdition(e) {
+		const id = this.getAttribute('href').replace('#edition', '');
+
+		e.preventDefault();
+
+		fetch(DATA_URL)
+			.then(response => response.json())
+			.then((data) => {
+				const year = new yearView(data, id);
+
+				year.updateDetails();
 			})
 			.catch((error) => {
 				console.log(error);
@@ -83,7 +93,7 @@ export class timelineItem extends edition {
 
 		a.href = `#edition${this.editionId}`;
 		a.classList.add(TIMELINE.MAIN_EDITION_LINK_CLASS);
-		a.addEventListener('click', this.switchEdition, null);
+		a.addEventListener('click', this.switchView, null);
 		a.appendChild(year);
 		a.appendChild(mask);
 
