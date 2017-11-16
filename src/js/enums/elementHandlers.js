@@ -35,6 +35,7 @@ export const TIMELINE = {
 	MAIN_EDITION_MASK_BG_CLASS: 'mainEditionMask__bg',
 	NAV_EDITIONS_CLASS: 'navEditionsList',
 	NAV_EDITION_CLASS: 'navEdition',
+	NAV_EDITION_ACTIVE_CLASS: 'navEdition--active',
 	NAV_EDITION_LINK_CLASS: 'navEdition__link',
 };
 export const EDITION = {
@@ -59,6 +60,5 @@ export const LINK = {
 	BASIC_CLASS: 'link',
 	INVERTED_STYLE_CLASS: 'link--inverted'
 };
-export const ACTIVE_CLASS = 'active';
 export const VISIBILITY_CLASS = 'visible';
 export const SELECTED_CLASS = 'selected';

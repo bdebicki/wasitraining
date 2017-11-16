@@ -11,6 +11,11 @@ export class navTimeline {
 		this.target = target;
 	}
 
+	updateSelectedEdition(newEdition) {
+		document.querySelector(`.${TIMELINE.NAV_EDITION_ACTIVE_CLASS}`).classList.remove(TIMELINE.NAV_EDITION_ACTIVE_CLASS);
+		newEdition.parentNode.classList.add(TIMELINE.NAV_EDITION_ACTIVE_CLASS);
+	}
+
 	createTimelineContainer() {
 		let timelineContainer = document.createElement('nav');
 

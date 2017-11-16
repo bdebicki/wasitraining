@@ -20,10 +20,12 @@ export class yearView {
 		updateViewType(VIEW_TYPES.YEAR);
 	}
 
-	updateDetails() {
-		const newEditionId = this.data[this.editionId];
-		const yearBlock = new yearDetails(newEditionId);
+	updateDetails(newEdition) {
+		const newEditionData = this.data[this.editionId];
+		const yearBlock = new yearDetails(newEditionData);
+		const navTimelineBlock = new navTimeline();
 
+		navTimelineBlock.updateSelectedEdition(newEdition);
 		yearBlock.updateYearDetails();
 	}
 

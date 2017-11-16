@@ -1,7 +1,7 @@
 'use strict';
 
 import { DATA_URL } from '../../enums/data';
-import { TIMELINE, ACTIVE_CLASS } from '../../enums/elementHandlers';
+import { TIMELINE } from '../../enums/elementHandlers';
 import { edition } from '../../classes/edition';
 import { yearView } from '../../views/yearView';
 
@@ -37,7 +37,7 @@ export class timelineItem extends edition {
 			.then((data) => {
 				const year = new yearView(data, id);
 
-				year.updateDetails();
+				year.updateDetails(this);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -125,7 +125,7 @@ export class timelineItem extends edition {
 
 		li.classList.add(TIMELINE.NAV_EDITION_CLASS);
 		if(isActive) {
-			li.classList.add(ACTIVE_CLASS);
+			li.classList.add(TIMELINE.NAV_EDITION_ACTIVE_CLASS);
 		}
 		li.appendChild(this.renderNavLink());
 
