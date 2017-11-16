@@ -2,20 +2,14 @@
 	@navTimelineSize: 215px;
 	@navTimelineBorderSize: 1px;
 
-	.editionsList {
+	.navEditionsList {
 		display: flex;
 		flex-direction: row;
 	}
 
-	.edition {
-		+ .edition {
+	.navEdition {
+		+ .navEdition {
 			margin-left: 10px;
 		}
-	}
-}
-
-#wiraof:not(.wiraof--introView) {
-	#mainTimeline {
-		display: none;
 	}
 }

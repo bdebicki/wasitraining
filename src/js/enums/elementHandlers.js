@@ -33,7 +33,9 @@ export const TIMELINE = {
 	MAIN_EDITION_MASK_RECT_CLASS: 'mainEditionMask__rect',
 	MAIN_EDITION_MASK_TEXT_CLASS: 'mainEditionMask__text',
 	MAIN_EDITION_MASK_BG_CLASS: 'mainEditionMask__bg',
-
+	NAV_EDITIONS_CLASS: 'navEditionsList',
+	NAV_EDITION_CLASS: 'navEdition',
+	NAV_EDITION_LINK_CLASS: 'navEdition__link',
 };
 export const EDITION = {
 	EDITION_DETAILS_ID: 'editionDetails',

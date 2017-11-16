@@ -90,11 +90,34 @@ export class timelineItem extends edition {
 		return a;
 	}
 
+	renderNavLink() {
+		let a = document.createElement('a');
+
+		a.href = `#edition${this.editionId}`;
+		a.classList.add(TIMELINE.NAV_EDITION_LINK_CLASS);
+		a.addEventListener('click', this.switchEdition, null);
+		a.textContent = this.editionYear;
+
+		return a;
+	}
+
 	renderMainEdition() {
 		let li = document.createElement('li');
 
 		li.classList.add(TIMELINE.MAIN_EDITION_CLASS);
 		li.appendChild(this.renderMainLink());
+
+		return li
+	}
+
+	renderNavEdition(isActive) {
+		let li = document.createElement('li');
+
+		li.classList.add(TIMELINE.NAV_EDITION_CLASS);
+		if(isActive) {
+			li.classList.add(ACTIVE_CLASS);
+		}
+		li.appendChild(this.renderNavLink());
 
 		return li
 	}
