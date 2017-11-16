@@ -4,7 +4,7 @@ import { LAYOUT, HEADER } from '../enums/elementHandlers';
 import { VIEW_TYPES } from '../enums/viewTypes';
 import { header } from '../components/header/header';
 import { title } from '../components/header/title';
-import { timeline } from '../components/timeline/mainTimeline';
+import { navTimeline } from '../components/timeline/navTimeline';
 import { yearDetails } from '../components/yearDetails/yearDetails'
 import { bgVideo } from '../components/bgVideo/bgVideo';
 import { footer } from '../components/footer/footer';
@@ -20,21 +20,6 @@ export class yearView {
 		updateViewType(VIEW_TYPES.YEAR);
 	}
 
-	switchToYearView() {
-		const yearBlock = new yearDetails(this.data[this.editionId], LAYOUT.MAIN_CONTAINER_ID);
-		const titleBlock = new title();
-		const headerBlock = new header();
-		const timelineBlock = new timeline();
-
-		this.updateViewTypeToYear();
-		titleBlock.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
-		headerBlock.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
-		timelineBlock.updateTimelineLocation(document.getElementById(LAYOUT.MAIN_TIMELINE_ID));
-		document.getElementById(LAYOUT.HEADER_ID).appendChild(document.getElementById(LAYOUT.MAIN_TIMELINE_ID));
-
-		yearBlock.render();
-	}
-
 	updateDetails() {
 		const newEditionId = this.data[this.editionId];
 		const yearBlock = new yearDetails(newEditionId);
@@ -42,19 +27,32 @@ export class yearView {
 		yearBlock.updateYearDetails();
 	}
 
+	switchToYearView() {
+		const yearBlock = new yearDetails(this.data[this.editionId], LAYOUT.MAIN_CONTAINER_ID);
+		const titleBlock = new title();
+		const headerBlock = new header();
+		const navTimelineBlock = new navTimeline(this.data, LAYOUT.HEADER_ID);
+
+		this.updateViewTypeToYear();
+		titleBlock.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
+		headerBlock.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
+		navTimelineBlock.render();
+		yearBlock.render();
+		document.getElementById(LAYOUT.MAIN_TIMELINE_ID).remove();
+	}
+
 	render() {
 		const body = LAYOUT.MAIN_CONTAINER_ID;
 		const data = this.data;
 		const headerBlock = new header(data, body);
-		const timelineBlock = new timeline(data, LAYOUT.HEADER_ID);
+		const navTimelineBlock = new navTimeline(data, LAYOUT.HEADER_ID);
 		const yearBlock = new yearDetails(data[this.editionId], body);
 		const bgBlock = new bgVideo(body);
 		const footerBlock = new footer(body);
 
 		this.updateViewTypeToYear();
-
 		headerBlock.render();
-		timelineBlock.render();
+		navTimelineBlock.render();
 		yearBlock.render();
 		bgBlock.render();
 		footerBlock.render();

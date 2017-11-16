@@ -2,23 +2,17 @@
 
 import { LAYOUT, TIMELINE } from '../../enums/elementHandlers';
 import { timelineItem } from './timelineItem';
-import { updateComponentByViewType } from '../../utils/updateView';
 
-export class timeline {
+export class mainTimeline {
 	constructor(data, target) {
 		this.data = data;
 		this.target = target;
-	}
-
-	updateTimelineLocation(el) {
-		updateComponentByViewType(el, TIMELINE.MAIN_TIMELINE_CLASS);
 	}
 
 	createTimelineContainer() {
 		let timelineContainer = document.createElement('nav');
 
 		timelineContainer.id = LAYOUT.MAIN_TIMELINE_ID;
-		this.updateTimelineLocation(timelineContainer);
 
 		return timelineContainer;
 	}
