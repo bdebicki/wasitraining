@@ -1,6 +1,7 @@
 'use strict';
 
 import { LAYOUT, TIMELINE } from '../../enums/elementHandlers';
+import { reverseSortEditions } from '../../utils/sortEditions';
 import { timelineItem } from './timelineItem';
 
 export class mainTimeline {
@@ -25,12 +26,8 @@ export class mainTimeline {
 		return editionsListContainer;
 	}
 
-	reverseSortEditions() {
-		return Object.keys(this.data).reverse();
-	}
-
 	render() {
-		const revertedEditionsOrder = () => this.reverseSortEditions(this.data);
+		const revertedEditionsOrder = () => reverseSortEditions(this.data);
 		let timelineContainer = this.createTimelineContainer();
 		let editionsListContainer = this.createEditionsListContainer();
 
