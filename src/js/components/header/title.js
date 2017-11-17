@@ -1,5 +1,6 @@
 'use strict';
 
+import { DATA_URL } from '../../enums/data';
 import { TITLE } from '../../enums/content';
 import { HEADER } from '../../enums/elementHandlers';
 import { VIEW_TYPES } from '../../enums/viewTypes';
@@ -15,8 +16,15 @@ export class title {
 		e.preventDefault();
 
 		if(document.querySelector('html').dataset.view === VIEW_TYPES.YEAR) {
-			const intro = new introView();
-			intro.switchToIntoView();
+			fetch(DATA_URL)
+				.then(response => response.json())
+				.then((data) => {
+					const intro = new introView(data);
+					intro.switchToIntoView();
+				})
+				.catch((error) => {
+					console.log(error);
+				});
 		}
 	}
 

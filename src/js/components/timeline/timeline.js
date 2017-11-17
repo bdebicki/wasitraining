@@ -2,31 +2,31 @@
 
 import { LAYOUT, TIMELINE } from '../../enums/elementHandlers';
 import { timelineItem } from './timelineItem';
-import { updateComponentByViewType } from '../../utils/updateView';
 
 export class timeline {
-	constructor(data, target) {
+	constructor(data, target, editionId) {
 		this.data = data;
 		this.target = target;
+		this.editionId = editionId;
 	}
 
-	updateTimelineLocation(el) {
-		updateComponentByViewType(el, TIMELINE.MAIN_TIMELINE_CLASS);
+	updateSelectedEdition(newEdition) {
+		document.querySelector(`.${TIMELINE.NAV_EDITION_ACTIVE_CLASS}`).classList.remove(TIMELINE.NAV_EDITION_ACTIVE_CLASS);
+		newEdition.classList.add(TIMELINE.NAV_EDITION_ACTIVE_CLASS);
 	}
 
-	createTimelineContainer() {
+	createTimelineContainer(containerId) {
 		let timelineContainer = document.createElement('nav');
 
-		timelineContainer.id = LAYOUT.TIMELINE_ID;
-		this.updateTimelineLocation(timelineContainer);
+		timelineContainer.id = containerId;
 
 		return timelineContainer;
 	}
 
-	createEditionsListContainer() {
+	createEditionsListContainer(listClass) {
 		let editionsListContainer = document.createElement('ul');
 
-		editionsListContainer.classList.add(TIMELINE.EDITIONS_CLASS);
+		editionsListContainer.classList.add(listClass);
 
 		return editionsListContainer;
 	}
@@ -35,15 +35,34 @@ export class timeline {
 		return Object.keys(this.data).reverse();
 	}
 
-	render() {
+	renderNavTimeline() {
+		const revertedEditionsOrder = () => this.reverseSortEditions();
+		let timelineContainer = this.createTimelineContainer(LAYOUT.NAV_TIMELINE_ID);
+		let editionsListContainer = this.createEditionsListContainer(TIMELINE.NAV_EDITIONS_CLASS);
+
+		revertedEditionsOrder().map((item) => {
+			const edition = new timelineItem(this.data[item]);
+
+			if(this.data[item].id === this.editionId) {
+				editionsListContainer.appendChild(edition.renderNavEdition(true));
+			} else {
+				editionsListContainer.appendChild(edition.renderNavEdition());
+			}
+		});
+
+		timelineContainer.appendChild(editionsListContainer);
+		document.getElementById(this.target).appendChild(timelineContainer);
+	}
+
+	renderMainTimeline() {
 		const revertedEditionsOrder = () => this.reverseSortEditions(this.data);
-		let timelineContainer = this.createTimelineContainer();
-		let editionsListContainer = this.createEditionsListContainer();
+		let timelineContainer = this.createTimelineContainer(LAYOUT.MAIN_TIMELINE_ID);
+		let editionsListContainer = this.createEditionsListContainer(TIMELINE.MAIN_EDITIONS_CLASS);
 
 		revertedEditionsOrder().map((item) => {
 			let edition = new timelineItem(this.data[item]);
 
-			edition.render(editionsListContainer);
+			editionsListContainer.appendChild(edition.renderMainEdition());
 		});
 
 		timelineContainer.appendChild(editionsListContainer);

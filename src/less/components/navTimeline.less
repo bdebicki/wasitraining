@@ -1,0 +1,41 @@
+#navTimeline {
+	display: flex;
+	flex-grow: 0;
+	flex-shrink: 1;
+	margin-bottom: -1px;
+	margin-left: 20px;
+	order: 3;
+
+	.navEditionsList {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.navEdition {
+		font-size: @fontSize-s;
+		line-height: @lineHeight-s;
+
+		+ .navEdition {
+			margin-left: 12px;
+		}
+
+		&__link {
+			position: relative;
+			color: @gray-lighten30;
+
+			&--active {
+				color: @gray-darken10;
+
+				&:before {
+					content: '';
+					height: 2px;
+					position: absolute;
+					right: -3px;
+					bottom: -3px;
+					left: -3px;
+					background: currentColor;
+				}
+			}
+		}
+	}
+}

@@ -21,13 +21,13 @@ export class introView {
 	switchToIntoView() {
 		const titleBlock = new title();
 		const headerBlock = new header();
-		const timelineBlock = new timeline();
+		const timelineBlock = new timeline(this.data, LAYOUT.MAIN_CONTAINER_ID);
 
 		this.updateViewTypeToIntro();
 		titleBlock.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
 		headerBlock.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
-		timelineBlock.updateTimelineLocation(document.getElementById(LAYOUT.TIMELINE_ID));
-		document.getElementById(LAYOUT.MAIN_CONTAINER_ID).appendChild(document.getElementById(LAYOUT.TIMELINE_ID));
+		timelineBlock.renderMainTimeline();
+		document.getElementById(LAYOUT.NAV_TIMELINE_ID).remove();
 		document.getElementById(LAYOUT.YEAR_CONTAINER_ID).remove();
 	}
 
@@ -39,9 +39,8 @@ export class introView {
 		const footerBlock = new footer(body);
 
 		this.updateViewTypeToIntro();
-
 		headerBlock.render();
-		timelineBlock.render();
+		timelineBlock.renderMainTimeline();
 		bgBlock.render();
 		footerBlock.render();
 	}

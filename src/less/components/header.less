@@ -4,8 +4,16 @@
 	&:not(.header--introHeader) {
 		display: flex;
 		height: @topHeight;
+		padding-top: 19px;
 		flex-direction: row;
+		align-items: flex-end;
 		grid-area: header;
+
+		&:after {
+			.separateBorder(@stretch: true);
+			margin-bottom: 11px;
+			order: 2;
+		}
 	}
 
 	&.header--introHeader {
@@ -19,24 +27,36 @@
 	&:before {
 		content: attr(data-bg-text);
 		position: absolute;
-		top: 6px;
 		left: 50%;
 		z-index: 0;
-		transform: translateX(-50%) translateX(100px);
 		font-size: 160px;
 		font-weight: bold;
 		white-space: nowrap;
 		pointer-events: none;
 
-		.wiraof--introView & {
+		.header--introHeader& {
 			opacity: 0.05;
+			top: 6px;
+			transform: translateX(-50%) translateX(100px);
 			color: #fff;
+		}
+		:not(.header--introHeader)& {
+			opacity: 0.03;
+			top: 30px;
+			transform: translateX(-50%) translateX(135px);
 		}
 	}
 
 	.pageName {
 		:not(.header--introHeader)& {
-			margin-right: 10px;
+			display: flex;
+			flex-grow: 0;
+			flex-shrink: 1;
+			margin-right: 20px;
+			order: 1;
+			font-size: @fontSize-base;
+			line-height: @lineHeight-base;
+			white-space: nowrap;
 		}
 
 		.header--introHeader& {

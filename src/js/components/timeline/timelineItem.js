@@ -1,9 +1,7 @@
 'use strict';
 
 import { DATA_URL } from '../../enums/data';
-import { TIMELINE, ACTIVE_CLASS } from '../../enums/elementHandlers';
-import { VIEW_TYPES } from '../../enums/viewTypes';
-import { getViewType } from '../../utils/updateView';
+import { TIMELINE } from '../../enums/elementHandlers';
 import { edition } from '../../classes/edition';
 import { yearView } from '../../views/yearView';
 
@@ -12,22 +10,34 @@ export class timelineItem extends edition {
 		super(data);
 	}
 
-	switchEdition(e) {
-		e.preventDefault();
-
+	switchView(e) {
 		const id = this.getAttribute('href').replace('#edition', '');
-		const viewType = () => getViewType();
+
+		e.preventDefault();
 
 		fetch(DATA_URL)
 			.then(response => response.json())
 			.then((data) => {
 				const year = new yearView(data, id);
 
-				if(viewType() === VIEW_TYPES.INTRO) {
-					year.switchToYearView();
-				} else {
-					year.updateDetails();
-				}
+				year.switchToYearView();
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	}
+
+	switchEdition(e) {
+		const id = this.getAttribute('href').replace('#edition', '');
+
+		e.preventDefault();
+
+		fetch(DATA_URL)
+			.then(response => response.json())
+			.then((data) => {
+				const year = new yearView(data, id);
+
+				year.updateDetails(this);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -46,15 +56,15 @@ export class timelineItem extends edition {
 		let textMask = document.createElementNS(xmlns, 'text');
 		let rectBg = document.createElementNS(xmlns, 'rect');
 
-		svg.classList.add(TIMELINE.EDITION_MASK_CLASS);
+		svg.classList.add(TIMELINE.MAIN_EDITION_MASK_CLASS);
 		mask.id = maskId;
 		mask.setAttributeNS(null, 'maskUnits', 'userSpaceOnUse');
-		rectMask.classList.add(TIMELINE.EDITION_MASK_RECT_CLASS);
-		textMask.classList.add(TIMELINE.EDITION_MASK_TEXT_CLASS);
+		rectMask.classList.add(TIMELINE.MAIN_EDITION_MASK_RECT_CLASS);
+		textMask.classList.add(TIMELINE.MAIN_EDITION_MASK_TEXT_CLASS);
 		textMask.setAttributeNS(null, 'x', '50%');
 		textMask.setAttributeNS(null, 'y', '50%');
 		textMask.textContent = editionYear;
-		rectBg.classList.add(TIMELINE.EDITION_MASK_BG_CLASS);
+		rectBg.classList.add(TIMELINE.MAIN_EDITION_MASK_BG_CLASS);
 		rectBg.setAttributeNS(null, 'mask', `url(#${maskId})`);
 
 		mask.appendChild(rectMask);
@@ -70,39 +80,55 @@ export class timelineItem extends edition {
 	renderYear() {
 		let span = document.createElement('span');
 
-		span.classList.add(TIMELINE.EDITION_YEAR_CLASS);
+		span.classList.add(TIMELINE.MAIN_EDITION_YEAR_CLASS);
 		span.textContent = this.editionYear;
 
 		return span;
 	}
 
-	renderLink() {
+	renderMainLink() {
 		let a = document.createElement('a');
 		const year = this.renderYear();
 		const mask = this.renderYearMask();
 
 		a.href = `#edition${this.editionId}`;
-		a.classList.add(TIMELINE.EDITION_LINK_CLASS);
-		a.addEventListener('click', this.switchEdition, null);
+		a.classList.add(TIMELINE.MAIN_EDITION_LINK_CLASS);
+		a.addEventListener('click', this.switchView, null);
 		a.appendChild(year);
 		a.appendChild(mask);
 
 		return a;
 	}
 
-	renderEdition(isActive) {
+	renderNavLink(isActive) {
+		let a = document.createElement('a');
+
+		a.href = `#edition${this.editionId}`;
+		a.classList.add(TIMELINE.NAV_EDITION_LINK_CLASS);
+		if (isActive) {
+			a.classList.add(TIMELINE.NAV_EDITION_ACTIVE_CLASS);
+		}
+		a.addEventListener('click', this.switchEdition, null);
+		a.textContent = this.editionYear;
+
+		return a;
+	}
+
+	renderMainEdition() {
 		let li = document.createElement('li');
 
-		li.classList.add(TIMELINE.EDITION_CLASS);
-		if(isActive) {
-			li.classList.add(ACTIVE_CLASS);
-		}
-		li.appendChild(this.renderLink());
+		li.classList.add(TIMELINE.MAIN_EDITION_CLASS);
+		li.appendChild(this.renderMainLink());
 
 		return li
 	}
 
-	render(target, isActive) {
-		target.appendChild(this.renderEdition(isActive));
+	renderNavEdition(isActive) {
+		let li = document.createElement('li');
+
+		li.classList.add(TIMELINE.NAV_EDITION_CLASS);
+		li.appendChild(this.renderNavLink(isActive));
+
+		return li
 	}
 }

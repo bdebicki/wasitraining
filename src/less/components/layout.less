@@ -8,7 +8,7 @@
 	overflow: hidden;
 
 	&:not(.wiraof--introView) {
-		grid-template-columns: @bodyOffset auto @mainContentWidth auto @bodyOffset;
+		grid-template-columns: @bodyOffset minmax(@bodyOffset, auto) @mainContentWidth minmax(@bodyOffset, auto) @bodyOffset;
 		grid-template-rows: @bodyOffset @topHeight auto @footerHeight @bodyOffset;
 		grid-template-areas: ". . . . ."
 						 	 ". . header . ."

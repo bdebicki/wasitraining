@@ -20,41 +20,42 @@ export class yearView {
 		updateViewType(VIEW_TYPES.YEAR);
 	}
 
+	updateDetails(newEdition) {
+		const newEditionData = this.data[this.editionId];
+		const yearBlock = new yearDetails(newEditionData);
+		const timelineBlock = new timeline();
+
+		timelineBlock.updateSelectedEdition(newEdition);
+		yearBlock.updateYearDetails();
+	}
+
 	switchToYearView() {
 		const yearBlock = new yearDetails(this.data[this.editionId], LAYOUT.MAIN_CONTAINER_ID);
 		const titleBlock = new title();
 		const headerBlock = new header();
-		const timelineBlock = new timeline();
+		const timelineBlock = new timeline(this.data, LAYOUT.HEADER_ID, this.editionId);
 
 		this.updateViewTypeToYear();
 		titleBlock.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
 		headerBlock.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
-		timelineBlock.updateTimelineLocation(document.getElementById(LAYOUT.TIMELINE_ID));
-		document.getElementById(LAYOUT.HEADER_ID).appendChild(document.getElementById(LAYOUT.TIMELINE_ID));
-
+		timelineBlock.renderNavTimeline();
 		yearBlock.render();
-	}
-
-	updateDetails() {
-		const newEditionId = this.data[this.editionId];
-		const yearBlock = new yearDetails(newEditionId);
-
-		yearBlock.updateYearDetails();
+		document.getElementById(LAYOUT.MAIN_TIMELINE_ID).remove();
 	}
 
 	render() {
 		const body = LAYOUT.MAIN_CONTAINER_ID;
 		const data = this.data;
+		const editionId = this.editionId;
 		const headerBlock = new header(data, body);
-		const timelineBlock = new timeline(data, LAYOUT.HEADER_ID);
-		const yearBlock = new yearDetails(data[this.editionId], body);
+		const timelineBlock = new timeline(data, LAYOUT.HEADER_ID, editionId);
+		const yearBlock = new yearDetails(data[editionId], body);
 		const bgBlock = new bgVideo(body);
 		const footerBlock = new footer(body);
 
 		this.updateViewTypeToYear();
-
 		headerBlock.render();
-		timelineBlock.render();
+		timelineBlock.renderNavTimeline();
 		yearBlock.render();
 		bgBlock.render();
 		footerBlock.render();

@@ -3,7 +3,8 @@
 export const LAYOUT = {
 	MAIN_CONTAINER_ID: 'wiraof',
 	HEADER_ID: 'header',
-	TIMELINE_ID: 'timeline',
+	MAIN_TIMELINE_ID: 'mainTimeline',
+	NAV_TIMELINE_ID: 'navTimeline',
 	YEAR_CONTAINER_ID: 'yearDetails',
 	BG_VIDEO_ID: 'bgVideo',
 	FOOTER_ID: 'footer'
@@ -24,16 +25,18 @@ export const FOOTER = {
 	ABOUT_LINK_CLASS: 'aboutSection__aboutLink'
 };
 export const TIMELINE = {
-	MAIN_TIMELINE_CLASS: `${LAYOUT.TIMELINE_ID}--mainNavigation`,
-	EDITIONS_CLASS: 'editionsList',
-	EDITION_CLASS: 'edition',
-	EDITION_LINK_CLASS: 'edition__link',
-	EDITION_YEAR_CLASS: 'edition__year',
-	EDITION_MASK_CLASS: 'edition__mask',
-	EDITION_MASK_RECT_CLASS: 'mask__rect',
-	EDITION_MASK_TEXT_CLASS: 'mask__text',
-	EDITION_MASK_BG_CLASS: 'mask__bg',
-
+	MAIN_EDITIONS_CLASS: 'mainEditionsList',
+	MAIN_EDITION_CLASS: 'mainEdition',
+	MAIN_EDITION_LINK_CLASS: 'mainEdition__link',
+	MAIN_EDITION_YEAR_CLASS: 'mainEdition__year',
+	MAIN_EDITION_MASK_CLASS: 'mainEdition__mask',
+	MAIN_EDITION_MASK_RECT_CLASS: 'mainEditionMask__rect',
+	MAIN_EDITION_MASK_TEXT_CLASS: 'mainEditionMask__text',
+	MAIN_EDITION_MASK_BG_CLASS: 'mainEditionMask__bg',
+	NAV_EDITIONS_CLASS: 'navEditionsList',
+	NAV_EDITION_CLASS: 'navEdition',
+	NAV_EDITION_LINK_CLASS: 'navEdition__link',
+	NAV_EDITION_ACTIVE_CLASS: 'navEdition__link--active',
 };
 export const EDITION = {
 	EDITION_DETAILS_ID: 'editionDetails',
@@ -57,6 +60,5 @@ export const LINK = {
 	BASIC_CLASS: 'link',
 	INVERTED_STYLE_CLASS: 'link--inverted'
 };
-export const ACTIVE_CLASS = 'active';
 export const VISIBILITY_CLASS = 'visible';
 export const SELECTED_CLASS = 'selected';
