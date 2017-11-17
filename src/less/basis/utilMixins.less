@@ -1,7 +1,17 @@
-.separateBorder(@size: 10px, @color: @gray-lighten65) {
+.separateBorder(@size: 10px, @color: @gray-lighten65, @stretch: false) {
 	content: '';
-	display: block;
 	width: @size;
 	height: 1px;
 	background: @color;
+
+	& when (@stretch = false) {
+		display: block;
+	}
+
+	& when (@stretch = true) {
+		display: flex;
+		flex-basis: auto;
+		flex-grow: 1;
+		flex-shrink: 0;
+	}
 }

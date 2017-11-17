@@ -8,6 +8,12 @@
 		flex-direction: row;
 		align-items: flex-end;
 		grid-area: header;
+
+		&:after {
+			.separateBorder(@stretch: true);
+			margin-bottom: 11px;
+			order: 2;
+		}
 	}
 
 	&.header--introHeader {
@@ -43,7 +49,11 @@
 
 	.pageName {
 		:not(.header--introHeader)& {
-			margin-right: 10px;
+			display: flex;
+			flex-grow: 0;
+			flex-shrink: 1;
+			margin-right: 20px;
+			order: 1;
 			font-size: @fontSize-base;
 			line-height: @lineHeight-base;
 			white-space: nowrap;
