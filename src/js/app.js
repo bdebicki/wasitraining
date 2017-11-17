@@ -1,8 +1,8 @@
 'use strict';
 
 import { DATA_URL } from './enums/data';
-// import { introView } from './views/introView'
-import { yearView } from './views/yearView'
+import { introView } from './views/introView'
+// import { yearView } from './views/yearView'
 
 import '../less/app.less';
 
@@ -10,12 +10,12 @@ function app() {
 	fetch(DATA_URL)
 		.then(response => response.json())
 		.then((data) => {
-			const year = new yearView(data, '16');
+			const intro = new introView(data);
 
-			year.render();
-			// const intro = new introView(data);
+			intro.render();
+			// const year = new yearView(data, '16');
 			//
-			// intro.render();
+			// year.render();
 		})
 		.catch((error) => {
 			console.log(error);
