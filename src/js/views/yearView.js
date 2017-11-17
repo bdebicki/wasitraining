@@ -4,7 +4,7 @@ import { LAYOUT, HEADER } from '../enums/elementHandlers';
 import { VIEW_TYPES } from '../enums/viewTypes';
 import { header } from '../components/header/header';
 import { title } from '../components/header/title';
-import { navTimeline } from '../components/timeline/navTimeline';
+import { timeline } from '../components/timeline/timeline';
 import { yearDetails } from '../components/yearDetails/yearDetails'
 import { bgVideo } from '../components/bgVideo/bgVideo';
 import { footer } from '../components/footer/footer';
@@ -23,9 +23,9 @@ export class yearView {
 	updateDetails(newEdition) {
 		const newEditionData = this.data[this.editionId];
 		const yearBlock = new yearDetails(newEditionData);
-		const navTimelineBlock = new navTimeline();
+		const timelineBlock = new timeline();
 
-		navTimelineBlock.updateSelectedEdition(newEdition);
+		timelineBlock.updateSelectedEdition(newEdition);
 		yearBlock.updateYearDetails();
 	}
 
@@ -33,12 +33,12 @@ export class yearView {
 		const yearBlock = new yearDetails(this.data[this.editionId], LAYOUT.MAIN_CONTAINER_ID);
 		const titleBlock = new title();
 		const headerBlock = new header();
-		const navTimelineBlock = new navTimeline(this.data, this.editionId, LAYOUT.HEADER_ID);
+		const timelineBlock = new timeline(this.data, LAYOUT.HEADER_ID, this.editionId);
 
 		this.updateViewTypeToYear();
 		titleBlock.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
 		headerBlock.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
-		navTimelineBlock.render();
+		timelineBlock.renderNavTimeline();
 		yearBlock.render();
 		document.getElementById(LAYOUT.MAIN_TIMELINE_ID).remove();
 	}
@@ -48,14 +48,14 @@ export class yearView {
 		const data = this.data;
 		const editionId = this.editionId;
 		const headerBlock = new header(data, body);
-		const navTimelineBlock = new navTimeline(data, editionId, LAYOUT.HEADER_ID);
+		const timelineBlock = new timeline(data, LAYOUT.HEADER_ID, editionId);
 		const yearBlock = new yearDetails(data[editionId], body);
 		const bgBlock = new bgVideo(body);
 		const footerBlock = new footer(body);
 
 		this.updateViewTypeToYear();
 		headerBlock.render();
-		navTimelineBlock.render();
+		timelineBlock.renderNavTimeline();
 		yearBlock.render();
 		bgBlock.render();
 		footerBlock.render();
