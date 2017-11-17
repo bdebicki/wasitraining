@@ -1,6 +1,6 @@
 #mainTimeline {
-	@navTimelineSize: 215px;
-	@navTimelineBorderSize: 1px;
+	@mainTimelineEditionSize: 215px;
+	@mainTimelineEditionBorderSize: 1px;
 
 	margin-left: -@mainContentWidth/2;
 	grid-area: intro;
@@ -21,7 +21,7 @@
 	}
 
 	.mainEdition {
-		width: @navTimelineSize + @navTimelineBorderSize;
+		width: @mainTimelineEditionSize + @mainTimelineEditionBorderSize;
 		height: 100%;
 		flex-grow: 1;
 		flex-shrink: 0;
@@ -32,7 +32,7 @@
 
 
 		&:first-child {
-			width: @navTimelineSize + 2 * @navTimelineBorderSize;
+			width: @mainTimelineEditionSize + 2 * @mainTimelineEditionBorderSize;
 			border-left: 1px solid fade(#fff, 40%);
 		}
 
