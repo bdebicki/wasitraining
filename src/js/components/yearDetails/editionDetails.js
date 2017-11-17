@@ -25,6 +25,7 @@ export class editionDetails extends edition {
 			const li = document.createElement('li');
 
 			li.textContent = item;
+			li.classList.add(EDITION.HEADLINER_CLASS);
 			fragment.appendChild(li);
 		});
 

@@ -40,12 +40,13 @@ export const TIMELINE = {
 };
 export const EDITION = {
 	EDITION_DETAILS_ID: 'editionDetails',
-	FULL_NAME_CLASS: 'fullName',
-	PLACE_CLASS: 'place',
-	YEAR_CLASS: 'editionYear',
-	DATES_CLASS: 'date',
-	HEADLINERS_CLASS: 'headliners',
-	LINEUP_LINK_CLASS: 'lineupDetailsLink'
+	FULL_NAME_CLASS: 'editionDetails__fullName',
+	PLACE_CLASS: 'editionDetails__place',
+	YEAR_CLASS: 'editionDetails__year',
+	DATES_CLASS: 'editionDetails__date',
+	HEADLINERS_CLASS: 'editionDetails__headliners',
+	HEADLINER_CLASS: 'headliners__headliner',
+	LINEUP_LINK_CLASS: 'editionDetails__lineupDetailsLink'
 };
 export const RAIN = {
 	RAIN_DETAILS_ID: 'rainDetails',
