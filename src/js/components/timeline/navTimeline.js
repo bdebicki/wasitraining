@@ -13,7 +13,7 @@ export class navTimeline {
 
 	updateSelectedEdition(newEdition) {
 		document.querySelector(`.${TIMELINE.NAV_EDITION_ACTIVE_CLASS}`).classList.remove(TIMELINE.NAV_EDITION_ACTIVE_CLASS);
-		newEdition.parentNode.classList.add(TIMELINE.NAV_EDITION_ACTIVE_CLASS);
+		newEdition.classList.add(TIMELINE.NAV_EDITION_ACTIVE_CLASS);
 	}
 
 	createTimelineContainer() {

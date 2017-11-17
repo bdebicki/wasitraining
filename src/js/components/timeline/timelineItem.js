@@ -100,11 +100,14 @@ export class timelineItem extends edition {
 		return a;
 	}
 
-	renderNavLink() {
+	renderNavLink(isActive) {
 		let a = document.createElement('a');
 
 		a.href = `#edition${this.editionId}`;
 		a.classList.add(TIMELINE.NAV_EDITION_LINK_CLASS);
+		if (isActive) {
+			a.classList.add(TIMELINE.NAV_EDITION_ACTIVE_CLASS);
+		}
 		a.addEventListener('click', this.switchEdition, null);
 		a.textContent = this.editionYear;
 
@@ -124,10 +127,7 @@ export class timelineItem extends edition {
 		let li = document.createElement('li');
 
 		li.classList.add(TIMELINE.NAV_EDITION_CLASS);
-		if(isActive) {
-			li.classList.add(TIMELINE.NAV_EDITION_ACTIVE_CLASS);
-		}
-		li.appendChild(this.renderNavLink());
+		li.appendChild(this.renderNavLink(isActive));
 
 		return li
 	}

@@ -35,8 +35,8 @@ export const TIMELINE = {
 	MAIN_EDITION_MASK_BG_CLASS: 'mainEditionMask__bg',
 	NAV_EDITIONS_CLASS: 'navEditionsList',
 	NAV_EDITION_CLASS: 'navEdition',
-	NAV_EDITION_ACTIVE_CLASS: 'navEdition--active',
 	NAV_EDITION_LINK_CLASS: 'navEdition__link',
+	NAV_EDITION_ACTIVE_CLASS: 'navEdition__link--active',
 };
 export const EDITION = {
 	EDITION_DETAILS_ID: 'editionDetails',
