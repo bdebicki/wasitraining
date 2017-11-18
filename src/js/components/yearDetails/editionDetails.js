@@ -1,6 +1,6 @@
 'use strict';
 
-import { EDITION } from '../../enums/elementHandlers';
+import { EDITION, LINK } from '../../enums/elementHandlers';
 import { edition } from '../../classes/edition';
 
 export class editionDetails extends edition {
@@ -71,6 +71,14 @@ export class editionDetails extends edition {
 		return fragment;
 	};
 
+	renderShortLineupContainer() {
+		let div = document.createElement('div');
+
+		div.classList.add(EDITION.LINEUP_CLASS);
+
+		return div;
+	}
+
 	updateHeadliners() {
 		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent =''; // to clear rain details list
 
@@ -87,14 +95,18 @@ export class editionDetails extends edition {
 	}
 
 	renderLineupLink() {
+		let p = document.createElement('p');
 		let a = document.createElement('a');
 
-		a.classList.add(EDITION.LINEUP_LINK_CLASS);
+		p.classList.add(EDITION.LINEUP_LINK_CLASS);
+		a.classList.add(LINK.BASIC_CLASS, LINK.INVERTED_STYLE_CLASS, LINK.SIZE_S_CLASS);
 		a.href = `#lineup`;
 		a.textContent = 'see full lineup';
 		a.addEventListener('click', this.toggleLineup, null);
 
-		return a;
+		p.appendChild(a);
+
+		return p;
 	}
 
 	updateEditionDetails() {
@@ -108,12 +120,14 @@ export class editionDetails extends edition {
 	render() {
 		let editionContainer = this.renderEditionContainer();
 		const editionDetails = this.renderEditionDetails();
+		const lineup = this.renderShortLineupContainer();
 		const headliners = this.renderHeadliners();
 		const lineupLink = this.renderLineupLink();
 
+		lineup.appendChild(headliners);
+		lineup.appendChild(lineupLink);
 		editionContainer.appendChild(editionDetails);
-		editionContainer.appendChild(headliners);
-		editionContainer.appendChild(lineupLink);
+		editionContainer.appendChild(lineup);
 
 		return editionContainer;
 	}

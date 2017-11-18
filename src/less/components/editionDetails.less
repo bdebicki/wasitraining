@@ -30,11 +30,32 @@
 			font-size: @fontSize-s;
 			line-height: @lineHeight-s;
 		}
+	}
+	.shortLineup {
+		display: flex;
+		width: 300px;
+		margin-top: 8px;
+		flex-direction: column;
+		justify-content: flex-end;
+
 		&__headliners {
-
+			display: flex;
+			margin-bottom: 1px;
+			flex-wrap: wrap;
+			color: @gray-lighten35;
+			font-size: @fontSize-xl;
+			font-weight: 900;
+			line-height: @lineHeight-xl;
 		}
-		&__lineupDetailsLink {
-
+		&__detailsLink {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+	.headliners {
+		&__headliner {
+			margin-right: 15px;
+			white-space: nowrap;
 		}
 	}
 }
