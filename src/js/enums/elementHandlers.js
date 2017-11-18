@@ -15,14 +15,14 @@ export const VIEWS = {
 };
 
 const headerClassBuilders = {
-	mainBuilder: LAYOUT.HEADER_ID,
-	titleBuilder: 'pageName',
+	main: LAYOUT.HEADER_ID,
+	title: 'pageName',
 };
 export const HEADER = {
-	INTRO_HEADER_CLASS: `${headerClassBuilders.mainBuilder}--introHeader`,
-	TITLE_CLASS: headerClassBuilders.titleBuilder,
-	TITLE_HEADER_CLASS: `${headerClassBuilders.titleBuilder}--introHeader`,
-	TITLE_LINK_CLASS: `${headerClassBuilders.titleBuilder}__link`,
+	INTRO_HEADER_CLASS: `${headerClassBuilders.main}--introHeader`,
+	TITLE_CLASS: headerClassBuilders.title,
+	TITLE_HEADER_CLASS: `${headerClassBuilders.title}--introHeader`,
+	TITLE_LINK_CLASS: `${headerClassBuilders.title}__link`,
 };
 
 const aboutClassBuilder = 'aboutSection';
@@ -56,18 +56,20 @@ export const TIMELINE = {
 };
 
 const editionClassBuilders = {
-	detailsBuilder: 'editionDetails',
+	details: 'editionDetails',
+	lineup: 'shortLineup',
 	headlines: 'headliners',
 };
 export const EDITION = {
-	EDITION_DETAILS_ID: editionClassBuilders.detailsBuilder,
-	FULL_NAME_CLASS: `${editionClassBuilders.detailsBuilder}__fullName`,
-	PLACE_CLASS: `${editionClassBuilders.detailsBuilder}__place`,
-	YEAR_CLASS: `${editionClassBuilders.detailsBuilder}__year`,
-	DATES_CLASS: `${editionClassBuilders.detailsBuilder}__date`,
-	HEADLINERS_CLASS: `${editionClassBuilders.detailsBuilder}__${editionClassBuilders.headlines}`,
+	EDITION_DETAILS_ID: editionClassBuilders.details,
+	FULL_NAME_CLASS: `${editionClassBuilders.details}__fullName`,
+	PLACE_CLASS: `${editionClassBuilders.details}__place`,
+	YEAR_CLASS: `${editionClassBuilders.details}__year`,
+	DATES_CLASS: `${editionClassBuilders.details}__date`,
+	LINEUP_CLASS: editionClassBuilders.lineup,
+	HEADLINERS_CLASS: `${editionClassBuilders.lineup}__${editionClassBuilders.headlines}`,
 	HEADLINER_CLASS: `${editionClassBuilders.headlines}__headliner`,
-	LINEUP_LINK_CLASS: `${editionClassBuilders.detailsBuilder}__lineupDetailsLink`,
+	LINEUP_LINK_CLASS: `${editionClassBuilders.lineup}__detailsLink`,
 };
 
 export const RAIN = {
@@ -85,6 +87,7 @@ const linkClassBuilder = 'link';
 export const LINK = {
 	BASIC_CLASS: linkClassBuilder,
 	INVERTED_STYLE_CLASS: `${linkClassBuilder}--inverted`,
+	SIZE_S_CLASS: `${linkClassBuilder}--sizeS`,
 };
 
 export const VISIBILITY_CLASS = 'visible';
