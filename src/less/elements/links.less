@@ -1,4 +1,7 @@
 .link {
+	@iconSpacing: 4px;
+	@underlineIconOffset: @iconSpacing + @plusIconSize;
+
 	.underline(@opacity: 0.2) {
 		content: '';
 		opacity: @opacity;
@@ -33,5 +36,20 @@
 	}
 	&--hasSkip {
 		text-shadow: -1px 0 #fff, 1px 0 #fff; //simulate text-decoration-skip
+	}
+	&--sizeS {
+		font-size: @fontSize-xxs;
+		line-height: @lineHeight-xxs;
+	}
+	&--hasIcon {
+		&:hover {
+			&:before {
+				width: ~'calc(100% - @{underlineIconOffset})';
+			}
+		}
+	}
+
+	&__icon {
+		margin-left: @iconSpacing;
 	}
 }

@@ -2,17 +2,15 @@
 	display: grid;
 	grid-area: details;
 	grid-template-columns: 530px 530px;
-	grid-template-rows: auto auto;
+	grid-template-rows: auto;
 	grid-template-areas: "edition rain";
 	grid-column-gap: 40px;
 }
 
-#editionDetails {
-	grid-area: edition;
-}
-
 #rainDetails {
 	grid-area: rain;
+	align-self: center;
+	justify-self: center;
 }
 
 #rainEditionDetails {
