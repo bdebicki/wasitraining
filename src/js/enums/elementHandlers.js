@@ -1,5 +1,11 @@
 `use strict`;
 
+export const globalClassBuilders = {
+	active: 'isActive',
+	visible: 'isVisible',
+	hidden: 'isHidden'
+};
+
 export const LAYOUT = {
 	MAIN_CONTAINER_ID: 'wiraof',
 	HEADER_ID: 'header',
@@ -52,7 +58,7 @@ export const TIMELINE = {
 	NAV_EDITIONS_CLASS: `${timelineClassBuilders.navTimelineItem}List`,
 	NAV_EDITION_CLASS: timelineClassBuilders.navTimelineItem,
 	NAV_EDITION_LINK_CLASS: `${timelineClassBuilders.navTimelineItem}__${timelineClassBuilders.link}`,
-	NAV_EDITION_ACTIVE_CLASS: `${timelineClassBuilders.navTimelineItem}__${timelineClassBuilders.link}--active`,
+	NAV_EDITION_ACTIVE_CLASS: `${timelineClassBuilders.navTimelineItem}__${timelineClassBuilders.link}--${globalClassBuilders.active}`,
 };
 
 const editionClassBuilders = {
@@ -83,11 +89,17 @@ export const VIDEO = {
 	VIDEO_CLASS: `${LAYOUT.BG_VIDEO_ID}__video`,
 };
 
+const iconClassBuilder = 'icon';
+export const ICONS = {
+	PLUS: `${iconClassBuilder}--plus`,
+};
+
 const linkClassBuilder = 'link';
 export const LINK = {
 	BASIC_CLASS: linkClassBuilder,
 	INVERTED_STYLE_CLASS: `${linkClassBuilder}--inverted`,
 	SIZE_S_CLASS: `${linkClassBuilder}--sizeS`,
+	ICON_CLASS: `${linkClassBuilder}__${iconClassBuilder}`,
 };
 
 export const VISIBILITY_CLASS = 'visible';

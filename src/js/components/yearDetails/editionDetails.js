@@ -2,6 +2,8 @@
 
 import { EDITION, LINK } from '../../enums/elementHandlers';
 import { edition } from '../../classes/edition';
+import { setIcon } from '../../utils/setIcon';
+import { icons } from '../../utils/iconsLibrary';
 
 export class editionDetails extends edition {
 	constructor(editionId) {
@@ -99,10 +101,11 @@ export class editionDetails extends edition {
 		let a = document.createElement('a');
 
 		p.classList.add(EDITION.LINEUP_LINK_CLASS);
-		a.classList.add(LINK.BASIC_CLASS, LINK.INVERTED_STYLE_CLASS, LINK.SIZE_S_CLASS);
+		a.classList.add(LINK.BASIC_CLASS, LINK.INVERTED_STYLE_CLASS, LINK.SIZE_S_CLASS, LINK.HAS_ICON_CLASS);
 		a.href = `#lineup`;
 		a.textContent = 'see full lineup';
 		a.addEventListener('click', this.toggleLineup, null);
+		a.appendChild(setIcon(icons.plus(), `${LINK.ICON_CLASS}`));
 
 		p.appendChild(a);
 
