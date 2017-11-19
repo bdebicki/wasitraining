@@ -14,10 +14,10 @@ export class rainDetails extends edition {
 		const target = this.getAttribute('href').replace('#', '');
 		let targetEl = document.getElementById(target);
 
-		if(targetEl.classList.contains(VISIBILITY_CLASS)) {
-			targetEl.classList.remove(VISIBILITY_CLASS);
+		if(targetEl.classList.contains(RAIN.DETAILS_HIDDEN_CLASS)) {
+			targetEl.classList.remove(RAIN.DETAILS_HIDDEN_CLASS);
 		} else {
-			targetEl.classList.add(VISIBILITY_CLASS);
+			targetEl.classList.add(RAIN.DETAILS_HIDDEN_CLASS);
 		}
 	}
 
@@ -26,21 +26,41 @@ export class rainDetails extends edition {
 
 		this.editionDetails.map((item) => {
 			const li = document.createElement('li');
+			const spanDay = document.createElement('span');
+			const spanRain = document.createElement('span');
 			const rain = item.rain ? 'yes' : 'no';
-			li.textContent = `${item.day} ${rain}`;
 
+			spanDay.classList.add(RAIN.DETAILS_ITEM_DAY_CLASS);
+			spanDay.textContent = item.day;
+			spanRain.classList.add(RAIN.DETAILS_ITEM_RAIN_CLASS);
+			spanRain.textContent = rain;
+			li.classList.add(RAIN.DETAILS_ITEM_CLASS);
+
+			li.appendChild(spanDay);
+			li.appendChild(spanRain);
 			fragment.appendChild(li);
 		});
 
 		return fragment;
 	}
 
-	renderRainDayDetailsLink() {
+	renderRainDetailsLink() {
 		let a = document.createElement('a');
 
 		a.classList.add(RAIN.DETAILS_LINK_CLASS);
-		a.href = `#${RAIN.EDITION_RAIN_DETAILS_ID}`;
+		a.href = `#${RAIN.DETAILS_ID}`;
 		a.textContent = 'more';
+		a.addEventListener('click', this.toggleDetails, null);
+
+		return a;
+	}
+
+	renderCloseRainDetails() {
+		let a = document.createElement('a');
+
+		a.classList.add(RAIN.CLOSE_DETAILS_CLASS);
+		a.href = `#${RAIN.DETAILS_ID}`;
+		a.textContent = 'close details';
 		a.addEventListener('click', this.toggleDetails, null);
 
 		return a;
@@ -50,10 +70,13 @@ export class rainDetails extends edition {
 		let section = document.createElement('section');
 		let header = document.createElement('header');
 		let rainHeadline = document.createElement('h3');
-		const moreLink = this.renderRainDayDetailsLink();
+		let moreLink = this.renderRainDetailsLink();
 
-		section.id = RAIN.RAIN_DETAILS_ID;
-		rainHeadline.textContent = 'rain';
+		section.id = RAIN.SECTION_ID;
+		header.classList.add(RAIN.HEADER_CLASS);
+		rainHeadline.textContent = 'Rain';
+		rainHeadline.classList.add(RAIN.HEADLINE_CLASS);
+		moreLink.classList.add(RAIN.DETAILS_LINK_CLASS);
 		header.appendChild(rainHeadline);
 		header.appendChild(moreLink);
 		section.appendChild(header);
@@ -64,37 +87,38 @@ export class rainDetails extends edition {
 	renderRainInfo() {
 		let p = document.createElement('p');
 
-		p.classList.add(RAIN.RAIN_CLASS);
+		p.classList.add(RAIN.INFO_CLASS);
 		p.textContent = this.editionRain;
 
 		return p;
 	}
 
 	updateRainDayDetails() {
-		document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).textContent =''; // to clear rain details list
+		document.getElementById(RAIN.DETAILS_ID).textContent =''; // to clear rain details list
 
 		return this.decorateRainDayDetails();
 	}
 
-	renderRainDayDetails() {
+	renderRainDetails() {
 		let ul = document.createElement('ul');
 
-		ul.id = RAIN.EDITION_RAIN_DETAILS_ID;
+		ul.id = RAIN.DETAILS_ID;
+		ul.classList.add(RAIN.DETAILS_HIDDEN_CLASS);
 		ul.appendChild(this.decorateRainDayDetails());
 
 		return ul;
 	}
 
 	updateRainDetails() {
-		document.querySelector(`.${RAIN.RAIN_CLASS}`).textContent = this.editionRain;
-		document.getElementById(RAIN.EDITION_RAIN_DETAILS_ID).appendChild(this.updateRainDayDetails());
+		document.querySelector(`.${RAIN.INFO_CLASS}`).textContent = this.editionRain;
+		document.getElementById(RAIN.DETAILS_ID).appendChild(this.updateRainDayDetails());
 	}
 
 	render() {
 		let fragment = document.createDocumentFragment();
 		let rainContainer = this.renderRainContainer();
 		const rainInfo = this.renderRainInfo();
-		const rainDetails = this.renderRainDayDetails();
+		const rainDetails = this.renderRainDetails();
 
 		fragment.appendChild(rainInfo);
 		fragment.appendChild(rainDetails);

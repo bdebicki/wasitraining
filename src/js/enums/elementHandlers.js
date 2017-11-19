@@ -78,11 +78,26 @@ export const EDITION = {
 	LINEUP_LINK_CLASS: `${editionClassBuilders.lineup}__detailsLink`,
 };
 
+const rainClassBuilders = {
+	section: 'rainSection',
+	info: 'rainInfo',
+	header: 'rainHeader',
+	details: 'rainDetails',
+	detailsItem: 'rainDetailsItem',
+};
 export const RAIN = {
-	RAIN_DETAILS_ID: `rainDetails`,
-	RAIN_CLASS: `rain`,
-	DETAILS_LINK_CLASS: `rainDetailsLink`,
-	EDITION_RAIN_DETAILS_ID: `rainEditionDetails`,
+	SECTION_ID: rainClassBuilders.section,
+	INFO_CLASS: rainClassBuilders.info,
+	HEADER_CLASS: rainClassBuilders.header,
+	HEADER_HIDDEN_CLASS: `${rainClassBuilders.header}--${globalClassBuilders.hidden}`,
+	HEADLINE_CLASS: `${rainClassBuilders.header}__headline`,
+	DETAILS_LINK_CLASS: `${rainClassBuilders.details}__link`,
+	CLOSE_DETAILS_CLASS: `${rainClassBuilders.details}__close`,
+	DETAILS_ID: rainClassBuilders.details,
+	DETAILS_HIDDEN_CLASS: `${rainClassBuilders.details}--${globalClassBuilders.hidden}`,
+	DETAILS_ITEM_CLASS: rainClassBuilders.detailsItem,
+	DETAILS_ITEM_DAY_CLASS: `${rainClassBuilders.detailsItem}__day`,
+	DETAILS_ITEM_RAIN_CLASS: `${rainClassBuilders.detailsItem}__rain`,
 };
 
 export const VIDEO = {
