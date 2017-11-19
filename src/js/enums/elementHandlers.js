@@ -100,8 +100,9 @@ export const RAIN = {
 	DETAILS_ITEM_RAIN_CLASS: `${rainClassBuilders.detailsItem}__rain`,
 };
 
-export const VIDEO = {
-	VIDEO_CLASS: `${LAYOUT.BG_VIDEO_ID}__video`,
+const bgClassBuilder = LAYOUT.BG_VIDEO_ID;
+export const BG = {
+	VIDEO_CLASS: `${bgClassBuilder}__video`,
 };
 
 const iconClassBuilder = 'icon';
