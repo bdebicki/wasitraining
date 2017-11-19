@@ -1,4 +1,7 @@
 .link {
+	@iconSpacing: 4px;
+	@underlineIconOffset: @iconSpacing + @plusIconSize;
+
 	.underline(@opacity: 0.2) {
 		content: '';
 		opacity: @opacity;
@@ -38,8 +41,15 @@
 		font-size: @fontSize-xxs;
 		line-height: @lineHeight-xxs;
 	}
+	&--hasIcon {
+		&:hover {
+			&:before {
+				width: ~'calc(100% - @{underlineIconOffset})';
+			}
+		}
+	}
 
 	&__icon {
-		margin-left: 4px;
+		margin-left: @iconSpacing;
 	}
 }
