@@ -1,6 +1,6 @@
 'use strict';
 
-import { RAIN, VISIBILITY_CLASS } from '../../enums/elementHandlers';
+import { RAIN, globalClassBuilders } from '../../enums/elementHandlers';
 import { edition } from '../../classes/edition';
 
 export class rainDetails extends edition {
@@ -12,12 +12,13 @@ export class rainDetails extends edition {
 		e.preventDefault();
 
 		const target = this.getAttribute('href').replace('#', '');
+		const targetHiddenClassName = `${target}--${globalClassBuilders.hidden}`;
 		let targetEl = document.getElementById(target);
 
-		if(targetEl.classList.contains(RAIN.DETAILS_HIDDEN_CLASS)) {
-			targetEl.classList.remove(RAIN.DETAILS_HIDDEN_CLASS);
+		if(targetEl.classList.contains(targetHiddenClassName)) {
+			targetEl.classList.remove(targetHiddenClassName);
 		} else {
-			targetEl.classList.add(RAIN.DETAILS_HIDDEN_CLASS);
+			targetEl.classList.add(targetHiddenClassName);
 		}
 	}
 
