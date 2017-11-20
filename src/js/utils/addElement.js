@@ -13,11 +13,17 @@ export function addSVGmask(maskSettings) {
 	let rectMask = document.createElementNS(svgType, 'rect');
 	let rectBg = document.createElementNS(svgType, 'rect');
 
-	svg.classList.add(SVG_MASK.MASK_CLASS, settings.svgClass);
+	svg.classList.add(SVG_MASK.MASK_CLASS);
+	if (settings.svgClass) {
+		svg.classList.add(settings.svgClass);
+	}
 	mask.id = maskId;
 	mask.setAttributeNS(null, 'maskUnits', 'userSpaceOnUse');
 	rectMask.classList.add(SVG_MASK.MASK_BASE_CLASS);
-	rectBg.classList.add(SVG_MASK.MASK_BG_CLASS, settings.maskBgClass);
+	rectBg.classList.add(SVG_MASK.MASK_BG_CLASS);
+	if (settings.maskBgClass) {
+		rectBg.classList.add(settings.maskBgClass);
+	}
 	rectBg.setAttributeNS(null, 'mask', `url(#${maskId})`);
 
 	mask.appendChild(rectMask);
