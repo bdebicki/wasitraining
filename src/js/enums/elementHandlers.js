@@ -118,5 +118,3 @@ export const LINK = {
 	HAS_ICON_CLASS: `${linkClassBuilder}--hasIcon`,
 	ICON_CLASS: `${linkClassBuilder}__${iconClassBuilder}`,
 };
-
-export const VISIBILITY_CLASS = 'visible';
