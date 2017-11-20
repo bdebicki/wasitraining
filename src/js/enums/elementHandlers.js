@@ -52,7 +52,6 @@ export const TIMELINE = {
 	MAIN_EDITION_LINK_CLASS: `${timelineClassBuilders.mainTimelineItem}__${timelineClassBuilders.link}`,
 	MAIN_EDITION_YEAR_CLASS: `${timelineClassBuilders.mainTimelineItem}__year`,
 	MAIN_EDITION_MASK_CLASS: timelineClassBuilders.mainTimelineItemMask,
-	MAIN_EDITION_MASK_RECT_CLASS: `${timelineClassBuilders.mainTimelineItemMask}__rect`,
 	MAIN_EDITION_MASK_TEXT_CLASS: `${timelineClassBuilders.mainTimelineItemMask}__text`,
 	MAIN_EDITION_MASK_BG_CLASS: `${timelineClassBuilders.mainTimelineItemMask}__bg`,
 	NAV_EDITIONS_CLASS: `${timelineClassBuilders.navTimelineItem}List`,
@@ -117,4 +116,11 @@ export const LINK = {
 	SIZE_S_CLASS: `${linkClassBuilder}--sizeS`,
 	HAS_ICON_CLASS: `${linkClassBuilder}--hasIcon`,
 	ICON_CLASS: `${linkClassBuilder}__${iconClassBuilder}`,
+};
+
+const svgMaskClassBuilder = 'svgMask';
+export const SVG_MASK = {
+	MASK_CLASS: svgMaskClassBuilder,
+	MASK_BASE_CLASS: `${svgMaskClassBuilder}__base`,
+	MASK_BG_CLASS: `${svgMaskClassBuilder}__bg`,
 };

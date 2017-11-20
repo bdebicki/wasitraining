@@ -1,7 +1,7 @@
 'use strict';
 
 import { LAYOUT, BG } from '../../enums/elementHandlers';
-import { addVideo } from '../../utils/addVideo';
+import { addVideo } from '../../utils/addElement';
 
 export class bgVideo {
 	constructor(target) {

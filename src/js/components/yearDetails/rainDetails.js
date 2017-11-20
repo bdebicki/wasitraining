@@ -1,6 +1,7 @@
 'use strict';
 
 import { RAIN, globalClassBuilders } from '../../enums/elementHandlers';
+import { addSVGmask } from '../../utils/addElement';
 import { edition } from '../../classes/edition';
 
 export class rainDetails extends edition {

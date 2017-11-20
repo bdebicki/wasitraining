@@ -2,6 +2,7 @@
 
 import { DATA_URL } from '../../enums/data';
 import { TIMELINE } from '../../enums/elementHandlers';
+import { addSVGmask, svgType } from '../../utils/addElement';
 import { edition } from '../../classes/edition';
 import { yearView } from '../../views/yearView';
 
@@ -46,35 +47,21 @@ export class timelineItem extends edition {
 
 	renderYearMask() {
 		const editionYear = this.editionYear;
-		const maskId = `yearMask${editionYear}`;
-		const xmlns = "http://www.w3.org/2000/svg";
-		let fragment = document.createDocumentFragment();
-		let svg = document.createElementNS(xmlns, 'svg');
-		let defs = document.createElementNS(xmlns, 'defs');
-		let mask = document.createElementNS(xmlns, 'mask');
-		let rectMask = document.createElementNS(xmlns, 'rect');
-		let textMask = document.createElementNS(xmlns, 'text');
-		let rectBg = document.createElementNS(xmlns, 'rect');
+		let textMask = document.createElementNS(svgType, 'text');
 
-		svg.classList.add(TIMELINE.MAIN_EDITION_MASK_CLASS);
-		mask.id = maskId;
-		mask.setAttributeNS(null, 'maskUnits', 'userSpaceOnUse');
-		rectMask.classList.add(TIMELINE.MAIN_EDITION_MASK_RECT_CLASS);
 		textMask.classList.add(TIMELINE.MAIN_EDITION_MASK_TEXT_CLASS);
 		textMask.setAttributeNS(null, 'x', '50%');
 		textMask.setAttributeNS(null, 'y', '50%');
 		textMask.textContent = editionYear;
-		rectBg.classList.add(TIMELINE.MAIN_EDITION_MASK_BG_CLASS);
-		rectBg.setAttributeNS(null, 'mask', `url(#${maskId})`);
 
-		mask.appendChild(rectMask);
-		mask.appendChild(textMask);
-		defs.appendChild(mask);
-		svg.appendChild(defs);
-		svg.appendChild(rectBg);
-		fragment.appendChild(svg);
+		const maskOptions = {
+			svgClass: TIMELINE.MAIN_EDITION_MASK_CLASS,
+			maskId: `yearMask${editionYear}`,
+			maskShape: textMask,
+			maskBgClass: TIMELINE.MAIN_EDITION_MASK_BG_CLASS,
+		};
 
-		return fragment;
+		return addSVGmask(maskOptions);
 	}
 
 	renderYear() {
