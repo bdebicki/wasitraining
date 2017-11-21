@@ -137,11 +137,13 @@ export class rainDetails extends edition {
 	}
 
 	selectRainInfo(target) {
-		target.dataset.rain = this.editionRain;
-
 		if (this.editionRain === true) {
+			target.classList.remove(RAIN.INFO_NO_CLASS);
+			target.classList.add(RAIN.INFO_YES_CLASS);
 			target.appendChild(this.renderRainInfoYes());
 		} else {
+			target.classList.remove(RAIN.INFO_YES_CLASS);
+			target.classList.add(RAIN.INFO_NO_CLASS);
 			target.appendChild(this.renderRainInfoNo());
 		}
 	}
@@ -157,7 +159,7 @@ export class rainDetails extends edition {
 
 	updateRainInfo() {
 		const rainInfo = document.querySelector(`.${RAIN.INFO_CLASS}`);
-		const currentRain = rainInfo.dataset.rain === "true";
+		const currentRain = rainInfo.classList.contains(RAIN.INFO_YES_CLASS);
 		const newRain = this.editionRain;
 
 		if (currentRain !== newRain) {
