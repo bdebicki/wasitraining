@@ -86,16 +86,6 @@ export class rainDetails extends edition {
 		return section;
 	}
 
-	renderRainInfo() {
-		let div = document.createElement('div');
-
-		div.classList.add(RAIN.INFO_CLASS);
-		div.appendChild(this.renderRainInfoNo());
-//		div.textContent = this.editionRain;
-
-		return div;
-	}
-
 	renderRainInfoYes() {
 		let fragment = document.createDocumentFragment();
 		let svgMask = document.createElementNS(svgType, 'path');
@@ -146,8 +136,38 @@ export class rainDetails extends edition {
 		return fragment;
 	}
 
+	selectRainInfo(target) {
+		target.dataset.rain = this.editionRain;
+
+		if (this.editionRain === true) {
+			target.appendChild(this.renderRainInfoYes());
+		} else {
+			target.appendChild(this.renderRainInfoNo());
+		}
+	}
+
+	renderRainInfo() {
+		let div = document.createElement('div');
+
+		div.classList.add(RAIN.INFO_CLASS);
+		this.selectRainInfo(div);
+
+		return div;
+	}
+
+	updateRainInfo() {
+		const rainInfo = document.querySelector(`.${RAIN.INFO_CLASS}`);
+		const currentRain = rainInfo.dataset.rain === "true";
+		const newRain = this.editionRain;
+
+		if (currentRain !== newRain) {
+			rainInfo.textContent = ''; // to clear rain info container
+			this.selectRainInfo(rainInfo);
+		}
+	}
+
 	updateRainDayDetails() {
-		document.getElementById(RAIN.DETAILS_ID).textContent =''; // to clear rain details list
+		document.getElementById(RAIN.DETAILS_ID).textContent = ''; // to clear rain details list
 
 		return this.decorateRainDayDetails();
 	}
@@ -163,7 +183,7 @@ export class rainDetails extends edition {
 	}
 
 	updateRainDetails() {
-		document.querySelector(`.${RAIN.INFO_CLASS}`).textContent = this.editionRain;
+		this.updateRainInfo();
 		document.getElementById(RAIN.DETAILS_ID).appendChild(this.updateRainDayDetails());
 	}
 
