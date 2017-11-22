@@ -1,7 +1,9 @@
 'use strict';
 
-import { RAIN, globalClassBuilders } from '../../enums/elementHandlers';
+import { LINK, RAIN, globalClassBuilders } from '../../enums/elementHandlers';
 import { addVideo, addSVGmask, svgType } from '../../utils/addElement';
+import { setIcon } from '../../utils/setIcon';
+import { icons } from '../../utils/iconsLibrary';
 import { edition } from '../../classes/edition';
 
 export class rainDetails extends edition {
@@ -49,9 +51,10 @@ export class rainDetails extends edition {
 	renderRainDetailsLink() {
 		let a = document.createElement('a');
 
-		a.classList.add(RAIN.DETAILS_LINK_CLASS);
+		a.classList.add(LINK.BASIC_CLASS, LINK.INVERTED_STYLE_CLASS, LINK.SIZE_S_CLASS, LINK.HAS_ICON_CLASS, RAIN.DETAILS_LINK_CLASS);
 		a.href = `#${RAIN.DETAILS_ID}`;
 		a.textContent = 'more';
+		a.appendChild(setIcon(icons.plus(), `${LINK.ICON_CLASS}`));
 		a.addEventListener('click', this.toggleDetails, null);
 
 		return a;

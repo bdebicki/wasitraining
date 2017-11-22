@@ -2,12 +2,34 @@
 	grid-area: rain;
 	align-self: center;
 	justify-self: center;
-}
 
-#rainDetails {
-}
-.rainDetails {
-	&--isHidden {
-		display: none;
+	.rainHeader {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+
+		&:after {
+			.separateBorder(@stretch: true);
+			margin-top: -1px;
+			order: 2;
+		}
+
+		&--isHidden {
+			visibility: hidden;
+		}
+
+		&__headline {
+			order: 1;
+		}
+	}
+
+	.rainDetails {
+		&--isHidden {
+			display: none;
+		}
+
+		&__link {
+			order: 3;
+		}
 	}
 }
