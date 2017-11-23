@@ -18,7 +18,7 @@ export class bgVideo {
 
 	renderVideo() {
 		const settings = {
-			className: BG.VIDEO_CLASS,
+			classNames: BG.VIDEO_CLASS,
 			src: '/videos/bg-video.webm',
 			placeholder: '/images/bg-img.png',
 			width: '1366',

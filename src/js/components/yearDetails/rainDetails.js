@@ -92,7 +92,7 @@ export class rainDetails extends edition {
 		let fragment = document.createDocumentFragment();
 		let svgMask = document.createElementNS(svgType, 'path');
 		const videoSettings = {
-			className: [RAIN.VIDEO_CLASS, RAIN.YES_VIDEO_CLASS],
+			classNames: [RAIN.VIDEO_CLASS, RAIN.YES_VIDEO_CLASS],
 			src: '/videos/yes-video.webm',
 			placeholder: '/images/yes-bg.png',
 			width: '426',
@@ -117,7 +117,7 @@ export class rainDetails extends edition {
 		let fragment = document.createDocumentFragment();
 		let svgMask = document.createElementNS(svgType, 'path');
 		const videoSettings = {
-			className: [RAIN.VIDEO_CLASS, RAIN.NO_VIDEO_CLASS],
+			classNames: [RAIN.VIDEO_CLASS, RAIN.NO_VIDEO_CLASS],
 			src: '/videos/no-video.webm',
 			placeholder: '/images/no-bg.png',
 			width: '360',

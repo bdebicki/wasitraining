@@ -40,12 +40,12 @@ export function addVideo(videoSettings) {
 	const settings = videoSettings;
 	let video = document.createElement('video');
 
-	if (Array.isArray(settings.className)) {
-		settings.className.map((className) => {
+	if (Array.isArray(settings.classNames)) {
+		settings.classNames.map((className) => {
 			video.classList.add(className);
 		});
 	} else {
-		video.classList.add(settings.className);
+		video.classList.add(settings.classNames);
 	}
 	video.setAttribute('src', settings.src);
 	video.setAttribute('poster', settings.placeholder);
