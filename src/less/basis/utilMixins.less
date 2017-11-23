@@ -1,4 +1,4 @@
-.separateBorder(@size: 10px, @color: @gray-lighten65, @stretch: false) {
+.separateBorder(@size: 10px, @color: @gray-lighten65, @stretch: false, @marginRight: @separatorOffset, @marginLeft: @separatorOffset) {
 	content: '';
 	width: @size;
 	height: 1px;
@@ -10,8 +10,8 @@
 
 	& when (@stretch = true) {
 		display: flex;
-		margin-right: 20px;
-		margin-left: 20px;
+		margin-right: @marginRight;
+		margin-left: @marginLeft;
 		flex-basis: auto;
 		flex-grow: 1;
 		flex-shrink: 0;

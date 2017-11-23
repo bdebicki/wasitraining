@@ -81,7 +81,6 @@ export class rainDetails extends edition {
 		header.classList.add(RAIN.HEADER_CLASS);
 		rainHeadline.textContent = 'Rain';
 		rainHeadline.classList.add(RAIN.HEADLINE_CLASS);
-		moreLink.classList.add(RAIN.DETAILS_LINK_CLASS);
 		header.appendChild(rainHeadline);
 		header.appendChild(moreLink);
 		section.appendChild(header);
@@ -172,9 +171,18 @@ export class rainDetails extends edition {
 	}
 
 	updateRainDayDetails() {
-		document.getElementById(RAIN.DETAILS_ID).textContent = ''; // to clear rain details list
+		const rainDetailsEl = document.getElementById(RAIN.DETAILS_ID);
 
-		return this.decorateRainDayDetails();
+		if (rainDetailsEl && this.editionRain) {
+			rainDetailsEl.textContent = ''; // to clear rain details list
+			rainDetailsEl.appendChild(this.decorateRainDayDetails());
+		} else if (!rainDetailsEl && this.editionRain) {
+			document.querySelector(`.${RAIN.HEADER_CLASS}`).appendChild(this.renderRainDetailsLink());
+			document.getElementById(RAIN.SECTION_ID).appendChild(this.renderRainDetails());
+		} else {
+			document.querySelector(`.${RAIN.DETAILS_LINK_CLASS}`).remove();
+			rainDetailsEl.remove();
+		}
 	}
 
 	renderRainDetails() {
@@ -189,7 +197,7 @@ export class rainDetails extends edition {
 
 	updateRainDetails() {
 		this.updateRainInfo();
-		document.getElementById(RAIN.DETAILS_ID).appendChild(this.updateRainDayDetails());
+		this.updateRainDayDetails();
 	}
 
 	render() {
