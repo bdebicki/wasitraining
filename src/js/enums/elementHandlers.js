@@ -133,3 +133,11 @@ export const SVG_MASK = {
 	MASK_BASE_CLASS: `${svgMaskClassBuilder}__base`,
 	MASK_BG_CLASS: `${svgMaskClassBuilder}__bg`,
 };
+
+
+const dialogboxClassBuilder = 'dialogbox';
+export const DIALOGBOX = {
+	BASIC_CLASS: dialogboxClassBuilder,
+	HEADER_CLASS: `${dialogboxClassBuilder}__header`,
+	CLOSE_CLASS: `${dialogboxClassBuilder}__close`,
+};
