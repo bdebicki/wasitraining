@@ -93,14 +93,14 @@ export class rainDetails extends edition {
 		let fragment = document.createDocumentFragment();
 		let svgMask = document.createElementNS(svgType, 'path');
 		const videoSettings = {
-			className: RAIN.YES_VIDEO_CLASS,
+			className: [RAIN.VIDEO_CLASS, RAIN.YES_VIDEO_CLASS],
 			src: '/videos/yes-video.webm',
 			placeholder: '/images/yes-bg.png',
 			width: '426',
 			height: '240',
 		};
 		const maskSettings = {
-			svgClass: RAIN.YES_MASK_CLASS,
+			svgClass: RAIN.MASK_CLASS,
 			maskId: 'rainInfoMask',
 			maskShape: svgMask,
 		};
@@ -118,14 +118,14 @@ export class rainDetails extends edition {
 		let fragment = document.createDocumentFragment();
 		let svgMask = document.createElementNS(svgType, 'path');
 		const videoSettings = {
-			className: RAIN.NO_VIDEO_CLASS,
+			className: [RAIN.VIDEO_CLASS, RAIN.NO_VIDEO_CLASS],
 			src: '/videos/no-video.webm',
 			placeholder: '/images/no-bg.png',
 			width: '360',
 			height: '240',
 		};
 		const maskSettings = {
-			svgClass: RAIN.NO_MASK_CLASS,
+			svgClass: RAIN.MASK_CLASS,
 			maskId: 'rainInfoMask',
 			maskShape: svgMask,
 		};
