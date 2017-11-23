@@ -82,7 +82,7 @@ const rainClassBuilders = {
 	info: 'rainInfo',
 	header: 'rainHeader',
 	details: 'rainDetails',
-	detailsItem: 'rainDetailsItem',
+	detailsList: 'rainDetailsList',
 };
 export const RAIN = {
 	SECTION_ID: rainClassBuilders.section,
@@ -102,9 +102,10 @@ export const RAIN = {
 	CLOSE_DETAILS_CLASS: `${rainClassBuilders.details}__close`,
 	DETAILS_ID: rainClassBuilders.details,
 	DETAILS_HIDDEN_CLASS: `${rainClassBuilders.details}--${globalClassBuilders.hidden}`,
-	DETAILS_ITEM_CLASS: rainClassBuilders.detailsItem,
-	DETAILS_ITEM_DAY_CLASS: `${rainClassBuilders.detailsItem}__day`,
-	DETAILS_ITEM_RAIN_CLASS: `${rainClassBuilders.detailsItem}__rain`,
+	DETAILS_LIST_CLASS: rainClassBuilders.detailsList,
+	DETAILS_ITEM_CLASS: `${rainClassBuilders.detailsList}__item`,
+	DETAILS_ITEM_DAY_CLASS: `${rainClassBuilders.detailsList}__day`,
+	DETAILS_ITEM_RAIN_CLASS: `${rainClassBuilders.detailsList}__rain`,
 };
 
 const bgClassBuilder = LAYOUT.BG_VIDEO_ID;
@@ -135,9 +136,13 @@ export const SVG_MASK = {
 };
 
 
-const dialogboxClassBuilder = 'dialogbox';
+const dialogboxClassBuilder = {
+	mainBuilder: 'dialogbox',
+	header: 'dialogboxHeader'
+};
 export const DIALOGBOX = {
-	BASIC_CLASS: dialogboxClassBuilder,
-	HEADER_CLASS: `${dialogboxClassBuilder}__header`,
-	CLOSE_CLASS: `${dialogboxClassBuilder}__close`,
+	BASIC_CLASS: dialogboxClassBuilder.mainBuilder,
+	HEADER_CLASS: dialogboxClassBuilder.header,
+	HEADLINE_CLASS: `${dialogboxClassBuilder.header}__headline`,
+	CLOSE_CLASS: `${dialogboxClassBuilder.mainBuilder}__close`,
 };
