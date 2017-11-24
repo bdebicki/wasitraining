@@ -1,11 +1,14 @@
 #rainSection {
+	@rainInfoRightOffset: 10px;
+
 	grid-area: rain;
+	position: relative;
 	align-self: center;
 	justify-self: center;
 
 	.rainHeader {
 		display: flex;
-		margin-right: 7px;
+		margin-right: @rainInfoRightOffset;
 		margin-bottom: 7px;
 		align-items: center;
 		flex-direction: row;
@@ -68,8 +71,8 @@
 	}
 
 	.rainDetails {
-		&--isHidden {
-			display: none;
+		.dialogbox__header {
+			margin-right: @rainInfoRightOffset;
 		}
 
 		&__link {
