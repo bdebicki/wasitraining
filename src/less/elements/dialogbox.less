@@ -1,0 +1,29 @@
+.dialogbox {
+	.strechPosition();
+	display: none;
+	z-index: 2;
+	background: fade(#fff, 97%);
+
+	&--isVisible {
+		display: block;
+	}
+
+	&__header {
+		display: flex;
+		margin-bottom: 7px;
+		align-items: center;
+		flex-direction: row;
+
+		&:after {
+			.separateBorder(@stretch: true);
+			margin-top: -1px;
+			order: 2;
+		}
+	}
+	&__headline {
+		order: 1;
+	}
+	&__close {
+		order: 3;
+	}
+}

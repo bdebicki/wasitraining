@@ -101,7 +101,7 @@ export const RAIN = {
 	DETAILS_LINK_CLASS: `${rainClassBuilders.details}__link`,
 	CLOSE_DETAILS_CLASS: `${rainClassBuilders.details}__close`,
 	DETAILS_ID: rainClassBuilders.details,
-	DETAILS_HIDDEN_CLASS: `${rainClassBuilders.details}--${globalClassBuilders.hidden}`,
+	DETAILS_CLASS: rainClassBuilders.details,
 	DETAILS_LIST_CLASS: rainClassBuilders.detailsList,
 	DETAILS_ITEM_CLASS: `${rainClassBuilders.detailsList}__item`,
 	DETAILS_ITEM_DAY_CLASS: `${rainClassBuilders.detailsList}__day`,
@@ -116,6 +116,8 @@ export const BG = {
 const iconClassBuilder = 'icon';
 export const ICONS = {
 	PLUS: `${iconClassBuilder}--plus`,
+	CLOSE: `${iconClassBuilder}--close`,
+	CLOSE_RECT: `${iconClassBuilder}--close__line`,
 };
 
 const linkClassBuilder = 'link';
@@ -136,13 +138,11 @@ export const SVG_MASK = {
 };
 
 
-const dialogboxClassBuilder = {
-	mainBuilder: 'dialogbox',
-	header: 'dialogboxHeader'
-};
+const dialogboxClassBuilder = 'dialogbox';
 export const DIALOGBOX = {
-	BASIC_CLASS: dialogboxClassBuilder.mainBuilder,
-	HEADER_CLASS: dialogboxClassBuilder.header,
-	HEADLINE_CLASS: `${dialogboxClassBuilder.header}__headline`,
-	CLOSE_CLASS: `${dialogboxClassBuilder.mainBuilder}__close`,
+	BASIC_CLASS: dialogboxClassBuilder,
+	VISIBLE_CLASS: `${dialogboxClassBuilder}--${globalClassBuilders.visible}`,
+	HEADER_CLASS: `${dialogboxClassBuilder}__header`,
+	HEADLINE_CLASS: `${dialogboxClassBuilder}__headline`,
+	CLOSE_CLASS: `${dialogboxClassBuilder}__close`,
 };
