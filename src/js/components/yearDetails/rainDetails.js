@@ -179,6 +179,7 @@ export class rainDetails extends edition {
 			document.querySelector(`.${RAIN.HEADER_CLASS}`).appendChild(this.renderRainDetailsLink());
 			document.getElementById(RAIN.SECTION_ID).appendChild(this.renderRainDetails());
 		} else {
+			document.querySelector(`.${RAIN.HEADER_CLASS}`).classList.remove(RAIN.HEADER_HIDDEN_CLASS);
 			document.querySelector(`.${RAIN.DETAILS_LINK_CLASS}`).remove();
 			rainDetailsEl.remove();
 		}
