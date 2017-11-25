@@ -1,0 +1,112 @@
+#rainSection {
+	@rainInfoRightOffset: 10px;
+
+	grid-area: rain;
+	position: relative;
+	align-self: center;
+	justify-self: center;
+
+	.rainHeader {
+		display: flex;
+		margin-right: @rainInfoRightOffset;
+		margin-bottom: 7px;
+		align-items: center;
+		flex-direction: row;
+
+		&:after {
+			.separateBorder(@stretch: true, @marginRight: 0);
+			margin-top: -1px;
+			order: 2;
+		}
+
+		&--isHidden {
+			visibility: hidden;
+		}
+
+		&__headline {
+			order: 1;
+		}
+	}
+
+	.rainInfo {
+		height: 157px;
+		position: relative;
+		overflow: hidden;
+
+		&--yes {
+			width: 405px;
+		}
+		&--no {
+			width: 309px;
+		}
+
+		&__video {
+			position: relative;
+			z-index: 1;
+
+			&--yes {
+				top: -52px;
+				left: -11px;
+			}
+			&--no {
+				top: -35px;
+				left: -35px;
+			}
+		}
+
+		&__mask {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2;
+		}
+		&__maskShape {
+			&--yes {
+				transform: translate(-3px, 154px);
+			}
+			&--no {
+				transform: translate(-7px, 144px);
+			}
+		}
+	}
+
+	.rainDetails {
+		flex-direction: column;
+
+		.dialogbox__header {
+			flex-grow: 0;
+			margin-right: @rainInfoRightOffset;
+		}
+
+		&__link {
+			margin-left: @separatorOffset;
+			order: 3;
+		}
+
+		&List {
+			margin-top: auto;
+			margin-bottom: auto;
+
+			&__item {
+				display: flex;
+				font-size: @fontSize-xxl;
+				line-height: @lineHeight-xxl;
+				align-items: center;
+
+				&:after {
+					.separateBorder(@size: 15px, @marginRight: 10px, @marginLeft: 10px);
+					margin-top: 6px;
+					order: 2;
+				}
+			}
+			&__day {
+				width: 220px;
+				order: 1;
+				text-align: right;
+			}
+			&__rain {
+				order: 3;
+			}
+		}
+	}
+}

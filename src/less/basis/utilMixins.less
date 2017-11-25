@@ -1,7 +1,9 @@
-.separateBorder(@size: 10px, @color: @gray-lighten65, @stretch: false) {
+.separateBorder(@size: 10px, @color: @gray-lighten65, @stretch: false, @marginRight: @separatorOffset, @marginLeft: @separatorOffset) {
 	content: '';
 	width: @size;
 	height: 1px;
+	margin-right: @marginRight;
+	margin-left: @marginLeft;
 	background: @color;
 
 	& when (@stretch = false) {

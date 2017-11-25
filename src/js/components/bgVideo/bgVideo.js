@@ -1,6 +1,7 @@
 'use strict';
 
-import { LAYOUT, VIDEO } from '../../enums/elementHandlers';
+import { LAYOUT, BG } from '../../enums/elementHandlers';
+import { addVideo } from '../../utils/addElement';
 
 export class bgVideo {
 	constructor(target) {
@@ -16,23 +17,21 @@ export class bgVideo {
 	}
 
 	renderVideo() {
-		let video = document.createElement('video');
+		const settings = {
+			classNames: BG.VIDEO_CLASS,
+			src: '/videos/bg-video.webm',
+			placeholder: '/images/bg-img.png',
+			width: '1366',
+			height: '768',
+		};
 
-		video.classList.add(VIDEO.VIDEO_CLASS);
-		video.setAttribute('src', '/videos/bg-video.webm');
-		video.setAttribute('poster', '/images/bg-img.png');
-		video.width = '1366';
-		video.height = '768';
-		video.setAttribute('autoplay', '');
-		video.setAttribute('loop', '');
-
-		return video;
+		return addVideo(settings)
 	}
 
 	renderImg() {
 		let img = document.createElement('img');
 
-		img.classList.add(VIDEO.VIDEO_CLASS);
+		img.classList.add(BG.VIDEO_CLASS);
 		img.src = '/images/bg-img.png';
 		img.width = '1366';
 		img.height = '768';

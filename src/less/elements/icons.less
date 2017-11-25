@@ -1,8 +1,18 @@
 @plusIconSize: 6px;
+@closeIconSize: 10px;
 
 .icon {
 	&--plus {
 		width: @plusIconSize;
 		height: @plusIconSize;
+	}
+	&--close {
+		width: @closeIconSize;
+		height: @closeIconSize;
+
+		&__line {
+			transform: rotate(45deg);
+			transform-origin: 50% 50%;
+		}
 	}
 }
