@@ -195,9 +195,11 @@ export class rainDetails extends edition {
 			title: 'Rain',
 			content: ul,
 			closeAction: this.toggleDetails,
+			closeTitle: 'hide rain details',
 		};
 
 		ul.classList.add(RAIN.DETAILS_LIST_CLASS);
+
 		ul.appendChild(this.decorateRainDayDetails());
 
 		return addDialogbox(dialogboxSettings);
