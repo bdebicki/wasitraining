@@ -80,7 +80,9 @@ export class rainDetails extends edition {
 		rainHeadline.textContent = 'Rain';
 		rainHeadline.classList.add(RAIN.HEADLINE_CLASS);
 		header.appendChild(rainHeadline);
-		header.appendChild(moreLink);
+		if (this.editionRain) {
+			header.appendChild(moreLink);
+		}
 		section.appendChild(header);
 
 		return section;
@@ -213,7 +215,9 @@ export class rainDetails extends edition {
 		const rainDetails = this.renderRainDetails();
 
 		fragment.appendChild(rainInfo);
-		fragment.appendChild(rainDetails);
+		if (this.editionRain) {
+			fragment.appendChild(rainDetails);
+		}
 		rainContainer.appendChild(fragment);
 
 		return rainContainer;
