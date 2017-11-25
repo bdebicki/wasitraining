@@ -1,11 +1,41 @@
-@footerHeight: 50px;
+@footerHeight: 31px;
+@footerSectionsHeight: @lineHeight-xxs;
 
 #footer {
 	display: flex;
 	height: @footerHeight;
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	grid-area: footer;
 	justify-content: space-between;
+	font-size: @fontSize-xxs;
+	line-height: @lineHeight-xxs;
+
+	.wiraof--introView & {
+		color: #fff;
+	}
+}
+
+.cookiesSection {
+	height: @footerSectionsHeight;
+}
+
+.aboutSection {
+	display: flex;
+	height: @footerSectionsHeight;
+	align-items: center;
+
+	&:after {
+		.separateBorder(@size: 15px, @marginRight: 5px, @marginLeft: 5px);
+		order: 2;
+
+		.wiraof--introView & {
+			background: fade(#fff, 22%);
+		}
+	}
+
+	&__copyrights {
+		order: 1;
+	}
+	&__aboutLink {
+		order: 3;
+	}
 }

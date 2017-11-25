@@ -1,0 +1,110 @@
+/* CORE: global styles */
+
+//local vars
+@defaultFontColor: @gray-darken10;
+@selectionColor: @gray-lighten65;
+@selectionFontColor: @gray-darken10;
+@linkColor: @gray-darken15;
+
+@h1color: inherit;
+@h2color: inherit;
+@h3color: inherit;
+@h4color: inherit;
+@h5color: inherit;
+
+@defaultFontSize: @fontSize-base;
+@h1fontSize: @fontSize-xxxl;
+@h2fontSize: @fontSize-xxxxl;
+@h3fontSize: @fontSize-base;
+@h4fontSize: @fontSize-xs;
+@h5fontSize: @fontSize-xxs;
+
+@defaultLineHeight: @lineHeight-base;
+@h1lineHeight: @lineHeight-xxxl;
+@h2lineHeight: @lineHeight-xxxxl;
+@h3lineHeight: @lineHeight-base;
+@h4lineHeight: @lineHeight-xs;
+@h5lineHeight: @lineHeight-xxs;
+
+
+html {
+	height: 100%;
+	min-height: 100%;
+	background: #ffffff;
+	color: @defaultFontColor;
+}
+body {
+	min-width: 320px;
+	height: 100%;
+	font-family: @fontFamily-base, sans-serif;
+	font-size: @defaultFontSize;
+	line-height: @defaultLineHeight;
+}
+
+h1 {
+	color: @h1color;
+	font-size: @h1fontSize;
+	line-height: @h1lineHeight;
+}
+h2 {
+	color: @h2color;
+	font-size: @h2fontSize;
+	font-weight: 900;
+	line-height: @h2lineHeight;
+}
+h3 {
+	color: @h3color;
+	font-size: @h3fontSize;
+	line-height: @h3lineHeight;
+	text-transform: uppercase;
+}
+h4 {
+	color: @h4color;
+	font-size: @h4fontSize;
+	line-height: @h4lineHeight;
+}
+h5 {
+	color: @h5color;
+	font-size: @h5fontSize;
+	line-height: @h5lineHeight;
+}
+
+.textContainer {
+	p,
+	ul,
+	ol,
+	address {
+		margin-bottom: @defaultLineHeight;
+	}
+	p {
+		ul,
+		ol {
+			margin-top: -@defaultLineHeight;
+		}
+	}
+	ol {
+		padding-left: 22px;
+
+		li {
+			list-style: decimal;
+		}
+	}
+}
+
+ol,
+ul,
+nav {
+	& & {
+		margin-bottom: 0;
+	}
+}
+
+a {
+	color: @linkColor;
+	text-decoration: none;
+}
+
+::selection {
+	background: @selectionColor;
+	color: @selectionFontColor;
+}

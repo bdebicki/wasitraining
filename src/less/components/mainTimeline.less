@@ -1,0 +1,70 @@
+#mainTimeline {
+	@mainTimelineEditionSize: 215px;
+	@mainTimelineEditionBorderSize: 1px;
+
+	margin-left: -@mainContentWidth/2;
+	grid-area: intro;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+
+	@media screen and (max-width: (@mainContentWidth + (2 * @bodyOffset))) {
+		margin-left: 0;
+		left: @bodyOffset;
+	}
+
+	.mainTimelineItemList {
+		display: flex;
+		height: 100%;
+		flex-direction: row;
+	}
+
+	.mainTimelineItem {
+		width: @mainTimelineEditionSize + @mainTimelineEditionBorderSize;
+		height: 100%;
+		flex-grow: 1;
+		flex-shrink: 0;
+		border-right: 1px solid fade(#fff, 40%);
+		font-size: @fontSize-xxxxl;
+		font-weight: 900;
+		line-height: @lineHeight-xxxxl;
+
+
+		&:first-child {
+			width: @mainTimelineEditionSize + 2 * @mainTimelineEditionBorderSize;
+			border-left: 1px solid fade(#fff, 40%);
+		}
+
+		&__link {
+			display: flex;
+			height: 100%;
+			position: relative;
+		}
+		&__year {
+			.strechPosition();
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+		}
+
+		&:hover {
+			.mainTimelineItem__year {
+				display: none;
+			}
+			.mainTimelineItemMask__bg {
+				fill: #fff;
+			}
+		}
+	}
+	.mainTimelineItemMask {
+		&__text {
+			text-anchor: middle;
+			transform: translateY(20px); // ¯\_(ツ)_/¯ svg + grid + 100% height = 💥
+		}
+		&__bg {
+			fill: transparent;
+		}
+	}
+}

@@ -1,18 +1,18 @@
-/* ELEMENT: icons */
+@plusIconSize: 6px;
+@closeIconSize: 10px;
 
+.icon {
+	&--plus {
+		width: @plusIconSize;
+		height: @plusIconSize;
+	}
+	&--close {
+		width: @closeIconSize;
+		height: @closeIconSize;
 
-[class^="icon-"],
-[class*=" icon-"] {
-	&:before {
-		text-align: center;
-		font-family: 'icons-set';
-		font-style: normal;
-		font-weight: normal;
-		font-variant: normal;
-		speak: none;
-		text-transform: none;
-		line-height: 100%;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
+		&__line {
+			transform: rotate(45deg);
+			transform-origin: 50% 50%;
+		}
 	}
 }

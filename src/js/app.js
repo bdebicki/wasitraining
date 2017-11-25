@@ -2,6 +2,7 @@
 
 import { DATA_URL } from './enums/data';
 import { introView } from './views/introView'
+// import { yearView } from './views/yearView'
 
 import '../less/app.less';
 
@@ -12,6 +13,9 @@ function app() {
 			const intro = new introView(data);
 
 			intro.render();
+			// const year = new yearView(data, '16');
+			//
+			// year.render();
 		})
 		.catch((error) => {
 			console.log(error);

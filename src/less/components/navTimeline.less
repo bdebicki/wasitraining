@@ -1,0 +1,40 @@
+#navTimeline {
+	display: flex;
+	flex-grow: 0;
+	flex-shrink: 1;
+	margin-bottom: -1px;
+	order: 3;
+
+	.navTimelineItemList {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.navTimelineItem {
+		font-size: @fontSize-s;
+		line-height: @lineHeight-s;
+
+		+ .navTimelineItem {
+			margin-left: 12px;
+		}
+
+		&__link {
+			position: relative;
+			color: @gray-lighten30;
+
+			&--isActive {
+				color: @gray-darken10;
+
+				&:before {
+					content: '';
+					height: 2px;
+					position: absolute;
+					right: -3px;
+					bottom: -3px;
+					left: -3px;
+					background: currentColor;
+				}
+			}
+		}
+	}
+}
