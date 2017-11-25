@@ -2,6 +2,8 @@
 	content: '';
 	width: @size;
 	height: 1px;
+	margin-right: @marginRight;
+	margin-left: @marginLeft;
 	background: @color;
 
 	& when (@stretch = false) {
@@ -10,8 +12,6 @@
 
 	& when (@stretch = true) {
 		display: flex;
-		margin-right: @marginRight;
-		margin-left: @marginLeft;
 		flex-basis: auto;
 		flex-grow: 1;
 		flex-shrink: 0;

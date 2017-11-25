@@ -71,13 +71,42 @@
 	}
 
 	.rainDetails {
+		flex-direction: column;
+
 		.dialogbox__header {
+			flex-grow: 0;
 			margin-right: @rainInfoRightOffset;
 		}
 
 		&__link {
 			margin-left: @separatorOffset;
 			order: 3;
+		}
+
+		&List {
+			margin-top: auto;
+			margin-bottom: auto;
+
+			&__item {
+				display: flex;
+				font-size: @fontSize-xxl;
+				line-height: @lineHeight-xxl;
+				align-items: center;
+
+				&:after {
+					.separateBorder(@size: 15px, @marginRight: 10px, @marginLeft: 10px);
+					margin-top: 6px;
+					order: 2;
+				}
+			}
+			&__day {
+				width: 220px;
+				order: 1;
+				text-align: right;
+			}
+			&__rain {
+				order: 3;
+			}
 		}
 	}
 }
