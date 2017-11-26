@@ -730,7 +730,7 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"headliners": ["Drake,", "The Libertines", "Major Lazer", "Mumford & Sons", "Kasabian", "Disclosure"],
+		"headliners": ["Drake", "The Libertines", "Major Lazer", "Mumford & Sons", "Kasabian", "Disclosure"],
 		"details": [
 			{
 				"day": "1st July",
@@ -741,10 +741,10 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2015"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Drake"],
+					"primary": ["Alt-J", "Alabama Shakes", "A$AP Rocky", "Chet Faker", "Die Antwoord", "Modest Mouse"],
+					"secondary": ["Father John Misty", "Kodaline", "Natalia Przybysz", "Two Gallants"],
+					"other": ["HV/NOON", "Klaves", "Milky Wishlake", "W.E.N.A. x E.A.B.S", {"artist": "Golan", "visible": false}, {"artist": "Dakh Daughters", "visible": false}, {"artist": "Zeppy Zep", "visible": false}, {"artist": "Flirtini", "visible": false}]
 				}
 			}, {
 				"day": "2nd July",
@@ -755,10 +755,10 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2015"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["The Libertines", "Major Lazer"],
+					"primary": ["Enter Shikari", "Faithless 2.0", "Refused", {"artist": "Kendrick Lamar", "canceled": true}],
+					"secondary": ["Curly Heads", "Django Django", "Eagles Of The Death Metal", "Fisz Emade Tworzywo", "Marmozets", "Of Montreal", "Tom Odell"],
+					"other": ["Fismoll", "Małe Miasta", "Mary Komasa",  "Oxford Drama","Rysy", {"artist": "Groh + Buszkers", "visible": false}, {"artist": "Sonar Soul + Spisek1", "visible": false}, {"artist": "Daniel Drumz", "visible": false}]
 				}
 			}, {
 				"day": "3rd July",
@@ -769,10 +769,10 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2015"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Mumford & Sons"],
+					"primary": ["D'Angelo & The Vanguard", "Of Monsters and Men", {"artist": "The Prodigy", "decorator": "bold"}],
+					"secondary": ["Jonny Greenwood & LCO", "José Gonzalez", "Julia Marcell", "Swans", {"artist": "The Dumplings", "canceled": true}, {"artist": "Domowe Melodie", "replacement": true}, "The Vaccines", "Thurston Moore"],
+					"other": ["Agness B. Marry", "Min T", "Nervy", {"artist": "Taco Hemingway", "visible": false}, {"artist": "Rebel Babel Ensemble", "visible": false}, {"artist": "Selvy", "visible": false}, {"artist": "Pete Grace", "visible": false}]
 				}
 			}, {
 				"day": "4th July",
@@ -783,14 +783,14 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2015"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Kasabian", "Disclosure"],
+					"primary": ["Flume", "Hozier", "St. Vincent"],
+					"secondary": ["Domowe Melodie", "George Fitzgerald", {"artist": "Kaytranda", "canceled": true}, "Lao Che", "Skubas", "Ratking", "Years & Years"],
+					"other": ["The Feral Trees", "Trupa Trupa", {"artist": "Patrick The Pan", "visible": false}, {"artist": "Hudson Mohawke", "visible": false}, {"artist": "Oly", "visible": false}, {"artist": "Oly", "visible": false}, {"artist": "Matat Professionals", "visible": false}, {"artist": "Naphta", "visible": false}]
 				}
 			}
 		],
-		"otherArtists": ""
+		"otherArtists": "... and many other"
 	},
 	"15": {
 		"id": "15",
