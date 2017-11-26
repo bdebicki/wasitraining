@@ -579,29 +579,54 @@
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2017/6/28/DailyHistory.html?req_city=Gdynia",
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2017"
-				]
+				],
+				"lineup": {
+					"main": ["Radiohead"],
+					"primary": ["James Blake", "Royal Blood"],
+					"secondary": ["Michael Kiwanuka", "Rae Sremmurd", "Solange"],
+					"other": [{"artist": "Arca", "sufix": "(DJ Set)"}, "Black Coffee", "Natalia Przybysz", "Quebonafide", "Sorry Boys", "Enzu", "Flirtini", "Wacław Zimpel/Kuba Ziołek", "Holak", "Gverilla", "Mery Spolsky"]
+				}
 			}, {
 				"day": "29th June",
 				"rain": true,
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2017/6/29/DailyHistory.html?req_city=Gdynia",
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2017"
-				]
+				],
+				"lineup": {
+					"main": ["Foo Fighters"],
+					"primary": ["G-Eazy", "The Kills", "M.I.A."],
+					"secondary": ["Charli XCX", "Jimmy Eat World", "Trentemøller"],
+					"other": ["A_GIM", "Bitamina", "Blanck Mass", "Daniel Avery", "Hades", "Bownik", "Kari", "Marcin Krupa", "New People", "Salk", "Suwal"]
+				}
 			}, {
 				"day": "30th June",
 				"rain": true,
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2017/6/30/DailyHistory.html?req_city=Gdynia",
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2017"
-				]
+				],
+				"lineup": {
+					"main": ["The Weekend"],
+					"primary": ["Mac Miller", "Moderat", "Prophets of Rage"],
+					"secondary": ["Brodka", "The Dumplings", "Grammatik", "Jmsn", "Kiasmos", "Tiga", "Warpaint"],
+					"other": ["Bisz/Radex", "Daria Zawiałow", "Dassein", "Deas", "Hańba!", "Majlo", "Ralph Kaminski"]
+				}
 			}, {
 				"day": "1st July",
 				"rain": true,
 				"rainDataUrl": [
 					"https://www.wunderground.com/history/airport/EPGD/2017/7/1/DailyHistory.html?req_city=Gdynia",
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2017"
-				]
-			}
+				],
+				"lineup": {
+					"main": ["The XX, Lorde"],
+					"primary": ["George Ezra", "Taco Hemingway"],
+					"secondary": ["Dua Lipa", "Nicolas Jaar", "Tyga", "O.S.T.R."],
+					"other": ["Benjamin Booker", "Buslav", "Duit", "Julia Pietrucha", "Kevin Morby", "Krzysztof Zalewski", "Monki", "Niemoc", "Seltron400", "The Shelters", "Urbanski"]
+				}
+			},
+			{"otherArtists": "... and others"}
 		]
 	}
 }
