@@ -670,10 +670,10 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2014"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["The Black Keys"],
+					"primary": ["Foster the People", "Interpol", "Earl Sweatshirt", "Haim", "Metronomy"],
+					"secondary": ["Eldo", "Pablopavo i Ludziki", "Fair Weather Friends", "Night Marks Electric Trio & Archeo", "Jamie xx", "Coldair", "Mooryc"],
+					"other": ["Hanimal", "Eric Shoves Them in His Pockets", "Niewidzialna Nerka", {"artist": "Oxford Drama", "visible": false}, "Eric Shoves Them In His Pocket", "Żółte Kalendarze", "Wild Books", {"artist": "Sande Mölder", "sortBy": "Mölder"}, "Tasker"]
 				}
 			}, {
 				"day": "3rd July",
@@ -685,10 +685,10 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2014"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Pearl Jam"],
+					"primary": ["MGMT", "MØ", "Rudimental", "Darkside", "The Afghan Whigs", "Maya Jane Coles", "Jagwar Ma"],
+					"secondary": ["Pink Freud Plays Autechre", "Bokka", "Pustki", "Kuroma", "Rasmentalism"],
+					"other": ["Call the Sun", "Jerz Igor", "Weeping Birds", {"artist": "Kuba Sojka Live", "sortBy": "Sojka"}, {"artist": "Piotr Bejnar", "sortBy": "Bejnar"}]
 				}
 			}, {
 				"day": "4th July",
@@ -699,10 +699,10 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2014"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Jack White"],
+					"primary": ["Lykke Li", "Foals", "Mela Koteluk", "Ben Howard", "Banks", "Wild Beasts", "Royal Blood", "Chromeo"],
+					"secondary": ["KAMP!", "Misia FF", "Tourist", "Misia Ff", "Rubber Dots"],
+					"other": ["Bulbwires", "Carnival Youth", "Hatti Vatti & Lady Katee", "Hello Mark", "Carnival Youth", "Robert Piotrowicz", "Viadrina", "Kixnare"]
 				}
 			}, {
 				"day": "5th July",
@@ -713,10 +713,10 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2014"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Faith No More"],
+					"primary": ["The Horrors", "Phoenix", "Bastille", "Pusha T", {"artist": "Artur Rojek", "sortBy": "Rojek"}, "Daughter", "Warpaint", "Julio Bashmore"],
+					"secondary": [{"artist": "The Dumplings", "canceled": true}, {"artist": "Domowe Melodie", "replacement": true}, "Plastic", "Kari", "Król"],
+					"other": [{"artist": "Daniel Spaleniak", "sortBy": "Spaleniak"}, "Kaseciarz", "Szezlong", "Terrific Sunday", "ZAMILSKA", "Mr. Lex", "SLG"]
 				}
 			}
 		],
@@ -771,7 +771,7 @@
 				"lineup": {
 					"main": ["Mumford & Sons"],
 					"primary": ["D'Angelo & The Vanguard", "Of Monsters and Men", {"artist": "The Prodigy", "decorator": "bold"}],
-					"secondary": ["Jonny Greenwood & LCO", "José Gonzalez", "Julia Marcell", "Swans", {"artist": "The Dumplings", "canceled": true}, {"artist": "Domowe Melodie", "replacement": true}, "The Vaccines", "Thurston Moore"],
+					"secondary": ["Jonny Greenwood & LCO", "José Gonzalez", "Julia Marcell", "Swans", "The Dumplings", "The Vaccines", "Thurston Moore"],
 					"other": ["Agness B. Marry", "Min T", "Nervy", {"artist": "Taco Hemingway", "visible": false}, {"artist": "Rebel Babel Ensemble", "visible": false}, {"artist": "Selvy", "visible": false}, {"artist": "Pete Grace", "visible": false}]
 				}
 			}, {
