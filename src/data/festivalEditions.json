@@ -906,8 +906,8 @@
 				"lineup": {
 					"main": ["The Weekend"],
 					"primary": ["Mac Miller", "Moderat", "Prophets of Rage"],
-					"secondary": ["Brodka", "The Dumplings", "Grammatik", "Jmsn", "Kiasmos", "Tiga", "Warpaint"],
-					"other": ["Bisz/Radex", "Daria Zawiałow", "Dassein", "Deas", "Hańba!", "Majlo", "Ralph Kaminski"]
+					"secondary": ["Brodka", "The Dumplings", "Grammatik", "JMSN", "Kiasmos", "Tiga", "Warpaint"],
+					"other": ["Bisz/Radex", "Daria Zawiałow", "Dasein", "Deas", "Hańba!", "Majlo", "Ralph Kaminski"]
 				}
 			}, {
 				"day": "1st July",
@@ -920,7 +920,7 @@
 					"main": ["The XX, Lorde"],
 					"primary": ["George Ezra", "Taco Hemingway"],
 					"secondary": ["Dua Lipa", "Nicolas Jaar", "Tyga", "O.S.T.R."],
-					"other": ["Benjamin Booker", "Buslav", "Duit", "Julia Pietrucha", "Kevin Morby", "Krzysztof Zalewski", "Monki", "Niemoc", "Seltron400", "The Shelters", "Urbanski"]
+					"other": ["Benjamin Booker", "Buslav", "Duit", "Julia Pietrucha", "Kevin Morby", "Krzysztof Zalewski", "Monki", "Niemoc", "Seltron 400", "The Shelters", "Urbanski"]
 				}
 			}
 		],
