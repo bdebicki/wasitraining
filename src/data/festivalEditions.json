@@ -952,7 +952,7 @@
 				],
 				"lineup": {
 					"main": ["Foo Fighters"],
-					"primary": ["G-Eazy", "The Kills", "M.I.A."],
+					"primary": ["G-Eazy", {"artist": "The Kills", "sortBy": "Kills"}, "M.I.A."],
 					"secondary": ["Charli XCX", "Jimmy Eat World", "Trentemøller"],
 					"other": ["A_GIM", "Bitamina", "Blanck Mass", "Daniel Avery", "Hades", "Bownik", "Kari", "Marcin Krupa", "New People", "Salk", "Suwal"]
 				}
@@ -966,7 +966,7 @@
 				"lineup": {
 					"main": ["The Weekend"],
 					"primary": ["Mac Miller", "Moderat", "Prophets of Rage"],
-					"secondary": ["Brodka", "The Dumplings", "Grammatik", "JMSN", "Kiasmos", "Tiga", "Warpaint"],
+					"secondary": ["Brodka", {"artist": "The Dumplings", "sortBy": "Dumplings"}, "Grammatik", "JMSN", "Kiasmos", "Tiga", "Warpaint"],
 					"other": ["Bisz/Radex", "Daria Zawiałow", "Dasein", "Deas", "Hańba!", "Majlo", "Ralph Kaminski"]
 				}
 			}, {
@@ -979,7 +979,7 @@
 				"lineup": {
 					"main": ["The XX, Lorde"],
 					"primary": ["George Ezra", "Taco Hemingway"],
-					"secondary": ["Dua Lipa", "Nicolas Jaar", "Tyga", "O.S.T.R."],
+					"secondary": ["Dua Lipa", "Nicolas Jaar", {"artist": "Tyga", "sortIndex": "3"}, "O.S.T.R."],
 					"other": ["Benjamin Booker", "Buslav", "Duit", "Julia Pietrucha", "Kevin Morby", "Krzysztof Zalewski", "Monki", "Niemoc", "Seltron 400", "The Shelters", "Urbanski"]
 				}
 			}
