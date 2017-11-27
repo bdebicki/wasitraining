@@ -596,10 +596,10 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2013"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
+					"main": ["Blur"],
+					"primary": ["Editors", "Crystal Castles", "Kendrick Lamar", "Alt-J", "Savages"],
 					"secondary": [],
-					"other": []
+					"other": ["Vavamuffin", {"artist": "Vienio", "additionalInfo": "Profil Pokoleń"}, "Fox", "Mikromusic", "Domowe Melodie", "Plum", {"artist": "Dawid Podsiadło", "visible": false}, {"artist": "Patrick The Pan", "visible": false}, {"artist": "Hipersonik", "visible": false}, {"artist": "Semantik Punk", "visible": false}, {"artist": "Stroon", "visible": false}, {"artist": "Pol On", "visible": false}, {"artist": "Marcin Krupa", "visible": false}, {"artist": "SLG", "visible": false}, {"artist": "Marcin Czubala", "visible": false}]
 				}
 			},
 			{
@@ -611,10 +611,10 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2013"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Arctic Monkeys"],
+					"primary": ["Nick Cave & The Bad Seeds"],
+					"secondary": ["Tame Impala", "Matisyahu", "Junip", "Maria Peszek"],
+					"other": ["Kim Nowak", "Łąki Łan", "Ras Luta", {"artist": "Xxanaxx", "visible": false}, {"artist": "Sorry Boys", "visible": false}, {"artist": "Modest Mouse", "canceled": true, "visible": false}, {"artist": "Please The Trees", "visible": false}, {"artist": "Ptaky", "visible": false}, {"artist": "Lilly Hates Roses", "visible": false}, {"artist": "Pianohooligan", "visible": false}, {"artist": "Drekoty", "visible": false}, {"artist": "Fuka Lata", "visible": false}, {"artist": "Chloe Martini", "visible": false}, {"artist": "Seb Skalski", "visible": false}, {"artist": "Miko Czajkowski", "visible": false}, {"artist": "Adam Zasada", "visible": false}]
 				}
 			},
 			{
@@ -626,10 +626,10 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2013"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Queens of the Stone Age"],
+					"primary": ["The National", "Skunk Anansie", "Nas"],
+					"secondary": ["Disclosure", "Hey", "Kaliber 44"],
+					"other": ["These New Puritans", "Palma Violets", {"artist": "Rebeka", "visible": false}, {"artist": "Skubas", "visible": false}, {"artist": "Bobby the Unicorn", "visible": false}, {"artist": "Őszibarack", "visible": false}, {"artist": "L.U.C & Motion Trio", "visible": false}, {"artist": "Teielte", "visible": false}, {"artist": "Ifi Ude", "visible": false}, {"artist": "The &", "visible": false}, {"artist": "Kixnare", "visible": false}, {"artist": "Rykarda Parasol", "visible": false}, {"artist": "Naphta", "visible": false}, {"artist": "Klaves", "visible": false}, {"artist": "Patryk Niedziela", "visible": false}, {"artist": "Envee", "visible": false}]
 				}
 			},
 			{
@@ -641,14 +641,14 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2013"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Kings of Leon"],
+					"primary": ["Animal Collective", "Miguel", {"artist": "Steve Reich & Ensemble Modern", "multiline": true}, {"artist": "Jonny Greenwood", "multiline": true}],
+					"secondary": ["Crystal Fighters", "Devendra Banhart"],
+					"other": ["Mount Kimbie", "Everything Everything", {"artist": "Envee", "visible": false}, {"artist": "Magnificent Muttley", "visible": false}, {"artist": "Novika", "visible": false}, {"artist": "Sambor", "visible": false}, {"artist": "Hot Casandra", "visible": false}, {"artist": "Transmisja", "visible": false}, {"artist": "Lao Che", "visible": false}, {"artist": "Harotnica + N.R.M", "visible": false}, {"artist": "Stendek", "visible": false}, {"artist": "Fismoll", "visible": false}, {"artist": "Peter J. Birch & the River Boat Band", "visible": false}, {"artist": "Ballady i Romanse / Igor Boxx", "visible": false}, {"artist": "UL/KR", "visible": false}, {"artist": "The Phantom", "visible": false}, {"artist": "Chmara Winter", "visible": false}, {"artist": "BLCKSHP", "visible": false}, {"artist": "Catz'n Dogz", "visible": false}]
 				}
 			}
 		],
-		"otherArtists": ""
+		"otherArtists": "... and many more"
 	},
 	"13": {
 		"id": "13",
@@ -813,7 +813,7 @@
 				"lineup": {
 					"main": ["Florence+The Machine"],
 					"primary": ["Mac Demarco", "PJ Harvey", "Savages", "Skepta", "Tame Impala", "The Last Shadow Puppets"],
-					"secondary": ["DJ Tennis", "Flirtini", "Lunice", "Małpa", "XXanaXX"],
+					"secondary": ["DJ Tennis", "Flirtini", "Lunice", "Małpa", "Xxanaxx"],
 					"other": ["Chino", "Heroes Get Remembered", "Lxmp", "Otsochodzi", "Shy Albatross", "Stara Rzeka", "T’ien Lai"]
 				}
 			}, {
