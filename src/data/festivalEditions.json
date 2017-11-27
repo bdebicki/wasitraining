@@ -25,7 +25,11 @@
 				}
 			}
 		],
-		"otherArtists": ""
+		"lineupSettings": {
+			"sortBy": false,
+			"mergeArtists": false,
+			"otherArtists": false
+		}
 	},
 	"2": {
 		"id": "2",
@@ -53,7 +57,11 @@
 				}
 			}
 		],
-		"otherArtists": ""
+		"lineupSettings": {
+			"sortBy": false,
+			"mergeArtists": false,
+			"otherArtists": false
+		}
 	},
 	"3": {
 		"id": "3",
@@ -94,7 +102,11 @@
 				}
 			}
 		],
-		"otherArtists": ""
+		"lineupSettings": {
+			"sortBy": false,
+			"mergeArtists": false,
+			"otherArtists": false
+		}
 	},
 	"4": {
 		"id": "4",
@@ -134,7 +146,11 @@
 				}
 			}
 		],
-		"otherArtists": ""
+		"lineupSettings": {
+			"sortBy": false,
+			"mergeArtists": false,
+			"otherArtists": false
+		}
 	},
 	"5": {
 		"id": "5",
@@ -188,7 +204,11 @@
 				}
 			}
 		],
-		"otherArtists": ""
+		"lineupSettings": {
+			"sortBy": false,
+			"mergeArtists": false,
+			"otherArtists": false
+		}
 	},
 	"6": {
 		"id": "6",
@@ -243,7 +263,11 @@
 				}
 			}
 		],
-		"otherArtists": ""
+		"lineupSettings": {
+			"sortBy": false,
+			"mergeArtists": false,
+			"otherArtists": false
+		}
 	},
 	"7": {
 		"id": "7",
@@ -297,7 +321,11 @@
 				}
 			}
 		],
-		"otherArtists": ""
+		"lineupSettings": {
+			"sortBy": false,
+			"mergeArtists": false,
+			"otherArtists": false
+		}
 	},
 	"8": {
 		"id": "8",
@@ -364,7 +392,11 @@
 				}
 			}
 		],
-		"otherArtists": ""
+		"lineupSettings": {
+			"sortBy": false,
+			"mergeArtists": false,
+			"otherArtists": false
+		}
 	},
 	"9": {
 		"id": "9",
@@ -434,7 +466,11 @@
 				}
 			}
 		],
-		"otherArtists": ""
+		"lineupSettings": {
+			"sortBy": false,
+			"mergeArtists": false,
+			"otherArtists": false
+		}
 	},
 	"10": {
 		"id": "10",
@@ -505,7 +541,11 @@
 				}
 			}
 		],
-		"otherArtists": ""
+		"lineupSettings": {
+			"sortBy": false,
+			"mergeArtists": false,
+			"otherArtists": false
+		}
 	},
 	"11": {
 		"id": "11",
@@ -575,7 +615,11 @@
 				}
 			}
 		],
-		"otherArtists": ""
+		"lineupSettings": {
+			"sortBy": false,
+			"mergeArtists": false,
+			"otherArtists": false
+		}
 	},
 	"12": {
 		"id": "12",
@@ -648,7 +692,11 @@
 				}
 			}
 		],
-		"otherArtists": "... and many more"
+		"lineupSettings": {
+			"sortBy": false,
+			"mergeArtists": false,
+			"otherArtists": "... and many other"
+		}
 	},
 	"13": {
 		"id": "13",
@@ -720,7 +768,11 @@
 				}
 			}
 		],
-		"otherArtists": ""
+		"lineupSettings": {
+			"sortType": "alphabetical",
+			"mergeArtists": true,
+			"otherArtists": false
+		}
 	},
 	"14": {
 		"id": "14",
@@ -790,7 +842,11 @@
 				}
 			}
 		],
-		"otherArtists": "... and many other"
+		"lineupSettings": {
+			"sortType": "alphabetical",
+			"mergeDays": false,
+			"otherArtists": "... and many other"
+		}
 	},
 	"15": {
 		"id": "15",
@@ -858,7 +914,11 @@
 				}
 			}
 		],
-		"otherArtists": ""
+		"lineupSettings": {
+			"sortType": "alphabetical",
+			"mergeDays": true,
+			"otherArtists": false
+		}
 	},
 	"16": {
 		"id": "16",
@@ -924,6 +984,10 @@
 				}
 			}
 		],
-		"otherArtists": "... and others"
+		"lineupSettings": {
+			"sortType": "alphabetical",
+			"mergeDays": false,
+			"otherArtists": "... and others"
+		}
 	}
 }
