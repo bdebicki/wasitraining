@@ -646,7 +646,6 @@
 				"lineup": {
 					"main": ["Blur"],
 					"primary": ["Editors", "Crystal Castles", "Kendrick Lamar", "Alt-J", "Savages"],
-					"secondary": [],
 					"other": ["Vavamuffin", {"artist": "Vienio", "additionalInfo": "Profil Pokoleń"}, "Fox", "Mikromusic", "Domowe Melodie", "Plum", {"artist": "Dawid Podsiadło", "visible": false}, {"artist": "Patrick The Pan", "visible": false}, {"artist": "Hipersonik", "visible": false}, {"artist": "Semantik Punk", "visible": false}, {"artist": "Stroon", "visible": false}, {"artist": "Pol On", "visible": false}, {"artist": "Marcin Krupa", "visible": false}, {"artist": "SLG", "visible": false}, {"artist": "Marcin Czubala", "visible": false}]
 				}
 			},
