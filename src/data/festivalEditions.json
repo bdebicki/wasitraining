@@ -566,10 +566,11 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2012"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Björk"],
+					"primary": ["New Order", {"prefix": "The", "artist": "Kills"}],
+					"secondary": ["Wiz Khalifa", "Orbital", "Gogol Bordello"],
+					"mniddle": ["Yeasayer", {"prefix": "The", "artist": "Ting Tings"}, "SOJA"],
+					"other": [{"artist": "Fisz Emade",  "additionalInfo": "Tworzywo"}, {"artist": "June", "visible": false}, {"artist": "très.b", "visible": false}, {"artist": "Frozen Bird", "visible": false}, {"artist": "Mela Koteluk", "visible": false}, {"artist": "Jacaszek", "visible": false}, {"artist": "Chłopcy Kontra Basia", "visible": false}, {"artist": "Galus", "visible": false}, {"artist": "Sobura", "visible": false}, {"artist": "TEIELTE", "visible": false}, {"artist": "En2ak", "visible": false}, {"artist": "Ment XXL", "visible": false}, {"artist": "Praktik", "visible": false}, {"artist": "Groh + Eltron John", "visible": false}, {"artist": "Sonar Soul", "visible": false}, {"artist": "BEZSENSU", "visible": false}, {"artist": "Sjøn", "visible": false}, {"artist": "Enchanted Hunters", "visible": false}, {"artist": "Dva", "visible": false}]
 				}
 			}, {
 				"day": "5th July",
@@ -580,10 +581,11 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2012"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Justice"],
+					"primary": ["Bon Iver", {"artist": "Penderecki//Greenwood", "multiline": true}],
+					"secondary": [{"prefix": "The", "artist": "Maccabees"}, "Major Lazer", "Jamie Woon"],
+					"middle": [{"artist": "Dry", "prefix2": "The", "artist2": "River"}, "Jessie Ware"],
+					"other": ["Kapela ze Wsi Warszawa", "Pablopavo & Praczas", {"artist": "Iza Lach", "visible": false}, {"artist": "Paula i Karol", "visible": false}, {"artist": "The Stubs", "visible": false}, {"artist": "KROJC", "visible": false}, {"artist": "Kari Amirian", "visible": false}, {"artist": "Napszykłat", "visible": false}, {"artist": "Good Paul", "visible": false}, {"artist": "Axmusique", "visible": false}, {"artist": "Ros", "visible": false}, {"artist": "Twin Prix", "visible": false}, {"artist": "Little White Lies", "visible": false}, {"artist": "Miąższ", "visible": false}, {"artist": "Minerals", "visible": false}, {"artist": "Pipes & Pints", "visible": false}]
 				}
 			}, {
 				"day": "6th July",
@@ -594,10 +596,11 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2012"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Franz Ferdinand"],
+					"primary": ["Bloc Party", "M83"],
+					"secondary": ["Public Enemy", {"additionalInfo": "Kasia", "artist": "Nosowska"}, "Toro Y Moi"],
+					"middle": ["Julia Marcell"],
+					"other": [{"artist": "Łona Webber", "additionalInfo": "& The Pimps"}, "L.Stadt", {"artist": "The Cardigans play Gran Turismo", "visible": false}, {"artist": "UL/KR", "visible": false}, {"artist": "Klezmafour", "visible": false}, {"artist": "Yula", "visible": false}, {"artist": "Trupa Trupa", "visible": false}, {"artist": "The Saintbox", "visible": false}, {"artist": "Profesjonalizm", "visible": false}, {"artist": "The Phantom", "visible": false}, {"artist": "Bueno Bros", "visible": false}, {"artist": "Viadrina", "visible": false}, {"artist": "Bshosa", "visible": false}, {"artist": "Camero Cat", "visible": false}, {"artist": "Crab Invasion", "visible": false}, {"artist": "Sinusoidal", "visible": false}, {"artist": "Kerekes Band", "visible": false}]
 				}
 			}, {
 				"day": "7th July",
@@ -608,10 +611,11 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2012"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": [{"prefix": "The", "artist": "Mars Volta"}],
+					"primary": [{"artist": "Mumford", "prefix2": "&", "artist2": "Sons"}, {"prefix": "The", "artist": "xx", "artistUppercase": false}],
+					"secondary": ["Friendly Fires", "Janelle Monáe", "Bat For Lashes"],
+					"middle": [{"artist": "SBTRKT", "sufix": "Live"}],
+					"other": ["Świetliki", {"artist": "Cool Kids", "prefix2": "of", "artist2": "Death"}, {"artist": "The KDMS", "visible": false}, {"artist": "Maja Kleszcz & incarNations", "visible": false}, {"artist": "Brygada Kryzys", "visible": false}, {"artist": "Psychocukier", "visible": false}, {"artist": "kIRk", "visible": false}, {"artist": "Volume", "visible": false}, {"artist": "Coldair", "visible": false}, {"artist": "Spox", "visible": false}, {"artist": "Maximilian Skiba", "visible": false}, {"artist": "L.A.N.S.", "visible": false}, {"artist": "Kamp! (DJ set)", "visible": false}, {"artist": "Vermones", "visible": false}, {"artist": "Fair Weather Friends", "visible": false}, {"artist": "Keira Is You", "visible": false}, {"artist": "Instrumenti", "visible": false}]
 				}
 			}
 		],
