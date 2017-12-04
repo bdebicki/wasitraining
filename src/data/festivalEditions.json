@@ -287,10 +287,10 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2008-07-4&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"primary": [{"artist": "The Raconteurs", "order": 2}, {"artist": "Editors", "order": 3}, {"artist": "Roisin Murphy", "order": 4}],
+					"secondary": [{"artist": "Fischerspooner", "order": 2}, {"artist": "DeVotchKa", "order": 3}, {"artist": "The Cribs", "order": 4}, {"artist": "Dj Vadim Live", "order": 6}, {"artist": "Fujiya & Miyagi", "order": 7}],
+					"middle": [{"artist": "Muchy", "order": 2}, {"artist": "Mitch & Mitch Big Band", "order": 10}, {"artist": "Muzykoterapia", "order": 7, "canceled": true},{"artist": "Natu + Envee", "order": 12}, {"artist": "L.Stadt", "order": 15}],
+					"other": [{"artist": "Troitsa", "order": 2}, {"artist": "Hati", "order": 5}, {"artist": "emitter_franczak", "order": 8}, {"artist": "Teatr Porywacze Ciał", "order": 11}, {"artist": "Teatr Gry i Ludzie", "order": 12}, {"artist": "Mamadoo", "order": 14}, {"artist": "Fire Angels", "order": 15}, {"artist": "Pornohagen", "order": 17}, {"artist": "Biff", "order": 20}, {"artist": "Kleiber", "order": 23}, {"artist": "Ziemianie", "order": 24}, {"artist": "Kolorofon", "order": 29}, {"artist": "Chill", "visible": false}, {"artist": "Harper", "visible": false}, {"artist": "Maceo Wyro", "visible": false}, {"artist": "Papa Zura", "visible": false}]
 				}
 			}, {
 				"day": "5th July",
@@ -301,10 +301,11 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2008-07-5&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": [{"artist": "Jay-Z", "order": 3}, {"artist": "Interpol", "order": 4}],
+					"primary": [{"artist": "Erykah Badu", "order": 1}, {"artist": "Sex Pistols", "order": 6}, {"artist": "Beirut", "order": 10, "canceled": true}],
+					"secondary": [{"artist": "Gentleman", "order": 1, "additionalIngo": "& The Far East Band"}, {"artist": "Cocorosie", "order": 5}],
+					"middle": [{"artist": "Cool Kids Of Death", "order": 1}, {"artist": "Maria Peszek", "order": 5}, {"artist": "Everything is made in China", "order": 9}, {"artist": "Masala Soundsystem", "order": 11}, {"artist": "Loco Star", "order": 13}, {"artist": "Rotofobia", "order": 14}, {"artist": "Karimski Club", "order": 17}],
+					"other": [{"artist": "Tymański Yass Ensemble", "order": 1}, {"artist": "Alamut", "order": 4}, {"artist": "Wolfram", "order": 7}, {"artist": "Klan Grus", "order": 13}, {"artist": "New York Crasnals", "order": 16}, {"artist": "Sekend Hend", "order": 19}, {"artist": "California Stories Uncovered", "order": 22}, {"artist": "Radio Bagdad", "order": 25}, {"artist": "Teatr Porywacze Ciał", "visible": false}, {"artist": "Mamadoo", "visible": false}, {"artist": "Fire Angels", "visible": false}, {"artist": "Ojciec Karol", "visible": false}, {"artist": "Harper", "visible": false}, {"artist": "Envee", "visible": false}, {"artist": "Matman", "visible": false}, {"artist": "Ros + Wiosna", "visible": false}]
 				}
 			}, {
 				"day": "6th July",
@@ -314,16 +315,16 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2008-07-6&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": [{"artist": "Massive Attack", "order": 1}, {"artist": "The Chemical Brothers", "order": 2}],
+					"primary": [{"artist": "Goldfrapp", "order": 5}, {"artist": "M.I.A.", "order": 8, "canceled": true}, {"artist": "Martina Topley Bird", "order": 9, "replacement": true}],
+					"middle": [{"artist": "Vavamuffin", "order": 4}, {"artist": "Ścianka", "order": 6}, {"artist": "Őszibarack", "order": 8}, {"artist": "Kobiety", "order": 11}, {"artist": "Hatfinats", "order": 16}, {"artist": "Żywiołak", "order": 18}, {"artist": "Benzyna", "order": 19}],
+					"other": [{"artist": "RH+ audiowizualna grupa przyjaciół", "order": 3}, {"artist": "Echo TM", "order": 6}, {"artist": "C.H. District", "order": 9}, {"artist": "Teatr Ósmego Dnia", "additionalInfo": "\"Arka\"", "order": 10}, {"artist": "Polpo Motel", "order": 18}, {"artist": "Dav Intergalactic", "order": 21}, {"artist": "Bajzel", "order": 26}, {"artist": "Setting the Woods on Fire", "order": 28}, {"artist": "Gasoline", "order": 27}, {"artist": "Teatr Gry i Ludzie", "visible": false}, {"artist": "Teatr Porywacze Ciał", "visible": false}, {"artist": "Klan Grus", "visible": false}, {"artist": "Mamadoo", "visible": false}, {"artist": "V/A Team Hungry Hungry Models", "visible": false}]
 				}
 			}
 		],
 		"lineupSettings": {
-			"sortBy": false,
-			"mergeArtists": false,
+			"sortBy": "customOrder",
+			"mergeArtists": true,
 			"otherArtists": false
 		}
 	},
