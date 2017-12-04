@@ -228,10 +228,11 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2007-06-29&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"primary": [{"artist": "Sonic Youth", "order": 2}, {"artist": "The Roots", "order": 4}],
+					"secondary": [{"artist": "Laurent Garnier (Live)", "order": 1}, {"artist": "Dizzee Rascal", "order": 2}],
+					"middle": [{"artist": "Freeform Five", "order": 3}, {"artist": "The Strike Boys", "order": 5}, {"artist": "The Car Is on Fire", "order": 6}, {"artist": "Afro Kolektyw", "order": 10}, {"artist": "Pink Freud", "order": 12}, {"artist": "EastWest Rockers", "order": 13}],
+					"last": [{"artist": "Bruno Schulz", "order": 2}, {"artist": "Cała Góra Barwinków", "order": 3}],
+					"other": [{"artist": "Managga", "order": 3}, {"artist": "Organizm", "order": 7}, {"artist": "The Poise Rite", "order": 9}]
 				}
 			}, {
 				"day": "30th June",
@@ -242,10 +243,11 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2007-06-30&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": [{"artist": "Beastie Boys", "order": 2}, {"artist": "Muse", "order": 3}],
+					"primary": [{"artist": "Groove Armada", "order": 1}],
+					"middle": [{"artist": "Crazy P", "order": 1}, {"artist": "O.S.T.R.", "order": 2}, {"artist": "Apteka", "order": 8}, {"artist": "Kombajn do Zbierania Kur po Wioskach", "order": 14}, {"artist": "Łąki Łan", "order": 16}, {"artist": "Kapitan DA", "order": 17}, {"artist": "Me Myself and I", "order": 18}],
+					"last": [{"artist": "Dezodorant Squad", "order": 4}, {"artist": "Dick 4 Dick", "order": 5}],
+					"other": [{"artist": "Lars", "order": 2}, {"artist": "Mikrowafle", "order": 5}, {"artist": "NOT", "order": 6}, {"artist": "Out of Tune", "order": 8}, {"artist": "Farel Gott & White Rabbit's Trip", "visible": false}]
 				}
 			}, {
 				"day": "1st July",
@@ -256,15 +258,16 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2007-07-1&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": [{"artist": "Björk", "order": 1}],
+					"primary": [{"artist": "Bloc Party", "order": 3}, {"artist": "LCD Soundsystem", "order": 5}],
+					"middle": [{"artist": "Smolik", "order": 4}, {"artist": "Indios Bravos", "order": 7}, {"artist": "Novika", "order": 9}, {"artist": "Bassisters Orchestra", "order": 11}, {"artist": "Renton", "order": 15}],
+					"last": [{"artist": "Andy", "order": 1}, {"artist": "Erijef Massiv", "order": 6}],
+					"other": [{"artist": "Gentleman!", "order": 1}, {"artist": "Mikromusic", "order": 4}]
 				}
 			}
 		],
 		"lineupSettings": {
-			"sortBy": false,
+			"sortBy": "customOrder",
 			"mergeArtists": true,
 			"otherArtists": false
 		}
