@@ -126,10 +126,8 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2005-07-8&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Snoop Dogg", "Fatboy Slim", "Faithless"],
+					"other": [{"artist": "Pogodno", "order": 1}, {"artist": "O.S.T.R.", "order": 2}, {"artist": "Boogiemafia", "order": 7}, {"artist": "Less Is More", "order": 8}, {"artist": "Hariasen", "order": 9}, {"artist": "Rotofobia", "order": 10}, {"artist": "Lili Marlene", "order": 11}, {"artist": "teatry", "order": 12}, {"artist": "Strefa Ciszy", "order": 13}, {"artist": "Porywacze Ciał", "order": 14}, {"artist": "Akt Okazjonalny", "order": 15}]
 				}
 			}, {
 				"day":  "9th July",
@@ -139,17 +137,17 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2005-07-9&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["The White Stripes", "Lauryn Hill", "Underworld"],
+					"primary": [{"artist": "The Music", "order": "headliners"}],
+					"secondary": [{"artist": "Neo", "decorated": "uppercase"}],
+					"other": [{"artist": "SOFA", "order": 3}, {"artist": "Őszibarack", "order": 4}, {"artist": "Peepol", "order": 5}, {"artist": "Tworzywo Sztuczne", "order": 6}, {"artist": "Good Girl Killer", "order": 16}, {"artist": "DJ Seb Skalski act", "visible": false}]
 				}
 			}
 		],
 		"lineupSettings": {
-			"sortBy": false,
-			"mergeArtists": false,
-			"otherArtists": false
+			"sortBy": "customOrderExceptHeadliners",
+			"mergeArtists": "exceptHeadliners",
+			"otherArtists": "And also:"
 		}
 	},
 	"5": {
