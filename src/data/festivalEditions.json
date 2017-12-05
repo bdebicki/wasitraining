@@ -170,10 +170,10 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2006-07-8&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": [{"artist": "Placebo", "decorator": "uppercase"}, "Pharrell Williams", {"artist": "Manu Chao", "sufix": "Radio Bemba Sound System"}],
+					"primary": [{"artist": "", "order": "headliners"}],
+					"secondary": [{"artist": "Matthew Herbert", "order": 5, "canceled": true}, {"artist": "Nightmares on Wax", "order": 5}],
+					"other": [{"artist": "Fisz, Emade i Goście", "order": 3}, {"artist": "The Car Is On Fire", "order": 7}, {"artist": "Cool Kids of Death", "order": 9}, {"artist": "Sofa", "order": 10}, {"artist": "Masala Sound System", "order": 14}, {"artist": "Loco Motive Sun", "order": 16}, {"artist": "Teatr Klan Grus", "order": 21}, {"artist": "Teatr Fire Angels", "order": 20}]
 				}
 			}, {
 				"day": "7th July",
@@ -183,10 +183,9 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2006-07-8&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Franz Ferdinand", "Sigur Rós", "Scissor Sisters", "Skin"],
+					"secondary": [{"artist": "Coldcut", "order": 1}, {"artist": "Ladytron", "order": 3}],
+					"other": [{"artist": "Myslovitz", "order": 2}, {"artist": "Maria Peszek", "order": 5}, {"artist": "Kanał Audytywny", "order": 8}, {"artist": "Miloopa", "order": 11}, {"artist": "Niewinni Czarodzieje", "order": 12}, {"artist": "Electricity", "order": 18}, {"artist": "Teatr Klan Grus", "visible": false}, {"artist": "Teatr Fire Angels", "visible": false}]
 				}
 			}, {
 				"day": "8th July",
@@ -197,17 +196,16 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2006-07-8&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Kanye West", "Basement Jaxx", "The Streets", {"artist": "Groove Armada", "canceled": true}],
+					"secondary": [{"artist": "Roger Sanchez", "order": 2}],
+					"other": [{"artist": "Peter Greenaway", "order": 1}, {"artist": "Abra dAb", "order": 4}, {"artist": "Pustki", "order": 6}, {"artist": "Beats Friendly", "order": 13}, {"artist": "Freak of Nature", "order": 15}, {"artist": "Psychocukier", "order": 17}, {"artist": "Teatr Klan Grus", "visible": false}, {"artist": "Teatr Fire Angels", "visible": false}, {"artist": "Usta Bilizowane", "order": 19}]
 				}
 			}
 		],
 		"lineupSettings": {
-			"sortBy": false,
-			"mergeArtists": false,
-			"otherArtists": false
+			"sortBy": "customOrderExceptHeadliners",
+			"mergeArtists": "exceptHeadliners",
+			"otherArtists": "and also:"
 		}
 	},
 	"6": {
