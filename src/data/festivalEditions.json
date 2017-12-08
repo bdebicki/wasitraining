@@ -50,10 +50,9 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2003-07-26&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Cassius", "Kosheen", "Layo & Bushwacka!"],
+					"primary": ["15 Minuk Projekt", "Marika"],
+					"other": ["Finalists of THIRST competition"]
 				}
 			}
 		],
