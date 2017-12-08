@@ -82,10 +82,10 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2004-07-2&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Pink", "Cypress Hill"],
+					"secondary": ["Sistars"],
+					"middle": ["G!MIDI", "Slajd", "Progress"],
+					"other": ["Ojciec Karol", "Charlie Jan"]
 				}
 			}, {
 				"day": "3rd July",
@@ -95,10 +95,11 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2004-07-3&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["Massive Attack", "Goldfrapp"],
+					"primary": ["Adam Freeland"],
+					"secondary": ["Smolik"],
+					"middle": ["Novika", "Harper", "Twinn"],
+					"other": [{"artist": "Klinika lalek + Kinior Sky Orkiestra:", "sufix": "przedstawienie Anielicje"}, {"artist": "Teatr Cinema:", "sufix": "Kabaret Olbrzymów", "sufix2": "Wieczór III. Lekkie czasy ciężkich chorób"}, {"artist": "Teatr Snów:", "sufix": "przedstawienie Republika Marzeń"}, {"artist": "Klinika Lalek:", "sufix": "Parada uliczna"}]
 				}
 			}
 		],
