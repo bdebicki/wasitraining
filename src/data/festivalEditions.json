@@ -18,10 +18,8 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=57321&date=2009-07-02&citynameWarsaw%2C+Masovian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [],
-					"primary": [],
-					"secondary": [],
-					"other": []
+					"main": ["The Chemical Brothers"],
+					"primary": ["Glasse", "Sonic Trip", "Harper", "MK Fever", "Smolik", "Fresh"]
 				}
 			}
 		],
