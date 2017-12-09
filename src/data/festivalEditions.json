@@ -343,11 +343,11 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2009-07-2&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [{"artist": "Arctic Monkeys", "promoted": true, "marked": true}],
-					"primary": ["Basement Jaxx"],
-					"secondary": [{"artist": "Peter Bjorn and John", "marked": true}, "Late of the Pier"],
-					"middle": ["Renton"],
-					"last": [{"artist": "The Car Is On Fire", "marked": true}, "Łąki Łan", {"artist": "Skinny Patrini", "marked": true}, "Old Time Radio", "Wariacje.pl", {"artist": "Grabek", "marked": true}],
+					"main": [{"artist": "Arctic Monkeys", "promoted": true, "marked": true, "order": 2}],
+					"primary": [{"artist": "Basement Jaxx", "order": 4}],
+					"secondary": [{"artist": "Peter Bjorn and John", "marked": true, "order": 11}, {"artist": "Late of the Pier", "order": 13}],
+					"middle": [{"artist": "Renton", "order": 8}],
+					"last": [{"artist": "The Car Is On Fire", "marked": true, "order": 1}, {"artist": "Łąki Łan", "order": 2}, {"artist": "Skinny Patrini", "marked": true, "order": 10}, {"artist": "Old Time Radio", "order": 17}, {"artist": "Wariacje.pl", "order": 22}, {"artist": "Grabek", "marked": true, "order": 23}],
 					"other": [{"artist": "Sorry", "visible": false}, {"artist": "Ghettoblaster", "visible": false}, {"artist": "AM Radio", "visible": false}, {"artist": "Mentalcut", "visible": false}, {"artist": "Heima", "visible": false}, {"artist": "Berlin Calling", "visible": false}]
 				}
 			}, {
@@ -358,11 +358,11 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2009-07-3&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"primary": ["Moby", {"artist": "Duffy", "marked": true}],
-					"secondary": ["The Kooks", "Pendulum", "Gossip", {"artist": "Crystal Castles", "marked": true}],
-					"middle": [{"artist": "Hjaltalín", "marked": true}, {"artist": "Speed Caravan", "marked": true}, {"artist": "Maria Peszek", "marked": true}, {"artist": "Kapela Ze Wsi Warszawa", "marked": true}, {"artist": "Thievery Corporation", "canceled": true}],
-					"last": [{"artist": "Pati Yang", "marked": true}, {"artist": "Gaba Kulka", "marked": true}, "Paristetris", {"artist": "Wiolonczele z Miasta", "marked": true}, {"artist": "Kakofonikt", "marked": true}],
-					"other": [{"artist": "Furia Futrzaków", "marked": true}, "Superxiu", {"artist": "The October Leaves", "marked": true}, "Pchełki", {"artist": "Heima", "visible": false}, {"artist": "Lucky People Center International", "visible": false}, {"artist": "Piękni Chłopcy", "visible": false}, {"artist": "Daniel Drumz & Burn Reynolds", "visible": false}, {"artist": "Modfunk", "visible": false}]
+					"primary": [{"artist": "Moby", "order": 1}, {"artist": "Duffy", "marked": true, "order": 2}],
+					"secondary": [{"artist": "The Kooks", "order": 3}, {"artist": "Pendulum", "order": 4}, {"artist": "Gossip", "order": 5}, {"artist": "Crystal Castles", "marked": true, "order": 9}],
+					"middle": [{"artist": "Hjaltalín", "marked": true, "order": 2}, {"artist": "Speed Caravan", "marked": true, "order": 3}, {"artist": "Maria Peszek", "marked": true, "order": 5}, {"artist": "Kapela Ze Wsi Warszawa", "marked": true, "order": 9}, {"artist": "Thievery Corporation", "canceled": true, "order": 11}],
+					"last": [{"artist": "Pati Yang", "marked": true, "order": 4}, {"artist": "Gaba Kulka", "marked": true, "order": 5}, {"artist": "Paristetris", "order": 18}, {"artist": "Wiolonczele z Miasta", "marked": true, "order": 19}, {"artist": "Kakofonikt", "marked": true, "order": 24}],
+					"other": [{"artist": "Furia Futrzaków", "marked": true, "order": 2}, "Superxiu", {"artist": "The October Leaves", "marked": true, "order": 10}, {"artist": "Pchełki", "order": 12}, {"artist": "Heima", "visible": false}, {"artist": "Lucky People Center International", "visible": false}, {"artist": "Piękni Chłopcy", "visible": false}, {"artist": "Daniel Drumz & Burn Reynolds", "visible": false}, {"artist": "Modfunk", "visible": false}]
 				}
 			}, {
 				"day": "4th July",
@@ -373,12 +373,11 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2009-07-4&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": ["Faith No More"],
-					"primary": [{"artist": "Q-Tip", "marked": true}, {"artist": "Madness", "marked": true}],
-					"secondary": ["White Lies", "Emiliana Torrini", {"artist": "M83", "marked": true}, {"artist": "Buraka Som Sistema", "marked": true}],
-					"middle": ["Izrael", "Fisz Emade Tworzywo"],
-					"last": ["Village Kollektiv", "Kamp!", {"artist": "Kormorany", "marked": true}, "Szelest Spadających Papierków", {"artist": "Betty Be", "marked": true}, {"artist": "Dagadana", "marked": true}],
-					"other": [{"artist": "Kawałek Kulki", "marked": true}, {"artist": "Twilite", "marked": true}, "Jazzus", {"artist": "Enchantia", "marked": true}, {"artist": "Enchantia", "visible": false}, {"artist": "Berlin Calling", "visible": false}, {"artist": "Heima", "visible": false}, {"artist": "Lucky People Center International", "visible": false}, {"artist": "Beats Friendly", "visible": false}, {"artist": "Last Robots Alive", "visible": false}]
+					"main": [{"artist": "Faith No More", "order": 5}],
+					"secondary": [{"artist": "Q-Tip", "marked": true, "order": 1}, "White Lies", "Emiliana Torrini", {"artist": "M83", "marked": true, "order": 12}, {"artist": "Buraka Som Sistema", "marked": true, "order": 13}, {"artist": "Madness", "marked": true, "order": 15}],
+					"middle": [{"artist": "Izrael", "order": 7}, {"artist": "Fisz Emade Tworzywo", "order": 10}],
+					"last": [{"artist": "Village Kollektiv", "order": 3}, {"artist": "Kamp!", "marked": true, "order": 9}, {"artist": "Kormorany", "marked": true, "order": 12}, {"artist": "Szelest Spadających Papierków", "order": 13}, {"artist": "Betty Be", "marked": true, "order": 16}, {"artist": "Dagadana", "marked": true, "order": 20}],
+					"other": [{"artist": "Kawałek Kulki", "marked": true, "order": 3}, {"artist": "Twilite", "marked": true, "order": 4}, "Jazzus", {"artist": "Enchantia", "marked": true, "order": 9}, {"artist": "Berlin Calling", "visible": false}, {"artist": "Heima", "visible": false}, {"artist": "Lucky People Center International", "visible": false}, {"artist": "Beats Friendly", "visible": false}, {"artist": "Last Robots Alive", "visible": false}]
 				}
 			}, {
 				"day": "5th July",
@@ -388,12 +387,12 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2009-07-5&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [{"artist": "Kings of Leon", "promoted": true}, "Placebo", {"artist": "The Prodigy", "marked": true}],
-					"primary": ["Lily Allen"],
-					"secondary": [{"artist": "The Ting Tings", "marked": true}, "Santigold", {"artist": "Fat Freddy's Drop", "canceled": true}],
-					"middle": ["Jazzanova (live)", "Priscilla Ahn", {"artist": "O.S.T.R.", "marked": true}],
-					"last": ["Sofa", "The Black Tapes", "Kumka Olik", "Contemporary Noise Sextet", "Lady Aarp", "Mass Kotki", {"artist": "Gadająca Tykwa", "marked": true}],
-					"other": ["Iowa Super Soccer", "The Calog", {"artist": "Plug and Play", "marked": true}, "Letko", {"artist": "Lucky People Center International", "visible": false}, {"artist": "Berlin Calling", "visible": false}, {"artist": "Envee", "visible": false}, {"artist": "Busha", "visible": false}, {"artist": "Ros", "visible": false}, {"artist": "Auricom", "visible": false}]
+					"main": [{"artist": "Kings of Leon", "promoted": true, "order": 1}, {"artist": "Placebo", "order": 3}, {"artist": "The Prodigy", "marked": true, "order": 4}],
+					"primary": [{"artist": "Lily Allen", "order": 3}],
+					"secondary": [{"artist": "The Ting Tings", "marked": true, "order": 6}, {"artist": "Santigold", "order": 8}, {"artist": "Fat Freddy's Drop", "canceled": true, "order": 14}],
+					"middle": [{"artist": "Jazzanova (live)", "order": 1}, {"artist": "Priscilla Ahn", "order": 4}, {"artist": "O.S.T.R.", "marked": true, "order": 6}],
+					"last": [{"artist": "Sofa", "order": 6}, {"artist": "The Black Tapes", "order": 7}, {"artist": "Kumka Olik", "order": 8}, {"artist": "Contemporary Noise Sextet", "order": 11}, {"artist": "Lady Aarp", "order": 14}, {"artist": "Mass Kotki", "order": 21}, {"artist": "Gadająca Tykwa", "marked": true, "order": 25}],
+					"other": [{"artist": "Iowa Super Soccer", "order": 1}, {"artist": "The Calog", "order": 6}, {"artist": "Plug and Play", "marked": true, "order": 8}, {"artist": "Letko", "order": 11}, {"artist": "Lucky People Center International", "visible": false}, {"artist": "Berlin Calling", "visible": false}, {"artist": "Envee", "visible": false}, {"artist": "Busha", "visible": false}, {"artist": "Ros", "visible": false}, {"artist": "Auricom", "visible": false}]
 				}
 			}
 		],
