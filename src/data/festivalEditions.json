@@ -422,12 +422,11 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2010"
 				],
 				"lineup": {
-					"main": ["Pearl Jam"],
-					"primary": [],
-					"secondary": [{"artist": "Ben Harper and the Relentless7", "marked": true}, {"artist": "Tricky", "marked": true}, "Groove Armada", "2manydjs", {"artist": "Yeasayer", "marked": true}],
-					"middle": [{"artist": "Łąki Łan", "marked": true}, {"artist": "Tinariwen", "marked": true}],
-					"last": [{"artist": "Indigo Tree", "marked": true}],
-					"other": [{"artist": "Kacezet & Dreadsquad", "marked": true}, "Wiracki + Suka Off/BFV", "Pasimito", {"artist": "Paula i Karol", "marked": true}, {"artist": "Dead Snow Monster", "marked": true}, "Kiev Office", "Natural Born Chillers", {"artist": "Biff", "visible": false}, {"artist": "The Phenomenal Handclap Band", "visible": false}, {"artist": "Gazella", "visible": false}, {"artist": "Eltron John", "visible": false}, {"artist": "Pol_On", "visible": false}, {"artist": "Catz ’n Dogz and Gospel Voices", "visible": false}]
+					"main": [{"artist": "Pearl Jam", "order": 1}],
+					"secondary": [{"artist": "Ben Harper and the Relentless7", "marked": true, "order": 1}, {"artist": "Tricky", "marked": true, "order": 7}, {"artist": "Groove Armada", "order": 9}, {"artist": "2manydjs", "order": 10}, {"artist": "Yeasayer", "marked": true, "order": 14}],
+					"middle": [{"artist": "Łąki Łan", "marked": true, "order": 7}, {"artist": "Tinariwen", "marked": true, "order": 100}],
+					"last": [{"artist": "Indigo Tree", "marked": true, "order": 3}, {"artist": "Pasimito", "order": 8}],
+					"other": [{"artist": "Kacezet & Dreadsquad", "marked": true, "order": 1}, {"artist": "Wiracki + Suka Off/BFV", "order": 4}, {"artist": "Paula i Karol", "marked": true, "order": 6}, {"artist": "Dead Snow Monster", "marked": true, "order": 7}, {"artist": "Kiev Office", "order": 14}, {"artist": "Natural Born Chillers", "order": 15}, {"artist": "Biff", "visible": false}, {"artist": "The Phenomenal Handclap Band", "visible": false}, {"artist": "Gazella", "visible": false}, {"artist": "Eltron John", "visible": false}, {"artist": "Pol_On", "visible": false}, {"artist": "Catz ’n Dogz and Gospel Voices", "visible": false}]
 				}
 			}, {
 				"day": "2nd July",
@@ -438,12 +437,12 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2010"
 				],
 				"lineup": {
-					"main": [{"artist": "Massive Attack", "marked": true}],
-					"primary": [{"artist": "Pavement", "marked": true}, {"artist": "Grace Jones", "marked": true}],
-					"secondary": [{"artist": "Empire of the Sun", "marked": true}, {"artist": "Cypress Hill", "marked": true}, {"artist": "Klaxons", "marked": true}, {"artist": "Mando Diao", "marked": true}],
-					"middle": [{"artist": "Die Antwoord", "marked": true}, "Lao Che", {"artist": "Fox", "marked": true}, {"artist": "Pablopavo", "additionalInfo": "i Ludziki"}, {"artist": "Psio Crew", "marked": true}],
-					"last": ["Jacaszek", {"artist": "Najakotiva", "marked": true}, "Muariolanza", "Oranżada", {"artist": "52UM", "marked": true}, "Brasil and the Gallowbrothers"],
-					"other": ["Let The Boy Decide", {"artist": "Klimt", "marked":true}, {"artist": "Soniamiki", "marked":true}, {"artist": "Good Paul", "visible": false}, {"artist": "Harper & Green Jesus", "visible": false}, {"artist": "Novicky & Brat Matt", "visible": false}]
+					"main": [{"artist": "Massive Attack", "marked": true, "order": 3}],
+					"primary": [{"artist": "Pavement", "marked": true, "order": 1}, {"artist": "Grace Jones", "marked": true, "order": 3}],
+					"secondary": [{"artist": "Empire of the Sun", "marked": true, "order": 3}, {"artist": "Cypress Hill", "marked": true, "order": 4}, {"artist": "Klaxons", "marked": true, "order": 6}, {"artist": "Mando Diao", "marked": true, "order": 17}],
+					"middle": [{"artist": "Die Antwoord", "marked": true, "order": 3}, {"artist": "Lao Che", "order": 4}, {"artist": "Fox", "marked": true, "order": 7}, {"artist": "Pablopavo", "additionalInfo": "i Ludziki", "order": 14}, {"artist": "Psio Crew", "marked": true, "order": 17}],
+					"last": [{"artist": "Jacaszek", "order": 1}, {"artist": "Najakotiva", "marked": true, "order": 6}, {"artist": "Muariolanza", "order": 9}, {"artist": "Oranżada", "order": 10}, {"artist": "52UM", "marked": true, "order": 14}, {"artist": "Brasil and the Gallowbrothers", "order": 15}],
+					"other": [{"artist": "Let The Boy Decide", "order": 8}, {"artist": "Klimt", "marked":true, "order": 16}, {"artist": "Soniamiki", "marked":true, "order": 19}, {"artist": "Good Paul", "visible": false}, {"artist": "Harper & Green Jesus", "visible": false}, {"artist": "Novicky & Brat Matt", "visible": false}]
 				}
 			}, {
 				"day": "3rd July",
@@ -454,12 +453,12 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2010"
 				],
 				"lineup": {
-					"main": [{"artist": "Kasabian", "marked": true}],
-					"primary": [{"artist": "Hot Chip", "marked": true}],
-					"secondary": ["Skunk Anansie", {"artist": "Regina Spektor", "marked": true}, {"artist": "Ellie Goulding", "canceled": true}, "Matisyahu"],
-					"middle": ["Gorillaz Sound System (DVJ)", "L.U.C", "Julia Marcell", "Novika", {"artist": "We Call It A Sound", "marked": true}, {"artist": "Alians", "marked": true}, "Bester Quartet"],
+					"main": [{"artist": "Kasabian", "marked": true, "order": 2}],
+					"primary": [{"artist": "Hot Chip", "marked": true, "order": 5}],
+					"secondary": [{"artist": "Skunk Anansie", "order": 5}, {"artist": "Regina Spektor", "marked": true, "order": 11}, {"artist": "Ellie Goulding", "canceled": true, "order": 12}, {"artist": "Matisyahu", "order": 15}],
+					"middle": [{"artist": "Gorillaz Sound System (DVJ)", "order": 1}, {"artist": "L.U.C", "order": 6}, {"artist": "Julia Marcell", "order": 10}, {"artist": "Novika", "order": 12}, {"artist": "We Call It A Sound", "marked": true, "order": 13}, {"artist": "Alians", "marked": true, "order": 18}, {"artist": "Bester Quartet", "order": 19}],
 					"last": [{"artist": "Karolina Glazer", "marked": true}, {"artist": "Kciuk & The Fingers", "marked": true}, {"artist": "Niwea", "marked": true}],
-					"other": ["Merkabah", "Popkultura", "London Type Smog", {"artist": "Letters From Silence", "marked": true}, "Irena", {"artist": "The Phantom", "visible": false}, {"artist": "Club Collab", "visible": false}, {"artist": "Suprat", "visible": false}, {"artist": "Kukabura Soundsystem", "visible": false}]
+					"other": [{"artist": "Merkabah", "order": 3}, {"artist": "Popkultura", "order": 4}, {"artist": "London Type Smog", "order": 9}, {"artist": "Letters From Silence", "marked": true, "order": 10}, {"artist": "Irena", "order": 13}, {"artist": "The Phantom", "visible": false}, {"artist": "Club Collab", "visible": false}, {"artist": "Suprat", "visible": false}, {"artist": "Kukabura Soundsystem", "visible": false}]
 				}
 			}, {
 				"day": "4th July",
@@ -470,12 +469,12 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2010"
 				],
 				"lineup": {
-					"main": ["The Dead Weather"],
-					"primary": ["Fatboy Slim", "Nas & Damian Marley"],
-					"secondary": ["The Hives", {"artist": "Archive", "marked": true}, "Kings of Convenience", "Wild Beasts"],
-					"middle": ["Muchy", {"artist": "Pink Freud", "marked": true}, "L.Stadt", "Marika", {"artist": "Mitch & Mitch", "additionalInfo": "with their Incredible Combo"}],
-					"last": ["kIRk", {"artist": "NP", "marked": true}, {"artist": "Pleq", "marked": true}],
-					"other": ["Borys Kossakowski", {"artist": "The Lollipops", "marked": true}, {"artist": "Ms. No One", "marked": true}, {"artist": "3Moonboys", "marked": true}, {"artist": "Kyst", "marked": true}, {"artist": "Gra Pozorów", "marked": true}, {"artist": "Niewinni Czarodzieje", "visible": false}, {"artist": "Soul Service", "visible": false}, {"artist": "Gangsteppaz", "visible": false}]
+					"main": [{"artist": "The Dead Weather", "order": 4}],
+					"primary": [{"artist": "Fatboy Slim", "order": 2}, {"artist": "Nas & Damian Marley", "order": 4}],
+					"secondary": [{"artist": "The Hives", "order": 1}, {"artist": "Archive", "marked": true, "order": 8}, {"artist": "Kings of Convenience", "order": 13}, {"artist": "Wild Beasts", "order": 16}],
+					"middle": [{"artist": "Muchy", "order": 5}, {"artist": "Pink Freud", "marked": true, "order": 9}, {"artist": "L.Stadt", "order": 11}, {"artist": "Marika", "order": 15}, {"artist": "Mitch & Mitch", "additionalInfo": "with their Incredible Combo", "order": 16}],
+					"last": [{"artist": "kIRk", "order": 5}, {"artist": "NP", "marked": true, "order": 11}, {"artist": "Pleq", "marked": true, "order": 12}],
+					"other": [{"artist": "Borys Kossakowski", "order": 2}, {"artist": "The Lollipops", "marked": true, "order": 5}, {"artist": "Ms. No One", "marked": true, "order": 11}, {"artist": "3Moonboys", "marked": true, "order": 12}, {"artist": "Kyst", "marked": true, "order": 17}, {"artist": "Gra Pozorów", "marked": true, "order": 18}, {"artist": "Niewinni Czarodzieje", "visible": false}, {"artist": "Soul Service", "visible": false}, {"artist": "Gangsteppaz", "visible": false}]
 				}
 			}
 		],
