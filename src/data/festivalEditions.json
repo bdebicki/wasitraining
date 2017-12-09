@@ -18,8 +18,8 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=57321&date=2009-07-02&citynameWarsaw%2C+Masovian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": ["The Chemical Brothers"],
-					"primary": ["Glasse", "Sonic Trip", "Harper", "MK Fever", "Smolik", "Fresh"]
+					"headliners": ["The Chemical Brothers"],
+					"lvl1": ["Glasse", "Sonic Trip", "Harper", "MK Fever", "Smolik", "Fresh"]
 				}
 			}
 		],
@@ -48,8 +48,8 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2003-07-26&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": ["Cassius", "Kosheen", "Layo & Bushwacka!"],
-					"primary": ["15 Minuk Projekt", "Marika"],
+					"headliners": ["Cassius", "Kosheen", "Layo & Bushwacka!"],
+					"lvl1": ["15 Minuk Projekt", "Marika"],
 					"other": ["Finalists of THIRST competition"]
 				}
 			}
@@ -79,9 +79,9 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2004-07-2&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": ["Pink", "Cypress Hill"],
-					"secondary": ["Sistars"],
-					"middle": ["G!MIDI", "Slajd", "Progress"],
+					"headliners": ["Pink", "Cypress Hill"],
+					"lvl2": ["Sistars"],
+					"lvl3": ["G!MIDI", "Slajd", "Progress"],
 					"other": ["Ojciec Karol", "Charlie Jan"]
 				}
 			}, {
@@ -92,10 +92,10 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2004-07-3&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": ["Massive Attack", "Goldfrapp"],
-					"primary": ["Adam Freeland"],
-					"secondary": ["Smolik"],
-					"middle": ["Novika", "Harper", "Twinn", "THIRST Winner in Denmark"],
+					"headliners": ["Massive Attack", "Goldfrapp"],
+					"lvl1": ["Adam Freeland"],
+					"lvl2": ["Smolik"],
+					"lvl3": ["Novika", "Harper", "Twinn", "THIRST Winner in Denmark"],
 					"other": [
 						{"artist": "Klinika lalek + Kinior Sky Orkiestra:", "sufix": "przedstawienie Anielicje"},
 						{"artist": "Teatr Cinema:", "sufix": "Kabaret Olbrzymów", "sufix2": "Wieczór III. Lekkie czasy ciężkich chorób"},
@@ -128,7 +128,7 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2005-07-8&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": ["Snoop Dogg", "Fatboy Slim", "Faithless"],
+					"headliners": ["Snoop Dogg", "Fatboy Slim", "Faithless"],
 					"other": [
 						{"artist": "Pogodno", "order": 1},
 						{"artist": "O.S.T.R.", "order": 2},
@@ -151,11 +151,11 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2005-07-9&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": ["The White Stripes", "Lauryn Hill", "Underworld"],
-					"primary": [
+					"headliners": ["The White Stripes", "Lauryn Hill", "Underworld"],
+					"lvl1": [
 						{"artist": "The Music", "order": "headliners"}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "Neo", "decorated": "uppercase"}
 					],
 					"other": [
@@ -193,15 +193,15 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2006-07-8&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Placebo", "decorator": "uppercase"},
 						"Pharrell Williams",
 						{"artist": "Manu Chao", "sufix": "Radio Bemba Sound System"}
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "", "order": "headliners"}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "Matthew Herbert", "order": 5, "canceled": true},
 						{"artist": "Nightmares on Wax", "order": 5}
 					],
@@ -224,8 +224,8 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2006-07-8&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": ["Franz Ferdinand", "Sigur Rós", "Scissor Sisters", "Skin"],
-					"secondary": [
+					"headliners": ["Franz Ferdinand", "Sigur Rós", "Scissor Sisters", "Skin"],
+					"lvl2": [
 						{"artist": "Coldcut", "order": 1},
 						{"artist": "Ladytron", "order": 3}
 					],
@@ -249,13 +249,13 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2006-07-8&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						"Kanye West",
 						"Basement Jaxx",
 						"The Streets",
 						{"artist": "Groove Armada", "canceled": true}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "Roger Sanchez", "order": 2}
 					],
 					"other": [
@@ -296,15 +296,15 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2007-06-29&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"primary": [
+					"lvl1": [
 						{"artist": "Sonic Youth", "order": 2},
 						{"artist": "The Roots", "order": 4}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "Laurent Garnier (Live)", "order": 1},
 						{"artist": "Dizzee Rascal", "order": 2}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Freeform Five", "order": 3},
 						{"artist": "The Strike Boys", "order": 5},
 						{"artist": "The Car Is on Fire", "order": 6},
@@ -312,7 +312,7 @@
 						{"artist": "Pink Freud", "order": 12},
 						{"artist": "EastWest Rockers", "order": 13}
 					],
-					"last": [
+					"lvl4": [
 						{"artist": "Bruno Schulz", "order": 2},
 						{"artist": "Cała Góra Barwinków", "order": 3}
 					],
@@ -331,14 +331,14 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2007-06-30&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Beastie Boys", "order": 2},
 						{"artist": "Muse", "order": 3}
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "Groove Armada", "order": 1}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Crazy P", "order": 1},
 						{"artist": "O.S.T.R.", "order": 2},
 						{"artist": "Apteka", "order": 8},
@@ -347,7 +347,7 @@
 						{"artist": "Kapitan DA", "order": 17},
 						{"artist": "Me Myself and I", "order": 18}
 					],
-					"last": [
+					"lvl4": [
 						{"artist": "Dezodorant Squad", "order": 4},
 						{"artist": "Dick 4 Dick", "order": 5}
 					],
@@ -368,21 +368,21 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2007-07-1&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Björk", "order": 1}
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "Bloc Party", "order": 3},
 						{"artist": "LCD Soundsystem", "order": 5}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Smolik", "order": 4},
 						{"artist": "Indios Bravos", "order": 7},
 						{"artist": "Novika", "order": 9},
 						{"artist": "Bassisters Orchestra", "order": 11},
 						{"artist": "Renton", "order": 15}
 					],
-					"last": [
+					"lvl4": [
 						{"artist": "Andy", "order": 1},
 						{"artist": "Erijef Massiv", "order": 6}
 					],
@@ -417,19 +417,19 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2008-07-4&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"primary": [
+					"lvl1": [
 						{"artist": "The Raconteurs", "order": 2},
 						{"artist": "Editors", "order": 3},
 						{"artist": "Roisin Murphy", "order": 4}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "Fischerspooner", "order": 2},
 						{"artist": "DeVotchKa", "order": 3},
 						{"artist": "The Cribs", "order": 4},
 						{"artist": "Dj Vadim Live", "order": 6},
 						{"artist": "Fujiya & Miyagi", "order": 7}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Muchy", "order": 2},
 						{"artist": "Mitch & Mitch Big Band", "order": 10},
 						{"artist": "Muzykoterapia", "order": 7, "canceled": true},
@@ -464,20 +464,20 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2008-07-5&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Jay-Z", "order": 3},
 						{"artist": "Interpol", "order": 4}
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "Erykah Badu", "order": 1},
 						{"artist": "Sex Pistols", "order": 6},
 						{"artist": "Beirut", "order": 10, "canceled": true}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "Gentleman", "order": 1, "additionalIngo": "& The Far East Band"},
 						{"artist": "Cocorosie", "order": 5}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Cool Kids Of Death", "order": 1},
 						{"artist": "Maria Peszek", "order": 5},
 						{"artist": "Everything is made in China", "order": 9},
@@ -513,16 +513,16 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2008-07-6&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Massive Attack", "order": 1},
 						{"artist": "The Chemical Brothers", "order": 2}
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "Goldfrapp", "order": 5},
 						{"artist": "M.I.A.", "order": 8, "canceled": true},
 						{"artist": "Martina Topley Bird", "order": 9, "replacement": true}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Vavamuffin", "order": 4},
 						{"artist": "Ścianka", "order": 6},
 						{"artist": "Őszibarack", "order": 8},
@@ -574,20 +574,20 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2009-07-2&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Arctic Monkeys", "promoted": true, "marked": true, "order": 2}
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "Basement Jaxx", "order": 4}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "Peter Bjorn and John", "marked": true, "order": 11},
 						{"artist": "Late of the Pier", "order": 13}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Renton", "order": 8}
 					],
-					"last": [
+					"lvl4": [
 						{"artist": "The Car Is On Fire", "marked": true, "order": 1},
 						{"artist": "Łąki Łan", "order": 2},
 						{"artist": "Skinny Patrini", "marked": true, "order": 10},
@@ -597,7 +597,7 @@
 					],
 					"other": [
 						{"artist": "Sorry", "visible": false},
-						{"artist": "Ghettoblaster", "visible": false},
+						{"artist": "Ghettoblvl4er", "visible": false},
 						{"artist": "AM Radio", "visible": false},
 						{"artist": "Mentalcut", "visible": false},
 						{"artist": "Heima", "visible": false},
@@ -612,24 +612,24 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2009-07-3&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"primary": [
+					"lvl1": [
 						{"artist": "Moby", "order": 1},
 						{"artist": "Duffy", "marked": true, "order": 2}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "The Kooks", "order": 3},
 						{"artist": "Pendulum", "order": 4},
 						{"artist": "Gossip", "order": 5},
 						{"artist": "Crystal Castles", "marked": true, "order": 9}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Hjaltalín", "marked": true, "order": 2},
 						{"artist": "Speed Caravan", "marked": true, "order": 3},
 						{"artist": "Maria Peszek", "marked": true, "order": 5},
 						{"artist": "Kapela Ze Wsi Warszawa", "marked": true, "order": 9},
 						{"artist": "Thievery Corporation", "canceled": true, "order": 11}
 					],
-					"last": [
+					"lvl4": [
 						{"artist": "Pati Yang", "marked": true, "order": 4},
 						{"artist": "Gaba Kulka", "marked": true, "order": 5},
 						{"artist": "Paristetris", "order": 18},
@@ -657,10 +657,10 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2009-07-4&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Faith No More", "order": 5}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "Q-Tip", "marked": true, "order": 1},
 						{"artist": "White Lies", "order": 7},
 						{"artist": "Emiliana Torrini", "order": 10},
@@ -668,11 +668,11 @@
 						{"artist": "Buraka Som Sistema", "marked": true, "order": 13},
 						{"artist": "Madness", "marked": true, "order": 15}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Izrael", "order": 7},
 						{"artist": "Fisz Emade Tworzywo", "order": 10}
 					],
-					"last": [
+					"lvl4": [
 						{"artist": "Village Kollektiv", "order": 3},
 						{"artist": "Kamp!", "marked": true, "order": 9},
 						{"artist": "Kormorany", "marked": true, "order": 12},
@@ -689,7 +689,7 @@
 						{"artist": "Heima", "visible": false},
 						{"artist": "Lucky People Center International", "visible": false},
 						{"artist": "Beats Friendly", "visible": false},
-						{"artist": "Last Robots Alive", "visible": false}
+						{"artist": "lvl4 Robots Alive", "visible": false}
 					]
 				}
 			}, {
@@ -700,25 +700,25 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2009-07-5&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Kings of Leon", "promoted": true, "order": 1},
 						{"artist": "Placebo", "order": 3},
 						{"artist": "The Prodigy", "marked": true, "order": 4}
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "Lily Allen", "order": 3}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "The Ting Tings", "marked": true, "order": 6},
 						{"artist": "Santigold", "order": 8},
 						{"artist": "Fat Freddy's Drop", "canceled": true, "order": 14}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Jazzanova (live)", "order": 1},
 						{"artist": "Priscilla Ahn", "order": 4},
 						{"artist": "O.S.T.R.", "marked": true, "order": 6}
 					],
-					"last": [
+					"lvl4": [
 						{"artist": "Sofa", "order": 6},
 						{"artist": "The Black Tapes", "order": 7},
 						{"artist": "Kumka Olik", "order": 8},
@@ -767,21 +767,21 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2010"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Pearl Jam", "order": 1}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "Ben Harper and the Relentless7", "marked": true, "order": 1},
 						{"artist": "Tricky", "marked": true, "order": 7},
 						{"artist": "Groove Armada", "order": 9},
 						{"artist": "2manydjs", "order": 10},
 						{"artist": "Yeasayer", "marked": true, "order": 14}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Łąki Łan", "marked": true, "order": 7},
 						{"artist": "Tinariwen", "marked": true, "order": 20}
 					],
-					"last": [
+					"lvl4": [
 						{"artist": "Indigo Tree", "marked": true, "order": 3},
 						{"artist": "Pasimito", "order": 8}
 					],
@@ -809,27 +809,27 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2010"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Massive Attack", "marked": true, "order": 3}
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "Pavement", "marked": true, "order": 1},
 						{"artist": "Grace Jones", "marked": true, "order": 3}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "Empire of the Sun", "marked": true, "order": 3},
 						{"artist": "Cypress Hill", "marked": true, "order": 4},
 						{"artist": "Klaxons", "marked": true, "order": 6},
 						{"artist": "Mando Diao", "marked": true, "order": 17}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Die Antwoord", "marked": true, "order": 3},
 						{"artist": "Lao Che", "order": 4},
 						{"artist": "Fox", "marked": true, "order": 8},
 						{"artist": "Pablopavo", "additionalInfo": "i Ludziki", "order": 14},
 						{"artist": "Psio Crew", "marked": true, "order": 17}
 					],
-					"last": [
+					"lvl4": [
 						{"artist": "Jacaszek", "order": 1},
 						{"artist": "Najakotiva", "marked": true, "order": 6},
 						{"artist": "Muariolanza", "order": 9},
@@ -855,19 +855,19 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2010"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Kasabian", "marked": true, "order": 2}
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "Hot Chip", "marked": true, "order": 5}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "Skunk Anansie", "order": 5},
 						{"artist": "Regina Spektor", "marked": true, "order": 11},
 						{"artist": "Ellie Goulding", "canceled": true, "order": 12},
 						{"artist": "Matisyahu", "order": 15}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Gorillaz Sound System (DVJ)", "order": 1},
 						{"artist": "L.U.C", "order": 6},
 						{"artist": "Julia Marcell", "order": 10},
@@ -876,7 +876,7 @@
 						{"artist": "Alians", "marked": true, "order": 18},
 						{"artist": "Bester Quartet", "order": 19}
 					],
-					"last": [
+					"lvl4": [
 						{"artist": "Karolina Glazer", "marked": true},
 						{"artist": "Kciuk & The Fingers", "marked": true},
 						{"artist": "Niwea", "marked": true}
@@ -902,27 +902,27 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2010"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "The Dead Weather", "order": 4}
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "Fatboy Slim", "order": 2},
 						{"artist": "Nas & Damian Marley", "order": 4}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "The Hives", "order": 1},
 						{"artist": "Archive", "marked": true, "order": 8},
 						{"artist": "Kings of Convenience", "order": 13},
 						{"artist": "Wild Beasts", "order": 16}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Muchy", "order": 5},
 						{"artist": "Pink Freud", "marked": true, "order": 9},
 						{"artist": "L.Stadt", "order": 11},
 						{"artist": "Marika", "order": 15},
 						{"artist": "Mitch & Mitch", "additionalInfo": "with their Incredible Combo", "order": 16}
 					],
-					"last": [
+					"lvl4": [
 						{"artist": "kIRk", "order": 5},
 						{"artist": "NP", "marked": true, "order": 11},
 						{"artist": "Pleq", "marked": true, "order": 12}
@@ -966,21 +966,21 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2011"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Coldplay", "marked": true, "decorator": "expanded", "order": 1}
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "The National", "marked": true, "ordered": 1},
 						{"artist": "Two Door Cinema Club", "order": 6},
 						{"artist": "Simian Mobile Disco Live", "order": 7}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "Paolo Nutini", "order": 1},
 						{"artist": "The Twilight Singers", "marked": true, "order": 6},
 						{"artist": "Caribou", "marked": true, "order": 9},
 						{"artist": "Fat Freddy's Drop", "marked": true, "order": 12}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Pustki", "order": 6},
 						{"artist": "Enej", "marked": true, "order": 17},
 						{"artist": "Tides From Nebula", "order": 19},
@@ -1009,18 +1009,18 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2011"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Pulp", "order": 4}
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "Foals", "order": 3}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "Youssou N’Dour", "order": 7},
 						{"artist": "Cut Copy", "marked": true, "order": 8},
 						{"artist": "British Sea Power", "marked": true, "order": 11}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Abraham Inc.", "marked": true, "order": 2},
 						{"artist": "Crystal Fighters", "marked": true, "order": 4},
 						{"artist": "Brodka", "marked": true, "order": 5},
@@ -1053,17 +1053,17 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2011"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Prince", "decorator": "expanded", "order": 2}
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "Primus", "order": 2},
 						{"artist": "Big Boi", "marked": true, "order": 5}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "Kate Nash", "marked": true, "order": 3}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Chapel Club", "order": 1},
 						{"artist":"The Asteroids Galaxy Tour", "marked": true, "order": 3},
 						{"artist": "Kim Nowak", "marked": true, "order": 9},
@@ -1080,7 +1080,7 @@
 						{"artist": "Adre'n'Alin", "order": 17},
 						{"artist": "Ailo In Head", "marked": true, "order": 18},
 						{"artist": "Asi Mina", "visible": false},
-						{"artist": "Last Robots", "visible": false},
+						{"artist": "lvl4 Robots", "visible": false},
 						{"artist": "Mr. Lex & Novika", "visible": false}
 					]
 				}
@@ -1094,21 +1094,21 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2011"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "The Strokes", "marked": true, "order": 3},
 						{"artist": "M.I.A.", "order": 5}
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "deadmau5", "order": 4},
 						{"artist": "The Wombats", "marked": true, "order": 8}
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "Hurts", "order": 2},
 						{"artist": "James Blake", "marked": true, "order": 4},
 						{"artist": "These New Puritans", "order": 5},
 						{"artist": "Chromeo", "order": 10}
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "The Black Tapes", "marked": true, "order": 8},
 						{"artist": "Vavamuffin", "marked": true, "order": 10},
 						{"artist": "Baaba Kulka", "marked": true, "order": 14},
@@ -1157,9 +1157,9 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2012"
 				],
 				"lineup": {
-					"main": ["Björk"],
-					"primary": ["New Order", {"prefix": "The", "artist": "Kills"}],
-					"secondary": ["Wiz Khalifa", "Orbital", "Gogol Bordello"],
+					"headliners": ["Björk"],
+					"lvl1": ["New Order", {"prefix": "The", "artist": "Kills"}],
+					"lvl2": ["Wiz Khalifa", "Orbital", "Gogol Bordello"],
 					"mniddle": ["Yeasayer", {"prefix": "The", "artist": "Ting Tings"}, "SOJA"],
 					"other": [{"artist": "Fisz Emade",  "additionalInfo": "Tworzywo"}, {"artist": "June", "visible": false}, {"artist": "très.b", "visible": false}, {"artist": "Frozen Bird", "visible": false}, {"artist": "Mela Koteluk", "visible": false}, {"artist": "Jacaszek", "visible": false}, {"artist": "Chłopcy Kontra Basia", "visible": false}, {"artist": "Galus", "visible": false}, {"artist": "Sobura", "visible": false}, {"artist": "TEIELTE", "visible": false}, {"artist": "En2ak", "visible": false}, {"artist": "Ment XXL", "visible": false}, {"artist": "Praktik", "visible": false}, {"artist": "Groh + Eltron John", "visible": false}, {"artist": "Sonar Soul", "visible": false}, {"artist": "BEZSENSU", "visible": false}, {"artist": "Sjøn", "visible": false}, {"artist": "Enchanted Hunters", "visible": false}, {"artist": "Dva", "visible": false}]
 				}
@@ -1172,17 +1172,17 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2012"
 				],
 				"lineup": {
-					"main": ["Justice"],
-					"primary": [
+					"headliners": ["Justice"],
+					"lvl1": [
 						"Bon Iver",
 						{"artist": "Penderecki//Greenwood", "multiline": true}
 					],
-					"secondary": [
+					"lvl2": [
 						{"prefix": "The", "artist": "Maccabees"},
 						"Major Lazer",
 						"Jamie Woon"
 					],
-					"middle": [
+					"lvl3": [
 						{"artist": "Dry", "prefix2": "The", "artist2": "River"},
 						"Jessie Ware"
 					],
@@ -1214,14 +1214,14 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2012"
 				],
 				"lineup": {
-					"main": ["Franz Ferdinand"],
-					"primary": ["Bloc Party", "M83"],
-					"secondary": [
+					"headliners": ["Franz Ferdinand"],
+					"lvl1": ["Bloc Party", "M83"],
+					"lvl2": [
 						"Public Enemy",
 						{"additionalInfo": "Kasia", "artist": "Nosowska"},
 						"Toro Y Moi"
 					],
-					"middle": ["Julia Marcell"],
+					"lvl3": ["Julia Marcell"],
 					"other": [
 						{"artist": "Łona Webber", "additionalInfo": "& The Pimps"},
 						"L.Stadt",
@@ -1251,15 +1251,15 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2012"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"prefix": "The", "artist": "Mars Volta"}
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "Mumford", "prefix2": "&", "artist2": "Sons"},
 						{"prefix": "The", "artist": "xx", "artistUppercase": false}
 					],
-					"secondary": ["Friendly Fires", "Janelle Monáe", "Bat For Lashes"],
-					"middle": [
+					"lvl2": ["Friendly Fires", "Janelle Monáe", "Bat For Lashes"],
+					"lvl3": [
 						{"artist": "SBTRKT", "sufix": "Live"}
 					],
 					"other": [
@@ -1309,8 +1309,8 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2013"
 				],
 				"lineup": {
-					"main": ["Blur"],
-					"primary": ["Editors", "Crystal Castles", "Kendrick Lamar", "Alt-J", "Savages"],
+					"headliners": ["Blur"],
+					"lvl1": ["Editors", "Crystal Castles", "Kendrick Lamar", "Alt-J", "Savages"],
 					"other": [
 						"Vavamuffin",
 						{"artist": "Vienio", "additionalInfo": "Profil Pokoleń"},
@@ -1339,9 +1339,9 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2013"
 				],
 				"lineup": {
-					"main": ["Arctic Monkeys"],
-					"primary": ["Nick Cave & The Bad Seeds"],
-					"secondary": ["Tame Impala", "Matisyahu", "Junip", "Maria Peszek"],
+					"headliners": ["Arctic Monkeys"],
+					"lvl1": ["Nick Cave & The Bad Seeds"],
+					"lvl2": ["Tame Impala", "Matisyahu", "Junip", "Maria Peszek"],
 					"other": [
 						"Kim Nowak",
 						"Łąki Łan",
@@ -1371,9 +1371,9 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2013"
 				],
 				"lineup": {
-					"main": ["Queens of the Stone Age"],
-					"primary": ["The National", "Skunk Anansie", "Nas"],
-					"secondary": ["Disclosure", "Hey", "Kaliber 44"],
+					"headliners": ["Queens of the Stone Age"],
+					"lvl1": ["The National", "Skunk Anansie", "Nas"],
+					"lvl2": ["Disclosure", "Hey", "Kaliber 44"],
 					"other": [
 						"These New Puritans",
 						"Palma Violets",
@@ -1403,14 +1403,14 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2013"
 				],
 				"lineup": {
-					"main": ["Kings of Leon"],
-					"primary": [
+					"headliners": ["Kings of Leon"],
+					"lvl1": [
 						"Animal Collective",
 						"Miguel",
 						{"artist": "Steve Reich & Ensemble Modern", "multiline": true},
 						{"artist": "Jonny Greenwood", "multiline": true}
 					],
-					"secondary": ["Crystal Fighters", "Devendra Banhart"],
+					"lvl2": ["Crystal Fighters", "Devendra Banhart"],
 					"other": [
 						"Mount Kimbie",
 						"Everything Everything",
@@ -1461,9 +1461,9 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2014"
 				],
 				"lineup": {
-					"main": ["The Black Keys"],
-					"primary": ["Foster the People", "Interpol", "Earl Sweatshirt", "Haim", "Metronomy"],
-					"secondary": [
+					"headliners": ["The Black Keys"],
+					"lvl1": ["Foster the People", "Interpol", "Earl Sweatshirt", "Haim", "Metronomy"],
+					"lvl2": [
 						"Eldo",
 						"Pablopavo i Ludziki",
 						"Fair Weather Friends",
@@ -1494,8 +1494,8 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2014"
 				],
 				"lineup": {
-					"main": ["Pearl Jam"],
-					"primary": [
+					"headliners": ["Pearl Jam"],
+					"lvl1": [
 						"MGMT",
 						"MØ",
 						"Rudimental",
@@ -1504,7 +1504,7 @@
 						"Maya Jane Coles",
 						"Jagwar Ma"
 					],
-					"secondary": ["Pink Freud Plays Autechre", "Bokka", "Pustki", "Kuroma", "Rasmentalism"],
+					"lvl2": ["Pink Freud Plays Autechre", "Bokka", "Pustki", "Kuroma", "Rasmentalism"],
 					"other": [
 						"Call the Sun",
 						"Jerz Igor",
@@ -1522,8 +1522,8 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2014"
 				],
 				"lineup": {
-					"main": ["Jack White"],
-					"primary": [
+					"headliners": ["Jack White"],
+					"lvl1": [
 						"Lykke Li",
 						"Foals",
 						"Mela Koteluk",
@@ -1533,7 +1533,7 @@
 						"Royal Blood",
 						"Chromeo"
 					],
-					"secondary": ["KAMP!", "Misia FF", "Tourist", "Misia Ff", "Rubber Dots"],
+					"lvl2": ["KAMP!", "Misia FF", "Tourist", "Misia Ff", "Rubber Dots"],
 					"other": [
 						"Bulbwires",
 						"Carnival Youth",
@@ -1554,8 +1554,8 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2014"
 				],
 				"lineup": {
-					"main": ["Faith No More"],
-					"primary": [
+					"headliners": ["Faith No More"],
+					"lvl1": [
 						"The Horrors",
 						"Phoenix",
 						"Bastille",
@@ -1565,10 +1565,10 @@
 						"Warpaint",
 						"Julio Bashmore"
 					],
-					"secondary": [
+					"lvl2": [
 						{"artist": "The Dumplings", "canceled": true},
 						{"artist": "Domowe Melodie", "replacement": true},
-						"Plastic",
+						"Plvl4ic",
 						"Kari",
 						"Król"
 					],
@@ -1609,10 +1609,10 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2015"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Drake", "marked": true}
 					],
-					"primary": [
+					"lvl1": [
 						"Alt-J",
 						{"artist": "Alabama Shakes", "marked": true},
 						"A$AP Rocky",
@@ -1620,7 +1620,7 @@
 						"Die Antwoord",
 						{"artist": "Modest Mouse", "marked": true}
 					],
-					"secondary": [
+					"lvl2": [
 						"Father John Misty",
 						{"artist": "Kodaline", "marked": true},
 						"Natalia Przybysz",
@@ -1646,17 +1646,17 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2015"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "The Libertines", "marked": true},
 						"Major Lazer"
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "Enter Shikari", "marked": true},
 						"Faithless 2.0",
 						{"artist": "Refused", "marked": true},
 						{"artist": "Kendrick Lamar", "canceled": true}
 					],
-					"secondary": [
+					"lvl2": [
 						"Curly Heads",
 						{"artist": "Django Django", "marked": true},
 						"Eagles Of The Death Metal",
@@ -1685,15 +1685,15 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2015"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Mumford & Sons", "marked": true}
 					],
-					"primary": [
+					"lvl1": [
 						"D'Angelo & The Vanguard",
 						{"artist": "Of Monsters and Men", "marked": true},
 						{"artist": "The Prodigy", "decorator": "bold"}
 					],
-					"secondary": [
+					"lvl2": [
 						"Jonny Greenwood & LCO",
 						{"artist": "José Gonzalez", "marked": true},
 						"Julia Marcell",
@@ -1721,16 +1721,16 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2015"
 				],
 				"lineup": {
-					"main": [
+					"headliners": [
 						{"artist": "Kasabian", "marked": true},
 						"Disclosure"
 					],
-					"primary": [
+					"lvl1": [
 						{"artist": "Flume", "marked": true},
 						"Hozier",
 						{"artist": "St. Vincent", "marked": true}
 					],
-					"secondary": [
+					"lvl2": [
 						"Domowe Melodie",
 						{"artist": "George Fitzgerald", "marked": true},
 						{"artist": "Kaytranda", "canceled": true},
@@ -1777,16 +1777,16 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2016"
 				],
 				"lineup": {
-					"main": ["Florence+The Machine"],
-					"primary": [
+					"headliners": ["Florence+The Machine"],
+					"lvl1": [
 						"Mac Demarco",
 						"PJ Harvey",
 						"Savages",
 						"Skepta",
 						"Tame Impala",
-						"The Last Shadow Puppets"
+						"The lvl4 Shadow Puppets"
 					],
-					"secondary": ["DJ Tennis", "Flirtini", "Lunice", "Małpa", "Xxanaxx"],
+					"lvl2": ["DJ Tennis", "Flirtini", "Lunice", "Małpa", "Xxanaxx"],
 					"other": [
 						"Chino",
 						"Heroes Get Remembered",
@@ -1806,9 +1806,9 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2016"
 				],
 				"lineup": {
-					"main": ["Red Hot Chili Peppers"],
-					"primary": ["Beirut", "Caribou", "Foals", "M83"],
-					"secondary": ["KAMP!", "Maria Peszek", "Rebeka", "Section Boyz"],
+					"headliners": ["Red Hot Chili Peppers"],
+					"lvl1": ["Beirut", "Caribou", "Foals", "M83"],
+					"lvl2": ["KAMP!", "Maria Peszek", "Rebeka", "Section Boyz"],
 					"other": ["An On Bast", "Baasch", "Czeluść (Jutro X Kosa)", "Kroki", "Piotr Zioła", "Sonar", "V/O"]
 				}
 			}, {
@@ -1819,9 +1819,9 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2016"
 				],
 				"lineup": {
-					"main": ["Lcd Soundsystem", "Sigur Rós"],
-					"primary": ["Dawid Podsiadło", "Kurt Ville & The Violators", "Paul Kalkbrenner", "Wiz Khalifa"],
-					"secondary": [
+					"headliners": ["Lcd Soundsystem", "Sigur Rós"],
+					"lvl1": ["Dawid Podsiadło", "Kurt Ville & The Violators", "Paul Kalkbrenner", "Wiz Khalifa"],
+					"lvl2": [
 						"Catz ’n Dogs", "Kortez",
 						"Nothing but Thieves",
 						"Ptaki",
@@ -1846,9 +1846,9 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2016"
 				],
 				"lineup": {
-					"main": ["Pharrell Williams", "Kygo"],
-					"primary": ["At The Drive-in", "Bastille", "Chvrches", "Grimes", "The 1975"],
-					"secondary": ["Jacek Sienkiewicz", "Rasmentalism"],
+					"headliners": ["Pharrell Williams", "Kygo"],
+					"lvl1": ["At The Drive-in", "Bastille", "Chvrches", "Grimes", "The 1975"],
+					"lvl2": ["Jacek Sienkiewicz", "Rasmentalism"],
 					"other": [
 						"Coldair",
 						"Hana",
@@ -1887,9 +1887,9 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2017"
 				],
 				"lineup": {
-					"main": ["Radiohead"],
-					"primary": ["James Blake", "Royal Blood"],
-					"secondary": ["Michael Kiwanuka", "Rae Sremmurd", "Solange"],
+					"headliners": ["Radiohead"],
+					"lvl1": ["James Blake", "Royal Blood"],
+					"lvl2": ["Michael Kiwanuka", "Rae Sremmurd", "Solange"],
 					"other": [
 						{"artist": "Arca", "sufix": "(DJ Set)"},
 						"Black Coffee",
@@ -1912,13 +1912,13 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2017"
 				],
 				"lineup": {
-					"main": ["Foo Fighters"],
-					"primary": [
+					"headliners": ["Foo Fighters"],
+					"lvl1": [
 						"G-Eazy",
 						{"artist": "The Kills", "sortBy": "Kills"},
 						"M.I.A."
 					],
-					"secondary": ["Charli XCX", "Jimmy Eat World", "Trentemøller"],
+					"lvl2": ["Charli XCX", "Jimmy Eat World", "Trentemøller"],
 					"other": [
 						"A_GIM",
 						"Bitamina",
@@ -1941,9 +1941,9 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2017"
 				],
 				"lineup": {
-					"main": ["The Weekend"],
-					"primary": ["Mac Miller", "Moderat", "Prophets of Rage"],
-					"secondary": [
+					"headliners": ["The Weekend"],
+					"lvl1": ["Mac Miller", "Moderat", "Prophets of Rage"],
+					"lvl2": [
 						"Brodka",
 						{"artist": "The Dumplings", "sortBy": "Dumplings"},
 						"Grammatik",
@@ -1962,9 +1962,9 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2017"
 				],
 				"lineup": {
-					"main": ["The XX, Lorde"],
-					"primary": ["George Ezra", "Taco Hemingway"],
-					"secondary": [
+					"headliners": ["The XX, Lorde"],
+					"lvl1": ["George Ezra", "Taco Hemingway"],
+					"lvl2": [
 						"Dua Lipa",
 						"Nicolas Jaar",
 						{"artist": "Tyga", "sortIndex": "3"},
