@@ -504,11 +504,11 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2011"
 				],
 				"lineup": {
-					"main": [{"artist": "Coldplay", "marked": true}],
-					"primary": [{"artist": "The National", "marked": true}, "Two Door Cinema Club", "Simian Mobile Disco Live"],
-					"secondary": ["Paolo Nutini", {"artist": "The Twilight Singers", "marked": true}, {"artist": "Caribou", "marked": true}, {"artist": "Fat Freddy's Drop", "marked": true}],
-					"middle": ["Pustki", {"artist": "Enej", "marked": true}, "Tides From Nebula", "Marcelina"],
-					"other": ["Daktari", {"artist": "Jazzpospolita", "marked": true}, {"artist": "Rebeka", "marked": true}, {"artist": "Lody", "marked": true}, {"artist": "Karbido", "visible": false}, {"artist": "Futuristen", "visible": false}, {"artist": "Cuba de Zoo", "visible": false}, {"artist": "Woody Alien", "visible": false}, {"artist": "Mentalcut", "visible": false}, {"artist": "Daniel Drumz", "visible": false}, {"artist": "My Head is a Dubby", "visible": false}]
+					"main": [{"artist": "Coldplay", "marked": true, "decorator": "expanded", "order": 1}],
+					"primary": [{"artist": "The National", "marked": true, "ordered": 1}, {"artist": "Two Door Cinema Club", "order": 6}, {"artist": "Simian Mobile Disco Live", "order": 7}],
+					"secondary": [{"artist": "Paolo Nutini", "order": 1}, {"artist": "The Twilight Singers", "marked": true, "order": 6}, {"artist": "Caribou", "marked": true, "order": 9}, {"artist": "Fat Freddy's Drop", "marked": true, "order": 12}],
+					"middle": [{"artist": "Pustki", "order": 6}, {"artist": "Enej", "marked": true, "order": 17}, {"artist": "Tides From Nebula", "order": 19}, {"artist": "Marcelina", "order": 23}],
+					"other": [{"artist": "Daktari", "order": 10}, {"artist": "Jazzpospolita", "marked": true, "order": 12}, {"artist": "Rebeka", "marked": true, "order": 19}, {"artist": "Lody", "marked": true, "order": 21}, {"artist": "Karbido", "visible": false}, {"artist": "Futuristen", "visible": false}, {"artist": "Cuba de Zoo", "visible": false}, {"artist": "Woody Alien", "visible": false}, {"artist": "Mentalcut", "visible": false}, {"artist": "Daniel Drumz", "visible": false}, {"artist": "My Head is a Dubby", "visible": false}]
 				}
 			}, {
 				"day": "1st July",
@@ -519,11 +519,11 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2011"
 				],
 				"lineup": {
-					"main": ["Pulp"],
-					"primary": ["Foals"],
-					"secondary": ["Youssou N’Dour", {"artist": "Cut Copy", "marked": true}, {"artist": "British Sea Power", "marked": true}],
-					"middle": [{"artist": "Abraham Inc.", "marked": true}, {"artist": "Crystal Fighters", "marked": true}, {"artist": "Brodka", "marked": true}, {"artist": "Pogodno", "marked": true}, {"artist": "D4D", "marked": true}, "Ballady i Romanse", {"artist": "Twilite", "marked": true}, {"artist": "PFK Kompany", "marked": true}, "Igor Boxx"],
-					"other": ["Plazmatikon", {"artist": "The Phantoms", "marked": true}, "Bipolar Bears", {"artist": "New New", "marked": true}, {"artist": "Contemporary Noise Sextet", "visible": false}, {"artist": "Tres.B", "visible": false}, {"artist": "Harper", "visible": false}, {"artist": "Club Collab", "visible": false}, {"artist": "Spox", "visible": false}, {"artist": "Junkie Punks", "visible": false}]
+					"main": [{"artist": "Pulp", "order": 4}],
+					"primary": [{"artist": "Foals", "order": 3}],
+					"secondary": [{"artist": "Youssou N’Dour", "order": 7}, {"artist": "Cut Copy", "marked": true, "order": 8}, {"artist": "British Sea Power", "marked": true, "order": 11}],
+					"middle": [{"artist": "Abraham Inc.", "marked": true, "order": 2}, {"artist": "Crystal Fighters", "marked": true, "order": 4}, {"artist": "Brodka", "marked": true, "order": 5}, {"artist": "Pogodno", "marked": true, "order": 7}, {"artist": "D4D", "marked": true, "order": 11}, {"artist": "Ballady i Romanse", "order": 12}, {"artist": "Twilite", "marked": true, "order": 15}, {"artist": "PFK Kompany", "marked": true, "order": 20}, {"artist": "Igor Boxx", "order": 24}],
+					"other": [{"artist": "Plazmatikon", "order": 9}, {"artist": "The Phantoms", "marked": true, "order": 14}, {"artist": "Bipolar Bears", "order": 15}, {"artist": "New New", "marked": true, "order": 20}, {"artist": "Contemporary Noise Sextet", "visible": false}, {"artist": "Tres.B", "visible": false}, {"artist": "Harper", "visible": false}, {"artist": "Club Collab", "visible": false}, {"artist": "Spox", "visible": false}, {"artist": "Junkie Punks", "visible": false}]
 				}
 			}, {
 				"day": "2nd July",
@@ -534,11 +534,11 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2011"
 				],
 				"lineup": {
-					"main": ["Prince"],
-					"primary": ["Primus", {"artist": "Big Boi", "marked": true}],
-					"secondary": [{"artist": "Kate Nash", "marked": true}],
-					"middle": ["Chapel Club", {"artist":"The Asteroids Galaxy Tour", "marked": true}, {"artist": "Kim Nowak", "marked": true}, {"artist": "Paristetris", "marked": true}, {"artist": "R.U.T.A.", "marked": true}, "Gooral"],
-					"other": [{"artist": "Małe Instrumenty", "marked": true}, "Grabek", {"artist": "Snowman", "marked": true}, {"artist": "Nerwowe Wakacje", "marked": true}, "Niechęć", "Adre'n'Alin", {"artist": "Ailo In Head", "marked": true}, {"artist": "Asi Mina", "visible": false}, {"artist": "Last Robots", "visible": false}, {"artist": "Mr. Lex & Novika", "visible": false}]
+					"main": [{"artist": "Prince", "decorator": "expanded", "order": 2}],
+					"primary": [{"artist": "Primus", "order": 2}, {"artist": "Big Boi", "marked": true, "order": 5}],
+					"secondary": [{"artist": "Kate Nash", "marked": true, "order": 3}],
+					"middle": [{"artist": "Chapel Club", "order": 1}, {"artist":"The Asteroids Galaxy Tour", "marked": true, "order": 3}, {"artist": "Kim Nowak", "marked": true, "order": 9}, {"artist": "Paristetris", "marked": true, "order": 13}, {"artist": "R.U.T.A.", "marked": true, "order": 16}, {"artist": "Gooral", "order": 18}],
+					"other": [{"artist": "Małe Instrumenty", "marked": true, "order": 1}, {"artist": "Grabek", "order": 3}, {"artist": "Snowman", "marked": true, "order": 6}, {"artist": "Nerwowe Wakacje", "marked": true, "order": 8}, {"artist": "Niechęć", "order": 11}, {"artist": "Adre'n'Alin", "order": 17}, {"artist": "Ailo In Head", "marked": true, "order": 18}, {"artist": "Asi Mina", "visible": false}, {"artist": "Last Robots", "visible": false}, {"artist": "Mr. Lex & Novika", "visible": false}]
 				}
 			}, {
 				"day": "3rd July",
@@ -550,11 +550,11 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2011"
 				],
 				"lineup": {
-					"main": [{"artist": "The Strokes", "marked": true}, "M.I.A."],
-					"primary": ["deadmau5", {"artist": "The Wombats", "marked": true}],
-					"secondary": ["Hurts", {"artist": "James Blake", "marked": true}, "These New Puritans", "Chromeo"],
-					"middle": [{"artist": "The Black Tapes", "marked": true}, {"artist": "Vavamuffin", "marked": true}, {"artist": "Baaba Kulka", "marked": true}, {"artist": "Sedativa feat. Dawid Portasz", "marked": true}, "Neony"],
-					"other": [{"artist": "Janusz Prusinowski Trio", "marked": true}, "Spięty", "Wojtek Mazolewski Quintet", {"artist": "Fonovel", "marked": true}, {"artist": "Karolina Cicha", "marked": true}, "Peter J. Birch", {"artist": "Revlovers", "visible": false}, {"artist": "Wilson Square", "visible": false}, {"artist": "Eltron John", "visible": false}, {"artist": "Envee", "visible": false}, {"artist": "Bueno Bros", "visible": false}, {"artist": "Catz 'n Dogz", "visible": false}]
+					"main": [{"artist": "The Strokes", "marked": true, "order": 3}, {"artist": "M.I.A.", "order": 5}],
+					"primary": [{"artist": "deadmau5", "order": 4}, {"artist": "The Wombats", "marked": true, "order": 8}],
+					"secondary": [{"artist": "Hurts", "order": 2}, {"artist": "James Blake", "marked": true, "order": 4}, {"artist": "These New Puritans", "order": 5}, {"artist": "Chromeo", "order": 10}],
+					"middle": [{"artist": "The Black Tapes", "marked": true, "order": 8}, {"artist": "Vavamuffin", "marked": true, "order": 10}, {"artist": "Baaba Kulka", "marked": true, "order": 14}, {"artist": "Sedativa feat. Dawid Portasz", "marked": true, "order": 21}, {"artist": "Neony", "order": 22}],
+					"other": [{"artist": "Janusz Prusinowski Trio", "marked": true, "order": 2}, {"artist": "Spięty", "order": 4}, {"artist": "Wojtek Mazolewski Quintet", "order": 5}, {"artist": "Fonovel", "marked": true, "order": 7}, {"artist": "Karolina Cicha", "marked": true, "order": 13}, {"artist": "Peter J. Birch", "order": 16}, {"artist": "Revlovers", "visible": false}, {"artist": "Wilson Square", "visible": false}, {"artist": "Eltron John", "visible": false}, {"artist": "Envee", "visible": false}, {"artist": "Bueno Bros", "visible": false}, {"artist": "Catz 'n Dogz", "visible": false}]
 				}
 			}
 		],
@@ -637,7 +637,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortBy": "customOrder",
+			"sortBy": false,
 			"mergeArtists": false,
 			"otherArtists": false
 		}
@@ -713,7 +713,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortBy": "alphabetical",
+			"sortBy": false,
 			"mergeArtists": false,
 			"otherArtists": "... and many other"
 		}
