@@ -597,7 +597,7 @@
 					],
 					"other": [
 						{"artist": "Sorry", "visible": false},
-						{"artist": "Ghettoblvl4er", "visible": false},
+						{"artist": "Ghettoblaster", "visible": false},
 						{"artist": "AM Radio", "visible": false},
 						{"artist": "Mentalcut", "visible": false},
 						{"artist": "Heima", "visible": false},
@@ -689,7 +689,7 @@
 						{"artist": "Heima", "visible": false},
 						{"artist": "Lucky People Center International", "visible": false},
 						{"artist": "Beats Friendly", "visible": false},
-						{"artist": "lvl4 Robots Alive", "visible": false}
+						{"artist": "Last Robots Alive", "visible": false}
 					]
 				}
 			}, {
@@ -1160,7 +1160,7 @@
 					"headliners": ["Björk"],
 					"lvl1": ["New Order", {"prefix": "The", "artist": "Kills"}],
 					"lvl2": ["Wiz Khalifa", "Orbital", "Gogol Bordello"],
-					"mniddle": ["Yeasayer", {"prefix": "The", "artist": "Ting Tings"}, "SOJA"],
+					"lvl4": ["Yeasayer", {"prefix": "The", "artist": "Ting Tings"}, "SOJA"],
 					"other": [
 						{"artist": "Fisz Emade Tworzywo",  "displayName": "Fisz Emade"},
 						{"artist": "June", "visible": false},
