@@ -23,7 +23,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortBy": false,
+			"sortType": false,
 			"mergeArtists": false,
 			"otherArtists": false
 		}
@@ -53,7 +53,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortBy": false,
+			"sortType": false,
 			"mergeArtists": false,
 			"otherArtists": false
 		}
@@ -103,7 +103,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortBy": false,
+			"sortType": false,
 			"mergeArtists": false,
 			"otherArtists": false
 		}
@@ -167,7 +167,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortBy": "customOrderExceptHeadliners",
+			"sortType": "customOrderExceptHeadliners",
 			"mergeArtists": "exceptHeadliners",
 			"otherArtists": "And also:"
 		}
@@ -269,7 +269,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortBy": "customOrderExceptHeadliners",
+			"sortType": "customOrderExceptHeadliners",
 			"mergeArtists": "exceptHeadliners",
 			"otherArtists": "and also:"
 		}
@@ -389,7 +389,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortBy": "customOrder",
+			"sortType": "customOrder",
 			"mergeArtists": true,
 			"otherArtists": false
 		}
@@ -545,7 +545,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortBy": "customOrder",
+			"sortType": "customOrder",
 			"mergeArtists": true,
 			"otherArtists": false
 		}
@@ -736,7 +736,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortBy": "customOrder",
+			"sortType": "customOrder",
 			"mergeArtists": true,
 			"otherArtists": false
 		}
@@ -934,7 +934,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortBy": "customOrder",
+			"sortType": "customOrder",
 			"mergeArtists": true,
 			"otherArtists": false
 		}
@@ -1124,7 +1124,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortBy": "customOrder",
+			"sortType": "customOrder",
 			"mergeArtists": true,
 			"otherArtists": false
 		}
@@ -1295,7 +1295,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortBy": false,
+			"sortType": false,
 			"mergeArtists": false,
 			"otherArtists": false
 		}
@@ -1445,7 +1445,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortBy": false,
+			"sortType": false,
 			"mergeArtists": false,
 			"otherArtists": "... and many other"
 		}
