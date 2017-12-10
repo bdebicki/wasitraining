@@ -97,9 +97,10 @@
 					"lvl2": ["Smolik"],
 					"lvl3": ["Novika", "Harper", "Twinn", "THIRST Winner in Denmark"],
 					"other": [
-						{"artist": "Klinika lalek + Kinior Sky Orkiestra:", "sufix": "przedstawienie Anielicje"},
-						{"artist": "Teatr Cinema:", "sufix": "Kabaret Olbrzymów", "sufix2": "Wieczór III. Lekkie czasy ciężkich chorób"},
-						{"artist": "Teatr Snów:", "sufix": "przedstawienie Republika Marzeń"}, {"artist": "Klinika Lalek:", "sufix": "Parada uliczna"}
+						{"artist": "Klinika lalek + Kinior Sky Orkiestra: przedstawienie Anielicje", "sliceDecorator": {"slice": "przedstawienie Anielicje", "style": "newLine"}},
+						{"artist": "Teatr Cinema: Kabaret Olbrzymów Wieczór III. Lekkie czasy ciężkich chorób", "sliceDecorator": {"slice": "Wieczór III. Lekkie czasy ciężkich chorób", "style": "newLine"}},
+						{"artist": "Teatr Snów: przedstawienie Republika Marzeń"},
+						{"artist": "Klinika Lalek: Parada uliczna"}
 					]
 				}
 			}
@@ -196,7 +197,7 @@
 					"headliners": [
 						{"artist": "Placebo", "decorator": "uppercase"},
 						"Pharrell Williams",
-						{"artist": "Manu Chao", "sufix": "Radio Bemba Sound System"}
+						{"artist": "Manu Chao Radio Bemba Sound System", "sliceDecorator": {"slice": "Radio Bemba Sound System", "style": "down"}}
 					],
 					"lvl1": [
 						{"artist": "", "order": "headliners"}
@@ -1158,9 +1159,9 @@
 				],
 				"lineup": {
 					"headliners": ["Björk"],
-					"lvl1": ["New Order", {"prefix": "The", "artist": "Kills"}],
+					"lvl1": ["New Order", {"artist": "The Kills", "sliceDecorator": {"slice": "The", "style": "up"}}],
 					"lvl2": ["Wiz Khalifa", "Orbital", "Gogol Bordello"],
-					"lvl4": ["Yeasayer", {"prefix": "The", "artist": "Ting Tings"}, "SOJA"],
+					"lvl4": ["Yeasayer", {"artist": "The Ting Tings", "sliceDecorator": {"slice": "The", "style": "up"}}, "SOJA"],
 					"other": [
 						{"artist": "Fisz Emade Tworzywo",  "displayName": "Fisz Emade"},
 						{"artist": "June", "visible": false},
@@ -1198,12 +1199,12 @@
 						{"artist": "Penderecki//Greenwood", "multiline": true}
 					],
 					"lvl2": [
-						{"prefix": "The", "artist": "Maccabees"},
+						{"artist": "The Maccabees", "sliceDecorator": {"slice": "The", "style": "up"}},
 						"Major Lazer",
 						"Jamie Woon"
 					],
 					"lvl3": [
-						{"artist": "Dry", "prefix2": "The", "artist2": "River"},
+						{"artist": "Dry The River", "sliceDecorator": {"slice": "The", "style": "middle"}},
 						"Jessie Ware"
 					],
 					"other": [
@@ -1272,19 +1273,19 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"prefix": "The", "artist": "Mars Volta"}
+						{"artist": "The Mars Volta", "sliceDecorator": {"slice": "The", "style": "up"}}
 					],
 					"lvl1": [
-						{"artist": "Mumford", "prefix2": "&", "artist2": "Sons"},
-						{"prefix": "The", "artist": "xx", "artistUppercase": false}
+						{"artist": "Mumford & Sons", "sliceDecorator": {"slice": "&", "style": "middle"}},
+						{"artist": "The XX", "sliceDecorator": {"slice": "XX", "style": "lower"}}
 					],
 					"lvl2": ["Friendly Fires", "Janelle Monáe", "Bat For Lashes"],
 					"lvl3": [
-						{"artist": "SBTRKT", "sufix": "Live"}
+						{"artist": "SBTRKT Live", "sliceDecorator": {"slice": "Live", "style": "up"}}
 					],
 					"other": [
 						"Świetliki",
-						{"artist": "Cool Kids", "prefix2": "of", "artist2": "Death"},
+						{"artist": "Cool Kids of Death", "sliceDecorator": {"slice": "of", "style": "middle"}},
 						{"artist": "The KDMS", "visible": false},
 						{"artist": "Maja Kleszcz & incarNations", "visible": false},
 						{"artist": "Brygada Kryzys", "visible": false},
@@ -1847,7 +1848,12 @@
 						"Ptaki",
 						"Rysy",
 						"Vince Staples",
-						{"artist": "Zbigniew Wodeski", "sufix": "with", "artist2": "Mitch & Mitch", "sufix2": "Orchestra and Choir"}
+						{"artist": "Zbigniew Wodeski with Mitch & Mitch Orchestra and Choir",
+							"sliceDecorator": [
+								{"slice": "with", "style": "down"},
+								{"slice": "Orchestra and Choir", "style": "multiline"}
+							]
+						}
 					],
 					"other": [
 						"Grobel",
@@ -1911,7 +1917,7 @@
 					"lvl1": ["James Blake", "Royal Blood"],
 					"lvl2": ["Michael Kiwanuka", "Rae Sremmurd", "Solange"],
 					"other": [
-						{"artist": "Arca", "sufix": "(DJ Set)"},
+						{"artist": "Arca (DJ Set)", "sliceDecorator": {"slice": "(DJ Set)", "style": "down"}},
 						"Black Coffee",
 						"Natalia Przybysz",
 						"Quebonafide",
