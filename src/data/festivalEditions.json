@@ -156,7 +156,7 @@
 						{"artist": "The Music", "order": "headliners"}
 					],
 					"lvl2": [
-						{"artist": "Neo", "decorated": "uppercase"}
+						{"artist": "Neo", "decorator": "uppercase"}
 					],
 					"other": [
 						{"artist": "SOFA", "order": 3},
@@ -474,7 +474,7 @@
 						{"artist": "Beirut", "order": 10, "canceled": true}
 					],
 					"lvl2": [
-						{"artist": "Gentleman", "order": 1, "additionalIngo": "& The Far East Band"},
+						{"artist": "Gentleman & The Far East Band", "displayName": "Gentleman", "order": 1},
 						{"artist": "Cocorosie", "order": 5}
 					],
 					"lvl3": [
@@ -535,7 +535,7 @@
 						{"artist": "RH+ audiowizualna grupa przyjaciół", "order": 3},
 						{"artist": "Echo TM", "order": 6},
 						{"artist": "C.H. District", "order": 9},
-						{"artist": "Teatr Ósmego Dnia", "additionalInfo": "\"Arka\"", "order": 10},
+						{"artist": "Teatr Ósmego Dnia: \"Arka\"", "displayName": "Teatr Ósmego Dnia", "order": 10},
 						{"artist": "Polpo Motel", "order": 18},
 						{"artist": "Dav Intergalactic", "order": 21},
 						{"artist": "Bajzel", "order": 26},
@@ -575,7 +575,7 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "Arctic Monkeys", "promoted": true, "marked": true, "order": 2}
+						{"artist": "Arctic Monkeys", "marked": true, "decorator": "promoted", "order": 2}
 					],
 					"lvl1": [
 						{"artist": "Basement Jaxx", "order": 4}
@@ -701,7 +701,7 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "Kings of Leon", "promoted": true, "order": 1},
+						{"artist": "Kings of Leon", "decorator": "promoted", "order": 1},
 						{"artist": "Placebo", "order": 3},
 						{"artist": "The Prodigy", "marked": true, "order": 4}
 					],
@@ -826,7 +826,7 @@
 						{"artist": "Die Antwoord", "marked": true, "order": 3},
 						{"artist": "Lao Che", "order": 4},
 						{"artist": "Fox", "marked": true, "order": 8},
-						{"artist": "Pablopavo", "additionalInfo": "i Ludziki", "order": 14},
+						{"artist": "Pablopavo i Ludziki", "displayName": "Pablopavo", "order": 14},
 						{"artist": "Psio Crew", "marked": true, "order": 17}
 					],
 					"lvl4": [
@@ -920,7 +920,7 @@
 						{"artist": "Pink Freud", "marked": true, "order": 9},
 						{"artist": "L.Stadt", "order": 11},
 						{"artist": "Marika", "order": 15},
-						{"artist": "Mitch & Mitch", "additionalInfo": "with their Incredible Combo", "order": 16}
+						{"artist": "Mitch & Mitch with their Incredible Combo", "displayName": "Mitch & Mitch", "order": 16}
 					],
 					"lvl4": [
 						{"artist": "kIRk", "order": 5},
@@ -1161,7 +1161,27 @@
 					"lvl1": ["New Order", {"prefix": "The", "artist": "Kills"}],
 					"lvl2": ["Wiz Khalifa", "Orbital", "Gogol Bordello"],
 					"mniddle": ["Yeasayer", {"prefix": "The", "artist": "Ting Tings"}, "SOJA"],
-					"other": [{"artist": "Fisz Emade",  "additionalInfo": "Tworzywo"}, {"artist": "June", "visible": false}, {"artist": "très.b", "visible": false}, {"artist": "Frozen Bird", "visible": false}, {"artist": "Mela Koteluk", "visible": false}, {"artist": "Jacaszek", "visible": false}, {"artist": "Chłopcy Kontra Basia", "visible": false}, {"artist": "Galus", "visible": false}, {"artist": "Sobura", "visible": false}, {"artist": "TEIELTE", "visible": false}, {"artist": "En2ak", "visible": false}, {"artist": "Ment XXL", "visible": false}, {"artist": "Praktik", "visible": false}, {"artist": "Groh + Eltron John", "visible": false}, {"artist": "Sonar Soul", "visible": false}, {"artist": "BEZSENSU", "visible": false}, {"artist": "Sjøn", "visible": false}, {"artist": "Enchanted Hunters", "visible": false}, {"artist": "Dva", "visible": false}]
+					"other": [
+						{"artist": "Fisz Emade Tworzywo",  "displayName": "Fisz Emade"},
+						{"artist": "June", "visible": false},
+						{"artist": "très.b", "visible": false},
+						{"artist": "Frozen Bird", "visible": false},
+						{"artist": "Mela Koteluk", "visible": false},
+						{"artist": "Jacaszek", "visible": false},
+						{"artist": "Chłopcy Kontra Basia", "visible": false},
+						{"artist": "Galus", "visible": false},
+						{"artist": "Sobura", "visible": false},
+						{"artist": "TEIELTE", "visible": false},
+						{"artist": "En2ak", "visible": false},
+						{"artist": "Ment XXL", "visible": false},
+						{"artist": "Praktik", "visible": false},
+						{"artist": "Groh + Eltron John", "visible": false},
+						{"artist": "Sonar Soul", "visible": false},
+						{"artist": "BEZSENSU", "visible": false},
+						{"artist": "Sjøn", "visible": false},
+						{"artist": "Enchanted Hunters", "visible": false},
+						{"artist": "Dva", "visible": false}
+					]
 				}
 			}, {
 				"day": "5th July",
@@ -1218,12 +1238,12 @@
 					"lvl1": ["Bloc Party", "M83"],
 					"lvl2": [
 						"Public Enemy",
-						{"additionalInfo": "Kasia", "artist": "Nosowska"},
+						{"artist": "Kasia Nosowska", "displayName": "Nosowska"},
 						"Toro Y Moi"
 					],
 					"lvl3": ["Julia Marcell"],
 					"other": [
-						{"artist": "Łona Webber", "additionalInfo": "& The Pimps"},
+						{"artist": "Łona Webber & The Pimps", "displayName": "Łona Webber"},
 						"L.Stadt",
 						{"artist": "The Cardigans play Gran Turismo", "visible": false},
 						{"artist": "UL/KR", "visible": false},
@@ -1313,7 +1333,7 @@
 					"lvl1": ["Editors", "Crystal Castles", "Kendrick Lamar", "Alt-J", "Savages"],
 					"other": [
 						"Vavamuffin",
-						{"artist": "Vienio", "additionalInfo": "Profil Pokoleń"},
+						{"artist": "Vienio Profil Pokoleń", "displayName": "Vienio"},
 						"Fox",
 						"Mikromusic",
 						"Domowe Melodie",
@@ -1691,7 +1711,7 @@
 					"lvl1": [
 						"D'Angelo & The Vanguard",
 						{"artist": "Of Monsters and Men", "marked": true},
-						{"artist": "The Prodigy", "decorator": "bold"}
+						{"artist": "The Prodigy", "decorator": "promoted"}
 					],
 					"lvl2": [
 						"Jonny Greenwood & LCO",
@@ -1967,7 +1987,7 @@
 					"lvl2": [
 						"Dua Lipa",
 						"Nicolas Jaar",
-						{"artist": "Tyga", "sortIndex": "3"},
+						{"artist": "Tyga", "forceOrder": "3"},
 						"O.S.T.R."
 					],
 					"other": [
