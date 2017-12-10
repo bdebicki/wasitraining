@@ -7,7 +7,6 @@
 			"city": "Warsaw",
 			"object": "Stegny Track"
 		},
-		"headliners": ["The Chemical Brothers"],
 		"details": [
 			{
 				"day": "2nd July",
@@ -37,7 +36,6 @@
 			"city": "Gdynia",
 			"object": "Kościuszki Square"
 		},
-		"headliners": ["Cassius", "Kosheen", "Layo & Bushwacka!"],
 		"details": [
 			{
 				"day": "26th July",
@@ -68,7 +66,6 @@
 			"city": "Gdynia",
 			"object": "Kościuszki Square"
 		},
-		"headliners": ["Cypress Hill", "Pink", "Goldfrapp", "Massive Attack"],
 		"details": [
 			{
 				"day": "2nd July",
@@ -119,7 +116,6 @@
 			"city": "Gdynia",
 			"object": "Kościuszki Square"
 		},
-		"headliners": ["Snoop Dogg", "Faithless", "Fatboy Slim", "Lauryn Hill", "The White Stripes", "Underworld."],
 		"details": [
 			{
 				"day": "8th July",
@@ -184,7 +180,6 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"headliners": ["Placebo", "Pharrell Williams", "Franz Ferdinand", "Sigur Rós", "Scissor Sisters", "The Streets", "Kanye West", "Basement Jaxx"],
 		"details": [
 			{
 				"day": "6th July",
@@ -287,7 +282,6 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"headliners": ["Björk", "Beastie Boys", "Muse"],
 		"details": [
 			{
 				"day": "29th June",
@@ -408,7 +402,6 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"headliners": ["Massive Attack", "The Chemical Brothers", "Jay–Z", "Interpol"],
 		"details": [
 			{
 				"day": "4th July",
@@ -565,7 +558,6 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"headliners": ["Kings of Leon", "Arctic Monkeys", "Placebo", "The Prodigy", "Faith No More"],
 		"details": [
 			{
 				"day": "2nd July",
@@ -757,7 +749,6 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"headliners": ["Pearl Jam", "Kasabian", "Massive Attack", "The Dead Weather"],
 		"details": [
 			{
 				"day": "1st July",
@@ -956,7 +947,6 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"headliners": ["Coldplay", "Prince", "The Strokes", "Pulp", "M.I.A."],
 		"details": [
 			{
 				"day": "30th June",
@@ -1147,7 +1137,6 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"headliners": ["penderecki//greenwood", "The Kills", "Björk", "New Order", "Bon Iver", "Justice", "Franz Ferdinand", "The Mars Volta", "Mumford & Sons"],
 		"details": [
 			{
 				"day": "4th July",
@@ -1319,7 +1308,6 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"headliners": ["Blur", "Arctic Monkeys", "Queens Of The Stone Age", "Kings of Leon"],
 		"details": [
 			{
 				"day": "3rd July",
@@ -1470,7 +1458,6 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"headliners": ["The Black Keys", "Pearl Jam", "Jack White", "Faith No More"],
 		"details": [
 			{
 				"day": "2nd July",
@@ -1619,7 +1606,6 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"headliners": ["Drake", "The Libertines", "Major Lazer", "Mumford & Sons", "Kasabian", "Disclosure"],
 		"details": [
 			{
 				"day": "1st July",
@@ -1787,7 +1773,6 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"headliners": ["Florence + The Machines", "Red Hot Chili Peppers", "LCD Soundsystem", "Sigur Rós", "Pharrell Williams", "Kygo"],
 		"details": [
 			{
 				"day": "29th June",
@@ -1903,7 +1888,6 @@
 			"city": "Gdynia",
 			"object": "Babie Doły Airport"
 		},
-		"headliners": ["Radiohead", "Foo Fighters", "The Weekend", "The XX", "Lorde"],
 		"details": [
 			{
 				"day": "28th June",

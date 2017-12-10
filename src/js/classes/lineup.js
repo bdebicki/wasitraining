@@ -10,7 +10,7 @@ export class lineup {
 	get settings() {
 		return this._settings;
 	}
-	
+
 	get lineup() {
 		let lineup = [];
 
@@ -25,12 +25,14 @@ export class lineup {
 		let headliners = [];
 
 		this.lineup.map((item) => {
-			if (item.headliners.length > 1) {
+			if (item.headliners) { // check does headliners was on that day
 				item.headliners.map((subItems) => {
-					headliners.push(subItems);
+					if (typeof subItems === 'object') {
+						headliners.push(subItems.artist);
+					} else {
+						headliners.push(subItems);
+					}
 				});
-			} else {
-				headliners.push(item.headliners.toString());
 			}
 		});
 
