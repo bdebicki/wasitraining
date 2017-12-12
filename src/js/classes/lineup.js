@@ -1,5 +1,14 @@
 'use strict';
 
+/**
+ * sort types:
+ *	- false - don't sort artists
+ *	- alphabetical - sort alphabetical
+ *	- alphabeticalExceptHeadliners - sort alphabetical artists from all groups except headliners
+ *	- customOrder - sort by 'order' props from artist object
+ *	- customOrderExceptHeadliners -	sort by 'order' props from artist object but don't touch headliners
+ */
+
 export class lineup {
 	constructor(editionId) {
 		this._editionDetails = editionId.details;
@@ -14,7 +23,7 @@ export class lineup {
 		return this.settings.sortType;
 	}
 
-	get mergeFays() {
+	get mergeDays() {
 		return this.settings.mergeDays;
 	}
 
@@ -33,9 +42,19 @@ export class lineup {
 	}
 
 	get headliners() {
+		if(this.sortType === 'alphabetical') {
+			return this.sortAlphabeticallyHeadliners();
+		} else if (this.sortType === 'customOrder') {
+			return this.sortOrderedHeadliners();
+		} else { // sortType is false, 'customOrderExceptHeadliners' or 'alphabeticalExceptHeadliners'
+			return this.notSortedHeadliners();
+		}
+	}
+
+	notSortedHeadliners() {
 		let headliners = [];
 
-		this.lineup.map((item) => {
+		this.lineup.map((item) => { // merge headliners from all days into one flat array (with artists only)
 			if (item.headliners) { // check does headliners was on that day
 				item.headliners.map((subItems) => {
 					if (typeof subItems === 'object') {
@@ -45,6 +64,32 @@ export class lineup {
 					}
 				});
 			}
+		});
+
+		return headliners;
+	}
+
+	sortAlphabeticallyHeadliners() {
+		return this.notSortedHeadliners.sort(); // sort alphabetically flat array
+	}
+
+	sortOrderedHeadliners() {
+		let headliners = [];
+
+		this.lineup.map((item) => { // merge headliners from all days in one array
+			if (item.headliners) { // check does headliners was on that day
+				item.headliners.map((subItems) => {
+					headliners.push(subItems);
+				});
+			}
+		});
+
+		headliners.sort((a, b) => { // sort headliners by order property
+			return a.order - b.order;
+		});
+
+		headliners.map((item, index) => { // flattening array - remove objects and displays only artists
+			headliners.splice(index, 1, item.artist)
 		});
 
 		return headliners;
