@@ -3,10 +3,19 @@
 /**
  * sort types:
  *	- false - don't sort artists
- *	- alphabetical - sort alphabetical
- *	- alphabeticalExceptHeadliners - sort alphabetical artists from all groups except headliners
- *	- customOrder - sort by 'order' props from artist object
- *	- customOrderExceptHeadliners -	sort by 'order' props from artist object but don't touch headliners
+ *	- 'alphabetical' - sort alphabetical
+ *	- 'alphabeticalExceptHeadliners' - sort alphabetical artists from all groups except headliners
+ *	- 'customOrder' - sort by 'order' props from artist object
+ *	- 'customOrderExceptHeadliners' - sort by 'order' props from artist object but don't touch headliners
+ *
+ * mergeArtists:
+ * 	- false - don't merge artists levels and split lineup on days
+ * 	- true - merge artists by levels
+ * 	- 'exceptHeadliners' - merge artists from all levels except headliners and display them splited by days
+ *
+ * otherArtists:
+ *  - string - display label with information about other artists
+ * 	- false - don't display information about other artists
  */
 
 export class lineup {
