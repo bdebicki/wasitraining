@@ -1593,7 +1593,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortType": "alphabetical",
+			"sortType": "alphabeticalExceptHeadliners",
 			"mergeArtists": true,
 			"otherArtists": false
 		}
@@ -1760,7 +1760,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortType": "alphabetical",
+			"sortType": "alphabeticalExceptHeadliners",
 			"mergeDays": false,
 			"otherArtists": "... and many other"
 		}
@@ -1875,7 +1875,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortType": "alphabetical",
+			"sortType": "alphabeticalExceptHeadliners",
 			"mergeDays": true,
 			"otherArtists": false
 		}
@@ -1997,7 +1997,7 @@
 			}
 		],
 		"lineupSettings": {
-			"sortType": "alphabetical",
+			"sortType": "alphabeticalExceptHeadliners",
 			"mergeDays": false,
 			"otherArtists": "... and others"
 		}
