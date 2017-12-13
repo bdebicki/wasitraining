@@ -5,12 +5,14 @@ import { edition } from '../../classes/edition';
 import { lineup } from '../../classes/lineup';
 import { setIcon } from '../../utils/setIcon';
 import { icons } from '../../utils/iconsLibrary';
+import { lineupDetails } from "./lineupDetails";
 
 export class editionDetails extends edition {
 	constructor(editionId) {
 		super(editionId);
 
-		this.lineupData = new lineup(editionId);
+		this.headlinersDetails = new lineup(editionId);
+		this.lineupDetails = new lineupDetails(editionId);
 	};
 
 	decorateEditionDates() {
@@ -26,7 +28,7 @@ export class editionDetails extends edition {
 	decorateEditionHeadliners() {
 		let fragment = document.createDocumentFragment();
 
-		this.lineupData.headliners.map((item) => {
+		this.headlinersDetails.headliners.map((item) => {
 			const li = document.createElement('li');
 
 			li.textContent = item;
@@ -90,6 +92,10 @@ export class editionDetails extends edition {
 		return this.decorateEditionHeadliners();
 	}
 
+	updateLineup() {
+		this.lineupDetails.updateDetails();
+	}
+
 	renderHeadliners() {
 		let ul = document.createElement('ul');
 
@@ -116,7 +122,7 @@ export class editionDetails extends edition {
 	}
 
 	renderLineup() {
-		this.lineupData.lineup;
+		this.lineupDetails.render();
 	}
 
 	updateEditionDetails() {
@@ -125,6 +131,7 @@ export class editionDetails extends edition {
 		document.querySelector(`.${EDITION.FULL_NAME_CLASS}`).textContent = this.editionFullName;
 		document.querySelector(`.${EDITION.PLACE_CLASS}`).textContent = this.editionPlace;
 		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(this.updateHeadliners());
+		this.updateLineup();
 	}
 
 	render() {
