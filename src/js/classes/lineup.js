@@ -124,6 +124,69 @@ export class lineup {
 
 	mergeAndSortCustomArtists() {
 		console.log('merge artists and sort artists by customOrder');
+
+		let headliners = [];
+		let lvl1 = [];
+		let lvl2 = [];
+		let lvl3 = [];
+		let lvl4 = [];
+		let other = [];
+		let sortedLineup = [];
+
+		this.rawLineup.map((item) => { // merge artists from different days into levels
+			for (var key in item) {
+				switch (key.toString()) {
+					case "headliners":
+						item.headliners.map((subItems) => {
+							headliners.push(subItems);
+						});
+						break;
+					case "lvl1":
+						item.lvl1.map((subItems) => {
+							lvl1.push(subItems);
+						});
+						break;
+					case "lvl2":
+						item.lvl2.map((subItems) => {
+							lvl2.push(subItems);
+						});
+						break;
+					case "lvl3":
+						item.lvl3.map((subItems) => {
+							lvl3.push(subItems);
+						});
+						break;
+					case "lvl4":
+						item.lvl4.map((subItems) => {
+							lvl4.push(subItems);
+						});
+						break;
+					case "other":
+						item.other.map((subItems) => {
+							other.push(subItems);
+						});
+						break;
+				}
+			}
+		});
+
+		// sort lineup
+
+		// remove order indicators
+
+		// remove empty levels and build sortedLineup
+
+		console.log({
+			headliners,
+			lvl1,
+			lvl2,
+			lvl3,
+			lvl4,
+			other,
+			sortedLineup
+		});
+
+		return sortedLineup;
 	}
 
 	mergeAndSortAlphabeticallyExceptHearliners() {
