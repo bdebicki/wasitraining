@@ -61,22 +61,19 @@ export class lineup {
 	}
 
 	get lineup() {
-		if (this.mergeArtists === true) {
-			console.log('merge artists');
-			if(this.sortType === 'customOrder') {
-				console.log('and sort artists by customOrder')
+		if (this.mergeArtists === true) { // merge artists
+			if(this.sortType === 'customOrder') { // & sort by custom order
+				this.mergeAndSortCustomArtists();
 			} else if (this.sortType === 'alphabeticalExceptHeadliners') {
-				console.log('and sort artists by alphabeticalExceptHeadliners')
+				this.mergeAndSortAlphabeticallyExceptHearliners();
 			}
 		} else if (this.mergeArtists === 'exceptHeadliners' && this.sortType === 'customOrderExceptHeadliners') {
-			console.log('merge artists except headliners');
-			console.log('and sort artists by customOrderExceptHeadliners');
+			this.mergeExceptHeadlinersAndSortCustomExceptHeadliners();
 		} else {
-			console.log('don\'t merge artists');
 			if(this.sortType === false) {
-				console.log('and don\'t sort artists');
+				this.notMergedAndNotSorted();
 			} else if (this.sortType === 'alphabeticalExceptHeadliners') {
-				console.log('and sort artists by alphabeticalExceptHeadliners')
+				this.notMergedAndSortAlpabeticallyExceptHeadliners();
 			}
 		}
 	}
@@ -125,5 +122,23 @@ export class lineup {
 		return headliners;
 	}
 
-	
+	mergeAndSortCustomArtists() {
+		console.log('merge artists and sort artists by customOrder');
+	}
+
+	mergeAndSortAlphabeticallyExceptHearliners() {
+		console.log('merge artists and sort artists by alphabeticalExceptHeadliners')
+	}
+
+	mergeExceptHeadlinersAndSortCustomExceptHeadliners() {
+		console.log('merge artists except headliners and sort artists by customOrderExceptHeadliners');
+	}
+
+	notMergedAndNotSorted() {
+		console.log('don\'t merge artists and don\'t sort artists');
+	}
+
+	notMergedAndSortAlpabeticallyExceptHeadliners() {
+		console.log('don\'t merge artists and sort artists by alphabeticalExceptHeadliners');
+	}
 }
