@@ -7,7 +7,7 @@ export class lineupDetails extends lineup {
 		super(editionId);
 	}
 
-	updateDetails() {
+	update() {
 		this.lineup;
 	}
 
