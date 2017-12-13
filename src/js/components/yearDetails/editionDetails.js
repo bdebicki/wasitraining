@@ -93,7 +93,7 @@ export class editionDetails extends edition {
 	}
 
 	updateLineup() {
-		this.lineupDetails.updateDetails();
+		this.lineupDetails.update();
 	}
 
 	renderHeadliners() {
