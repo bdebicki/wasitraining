@@ -32,15 +32,15 @@ export class lineup {
 		return this.settings.sortType;
 	}
 
-	get mergeDays() {
-		return this.settings.mergeDays;
+	get mergeArtists() {
+		return this.settings.mergeArtists;
 	}
 
 	get otherArtists() {
 		return this.settings.otherArtists;
 	}
 
-	get lineup() {
+	get rawLineup() {
 		let lineup = [];
 
 		this._editionDetails.map((item) => {
@@ -60,10 +60,31 @@ export class lineup {
 		}
 	}
 
+	get lineup() {
+		if (this.mergeArtists === true) {
+			console.log('merge artists');
+			if(this.sortType === 'customOrder') {
+				console.log('and sort artists by customOrder')
+			} else if (this.sortType === 'alphabeticalExceptHeadliners') {
+				console.log('and sort artists by alphabeticalExceptHeadliners')
+			}
+		} else if (this.mergeArtists === 'exceptHeadliners' && this.sortType === 'customOrderExceptHeadliners') {
+			console.log('merge artists except headliners');
+			console.log('and sort artists by customOrderExceptHeadliners');
+		} else {
+			console.log('don\'t merge artists');
+			if(this.sortType === false) {
+				console.log('and don\'t sort artists');
+			} else if (this.sortType === 'alphabeticalExceptHeadliners') {
+				console.log('and sort artists by alphabeticalExceptHeadliners')
+			}
+		}
+	}
+
 	notSortedHeadliners() {
 		let headliners = [];
 
-		this.lineup.map((item) => { // merge headliners from all days into one flat array (with artists only)
+		this.rawLineup.map((item) => { // merge headliners from all days into one flat array (with artists only)
 			if (item.headliners) { // check does headliners was on that day
 				item.headliners.map((subItems) => {
 					if (typeof subItems === 'object') {
@@ -85,7 +106,7 @@ export class lineup {
 	sortOrderedHeadliners() {
 		let headliners = [];
 
-		this.lineup.map((item) => { // merge headliners from all days in one array
+		this.rawLineup.map((item) => { // merge headliners from all days in one array
 			if (item.headliners) { // check does headliners was on that day
 				item.headliners.map((subItems) => {
 					headliners.push(subItems);
@@ -103,4 +124,6 @@ export class lineup {
 
 		return headliners;
 	}
+
+	
 }

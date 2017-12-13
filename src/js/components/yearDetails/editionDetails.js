@@ -116,7 +116,7 @@ export class editionDetails extends edition {
 	}
 
 	renderLineup() {
-		console.log('lineup container');
+		this.lineupData.lineup;
 	}
 
 	updateEditionDetails() {
