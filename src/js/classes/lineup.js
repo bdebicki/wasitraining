@@ -122,69 +122,123 @@ export class lineup {
 		return headliners;
 	}
 
-	mergeAndSortCustomArtists() {
-		console.log('merge artists and sort artists by customOrder');
-
+	mergeAndSortCustomArtists() { // merge artists and sort artists by customOrder
 		let headliners = [];
 		let lvl1 = [];
 		let lvl2 = [];
 		let lvl3 = [];
 		let lvl4 = [];
 		let other = [];
-		let sortedLineup = [];
+		let sortedLineup = {};
 
 		this.rawLineup.map((item) => { // merge artists from different days into levels
 			for (var key in item) {
 				switch (key.toString()) {
 					case "headliners":
 						item.headliners.map((subItems) => {
-							headliners.push(subItems);
+							if (subItems.visible !== false) { // skip not visible artists
+								headliners.push(subItems);
+							}
 						});
 						break;
 					case "lvl1":
 						item.lvl1.map((subItems) => {
-							lvl1.push(subItems);
+							if (subItems.visible !== false) {
+								lvl1.push(subItems);
+							}
 						});
 						break;
 					case "lvl2":
 						item.lvl2.map((subItems) => {
-							lvl2.push(subItems);
+							if (subItems.visible !== false) {
+								lvl2.push(subItems);
+							}
 						});
 						break;
 					case "lvl3":
 						item.lvl3.map((subItems) => {
-							lvl3.push(subItems);
+							if (subItems.visible !== false) {
+								lvl3.push(subItems);
+							}
 						});
 						break;
 					case "lvl4":
 						item.lvl4.map((subItems) => {
-							lvl4.push(subItems);
+							if (subItems.visible !== false) {
+								lvl4.push(subItems);
+							}
 						});
 						break;
 					case "other":
 						item.other.map((subItems) => {
-							other.push(subItems);
+							if (subItems.visible !== false) {
+								other.push(subItems);
+							}
 						});
 						break;
 				}
 			}
 		});
 
-		// sort lineup
+		// sort lineup by order property
+		headliners.sort((a, b) => {
+			return a.order - b.order;
+		});
+		lvl1.sort((a, b) => {
+			return a.order - b.order;
+		});
+		lvl2.sort((a, b) => {
+			return a.order - b.order;
+		});
+		lvl3.sort((a, b) => {
+			return a.order - b.order;
+		});
+		lvl4.sort((a, b) => {
+			return a.order - b.order;
+		});
+		other.sort((a, b) => {
+			return a.order - b.order;
+		});
 
 		// remove order indicators
+		headliners.map((item) => {
+			delete item.order;
+		});
+		lvl1.map((item) => {
+			delete item.order;
+		});
+		lvl2.map((item) => {
+			delete item.order;
+		});
+		lvl3.map((item) => {
+			delete item.order;
+		});
+		lvl4.map((item) => {
+			delete item.order;
+		});
+		other.map((item) => {
+			delete item.order;
+		});
 
 		// remove empty levels and build sortedLineup
-
-		console.log({
-			headliners,
-			lvl1,
-			lvl2,
-			lvl3,
-			lvl4,
-			other,
-			sortedLineup
-		});
+		if (headliners.length > 0) {
+			sortedLineup.headliners = headliners;
+		}
+		if (lvl1.length > 0) {
+			sortedLineup.lvl1 = lvl1;
+		}
+		if (lvl2.length > 0) {
+			sortedLineup.lvl2 = lvl2;
+		}
+		if (lvl3.length > 0) {
+			sortedLineup.lvl3 = lvl3;
+		}
+		if (lvl4.length > 0) {
+			sortedLineup.lvl4 = lvl4;
+		}
+		if (other.length > 0) {
+			sortedLineup.other = other;
+		}
 
 		return sortedLineup;
 	}
