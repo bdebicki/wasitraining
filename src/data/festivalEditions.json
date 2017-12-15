@@ -17,7 +17,7 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=57321&date=2009-07-02&citynameWarsaw%2C+Masovian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"headliners": ["The Chemical Brothers"],
+					"headliners": ["The Chemical Brotherss"],
 					"lvl1": ["Glasse", "Sonic Trip", "Harper", "MK Fever", "Smolik", "Fresh"]
 				}
 			}
@@ -48,7 +48,7 @@
 				"lineup": {
 					"headliners": ["Cassius", "Kosheen", "Layo & Bushwacka!"],
 					"lvl1": ["15 Minuk Projekt", "Marika"],
-					"other": ["Finalists of THIRST competition"]
+					"others": ["Finalists of THIRST competition"]
 				}
 			}
 		],
@@ -79,7 +79,7 @@
 					"headliners": ["Pink", "Cypress Hill"],
 					"lvl2": ["Sistars"],
 					"lvl3": ["G!MIDI", "Slajd", "Progress"],
-					"other": ["Ojciec Karol", "Charlie Jan"]
+					"others": ["Ojciec Karol", "Charlie Jan"]
 				}
 			}, {
 				"day": "3rd July",
@@ -93,7 +93,7 @@
 					"lvl1": ["Adam Freeland"],
 					"lvl2": ["Smolik"],
 					"lvl3": ["Novika", "Harper", "Twinn", "THIRST Winner in Denmark"],
-					"other": [
+					"others": [
 						{"artist": "Klinika lalek + Kinior Sky Orkiestra: przedstawienie Anielicje", "sliceDecorator": {"slice": "przedstawienie Anielicje", "style": "newLine"}},
 						{"artist": "Teatr Cinema: Kabaret Olbrzymów Wieczór III. Lekkie czasy ciężkich chorób", "sliceDecorator": {"slice": "Wieczór III. Lekkie czasy ciężkich chorób", "style": "newLine"}},
 						{"artist": "Teatr Snów: przedstawienie Republika Marzeń"},
@@ -126,7 +126,7 @@
 				],
 				"lineup": {
 					"headliners": ["Snoop Dogg", "Fatboy Slim", "Faithless"],
-					"other": [
+					"others": [
 						{"artist": "Pogodno", "order": 1},
 						{"artist": "O.S.T.R.", "order": 2},
 						{"artist": "Boogiemafia", "order": 7},
@@ -155,7 +155,7 @@
 					"lvl2": [
 						{"artist": "Neo", "decorator": "uppercase"}
 					],
-					"other": [
+					"others": [
 						{"artist": "SOFA", "order": 3},
 						{"artist": "Őszibarack", "order": 4},
 						{"artist": "Peepol", "order": 5},
@@ -201,7 +201,7 @@
 						{"artist": "Matthew Herbert", "order": 5, "canceled": true},
 						{"artist": "Nightmares on Wax", "order": 5}
 					],
-					"other": [
+					"others": [
 						{"artist": "Fisz, Emade i Goście", "order": 3},
 						{"artist": "The Car Is On Fire", "order": 7},
 						{"artist": "Cool Kids of Death", "order": 9},
@@ -225,7 +225,7 @@
 						{"artist": "Coldcut", "order": 1},
 						{"artist": "Ladytron", "order": 3}
 					],
-					"other": [
+					"others": [
 						{"artist": "Myslovitz", "order": 2},
 						{"artist": "Maria Peszek", "order": 5},
 						{"artist": "Kanał Audytywny", "order": 8},
@@ -254,7 +254,7 @@
 					"lvl2": [
 						{"artist": "Roger Sanchez", "order": 2}
 					],
-					"other": [
+					"others": [
 						{"artist": "Peter Greenaway", "order": 1},
 						{"artist": "Abra dAb", "order": 4},
 						{"artist": "Pustki", "order": 6},
@@ -311,7 +311,7 @@
 						{"artist": "Bruno Schulz", "order": 2},
 						{"artist": "Cała Góra Barwinków", "order": 3}
 					],
-					"other": [
+					"others": [
 						{"artist": "Managga", "order": 3},
 						{"artist": "Organizm", "order": 7},
 						{"artist": "The Poise Rite", "order": 9}
@@ -346,7 +346,7 @@
 						{"artist": "Dezodorant Squad", "order": 4},
 						{"artist": "Dick 4 Dick", "order": 5}
 					],
-					"other": [
+					"others": [
 						{"artist": "Lars", "order": 2},
 						{"artist": "Mikrowafle", "order": 5},
 						{"artist": "NOT", "order": 6},
@@ -381,7 +381,7 @@
 						{"artist": "Andy", "order": 1},
 						{"artist": "Erijef Massiv", "order": 6}
 					],
-					"other": [
+					"others": [
 						{"artist": "Gentleman!", "order": 1},
 						{"artist": "Mikromusic", "order": 4}
 					]
@@ -430,7 +430,7 @@
 						{"artist": "Natu + Envee", "order": 12},
 						{"artist": "L.Stadt", "order": 15}
 					],
-					"other": [
+					"others": [
 						{"artist": "Troitsa", "order": 2},
 						{"artist": "Hati", "order": 5},
 						{"artist": "emitter_franczak", "order": 8},
@@ -480,7 +480,7 @@
 						{"artist": "Rotofobia", "order": 14},
 						{"artist": "Karimski Club", "order": 17}
 					],
-					"other": [
+					"others": [
 						{"artist": "Tymański Yass Ensemble", "order": 1},
 						{"artist": "Alamut", "order": 4},
 						{"artist": "Wolfram", "order": 7},
@@ -509,7 +509,7 @@
 				"lineup": {
 					"headliners": [
 						{"artist": "Massive Attack", "order": 1},
-						{"artist": "The Chemical Brothers", "order": 2}
+						{"artist": "The Chemical Brotherss", "order": 2}
 					],
 					"lvl1": [
 						{"artist": "Goldfrapp", "order": 5},
@@ -525,7 +525,7 @@
 						{"artist": "Żywiołak", "order": 18},
 						{"artist": "Benzyna", "order": 19}
 					],
-					"other": [
+					"others": [
 						{"artist": "RH+ audiowizualna grupa przyjaciół", "order": 3},
 						{"artist": "Echo TM", "order": 6},
 						{"artist": "C.H. District", "order": 9},
@@ -588,7 +588,7 @@
 						{"artist": "Wariacje.pl", "order": 22},
 						{"artist": "Grabek", "marked": true, "order": 23}
 					],
-					"other": [
+					"others": [
 						{"artist": "Sorry", "visible": false},
 						{"artist": "Ghettoblaster", "visible": false},
 						{"artist": "AM Radio", "visible": false},
@@ -629,7 +629,7 @@
 						{"artist": "Wiolonczele z Miasta", "marked": true, "order": 19},
 						{"artist": "Kakofonikt", "marked": true, "order": 24}
 					],
-					"other": [
+					"others": [
 						{"artist": "Furia Futrzaków", "marked": true, "order": 2},
 						{"artist": "Superxiu", "order": 5},
 						{"artist": "The October Leaves", "marked": true, "order": 10},
@@ -673,7 +673,7 @@
 						{"artist": "Betty Be", "marked": true, "order": 16},
 						{"artist": "Dagadana", "marked": true, "order": 20}
 					],
-					"other": [
+					"others": [
 						{"artist": "Kawałek Kulki", "marked": true, "order": 3},
 						{"artist": "Twilite", "marked": true, "order": 4},
 						{"artist": "Jazzus", "order": 7},
@@ -720,7 +720,7 @@
 						{"artist": "Mass Kotki", "order": 21},
 						{"artist": "Gadająca Tykwa", "marked": true, "order": 25}
 					],
-					"other": [
+					"others": [
 						{"artist": "Iowa Super Soccer", "order": 1},
 						{"artist": "The Calog", "order": 6},
 						{"artist": "Plug and Play", "marked": true, "order": 8},
@@ -777,7 +777,7 @@
 						{"artist": "Indigo Tree", "marked": true, "order": 3},
 						{"artist": "Pasimito", "order": 8}
 					],
-					"other": [
+					"others": [
 						{"artist": "Kacezet & Dreadsquad", "marked": true, "order": 1},
 						{"artist": "Wiracki + Suka Off/BFV", "order": 4},
 						{"artist": "Paula i Karol", "marked": true, "order": 6},
@@ -827,9 +827,9 @@
 						{"artist": "Muariolanza", "order": 9},
 						{"artist": "Oranżada", "order": 10},
 						{"artist": "52UM", "marked": true, "order": 14},
-						{"artist": "Brasil and the Gallowbrothers", "order": 15}
+						{"artist": "Brasil and the Gallowbrotherss", "order": 15}
 					],
-					"other": [
+					"others": [
 						{"artist": "Let The Boy Decide", "order": 8},
 						{"artist": "Klimt", "marked":true, "order": 16},
 						{"artist": "Soniamiki", "marked":true, "order": 19},
@@ -873,7 +873,7 @@
 						{"artist": "Kciuk & The Fingers", "marked": true},
 						{"artist": "Niwea", "marked": true}
 					],
-					"other": [
+					"others": [
 						{"artist": "Merkabah", "order": 3},
 						{"artist": "Popkultura", "order": 4},
 						{"artist": "London Type Smog", "order": 9},
@@ -919,7 +919,7 @@
 						{"artist": "NP", "marked": true, "order": 11},
 						{"artist": "Pleq", "marked": true, "order": 12}
 					],
-					"other": [
+					"others": [
 						{"artist": "Borys Kossakowski", "order": 2},
 						{"artist": "The Lollipops", "marked": true, "order": 5},
 						{"artist": "Ms. No One", "marked": true, "order": 11},
@@ -977,7 +977,7 @@
 						{"artist": "Tides From Nebula", "order": 19},
 						{"artist": "Marcelina", "order": 23}
 					],
-					"other": [
+					"others": [
 						{"artist": "Daktari", "order": 10},
 						{"artist": "Jazzpospolita", "marked": true, "order": 12},
 						{"artist": "Rebeka", "marked": true, "order": 19},
@@ -1022,7 +1022,7 @@
 						{"artist": "PFK Kompany", "marked": true, "order": 20},
 						{"artist": "Igor Boxx", "order": 24}
 					],
-					"other": [
+					"others": [
 						{"artist": "Plazmatikon", "order": 9},
 						{"artist": "The Phantoms", "marked": true, "order": 14},
 						{"artist": "Bipolar Bears", "order": 15},
@@ -1062,7 +1062,7 @@
 						{"artist": "R.U.T.A.", "marked": true, "order": 16},
 						{"artist": "Gooral", "order": 18}
 					],
-					"other": [
+					"others": [
 						{"artist": "Małe Instrumenty", "marked": true, "order": 1},
 						{"artist": "Grabek", "order": 3},
 						{"artist": "Snowman", "marked": true, "order": 6},
@@ -1106,7 +1106,7 @@
 						{"artist": "Sedativa feat. Dawid Portasz", "marked": true, "order": 21},
 						{"artist": "Neony", "order": 22}
 					],
-					"other": [
+					"others": [
 						{"artist": "Janusz Prusinowski Trio", "marked": true, "order": 2},
 						{"artist": "Spięty", "order": 4},
 						{"artist": "Wojtek Mazolewski Quintet", "order": 5},
@@ -1151,7 +1151,7 @@
 					"lvl1": ["New Order", {"artist": "The Kills", "sliceDecorator": {"slice": "The", "style": "up"}}],
 					"lvl2": ["Wiz Khalifa", "Orbital", "Gogol Bordello"],
 					"lvl4": ["Yeasayer", {"artist": "The Ting Tings", "sliceDecorator": {"slice": "The", "style": "up"}}, "SOJA"],
-					"other": [
+					"others": [
 						{"artist": "Fisz Emade Tworzywo",  "displayName": "Fisz Emade"},
 						{"artist": "June", "visible": false},
 						{"artist": "très.b", "visible": false},
@@ -1196,7 +1196,7 @@
 						{"artist": "Dry The River", "sliceDecorator": {"slice": "The", "style": "middle"}},
 						"Jessie Ware"
 					],
-					"other": [
+					"others": [
 						"Kapela ze Wsi Warszawa",
 						"Pablopavo & Praczas",
 						{"artist": "Iza Lach", "visible": false},
@@ -1232,7 +1232,7 @@
 						"Toro Y Moi"
 					],
 					"lvl3": ["Julia Marcell"],
-					"other": [
+					"others": [
 						{"artist": "Łona Webber & The Pimps", "displayName": "Łona Webber"},
 						"L.Stadt",
 						{"artist": "The Cardigans play Gran Turismo", "visible": false},
@@ -1272,7 +1272,7 @@
 					"lvl3": [
 						{"artist": "SBTRKT Live", "sliceDecorator": {"slice": "Live", "style": "up"}}
 					],
-					"other": [
+					"others": [
 						"Świetliki",
 						{"artist": "Cool Kids of Death", "sliceDecorator": {"slice": "of", "style": "middle"}},
 						{"artist": "The KDMS", "visible": false},
@@ -1320,7 +1320,7 @@
 				"lineup": {
 					"headliners": ["Blur"],
 					"lvl1": ["Editors", "Crystal Castles", "Kendrick Lamar", "Alt-J", "Savages"],
-					"other": [
+					"others": [
 						"Vavamuffin",
 						{"artist": "Vienio Profil Pokoleń", "displayName": "Vienio"},
 						"Fox",
@@ -1351,7 +1351,7 @@
 					"headliners": ["Arctic Monkeys"],
 					"lvl1": ["Nick Cave & The Bad Seeds"],
 					"lvl2": ["Tame Impala", "Matisyahu", "Junip", "Maria Peszek"],
-					"other": [
+					"others": [
 						"Kim Nowak",
 						"Łąki Łan",
 						"Ras Luta",
@@ -1383,7 +1383,7 @@
 					"headliners": ["Queens of the Stone Age"],
 					"lvl1": ["The National", "Skunk Anansie", "Nas"],
 					"lvl2": ["Disclosure", "Hey", "Kaliber 44"],
-					"other": [
+					"others": [
 						"These New Puritans",
 						"Palma Violets",
 						{"artist": "Rebeka", "visible": false},
@@ -1420,7 +1420,7 @@
 						{"artist": "Jonny Greenwood", "multiline": true}
 					],
 					"lvl2": ["Crystal Fighters", "Devendra Banhart"],
-					"other": [
+					"others": [
 						"Mount Kimbie",
 						"Everything Everything",
 						{"artist": "Envee", "visible": false},
@@ -1447,7 +1447,7 @@
 		"lineupSettings": {
 			"sortType": false,
 			"mergeArtists": false,
-			"otherArtists": "... and many other"
+			"otherArtists": "... and many others"
 		}
 	},
 	"13": {
@@ -1480,7 +1480,7 @@
 						"Coldair",
 						"Mooryc"
 					],
-					"other": [
+					"others": [
 						"Hanimal",
 						"Eric Shoves Them in His Pockets",
 						"Niewidzialna Nerka",
@@ -1513,7 +1513,7 @@
 						"Jagwar Ma"
 					],
 					"lvl2": ["Pink Freud Plays Autechre", "Bokka", "Pustki", "Kuroma", "Rasmentalism"],
-					"other": [
+					"others": [
 						"Call the Sun",
 						"Jerz Igor",
 						"Weeping Birds",
@@ -1542,7 +1542,7 @@
 						"Chromeo"
 					],
 					"lvl2": ["KAMP!", "Misia FF", "Tourist", "Misia Ff", "Rubber Dots"],
-					"other": [
+					"others": [
 						"Bulbwires",
 						"Carnival Youth",
 						"Hatti Vatti & Lady Katee",
@@ -1580,7 +1580,7 @@
 						"Kari",
 						"Król"
 					],
-					"other": [
+					"others": [
 						{"artist": "Daniel Spaleniak", "sortBy": "Spaleniak"},
 						"Kaseciarz",
 						"Szezlong",
@@ -1633,7 +1633,7 @@
 						"Natalia Przybysz",
 						{"artist": "Two Gallants", "marked": true}
 					],
-					"other": [
+					"others": [
 						"HV/NOON",
 						{"artist": "Klaves", "marked": true},
 						"Milky Wishlake",
@@ -1672,7 +1672,7 @@
 						{"artist": "Of Montreal", "marked": true},
 						"Tom Odell"
 					],
-					"other": [
+					"others": [
 						"Fismoll",
 						{"artist": "Małe Miasta", "marked": true},
 						"Mary Komasa",
@@ -1709,7 +1709,7 @@
 						{"artist": "The Vaccines", "marked": true},
 						"Thurston Moore"
 					],
-					"other": [
+					"others": [
 						{"artist": "Agness B. Marry", "marked": true},
 						"Min T",
 						{"artist": "Nervy", "marked": true},
@@ -1746,7 +1746,7 @@
 						{"artist": "Ratking", "marked": true},
 						"Years & Years"
 					],
-					"other": [
+					"others": [
 						{"artist": "The Feral Trees", "marked": true},
 						"Trupa Trupa",
 						{"artist": "Patrick The Pan", "visible": false},
@@ -1762,7 +1762,7 @@
 		"lineupSettings": {
 			"sortType": "alphabeticalExceptHeadliners",
 			"mergeDays": false,
-			"otherArtists": "... and many other"
+			"otherArtists": "... and many others"
 		}
 	},
 	"15": {
@@ -1793,7 +1793,7 @@
 						"The lvl4 Shadow Puppets"
 					],
 					"lvl2": ["DJ Tennis", "Flirtini", "Lunice", "Małpa", "Xxanaxx"],
-					"other": [
+					"others": [
 						"Chino",
 						"Heroes Get Remembered",
 						"Lxmp",
@@ -1815,7 +1815,7 @@
 					"headliners": ["Red Hot Chili Peppers"],
 					"lvl1": ["Beirut", "Caribou", "Foals", "M83"],
 					"lvl2": ["KAMP!", "Maria Peszek", "Rebeka", "Section Boyz"],
-					"other": ["An On Bast", "Baasch", "Czeluść (Jutro X Kosa)", "Kroki", "Piotr Zioła", "Sonar", "V/O"]
+					"others": ["An On Bast", "Baasch", "Czeluść (Jutro X Kosa)", "Kroki", "Piotr Zioła", "Sonar", "V/O"]
 				}
 			}, {
 				"day": "1st July",
@@ -1840,7 +1840,7 @@
 							]
 						}
 					],
-					"other": [
+					"others": [
 						"Grobel",
 						"Jóga",
 						"Kuba Sojka",
@@ -1860,7 +1860,7 @@
 					"headliners": ["Pharrell Williams", "Kygo"],
 					"lvl1": ["At The Drive-in", "Bastille", "Chvrches", "Grimes", "The 1975"],
 					"lvl2": ["Jacek Sienkiewicz", "Rasmentalism"],
-					"other": [
+					"others": [
 						"Coldair",
 						"Hana",
 						"JAAA!",
@@ -1900,7 +1900,7 @@
 					"headliners": ["Radiohead"],
 					"lvl1": ["James Blake", "Royal Blood"],
 					"lvl2": ["Michael Kiwanuka", "Rae Sremmurd", "Solange"],
-					"other": [
+					"others": [
 						{"artist": "Arca (DJ Set)", "sliceDecorator": {"slice": "(DJ Set)", "style": "down"}},
 						"Black Coffee",
 						"Natalia Przybysz",
@@ -1929,7 +1929,7 @@
 						"M.I.A."
 					],
 					"lvl2": ["Charli XCX", "Jimmy Eat World", "Trentemøller"],
-					"other": [
+					"others": [
 						"A_GIM",
 						"Bitamina",
 						"Blanck Mass",
@@ -1962,7 +1962,7 @@
 						"Tiga",
 						"Warpaint"
 					],
-					"other": ["Bisz/Radex", "Daria Zawiałow", "Dasein", "Deas", "Hańba!", "Majlo", "Ralph Kaminski"]
+					"others": ["Bisz/Radex", "Daria Zawiałow", "Dasein", "Deas", "Hańba!", "Majlo", "Ralph Kaminski"]
 				}
 			}, {
 				"day": "1st July",
@@ -1980,7 +1980,7 @@
 						{"artist": "Tyga", "forceOrder": "3"},
 						"O.S.T.R."
 					],
-					"other": [
+					"others": [
 						"Benjamin Booker",
 						"Buslav",
 						"Duit",
@@ -1999,7 +1999,7 @@
 		"lineupSettings": {
 			"sortType": "alphabeticalExceptHeadliners",
 			"mergeDays": false,
-			"otherArtists": "... and others"
+			"otherArtists": "... and otherss"
 		}
 	}
 }

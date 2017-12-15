@@ -14,8 +14,8 @@
  * 	- 'exceptHeadliners' - merge artists from all levels except headliners and display them splited by days
  *
  * otherArtists:
- *  - string - display label with information about other artists
- * 	- false - don't display information about other artists
+ *  - string - display label with information about others artists
+ * 	- false - don't display information about others artists
  */
 
 export class lineup {
@@ -128,7 +128,7 @@ export class lineup {
 		let lvl2 = [];
 		let lvl3 = [];
 		let lvl4 = [];
-		let other = [];
+		let others = [];
 		let sortedLineup = {};
 
 		this.rawLineup.map((item) => { // merge artists from different days into levels
@@ -169,10 +169,10 @@ export class lineup {
 							}
 						});
 						break;
-					case "other":
-						item.other.map((subItems) => {
+					case "others":
+						item.others.map((subItems) => {
 							if (subItems.visible !== false) {
-								other.push(subItems);
+								others.push(subItems);
 							}
 						});
 						break;
@@ -196,7 +196,7 @@ export class lineup {
 		lvl4.sort((a, b) => {
 			return a.order - b.order;
 		});
-		other.sort((a, b) => {
+		others.sort((a, b) => {
 			return a.order - b.order;
 		});
 
@@ -216,7 +216,7 @@ export class lineup {
 		lvl4.map((item) => {
 			delete item.order;
 		});
-		other.map((item) => {
+		others.map((item) => {
 			delete item.order;
 		});
 
@@ -236,8 +236,8 @@ export class lineup {
 		if (lvl4.length > 0) {
 			sortedLineup.lvl4 = lvl4;
 		}
-		if (other.length > 0) {
-			sortedLineup.other = other;
+		if (others.length > 0) {
+			sortedLineup.others = others;
 		}
 
 		return sortedLineup;
