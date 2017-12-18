@@ -143,55 +143,40 @@ export class lineup {
 	mergeAndSortCustomArtists() { // merge artists and sort artists by customOrder
 		let sortedLineup = lineupLevelsList;
 
-		this.rawLineup.map((item) => { // merge artists from different days into levels
-			for (var key in item) {
-				switch (key.toString()) {
+		const pushToLvl = (item, key) => {
+			item[key].map((subItems) => {
+				if (subItems.visible !== false) { // skip not visible artists
+					sortedLineup[key].push(subItems);
+				}
+			});
+		};
+
+		// merge artists from different days into levels
+		this.rawLineup.map((item) => { // iterate on days
+			Object.keys(item).map((key) => { // iterate on day artists from different levels
+				switch (key) { // get specific level from raw lineup
 					case LINEUP_LEVELS.HEADLINERS:
-						item[LINEUP_LEVELS.HEADLINERS].map((subItems) => {
-							if (subItems.visible !== false) { // skip not visible artists
-								sortedLineup[LINEUP_LEVELS.HEADLINERS].push(subItems);
-							}
-						});
+						// iterate on specific level artists from raw lineup and add push astist to level in sortedLineup
+						pushToLvl(item, LINEUP_LEVELS.HEADLINERS);
 						break;
 					case LINEUP_LEVELS.LVL1:
-						item[LINEUP_LEVELS.LVL1].map((subItems) => {
-							if (subItems.visible !== false) {
-								sortedLineup[LINEUP_LEVELS.LVL1].push(subItems);
-							}
-						});
+						pushToLvl(item, LINEUP_LEVELS.LVL1);
 						break;
 					case LINEUP_LEVELS.LVL2:
-						item[LINEUP_LEVELS.LVL2].map((subItems) => {
-							if (subItems.visible !== false) {
-								sortedLineup[LINEUP_LEVELS.LVL2].push(subItems);
-							}
-						});
+						pushToLvl(item, LINEUP_LEVELS.LVL2);
 						break;
 					case LINEUP_LEVELS.LVL3:
-						item[LINEUP_LEVELS.LVL3].map((subItems) => {
-							if (subItems.visible !== false) {
-								sortedLineup[LINEUP_LEVELS.LVL3].push(subItems);
-							}
-						});
+						pushToLvl(item, LINEUP_LEVELS.LVL3);
 						break;
 					case LINEUP_LEVELS.LVL4:
-						item[LINEUP_LEVELS.LVL4].map((subItems) => {
-							if (subItems.visible !== false) {
-								sortedLineup[LINEUP_LEVELS.LVL4].push(subItems);
-							}
-						});
+						pushToLvl(item, LINEUP_LEVELS.LVL4);
 						break;
 					case LINEUP_LEVELS.OTHERS:
-						item[LINEUP_LEVELS.OTHERS].map((subItems) => {
-							if (subItems.visible !== false) {
-								sortedLineup[LINEUP_LEVELS.OTHERS].push(subItems);
-							}
-						});
+						pushToLvl(item, LINEUP_LEVELS.OTHERS);
 						break;
 				}
-			}
+			});
 		});
-
 
 		Object.keys(sortedLineup).map((key) => {
 			if(sortedLineup[key].length !== 0) { // if level has some artist proceed
