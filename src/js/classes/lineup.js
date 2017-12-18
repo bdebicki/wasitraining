@@ -123,13 +123,14 @@ export class lineup {
 	}
 
 	mergeAndSortCustomArtists() { // merge artists and sort artists by customOrder
-		let headliners = [];
-		let lvl1 = [];
-		let lvl2 = [];
-		let lvl3 = [];
-		let lvl4 = [];
-		let others = [];
-		let sortedLineup = {};
+		let sortedLineup = {
+			headliners: [],
+			lvl1: [],
+			lvl2: [],
+			lvl3: [],
+			lvl4: [],
+			others: []
+		};
 
 		this.rawLineup.map((item) => { // merge artists from different days into levels
 			for (var key in item) {
@@ -137,42 +138,42 @@ export class lineup {
 					case "headliners":
 						item.headliners.map((subItems) => {
 							if (subItems.visible !== false) { // skip not visible artists
-								headliners.push(subItems);
+								sortedLineup.headliners.push(subItems);
 							}
 						});
 						break;
 					case "lvl1":
 						item.lvl1.map((subItems) => {
 							if (subItems.visible !== false) {
-								lvl1.push(subItems);
+								sortedLineup.lvl1.push(subItems);
 							}
 						});
 						break;
 					case "lvl2":
 						item.lvl2.map((subItems) => {
 							if (subItems.visible !== false) {
-								lvl2.push(subItems);
+								sortedLineup.lvl2.push(subItems);
 							}
 						});
 						break;
 					case "lvl3":
 						item.lvl3.map((subItems) => {
 							if (subItems.visible !== false) {
-								lvl3.push(subItems);
+								sortedLineup.lvl3.push(subItems);
 							}
 						});
 						break;
 					case "lvl4":
 						item.lvl4.map((subItems) => {
 							if (subItems.visible !== false) {
-								lvl4.push(subItems);
+								sortedLineup.lvl4.push(subItems);
 							}
 						});
 						break;
 					case "others":
 						item.others.map((subItems) => {
 							if (subItems.visible !== false) {
-								others.push(subItems);
+								sortedLineup.others.push(subItems);
 							}
 						});
 						break;
@@ -181,65 +182,66 @@ export class lineup {
 		});
 
 		// sort lineup by order property
-		headliners.sort((a, b) => {
+		sortedLineup.headliners.sort((a, b) => {
 			return a.order - b.order;
 		});
-		lvl1.sort((a, b) => {
+		sortedLineup.lvl1.sort((a, b) => {
 			return a.order - b.order;
 		});
-		lvl2.sort((a, b) => {
+		sortedLineup.lvl2.sort((a, b) => {
 			return a.order - b.order;
 		});
-		lvl3.sort((a, b) => {
+		sortedLineup.lvl3.sort((a, b) => {
 			return a.order - b.order;
 		});
-		lvl4.sort((a, b) => {
+		sortedLineup.lvl4.sort((a, b) => {
 			return a.order - b.order;
 		});
-		others.sort((a, b) => {
+		sortedLineup.others.sort((a, b) => {
 			return a.order - b.order;
 		});
 
 		// remove order indicators
-		headliners.map((item) => {
+		sortedLineup.headliners.map((item) => {
 			delete item.order;
 		});
-		lvl1.map((item) => {
+		sortedLineup.lvl1.map((item) => {
 			delete item.order;
 		});
-		lvl2.map((item) => {
+		sortedLineup.lvl2.map((item) => {
 			delete item.order;
 		});
-		lvl3.map((item) => {
+		sortedLineup.lvl3.map((item) => {
 			delete item.order;
 		});
-		lvl4.map((item) => {
+		sortedLineup.lvl4.map((item) => {
 			delete item.order;
 		});
-		others.map((item) => {
+		sortedLineup.others.map((item) => {
 			delete item.order;
 		});
 
 		// remove empty levels and build sortedLineup
-		if (headliners.length > 0) {
-			sortedLineup.headliners = headliners;
+		if (sortedLineup.headliners.length === 0) {
+			delete sortedLineup.headliners;
 		}
-		if (lvl1.length > 0) {
-			sortedLineup.lvl1 = lvl1;
+		if (sortedLineup.lvl1.length === 0) {
+			delete sortedLineup.lvl1;
 		}
-		if (lvl2.length > 0) {
-			sortedLineup.lvl2 = lvl2;
+		if (sortedLineup.lvl2.length === 0) {
+			delete sortedLineup.lvl2;
 		}
-		if (lvl3.length > 0) {
-			sortedLineup.lvl3 = lvl3;
+		if (sortedLineup.lvl3.length === 0) {
+			delete sortedLineup.lvl3;
 		}
-		if (lvl4.length > 0) {
-			sortedLineup.lvl4 = lvl4;
+		if (sortedLineup.lvl4.length === 0) {
+			delete sortedLineup.lvl4;
 		}
-		if (others.length > 0) {
-			sortedLineup.others = others;
+		if (sortedLineup.others.length === 0) {
+			delete sortedLineup.others;
 		}
 
+		console.log(sortedLineup);
 		return sortedLineup;
 	}
 
