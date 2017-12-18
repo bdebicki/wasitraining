@@ -17,7 +17,7 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=57321&date=2009-07-02&citynameWarsaw%2C+Masovian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"headliners": ["The Chemical Brotherss"],
+					"headliners": ["The Chemical Brothers"],
 					"lvl1": ["Glasse", "Sonic Trip", "Harper", "MK Fever", "Smolik", "Fresh"]
 				}
 			}
@@ -509,7 +509,7 @@
 				"lineup": {
 					"headliners": [
 						{"artist": "Massive Attack", "order": 1},
-						{"artist": "The Chemical Brotherss", "order": 2}
+						{"artist": "The Chemical Brothers", "order": 2}
 					],
 					"lvl1": [
 						{"artist": "Goldfrapp", "order": 5},
@@ -827,7 +827,7 @@
 						{"artist": "Muariolanza", "order": 9},
 						{"artist": "Oranżada", "order": 10},
 						{"artist": "52UM", "marked": true, "order": 14},
-						{"artist": "Brasil and the Gallowbrotherss", "order": 15}
+						{"artist": "Brasil and the Gallowbrothers", "order": 15}
 					],
 					"others": [
 						{"artist": "Let The Boy Decide", "order": 8},
