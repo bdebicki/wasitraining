@@ -181,67 +181,20 @@ export class lineup {
 			}
 		});
 
-		// sort lineup by order property
-		sortedLineup.headliners.sort((a, b) => {
-			return a.order - b.order;
-		});
-		sortedLineup.lvl1.sort((a, b) => {
-			return a.order - b.order;
-		});
-		sortedLineup.lvl2.sort((a, b) => {
-			return a.order - b.order;
-		});
-		sortedLineup.lvl3.sort((a, b) => {
-			return a.order - b.order;
-		});
-		sortedLineup.lvl4.sort((a, b) => {
-			return a.order - b.order;
-		});
-		sortedLineup.others.sort((a, b) => {
-			return a.order - b.order;
+
+		Object.keys(sortedLineup).map((key) => {
+			if(sortedLineup[key].length !== 0) { // if level has some artist proceed
+				sortedLineup[key].sort((a, b) => { // sort lineup by order property
+					return a.order - b.order;
+				});
+				sortedLineup[key].map((item) => { // remove order indicators
+					delete item.order;
+				});
+			} else { // remove empty levels
+				delete sortedLineup[key];
+			}
 		});
 
-		// remove order indicators
-		sortedLineup.headliners.map((item) => {
-			delete item.order;
-		});
-		sortedLineup.lvl1.map((item) => {
-			delete item.order;
-		});
-		sortedLineup.lvl2.map((item) => {
-			delete item.order;
-		});
-		sortedLineup.lvl3.map((item) => {
-			delete item.order;
-		});
-		sortedLineup.lvl4.map((item) => {
-			delete item.order;
-		});
-		sortedLineup.others.map((item) => {
-			delete item.order;
-		});
-
-		// remove empty levels and build sortedLineup
-		if (sortedLineup.headliners.length === 0) {
-			delete sortedLineup.headliners;
-		}
-		if (sortedLineup.lvl1.length === 0) {
-			delete sortedLineup.lvl1;
-		}
-		if (sortedLineup.lvl2.length === 0) {
-			delete sortedLineup.lvl2;
-		}
-		if (sortedLineup.lvl3.length === 0) {
-			delete sortedLineup.lvl3;
-		}
-		if (sortedLineup.lvl4.length === 0) {
-			delete sortedLineup.lvl4;
-		}
-		if (sortedLineup.others.length === 0) {
-			delete sortedLineup.others;
-		}
-
-		console.log(sortedLineup);
 		return sortedLineup;
 	}
 
