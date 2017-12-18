@@ -18,6 +18,24 @@
  * 	- false - don't display information about others artists
  */
 
+const LINEUP_LEVELS = {
+	HEADLINERS: 'headliners',
+	LVL1: 'lvl1',
+	LVL2: 'lvl2',
+	LVL3: 'lvl3',
+	LVL4: 'lvl4',
+	OTHERS: 'others',
+};
+
+let lineupLevelsList = {
+	[LINEUP_LEVELS.HEADLINERS]: [],
+	[LINEUP_LEVELS.LVL1]: [],
+	[LINEUP_LEVELS.LVL2]: [],
+	[LINEUP_LEVELS.LVL3]: [],
+	[LINEUP_LEVELS.LVL4]: [],
+	[LINEUP_LEVELS.OTHERS]: []
+};
+
 export class lineup {
 	constructor(editionId) {
 		this._editionDetails = editionId.details;
@@ -123,57 +141,50 @@ export class lineup {
 	}
 
 	mergeAndSortCustomArtists() { // merge artists and sort artists by customOrder
-		let sortedLineup = {
-			headliners: [],
-			lvl1: [],
-			lvl2: [],
-			lvl3: [],
-			lvl4: [],
-			others: []
-		};
+		let sortedLineup = lineupLevelsList;
 
 		this.rawLineup.map((item) => { // merge artists from different days into levels
 			for (var key in item) {
 				switch (key.toString()) {
-					case "headliners":
-						item.headliners.map((subItems) => {
+					case LINEUP_LEVELS.HEADLINERS:
+						item[LINEUP_LEVELS.HEADLINERS].map((subItems) => {
 							if (subItems.visible !== false) { // skip not visible artists
-								sortedLineup.headliners.push(subItems);
+								sortedLineup[LINEUP_LEVELS.HEADLINERS].push(subItems);
 							}
 						});
 						break;
-					case "lvl1":
-						item.lvl1.map((subItems) => {
+					case LINEUP_LEVELS.LVL1:
+						item[LINEUP_LEVELS.LVL1].map((subItems) => {
 							if (subItems.visible !== false) {
-								sortedLineup.lvl1.push(subItems);
+								sortedLineup[LINEUP_LEVELS.LVL1].push(subItems);
 							}
 						});
 						break;
-					case "lvl2":
-						item.lvl2.map((subItems) => {
+					case LINEUP_LEVELS.LVL2:
+						item[LINEUP_LEVELS.LVL2].map((subItems) => {
 							if (subItems.visible !== false) {
-								sortedLineup.lvl2.push(subItems);
+								sortedLineup[LINEUP_LEVELS.LVL2].push(subItems);
 							}
 						});
 						break;
-					case "lvl3":
-						item.lvl3.map((subItems) => {
+					case LINEUP_LEVELS.LVL3:
+						item[LINEUP_LEVELS.LVL3].map((subItems) => {
 							if (subItems.visible !== false) {
-								sortedLineup.lvl3.push(subItems);
+								sortedLineup[LINEUP_LEVELS.LVL3].push(subItems);
 							}
 						});
 						break;
-					case "lvl4":
-						item.lvl4.map((subItems) => {
+					case LINEUP_LEVELS.LVL4:
+						item[LINEUP_LEVELS.LVL4].map((subItems) => {
 							if (subItems.visible !== false) {
-								sortedLineup.lvl4.push(subItems);
+								sortedLineup[LINEUP_LEVELS.LVL4].push(subItems);
 							}
 						});
 						break;
-					case "others":
-						item.others.map((subItems) => {
+					case LINEUP_LEVELS.OTHERS:
+						item[LINEUP_LEVELS.OTHERS].map((subItems) => {
 							if (subItems.visible !== false) {
-								sortedLineup.others.push(subItems);
+								sortedLineup[LINEUP_LEVELS.OTHERS].push(subItems);
 							}
 						});
 						break;
