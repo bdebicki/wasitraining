@@ -27,15 +27,6 @@ const LINEUP_LEVELS = {
 	OTHERS: 'others',
 };
 
-let lineupLevelsList = {
-	[LINEUP_LEVELS.HEADLINERS]: [],
-	[LINEUP_LEVELS.LVL1]: [],
-	[LINEUP_LEVELS.LVL2]: [],
-	[LINEUP_LEVELS.LVL3]: [],
-	[LINEUP_LEVELS.LVL4]: [],
-	[LINEUP_LEVELS.OTHERS]: []
-};
-
 export class lineup {
 	constructor(editionId) {
 		this._editionDetails = editionId.details;
@@ -141,7 +132,14 @@ export class lineup {
 	}
 
 	mergeAndSortCustomArtists() { // merge artists and sort artists by customOrder
-		let sortedLineup = lineupLevelsList;
+		let sortedLineup = {
+			[LINEUP_LEVELS.HEADLINERS]: [],
+			[LINEUP_LEVELS.LVL1]: [],
+			[LINEUP_LEVELS.LVL2]: [],
+			[LINEUP_LEVELS.LVL3]: [],
+			[LINEUP_LEVELS.LVL4]: [],
+			[LINEUP_LEVELS.OTHERS]: []
+		};
 
 		const pushToLvl = (item, key) => {
 			item[key].map((subItems) => {
