@@ -961,7 +961,7 @@
 						{"artist": "Coldplay", "marked": true, "decorator": "expanded", "order": 1}
 					],
 					"lvl1": [
-						{"artist": "The National", "marked": true, "ordered": 1},
+						{"artist": "The National", "marked": true, "order": 1},
 						{"artist": "Two Door Cinema Club", "order": 6},
 						{"artist": "Simian Mobile Disco Live", "order": 7}
 					],
