@@ -206,18 +206,15 @@ export class lineup {
 		let sortedLineup = [];
 
 		this.rawLineup.map((item) => { // iterate on raw lineup data
-			sortedLineup.push(item); // push filtered day lineup to final structure
-		});
-
-		sortedLineup.map((item) => { // iterate on lineup days
 			Object.keys(item).map((key) => { // iterate on lineup levels
-				item[key].map((itemKeyKey, index) => { // iterate on level artists
-					if(typeof(itemKeyKey) === "object" && itemKeyKey.visible === false) {
-						delete item[key][index]; // if item is an object remove it
+				item[key] = item[key].filter((e) => { // remove hidden elements from levels
+					if(e.visible !== false) {
+						return e;
 					}
-				});
-				item[key] = item[key].filter((item) => { return item !== undefined }); // clean empty items on array after cleaning hidden artists
+				})
 			});
+
+			sortedLineup.push(item); // push filtered day lineup to final structure
 		});
 
 		console.log('don\'t merge artists and don\'t sort artists');
