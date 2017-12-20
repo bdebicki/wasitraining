@@ -189,6 +189,8 @@ export class lineup {
 			}
 		});
 
+		console.log('merge artists and sort artists by customOrder');
+		console.log(sortedLineup);
 		return sortedLineup;
 	}
 
@@ -201,7 +203,26 @@ export class lineup {
 	}
 
 	notMergedAndNotSorted() {
+		let sortedLineup = [];
+
+		this.rawLineup.map((item) => { // iterate on raw lineup data
+			sortedLineup.push(item); // push filtered day lineup to final structure
+		});
+
+		sortedLineup.map((item) => { // iterate on lineup days
+			Object.keys(item).map((key) => { // iterate on lineup levels
+				item[key].map((itemKeyKey, index) => { // iterate on level artists
+					if(typeof(itemKeyKey) === "object" && itemKeyKey.visible === false) {
+						delete item[key][index]; // if item is an object remove it
+					}
+				});
+				item[key] = item[key].filter((item) => { return item !== undefined }); // clean empty items on array after cleaning hidden artists
+			});
+		});
+
 		console.log('don\'t merge artists and don\'t sort artists');
+		console.log(sortedLineup);
+		return sortedLineup;
 	}
 
 	notMergedAndSortAlpabeticallyExceptHeadliners() {
