@@ -138,7 +138,7 @@ export class lineup {
 		return headliners;
 	}
 
-	_noMergeArtists(target) { // filter artists and build list on only visible artists
+	_noMergeArtists(scope) { // filter artists and build list on only visible artists
 		this.rawLineup.map((item) => {
 			Object.keys(item).map((key) => { // iterate on lineup levels
 				item[key] = item[key].filter((e) => { // remove hidden elements from levels
@@ -148,7 +148,44 @@ export class lineup {
 				})
 			});
 
-			target.push(item); // push filtered day lineup to final structure
+			scope.push(item); // push filtered day lineup to final structure
+		});
+	}
+
+	_mergeArtists(scope) {
+		const pushToLvl = (item, key) => {
+			item[key].map((subItems) => {
+				if (subItems.visible !== false) { // skip not visible artists
+					scope[key].push(subItems);
+				}
+			});
+		};
+
+		// merge artists from different days into levels
+		this.rawLineup.map((item) => { // iterate on days
+			Object.keys(item).map((key) => { // iterate on day artists from different levels
+				switch (key) { // get specific level from raw lineup
+					case LINEUP_LEVELS.HEADLINERS:
+						// iterate on specific level artists from raw lineup and add push artist to level in sortedLineup
+						pushToLvl(item, LINEUP_LEVELS.HEADLINERS);
+						break;
+					case LINEUP_LEVELS.LVL1:
+						pushToLvl(item, LINEUP_LEVELS.LVL1);
+						break;
+					case LINEUP_LEVELS.LVL2:
+						pushToLvl(item, LINEUP_LEVELS.LVL2);
+						break;
+					case LINEUP_LEVELS.LVL3:
+						pushToLvl(item, LINEUP_LEVELS.LVL3);
+						break;
+					case LINEUP_LEVELS.LVL4:
+						pushToLvl(item, LINEUP_LEVELS.LVL4);
+						break;
+					case LINEUP_LEVELS.OTHERS:
+						pushToLvl(item, LINEUP_LEVELS.OTHERS);
+						break;
+				}
+			});
 		});
 	}
 
@@ -160,6 +197,12 @@ export class lineup {
 		}
 
 		return artist;
+	}
+
+	_clearEmptyLevels(scope, key) {
+		if(scope[key].length === 0) { // if level has not artist remove empty levels
+			delete scope[key];
+		}
 	}
 
 	_updateArtistObjectOnArray({scope, index, place = 1, artist, key, withValidation = false}) {
@@ -176,8 +219,8 @@ export class lineup {
 		}
 	}
 
-	_sortAlphabeticallyLevel(sortData) {
-		sortData.sort((a, b) => {
+	_sortAlphabeticallyLevel(sortScope) {
+		sortScope.sort((a, b) => {
 			const val = (input) => {
 				if(typeof input === 'object' && input[ARTIST_KEYS.SORT_BY]) {
 					return input[ARTIST_KEYS.SORT_BY];
@@ -200,9 +243,9 @@ export class lineup {
 			return 0;
 		});
 
-		sortData.map((item, index) => { // clear 'sortBy' key on artist obcject
+		sortScope.map((item, index) => { // clear 'sortBy' key on artist obcject
 			this._updateArtistObjectOnArray({
-				scope: sortData,
+				scope: sortScope,
 				index: index,
 				artist: item,
 				key: ARTIST_KEYS.SORT_BY,
@@ -210,7 +253,7 @@ export class lineup {
 			});
 		});
 
-		return sortData;
+		return sortScope;
 	}
 
 	_forceOrder(input) { // force positions on lineup
@@ -244,58 +287,24 @@ export class lineup {
 			[LINEUP_LEVELS.OTHERS]: []
 		};
 
-		const pushToLvl = (item, key) => {
-			item[key].map((subItems) => {
-				if (subItems.visible !== false) { // skip not visible artists
-					sortedLineup[key].push(subItems);
-				}
-			});
-		};
-
-		// merge artists from different days into levels
-		this.rawLineup.map((item) => { // iterate on days
-			Object.keys(item).map((key) => { // iterate on day artists from different levels
-				switch (key) { // get specific level from raw lineup
-					case LINEUP_LEVELS.HEADLINERS:
-						// iterate on specific level artists from raw lineup and add push artist to level in sortedLineup
-						pushToLvl(item, LINEUP_LEVELS.HEADLINERS);
-						break;
-					case LINEUP_LEVELS.LVL1:
-						pushToLvl(item, LINEUP_LEVELS.LVL1);
-						break;
-					case LINEUP_LEVELS.LVL2:
-						pushToLvl(item, LINEUP_LEVELS.LVL2);
-						break;
-					case LINEUP_LEVELS.LVL3:
-						pushToLvl(item, LINEUP_LEVELS.LVL3);
-						break;
-					case LINEUP_LEVELS.LVL4:
-						pushToLvl(item, LINEUP_LEVELS.LVL4);
-						break;
-					case LINEUP_LEVELS.OTHERS:
-						pushToLvl(item, LINEUP_LEVELS.OTHERS);
-						break;
-				}
-			});
-		});
+		this._mergeArtists(sortedLineup);
 
 		Object.keys(sortedLineup).map((key) => {
 			const currentLvl = sortedLineup[key];
-			if(currentLvl.length !== 0) { // if level has some artist proceed
-				currentLvl.sort((a, b) => { // sort lineup by order property
-					return a.order - b.order;
+
+			this._clearEmptyLevels(sortedLineup, key); // remove empty levels
+
+			currentLvl.sort((a, b) => { // sort lineup by order property
+				return a.order - b.order;
+			});
+			currentLvl.map((item, index) => { // remove order indicators
+				this._updateArtistObjectOnArray({
+					scope: currentLvl,
+					index: index,
+					artist: item,
+					key: ARTIST_KEYS.ORDER,
 				});
-				currentLvl.map((item, index) => { // remove order indicators
-					this._updateArtistObjectOnArray({
-						scope: currentLvl,
-						index: index,
-						artist: item,
-						key: ARTIST_KEYS.ORDER,
-					});
-				});
-			} else { // remove empty levels
-				delete sortedLineup[key];
-			}
+			});
 		});
 
 		console.log('merge artists and sort artists by customOrder');
@@ -304,7 +313,30 @@ export class lineup {
 	}
 
 	mergeAndSortAlphabeticallyExceptHearliners() {
-		console.log('merge artists and sort artists by alphabeticalExceptHeadliners')
+		let sortedLineup = {
+			[LINEUP_LEVELS.HEADLINERS]: [],
+			[LINEUP_LEVELS.LVL1]: [],
+			[LINEUP_LEVELS.LVL2]: [],
+			[LINEUP_LEVELS.LVL3]: [],
+			[LINEUP_LEVELS.LVL4]: [],
+			[LINEUP_LEVELS.OTHERS]: []
+		};
+
+		this._mergeArtists(sortedLineup);
+
+		Object.keys(sortedLineup).map((key) => {
+			const currentLvl = sortedLineup[key];
+
+			this._clearEmptyLevels(sortedLineup, key); // remove empty levels
+			if(key !== LINEUP_LEVELS.HEADLINERS) {
+				this._sortAlphabeticallyLevel(currentLvl);
+				this._forceOrder(currentLvl); // force alphabetical order
+			}
+		});
+
+		console.log('merge artists and sort artists by alphabeticalExceptHeadliners');
+		console.log(sortedLineup);
+		return sortedLineup;
 	}
 
 	mergeExceptHeadlinersAndSortCustomExceptHeadliners() {
