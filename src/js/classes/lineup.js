@@ -162,6 +162,20 @@ export class lineup {
 		return artist;
 	}
 
+	_updateArtistObjectOnArray({scope, index, place = 1, artist, key, withValidation = false}) {
+		const updateScope = (scope, index, place, artist, key) => {
+			scope.splice(index, place, this._clearArtistObject(artist, key));
+		};
+
+		if (withValidation) {
+			if(artist[key]) {
+				updateScope(scope, index, place, artist, key);
+			}
+		} else {
+			updateScope(scope, index, place, artist, key);
+		}
+	}
+
 	_sortAlphabeticallyLevel(sortData) {
 		sortData.sort((a, b) => {
 			const val = (input) => {
@@ -187,9 +201,13 @@ export class lineup {
 		});
 
 		sortData.map((item, index) => { // clear 'sortBy' key on artist obcject
-			if(item[ARTIST_KEYS.SORT_BY]) {
-				sortData.splice(index, 1, this._clearArtistObject(item, ARTIST_KEYS.SORT_BY));
-			}
+			this._updateArtistObjectOnArray({
+				scope: sortData,
+				index: index,
+				artist: item,
+				key: ARTIST_KEYS.SORT_BY,
+				withValidation: true,
+			});
 		});
 
 		return sortData;
@@ -205,7 +223,13 @@ export class lineup {
 				const newIndex = artist[ARTIST_KEYS.FORCE_ORDER] - 1; // -1 because array order is from 0
 
 				level.splice(index, 1); // remove artist from current position
-				level.splice(newIndex, 0, this._clearArtistObject(artist, ARTIST_KEYS.FORCE_ORDER)); // move artist to forced order
+				this._updateArtistObjectOnArray({ // move artist to forced order
+					scope: level,
+					index: newIndex,
+					place: 0,
+					artist: artist,
+					key: ARTIST_KEYS.FORCE_ORDER,
+				});
 			}
 		})
 	}
@@ -262,7 +286,12 @@ export class lineup {
 					return a.order - b.order;
 				});
 				currentLvl.map((item, index) => { // remove order indicators
-					currentLvl.splice(index, 1, this._clearArtistObject(item, ARTIST_KEYS.ORDER));
+					this._updateArtistObjectOnArray({
+						scope: currentLvl,
+						index: index,
+						artist: item,
+						key: ARTIST_KEYS.ORDER,
+					});
 				});
 			} else { // remove empty levels
 				delete sortedLineup[key];
