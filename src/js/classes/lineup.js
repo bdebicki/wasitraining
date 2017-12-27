@@ -131,6 +131,78 @@ export class lineup {
 		return headliners;
 	}
 
+	noMergeArtists(target) { // filter artists and build list on only visible artists
+		this.rawLineup.map((item) => {
+			Object.keys(item).map((key) => { // iterate on lineup levels
+				item[key] = item[key].filter((e) => { // remove hidden elements from levels
+					if(e.visible !== false) {
+						return e;
+					}
+				})
+			});
+
+			target.push(item); // push filtered day lineup to final structure
+		});
+	}
+
+	clearArtistObject(artist, key) {
+		delete artist[key]; // remove used key from
+
+		if(Object.keys(artist).length === 1) { // leave string if 'artist' key is only one
+			artist = artist.artist;
+		}
+
+		return artist;
+	}
+
+	sortAlphabeticallyLevel(sortData) {
+		sortData.sort((a, b) => {
+			const val = (input) => {
+				if(typeof input === 'object' && input.sortBy) {
+					return input.sortBy;
+
+				}
+				if(typeof input === 'object' && !input.sortBy) {
+					return input.artist;
+				}
+				return input;
+			};
+			const valA = val(a);
+			const valB = val(b);
+
+			if(valA < valB) {
+				return -1;
+			}
+			if(valA > valB) {
+				return 1;
+			}
+			return 0;
+		});
+
+		sortData.map((item, index) => { // clear 'sortBy' key on artist obcject
+			if(item.sortBy) {
+				sortData.splice(index, 1, this.clearArtistObject(item, 'sortBy'));
+			}
+		});
+
+		return sortData;
+	}
+
+	forceOrder(input) { // force positions on lineup
+		const level = input;
+
+		level.map((keyItem, index) => {
+			const artist = keyItem;
+
+			if(artist.forceOrder) {
+				const newIndex = artist.forceOrder - 1; // -1 because array order is from 0
+
+				level.splice(index, 1); // remove artist from current position
+				level.splice(newIndex, 0, this.clearArtistObject(artist, 'forceOrder')); // move artist to forced order
+			}
+		})
+	}
+
 	mergeAndSortCustomArtists() { // merge artists and sort artists by customOrder
 		let sortedLineup = {
 			[LINEUP_LEVELS.HEADLINERS]: [],
@@ -154,7 +226,7 @@ export class lineup {
 			Object.keys(item).map((key) => { // iterate on day artists from different levels
 				switch (key) { // get specific level from raw lineup
 					case LINEUP_LEVELS.HEADLINERS:
-						// iterate on specific level artists from raw lineup and add push astist to level in sortedLineup
+						// iterate on specific level artists from raw lineup and add push artist to level in sortedLineup
 						pushToLvl(item, LINEUP_LEVELS.HEADLINERS);
 						break;
 					case LINEUP_LEVELS.LVL1:
@@ -205,17 +277,7 @@ export class lineup {
 	notMergedAndNotSorted() {
 		let sortedLineup = [];
 
-		this.rawLineup.map((item) => { // iterate on raw lineup data
-			Object.keys(item).map((key) => { // iterate on lineup levels
-				item[key] = item[key].filter((e) => { // remove hidden elements from levels
-					if(e.visible !== false) {
-						return e;
-					}
-				})
-			});
-
-			sortedLineup.push(item); // push filtered day lineup to final structure
-		});
+		this.noMergeArtists(sortedLineup);
 
 		console.log('don\'t merge artists and don\'t sort artists');
 		console.log(sortedLineup);
@@ -223,6 +285,24 @@ export class lineup {
 	}
 
 	notMergedAndSortAlpabeticallyExceptHeadliners() {
+		let sortedLineup = [];
+
+		this.noMergeArtists(sortedLineup);
+
+		sortedLineup.map((item) => { // sort artist of levels except
+			Object.keys(item).map((key) => {
+				const currentLvl = item[key];
+
+				if(key !== LINEUP_LEVELS.HEADLINERS) { // sort only not headliner artists
+					this.sortAlphabeticallyLevel(currentLvl);
+					this.forceOrder(currentLvl); // force alphabetical order
+				}
+			});
+		});
+
+
 		console.log('don\'t merge artists and sort artists by alphabeticalExceptHeadliners');
+		console.log(sortedLineup);
+		return sortedLineup;
 	}
 }
