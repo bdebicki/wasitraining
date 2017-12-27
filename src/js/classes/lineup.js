@@ -136,7 +136,7 @@ export class lineup {
 		return headliners;
 	}
 
-	noMergeArtists(target) { // filter artists and build list on only visible artists
+	_noMergeArtists(target) { // filter artists and build list on only visible artists
 		this.rawLineup.map((item) => {
 			Object.keys(item).map((key) => { // iterate on lineup levels
 				item[key] = item[key].filter((e) => { // remove hidden elements from levels
@@ -150,7 +150,7 @@ export class lineup {
 		});
 	}
 
-	clearArtistObject(artist, key) {
+	_clearArtistObject(artist, key) {
 		delete artist[key]; // remove used key from
 
 		if(Object.keys(artist).length === 1) { // leave string if 'artist' key is only one
@@ -160,7 +160,7 @@ export class lineup {
 		return artist;
 	}
 
-	sortAlphabeticallyLevel(sortData) {
+	_sortAlphabeticallyLevel(sortData) {
 		sortData.sort((a, b) => {
 			const val = (input) => {
 				if(typeof input === 'object' && input[ARTIST_KEYS.SORT_BY]) {
@@ -186,14 +186,14 @@ export class lineup {
 
 		sortData.map((item, index) => { // clear 'sortBy' key on artist obcject
 			if(item[ARTIST_KEYS.SORT_BY]) {
-				sortData.splice(index, 1, this.clearArtistObject(item, ARTIST_KEYS.SORT_BY));
+				sortData.splice(index, 1, this._clearArtistObject(item, ARTIST_KEYS.SORT_BY));
 			}
 		});
 
 		return sortData;
 	}
 
-	forceOrder(input) { // force positions on lineup
+	_forceOrder(input) { // force positions on lineup
 		const level = input;
 
 		level.map((keyItem, index) => {
@@ -203,7 +203,7 @@ export class lineup {
 				const newIndex = artist[ARTIST_KEYS.FORCE_ORDER] - 1; // -1 because array order is from 0
 
 				level.splice(index, 1); // remove artist from current position
-				level.splice(newIndex, 0, this.clearArtistObject(artist, ARTIST_KEYS.FORCE_ORDER)); // move artist to forced order
+				level.splice(newIndex, 0, this._clearArtistObject(artist, ARTIST_KEYS.FORCE_ORDER)); // move artist to forced order
 			}
 		})
 	}
@@ -282,7 +282,7 @@ export class lineup {
 	notMergedAndNotSorted() {
 		let sortedLineup = [];
 
-		this.noMergeArtists(sortedLineup);
+		this._noMergeArtists(sortedLineup);
 
 		console.log('don\'t merge artists and don\'t sort artists');
 		console.log(sortedLineup);
@@ -292,15 +292,15 @@ export class lineup {
 	notMergedAndSortAlpabeticallyExceptHeadliners() {
 		let sortedLineup = [];
 
-		this.noMergeArtists(sortedLineup);
+		this._noMergeArtists(sortedLineup);
 
 		sortedLineup.map((item) => { // sort artist of levels except
 			Object.keys(item).map((key) => {
 				const currentLvl = item[key];
 
 				if(key !== LINEUP_LEVELS.HEADLINERS) { // sort only not headliner artists
-					this.sortAlphabeticallyLevel(currentLvl);
-					this.forceOrder(currentLvl); // force alphabetical order
+					this._sortAlphabeticallyLevel(currentLvl);
+					this._forceOrder(currentLvl); // force alphabetical order
 				}
 			});
 		});
