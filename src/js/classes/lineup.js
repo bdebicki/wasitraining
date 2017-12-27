@@ -27,6 +27,11 @@ const LINEUP_LEVELS = {
 	OTHERS: 'others',
 };
 
+const ARTIST_KEYS = {
+	FORCE_ORDER: 'forceOrder',
+	SORT_BY: 'sortBy',
+};
+
 export class lineup {
 	constructor(editionId) {
 		this._editionDetails = editionId.details;
@@ -158,11 +163,11 @@ export class lineup {
 	sortAlphabeticallyLevel(sortData) {
 		sortData.sort((a, b) => {
 			const val = (input) => {
-				if(typeof input === 'object' && input.sortBy) {
-					return input.sortBy;
+				if(typeof input === 'object' && input[ARTIST_KEYS.SORT_BY]) {
+					return input[ARTIST_KEYS.SORT_BY];
 
 				}
-				if(typeof input === 'object' && !input.sortBy) {
+				if(typeof input === 'object' && !input[ARTIST_KEYS.SORT_BY]) {
 					return input.artist;
 				}
 				return input;
@@ -180,8 +185,8 @@ export class lineup {
 		});
 
 		sortData.map((item, index) => { // clear 'sortBy' key on artist obcject
-			if(item.sortBy) {
-				sortData.splice(index, 1, this.clearArtistObject(item, 'sortBy'));
+			if(item[ARTIST_KEYS.SORT_BY]) {
+				sortData.splice(index, 1, this.clearArtistObject(item, ARTIST_KEYS.SORT_BY));
 			}
 		});
 
@@ -194,11 +199,11 @@ export class lineup {
 		level.map((keyItem, index) => {
 			const artist = keyItem;
 
-			if(artist.forceOrder) {
-				const newIndex = artist.forceOrder - 1; // -1 because array order is from 0
+			if(artist[ARTIST_KEYS.FORCE_ORDER]) {
+				const newIndex = artist[ARTIST_KEYS.FORCE_ORDER] - 1; // -1 because array order is from 0
 
 				level.splice(index, 1); // remove artist from current position
-				level.splice(newIndex, 0, this.clearArtistObject(artist, 'forceOrder')); // move artist to forced order
+				level.splice(newIndex, 0, this.clearArtistObject(artist, ARTIST_KEYS.FORCE_ORDER)); // move artist to forced order
 			}
 		})
 	}
