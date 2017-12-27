@@ -28,6 +28,8 @@ const LINEUP_LEVELS = {
 };
 
 const ARTIST_KEYS = {
+	ARTIST: 'artist',
+	ORDER: 'order',
 	FORCE_ORDER: 'forceOrder',
 	SORT_BY: 'sortBy',
 };
@@ -99,7 +101,7 @@ export class lineup {
 			if (item.headliners) { // check does headliners was on that day
 				item.headliners.map((subItems) => {
 					if (typeof subItems === 'object') {
-						headliners.push(subItems.artist);
+						headliners.push(subItems[ARTIST_KEYS.ARTIST]);
 					} else {
 						headliners.push(subItems);
 					}
@@ -130,7 +132,7 @@ export class lineup {
 		});
 
 		headliners.map((item, index) => { // flattening array - remove objects and displays only artists
-			headliners.splice(index, 1, item.artist)
+			headliners.splice(index, 1, item[ARTIST_KEYS.ARTIST])
 		});
 
 		return headliners;
@@ -154,7 +156,7 @@ export class lineup {
 		delete artist[key]; // remove used key from
 
 		if(Object.keys(artist).length === 1) { // leave string if 'artist' key is only one
-			artist = artist.artist;
+			artist = artist[ARTIST_KEYS.ARTIST];
 		}
 
 		return artist;
@@ -168,7 +170,7 @@ export class lineup {
 
 				}
 				if(typeof input === 'object' && !input[ARTIST_KEYS.SORT_BY]) {
-					return input.artist;
+					return input[ARTIST_KEYS.ARTIST];
 				}
 				return input;
 			};
@@ -254,12 +256,13 @@ export class lineup {
 		});
 
 		Object.keys(sortedLineup).map((key) => {
-			if(sortedLineup[key].length !== 0) { // if level has some artist proceed
-				sortedLineup[key].sort((a, b) => { // sort lineup by order property
+			const currentLvl = sortedLineup[key];
+			if(currentLvl.length !== 0) { // if level has some artist proceed
+				currentLvl.sort((a, b) => { // sort lineup by order property
 					return a.order - b.order;
 				});
-				sortedLineup[key].map((item) => { // remove order indicators
-					delete item.order;
+				currentLvl.map((item, index) => { // remove order indicators
+					currentLvl.splice(index, 1, this._clearArtistObject(item, ARTIST_KEYS.ORDER));
 				});
 			} else { // remove empty levels
 				delete sortedLineup[key];
