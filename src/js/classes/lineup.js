@@ -25,6 +25,8 @@ const LINEUP_LEVELS = {
 	LVL3: 'lvl3',
 	LVL4: 'lvl4',
 	OTHERS: 'others',
+	DAILY_HEADLINERS: 'dailyHeadliners',
+	DAILY_LVL1: 'dailyLvl1',
 };
 
 const ARTIST_KEYS = {
@@ -32,6 +34,7 @@ const ARTIST_KEYS = {
 	ORDER: 'order',
 	FORCE_ORDER: 'forceOrder',
 	SORT_BY: 'sortBy',
+	VISIBLE: 'visible',
 };
 
 export class lineup {
@@ -138,11 +141,11 @@ export class lineup {
 		return headliners;
 	}
 
-	_noMergeArtists(scope) { // filter artists and build list on only visible artists
-		this.rawLineup.map((item) => {
+	_noMergeArtists({source = this.rawLineup, scope}) { // filter artists and build list on only visible artists
+		source.map((item) => {
 			Object.keys(item).map((key) => { // iterate on lineup levels
 				item[key] = item[key].filter((e) => { // remove hidden elements from levels
-					if(e.visible !== false) {
+					if(e[ARTIST_KEYS.VISIBLE] !== false) {
 						return e;
 					}
 				})
@@ -152,7 +155,7 @@ export class lineup {
 		});
 	}
 
-	_mergeArtists(scope) {
+	_mergeArtists({scope, mergeHeadliners = true, mergeLvl1 = true, mergeLvl2 = true, mergeLvl3 = true, mergeOthers = true }) {
 		const pushToLvl = (item, key) => {
 			item[key].map((subItems) => {
 				if (subItems.visible !== false) { // skip not visible artists
@@ -164,26 +167,24 @@ export class lineup {
 		// merge artists from different days into levels
 		this.rawLineup.map((item) => { // iterate on days
 			Object.keys(item).map((key) => { // iterate on day artists from different levels
-				switch (key) { // get specific level from raw lineup
-					case LINEUP_LEVELS.HEADLINERS:
-						// iterate on specific level artists from raw lineup and add push artist to level in sortedLineup
-						pushToLvl(item, LINEUP_LEVELS.HEADLINERS);
-						break;
-					case LINEUP_LEVELS.LVL1:
-						pushToLvl(item, LINEUP_LEVELS.LVL1);
-						break;
-					case LINEUP_LEVELS.LVL2:
-						pushToLvl(item, LINEUP_LEVELS.LVL2);
-						break;
-					case LINEUP_LEVELS.LVL3:
-						pushToLvl(item, LINEUP_LEVELS.LVL3);
-						break;
-					case LINEUP_LEVELS.LVL4:
-						pushToLvl(item, LINEUP_LEVELS.LVL4);
-						break;
-					case LINEUP_LEVELS.OTHERS:
-						pushToLvl(item, LINEUP_LEVELS.OTHERS);
-						break;
+				// iterate on specific level artists from raw lineup and add push artist to level in sortedLineup
+				if(key === LINEUP_LEVELS.HEADLINERS && mergeHeadliners) {
+					pushToLvl(item, LINEUP_LEVELS.HEADLINERS);
+				}
+				if(key === LINEUP_LEVELS.LVL1 && mergeLvl1) {
+					pushToLvl(item, LINEUP_LEVELS.LVL1);
+				}
+				if(key === LINEUP_LEVELS.LVL2 && mergeLvl2) {
+					pushToLvl(item, LINEUP_LEVELS.LVL2);
+				}
+				if(key === LINEUP_LEVELS.LVL3 && mergeLvl3) {
+					pushToLvl(item, LINEUP_LEVELS.LVL3);
+				}
+				if(key === LINEUP_LEVELS.LVL4 && mergeLvl4) {
+					pushToLvl(item, LINEUP_LEVELS.LVL4);
+				}
+				if(key === LINEUP_LEVELS.OTHERS && mergeOthers) {
+					pushToLvl(item, LINEUP_LEVELS.OTHERS);
 				}
 			});
 		});
@@ -256,6 +257,22 @@ export class lineup {
 		return sortScope;
 	}
 
+	_sortCustomOrderLevel(sortScope) {
+		sortScope.sort((a, b) => { // sort lineup by order property
+			return a.order - b.order;
+		});
+		sortScope.map((item, index) => { // remove order indicators
+			this._updateArtistObjectOnArray({
+				scope: sortScope,
+				index: index,
+				artist: item,
+				key: ARTIST_KEYS.ORDER,
+			});
+		});
+
+		return sortScope;
+	}
+
 	_forceOrder(input) { // force positions on lineup
 		const level = input;
 
@@ -287,24 +304,13 @@ export class lineup {
 			[LINEUP_LEVELS.OTHERS]: []
 		};
 
-		this._mergeArtists(sortedLineup);
+		this._mergeArtists({scope: sortedLineup});
 
 		Object.keys(sortedLineup).map((key) => {
 			const currentLvl = sortedLineup[key];
 
 			this._clearEmptyLevels(sortedLineup, key); // remove empty levels
-
-			currentLvl.sort((a, b) => { // sort lineup by order property
-				return a.order - b.order;
-			});
-			currentLvl.map((item, index) => { // remove order indicators
-				this._updateArtistObjectOnArray({
-					scope: currentLvl,
-					index: index,
-					artist: item,
-					key: ARTIST_KEYS.ORDER,
-				});
-			});
+			this._sortCustomOrderLevel(currentLvl)
 		});
 
 		console.log('merge artists and sort artists by customOrder');
@@ -322,7 +328,7 @@ export class lineup {
 			[LINEUP_LEVELS.OTHERS]: []
 		};
 
-		this._mergeArtists(sortedLineup);
+		this._mergeArtists({scope: sortedLineup});
 
 		Object.keys(sortedLineup).map((key) => {
 			const currentLvl = sortedLineup[key];
@@ -340,13 +346,42 @@ export class lineup {
 	}
 
 	mergeExceptHeadlinersAndSortCustomExceptHeadliners() {
+		let sortedLineup = {
+			[LINEUP_LEVELS.DAILY_HEADLINERS]: [],
+			[LINEUP_LEVELS.DAILY_LVL1]: [],
+			[LINEUP_LEVELS.LVL2]: [],
+			[LINEUP_LEVELS.OTHERS]: []
+		};
+
+		this.rawLineup.map((item) => { // prepare artists splited per days
+			Object.keys(item).map((key) => {
+				if(key === LINEUP_LEVELS.HEADLINERS) {
+					sortedLineup[LINEUP_LEVELS.DAILY_HEADLINERS].push(item[key]);
+				}
+				if(key === LINEUP_LEVELS.LVL1) {
+					sortedLineup[LINEUP_LEVELS.DAILY_LVL1].push(item[key]);
+				}
+			});
+		});
+		this._mergeArtists({scope: sortedLineup, mergeHeadliners: false, mergeLvl1: false}); // merge other artists
+
+		Object.keys(sortedLineup).map((key) => {
+			this._clearEmptyLevels(sortedLineup, key); // remove empty levels
+
+			if(key !== LINEUP_LEVELS.DAILY_HEADLINERS && key !== LINEUP_LEVELS.DAILY_LVL1) { // sort other artists
+				this._sortCustomOrderLevel(sortedLineup[key]);
+			}
+		});
+
 		console.log('merge artists except headliners and sort artists by customOrderExceptHeadliners');
+		console.log(sortedLineup);
+		return sortedLineup;
 	}
 
 	notMergedAndNotSorted() {
 		let sortedLineup = [];
 
-		this._noMergeArtists(sortedLineup);
+		this._noMergeArtists({scope: sortedLineup});
 
 		console.log('don\'t merge artists and don\'t sort artists');
 		console.log(sortedLineup);
@@ -356,7 +391,7 @@ export class lineup {
 	notMergedAndSortAlpabeticallyExceptHeadliners() {
 		let sortedLineup = [];
 
-		this._noMergeArtists(sortedLineup);
+		this._noMergeArtists({scope: sortedLineup});
 
 		sortedLineup.map((item) => { // sort artist of levels except
 			Object.keys(item).map((key) => {

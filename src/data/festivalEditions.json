@@ -150,7 +150,7 @@
 				"lineup": {
 					"headliners": ["The White Stripes", "Lauryn Hill", "Underworld"],
 					"lvl1": [
-						{"artist": "The Music", "order": "headliners"}
+						{"artist": "The Music", "order": "day2"}
 					],
 					"lvl2": [
 						{"artist": "Neo", "decorator": "uppercase"}
@@ -193,9 +193,6 @@
 						{"artist": "Placebo", "decorator": "uppercase"},
 						"Pharrell Williams",
 						{"artist": "Manu Chao Radio Bemba Sound System", "sliceDecorator": {"slice": "Radio Bemba Sound System", "style": "down"}}
-					],
-					"lvl1": [
-						{"artist": "", "order": "headliners"}
 					],
 					"lvl2": [
 						{"artist": "Matthew Herbert", "order": 5, "canceled": true},
