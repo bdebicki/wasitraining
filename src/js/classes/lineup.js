@@ -1,0 +1,412 @@
+'use strict';
+
+/**
+ * sort types:
+ *	- false - don't sort artists
+ *	- 'alphabetical' - sort alphabetical
+ *	- 'alphabeticalExceptHeadliners' - sort alphabetical artists from all groups except headliners
+ *	- 'customOrder' - sort by 'order' props from artist object
+ *	- 'customOrderExceptHeadliners' - sort by 'order' props from artist object but don't touch headliners
+ *
+ * mergeArtists:
+ * 	- false - don't merge artists levels and split lineup on days
+ * 	- true - merge artists by levels
+ * 	- 'exceptHeadliners' - merge artists from all levels except headliners and display them splited by days
+ *
+ * otherArtists:
+ *  - string - display label with information about others artists
+ * 	- false - don't display information about others artists
+ */
+
+const LINEUP_LEVELS = {
+	HEADLINERS: 'headliners',
+	LVL1: 'lvl1',
+	LVL2: 'lvl2',
+	LVL3: 'lvl3',
+	LVL4: 'lvl4',
+	OTHERS: 'others',
+	DAILY_HEADLINERS: 'dailyHeadliners',
+	DAILY_LVL1: 'dailyLvl1',
+};
+
+const ARTIST_KEYS = {
+	ARTIST: 'artist',
+	ORDER: 'order',
+	FORCE_ORDER: 'forceOrder',
+	SORT_BY: 'sortBy',
+	VISIBLE: 'visible',
+};
+
+export class lineup {
+	constructor(editionId) {
+		this._editionDetails = editionId.details;
+		this._settings = editionId.lineupSettings;
+	}
+
+	get settings() {
+		return this._settings;
+	}
+
+	get sortType() {
+		return this.settings.sortType;
+	}
+
+	get mergeArtists() {
+		return this.settings.mergeArtists;
+	}
+
+	get otherArtists() {
+		return this.settings.otherArtists;
+	}
+
+	get rawLineup() {
+		let lineup = [];
+
+		this._editionDetails.map((item) => {
+			lineup.push(item.lineup);
+		});
+
+		return lineup;
+	}
+
+	get headliners() {
+		if(this.sortType === 'alphabetical') {
+			return this.sortAlphabeticallyHeadliners();
+		} else if (this.sortType === 'customOrder') {
+			return this.sortOrderedHeadliners();
+		} else { // sortType is false, 'customOrderExceptHeadliners' or 'alphabeticalExceptHeadliners'
+			return this.notSortedHeadliners();
+		}
+	}
+
+	get lineup() {
+		if (this.mergeArtists === true) { // merge artists
+			if(this.sortType === 'customOrder') { // & sort by custom order
+				this.mergeAndSortCustomArtists();
+			} else if (this.sortType === 'alphabeticalExceptHeadliners') {
+				this.mergeAndSortAlphabeticallyExceptHearliners();
+			}
+		} else if (this.mergeArtists === 'exceptHeadliners' && this.sortType === 'customOrderExceptHeadliners') {
+			this.mergeExceptHeadlinersAndSortCustomExceptHeadliners();
+		} else {
+			if(this.sortType === false) {
+				this.notMergedAndNotSorted();
+			} else if (this.sortType === 'alphabeticalExceptHeadliners') {
+				this.notMergedAndSortAlpabeticallyExceptHeadliners();
+			}
+		}
+	}
+
+	notSortedHeadliners() {
+		let headliners = [];
+
+		this.rawLineup.map((item) => { // merge headliners from all days into one flat array (with artists only)
+			if (item.headliners) { // check does headliners was on that day
+				item.headliners.map((subItems) => {
+					if (typeof subItems === 'object') {
+						headliners.push(subItems[ARTIST_KEYS.ARTIST]);
+					} else {
+						headliners.push(subItems);
+					}
+				});
+			}
+		});
+
+		return headliners;
+	}
+
+	sortAlphabeticallyHeadliners() {
+		return this.notSortedHeadliners.sort(); // sort alphabetically flat array
+	}
+
+	sortOrderedHeadliners() {
+		let headliners = [];
+
+		this.rawLineup.map((item) => { // merge headliners from all days in one array
+			if (item.headliners) { // check does headliners was on that day
+				item.headliners.map((subItems) => {
+					headliners.push(subItems);
+				});
+			}
+		});
+
+		headliners.sort((a, b) => { // sort headliners by order property
+			return a.order - b.order;
+		});
+
+		headliners.map((item, index) => { // flattening array - remove objects and displays only artists
+			headliners.splice(index, 1, item[ARTIST_KEYS.ARTIST])
+		});
+
+		return headliners;
+	}
+
+	_noMergeArtists({source = this.rawLineup, scope}) { // filter artists and build list on only visible artists
+		source.map((item) => {
+			Object.keys(item).map((key) => { // iterate on lineup levels
+				item[key] = item[key].filter((e) => { // remove hidden elements from levels
+					if(e[ARTIST_KEYS.VISIBLE] !== false) {
+						return e;
+					}
+				})
+			});
+
+			scope.push(item); // push filtered day lineup to final structure
+		});
+	}
+
+	_mergeArtists({scope, mergeHeadliners = true, mergeLvl1 = true, mergeLvl2 = true, mergeLvl3 = true, mergeOthers = true }) {
+		const pushToLvl = (item, key) => {
+			item[key].map((subItems) => {
+				if (subItems.visible !== false) { // skip not visible artists
+					scope[key].push(subItems);
+				}
+			});
+		};
+
+		// merge artists from different days into levels
+		this.rawLineup.map((item) => { // iterate on days
+			Object.keys(item).map((key) => { // iterate on day artists from different levels
+				// iterate on specific level artists from raw lineup and add push artist to level in sortedLineup
+				if(key === LINEUP_LEVELS.HEADLINERS && mergeHeadliners) {
+					pushToLvl(item, LINEUP_LEVELS.HEADLINERS);
+				}
+				if(key === LINEUP_LEVELS.LVL1 && mergeLvl1) {
+					pushToLvl(item, LINEUP_LEVELS.LVL1);
+				}
+				if(key === LINEUP_LEVELS.LVL2 && mergeLvl2) {
+					pushToLvl(item, LINEUP_LEVELS.LVL2);
+				}
+				if(key === LINEUP_LEVELS.LVL3 && mergeLvl3) {
+					pushToLvl(item, LINEUP_LEVELS.LVL3);
+				}
+				if(key === LINEUP_LEVELS.LVL4 && mergeLvl4) {
+					pushToLvl(item, LINEUP_LEVELS.LVL4);
+				}
+				if(key === LINEUP_LEVELS.OTHERS && mergeOthers) {
+					pushToLvl(item, LINEUP_LEVELS.OTHERS);
+				}
+			});
+		});
+	}
+
+	_clearArtistObject(artist, key) {
+		delete artist[key]; // remove used key from
+
+		if(Object.keys(artist).length === 1) { // leave string if 'artist' key is only one
+			artist = artist[ARTIST_KEYS.ARTIST];
+		}
+
+		return artist;
+	}
+
+	_clearEmptyLevels(scope, key) {
+		if(scope[key].length === 0) { // if level has not artist remove empty levels
+			delete scope[key];
+		}
+	}
+
+	_updateArtistObjectOnArray({scope, index, place = 1, artist, key, withValidation = false}) {
+		const updateScope = (scope, index, place, artist, key) => {
+			scope.splice(index, place, this._clearArtistObject(artist, key));
+		};
+
+		if (withValidation) {
+			if(artist[key]) {
+				updateScope(scope, index, place, artist, key);
+			}
+		} else {
+			updateScope(scope, index, place, artist, key);
+		}
+	}
+
+	_sortAlphabeticallyLevel(sortScope) {
+		sortScope.sort((a, b) => {
+			const val = (input) => {
+				if(typeof input === 'object' && input[ARTIST_KEYS.SORT_BY]) {
+					return input[ARTIST_KEYS.SORT_BY];
+
+				}
+				if(typeof input === 'object' && !input[ARTIST_KEYS.SORT_BY]) {
+					return input[ARTIST_KEYS.ARTIST];
+				}
+				return input;
+			};
+			const valA = val(a);
+			const valB = val(b);
+
+			if(valA < valB) {
+				return -1;
+			}
+			if(valA > valB) {
+				return 1;
+			}
+			return 0;
+		});
+
+		sortScope.map((item, index) => { // clear 'sortBy' key on artist obcject
+			this._updateArtistObjectOnArray({
+				scope: sortScope,
+				index: index,
+				artist: item,
+				key: ARTIST_KEYS.SORT_BY,
+				withValidation: true,
+			});
+		});
+
+		return sortScope;
+	}
+
+	_sortCustomOrderLevel(sortScope) {
+		sortScope.sort((a, b) => { // sort lineup by order property
+			return a.order - b.order;
+		});
+		sortScope.map((item, index) => { // remove order indicators
+			this._updateArtistObjectOnArray({
+				scope: sortScope,
+				index: index,
+				artist: item,
+				key: ARTIST_KEYS.ORDER,
+			});
+		});
+
+		return sortScope;
+	}
+
+	_forceOrder(input) { // force positions on lineup
+		const level = input;
+
+		level.map((keyItem, index) => {
+			const artist = keyItem;
+
+			if(artist[ARTIST_KEYS.FORCE_ORDER]) {
+				const newIndex = artist[ARTIST_KEYS.FORCE_ORDER] - 1; // -1 because array order is from 0
+
+				level.splice(index, 1); // remove artist from current position
+				this._updateArtistObjectOnArray({ // move artist to forced order
+					scope: level,
+					index: newIndex,
+					place: 0,
+					artist: artist,
+					key: ARTIST_KEYS.FORCE_ORDER,
+				});
+			}
+		})
+	}
+
+	mergeAndSortCustomArtists() { // merge artists and sort artists by customOrder
+		let sortedLineup = {
+			[LINEUP_LEVELS.HEADLINERS]: [],
+			[LINEUP_LEVELS.LVL1]: [],
+			[LINEUP_LEVELS.LVL2]: [],
+			[LINEUP_LEVELS.LVL3]: [],
+			[LINEUP_LEVELS.LVL4]: [],
+			[LINEUP_LEVELS.OTHERS]: []
+		};
+
+		this._mergeArtists({scope: sortedLineup});
+
+		Object.keys(sortedLineup).map((key) => {
+			const currentLvl = sortedLineup[key];
+
+			this._clearEmptyLevels(sortedLineup, key); // remove empty levels
+			this._sortCustomOrderLevel(currentLvl)
+		});
+
+		console.log('merge artists and sort artists by customOrder');
+		console.log(sortedLineup);
+		return sortedLineup;
+	}
+
+	mergeAndSortAlphabeticallyExceptHearliners() {
+		let sortedLineup = {
+			[LINEUP_LEVELS.HEADLINERS]: [],
+			[LINEUP_LEVELS.LVL1]: [],
+			[LINEUP_LEVELS.LVL2]: [],
+			[LINEUP_LEVELS.LVL3]: [],
+			[LINEUP_LEVELS.LVL4]: [],
+			[LINEUP_LEVELS.OTHERS]: []
+		};
+
+		this._mergeArtists({scope: sortedLineup});
+
+		Object.keys(sortedLineup).map((key) => {
+			const currentLvl = sortedLineup[key];
+
+			this._clearEmptyLevels(sortedLineup, key); // remove empty levels
+			if(key !== LINEUP_LEVELS.HEADLINERS) {
+				this._sortAlphabeticallyLevel(currentLvl);
+				this._forceOrder(currentLvl); // force alphabetical order
+			}
+		});
+
+		console.log('merge artists and sort artists by alphabeticalExceptHeadliners');
+		console.log(sortedLineup);
+		return sortedLineup;
+	}
+
+	mergeExceptHeadlinersAndSortCustomExceptHeadliners() {
+		let sortedLineup = {
+			[LINEUP_LEVELS.DAILY_HEADLINERS]: [],
+			[LINEUP_LEVELS.DAILY_LVL1]: [],
+			[LINEUP_LEVELS.LVL2]: [],
+			[LINEUP_LEVELS.OTHERS]: []
+		};
+
+		this.rawLineup.map((item) => { // prepare artists splited per days
+			Object.keys(item).map((key) => {
+				if(key === LINEUP_LEVELS.HEADLINERS) {
+					sortedLineup[LINEUP_LEVELS.DAILY_HEADLINERS].push(item[key]);
+				}
+				if(key === LINEUP_LEVELS.LVL1) {
+					sortedLineup[LINEUP_LEVELS.DAILY_LVL1].push(item[key]);
+				}
+			});
+		});
+		this._mergeArtists({scope: sortedLineup, mergeHeadliners: false, mergeLvl1: false}); // merge other artists
+
+		Object.keys(sortedLineup).map((key) => {
+			this._clearEmptyLevels(sortedLineup, key); // remove empty levels
+
+			if(key !== LINEUP_LEVELS.DAILY_HEADLINERS && key !== LINEUP_LEVELS.DAILY_LVL1) { // sort other artists
+				this._sortCustomOrderLevel(sortedLineup[key]);
+			}
+		});
+
+		console.log('merge artists except headliners and sort artists by customOrderExceptHeadliners');
+		console.log(sortedLineup);
+		return sortedLineup;
+	}
+
+	notMergedAndNotSorted() {
+		let sortedLineup = [];
+
+		this._noMergeArtists({scope: sortedLineup});
+
+		console.log('don\'t merge artists and don\'t sort artists');
+		console.log(sortedLineup);
+		return sortedLineup;
+	}
+
+	notMergedAndSortAlpabeticallyExceptHeadliners() {
+		let sortedLineup = [];
+
+		this._noMergeArtists({scope: sortedLineup});
+
+		sortedLineup.map((item) => { // sort artist of levels except
+			Object.keys(item).map((key) => {
+				const currentLvl = item[key];
+
+				if(key !== LINEUP_LEVELS.HEADLINERS) { // sort only not headliner artists
+					this._sortAlphabeticallyLevel(currentLvl);
+					this._forceOrder(currentLvl); // force alphabetical order
+				}
+			});
+		});
+
+
+		console.log('don\'t merge artists and sort artists by alphabeticalExceptHeadliners');
+		console.log(sortedLineup);
+		return sortedLineup;
+	}
+}
