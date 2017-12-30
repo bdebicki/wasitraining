@@ -122,7 +122,7 @@ export class editionDetails extends edition {
 	}
 
 	renderLineup() {
-		this.lineupDetails.render();
+		return this.lineupDetails.render();
 	}
 
 	updateEditionDetails() {
@@ -146,6 +146,7 @@ export class editionDetails extends edition {
 		lineupContainer.appendChild(lineupLink);
 		editionContainer.appendChild(editionDetails);
 		editionContainer.appendChild(lineupContainer);
+		editionContainer.appendChild(lineup);
 
 		return editionContainer;
 	}

@@ -108,6 +108,11 @@ export const RAIN = {
 	DETAILS_ITEM_RAIN_CLASS: `${rainClassBuilders.detailsList}__rain`,
 };
 
+const lineupClassBuilder = 'lineup';
+export const LINEUP = {
+	SECTION_ID: lineupClassBuilder,
+};
+
 const bgClassBuilder = LAYOUT.BG_VIDEO_ID;
 export const BG = {
 	VIDEO_CLASS: `${bgClassBuilder}__video`,
