@@ -1,8 +1,10 @@
 'use strict';
 
 import { lineup } from "../../classes/lineup";
-import { LINEUP } from "../../enums/elementHandlers";
+import { LINEUP, DIALOGBOX } from "../../enums/elementHandlers";
 import { addDialogbox } from '../../utils/addDialogbox';
+
+const DIALOGBOX_HEADLINE_TEXT = 'Lineup';
 
 export class lineupDetails extends lineup {
 	constructor(editionId) {
@@ -10,6 +12,8 @@ export class lineupDetails extends lineup {
 	}
 
 	update() {
+		document.querySelector(`#${LINEUP.SECTION_ID} .${DIALOGBOX.HEADLINE_CLASS}`).textContent = `${DIALOGBOX_HEADLINE_TEXT} ${this.editionYear}`;
+
 		this.lineup;
 	}
 
@@ -17,7 +21,7 @@ export class lineupDetails extends lineup {
 		let fragment = document.createDocumentFragment();
 		const dialogboxSettings = {
 			id: LINEUP.SECTION_ID,
-			title: 'Lineup',
+			title: `${DIALOGBOX_HEADLINE_TEXT} ${this.editionYear}`,
 			content: fragment,
 			closeAction: this.toggleDetails,
 			closeTitle: 'hide lineup details',

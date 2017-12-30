@@ -39,8 +39,13 @@ const ARTIST_KEYS = {
 
 export class lineup {
 	constructor(editionId) {
+		this._editionYear = editionId.editionYear;
 		this._editionDetails = editionId.details;
 		this._settings = editionId.lineupSettings;
+	}
+
+	get editionYear() {
+		return this._editionYear;
 	}
 
 	get settings() {
