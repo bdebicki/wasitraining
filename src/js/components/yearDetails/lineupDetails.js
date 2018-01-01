@@ -13,7 +13,7 @@ export class lineupDetails extends lineup {
 		super(editionId);
 	}
 
-	update() {
+	updateLineupDetails() {
 		document.querySelector(`#${LINEUP.SECTION_ID} .${DIALOGBOX.HEADLINE_CLASS}`).textContent = `${DIALOGBOX_HEADLINE_TEXT} ${this.editionYear}`;
 
 		this.lineup;
@@ -44,7 +44,6 @@ export class lineupDetails extends lineup {
 		let fragment = document.createDocumentFragment();
 		const dialogboxLineup = dialogbox.addDialogbox({
 			id: LINEUP.SECTION_ID,
-			classNames: ['boczek'],
 			title: `${DIALOGBOX_HEADLINE_TEXT} ${this.editionYear}`,
 			content: fragment,
 			closeTitle: 'hide lineup details'

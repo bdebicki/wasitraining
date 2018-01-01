@@ -99,7 +99,6 @@ export class editionDetails extends edition {
 		document.querySelector(`.${EDITION.FULL_NAME_CLASS}`).textContent = this.editionFullName;
 		document.querySelector(`.${EDITION.PLACE_CLASS}`).textContent = this.editionPlace;
 		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(this.updateHeadliners());
-		this.lineupDetails.update();
 	}
 
 	render() {
@@ -108,13 +107,11 @@ export class editionDetails extends edition {
 		const lineupContainer = this.renderShortLineupContainer();
 		const headliners = this.renderHeadliners();
 		const lineupLink = this.lineupDetails.renderLineupLink();
-		const lineup = this.lineupDetails.render();
 
 		lineupContainer.appendChild(headliners);
 		lineupContainer.appendChild(lineupLink);
 		editionContainer.appendChild(editionDetails);
 		editionContainer.appendChild(lineupContainer);
-		editionContainer.appendChild(lineup);
 
 		return editionContainer;
 	}
