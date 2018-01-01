@@ -12,9 +12,11 @@ export function addDialogbox({id, classNames, closeAction = toggleDialogbox, clo
 	const dialogboxId = id;
 	const dialogboxClassNames = [DIALOGBOX.BASIC_CLASS];
 
-	classNames.map((item) => {
-		dialogboxClassNames.push(item);
-	});
+	if(classNames) {
+		classNames.map((item) => {
+			dialogboxClassNames.push(item);
+		});
+	}
 
 	div.id = dialogboxId;
 	div.classList.add(...dialogboxClassNames);
