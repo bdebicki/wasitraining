@@ -13,12 +13,6 @@ export class lineupDetails extends lineup {
 		super(editionId);
 	}
 
-	updateLineupDetails() {
-		document.querySelector(`#${LINEUP.SECTION_ID} .${DIALOGBOX.HEADLINE_CLASS}`).textContent = `${DIALOGBOX_HEADLINE_TEXT} ${this.editionYear}`;
-
-		this.lineup;
-	}
-
 	toggleLineup(e) {
 		e.preventDefault();
 		dialogbox.toggleDialogboxAction(`#${LINEUP.SECTION_ID}`);
@@ -40,16 +34,42 @@ export class lineupDetails extends lineup {
 		return p;
 	}
 
-	render() {
+	decorateLineup() {
 		let fragment = document.createDocumentFragment();
+
+		this.lineup;
+
+		return fragment;
+	}
+
+	updateLineupDetails() {
+		let lineupContainer = document.querySelector(`#${LINEUP.SECTION_ID}`);
+		let artistsContainer = document.querySelector(`.${LINEUP.ARTISTS}`);
+		let oldYear = lineupContainer.dataset.year;
+
+		lineupContainer.querySelector(`.${DIALOGBOX.HEADLINE_CLASS}`).textContent = `${DIALOGBOX_HEADLINE_TEXT} ${this.editionYear}`;
+		lineupContainer.classList.remove(`${LINEUP.EDITION_CLASS}${oldYear}`);
+		lineupContainer.classList.add(`${LINEUP.EDITION_CLASS}${this.editionYear}`);
+		lineupContainer.dataset.year = this.editionYear;
+		artistsContainer.textContent = '';
+		artistsContainer.classList.remove(`${LINEUP.ARTISTS_EDITION}${oldYear}`);
+		artistsContainer.classList.add(`${LINEUP.ARTISTS_EDITION}${this.editionYear}`);
+		artistsContainer.appendChild(this.decorateLineup());
+	}
+
+	render() {
+		let section = document.createElement('section');
 		const dialogboxLineup = dialogbox.addDialogbox({
 			id: LINEUP.SECTION_ID,
+			classNames: [DIALOGBOX.VISIBLE_CLASS, `${LINEUP.EDITION_CLASS}${this.editionYear}`],
+			dataAttr: [['year', `${this.editionYear}`]],
 			title: `${DIALOGBOX_HEADLINE_TEXT} ${this.editionYear}`,
-			content: fragment,
+			content: section,
 			closeTitle: 'hide lineup details'
 		});
 
-		this.lineup;
+		section.classList.add(LINEUP.ARTISTS, `${LINEUP.ARTISTS_EDITION}${this.editionYear}`);
+		section.appendChild(this.decorateLineup());
 
 		return dialogboxLineup;
 	}

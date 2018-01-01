@@ -3,7 +3,15 @@ import { DIALOGBOX, LINK } from '../enums/elementHandlers';
 import { setIcon } from './setIcon';
 import { icons } from './iconsLibrary';
 
-export function addDialogbox({id, classNames, closeAction = toggleDialogbox, closeTitle = 'hide details', title, content} = {}) {
+export function addDialogbox({
+		id,
+		classNames,
+		dataAttr,
+		closeAction = toggleDialogbox,
+		closeTitle = 'hide details',
+		title,
+		content
+	} = {}) {
 	let div = document.createElement('div');
 	let header = document.createElement('header');
 	let h3 = document.createElement('h3');
@@ -15,6 +23,11 @@ export function addDialogbox({id, classNames, closeAction = toggleDialogbox, clo
 	if(classNames) {
 		classNames.map((item) => {
 			dialogboxClassNames.push(item);
+		});
+	}
+	if(dataAttr) {
+		dataAttr.map((item) => {
+			div.dataset[item[0]] = item[1];
 		});
 	}
 
