@@ -3,8 +3,6 @@
 import { EDITION, LINK } from '../../enums/elementHandlers';
 import { edition } from '../../classes/edition';
 import { lineup } from '../../classes/lineup';
-import { setIcon } from '../../utils/setIcon';
-import { icons } from '../../utils/iconsLibrary';
 import { lineupDetails } from "./lineupDetails";
 
 export class editionDetails extends edition {
@@ -37,12 +35,6 @@ export class editionDetails extends edition {
 		});
 
 		return fragment;
-	}
-
-	toggleLineup(e) {
-		e.preventDefault();
-
-		console.log('display lineup');
 	}
 
 	renderEditionContainer() {
@@ -92,10 +84,6 @@ export class editionDetails extends edition {
 		return this.decorateEditionHeadliners();
 	}
 
-	updateLineup() {
-		this.lineupDetails.update();
-	}
-
 	renderHeadliners() {
 		let ul = document.createElement('ul');
 
@@ -105,33 +93,13 @@ export class editionDetails extends edition {
 		return ul;
 	}
 
-	renderLineupLink() {
-		let p = document.createElement('p');
-		let a = document.createElement('a');
-
-		p.classList.add(EDITION.LINEUP_LINK_CLASS);
-		a.classList.add(LINK.BASIC_CLASS, LINK.INVERTED_STYLE_CLASS, LINK.SIZE_XS_CLASS, LINK.HAS_ICON_CLASS);
-		a.href = `#lineup`;
-		a.textContent = 'see full lineup';
-		a.appendChild(setIcon(icons.plus(), `${LINK.ICON_CLASS}`));
-		a.addEventListener('click', this.toggleLineup, null);
-
-		p.appendChild(a);
-
-		return p;
-	}
-
-	renderLineup() {
-		return this.lineupDetails.render();
-	}
-
 	updateEditionDetails() {
 		document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent = this.editionYear;
 		document.querySelector(`.${EDITION.DATES_CLASS}`).textContent = this.decorateEditionDates();
 		document.querySelector(`.${EDITION.FULL_NAME_CLASS}`).textContent = this.editionFullName;
 		document.querySelector(`.${EDITION.PLACE_CLASS}`).textContent = this.editionPlace;
 		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(this.updateHeadliners());
-		this.updateLineup();
+		this.lineupDetails.update();
 	}
 
 	render() {
@@ -139,8 +107,8 @@ export class editionDetails extends edition {
 		const editionDetails = this.renderEditionDetails();
 		const lineupContainer = this.renderShortLineupContainer();
 		const headliners = this.renderHeadliners();
-		const lineupLink = this.renderLineupLink();
-		const lineup = this.renderLineup();
+		const lineupLink = this.lineupDetails.renderLineupLink();
+		const lineup = this.lineupDetails.render();
 
 		lineupContainer.appendChild(headliners);
 		lineupContainer.appendChild(lineupLink);

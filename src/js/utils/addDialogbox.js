@@ -18,7 +18,11 @@ export function addDialogbox(dialogboxSettings) {
 	closeBtn.classList.add(DIALOGBOX.CLOSE_CLASS);
 	closeBtn.appendChild(setIcon(icons.close(), `${LINK.ICON_CLASS}`));
 	closeBtn.setAttribute('href', settings.id);
-	closeBtn.addEventListener('click', settings.closeAction, null);
+	if (settings.closeAction) {
+		closeBtn.addEventListener('click', settings.closeAction, null);
+	} else {
+		closeBtn.addEventListener('click', toggleDialogbox, null);
+	}
 	if (settings.closeTitle) {
 		closeBtn.title = settings.closeTitle;
 	} else {
@@ -34,4 +38,13 @@ export function addDialogbox(dialogboxSettings) {
 	div.appendChild(settings.content);
 
 	return div;
+}
+
+export function toggleDialogbox(e) {
+	e.preventDefault();
+	toggleDialogboxAction(`.${DIALOGBOX.VISIBLE_CLASS}`);
+}
+
+export function toggleDialogboxAction(target) {
+	document.querySelector(target).classList.toggle(DIALOGBOX.VISIBLE_CLASS);
 }

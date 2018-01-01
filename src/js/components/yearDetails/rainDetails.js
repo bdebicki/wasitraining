@@ -2,7 +2,7 @@
 
 import { LINK, RAIN, DIALOGBOX} from '../../enums/elementHandlers';
 import { addVideo, addSVGmask, svgType } from '../../utils/addElement';
-import { addDialogbox } from '../../utils/addDialogbox';
+import { addDialogbox, toggleDialogboxAction } from '../../utils/addDialogbox';
 import { setIcon } from '../../utils/setIcon';
 import { icons } from '../../utils/iconsLibrary';
 import { edition } from '../../classes/edition';
@@ -17,10 +17,9 @@ export class rainDetails extends edition {
 
 		const headerEl = document.querySelector(`.${RAIN.HEADER_CLASS}`);
 		const target = this.getAttribute('href').replace('#', '');
-		let targetEl = document.getElementById(target);
 
 		headerEl.classList.toggle(RAIN.HEADER_HIDDEN_CLASS);
-		targetEl.classList.toggle(DIALOGBOX.VISIBLE_CLASS);
+		toggleDialogboxAction(`#${target}`);
 	}
 
 	decorateRainDayDetails() {
