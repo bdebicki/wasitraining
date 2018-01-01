@@ -2,7 +2,7 @@
 
 import { lineup } from "../../classes/lineup";
 import { LINEUP, DIALOGBOX, LINK, EDITION } from "../../enums/elementHandlers";
-import { addDialogbox, toggleDialogboxAction } from '../../utils/addDialogbox';
+import * as dialogbox from '../../utils/addDialogbox';
 import { setIcon } from "../../utils/setIcon";
 import { icons } from "../../utils/iconsLibrary";
 
@@ -21,7 +21,7 @@ export class lineupDetails extends lineup {
 
 	toggleLineup(e) {
 		e.preventDefault();
-		toggleDialogboxAction(`#${LINEUP.SECTION_ID}`);
+		dialogbox.toggleDialogboxAction(`#${LINEUP.SECTION_ID}`);
 	}
 
 	renderLineupLink() {
@@ -42,16 +42,16 @@ export class lineupDetails extends lineup {
 
 	render() {
 		let fragment = document.createDocumentFragment();
-		const dialogboxSettings = {
+		const dialogboxLineup = dialogbox.addDialogbox({
 			id: LINEUP.SECTION_ID,
+			classNames: ['boczek'],
 			title: `${DIALOGBOX_HEADLINE_TEXT} ${this.editionYear}`,
 			content: fragment,
-			// closeAction: this.toggleLineup,
-			closeTitle: 'hide lineup details',
-		};
+			closeTitle: 'hide lineup details'
+		});
 
 		this.lineup;
 
-		return addDialogbox(dialogboxSettings);
+		return dialogboxLineup;
 	}
 }
