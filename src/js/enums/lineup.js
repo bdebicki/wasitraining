@@ -17,6 +17,7 @@ export const ARTIST_KEYS = {
 	SORT_BY: 'sortBy',
 	VISIBLE: 'visible',
 	DECORATOR: 'decorator',
+	SLICE_DECORATOR: 'sliceDecorator',
 	MARKED: 'marked',
 	MULTILINE: 'multiline',
 };

@@ -50,8 +50,18 @@ export class lineupDetails extends lineup {
 		return p;
 	}
 
+	artistSliceDecorator(artistName, artistDecorations) {
+		let decoratedName = artistName;
+		const decorations  = artistDecorations;
+
+		console.log(decoratedName, decorations);
+
+		return decoratedName;
+	}
+
 	decorateArtist(artistKey, target) {
 		let li = document.createElement('li');
+		let artistName;
 
 		li.classList.add(LINEUP.ARTIST_CLASS);
 		if (artistKey[ARTIST_KEYS.DECORATOR]) {
@@ -65,12 +75,19 @@ export class lineupDetails extends lineup {
 		}
 
 		if (artistKey[ARTIST_KEYS.ARTIST] && !artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
-			li.textContent = artistKey[ARTIST_KEYS.ARTIST];
+			artistName = artistKey[ARTIST_KEYS.ARTIST];
 		} else if (artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
-			li.textContent = artistKey[ARTIST_KEYS.DISPLAY_NAME];
+			artistName = artistKey[ARTIST_KEYS.DISPLAY_NAME];
 		} else {
-			li.textContent = artistKey;
+			artistName = artistKey;
 		}
+
+		if (artistKey[ARTIST_KEYS.SLICE_DECORATOR]) {
+			li.textContent = this.artistSliceDecorator(artistName, artistKey[ARTIST_KEYS.SLICE_DECORATOR]);
+		} else {
+			li.textContent = artistName;
+		}
+
 		target.appendChild(li);
 	}
 
