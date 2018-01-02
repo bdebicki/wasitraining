@@ -35,6 +35,19 @@ export class lineupDetails extends lineup {
 		return p;
 	}
 
+	decorateArtist(artistKey, target) {
+		let li = document.createElement('li');
+
+		if (artistKey[ARTIST_KEYS.ARTIST] && !artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
+			li.textContent = artistKey[ARTIST_KEYS.ARTIST];
+		} else if (artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
+			li.textContent = artistKey[ARTIST_KEYS.DISPLAY_NAME];
+		} else {
+			li.textContent = artistKey;
+		}
+		target.appendChild(li);
+	}
+
 	decorateLineupByType() {
 		if(this.mergeArtists) {
 			return this.decorateLineupByLevels();
@@ -54,30 +67,12 @@ export class lineupDetails extends lineup {
 			if (key === LINEUP_LEVELS.DAILY_HEADLINERS || key === LINEUP_LEVELS.DAILY_LVL1) {
 				lineup[key].map((item) => {
 					item.map((itemItem) => {
-						let li = document.createElement('li');
-
-						if (itemItem[ARTIST_KEYS.ARTIST] && !itemItem[ARTIST_KEYS.DISPLAY_NAME]) {
-							li.textContent = itemItem[ARTIST_KEYS.ARTIST];
-						} else if (itemItem[ARTIST_KEYS.DISPLAY_NAME]) {
-							li.textContent = itemItem[ARTIST_KEYS.DISPLAY_NAME];
-						} else {
-							li.textContent = itemItem;
-						}
-						ul.appendChild(li);
+						this.decorateArtist(itemItem, ul);
 					});
 				});
 			} else {
 				lineup[key].map((item) => {
-					let li = document.createElement('li');
-
-					if (item[ARTIST_KEYS.ARTIST] && !item[ARTIST_KEYS.DISPLAY_NAME]) {
-						li.textContent = item[ARTIST_KEYS.ARTIST];
-					} else if (item[ARTIST_KEYS.DISPLAY_NAME]) {
-						li.textContent = item[ARTIST_KEYS.DISPLAY_NAME];
-					} else {
-						li.textContent = item;
-					}
-					ul.appendChild(li);
+					this.decorateArtist(item, ul);
 				});
 			}
 			fragment.appendChild(ul);
@@ -88,9 +83,24 @@ export class lineupDetails extends lineup {
 
 	decorateLineupByDays() {
 		let fragment = document.createDocumentFragment();
+		const lineup = this.lineup;
 
 		console.log('lineup by days');
-		this.lineup;
+		lineup.map((item) => {
+			let section = document.createElement('section');
+
+			Object.keys(item).map((key) => {
+				let ul = document.createElement('ul');
+
+				item[key].map((itemKey) => {
+					this.decorateArtist(itemKey, ul);
+				});
+
+				section.appendChild(ul);
+			});
+
+			fragment.appendChild(section);
+		});
 
 		return fragment;
 	}
