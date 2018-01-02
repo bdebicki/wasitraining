@@ -1758,7 +1758,7 @@
 		],
 		"lineupSettings": {
 			"sortType": "alphabeticalExceptHeadliners",
-			"mergeDays": false,
+			"mergeArtists": false,
 			"otherArtists": "... and many others"
 		}
 	},
@@ -1873,7 +1873,7 @@
 		],
 		"lineupSettings": {
 			"sortType": "alphabeticalExceptHeadliners",
-			"mergeDays": true,
+			"mergeArtists": true,
 			"otherArtists": false
 		}
 	},
@@ -1995,7 +1995,7 @@
 		],
 		"lineupSettings": {
 			"sortType": "alphabeticalExceptHeadliners",
-			"mergeDays": false,
+			"mergeArtists": false,
 			"otherArtists": "... and otherss"
 		}
 	}
