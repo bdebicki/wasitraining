@@ -2,6 +2,7 @@
 
 import { lineup } from "../../classes/lineup";
 import { LINEUP, DIALOGBOX, LINK, EDITION } from "../../enums/elementHandlers";
+import { LINEUP_LEVELS, ARTIST_KEYS } from '../../enums/lineup';
 import * as dialogbox from '../../utils/addDialogbox';
 import { setIcon } from "../../utils/setIcon";
 import { icons } from "../../utils/iconsLibrary";
@@ -34,9 +35,61 @@ export class lineupDetails extends lineup {
 		return p;
 	}
 
-	decorateLineup() {
+	decorateLineupByType() {
+		if(this.mergeArtists) {
+			return this.decorateLineupByLevels();
+		} else {
+			return this.decorateLineupByDays();
+		}
+	}
+
+	decorateLineupByLevels() {
+		let fragment = document.createDocumentFragment();
+		const lineup = this.lineup;
+
+		console.log('lineup by levels');
+		Object.keys(lineup).map((key) => {
+			let ul = document.createElement('ul');
+
+			if (key === LINEUP_LEVELS.DAILY_HEADLINERS || key === LINEUP_LEVELS.DAILY_LVL1) {
+				lineup[key].map((item) => {
+					item.map((itemItem) => {
+						let li = document.createElement('li');
+
+						if (itemItem[ARTIST_KEYS.ARTIST] && !itemItem[ARTIST_KEYS.DISPLAY_NAME]) {
+							li.textContent = itemItem[ARTIST_KEYS.ARTIST];
+						} else if (itemItem[ARTIST_KEYS.DISPLAY_NAME]) {
+							li.textContent = itemItem[ARTIST_KEYS.DISPLAY_NAME];
+						} else {
+							li.textContent = itemItem;
+						}
+						ul.appendChild(li);
+					});
+				});
+			} else {
+				lineup[key].map((item) => {
+					let li = document.createElement('li');
+
+					if (item[ARTIST_KEYS.ARTIST] && !item[ARTIST_KEYS.DISPLAY_NAME]) {
+						li.textContent = item[ARTIST_KEYS.ARTIST];
+					} else if (item[ARTIST_KEYS.DISPLAY_NAME]) {
+						li.textContent = item[ARTIST_KEYS.DISPLAY_NAME];
+					} else {
+						li.textContent = item;
+					}
+					ul.appendChild(li);
+				});
+			}
+			fragment.appendChild(ul);
+		});
+
+		return fragment;
+	}
+
+	decorateLineupByDays() {
 		let fragment = document.createDocumentFragment();
 
+		console.log('lineup by days');
 		this.lineup;
 
 		return fragment;
@@ -54,7 +107,7 @@ export class lineupDetails extends lineup {
 		artistsContainer.textContent = '';
 		artistsContainer.classList.remove(`${LINEUP.ARTISTS_EDITION}${oldYear}`);
 		artistsContainer.classList.add(`${LINEUP.ARTISTS_EDITION}${this.editionYear}`);
-		artistsContainer.appendChild(this.decorateLineup());
+		artistsContainer.appendChild(this.decorateLineupByType());
 	}
 
 	render() {
@@ -69,7 +122,7 @@ export class lineupDetails extends lineup {
 		});
 
 		section.classList.add(LINEUP.ARTISTS, `${LINEUP.ARTISTS_EDITION}${this.editionYear}`);
-		section.appendChild(this.decorateLineup());
+		section.appendChild(this.decorateLineupByType());
 
 		return dialogboxLineup;
 	}

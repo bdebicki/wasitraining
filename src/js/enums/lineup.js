@@ -11,6 +11,7 @@ export const LINEUP_LEVELS = {
 
 export const ARTIST_KEYS = {
 	ARTIST: 'artist',
+	DISPLAY_NAME: 'displayName',
 	ORDER: 'order',
 	FORCE_ORDER: 'forceOrder',
 	SORT_BY: 'sortBy',
