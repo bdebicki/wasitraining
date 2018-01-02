@@ -16,4 +16,13 @@ export const ARTIST_KEYS = {
 	FORCE_ORDER: 'forceOrder',
 	SORT_BY: 'sortBy',
 	VISIBLE: 'visible',
+	DECORATOR: 'decorator',
+	MARKED: 'marked',
+	MULTILINE: 'multiline',
+};
+
+export const ARTIST_DECORATORS = {
+	PROMOTED: 'promoted',
+	EXPANDED: 'expanded',
+	UPPERCASE: 'uppercase',
 };

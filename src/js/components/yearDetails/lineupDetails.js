@@ -2,7 +2,7 @@
 
 import { lineup } from "../../classes/lineup";
 import { LINEUP, DIALOGBOX, LINK, EDITION } from "../../enums/elementHandlers";
-import { LINEUP_LEVELS, ARTIST_KEYS } from '../../enums/lineup';
+import { LINEUP_LEVELS, ARTIST_KEYS, ARTIST_DECORATORS } from '../../enums/lineup';
 import * as dialogbox from '../../utils/addDialogbox';
 import { setIcon } from "../../utils/setIcon";
 import { icons } from "../../utils/iconsLibrary";
@@ -17,6 +17,11 @@ const lineupLvlToClassMap = {
 	[LINEUP_LEVELS.OTHERS]: LINEUP.ARTISTS_OTHERS_CLASS,
 	[LINEUP_LEVELS.DAILY_HEADLINERS]: LINEUP.ARTISTS_DAILY_HEADLINERS_CLASS,
 	[LINEUP_LEVELS.DAILY_LVL1]: LINEUP.ARTISTS_DAILY_LVL1_CLASS,
+};
+const artistDecoratorToClassMap = {
+	[ARTIST_DECORATORS.PROMOTED]: LINEUP.ARTIST_PROMOTED_CLASS,
+	[ARTIST_DECORATORS.EXPANDED]: LINEUP.ARTIST_EXPANDED_CLASS,
+	[ARTIST_DECORATORS.UPPERCASE]: LINEUP.ARTIST_UPPERCASE_CLASS,
 };
 
 export class lineupDetails extends lineup {
@@ -49,6 +54,10 @@ export class lineupDetails extends lineup {
 		let li = document.createElement('li');
 
 		li.classList.add(LINEUP.ARTIST_CLASS);
+
+		if (artistKey[ARTIST_KEYS.DECORATOR]) {
+			li.classList.add(artistDecoratorToClassMap[artistKey[ARTIST_KEYS.DECORATOR]]);
+		}
 
 		if (artistKey[ARTIST_KEYS.ARTIST] && !artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
 			li.textContent = artistKey[ARTIST_KEYS.ARTIST];

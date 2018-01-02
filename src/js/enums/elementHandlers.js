@@ -1,6 +1,6 @@
 `use strict`;
 
-import { LINEUP_LEVELS, ARTIST_KEYS } from './lineup';
+import { LINEUP_LEVELS, ARTIST_DECORATORS } from './lineup';
 
 export const globalClassBuilders = {
 	active: 'isActive',
@@ -129,6 +129,9 @@ export const LINEUP = {
 	ARTISTS_DAILY_HEADLINERS_CLASS: `${lineupClassBuilder.artists}__lvl--${LINEUP_LEVELS.DAILY_HEADLINERS}`,
 	ARTISTS_DAILY_LVL1_CLASS: `${lineupClassBuilder.artists}__lvl--${LINEUP_LEVELS.DAILY_LVL1}`,
 	ARTIST_CLASS: `${lineupClassBuilder.artists}__artist`,
+	ARTIST_PROMOTED_CLASS: `${lineupClassBuilder.artists}__artist--${ARTIST_DECORATORS.PROMOTED}`,
+	ARTIST_EXPANDED_CLASS: `${lineupClassBuilder.artists}__artist--${ARTIST_DECORATORS.EXPANDED}`,
+	ARTIST_UPPERCASE_CLASS: `${lineupClassBuilder.artists}__artist--${ARTIST_DECORATORS.UPPERCASE}`,
 };
 
 const bgClassBuilder = LAYOUT.BG_VIDEO_ID;
