@@ -54,9 +54,11 @@ export class lineupDetails extends lineup {
 		let li = document.createElement('li');
 
 		li.classList.add(LINEUP.ARTIST_CLASS);
-
 		if (artistKey[ARTIST_KEYS.DECORATOR]) {
 			li.classList.add(artistDecoratorToClassMap[artistKey[ARTIST_KEYS.DECORATOR]]);
+		}
+		if (artistKey[ARTIST_KEYS.MARKED]) {
+			li.classList.add(LINEUP.ARTIST_MARKED_CLASS);
 		}
 
 		if (artistKey[ARTIST_KEYS.ARTIST] && !artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
