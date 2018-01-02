@@ -60,6 +60,9 @@ export class lineupDetails extends lineup {
 		if (artistKey[ARTIST_KEYS.MARKED]) {
 			li.classList.add(LINEUP.ARTIST_MARKED_CLASS);
 		}
+		if (artistKey[ARTIST_KEYS.MULTILINE]) {
+			li.classList.add(LINEUP.ARTIST_MULTILINE_CLASS);
+		}
 
 		if (artistKey[ARTIST_KEYS.ARTIST] && !artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
 			li.textContent = artistKey[ARTIST_KEYS.ARTIST];

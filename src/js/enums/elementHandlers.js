@@ -133,6 +133,7 @@ export const LINEUP = {
 	ARTIST_EXPANDED_CLASS: `${lineupClassBuilder.artists}__artist--${ARTIST_DECORATORS.EXPANDED}`,
 	ARTIST_UPPERCASE_CLASS: `${lineupClassBuilder.artists}__artist--${ARTIST_DECORATORS.UPPERCASE}`,
 	ARTIST_MARKED_CLASS: `${lineupClassBuilder.artists}__artist--marked`,
+	ARTIST_MULTILINE_CLASS: `${lineupClassBuilder.artists}__artist--multiline`,
 };
 
 const bgClassBuilder = LAYOUT.BG_VIDEO_ID;
