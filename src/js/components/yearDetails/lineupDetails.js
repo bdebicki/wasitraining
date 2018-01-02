@@ -8,6 +8,16 @@ import { setIcon } from "../../utils/setIcon";
 import { icons } from "../../utils/iconsLibrary";
 
 const DIALOGBOX_HEADLINE_TEXT = 'Lineup';
+const lineupLvlToClassMap = {
+	[LINEUP_LEVELS.HEADLINERS]: LINEUP.ARTISTS_HEADLINERS_CLASS,
+	[LINEUP_LEVELS.LVL1]: LINEUP.ARTISTS_LVL1_CLASS,
+	[LINEUP_LEVELS.LVL2]: LINEUP.ARTISTS_LVL2_CLASS,
+	[LINEUP_LEVELS.LVL3]: LINEUP.ARTISTS_LVL3_CLASS,
+	[LINEUP_LEVELS.LVL4]: LINEUP.ARTISTS_LVL4_CLASS,
+	[LINEUP_LEVELS.OTHERS]: LINEUP.ARTISTS_OTHERS_CLASS,
+	[LINEUP_LEVELS.DAILY_HEADLINERS]: LINEUP.ARTISTS_DAILY_HEADLINERS_CLASS,
+	[LINEUP_LEVELS.DAILY_LVL1]: LINEUP.ARTISTS_DAILY_LVL1_CLASS,
+};
 
 export class lineupDetails extends lineup {
 	constructor(editionId) {
@@ -38,6 +48,8 @@ export class lineupDetails extends lineup {
 	decorateArtist(artistKey, target) {
 		let li = document.createElement('li');
 
+		li.classList.add(LINEUP.ARTIST_CLASS);
+
 		if (artistKey[ARTIST_KEYS.ARTIST] && !artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
 			li.textContent = artistKey[ARTIST_KEYS.ARTIST];
 		} else if (artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
@@ -64,6 +76,8 @@ export class lineupDetails extends lineup {
 		Object.keys(lineup).map((key) => {
 			let ul = document.createElement('ul');
 
+			ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
+
 			if (key === LINEUP_LEVELS.DAILY_HEADLINERS || key === LINEUP_LEVELS.DAILY_LVL1) {
 				lineup[key].map((item) => {
 					item.map((itemItem) => {
@@ -89,8 +103,12 @@ export class lineupDetails extends lineup {
 		lineup.map((item) => {
 			let section = document.createElement('section');
 
+			section.classList.add(LINEUP.ARTISTS_DAY_CLASS);
+
 			Object.keys(item).map((key) => {
 				let ul = document.createElement('ul');
+
+				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
 
 				item[key].map((itemKey) => {
 					this.decorateArtist(itemKey, ul);
@@ -107,7 +125,7 @@ export class lineupDetails extends lineup {
 
 	updateLineupDetails() {
 		let lineupContainer = document.querySelector(`#${LINEUP.SECTION_ID}`);
-		let artistsContainer = document.querySelector(`.${LINEUP.ARTISTS}`);
+		let artistsContainer = document.querySelector(`.${LINEUP.ARTISTS_CLASS}`);
 		let oldYear = lineupContainer.dataset.year;
 
 		lineupContainer.querySelector(`.${DIALOGBOX.HEADLINE_CLASS}`).textContent = `${DIALOGBOX_HEADLINE_TEXT} ${this.editionYear}`;
@@ -115,8 +133,8 @@ export class lineupDetails extends lineup {
 		lineupContainer.classList.add(`${LINEUP.EDITION_CLASS}${this.editionYear}`);
 		lineupContainer.dataset.year = this.editionYear;
 		artistsContainer.textContent = '';
-		artistsContainer.classList.remove(`${LINEUP.ARTISTS_EDITION}${oldYear}`);
-		artistsContainer.classList.add(`${LINEUP.ARTISTS_EDITION}${this.editionYear}`);
+		artistsContainer.classList.remove(`${LINEUP.ARTISTS_EDITION_CLASS}${oldYear}`);
+		artistsContainer.classList.add(`${LINEUP.ARTISTS_EDITION_CLASS}${this.editionYear}`);
 		artistsContainer.appendChild(this.decorateLineupByType());
 	}
 
@@ -124,14 +142,14 @@ export class lineupDetails extends lineup {
 		let section = document.createElement('section');
 		const dialogboxLineup = dialogbox.addDialogbox({
 			id: LINEUP.SECTION_ID,
-			classNames: [DIALOGBOX.VISIBLE_CLASS, `${LINEUP.EDITION_CLASS}${this.editionYear}`],
+			classNames: [DIALOGBOX.VISIBLE_CLASS],
 			dataAttr: [['year', `${this.editionYear}`]],
 			title: `${DIALOGBOX_HEADLINE_TEXT} ${this.editionYear}`,
 			content: section,
 			closeTitle: 'hide lineup details'
 		});
 
-		section.classList.add(LINEUP.ARTISTS, `${LINEUP.ARTISTS_EDITION}${this.editionYear}`);
+		section.classList.add(LINEUP.ARTISTS_CLASS, `${LINEUP.ARTISTS_EDITION_CLASS}${this.editionYear}`);
 		section.appendChild(this.decorateLineupByType());
 
 		return dialogboxLineup;
