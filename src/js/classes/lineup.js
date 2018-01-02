@@ -1,5 +1,7 @@
 'use strict';
 
+import { LINEUP_LEVELS, ARTIST_KEYS } from '../enums/lineup';
+
 /**
  * sort types:
  *	- false - don't sort artists
@@ -17,25 +19,6 @@
  *  - string - display label with information about others artists
  * 	- false - don't display information about others artists
  */
-
-const LINEUP_LEVELS = {
-	HEADLINERS: 'headliners',
-	LVL1: 'lvl1',
-	LVL2: 'lvl2',
-	LVL3: 'lvl3',
-	LVL4: 'lvl4',
-	OTHERS: 'others',
-	DAILY_HEADLINERS: 'dailyHeadliners',
-	DAILY_LVL1: 'dailyLvl1',
-};
-
-const ARTIST_KEYS = {
-	ARTIST: 'artist',
-	ORDER: 'order',
-	FORCE_ORDER: 'forceOrder',
-	SORT_BY: 'sortBy',
-	VISIBLE: 'visible',
-};
 
 export class lineup {
 	constructor(editionId) {
@@ -87,17 +70,17 @@ export class lineup {
 	get lineup() {
 		if (this.mergeArtists === true) { // merge artists
 			if(this.sortType === 'customOrder') { // & sort by custom order
-				this.mergeAndSortCustomArtists();
+				return this.mergeAndSortCustomArtists();
 			} else if (this.sortType === 'alphabeticalExceptHeadliners') {
-				this.mergeAndSortAlphabeticallyExceptHearliners();
+				return this.mergeAndSortAlphabeticallyExceptHearliners();
 			}
 		} else if (this.mergeArtists === 'exceptHeadliners' && this.sortType === 'customOrderExceptHeadliners') {
-			this.mergeExceptHeadlinersAndSortCustomExceptHeadliners();
+			return this.mergeExceptHeadlinersAndSortCustomExceptHeadliners();
 		} else {
 			if(this.sortType === false) {
-				this.notMergedAndNotSorted();
+				return this.notMergedAndNotSorted();
 			} else if (this.sortType === 'alphabeticalExceptHeadliners') {
-				this.notMergedAndSortAlpabeticallyExceptHeadliners();
+				return this.notMergedAndSortAlpabeticallyExceptHeadliners();
 			}
 		}
 	}
@@ -160,10 +143,10 @@ export class lineup {
 		});
 	}
 
-	_mergeArtists({scope, mergeHeadliners = true, mergeLvl1 = true, mergeLvl2 = true, mergeLvl3 = true, mergeOthers = true }) {
+	_mergeArtists({scope, mergeHeadliners = true, mergeLvl1 = true, mergeLvl2 = true, mergeLvl3 = true, mergeLvl4 = true, mergeOthers = true }) {
 		const pushToLvl = (item, key) => {
 			item[key].map((subItems) => {
-				if (subItems.visible !== false) { // skip not visible artists
+				if (subItems[ARTIST_KEYS.VISIBLE] !== false) { // skip not visible artists
 					scope[key].push(subItems);
 				}
 			});
