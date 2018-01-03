@@ -1,6 +1,6 @@
 `use strict`;
 
-import { LINEUP_LEVELS, ARTIST_DECORATORS } from './lineup';
+import { LINEUP_LEVELS, ARTIST_DECORATORS, ARTIST_SLICES, ARTIST_KEYS } from './lineup';
 
 export const globalClassBuilders = {
 	active: 'isActive',
@@ -112,28 +112,40 @@ export const RAIN = {
 
 const lineupClassBuilder = {
 	section: 'lineup',
-	artists: 'lineupArtists'
+	artists: 'lineupArtists',
+	lvl: 'lineupArtists__lvl',
+	artist: 'lineupArtists__artist',
+	slice: 'lineupArtists__slice',
 };
 export const LINEUP = {
 	SECTION_ID: lineupClassBuilder.section,
 	ARTISTS_CLASS: lineupClassBuilder.artists,
 	ARTISTS_EDITION_CLASS: `${lineupClassBuilder.artists}--edition`,
 	ARTISTS_DAY_CLASS: `${lineupClassBuilder.artists}__day`,
-	ARTISTS_LEVEL_CLASS: `${lineupClassBuilder.artists}__lvl`,
-	ARTISTS_HEADLINERS_CLASS: `${lineupClassBuilder.artists}__lvl--${LINEUP_LEVELS.HEADLINERS}`,
-	ARTISTS_LVL1_CLASS: `${lineupClassBuilder.artists}__lvl--${LINEUP_LEVELS.LVL1}`,
-	ARTISTS_LVL2_CLASS: `${lineupClassBuilder.artists}__lvl--${LINEUP_LEVELS.LVL2}`,
-	ARTISTS_LVL3_CLASS: `${lineupClassBuilder.artists}__lvl--${LINEUP_LEVELS.LVL3}`,
-	ARTISTS_LVL4_CLASS: `${lineupClassBuilder.artists}__lvl--${LINEUP_LEVELS.LVL4}`,
-	ARTISTS_OTHERS_CLASS: `${lineupClassBuilder.artists}__lvl--${LINEUP_LEVELS.OTHERS}`,
-	ARTISTS_DAILY_HEADLINERS_CLASS: `${lineupClassBuilder.artists}__lvl--${LINEUP_LEVELS.DAILY_HEADLINERS}`,
-	ARTISTS_DAILY_LVL1_CLASS: `${lineupClassBuilder.artists}__lvl--${LINEUP_LEVELS.DAILY_LVL1}`,
-	ARTIST_CLASS: `${lineupClassBuilder.artists}__artist`,
-	ARTIST_PROMOTED_CLASS: `${lineupClassBuilder.artists}__artist--${ARTIST_DECORATORS.PROMOTED}`,
-	ARTIST_EXPANDED_CLASS: `${lineupClassBuilder.artists}__artist--${ARTIST_DECORATORS.EXPANDED}`,
-	ARTIST_UPPERCASE_CLASS: `${lineupClassBuilder.artists}__artist--${ARTIST_DECORATORS.UPPERCASE}`,
-	ARTIST_MARKED_CLASS: `${lineupClassBuilder.artists}__artist--marked`,
-	ARTIST_MULTILINE_CLASS: `${lineupClassBuilder.artists}__artist--multiline`,
+	ARTISTS_LEVEL_CLASS: `${lineupClassBuilder.lvl}`,
+	ARTISTS_HEADLINERS_CLASS: `${lineupClassBuilder.lvl}__lvl--${LINEUP_LEVELS.HEADLINERS}`,
+	ARTISTS_LVL1_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.LVL1}`,
+	ARTISTS_LVL2_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.LVL2}`,
+	ARTISTS_LVL3_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.LVL3}`,
+	ARTISTS_LVL4_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.LVL4}`,
+	ARTISTS_OTHERS_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.OTHERS}`,
+	ARTISTS_DAILY_HEADLINERS_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.DAILY_HEADLINERS}`,
+	ARTISTS_DAILY_LVL1_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.DAILY_LVL1}`,
+	ARTIST_CLASS: `${lineupClassBuilder.artist}__artist`,
+	ARTIST_PROMOTED_CLASS: `${lineupClassBuilder.artist}__artist--${ARTIST_DECORATORS.PROMOTED}`,
+	ARTIST_EXPANDED_CLASS: `${lineupClassBuilder.artist}__artist--${ARTIST_DECORATORS.EXPANDED}`,
+	ARTIST_UPPERCASE_CLASS: `${lineupClassBuilder.artist}__artist--${ARTIST_DECORATORS.UPPERCASE}`,
+	ARTIST_MARKED_CLASS: `${lineupClassBuilder.artist}__artist--${ARTIST_KEYS.MARKED}`,
+	ARTIST_MULTILINE_CLASS: `${lineupClassBuilder.artist}__artist--${ARTIST_KEYS.MULTILINE}`,
+	ARTIST_CANCELED_CLASS: `${lineupClassBuilder.artist}__artist--${ARTIST_KEYS.CANCELED}`,
+	ARTIST_REPLACEMENT_CLASS: `${lineupClassBuilder.artist}__artist--${ARTIST_KEYS.REPLACEMENT}`,
+	ARTIST_SLICE_CLASS: `${lineupClassBuilder.slice}`,
+	ARTIST_SLICE_UP_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES.UP}`,
+	ARTIST_SLICE_DOWN_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES.DOWN}`,
+	ARTIST_SLICE_MIDDLE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES.MIDDLE}`,
+	ARTIST_SLICE_LOWER_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES.LOWER}`,
+	ARTIST_SLICE_MULTILINE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES.MULTILINE}`,
+	ARTIST_SLICE_NEW_LINE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES.NEW_LINE}`,
 };
 
 const bgClassBuilder = LAYOUT.BG_VIDEO_ID;

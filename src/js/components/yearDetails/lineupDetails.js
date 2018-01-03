@@ -2,7 +2,7 @@
 
 import { lineup } from "../../classes/lineup";
 import { LINEUP, DIALOGBOX, LINK, EDITION } from "../../enums/elementHandlers";
-import { LINEUP_LEVELS, ARTIST_KEYS, ARTIST_DECORATORS } from '../../enums/lineup';
+import { LINEUP_LEVELS, ARTIST_KEYS, ARTIST_DECORATORS, ARTIST_SLICES } from '../../enums/lineup';
 import * as dialogbox from '../../utils/addDialogbox';
 import { setIcon } from "../../utils/setIcon";
 import { icons } from "../../utils/iconsLibrary";
@@ -22,6 +22,14 @@ const artistDecoratorToClassMap = {
 	[ARTIST_DECORATORS.PROMOTED]: LINEUP.ARTIST_PROMOTED_CLASS,
 	[ARTIST_DECORATORS.EXPANDED]: LINEUP.ARTIST_EXPANDED_CLASS,
 	[ARTIST_DECORATORS.UPPERCASE]: LINEUP.ARTIST_UPPERCASE_CLASS,
+};
+const artistSliceDecoratorToClassMap = {
+	[ARTIST_SLICES.UP]: LINEUP.ARTIST_SLICE_UP_CLASS,
+	[ARTIST_SLICES.DOWN]: LINEUP.ARTIST_SLICE_DOWN_CLASS,
+	[ARTIST_SLICES.MIDDLE]: LINEUP.ARTIST_SLICE_MIDDLE_CLASS,
+	[ARTIST_SLICES.LOWER]: LINEUP.ARTIST_SLICE_LOWER_CLASS,
+	[ARTIST_SLICES.MULTILINE]: LINEUP.ARTIST_SLICE_MULTILINE_CLASS,
+	[ARTIST_SLICES.NEW_LINE]: LINEUP.ARTIST_SLICE_NEW_LINE_CLASS,
 };
 
 export class lineupDetails extends lineup {
@@ -51,10 +59,21 @@ export class lineupDetails extends lineup {
 	}
 
 	artistSliceDecorator(artistName, artistDecorations) {
-		let decoratedName = artistName;
 		const decorations  = artistDecorations;
+		let name = artistName;
+		let decoratedName = document.createDocumentFragment();
+		let span = document.createElement('span');
 
-		console.log(decoratedName, decorations);
+		if(!Array.isArray(decorations)) {
+			name = name.split(decorations['slice']);
+			span.textContent = decorations['slice'];
+			span.classList.add(LINEUP.ARTIST_SLICE_CLASS, artistSliceDecoratorToClassMap[decorations['style']]);
+			decoratedName.append(name[0], span, name[1]);
+
+		} else {
+			console.log('multiple slice decorations');
+			console.log(name, decorations);
+		}
 
 		return decoratedName;
 	}
@@ -74,6 +93,14 @@ export class lineupDetails extends lineup {
 			li.classList.add(LINEUP.ARTIST_MULTILINE_CLASS);
 		}
 
+		if (artistKey[ARTIST_KEYS.CANCELED]) {
+			li.classList.add(LINEUP.ARTIST_CANCELED_CLASS);
+		}
+
+		if (artistKey[ARTIST_KEYS.REPLACEMENT]) {
+			li.classList.add(LINEUP.ARTIST_REPLACEMENT_CLASS);
+		}
+
 		if (artistKey[ARTIST_KEYS.ARTIST] && !artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
 			artistName = artistKey[ARTIST_KEYS.ARTIST];
 		} else if (artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
@@ -83,7 +110,7 @@ export class lineupDetails extends lineup {
 		}
 
 		if (artistKey[ARTIST_KEYS.SLICE_DECORATOR]) {
-			li.textContent = this.artistSliceDecorator(artistName, artistKey[ARTIST_KEYS.SLICE_DECORATOR]);
+			li.append(this.artistSliceDecorator(artistName, artistKey[ARTIST_KEYS.SLICE_DECORATOR]));
 		} else {
 			li.textContent = artistName;
 		}

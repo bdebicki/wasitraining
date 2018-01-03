@@ -20,10 +20,21 @@ export const ARTIST_KEYS = {
 	SLICE_DECORATOR: 'sliceDecorator',
 	MARKED: 'marked',
 	MULTILINE: 'multiline',
+	CANCELED: 'canceled',
+	REPLACEMENT: 'replacement',
 };
 
 export const ARTIST_DECORATORS = {
 	PROMOTED: 'promoted',
 	EXPANDED: 'expanded',
 	UPPERCASE: 'uppercase',
+};
+
+export const ARTIST_SLICES = {
+	UP: 'up',
+	DOWN: 'down',
+	MIDDLE: 'middle',
+	LOWER: 'lower',
+	MULTILINE: 'multiline',
+	NEW_LINE: 'newLine',
 };
