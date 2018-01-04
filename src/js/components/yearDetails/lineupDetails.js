@@ -58,24 +58,46 @@ export class lineupDetails extends lineup {
 		return p;
 	}
 
-	artistSliceDecorator(artistName, artistDecorations) {
-		const decorations  = artistDecorations;
-		let name = artistName;
-		let decoratedName = document.createDocumentFragment();
+	sliceDecorator(name, decorations, decoratedName) {
 		let span = document.createElement('span');
 
+		name = name.split(decorations['slice']);
+		span.textContent = decorations['slice'];
+		span.classList.add(LINEUP.ARTIST_SLICE_CLASS, artistSliceDecoratorToClassMap[decorations['style']]);
+		decoratedName.append(name[0], span, name[1]);
+	}
+
+	artistSliceDecorator(artistName, artistDecorations) {
+		const decorations  = artistDecorations;
+
 		if(!Array.isArray(decorations)) {
+			let name = artistName;
+			let decoratedName = document.createDocumentFragment();
+			let span = document.createElement('span');
+
 			name = name.split(decorations['slice']);
 			span.textContent = decorations['slice'];
 			span.classList.add(LINEUP.ARTIST_SLICE_CLASS, artistSliceDecoratorToClassMap[decorations['style']]);
 			decoratedName.append(name[0], span, name[1]);
 
+			return decoratedName;
 		} else {
-			console.log('multiple slice decorations');
-			console.log(name, decorations);
-		}
+			let name = artistName;
+			// let decoratedName = document.createDocumentFragment();
+			let decoratedName = document.createElement('template');
+			let tmp;
 
-		return decoratedName;
+			tmp = name.replace(/with|Orchestra and Choir/gi, function(matched) {
+				let span = document.createElement('span');
+				span.textContent = matched;
+
+				return `<span>${matched}</span>`;
+			});
+			decoratedName.innerHTML = tmp;
+			console.log(tmp, decoratedName.content);
+
+			return decoratedName.content;
+		}
 	}
 
 	decorateArtist(artistKey, target) {
