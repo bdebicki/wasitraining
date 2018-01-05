@@ -1,6 +1,6 @@
 `use strict`;
 
-import { LINEUP_LEVELS, ARTIST_DECORATORS, ARTIST_SLICES, ARTIST_KEYS } from './lineup';
+import { LINEUP_LEVELS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_KEYS } from './lineup';
 
 export const globalClassBuilders = {
 	active: 'isActive',
@@ -140,12 +140,12 @@ export const LINEUP = {
 	ARTIST_CANCELED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.CANCELED}`,
 	ARTIST_REPLACEMENT_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.REPLACEMENT}`,
 	ARTIST_SLICE_CLASS: `${lineupClassBuilder.slice}`,
-	ARTIST_SLICE_UP_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES.UP}`,
-	ARTIST_SLICE_DOWN_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES.DOWN}`,
-	ARTIST_SLICE_MIDDLE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES.MIDDLE}`,
-	ARTIST_SLICE_LOWER_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES.LOWER}`,
-	ARTIST_SLICE_MULTILINE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES.MULTILINE}`,
-	ARTIST_SLICE_NEW_LINE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES.NEW_LINE}`,
+	ARTIST_SLICE_UP_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.UP}`,
+	ARTIST_SLICE_DOWN_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.DOWN}`,
+	ARTIST_SLICE_MIDDLE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.MIDDLE}`,
+	ARTIST_SLICE_LOWER_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.LOWER}`,
+	ARTIST_SLICE_MULTILINE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.MULTILINE}`,
+	ARTIST_SLICE_NEW_LINE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.NEW_LINE}`,
 };
 
 const bgClassBuilder = LAYOUT.BG_VIDEO_ID;

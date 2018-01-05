@@ -2,7 +2,7 @@
 
 import { lineup } from "../../classes/lineup";
 import { LINEUP, DIALOGBOX, LINK, EDITION } from "../../enums/elementHandlers";
-import { LINEUP_LEVELS, ARTIST_KEYS, ARTIST_DECORATORS, ARTIST_SLICES } from '../../enums/lineup';
+import { LINEUP_LEVELS, ARTIST_KEYS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_SLICES_PROPS } from '../../enums/lineup';
 import * as dialogbox from '../../utils/addDialogbox';
 import { setIcon } from "../../utils/setIcon";
 import { icons } from "../../utils/iconsLibrary";
@@ -24,12 +24,12 @@ const artistDecoratorToClassMap = {
 	[ARTIST_DECORATORS.UPPERCASE]: LINEUP.ARTIST_UPPERCASE_CLASS,
 };
 const artistSliceDecoratorToClassMap = {
-	[ARTIST_SLICES.UP]: LINEUP.ARTIST_SLICE_UP_CLASS,
-	[ARTIST_SLICES.DOWN]: LINEUP.ARTIST_SLICE_DOWN_CLASS,
-	[ARTIST_SLICES.MIDDLE]: LINEUP.ARTIST_SLICE_MIDDLE_CLASS,
-	[ARTIST_SLICES.LOWER]: LINEUP.ARTIST_SLICE_LOWER_CLASS,
-	[ARTIST_SLICES.MULTILINE]: LINEUP.ARTIST_SLICE_MULTILINE_CLASS,
-	[ARTIST_SLICES.NEW_LINE]: LINEUP.ARTIST_SLICE_NEW_LINE_CLASS,
+	[ARTIST_SLICES_STYLES.UP]: LINEUP.ARTIST_SLICE_UP_CLASS,
+	[ARTIST_SLICES_STYLES.DOWN]: LINEUP.ARTIST_SLICE_DOWN_CLASS,
+	[ARTIST_SLICES_STYLES.MIDDLE]: LINEUP.ARTIST_SLICE_MIDDLE_CLASS,
+	[ARTIST_SLICES_STYLES.LOWER]: LINEUP.ARTIST_SLICE_LOWER_CLASS,
+	[ARTIST_SLICES_STYLES.MULTILINE]: LINEUP.ARTIST_SLICE_MULTILINE_CLASS,
+	[ARTIST_SLICES_STYLES.NEW_LINE]: LINEUP.ARTIST_SLICE_NEW_LINE_CLASS,
 };
 
 export class lineupDetails extends lineup {
@@ -69,9 +69,9 @@ export class lineupDetails extends lineup {
 
 	artistSliceDecorator(artistName, artistDecorations) {
 		const decorations  = artistDecorations;
+		let name = artistName;
 
 		if(!Array.isArray(decorations)) {
-			let name = artistName;
 			let decoratedName = document.createDocumentFragment();
 			let span = document.createElement('span');
 
@@ -82,19 +82,19 @@ export class lineupDetails extends lineup {
 
 			return decoratedName;
 		} else {
-			let name = artistName;
-			// let decoratedName = document.createDocumentFragment();
 			let decoratedName = document.createElement('template');
-			let tmp;
+			let pattern;
 
-			tmp = name.replace(/with|Orchestra and Choir/gi, function(matched) {
-				let span = document.createElement('span');
-				span.textContent = matched;
+			pattern = new RegExp(
+				decorations.map((item) => {
+					return item[ARTIST_SLICES_PROPS.SLICE];
+				}).join("|"),"gi"
+			);
+			console.log(pattern);
 
+			decoratedName.innerHTML = name.replace(pattern, function(matched) {
 				return `<span>${matched}</span>`;
 			});
-			decoratedName.innerHTML = tmp;
-			console.log(tmp, decoratedName.content);
 
 			return decoratedName.content;
 		}

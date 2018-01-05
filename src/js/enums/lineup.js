@@ -30,7 +30,12 @@ export const ARTIST_DECORATORS = {
 	UPPERCASE: 'uppercase',
 };
 
-export const ARTIST_SLICES = {
+export const ARTIST_SLICES_PROPS = {
+	SLICE: 'slice',
+	STYLE: 'style',
+};
+
+export const ARTIST_SLICES_STYLES = {
 	UP: 'up',
 	DOWN: 'down',
 	MIDDLE: 'middle',
