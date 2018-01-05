@@ -197,32 +197,35 @@ export class lineupDetails extends lineup {
 	}
 
 	updateLineupDetails() {
-		let lineupContainer = document.querySelector(`#${LINEUP.SECTION_ID}`);
-		let artistsContainer = document.querySelector(`.${LINEUP.ARTISTS_CLASS}`);
-		let oldYear = lineupContainer.dataset.year;
+		const lineupContainer = document.querySelector(`#${LINEUP.SECTION_ID}`);
+		const artistsContainer = document.querySelector(`.${LINEUP.ARTISTS_CLASS}`);
+		const oldYear = lineupContainer.dataset.year;
+		const newYear = this.editionYear;
 
-		lineupContainer.querySelector(`.${DIALOGBOX.HEADLINE_CLASS}`).textContent = `${DIALOGBOX_HEADLINE_TEXT} ${this.editionYear}`;
-		lineupContainer.classList.remove(`${LINEUP.ARTISTS_EDITION_CLASS}${oldYear}`);
-		lineupContainer.classList.add(`${LINEUP.ARTISTS_EDITION_CLASS}${this.editionYear}`);
-		lineupContainer.dataset.year = this.editionYear;
+		lineupContainer.querySelector(`.${DIALOGBOX.HEADLINE_CLASS}`).textContent = `${DIALOGBOX_HEADLINE_TEXT} ${newYear}`;
+		lineupContainer.classList.remove(`${LINEUP.EDITION_CLASS}${oldYear}`);
+		lineupContainer.classList.add(`${LINEUP.EDITION_CLASS}${newYear}`);
+		lineupContainer.dataset.year = newYear;
 		artistsContainer.textContent = '';
 		artistsContainer.classList.remove(`${LINEUP.ARTISTS_EDITION_CLASS}${oldYear}`);
-		artistsContainer.classList.add(`${LINEUP.ARTISTS_EDITION_CLASS}${this.editionYear}`);
+		artistsContainer.classList.add(`${LINEUP.ARTISTS_EDITION_CLASS}${newYear}`);
 		artistsContainer.appendChild(this.getLineupByType());
 	}
 
 	render() {
 		let section = document.createElement('section');
+		const newYear = this.editionYear;
+
 		const dialogboxLineup = dialogbox.addDialogbox({
 			id: LINEUP.SECTION_ID,
-			classNames: [DIALOGBOX.VISIBLE_CLASS],
-			dataAttr: [['year', `${this.editionYear}`]],
-			title: `${DIALOGBOX_HEADLINE_TEXT} ${this.editionYear}`,
+			classNames: [`${LINEUP.EDITION_CLASS}${newYear}`],
+			dataAttr: [['year', `${newYear}`]],
+			title: `${DIALOGBOX_HEADLINE_TEXT} ${newYear}`,
 			content: section,
 			closeTitle: 'hide lineup details'
 		});
 
-		section.classList.add(LINEUP.ARTISTS_CLASS, `${LINEUP.ARTISTS_EDITION_CLASS}${this.editionYear}`);
+		section.classList.add(LINEUP.ARTISTS_CLASS, `${LINEUP.ARTISTS_EDITION_CLASS}${newYear}`);
 		section.appendChild(this.getLineupByType());
 
 		return dialogboxLineup;

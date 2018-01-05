@@ -69,11 +69,13 @@ const editionClassBuilders = {
 };
 export const EDITION = {
 	EDITION_DETAILS_ID: editionClassBuilders.details,
+	EDITION_DETAILS_YEAR_CLASS: `${editionClassBuilders.details}--edition`,
 	FULL_NAME_CLASS: `${editionClassBuilders.details}__fullName`,
 	PLACE_CLASS: `${editionClassBuilders.details}__place`,
 	YEAR_CLASS: `${editionClassBuilders.details}__year`,
 	DATES_CLASS: `${editionClassBuilders.details}__date`,
 	LINEUP_CLASS: editionClassBuilders.lineup,
+	LINEUP_EDITION_CLASS: `${editionClassBuilders.lineup}--edition`,
 	HEADLINERS_CLASS: `${editionClassBuilders.lineup}__${editionClassBuilders.headlines}`,
 	HEADLINER_CLASS: `${editionClassBuilders.headlines}__headliner`,
 	LINEUP_LINK_CLASS: `${editionClassBuilders.lineup}__detailsLink`,
@@ -119,6 +121,7 @@ const lineupClassBuilder = {
 };
 export const LINEUP = {
 	SECTION_ID: lineupClassBuilder.section,
+	EDITION_CLASS: `${lineupClassBuilder.section}--edition`,
 	ARTISTS_CLASS: lineupClassBuilder.artists,
 	ARTISTS_EDITION_CLASS: `${lineupClassBuilder.artists}--edition`,
 	ARTISTS_DAY_CLASS: `${lineupClassBuilder.artists}__day`,

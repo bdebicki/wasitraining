@@ -13,6 +13,10 @@ export class editionDetails extends edition {
 		this.lineupDetails = new lineupDetails(editionId);
 	};
 
+	get currentEditionYear() {
+		return document.getElementById(EDITION.EDITION_DETAILS_ID).dataset.year;
+	}
+
 	decorateEditionDates() {
 		const editionDate = this.editionDate;
 
@@ -41,6 +45,8 @@ export class editionDetails extends edition {
 		let section = document.createElement('section');
 
 		section.id = EDITION.EDITION_DETAILS_ID;
+		section.classList.add(`${EDITION.EDITION_DETAILS_YEAR_CLASS}${this.editionYear}`);
+		section.dataset.year = this.editionYear;
 
 		return section;
 	}
@@ -73,12 +79,15 @@ export class editionDetails extends edition {
 	renderShortLineupContainer() {
 		let div = document.createElement('div');
 
-		div.classList.add(EDITION.LINEUP_CLASS);
+		div.classList.add(EDITION.LINEUP_CLASS, `${EDITION.LINEUP_EDITION_CLASS}${this.editionYear}`);
 
 		return div;
 	}
 
-	updateHeadliners() {
+	updateHeadliners(oldYear) {
+		const shortLineupContainer = document.querySelector(`.${EDITION.LINEUP_CLASS}`);
+		shortLineupContainer.classList.remove(`${EDITION.LINEUP_EDITION_CLASS}${oldYear}`);
+		shortLineupContainer.classList.add(`${EDITION.LINEUP_EDITION_CLASS}${this.editionYear}`);
 		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent =''; // to clear rain details list
 
 		return this.decorateEditionHeadliners();
@@ -94,11 +103,19 @@ export class editionDetails extends edition {
 	}
 
 	updateEditionDetails() {
-		document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent = this.editionYear;
+		const detailsContainer = document.getElementById(EDITION.EDITION_DETAILS_ID);
+		const oldYear = this.currentEditionYear;
+		const newYear = this.editionYear;
+
+		detailsContainer.classList.remove(`${EDITION.EDITION_DETAILS_YEAR_CLASS}${oldYear}`);
+		detailsContainer.classList.add(`${EDITION.EDITION_DETAILS_YEAR_CLASS}${newYear}`);
+		detailsContainer.dataset.year = newYear;
+
+		document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent = newYear;
 		document.querySelector(`.${EDITION.DATES_CLASS}`).textContent = this.decorateEditionDates();
 		document.querySelector(`.${EDITION.FULL_NAME_CLASS}`).textContent = this.editionFullName;
 		document.querySelector(`.${EDITION.PLACE_CLASS}`).textContent = this.editionPlace;
-		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(this.updateHeadliners());
+		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(this.updateHeadliners(oldYear));
 	}
 
 	render() {
