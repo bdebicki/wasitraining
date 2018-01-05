@@ -90,10 +90,16 @@ export class lineupDetails extends lineup {
 					return item[ARTIST_SLICES_PROPS.SLICE];
 				}).join("|"),"gi"
 			);
-			console.log(pattern);
 
 			decoratedName.innerHTML = name.replace(pattern, function(matched) {
-				return `<span>${matched}</span>`;
+				let sliceStyleClassName;
+
+				decorations.map((item) => {
+					if (item[ARTIST_SLICES_PROPS.SLICE] === matched) {
+						sliceStyleClassName = artistSliceDecoratorToClassMap[item[ARTIST_SLICES_PROPS.STYLE]];
+					}
+				});
+				return `<span class="${LINEUP.ARTIST_SLICE_CLASS} ${sliceStyleClassName}">${matched}</span>`;
 			});
 
 			return decoratedName.content;
