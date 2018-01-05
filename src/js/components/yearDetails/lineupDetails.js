@@ -133,7 +133,7 @@ export class lineupDetails extends lineup {
 		target.appendChild(li);
 	}
 
-	decorateLineupByType() {
+	getLineupByType() {
 		if(this.mergeArtists) {
 			return this.decorateLineupByLevels();
 		} else {
@@ -208,7 +208,7 @@ export class lineupDetails extends lineup {
 		artistsContainer.textContent = '';
 		artistsContainer.classList.remove(`${LINEUP.ARTISTS_EDITION_CLASS}${oldYear}`);
 		artistsContainer.classList.add(`${LINEUP.ARTISTS_EDITION_CLASS}${this.editionYear}`);
-		artistsContainer.appendChild(this.decorateLineupByType());
+		artistsContainer.appendChild(this.getLineupByType());
 	}
 
 	render() {
@@ -223,7 +223,7 @@ export class lineupDetails extends lineup {
 		});
 
 		section.classList.add(LINEUP.ARTISTS_CLASS, `${LINEUP.ARTISTS_EDITION_CLASS}${this.editionYear}`);
-		section.appendChild(this.decorateLineupByType());
+		section.appendChild(this.getLineupByType());
 
 		return dialogboxLineup;
 	}
