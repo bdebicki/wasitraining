@@ -202,8 +202,8 @@ export class lineupDetails extends lineup {
 		let oldYear = lineupContainer.dataset.year;
 
 		lineupContainer.querySelector(`.${DIALOGBOX.HEADLINE_CLASS}`).textContent = `${DIALOGBOX_HEADLINE_TEXT} ${this.editionYear}`;
-		lineupContainer.classList.remove(`${LINEUP.EDITION_CLASS}${oldYear}`);
-		lineupContainer.classList.add(`${LINEUP.EDITION_CLASS}${this.editionYear}`);
+		lineupContainer.classList.remove(`${LINEUP.ARTISTS_EDITION_CLASS}${oldYear}`);
+		lineupContainer.classList.add(`${LINEUP.ARTISTS_EDITION_CLASS}${this.editionYear}`);
 		lineupContainer.dataset.year = this.editionYear;
 		artistsContainer.textContent = '';
 		artistsContainer.classList.remove(`${LINEUP.ARTISTS_EDITION_CLASS}${oldYear}`);
