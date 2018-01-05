@@ -58,52 +58,39 @@ export class lineupDetails extends lineup {
 		return p;
 	}
 
-	sliceDecorator(name, decorations, decoratedName) {
-		let span = document.createElement('span');
-
-		name = name.split(decorations['slice']);
-		span.textContent = decorations['slice'];
-		span.classList.add(LINEUP.ARTIST_SLICE_CLASS, artistSliceDecoratorToClassMap[decorations['style']]);
-		decoratedName.append(name[0], span, name[1]);
-	}
-
 	artistSliceDecorator(artistName, artistDecorations) {
 		const decorations  = artistDecorations;
+		const multipleDecorations = Array.isArray(decorations);
 		let name = artistName;
+		let decoratedName = document.createElement('template'); // document fragment can't be used with innerHtml method
+		let replacePattern;
 
-		if(!Array.isArray(decorations)) {
-			let decoratedName = document.createDocumentFragment();
-			let span = document.createElement('span');
-
-			name = name.split(decorations['slice']);
-			span.textContent = decorations['slice'];
-			span.classList.add(LINEUP.ARTIST_SLICE_CLASS, artistSliceDecoratorToClassMap[decorations['style']]);
-			decoratedName.append(name[0], span, name[1]);
-
-			return decoratedName;
+		if(!multipleDecorations) {
+			replacePattern = decorations[ARTIST_SLICES_PROPS.SLICE];
 		} else {
-			let decoratedName = document.createElement('template');
-			let pattern;
-
-			pattern = new RegExp(
+			replacePattern = new RegExp(
 				decorations.map((item) => {
 					return item[ARTIST_SLICES_PROPS.SLICE];
 				}).join("|"),"gi"
 			);
+		}
 
-			decoratedName.innerHTML = name.replace(pattern, function(matched) {
-				let sliceStyleClassName;
+		decoratedName.innerHTML = name.replace(replacePattern, function(matched) {
+			let sliceStyleClassName;
 
+			if(!multipleDecorations) {
+				sliceStyleClassName = artistSliceDecoratorToClassMap[decorations[ARTIST_SLICES_PROPS.STYLE]]
+			} else {
 				decorations.map((item) => {
 					if (item[ARTIST_SLICES_PROPS.SLICE] === matched) {
 						sliceStyleClassName = artistSliceDecoratorToClassMap[item[ARTIST_SLICES_PROPS.STYLE]];
 					}
 				});
-				return `<span class="${LINEUP.ARTIST_SLICE_CLASS} ${sliceStyleClassName}">${matched}</span>`;
-			});
+			}
+			return `<span class="${LINEUP.ARTIST_SLICE_CLASS} ${sliceStyleClassName}">${matched}</span>`;
+		});
 
-			return decoratedName.content;
-		}
+		return decoratedName.content;
 	}
 
 	decorateArtist(artistKey, target) {
