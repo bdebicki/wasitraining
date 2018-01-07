@@ -33,6 +33,7 @@ const artistSliceDecoratorToClassMap = {
 	[ARTIST_SLICES_STYLES.NEW_LINE]: LINEUP.ARTIST_SLICE_NEW_LINE_CLASS,
 	[ARTIST_SLICES_STYLES.EXPANDED]: LINEUP.ARTIST_SLICE_EXPANDED_CLASS,
 	[ARTIST_SLICES_STYLES.COLLAPSED]: LINEUP.ARTIST_SLICE_COLLAPSED_CLASS,
+	[ARTIST_SLICES_STYLES.INDENTED]: LINEUP.ARTIST_SLICE_INDENTED_CLASS,
 };
 
 export class lineupDetails extends lineup {
@@ -80,19 +81,22 @@ export class lineupDetails extends lineup {
 
 		decoratedName.innerHTML = name.replace(replacePattern, function(matched) {
 			let sliceStyleClassName = '';
+			const setStyleClassName = (styleList) => {
+				if (Array.isArray(styleList[ARTIST_SLICES_PROPS.STYLE])) {
+					styleList[ARTIST_SLICES_PROPS.STYLE].map((style) => {
+						sliceStyleClassName += ' ' + artistSliceDecoratorToClassMap[style];
+					});
+				} else {
+					sliceStyleClassName = artistSliceDecoratorToClassMap[styleList[ARTIST_SLICES_PROPS.STYLE]];
+				}
+			};
 
 			if(!multipleDecorations) {
-				sliceStyleClassName = artistSliceDecoratorToClassMap[decorations[ARTIST_SLICES_PROPS.STYLE]]
+				setStyleClassName(decorations);
 			} else {
 				decorations.map((item) => {
 					if (item[ARTIST_SLICES_PROPS.SLICE] === matched) {
-						if (Array.isArray(item[ARTIST_SLICES_PROPS.STYLE])) {
-							item[ARTIST_SLICES_PROPS.STYLE].map((style) => {
-								sliceStyleClassName += ' ' + artistSliceDecoratorToClassMap[style];
-							});
-						} else {
-							sliceStyleClassName = artistSliceDecoratorToClassMap[item[ARTIST_SLICES_PROPS.STYLE]];
-						}
+						setStyleClassName(item);
 					}
 				});
 			}
@@ -116,11 +120,13 @@ export class lineupDetails extends lineup {
 		if (artistKey[ARTIST_KEYS.MULTILINE]) {
 			li.classList.add(LINEUP.ARTIST_MULTILINE_CLASS);
 		}
+		if (artistKey[ARTIST_KEYS.SEPARATOR_MIDDLE]) {
+			li.classList.add(LINEUP.ARTIST_SEPARATOR_MIDDLE_CLASS);
+		}
 
 		if (artistKey[ARTIST_KEYS.CANCELED]) {
 			li.classList.add(LINEUP.ARTIST_CANCELED_CLASS);
 		}
-
 		if (artistKey[ARTIST_KEYS.REPLACEMENT]) {
 			li.classList.add(LINEUP.ARTIST_REPLACEMENT_CLASS);
 		}

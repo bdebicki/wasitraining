@@ -1318,12 +1318,12 @@
 					"headliners": ["Blur"],
 					"lvl1": ["Editors", "Crystal Castles", "Kendrick Lamar", "Alt-J", "Savages"],
 					"others": [
-						"Vavamuffin",
-						{"artist": "Vienio Profil Pokoleń", "displayName": "Vienio"},
-						"Fox",
-						"Mikromusic",
-						"Domowe Melodie",
-						"Plum",
+						{"artist": "Vavamuffin", "decorator": "collapsed"},
+						{"artist": "Vienio Profil Pokoleń", "displayName": "Vienio", "decorator": "collapsed"},
+						{"artist": "Fox", "decorator": "collapsed"},
+						{"artist": "Mikromusic", "decorator": "collapsed"},
+						{"artist": "Domowe Melodie", "decorator": "collapsed"},
+						{"artist": "Plum", "decorator": "collapsed"},
 						{"artist": "Dawid Podsiadło", "visible": false},
 						{"artist": "Patrick The Pan", "visible": false},
 						{"artist": "Hipersonik", "visible": false},
@@ -1377,7 +1377,7 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2013"
 				],
 				"lineup": {
-					"headliners": ["Queens of the Stone Age"],
+					"headliners": [{"artist": "Queens of the Stone Age", "decorator": "collapsed"}],
 					"lvl1": ["The National", "Skunk Anansie", "Nas"],
 					"lvl2": ["Disclosure", "Hey", "Kaliber 44"],
 					"others": [
@@ -1413,8 +1413,8 @@
 					"lvl1": [
 						"Animal Collective",
 						"Miguel",
-						{"artist": "Steve Reich & Ensemble Modern", "multiline": true},
-						{"artist": "Jonny Greenwood", "multiline": true}
+						{"artist": "Steve Reich & Ensemble Modern", "sliceDecorator": {"slice": "& Ensemble Modern", "style": "newLine"}, "separatorMiddle": true, "multiline": true},
+						{"artist": "Jonny Greenwood", "sliceDecorator": {"slice": "Greenwood", "style": ["newLine", "indented"]}, "multiline": true}
 					],
 					"lvl2": ["Crystal Fighters", "Devendra Banhart"],
 					"others": [

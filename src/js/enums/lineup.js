@@ -22,6 +22,7 @@ export const ARTIST_KEYS = {
 	MULTILINE: 'multiline',
 	CANCELED: 'canceled',
 	REPLACEMENT: 'replacement',
+	SEPARATOR_MIDDLE: 'separatorMiddle',
 };
 
 export const ARTIST_DECORATORS = {
@@ -45,4 +46,5 @@ export const ARTIST_SLICES_STYLES = {
 	NEW_LINE: 'newLine',
 	EXPANDED: 'expanded',
 	COLLAPSED: 'collapsed',
+	INDENTED: 'indented',
 };

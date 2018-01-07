@@ -143,6 +143,7 @@ export const LINEUP = {
 	ARTIST_MULTILINE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.MULTILINE}`,
 	ARTIST_CANCELED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.CANCELED}`,
 	ARTIST_REPLACEMENT_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.REPLACEMENT}`,
+	ARTIST_SEPARATOR_MIDDLE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.SEPARATOR_MIDDLE}`,
 	ARTIST_SLICE_CLASS: `${lineupClassBuilder.slice}`,
 	ARTIST_SLICE_UP_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.UP}`,
 	ARTIST_SLICE_DOWN_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.DOWN}`,
@@ -152,6 +153,7 @@ export const LINEUP = {
 	ARTIST_SLICE_NEW_LINE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.NEW_LINE}`,
 	ARTIST_SLICE_EXPANDED_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.EXPANDED}`,
 	ARTIST_SLICE_COLLAPSED_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.COLLAPSED}`,
+	ARTIST_SLICE_INDENTED_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.INDENTED}`,
 };
 
 const bgClassBuilder = LAYOUT.BG_VIDEO_ID;
