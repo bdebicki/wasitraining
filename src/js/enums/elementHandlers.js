@@ -137,6 +137,7 @@ export const LINEUP = {
 	ARTIST_CLASS: `${lineupClassBuilder.artist}`,
 	ARTIST_PROMOTED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.PROMOTED}`,
 	ARTIST_EXPANDED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.EXPANDED}`,
+	ARTIST_COLLAPSED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.COLLAPSED}`,
 	ARTIST_UPPERCASE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.UPPERCASE}`,
 	ARTIST_MARKED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.MARKED}`,
 	ARTIST_MULTILINE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.MULTILINE}`,
@@ -149,6 +150,8 @@ export const LINEUP = {
 	ARTIST_SLICE_LOWER_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.LOWER}`,
 	ARTIST_SLICE_MULTILINE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.MULTILINE}`,
 	ARTIST_SLICE_NEW_LINE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.NEW_LINE}`,
+	ARTIST_SLICE_EXPANDED_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.EXPANDED}`,
+	ARTIST_SLICE_COLLAPSED_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.COLLAPSED}`,
 };
 
 const bgClassBuilder = LAYOUT.BG_VIDEO_ID;

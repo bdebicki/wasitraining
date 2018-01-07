@@ -21,6 +21,7 @@ const lineupLvlToClassMap = {
 const artistDecoratorToClassMap = {
 	[ARTIST_DECORATORS.PROMOTED]: LINEUP.ARTIST_PROMOTED_CLASS,
 	[ARTIST_DECORATORS.EXPANDED]: LINEUP.ARTIST_EXPANDED_CLASS,
+	[ARTIST_DECORATORS.COLLAPSED]: LINEUP.ARTIST_COLLAPSED_CLASS,
 	[ARTIST_DECORATORS.UPPERCASE]: LINEUP.ARTIST_UPPERCASE_CLASS,
 };
 const artistSliceDecoratorToClassMap = {
@@ -30,6 +31,8 @@ const artistSliceDecoratorToClassMap = {
 	[ARTIST_SLICES_STYLES.LOWER]: LINEUP.ARTIST_SLICE_LOWER_CLASS,
 	[ARTIST_SLICES_STYLES.MULTILINE]: LINEUP.ARTIST_SLICE_MULTILINE_CLASS,
 	[ARTIST_SLICES_STYLES.NEW_LINE]: LINEUP.ARTIST_SLICE_NEW_LINE_CLASS,
+	[ARTIST_SLICES_STYLES.EXPANDED]: LINEUP.ARTIST_SLICE_EXPANDED_CLASS,
+	[ARTIST_SLICES_STYLES.COLLAPSED]: LINEUP.ARTIST_SLICE_COLLAPSED_CLASS,
 };
 
 export class lineupDetails extends lineup {
@@ -76,14 +79,20 @@ export class lineupDetails extends lineup {
 		}
 
 		decoratedName.innerHTML = name.replace(replacePattern, function(matched) {
-			let sliceStyleClassName;
+			let sliceStyleClassName = '';
 
 			if(!multipleDecorations) {
 				sliceStyleClassName = artistSliceDecoratorToClassMap[decorations[ARTIST_SLICES_PROPS.STYLE]]
 			} else {
 				decorations.map((item) => {
 					if (item[ARTIST_SLICES_PROPS.SLICE] === matched) {
-						sliceStyleClassName = artistSliceDecoratorToClassMap[item[ARTIST_SLICES_PROPS.STYLE]];
+						if (Array.isArray(item[ARTIST_SLICES_PROPS.STYLE])) {
+							item[ARTIST_SLICES_PROPS.STYLE].map((style) => {
+								sliceStyleClassName += ' ' + artistSliceDecoratorToClassMap[style];
+							});
+						} else {
+							sliceStyleClassName = artistSliceDecoratorToClassMap[item[ARTIST_SLICES_PROPS.STYLE]];
+						}
 					}
 				});
 			}

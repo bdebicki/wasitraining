@@ -27,6 +27,7 @@ export const ARTIST_KEYS = {
 export const ARTIST_DECORATORS = {
 	PROMOTED: 'promoted',
 	EXPANDED: 'expanded',
+	COLLAPSED: 'collapsed',
 	UPPERCASE: 'uppercase',
 };
 
@@ -42,4 +43,6 @@ export const ARTIST_SLICES_STYLES = {
 	LOWER: 'lower',
 	MULTILINE: 'multiline',
 	NEW_LINE: 'newLine',
+	EXPANDED: 'expanded',
+	COLLAPSED: 'collapsed',
 };
