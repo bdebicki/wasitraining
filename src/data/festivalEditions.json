@@ -1617,9 +1617,9 @@
 						{"artist": "Drake", "marked": true}
 					],
 					"lvl1": [
-						"Alt-J",
+						{"artist": "Alt-J", "forceOrder": 1},
 						{"artist": "Alabama Shakes", "marked": true},
-						"A$AP Rocky",
+						{"artist": "A$AP Rocky", "forceOrder": 3},
 						{"artist": "Chet Faker", "marked": true},
 						"Die Antwoord",
 						{"artist": "Modest Mouse", "marked": true}
@@ -1634,7 +1634,7 @@
 						"HV/NOON",
 						{"artist": "Klaves", "marked": true},
 						"Milky Wishlake",
-						{"artist": "W.E.N.A. x E.A.B.S", "marked": true},
+						{"artist": "W.E.N.A. x E.A.B.S.", "marked": true},
 						{"artist": "Golan", "visible": false},
 						{"artist": "Dakh Daughters", "visible": false},
 						{"artist": "Zeppy Zep", "visible": false},
@@ -1663,7 +1663,7 @@
 					"lvl2": [
 						"Curly Heads",
 						{"artist": "Django Django", "marked": true},
-						"Eagles Of The Death Metal",
+						"Eagles Of Death Metal",
 						{"artist": "Fisz Emade Tworzywo", "marked": true},
 						"Marmozets",
 						{"artist": "Of Montreal", "marked": true},
@@ -1671,7 +1671,7 @@
 					],
 					"others": [
 						"Fismoll",
-						{"artist": "Małe Miasta", "marked": true},
+						{"artist": "Małe Miasta", "marked": true, "forceOrder": 2},
 						"Mary Komasa",
 						{"artist": "Oxford Drama", "marked": true},
 						"Rysy",
@@ -1693,7 +1693,7 @@
 						{"artist": "Mumford & Sons", "marked": true}
 					],
 					"lvl1": [
-						"D'Angelo & The Vanguard",
+						"D'Angelo and The Vanguard",
 						{"artist": "Of Monsters and Men", "marked": true},
 						{"artist": "The Prodigy", "decorator": "promoted"}
 					],
@@ -1707,7 +1707,7 @@
 						"Thurston Moore"
 					],
 					"others": [
-						{"artist": "Agness B. Marry", "marked": true},
+						{"artist": "Agyness B. Marry", "marked": true},
 						"Min T",
 						{"artist": "Nervy", "marked": true},
 						{"artist": "Taco Hemingway", "visible": false},
@@ -1737,9 +1737,9 @@
 					"lvl2": [
 						"Domowe Melodie",
 						{"artist": "George Fitzgerald", "marked": true},
-						{"artist": "Kaytranda", "canceled": true},
+						{"artist": "Kaytranada", "canceled": true},
 						{"artist": "Lao Che", "marked": true},
-						"Skubas",
+						{"artist": "Skubas", "forceOrder": 5},
 						{"artist": "Ratking", "marked": true},
 						"Years & Years"
 					],
