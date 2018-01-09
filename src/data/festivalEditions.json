@@ -94,8 +94,14 @@
 					"lvl2": ["Smolik"],
 					"lvl3": ["Novika", "Harper", "Twinn", "THIRST Winner in Denmark"],
 					"others": [
-						{"artist": "Klinika lalek + Kinior Sky Orkiestra: przedstawienie Anielicje", "sliceDecorator": {"slice": "przedstawienie Anielicje", "style": "newLine"}},
-						{"artist": "Teatr Cinema: Kabaret Olbrzymów Wieczór III. Lekkie czasy ciężkich chorób", "sliceDecorator": {"slice": "Wieczór III. Lekkie czasy ciężkich chorób", "style": "newLine"}},
+						{
+							"artist": "Klinika lalek + Kinior Sky Orkiestra: przedstawienie Anielicje",
+							"sliceDecorator": {"slice": "przedstawienie Anielicje", "style": "newLine"}
+						},
+						{
+							"artist": "Teatr Cinema: Kabaret Olbrzymów Wieczór III. Lekkie czasy ciężkich chorób",
+							"sliceDecorator": {"slice": "Wieczór III. Lekkie czasy ciężkich chorób", "style": "newLine"}
+						},
 						{"artist": "Teatr Snów: przedstawienie Republika Marzeń"},
 						{"artist": "Klinika Lalek: Parada uliczna"}
 					]
@@ -1147,7 +1153,7 @@
 					"headliners": ["Björk"],
 					"lvl1": ["New Order", {"artist": "The Kills", "sliceDecorator": {"slice": "The", "style": "up"}}],
 					"lvl2": ["Wiz Khalifa", "Orbital", "Gogol Bordello"],
-					"lvl4": ["Yeasayer", {"artist": "The Ting Tings", "sliceDecorator": {"slice": "The", "style": "up"}}, "SOJA"],
+					"lvl3": ["Yeasayer", {"artist": "The Ting Tings", "sliceDecorator": {"slice": "The", "style": "up"}}, "SOJA"],
 					"others": [
 						{"artist": "Fisz Emade Tworzywo",  "displayName": "Fisz Emade"},
 						{"artist": "June", "visible": false},
@@ -1180,11 +1186,15 @@
 				],
 				"lineup": {
 					"headliners": ["Justice"],
-					"lvl1": [
-						"Bon Iver",
-						{"artist": "Penderecki//Greenwood", "multiline": true}
-					],
+					"lvl1": ["Bon Iver"],
 					"lvl2": [
+						{
+							"artist": "Penderecki//Greenwood",
+							"sliceDecorator": [
+								{"slice": "Penderecki", "style": ["expanded", "newLine"]},
+								{"slice": "//", "style": "collapsed"}
+							]
+						},
 						{"artist": "The Maccabees", "sliceDecorator": {"slice": "The", "style": "up"}},
 						"Major Lazer",
 						"Jamie Woon"
@@ -1228,7 +1238,7 @@
 						{"artist": "Kasia Nosowska", "displayName": "Nosowska"},
 						"Toro Y Moi"
 					],
-					"lvl3": ["Julia Marcell"],
+					"lvl4": ["Julia Marcell"],
 					"others": [
 						{"artist": "Łona Webber & The Pimps", "displayName": "Łona Webber"},
 						"L.Stadt",
@@ -1413,8 +1423,17 @@
 					"lvl1": [
 						"Animal Collective",
 						"Miguel",
-						{"artist": "Steve Reich & Ensemble Modern", "sliceDecorator": {"slice": "& Ensemble Modern", "style": "newLine"}, "separatorMiddle": true, "multiline": true},
-						{"artist": "Jonny Greenwood", "sliceDecorator": {"slice": "Greenwood", "style": ["newLine", "indented"]}, "multiline": true}
+						{
+							"artist": "Steve Reich & Ensemble Modern",
+							"sliceDecorator": {"slice": "& Ensemble Modern", "style": "newLine"},
+							"separatorMiddle": true,
+							"multiline": true
+						},
+						{
+							"artist": "Jonny Greenwood",
+							"sliceDecorator": {"slice": "Greenwood", "style": ["newLine", "indented"]},
+							"multiline": true
+						}
 					],
 					"lvl2": ["Crystal Fighters", "Devendra Banhart"],
 					"others": [
@@ -1515,7 +1534,8 @@
 						"Jagwar Ma"
 					],
 					"lvl2": [
-						{"artist": "Pink Freud Plays Autechre",
+						{
+							"artist": "Pink Freud Plays Autechre",
 							"breakLine": true,
 							"sliceDecorator": [
 								{"slice": "Pink Freud", "style": "expanded"},
@@ -1853,7 +1873,8 @@
 						"Ptaki",
 						"Rysy",
 						"Vince Staples",
-						{"artist": "Zbigniew Wodeski with Mitch & Mitch Orchestra and Choir",
+						{
+							"artist": "Zbigniew Wodeski with Mitch & Mitch Orchestra and Choir",
 							"sliceDecorator": [
 								{"slice": "with", "style": "down"},
 								{"slice": "Orchestra and Choir", "style": "multiline"}
