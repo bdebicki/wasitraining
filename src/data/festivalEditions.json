@@ -766,23 +766,23 @@
 						{"artist": "Pearl Jam", "order": 1}
 					],
 					"lvl2": [
-						{"artist": "Ben Harper and the Relentless7", "marked": true, "order": 1},
-						{"artist": "Tricky", "marked": true, "order": 7},
-						{"artist": "Groove Armada", "order": 9},
-						{"artist": "2manydjs", "order": 10},
+						{"artist": "Ben Harper and Relentless7", "marked": true, "order": 2},
+						{"artist": "Tricky", "marked": true, "decorator": "collapsed", "order": 7},
+						{"artist": "Groove Armada", "decorator": "collapsed", "order": 9},
+						{"artist": "2manydjs", "decorator": "collapsed", "order": 10},
 						{"artist": "Yeasayer", "marked": true, "order": 14}
 					],
 					"lvl3": [
 						{"artist": "Łąki Łan", "marked": true, "order": 7},
-						{"artist": "Tinariwen", "marked": true, "order": 20}
+						{"artist": "Tinariwen", "marked": true, "order": 2}
 					],
 					"lvl4": [
 						{"artist": "Indigo Tree", "marked": true, "order": 3},
-						{"artist": "Pasimito", "order": 8}
+						{"artist": "Pasimito", "order": 8},
+						{"artist": "Wiracki + Suka Off / BFV", "order": 4}
 					],
 					"others": [
 						{"artist": "Kacezet & Dreadsquad", "marked": true, "order": 1},
-						{"artist": "Wiracki + Suka Off/BFV", "order": 4},
 						{"artist": "Paula i Karol", "marked": true, "order": 6},
 						{"artist": "Dead Snow Monster", "marked": true, "order": 7},
 						{"artist": "Kiev Office", "order": 14},
@@ -814,7 +814,7 @@
 					"lvl2": [
 						{"artist": "Empire of the Sun", "marked": true, "order": 3},
 						{"artist": "Cypress Hill", "marked": true, "order": 4},
-						{"artist": "Klaxons", "marked": true, "order": 6},
+						{"artist": "Klaxons", "marked": true, "decorator": "collapsed", "order": 6},
 						{"artist": "Mando Diao", "marked": true, "order": 17}
 					],
 					"lvl3": [
@@ -830,7 +830,7 @@
 						{"artist": "Muariolanza", "order": 9},
 						{"artist": "Oranżada", "order": 10},
 						{"artist": "52UM", "marked": true, "order": 14},
-						{"artist": "Brasil and the Gallowbrothers", "order": 15}
+						{"artist": "Brasil and the Gallowbrothers Band", "order": 15}
 					],
 					"others": [
 						{"artist": "Let The Boy Decide", "order": 8},
@@ -858,8 +858,8 @@
 					],
 					"lvl2": [
 						{"artist": "Skunk Anansie", "order": 5},
-						{"artist": "Regina Spektor", "marked": true, "order": 11},
-						{"artist": "Ellie Goulding", "canceled": true, "order": 12},
+						{"artist": "Regina Spektor", "marked": true, "decorator": "collapsed", "order": 11},
+						{"artist": "Ellie Goulding", "canceled": true, "decorator": "collapsed", "order": 12},
 						{"artist": "Matisyahu", "order": 15}
 					],
 					"lvl3": [
@@ -867,14 +867,14 @@
 						{"artist": "L.U.C", "order": 6},
 						{"artist": "Julia Marcell", "order": 10},
 						{"artist": "Novika", "order": 12},
-						{"artist": "We Call It A Sound", "marked": true, "order": 13},
+						{"artist": "We Call It A Sound", "marked": true, "decorator": "collapsed", "order": 13},
 						{"artist": "Alians", "marked": true, "order": 18},
 						{"artist": "Bester Quartet", "order": 19}
 					],
 					"lvl4": [
-						{"artist": "Karolina Glazer", "marked": true},
-						{"artist": "Kciuk & The Fingers", "marked": true},
-						{"artist": "Niwea", "marked": true}
+						{"artist": "Karolina Glazer", "marked": true, "order": 2},
+						{"artist": "Kciuk & The Fingers", "marked": true, "order": 7},
+						{"artist": "Niwea", "marked": true, "order": 10}
 					],
 					"others": [
 						{"artist": "Merkabah", "order": 3},
@@ -906,8 +906,8 @@
 					],
 					"lvl2": [
 						{"artist": "The Hives", "order": 1},
-						{"artist": "Archive", "marked": true, "order": 8},
-						{"artist": "Kings of Convenience", "order": 13},
+						{"artist": "Archive", "marked": true, "decorator": "collapsed", "order": 8},
+						{"artist": "Kings of Convenience", "decorator": "collapsed", "order": 13},
 						{"artist": "Wild Beasts", "order": 16}
 					],
 					"lvl3": [
