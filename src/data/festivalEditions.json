@@ -616,7 +616,7 @@
 						{"artist": "The Kooks", "order": 3},
 						{"artist": "Pendulum", "order": 4},
 						{"artist": "Gossip", "order": 5},
-						{"artist": "Crystal Castles", "marked": true, "order": 9}
+						{"artist": "Crystal Castles", "marked": true, "decorator": "collapsed", "order": 9}
 					],
 					"lvl3": [
 						{"artist": "Hjaltalín", "marked": true, "order": 2},
@@ -628,6 +628,7 @@
 					"lvl4": [
 						{"artist": "Pati Yang", "marked": true, "order": 4},
 						{"artist": "Gaba Kulka", "marked": true, "order": 5},
+						{"artist": "100nka", "order": 15},
 						{"artist": "Paristetris", "order": 18},
 						{"artist": "Wiolonczele z Miasta", "marked": true, "order": 19},
 						{"artist": "Kakofonikt", "marked": true, "order": 24}
@@ -661,8 +662,8 @@
 						{"artist": "White Lies", "order": 7},
 						{"artist": "Emiliana Torrini", "order": 10},
 						{"artist": "M83", "marked": true, "order": 12},
-						{"artist": "Buraka Som Sistema", "marked": true, "order": 13},
-						{"artist": "Madness", "marked": true, "order": 15}
+						{"artist": "Buraka Som Sistema", "marked": true, "order": 14},
+						{"artist": "Madness", "marked": true, "order": 2}
 					],
 					"lvl3": [
 						{"artist": "Izrael", "order": 7},
@@ -707,7 +708,7 @@
 					"lvl2": [
 						{"artist": "The Ting Tings", "marked": true, "order": 6},
 						{"artist": "Santigold", "order": 8},
-						{"artist": "Fat Freddy's Drop", "canceled": true, "order": 14}
+						{"artist": "Fat Freddy's Drop", "canceled": true, "decorator": "collapsed", "order": 15}
 					],
 					"lvl3": [
 						{"artist": "Jazzanova (live)", "order": 1},
