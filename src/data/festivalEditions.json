@@ -296,7 +296,7 @@
 				"lineup": {
 					"lvl1": [
 						{"artist": "Sonic Youth", "order": 2},
-						{"artist": "The Roots", "order": 4}
+						{"artist": "The Roots", "order": 4, "decorator": "expanded"}
 					],
 					"lvl2": [
 						{"artist": "Laurent Garnier (Live)", "order": 1},
@@ -371,7 +371,7 @@
 					],
 					"lvl1": [
 						{"artist": "Bloc Party", "order": 3},
-						{"artist": "LCD Soundsystem", "order": 5}
+						{"artist": "LCD Soundsystem", "order": 5, "decorator": "expanded"}
 					],
 					"lvl3": [
 						{"artist": "Smolik", "order": 4},
