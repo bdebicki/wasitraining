@@ -420,14 +420,14 @@
 						{"artist": "Roisin Murphy", "order": 4}
 					],
 					"lvl2": [
-						{"artist": "Fischerspooner", "order": 2},
-						{"artist": "DeVotchKa", "order": 3},
+						{"artist": "Fischerspooner", "order": 2, "decorator": "expanded"},
+						{"artist": "DeVotchKa", "order": 3, "decorator": "expanded"},
 						{"artist": "The Cribs", "order": 4},
 						{"artist": "Dj Vadim Live", "order": 6},
 						{"artist": "Fujiya & Miyagi", "order": 7}
 					],
 					"lvl3": [
-						{"artist": "Muchy", "order": 2},
+						{"artist": "Muchy", "order": 2, "decorator": "expanded"},
 						{"artist": "Mitch & Mitch Big Band", "order": 10},
 						{"artist": "Muzykoterapia", "order": 7, "canceled": true},
 						{"artist": "Natu + Envee", "order": 12},
@@ -468,15 +468,15 @@
 					"lvl1": [
 						{"artist": "Erykah Badu", "order": 1},
 						{"artist": "Sex Pistols", "order": 6},
-						{"artist": "Beirut", "order": 10, "canceled": true}
+						{"artist": "Beirut", "order": 10, "canceled": true, "decorator": "collapsed"}
 					],
 					"lvl2": [
-						{"artist": "Gentleman & The Far East Band", "displayName": "Gentleman", "order": 1},
+						{"artist": "Gentleman & The Far East Band", "displayName": "Gentleman", "order": 1, "decorator": "expanded"},
 						{"artist": "Cocorosie", "order": 5}
 					],
 					"lvl3": [
-						{"artist": "Cool Kids Of Death", "order": 1},
-						{"artist": "Maria Peszek", "order": 5},
+						{"artist": "Cool Kids Of Death", "order": 1, "decorator": "expanded"},
+						{"artist": "Maria Peszek", "order": 5, "decorator": "expanded"},
 						{"artist": "Everything is made in China", "order": 9},
 						{"artist": "Masala Soundsystem", "order": 11},
 						{"artist": "Loco Star", "order": 13},
@@ -516,14 +516,15 @@
 					],
 					"lvl1": [
 						{"artist": "Goldfrapp", "order": 5},
-						{"artist": "M.I.A.", "order": 8, "canceled": true},
+						{"artist": "M.I.A.", "order": 8, "canceled": true, "decorator": "collapsed"},
 						{"artist": "Martina Topley Bird", "order": 9, "replacement": true}
 					],
 					"lvl3": [
-						{"artist": "Vavamuffin", "order": 4},
-						{"artist": "Ścianka", "order": 6},
+						{"artist": "Lao Che", "order": 3, "decorator": "expanded"},
+						{"artist": "Vavamuffin", "order": 4, "decorator": "expanded"},
+						{"artist": "Ścianka", "order": 6, "decorator": "expanded"},
 						{"artist": "Őszibarack", "order": 8},
-						{"artist": "Kobiety", "order": 11},
+						{"artist": "Kobiety", "order": 12},
 						{"artist": "Hatfinats", "order": 16},
 						{"artist": "Żywiołak", "order": 18},
 						{"artist": "Benzyna", "order": 19}
