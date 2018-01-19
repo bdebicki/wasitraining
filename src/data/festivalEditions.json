@@ -46,7 +46,14 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2003-07-26&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"headliners": ["Cassius", "Kosheen", "Layo & Bushwacka!"],
+					"headliners": [
+						"Cassius",
+						"Kosheen",
+						{
+							"artist": "Layo & Bushwacka!",
+							"sliceDecorator": {"slice": "& Bushwacka!", "style": "newLine"}
+						}
+					],
 					"lvl1": ["15 Minuk Projekt", "Marika"],
 					"others": ["Finalists of THIRST competition"]
 				}
@@ -102,8 +109,8 @@
 							"artist": "Teatr Cinema: Kabaret Olbrzymów Wieczór III. Lekkie czasy ciężkich chorób",
 							"sliceDecorator": {"slice": "Wieczór III. Lekkie czasy ciężkich chorób", "style": "newLine"}
 						},
-						{"artist": "Teatr Snów: przedstawienie Republika Marzeń"},
-						{"artist": "Klinika Lalek: Parada uliczna"}
+						"Teatr Snów: przedstawienie Republika Marzeń",
+						"Klinika Lalek: Parada uliczna"
 					]
 				}
 			}
@@ -131,7 +138,11 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2005-07-8&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"headliners": ["Snoop Dogg", "Fatboy Slim", "Faithless"],
+					"headliners": [
+						{"artist": "Snoop Dogg", "decorator": "expanded"},
+						{"artist": "Fatboy Slim", "decorator": "expanded"},
+						{"artist": "Faithless", "decorator": "expanded"}
+					],
 					"others": [
 						{"artist": "Pogodno", "order": 1},
 						{"artist": "O.S.T.R.", "order": 2},
@@ -156,13 +167,13 @@
 				"lineup": {
 					"headliners": ["The White Stripes", "Lauryn Hill", "Underworld"],
 					"lvl1": [
-						{"artist": "The Music", "order": "day2"}
+						{"artist": "The Music", "order": "headliners"}
 					],
 					"lvl2": [
 						{"artist": "Neo", "decorator": "uppercase"}
 					],
 					"others": [
-						{"artist": "SOFA", "order": 3},
+						{"artist": "SOFA", "order": 3, "decorator": "capitalize"},
 						{"artist": "Őszibarack", "order": 4},
 						{"artist": "Peepol", "order": 5},
 						{"artist": "Tworzywo Sztuczne", "order": 6},
