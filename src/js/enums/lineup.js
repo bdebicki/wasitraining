@@ -30,6 +30,7 @@ export const ARTIST_DECORATORS = {
 	EXPANDED: 'expanded',
 	COLLAPSED: 'collapsed',
 	UPPERCASE: 'uppercase',
+	CAPITALIZE: 'capitalize',
 };
 
 export const ARTIST_SLICES_PROPS = {
