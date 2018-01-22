@@ -166,9 +166,7 @@
 				],
 				"lineup": {
 					"headliners": ["The White Stripes", "Lauryn Hill", "Underworld"],
-					"lvl1": [
-						{"artist": "The Music", "order": "headliners"}
-					],
+					"lvl1": ["The Music"],
 					"lvl2": [
 						{"artist": "Neo", "decorator": "uppercase"}
 					],
