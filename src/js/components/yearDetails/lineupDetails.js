@@ -150,10 +150,13 @@ export class lineupDetails extends lineup {
 	}
 
 	getLineupByType() {
-		if(this.mergeArtists) {
-			return this.decorateLineupByLevels();
-		} else {
-			return this.decorateLineupByDays();
+		switch(this.mergeArtists) {
+			case true:
+				return this.decorateLineupByLevels();
+			case 'exceptHeadliners':
+				return this.decorateLineupHeadlinersByDays();
+			default:
+				return this.decorateLineupByDays();
 		}
 	}
 
@@ -167,19 +170,19 @@ export class lineupDetails extends lineup {
 
 			ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
 
-			if (key === LINEUP_LEVELS.DAILY_HEADLINERS || key === LINEUP_LEVELS.DAILY_LVL1) {
-				lineup[key].map((item) => {
-					item.map((itemItem) => {
-						this.decorateArtist(itemItem, ul);
-					});
-				});
-			} else {
-				lineup[key].map((item) => {
-					this.decorateArtist(item, ul);
-				});
-			}
+			lineup[key].map((item) => {
+				this.decorateArtist(item, ul);
+			});
+
 			fragment.appendChild(ul);
 		});
+
+		return fragment;
+	}
+
+	decorateLineupHeadlinersByDays() {
+		let fragment = document.createDocumentFragment();
+		const lineup = this.lineup;
 
 		return fragment;
 	}
@@ -234,7 +237,7 @@ export class lineupDetails extends lineup {
 
 		const dialogboxLineup = dialogbox.addDialogbox({
 			id: LINEUP.SECTION_ID,
-			classNames: [`${LINEUP.EDITION_CLASS}${newYear}`],
+			classNames: [`${LINEUP.EDITION_CLASS}${newYear}`, 'dialogbox--isVisible'],
 			dataAttr: [['year', `${newYear}`]],
 			title: `${DIALOGBOX_HEADLINE_TEXT} ${newYear}`,
 			content: section,
