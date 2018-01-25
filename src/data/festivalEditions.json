@@ -972,7 +972,7 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "Coldplay", "marked": true, "decorator": "expanded", "order": 1}
+						{"artist": "Coldplay", "marked": true, "decorator": "promoted", "order": 1}
 					],
 					"lvl1": [
 						{"artist": "The National", "marked": true, "decorator": "collapsed", "order": 1},
@@ -1059,7 +1059,7 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "Prince", "decorator": "expanded", "order": 2}
+						{"artist": "Prince", "decorator": "promoted", "order": 2}
 					],
 					"lvl1": [
 						{"artist": "Primus", "decorator": "collapsed", "order": 2},
