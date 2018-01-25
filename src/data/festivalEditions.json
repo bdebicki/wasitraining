@@ -18,7 +18,7 @@
 				],
 				"lineup": {
 					"headliners": ["The Chemical Brothers"],
-					"lvl1": ["Glasse", "Sonic Trip", "Harper", "MK Fever", "Smolik", "Fresh"]
+					"others": ["Glasse", "Sonic Trip", "Harper", "MK Fever", "Smolik", "Fresh"]
 				}
 			}
 		],
@@ -139,9 +139,9 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "Snoop Dogg", "decorator": "expanded"},
-						{"artist": "Fatboy Slim", "decorator": "expanded"},
-						{"artist": "Faithless", "decorator": "expanded"}
+						{"artist": "Snoop Dogg", "decorator": "promoted"},
+						{"artist": "Fatboy Slim", "decorator": "promoted"},
+						{"artist": "Faithless", "decorator": "promoted"}
 					],
 					"others": [
 						{"artist": "Pogodno", "order": 1},
