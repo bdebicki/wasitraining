@@ -1163,7 +1163,11 @@
 				"lineup": {
 					"headliners": ["Björk"],
 					"lvl1": ["New Order", {"artist": "The Kills", "sliceDecorator": {"slice": "The", "style": "up"}}],
-					"lvl2": ["Wiz Khalifa", "Orbital", "Gogol Bordello"],
+					"lvl2": [
+						{"artist": "Wiz Khalifa", "decorator": "expanded"},
+						{"artist": "Orbital", "decorator": "expanded"},
+						{"artist": "Gogol Bordello", "decorator": "expanded"}
+					],
 					"lvl3": ["Yeasayer", {"artist": "The Ting Tings", "sliceDecorator": {"slice": "The", "style": "up"}}, "SOJA"],
 					"others": [
 						{"artist": "Fisz Emade Tworzywo",  "displayName": "Fisz Emade"},
@@ -1286,7 +1290,11 @@
 						{"artist": "Mumford & Sons", "sliceDecorator": {"slice": "&", "style": "middle"}},
 						{"artist": "The XX", "sliceDecorator": {"slice": "XX", "style": "lower"}}
 					],
-					"lvl2": ["Friendly Fires", "Janelle Monáe", "Bat For Lashes"],
+					"lvl2": [
+						{"artist": "Friendly Fires", "decorator": "collapsed"},
+						{"artist": "Janelle Monáe", "decorator": "collapsed"},
+						{"artist": "Bat For Lashes", "decorator": "collapsed"}
+					],
 					"lvl3": [
 						{"artist": "SBTRKT Live", "sliceDecorator": {"slice": "Live", "style": "up"}}
 					],
