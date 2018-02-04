@@ -1958,18 +1958,18 @@
 				],
 				"lineup": {
 					"headliners": ["Radiohead"],
-					"lvl1": ["James Blake", "Royal Blood"],
-					"lvl2": ["Michael Kiwanuka", "Rae Sremmurd", "Solange"],
+					"lvl1": [{"artist": "James Blake", "firstOnLine": true}, "Royal Blood"],
+					"lvl2": [{"artist": "Michael Kiwanuka", "firstOnLine": true}, "Rae Sremmurd", "Solange"],
 					"others": [
-						{"artist": "Arca (DJ Set)", "sliceDecorator": {"slice": "(DJ Set)", "style": "down"}},
+						{"artist": "Arca (DJ Set)", "sliceDecorator": {"slice": "(DJ Set)", "style": "down"}, "firstOnLine": true},
 						"Black Coffee",
-						"Natalia Przybysz",
-						"Quebonafide",
-						"Sorry Boys",
+						{"artist": "Natalia Przybysz", "forceOrder": "3"},
+						{"artist": "Quebonafide", "forceOrder": "4"},
+						{"artist": "Sorry Boys", "forceOrder": "5", "firstOnLine": true},
 						"Enzu",
 						"Flirtini",
-						"Wacław Zimpel/Kuba Ziołek",
-						"Holak",
+						{"artist": "Wacław Zimpel/Kuba Ziołek", "forceOrder": "8"},
+						{"artist": "Holak", "forceOrder": "9", "firstOnLine": true},
 						"Gverilla",
 						"Mery Spolsky"
 					]
@@ -1984,13 +1984,17 @@
 				"lineup": {
 					"headliners": ["Foo Fighters"],
 					"lvl1": [
-						"G-Eazy",
+						{"artist": "G-Eazy", "firstOnLine": true},
 						{"artist": "The Kills", "sortBy": "Kills"},
 						"M.I.A."
 					],
-					"lvl2": ["Charli XCX", "Jimmy Eat World", "Trentemøller"],
+					"lvl2": [
+						{"artist": "Charli XCX", "firstOnLine": true},
+						"Jimmy Eat World",
+						"Trentemøller"
+					],
 					"others": [
-						"A_GIM",
+						{"artist": "A_GIM", "firstOnLine": true},
 						"Bitamina",
 						"Blanck Mass",
 						"Daniel Avery",
@@ -2012,9 +2016,9 @@
 				],
 				"lineup": {
 					"headliners": ["The Weekend"],
-					"lvl1": ["Mac Miller", "Moderat", "Prophets of Rage"],
+					"lvl1": [{"artist": "Mac Miller", "firstOnLine": true}, "Moderat", "Prophets of Rage"],
 					"lvl2": [
-						"Brodka",
+						{"artist": "Brodka", "firstOnLine": true},
 						{"artist": "The Dumplings", "sortBy": "Dumplings"},
 						"Grammatik",
 						"JMSN",
@@ -2022,7 +2026,15 @@
 						"Tiga",
 						"Warpaint"
 					],
-					"others": ["Bisz/Radex", "Daria Zawiałow", "Dasein", "Deas", "Hańba!", "Majlo", "Ralph Kaminski"]
+					"others": [
+						{"artist": "Bisz/Radex", "firstOnLine": true},
+						"Daria Zawiałow",
+						"Dasein",
+						"Deas",
+						"Hańba!",
+						"Majlo",
+						"Ralph Kaminski"
+					]
 				}
 			}, {
 				"day": "1st July",
@@ -2032,16 +2044,16 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2017"
 				],
 				"lineup": {
-					"headliners": ["The XX", "Lorde"],
-					"lvl1": ["George Ezra", "Taco Hemingway"],
+					"headliners": [{"artist": "The XX", "firstOnLine": true}, "Lorde"],
+					"lvl1": [{"artist": "George Ezra", "firstOnLine": true}, "Taco Hemingway"],
 					"lvl2": [
-						"Dua Lipa",
+						{"artist": "Dua Lipa", "firstOnLine": true},
 						"Nicolas Jaar",
 						{"artist": "Tyga", "forceOrder": "3"},
 						"O.S.T.R."
 					],
 					"others": [
-						"Benjamin Booker",
+						{"artist": "Benjamin Booker", "firstOnLine": true},
 						"Buslav",
 						"Duit",
 						"Julia Pietrucha",

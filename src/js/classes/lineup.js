@@ -265,13 +265,15 @@ export class lineup {
 		});
 
 		sortScope.map((item, index) => { // clear 'sortBy' key on artist obcject
-			this._updateArtistObjectOnArray({
-				scope: sortScope,
-				index: index,
-				artist: item,
-				key: ARTIST_KEYS.SORT_BY,
-				withValidation: true,
-			});
+			if(item[ARTIST_KEYS.SORT_BY]) {
+				this._updateArtistObjectOnArray({
+					scope: sortScope,
+					index: index,
+					artist: item,
+					key: ARTIST_KEYS.SORT_BY,
+					withValidation: true,
+				});
+			}
 		});
 
 		return sortScope;
@@ -301,7 +303,6 @@ export class lineup {
 
 			if(artist[ARTIST_KEYS.FORCE_ORDER]) {
 				const newIndex = artist[ARTIST_KEYS.FORCE_ORDER] - 1; // -1 because array order is from 0
-
 				level.splice(index, 1); // remove artist from current position
 				this._updateArtistObjectOnArray({ // move artist to forced order
 					scope: level,
@@ -418,7 +419,6 @@ export class lineup {
 				}
 			});
 		});
-
 
 		console.log('don\'t merge artists and sort artists by alphabeticalExceptHeadliners');
 		console.log(sortedLineup);

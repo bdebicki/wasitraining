@@ -22,6 +22,8 @@ export const ARTIST_KEYS = {
 	CANCELED: 'canceled',
 	REPLACEMENT: 'replacement',
 	SEPARATOR_MIDDLE: 'separatorMiddle',
+	FIRST_ON_LINE: 'firstOnLine',
+	LAST_ON_LINE: 'lastOnLine',
 };
 
 export const ARTIST_DECORATORS = {

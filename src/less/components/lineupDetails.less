@@ -1,3 +1,125 @@
 #lineup {
 	grid-area: edition;
+
+	.dialogbox__header:after {
+		.lineup--edition2017& {
+			background: @edition2017-leadColor;
+		}
+		.lineup--edition2016& {
+			background: @edition2016-leadColor;
+		}
+		.lineup--edition2015& {
+			background: @edition2015-leadColor;
+		}
+		.lineup--edition2014& {
+			background: @edition2014-leadColor;
+		}
+		.lineup--edition2013& {
+			background: @edition2013-leadColor;
+		}
+		.lineup--edition2012& {
+			background: @edition2012-leadColor;
+		}
+		.lineup--edition2011& {
+			background: @edition2011-leadColor;
+		}
+		.lineup--edition2010& {
+			background: @edition2010-leadColor;
+		}
+		.lineup--edition2009& {
+			background: @edition2009-leadColor;
+		}
+		.lineup--edition2008& {
+			background: @edition2008-leadColor;
+		}
+		.lineup--edition2007& {
+			background: @edition2007-leadColor;
+		}
+		.lineup--edition2006& {
+			background: @edition2006-leadColor;
+		}
+		.lineup--edition2005& {
+			background: @edition2005-leadColor;
+		}
+		.lineup--edition2004& {
+			background: @edition2004-leadColor;
+		}
+		.lineup--edition2003& {
+			background: @edition2003-leadColor;
+		}
+		.lineup--edition2002& {
+			background: @edition2002-leadColor;
+		}
+	}
+}
+
+.lineupArtists {
+	&--edition2017 {
+		font-family: @edition2017-fontFamily;
+		font-weight: @edition2017-fontWeight;
+		text-transform: uppercase;
+
+		.lineupArtists {
+			&__day {
+				&:not(:last-child) {
+					margin-bottom: @edition2017-sectionsSpace;
+				}
+			}
+			&__lvl {
+				max-width: 390px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+
+				&--headliners {
+					margin-bottom: @edition2017-lvlSpace-headliners;
+
+					.lineupArtists__artist {
+						font-size: @edition2017-fontSize-headliners;
+						font-weight: @edition2017-fontWeight-headliners;
+						letter-spacing: @edition2017-textSpacing-headliners;
+						line-height: @edition2017-lineHeight-headliners;
+					}
+				}
+				&--lvl1 {
+					margin-bottom: @edition2017-lvlSpace-lvl1;
+
+					.lineupArtists__artist {
+						font-size: @edition2017-fontSize-lvl1;
+						letter-spacing: @edition2017-textSpacing-lvl1;
+						line-height: @edition2017-lineHeight-lvl1;
+					}
+				}
+				&--lvl2 {
+					margin-bottom: @edition2017-lvlSpace-lvl2;
+
+					.lineupArtists__artist {
+						font-size: @edition2017-fontSize-lvl2;
+						letter-spacing: @edition2017-textSpacing-lvl2;
+						line-height: @edition2017-lineHeight-lvl2;
+					}
+				}
+				&--others {
+					.lineupArtists__artist {
+						font-size: @edition2017-fontSize-others;
+						letter-spacing: @edition2017-textSpacing-others;
+						line-height: @edition2017-lineHeight-others;
+					}
+				}
+			}
+			&__artist {
+				&:not(:only-child):not(.lineupArtists__artist--firstOnLine) {
+					&:before {
+						content: @edition2017-separatorStyle;
+						margin-right: 0.3em;
+						margin-left: 0.3em;
+						color: @edition2017-leadColor;
+						font-weight: @edition2017-fontWeight-headliners;
+					}
+				}
+				&--firstOnLine {
+				}
+			}
+		}
+	}
 }

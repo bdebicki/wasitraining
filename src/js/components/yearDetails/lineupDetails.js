@@ -127,6 +127,12 @@ export class lineupDetails extends lineup {
 		if (artistKey[ARTIST_KEYS.SEPARATOR_MIDDLE]) {
 			li.classList.add(LINEUP.ARTIST_SEPARATOR_MIDDLE_CLASS);
 		}
+		if (artistKey[ARTIST_KEYS.FIRST_ON_LINE]) {
+			li.classList.add(LINEUP.ARTIST_FIRST_ON_LINE_CLASS);
+		}
+		if (artistKey[ARTIST_KEYS.LAST_ON_LINE]) {
+			li.classList.add(LINEUP.ARTIST_LAST_ON_LINE_CLASS);
+		}
 
 		if (artistKey[ARTIST_KEYS.CANCELED]) {
 			li.classList.add(LINEUP.ARTIST_CANCELED_CLASS);
