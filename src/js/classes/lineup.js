@@ -72,7 +72,7 @@ export class lineup {
 			if(this.sortType === 'customOrder') { // & sort by custom order
 				return this.mergeAndSortCustomArtists();
 			} else if (this.sortType === 'alphabeticalExceptHeadliners') {
-				return this.mergeAndSortAlphabeticallyExceptHearliners();
+				return this.mergeAndSortAlphabeticallyExceptHeadliners();
 			}
 		} else if (this.mergeArtists === 'exceptHeadliners' && this.sortType === 'customOrderExceptHeadliners') {
 			return this.mergeExceptHeadlinersAndSortCustomExceptHeadliners();
@@ -80,7 +80,7 @@ export class lineup {
 			if(this.sortType === false) {
 				return this.notMergedAndNotSorted();
 			} else if (this.sortType === 'alphabeticalExceptHeadliners') {
-				return this.notMergedAndSortAlpabeticallyExceptHeadliners();
+				return this.notMergedAndSortAlphabeticallyExceptHeadliners();
 			}
 		}
 	}
@@ -341,7 +341,7 @@ export class lineup {
 		return sortedLineup;
 	}
 
-	mergeAndSortAlphabeticallyExceptHearliners() {
+	mergeAndSortAlphabeticallyExceptHeadliners() {
 		let sortedLineup = {
 			[LINEUP_LEVELS.HEADLINERS]: [],
 			[LINEUP_LEVELS.LVL1]: [],
@@ -405,7 +405,7 @@ export class lineup {
 		return sortedLineup;
 	}
 
-	notMergedAndSortAlpabeticallyExceptHeadliners() {
+	notMergedAndSortAlphabeticallyExceptHeadliners() {
 		let sortedLineup = [];
 
 		this._noMergeArtists({scope: sortedLineup});
