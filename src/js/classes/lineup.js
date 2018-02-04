@@ -302,19 +302,19 @@ export class lineup {
 	}
 
 	_sortCustomOrderLevel(sortScope) {
-		sortScope.sort((a, b) => { // sort lineup by order property
+		let sortArray = sortScope;
+
+		sortArray.sort((a, b) => { // sort lineup by order property
 			return a.order - b.order;
 		});
-		sortScope.map((item, index) => { // remove order indicators
+		sortArray.map((item, index) => { // remove order indicators
 			this._updateArtistObjectOnArray({
-				scope: sortScope,
+				scope: sortArray,
 				index: index,
 				artist: item,
 				key: ARTIST_KEYS.ORDER,
 			});
 		});
-
-		return sortScope;
 	}
 
 	mergeAndSortCustomArtists() { // merge artists and sort artists by customOrder
@@ -359,7 +359,9 @@ export class lineup {
 			this._clearEmptyLevels(sortedLineup, key); // remove empty levels
 
 			if(key !== LINEUP_LEVELS.HEADLINERS) {
-				this._sortAlphabeticallyLevel(currentLvl);
+				const sortedLvl = this._sortAlphabeticallyLevel(currentLvl);
+
+				currentLvl.splice(0, currentLvl.length, ...sortedLvl);
 			}
 		});
 
@@ -412,10 +414,12 @@ export class lineup {
 
 		sortedLineup.map((item) => { // sort artist of levels except
 			Object.keys(item).map((key) => {
-				const currentLvl = item[key];
+				let currentLvl = item[key];
 
 				if(key !== LINEUP_LEVELS.HEADLINERS) { // sort only not headliner artists
-					this._sortAlphabeticallyLevel(currentLvl);
+					const sortedLvl = this._sortAlphabeticallyLevel(currentLvl);
+
+					currentLvl.splice(0, currentLvl.length, ...sortedLvl);
 				}
 			});
 		});
