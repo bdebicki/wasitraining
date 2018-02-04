@@ -55,6 +55,8 @@
 
 .lineupArtists {
 	&--edition2017 {
+		@newLineOffset: 6px;
+
 		font-family: @edition2017-fontFamily;
 		font-weight: @edition2017-fontWeight;
 		text-transform: uppercase;
@@ -100,6 +102,8 @@
 					}
 				}
 				&--others {
+					//margin-left: -@newLineOffset;
+
 					.lineupArtists__artist {
 						font-size: @edition2017-fontSize-others;
 						letter-spacing: @edition2017-textSpacing-others;
@@ -117,8 +121,9 @@
 						font-weight: @edition2017-fontWeight-headliners;
 					}
 				}
-				&--firstOnLine {
-				}
+			}
+			&__newLine {
+				flex-basis: 100%;
 			}
 		}
 	}

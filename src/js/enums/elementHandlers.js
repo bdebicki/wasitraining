@@ -125,6 +125,7 @@ export const LINEUP = {
 	ARTISTS_CLASS: lineupClassBuilder.artists,
 	ARTISTS_EDITION_CLASS: `${lineupClassBuilder.artists}--edition`,
 	ARTISTS_DAY_CLASS: `${lineupClassBuilder.artists}__day`,
+	ARTISTS_NEW_LINE_CLASS: `${lineupClassBuilder.artists}__newLine`,
 	ARTISTS_LEVEL_CLASS: `${lineupClassBuilder.lvl}`,
 	ARTISTS_HEADLINERS_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.HEADLINERS}`,
 	ARTISTS_LVL1_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.LVL1}`,

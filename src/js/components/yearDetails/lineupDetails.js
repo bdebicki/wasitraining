@@ -110,7 +110,8 @@ export class lineupDetails extends lineup {
 		return decoratedName.content;
 	}
 
-	decorateArtist(artistKey, target, artistLvl) {
+	decorateArtist(artistKey, target, index, artistLvl) {
+		let fragment = document.createDocumentFragment();
 		let li = document.createElement('li');
 		let artistName;
 
@@ -129,6 +130,14 @@ export class lineupDetails extends lineup {
 		}
 		if (artistKey[ARTIST_KEYS.FIRST_ON_LINE]) {
 			li.classList.add(LINEUP.ARTIST_FIRST_ON_LINE_CLASS);
+
+			if (index > 0) {
+				let newLine = document.createElement('li');
+				
+				newLine.classList.add(LINEUP.ARTISTS_NEW_LINE_CLASS);
+
+				fragment.appendChild(newLine);
+			}
 		}
 		if (artistKey[ARTIST_KEYS.LAST_ON_LINE]) {
 			li.classList.add(LINEUP.ARTIST_LAST_ON_LINE_CLASS);
@@ -159,7 +168,9 @@ export class lineupDetails extends lineup {
 			li.classList.add(dailyLvlToClassMap[artistLvl]);
 		}
 
-		target.appendChild(li);
+		fragment.appendChild(li);
+
+		target.appendChild(fragment);
 	}
 
 	getLineupByType() {
@@ -182,8 +193,8 @@ export class lineupDetails extends lineup {
 
 			ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
 
-			lineup[key].map((item) => {
-				this.decorateArtist(item, ul);
+			lineup[key].map((item, index) => {
+				this.decorateArtist(item, ul, index);
 			});
 
 			fragment.appendChild(ul);
@@ -204,8 +215,8 @@ export class lineupDetails extends lineup {
 					ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
 
 					Object.keys(item).map((key) => {
-						item[key].map((itemKey) => {
-							this.decorateArtist(itemKey, ul, key);
+						item[key].map((itemKey, index) => {
+							this.decorateArtist(itemKey, ul, index, key);
 						});
 					});
 
@@ -216,8 +227,8 @@ export class lineupDetails extends lineup {
 
 				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
 
-				lineup[key].map((item) => {
-					this.decorateArtist(item, ul);
+				lineup[key].map((item, index) => {
+					this.decorateArtist(item, ul, index);
 				});
 
 				fragment.appendChild(ul);
@@ -241,8 +252,8 @@ export class lineupDetails extends lineup {
 
 				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
 
-				item[key].map((itemKey) => {
-					this.decorateArtist(itemKey, ul);
+				item[key].map((itemKey, index) => {
+					this.decorateArtist(itemKey, ul, index);
 				});
 
 				section.appendChild(ul);
