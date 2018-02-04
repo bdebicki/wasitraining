@@ -1963,13 +1963,13 @@
 					"others": [
 						{"artist": "Arca (DJ Set)", "sliceDecorator": {"slice": "(DJ Set)", "style": "down"}, "firstOnLine": true},
 						"Black Coffee",
-						{"artist": "Natalia Przybysz", "forceOrder": "3"},
-						{"artist": "Quebonafide", "forceOrder": "4"},
-						{"artist": "Sorry Boys", "forceOrder": "5", "firstOnLine": true},
+						{"artist": "Natalia Przybysz", "forceOrder": 3},
+						{"artist": "Quebonafide", "forceOrder": 4},
+						{"artist": "Sorry Boys", "forceOrder": 5, "firstOnLine": true},
 						"Enzu",
 						"Flirtini",
-						{"artist": "Wacław Zimpel/Kuba Ziołek", "forceOrder": "8"},
-						{"artist": "Holak", "forceOrder": "9", "firstOnLine": true},
+						{"artist": "Wacław Zimpel/Kuba Ziołek", "forceOrder": 8},
+						{"artist": "Holak", "forceOrder": 9, "firstOnLine": true},
 						"Gverilla",
 						"Mery Spolsky"
 					]
@@ -2049,7 +2049,7 @@
 					"lvl2": [
 						{"artist": "Dua Lipa", "firstOnLine": true},
 						"Nicolas Jaar",
-						{"artist": "Tyga", "forceOrder": "3"},
+						{"artist": "Tyga", "forceOrder": 3},
 						"O.S.T.R."
 					],
 					"others": [
