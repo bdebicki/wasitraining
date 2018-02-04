@@ -1995,11 +1995,11 @@
 					],
 					"others": [
 						{"artist": "A_GIM", "firstOnLine": true},
+						{"artist": "Bownik", "firstOnLine": true, "forceOrder": 6},
 						"Bitamina",
 						"Blanck Mass",
 						"Daniel Avery",
 						"Hades",
-						"Bownik",
 						"Kari",
 						"Marcin Krupa",
 						"New People",
@@ -2021,7 +2021,7 @@
 						{"artist": "Brodka", "firstOnLine": true},
 						{"artist": "The Dumplings", "sortBy": "Dumplings"},
 						"Grammatik",
-						"JMSN",
+						{"artist": "JMSN", "firstOnLine": true},
 						"Kiasmos",
 						"Tiga",
 						"Warpaint"
@@ -2032,7 +2032,7 @@
 						"Dasein",
 						"Deas",
 						"Hańba!",
-						"Majlo",
+						{"artist": "Majlo", "firstOnLine": true},
 						"Ralph Kaminski"
 					]
 				}
@@ -2058,7 +2058,7 @@
 						"Duit",
 						"Julia Pietrucha",
 						"Kevin Morby",
-						"Krzysztof Zalewski",
+						{"artist": "Krzysztof Zalewski", "firstOnLine": true},
 						"Monki",
 						"Niemoc",
 						"Seltron 400",
