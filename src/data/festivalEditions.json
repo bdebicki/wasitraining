@@ -2062,7 +2062,7 @@
 						"Monki",
 						"Niemoc",
 						"Seltron 400",
-						"The Shelters",
+						{"artist": "The Shelters", "firstOnLine": true},
 						"Urbanski"
 					]
 				}

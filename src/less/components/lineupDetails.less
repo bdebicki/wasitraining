@@ -1,5 +1,8 @@
 #lineup {
-	grid-area: edition;
+	&,
+	&:before {
+		grid-area: edition;
+	}
 
 	.dialogbox__header:after {
 		.lineup--edition2017& {
@@ -54,9 +57,9 @@
 }
 
 .lineupArtists {
-	&--edition2017 {
-		@newLineOffset: 6px;
+	margin-top: 13px;
 
+	&--edition2017 {
 		font-family: @edition2017-fontFamily;
 		font-weight: @edition2017-fontWeight;
 		text-transform: uppercase;
@@ -102,8 +105,6 @@
 					}
 				}
 				&--others {
-					//margin-left: -@newLineOffset;
-
 					.lineupArtists__artist {
 						font-size: @edition2017-fontSize-others;
 						letter-spacing: @edition2017-textSpacing-others;

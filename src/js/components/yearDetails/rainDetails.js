@@ -1,6 +1,6 @@
 'use strict';
 
-import { LINK, RAIN, DIALOGBOX} from '../../enums/elementHandlers';
+import { LINK, RAIN } from '../../enums/elementHandlers';
 import { addVideo, addSVGmask, svgType } from '../../utils/addElement';
 import * as dialogbox from '../../utils/addDialogbox';
 import { setIcon } from '../../utils/setIcon';
@@ -191,6 +191,7 @@ export class rainDetails extends edition {
 		const rainDetailsDialogbox = dialogbox.addDialogbox({
 			id: RAIN.DETAILS_ID,
 			classNames: [RAIN.DETAILS_CLASS],
+			stretched: true,
 			title: 'Rain',
 			content: ul,
 			closeAction: this.toggleDetails,

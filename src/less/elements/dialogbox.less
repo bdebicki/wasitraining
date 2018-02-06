@@ -1,12 +1,30 @@
 .dialogbox {
-	.strechPosition();
 	display: none;
-	flex-direction: column;
-	z-index: 2;
-	background: fade(#fff, 97%);
+	align-self: center;
+	justify-self: center;
 
+	&--bg-stretched {
+		&:before {
+			.strechPosition();
+			content: '';
+			z-index: 0;
+			background: fade(#fff, 97%);
+		}
+
+		.dialogbox__header,
+		.dialogbox__content {
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+	&--stretched {
+		.strechPosition();
+		z-index: 2;
+		background: fade(#fff, 97%);
+	}
 	&--isVisible {
-		display: flex;
+		display: block;
 	}
 
 	&__header {
@@ -26,5 +44,10 @@
 	}
 	&__close {
 		order: 3;
+	}
+
+	&__inactive-helper {
+		opacity: 0.03;
+		pointer-events: none;
 	}
 }

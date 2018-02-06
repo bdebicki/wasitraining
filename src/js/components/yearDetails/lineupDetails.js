@@ -47,7 +47,7 @@ export class lineupDetails extends lineup {
 
 	toggleLineup(e) {
 		e.preventDefault();
-		dialogbox.toggleDialogboxAction(`#${LINEUP.SECTION_ID}`);
+		dialogbox.toggleDialogboxAction(`#${LINEUP.SECTION_ID}`, `#${EDITION.EDITION_DETAILS_ID}`);
 	}
 
 	renderLineupLink() {
@@ -133,7 +133,7 @@ export class lineupDetails extends lineup {
 
 			if (index > 0) {
 				let newLine = document.createElement('li');
-				
+
 				newLine.classList.add(LINEUP.ARTISTS_NEW_LINE_CLASS);
 
 				fragment.appendChild(newLine);
@@ -288,13 +288,14 @@ export class lineupDetails extends lineup {
 		const dialogboxLineup = dialogbox.addDialogbox({
 			id: LINEUP.SECTION_ID,
 			classNames: [`${LINEUP.EDITION_CLASS}${newYear}`, 'dialogbox--isVisible'],
+			closeAction: dialogbox.toggleDialogboxWithInactive,
 			dataAttr: [['year', `${newYear}`]],
 			title: `${DIALOGBOX_HEADLINE_TEXT} ${newYear}`,
 			content: section,
 			closeTitle: 'hide lineup details'
 		});
 
-		section.classList.add(LINEUP.ARTISTS_CLASS, `${LINEUP.ARTISTS_EDITION_CLASS}${newYear}`);
+		section.classList.add(DIALOGBOX.CONTENT_CLASS, LINEUP.ARTISTS_CLASS, `${LINEUP.ARTISTS_EDITION_CLASS}${newYear}`);
 		section.appendChild(this.getLineupByType());
 
 		return dialogboxLineup;
