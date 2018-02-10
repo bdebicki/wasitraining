@@ -260,16 +260,10 @@ export class lineup {
 				}
 				return input;
 			};
-			const valA = val(a);
-			const valB = val(b);
+			const valA = val(a).toLowerCase();
+			const valB = val(b).toLowerCase();
 
-			if(valA < valB) {
-				return -1;
-			}
-			if(valA > valB) {
-				return 1;
-			}
-			return 0;
+			return valA.localeCompare(valB, 'pl', { sensitivity: 'accent'});
 		});
 
 		sortArray.map((item) => { // push artists with 'forceOrder' to new array (to right position)
