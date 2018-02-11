@@ -17,10 +17,6 @@ const lineupLvlToClassMap = {
 	[LINEUP_LEVELS.OTHERS]: LINEUP.ARTISTS_OTHERS_CLASS,
 	[LINEUP_LEVELS.DAILY_ARTISTS]: LINEUP.ARTISTS_DAILY_CLASS,
 };
-const dailyLvlToClassMap = {
-	[LINEUP_LEVELS.HEADLINERS]: LINEUP.ARTISTS_DAILY_HEADLINER_CLASS,
-	[LINEUP_LEVELS.LVL1]: LINEUP.ARTISTS_DAILY_LVL1_CLASS,
-};
 const artistDecoratorToClassMap = {
 	[ARTIST_DECORATORS.PROMOTED]: LINEUP.ARTIST_PROMOTED_CLASS,
 	[ARTIST_DECORATORS.EXPANDED]: LINEUP.ARTIST_EXPANDED_CLASS,
@@ -116,6 +112,12 @@ export class lineupDetails extends lineup {
 		let artistName;
 
 		li.classList.add(LINEUP.ARTIST_CLASS);
+		if(artistLvl === LINEUP_LEVELS.HEADLINERS) {
+			li.classList.add(`${LINEUP.ARTIST_CLASS}--headliner`);
+		} else {
+			li.classList.add(`${LINEUP.ARTIST_CLASS}--${artistLvl}`);
+		}
+
 		if (artistKey[ARTIST_KEYS.DECORATOR]) {
 			li.classList.add(artistDecoratorToClassMap[artistKey[ARTIST_KEYS.DECORATOR]]);
 		}
@@ -164,10 +166,6 @@ export class lineupDetails extends lineup {
 			li.textContent = artistName;
 		}
 
-		if (artistLvl) {
-			li.classList.add(dailyLvlToClassMap[artistLvl]);
-		}
-
 		fragment.appendChild(li);
 
 		target.appendChild(fragment);
@@ -194,7 +192,7 @@ export class lineupDetails extends lineup {
 			ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
 
 			lineup[key].map((item, index) => {
-				this.decorateArtist(item, ul, index);
+				this.decorateArtist(item, ul, index, key);
 			});
 
 			fragment.appendChild(ul);
@@ -228,7 +226,7 @@ export class lineupDetails extends lineup {
 				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
 
 				lineup[key].map((item, index) => {
-					this.decorateArtist(item, ul, index);
+					this.decorateArtist(item, ul, index, key);
 				});
 
 				fragment.appendChild(ul);
@@ -253,7 +251,7 @@ export class lineupDetails extends lineup {
 				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
 
 				item[key].map((itemKey, index) => {
-					this.decorateArtist(itemKey, ul, index);
+					this.decorateArtist(itemKey, ul, index, key);
 				});
 
 				section.appendChild(ul);

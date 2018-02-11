@@ -59,12 +59,32 @@
 .lineupArtists {
 	margin-top: 13px;
 
-	&__newLine {
-		flex-basis: 100%;
+	&__lvl {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 	}
+
+	&__newLine {
+		height: 0;
+		flex-basis: 100%;
+		overflow: hidden;
+	}
+
 	&__artist {
 		&--canceled {
-			text-decoration: line-through;
+			position: relative;
+			opacity: 0.5;
+
+			&:before {
+				content: '';
+				height: 1px;
+				position: absolute;
+				top: ~'calc(50% - 2px)';
+				right: 0;
+				left: 0;
+				background: currentColor;
+			}
 		}
 		&--replacement {
 			text-decoration: overline;
@@ -82,48 +102,21 @@
 					margin-bottom: @edition2017-sectionsSpace;
 				}
 			}
+
 			&__lvl {
 				max-width: 390px;
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
 
 				&--headliners {
 					margin-bottom: @edition2017-lvlSpace-headliners;
-
-					.lineupArtists__artist {
-						font-size: @edition2017-fontSize-headliners;
-						font-weight: @edition2017-fontWeight-headliners;
-						letter-spacing: @edition2017-textSpacing-headliners;
-						line-height: @edition2017-lineHeight-headliners;
-					}
 				}
 				&--lvl1 {
 					margin-bottom: @edition2017-lvlSpace-lvl1;
-
-					.lineupArtists__artist {
-						font-size: @edition2017-fontSize-lvl1;
-						letter-spacing: @edition2017-textSpacing-lvl1;
-						line-height: @edition2017-lineHeight-lvl1;
-					}
 				}
 				&--lvl2 {
 					margin-bottom: @edition2017-lvlSpace-lvl2;
-
-					.lineupArtists__artist {
-						font-size: @edition2017-fontSize-lvl2;
-						letter-spacing: @edition2017-textSpacing-lvl2;
-						line-height: @edition2017-lineHeight-lvl2;
-					}
-				}
-				&--others {
-					.lineupArtists__artist {
-						font-size: @edition2017-fontSize-others;
-						letter-spacing: @edition2017-textSpacing-others;
-						line-height: @edition2017-lineHeight-others;
-					}
 				}
 			}
+
 			&__artist {
 				&:not(:only-child):not(.lineupArtists__artist--firstOnLine) {
 					&:before {
@@ -133,6 +126,27 @@
 						color: @edition2017-leadColor;
 						font-weight: @edition2017-fontWeight-headliners;
 					}
+				}
+				&--headliner {
+					font-size: @edition2017-fontSize-headliners;
+					font-weight: @edition2017-fontWeight-headliners;
+					letter-spacing: @edition2017-textSpacing-headliners;
+					line-height: @edition2017-lineHeight-headliners;
+				}
+				&--lvl1 {
+					font-size: @edition2017-fontSize-lvl1;
+					letter-spacing: @edition2017-textSpacing-lvl1;
+					line-height: @edition2017-lineHeight-lvl1;
+				}
+				&--lvl2 {
+					font-size: @edition2017-fontSize-lvl2;
+					letter-spacing: @edition2017-textSpacing-lvl2;
+					line-height: @edition2017-lineHeight-lvl2;
+				}
+				&--others {
+					font-size: @edition2017-fontSize-others;
+					letter-spacing: @edition2017-textSpacing-others;
+					line-height: @edition2017-lineHeight-others;
 				}
 			}
 		}
@@ -145,43 +159,15 @@
 		.lineupArtists {
 			&__lvl {
 				max-width: 495px;
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
 
 				&--headliners {
 					margin-bottom: @edition2016-lvlSpace-headliners;
-
-					.lineupArtists__artist {
-						font-family: @edition2016-fontFamily-headliners;
-						font-size: @edition2016-fontSize-headliners;
-						font-weight: @edition2016-fontWeight-headliners;
-						line-height: @edition2016-lineHeight-headliners;
-					}
 				}
 				&--lvl1 {
 					margin-bottom: @edition2016-lvlSpace-lvl1;
-
-					.lineupArtists__artist {
-						font-size: @edition2016-fontSize-lvl1;
-						letter-spacing: @edition2016-textSpacing-lvl1;
-						line-height: @edition2016-lineHeight-lvl1;
-					}
 				}
 				&--lvl2 {
 					margin-bottom: @edition2016-lvlSpace-lvl2;
-
-					.lineupArtists__artist {
-						font-size: @edition2016-fontSize-lvl2;
-						letter-spacing: @edition2016-textSpacing-lvl2;
-						line-height: @edition2016-lineHeight-lvl2;
-					}
-				}
-				&--others {
-					.lineupArtists__artist {
-						font-size: @edition2016-fontSize-others;
-						line-height: @edition2016-lineHeight-others;
-					}
 				}
 			}
 
@@ -194,6 +180,26 @@
 						color: @edition2016-leadColor;
 					}
 				}
+				&--headliners {
+					font-family: @edition2016-fontFamily-headliners;
+					font-size: @edition2016-fontSize-headliners;
+					font-weight: @edition2016-fontWeight-headliners;
+					line-height: @edition2016-lineHeight-headliners;
+				}
+				&--lvl1 {
+					font-size: @edition2016-fontSize-lvl1;
+					letter-spacing: @edition2016-textSpacing-lvl1;
+					line-height: @edition2016-lineHeight-lvl1;
+				}
+				&--lvl2 {
+					font-size: @edition2016-fontSize-lvl2;
+					letter-spacing: @edition2016-textSpacing-lvl2;
+					line-height: @edition2016-lineHeight-lvl2;
+				}
+				&--others {
+					font-size: @edition2016-fontSize-others;
+					line-height: @edition2016-lineHeight-others;
+				}
 			}
 
 			&__slice {
@@ -203,6 +209,71 @@
 				&--multiline {
 					display: inline-block;
 					width: 36px;
+				}
+			}
+		}
+	}
+	&--edition2015 {
+		font-family: @edition2015-fontFamily;
+		font-weight: @edition2015-fontWeight;
+		text-transform: uppercase;
+
+		.lineupArtists {
+			&__day {
+				&:not(:last-child) {
+					margin-bottom: @edition2015-sectionsSpace;
+				}
+			}
+
+			&__lvl {
+				width: 490px;
+
+				&--headliners {
+					margin-bottom: @edition2015-lvlSpace-headliners;
+				}
+				&--lvl1 {
+					margin-bottom: @edition2015-lvlSpace-lvl1;
+				}
+				&--lvl2 {
+					margin-bottom: @edition2015-lvlSpace-lvl2;
+				}
+			}
+
+			&__artist {
+				&:not(:only-child):not(.lineupArtists__artist--firstOnLine) {
+					margin-left: @edition2015-separatorSpace;
+				}
+
+				&--headliner {
+					font-size: @edition2015-fontSize-headliners;
+					font-weight: @edition2015-fontWeight-headliners;
+					letter-spacing: @edition2015-textSpacing-headliners;
+					line-height: @edition2015-lineHeight-headliners;
+				}
+				&--lvl1 {
+					font-size: @edition2015-fontSize-lvl1;
+					letter-spacing: @edition2015-textSpacing-lvl1;
+					line-height: @edition2015-lineHeight-lvl1;
+				}
+				&--lvl2 {
+					font-size: @edition2015-fontSize-lvl2;
+					letter-spacing: @edition2015-textSpacing-lvl2;
+					line-height: @edition2015-lineHeight-lvl2;
+				}
+				&--others {
+					font-size: @edition2015-fontSize-others;
+					letter-spacing: @edition2015-textSpacing-others;
+					line-height: @edition2015-lineHeight-others;
+				}
+				&--canceled {
+					font-weight: @edition2015-fontWeight-canceled;
+					letter-spacing: @edition2015-textSpacing-canceled;
+				}
+				&--marked {
+					color: @edition2015-leadColor;
+				}
+				&--promoted {
+					font-weight: @edition2015-fontWeight-promoted;
 				}
 			}
 		}

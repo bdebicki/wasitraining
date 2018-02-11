@@ -1679,21 +1679,21 @@
 						{"artist": "Drake", "marked": true}
 					],
 					"lvl1": [
-						{"artist": "Alt-J", "forceOrder": 1},
+						{"artist": "Alt-J", "forceOrder": 1, "firstOnLine": true},
 						{"artist": "Alabama Shakes", "marked": true},
 						{"artist": "A$AP Rocky", "forceOrder": 3},
-						{"artist": "Chet Faker", "marked": true},
+						{"artist": "Chet Faker", "marked": true, "firstOnLine": true},
 						"Die Antwoord",
 						{"artist": "Modest Mouse", "marked": true}
 					],
 					"lvl2": [
-						"Father John Misty",
+						{"artist": "Father John Misty", "firstOnLine": true},
 						{"artist": "Kodaline", "marked": true},
 						"Natalia Przybysz",
 						{"artist": "Two Gallants", "marked": true}
 					],
 					"others": [
-						"HV/NOON",
+						{"artist": "HV/NOON", "firstOnLine": true},
 						{"artist": "Klaves", "marked": true},
 						"Milky Wishlake",
 						{"artist": "W.E.N.A. x E.A.B.S.", "marked": true},
@@ -1713,26 +1713,26 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "The Libertines", "marked": true},
+						{"artist": "The Libertines", "marked": true, "firstOnLine": true},
 						"Major Lazer"
 					],
 					"lvl1": [
-						{"artist": "Enter Shikari", "marked": true},
+						{"artist": "Enter Shikari", "marked": true, "firstOnLine": true},
 						"Faithless 2.0",
 						{"artist": "Refused", "marked": true},
-						{"artist": "Kendrick Lamar", "canceled": true}
+						{"artist": "Kendrick Lamar", "marked": true, "canceled": true, "forceOrder": 4}
 					],
 					"lvl2": [
-						"Curly Heads",
+						{"artist": "Curly Heads", "firstOnLine": true},
 						{"artist": "Django Django", "marked": true},
 						"Eagles Of Death Metal",
-						{"artist": "Fisz Emade Tworzywo", "marked": true},
+						{"artist": "Fisz Emade Tworzywo", "marked": true, "firstOnLine": true},
 						"Marmozets",
 						{"artist": "Of Montreal", "marked": true},
 						"Tom Odell"
 					],
 					"others": [
-						"Fismoll",
+						{"artist": "Fismoll", "firstOnLine": true},
 						{"artist": "Małe Miasta", "marked": true, "forceOrder": 2},
 						"Mary Komasa",
 						{"artist": "Oxford Drama", "marked": true},
@@ -1752,24 +1752,24 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "Mumford & Sons", "marked": true}
+						{"artist": "Mumford & Sons", "marked": true, "firstOnLine": true}
 					],
 					"lvl1": [
-						"D'Angelo and The Vanguard",
-						{"artist": "Of Monsters and Men", "marked": true},
+						{"artist": "D'Angelo and The Vanguard", "firstOnLine": true},
+						{"artist": "Of Monsters and Men", "marked": true, "firstOnLine": true},
 						{"artist": "The Prodigy", "decorator": "promoted"}
 					],
 					"lvl2": [
-						"Jonny Greenwood & LCO",
+						{"artist": "Jonny Greenwood & LCO", "firstOnLine": true},
 						{"artist": "José Gonzalez", "marked": true},
 						"Julia Marcell",
-						{"artist": "Swans", "marked": true},
+						{"artist": "Swans", "marked": true, "firstOnLine": true},
 						"The Dumplings",
 						{"artist": "The Vaccines", "marked": true},
 						"Thurston Moore"
 					],
 					"others": [
-						{"artist": "Agyness B. Marry", "marked": true},
+						{"artist": "Agyness B. Marry", "marked": true, "firstOnLine": true},
 						"Min T",
 						{"artist": "Nervy", "marked": true},
 						{"artist": "Taco Hemingway", "visible": false},
@@ -1788,25 +1788,25 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "Kasabian", "marked": true},
+						{"artist": "Kasabian", "marked": true, "firstOnLine": true},
 						"Disclosure"
 					],
 					"lvl1": [
-						{"artist": "Flume", "marked": true},
+						{"artist": "Flume", "marked": true, "firstOnLine": true},
 						"Hozier",
 						{"artist": "St. Vincent", "marked": true}
 					],
 					"lvl2": [
-						"Domowe Melodie",
+						{"artist": "Domowe Melodie", "firstOnLine": true},
 						{"artist": "George Fitzgerald", "marked": true},
 						{"artist": "Kaytranada", "canceled": true},
-						{"artist": "Lao Che", "marked": true},
+						{"artist": "Lao Che", "marked": true, "firstOnLine": true},
 						{"artist": "Skubas", "forceOrder": 5},
 						{"artist": "Ratking", "marked": true},
 						"Years & Years"
 					],
 					"others": [
-						{"artist": "The Feral Trees", "marked": true},
+						{"artist": "The Feral Trees", "marked": true, "firstOnLine": true},
 						"Trupa Trupa",
 						{"artist": "Patrick The Pan", "visible": false},
 						{"artist": "Hudson Mohawke", "visible": false},
