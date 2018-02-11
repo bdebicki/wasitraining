@@ -1842,19 +1842,25 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2016"
 				],
 				"lineup": {
-					"headliners": ["Florence+The Machine"],
+					"headliners": [{"artist": "Florence+The Machine", "firstOnLine": true}],
 					"lvl1": [
 						"Mac Demarco",
 						"PJ Harvey",
 						"Savages",
-						"Skepta",
+						{"artist": "Skepta", "firstOnLine": true},
 						"Tame Impala",
-						"The lvl4 Shadow Puppets"
+						{"artist": "The Last Shadow Puppets", "firstOnLine": true}
 					],
-					"lvl2": ["DJ Tennis", "Flirtini", "Lunice", "Małpa", "Xxanaxx"],
+					"lvl2": [
+						"DJ Tennis",
+						"Flirtini",
+						{"artist": "Lunice", "firstOnLine": true},
+						"Małpa",
+						"Xxanaxx"
+					],
 					"others": [
 						"Chino",
-						"Heroes Get Remembered",
+						{"artist": "Heroes Get Remembered", "firstOnLine": true},
 						"Lxmp",
 						"Otsochodzi",
 						"Shy Albatross",
@@ -1871,10 +1877,18 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2016"
 				],
 				"lineup": {
-					"headliners": ["Red Hot Chili Peppers"],
+					"headliners": [{"artist": "Red Hot Chili Peppers", "firstOnLine": true}],
 					"lvl1": ["Beirut", "Caribou", "Foals", "M83"],
-					"lvl2": ["KAMP!", "Maria Peszek", "Rebeka", "Section Boyz"],
-					"others": ["An On Bast", "Baasch", "Czeluść (Jutro X Kosa)", "Kroki", "Piotr Zioła", "Sonar", "V/O"]
+					"lvl2": ["KAMP!", "Maria Peszek", "Łona Webber", "Rebeka", "Section Boyz"],
+					"others": [
+						{"artist": "An On Bast", "firstOnLine": true},
+						"Baasch",
+						"Czeluść (Jutro X Kosa)",
+						"Kroki",
+						"Piotr Zioła",
+						"Sonar",
+						"V/O"
+					]
 				}
 			}, {
 				"day": "1st July",
@@ -1884,14 +1898,23 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2016"
 				],
 				"lineup": {
-					"headliners": ["Lcd Soundsystem", "Sigur Rós"],
-					"lvl1": ["Dawid Podsiadło", "Kurt Ville & The Violators", "Paul Kalkbrenner", "Wiz Khalifa"],
+					"headliners": [
+						{"artist": "Lcd Soundsystem", "firstOnLine": true},
+						"Sigur Rós"
+					],
+					"lvl1": [
+						"Dawid Podsiadło",
+						{"artist": "Kurt Ville & The Violators", "firstOnLine": true},
+						{"artist": "Paul Kalkbrenner", "firstOnLine": true},
+						"Wiz Khalifa"
+					],
 					"lvl2": [
-						"Catz ’n Dogs", "Kortez",
+						{"artist": "Catz ’n Dogs", "firstOnLine": true},
+						"Kortez",
 						"Nothing but Thieves",
-						"Ptaki",
+						{"artist": "Ptaki", "firstOnLine": true},
 						"Rysy",
-						"Vince Staples",
+						{"artist": "Wince Staples", "firstOnLine": true},
 						{
 							"artist": "Zbigniew Wodeski with Mitch & Mitch Orchestra and Choir",
 							"sliceDecorator": [
@@ -1904,7 +1927,7 @@
 						"Grobel",
 						"Jóga",
 						"Kuba Sojka",
-						"Olivier Heim",
+						{"artist": "Olivier Heim", "firstOnLine": true},
 						"Suumoo",
 						"Zamilska"
 					]
@@ -1917,8 +1940,17 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2016"
 				],
 				"lineup": {
-					"headliners": ["Pharrell Williams", "Kygo"],
-					"lvl1": ["At The Drive-in", "Bastille", "Chvrches", "Grimes", "The 1975"],
+					"headliners": [
+						{"artist": "Pharrell Williams", "firstOnLine": true},
+						"Kygo"
+					],
+					"lvl1": [
+						{"artist": "At The Drive-in", "firstOnLine": true},
+						"Bastille",
+						{"artist": "Chvrches", "firstOnLine": true},
+						"Grimes",
+						"The 1975"
+					],
 					"lvl2": ["Jacek Sienkiewicz", "Rasmentalism"],
 					"others": [
 						"Coldair",
@@ -1927,7 +1959,7 @@
 						"Nagrobki",
 						"Piotr Bejnar",
 						"Soom T",
-						"Spoken Love",
+						{"artist": "Spoken Love", "firstOnLine": true},
 						"Terrific Sunday",
 						"We Draw A"
 					]

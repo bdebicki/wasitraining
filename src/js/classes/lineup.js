@@ -263,6 +263,12 @@ export class lineup {
 			const valA = val(a).toLowerCase();
 			const valB = val(b).toLowerCase();
 
+			// if(valA < valB) {
+			// 	return -1;
+			// } else if(valA > valB) {
+			// 	return 1;
+			// }
+			// return 0;
 			return valA.localeCompare(valB, 'pl', { sensitivity: 'accent'});
 		});
 
