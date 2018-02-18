@@ -72,6 +72,12 @@
 	}
 
 	&__artist {
+		display: grid;
+		grid-column-gap: 0;
+		grid-row-gap: 0;
+		grid-template-columns: auto auto;
+		grid-template-areas: "artist separateDecorator";
+
 		&--canceled {
 			position: relative;
 			opacity: 0.5;
@@ -86,8 +92,23 @@
 				background: currentColor;
 			}
 		}
-		&--replacement {
-			text-decoration: overline;
+		&--nextLineArtist {
+			display: flex;
+
+			&:before {
+				content: attr(data-next-line-artist);
+				order: 3;
+			}
+
+			&:after {
+				order: 2;
+			}
+		}
+	}
+
+	&__slice {
+		&--previousLine {
+			display: none;
 		}
 	}
 
@@ -274,6 +295,112 @@
 				}
 				&--promoted {
 					font-weight: @edition2015-fontWeight-promoted;
+				}
+			}
+		}
+	}
+	&--edition2014 {
+		color: @edition2014-leadColor;
+		font-family: @edition2014-fontFamily;
+		font-weight: @edition2014-fontWeight;
+		text-transform: uppercase;
+
+		.lineupArtists {
+			&__lvl {
+				width: 485px;
+
+				&--headliners {
+					width: 447px;
+					margin-bottom: @edition2014-lvlSpace-headliners;
+					margin-left: 13px;
+					flex-direction: column;
+
+					.lineupArtists__artist--headliner {
+						&:nth-child(2n) {
+							align-self: flex-end;
+						}
+						&:nth-child(3) {
+							padding-left: 17px;
+						}
+					}
+				}
+				&--lvl1 {
+					margin-bottom: @edition2014-lvlSpace-lvl1;
+
+					.lineupArtists__artist--expanded {
+						letter-spacing: @edition2014-textSpacing-lvl1Expanded;
+					}
+					.lineupArtists__artist--collapsed {
+						letter-spacing: @edition2014-textSpacing-lvl1Collapsed;
+					}
+				}
+				&--lvl2 {
+					margin-bottom: @edition2014-lvlSpace-lvl2;
+
+					.lineupArtists__artist--expanded {
+						letter-spacing: @edition2014-textSpacing-lvl2Expanded;
+					}
+					.lineupArtists__artist--collapsed {
+						letter-spacing: @edition2014-textSpacing-lvl2Collapsed;
+					}
+
+					.lineupArtists__multipleArtists {
+						display: grid;
+						grid-column-gap: 0;
+						grid-row-gap: 0;
+						grid-template-columns: auto auto;
+						grid-template-rows: 8px 8px;
+						grid-template-areas: "canceled separator"
+											 "replacement separator";
+
+						&__artist {
+							font-size: 10px;
+							letter-spacing: 15 * @textSpacingToEmMultiplier;
+							line-height: 8px;
+						}
+
+						.lineupArtists__artist--canceled {
+							letter-spacing: 80 * @textSpacingToEmMultiplier;
+						}
+
+						&:after {
+							grid-area: separator;
+						}
+					}
+
+				}
+			}
+
+			&__artist {
+				&:not(:only-child):not(:last-child):not(.lineupArtists__artist--headliner) {
+					&:after {
+						content: @edition2014-separatorStyle;
+						margin-right: @edition2014-separatorSpace;
+					}
+				}
+
+				&--headliner {
+					color: @edition2014-fontColor-headliners;
+					font-family: @edition2014-fontFamily-headliners;
+					font-size: @edition2014-fontSize-headliners;
+					font-weight: @edition2014-fontWeight-headliners;
+					letter-spacing: @edition2014-textSpacing-headliners;
+					line-height: @edition2014-lineHeight-headliners;
+				}
+				&--lvl1 {
+					font-size: @edition2014-fontSize-lvl1;
+					letter-spacing: @edition2014-textSpacing-lvl1;
+					line-height: @edition2014-lineHeight-lvl1;
+				}
+				&--lvl2 {
+					font-size: @edition2014-fontSize-lvl2;
+					letter-spacing: @edition2014-textSpacing-lvl2;
+					line-height: @edition2014-lineHeight-lvl2;
+				}
+				&--others {
+					font-size: @edition2014-fontSize-others;
+					letter-spacing: @edition2014-textSpacing-others;
+					line-height: @edition2014-lineHeight-others;
 				}
 			}
 		}

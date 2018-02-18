@@ -24,6 +24,8 @@ export const ARTIST_KEYS = {
 	SEPARATOR_MIDDLE: 'separatorMiddle',
 	FIRST_ON_LINE: 'firstOnLine',
 	LAST_ON_LINE: 'lastOnLine',
+	BREAK_LINE: 'breakLine',
+	NEXT_LINE_ARTIST: 'nextLineArtist',
 };
 
 export const ARTIST_DECORATORS = {
@@ -49,4 +51,5 @@ export const ARTIST_SLICES_STYLES = {
 	EXPANDED: 'expanded',
 	COLLAPSED: 'collapsed',
 	INDENTED: 'indented',
+	PREVIOUS_LINE: 'previousLine',
 };

@@ -1556,10 +1556,8 @@
 						{
 							"artist": "Pink Freud Plays Autechre",
 							"breakLine": true,
-							"sliceDecorator": [
-								{"slice": "Pink Freud", "style": "expanded"},
-								{"slice": "Plays Autechre", "style": ["collapsed", "newLine"]}
-							]
+							"decorator": "collapsed",
+							"sliceDecorator": {"slice": "Pink Freud", "style": "previousLine"}
 						},
 						"Bokka",
 						{"artist": "Pustki", "decorator": "collapsed"},
@@ -1633,8 +1631,8 @@
 						"Julio Bashmore"
 					],
 					"lvl2": [
-						{"artist": "The Dumplings", "canceled": true, "decorator": "collapsed"},
-						{"artist": "Domowe Melodie", "replacement": true},
+						{"artist": "The Dumplings", "canceled": true},
+						{"artist": "Domowe Melodie", "sortBy": "The Dumplings Replacement", "replacement": "The Dumplings"},
 						{"artist": "Plastic", "decorator": "collapsed"},
 						"Kari",
 						"Król"

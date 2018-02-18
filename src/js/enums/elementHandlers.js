@@ -118,6 +118,7 @@ const lineupClassBuilder = {
 	lvl: 'lineupArtists__lvl',
 	artist: 'lineupArtists__artist',
 	slice: 'lineupArtists__slice',
+	multipleArtists: 'lineupArtists__multipleArtists',
 };
 export const LINEUP = {
 	SECTION_ID: lineupClassBuilder.section,
@@ -143,10 +144,13 @@ export const LINEUP = {
 	ARTIST_MARKED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.MARKED}`,
 	ARTIST_MULTILINE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.MULTILINE}`,
 	ARTIST_CANCELED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.CANCELED}`,
-	ARTIST_REPLACEMENT_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.REPLACEMENT}`,
+	ARTIST_REPLACEMENT_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.REPLACEMENT}`, // never used
 	ARTIST_SEPARATOR_MIDDLE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.SEPARATOR_MIDDLE}`,
 	ARTIST_FIRST_ON_LINE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.FIRST_ON_LINE}`,
 	ARTIST_LAST_ON_LINE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.LAST_ON_LINE}`,
+	ARTIST_NEXT_LINE_ARTIST_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.NEXT_LINE_ARTIST}`,
+	ARTIST_MULTIPLE_ARTISTS_CLASS: lineupClassBuilder.multipleArtists,
+	ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS: `${lineupClassBuilder.multipleArtists}__artist`,
 	ARTIST_SLICE_CLASS: `${lineupClassBuilder.slice}`,
 	ARTIST_SLICE_UP_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.UP}`,
 	ARTIST_SLICE_DOWN_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.DOWN}`,
@@ -157,6 +161,7 @@ export const LINEUP = {
 	ARTIST_SLICE_EXPANDED_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.EXPANDED}`,
 	ARTIST_SLICE_COLLAPSED_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.COLLAPSED}`,
 	ARTIST_SLICE_INDENTED_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.INDENTED}`,
+	ARTIST_SLICE_PREVIOUS_LINE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.PREVIOUS_LINE}`,
 };
 
 const bgClassBuilder = LAYOUT.BG_VIDEO_ID;

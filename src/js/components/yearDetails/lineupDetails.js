@@ -3,6 +3,7 @@
 import { lineup } from "../../classes/lineup";
 import { LINEUP, DIALOGBOX, LINK, EDITION } from "../../enums/elementHandlers";
 import { LINEUP_LEVELS, ARTIST_KEYS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_SLICES_PROPS } from '../../enums/lineup';
+import { ARTIST_CANCELED } from '../../enums/content';
 import * as dialogbox from '../../utils/addDialogbox';
 import { setIcon } from "../../utils/setIcon";
 import { icons } from "../../utils/iconsLibrary";
@@ -34,6 +35,7 @@ const artistSliceDecoratorToClassMap = {
 	[ARTIST_SLICES_STYLES.EXPANDED]: LINEUP.ARTIST_SLICE_EXPANDED_CLASS,
 	[ARTIST_SLICES_STYLES.COLLAPSED]: LINEUP.ARTIST_SLICE_COLLAPSED_CLASS,
 	[ARTIST_SLICES_STYLES.INDENTED]: LINEUP.ARTIST_SLICE_INDENTED_CLASS,
+	[ARTIST_SLICES_STYLES.PREVIOUS_LINE]: LINEUP.ARTIST_SLICE_PREVIOUS_LINE_CLASS,
 };
 
 export class lineupDetails extends lineup {
@@ -111,7 +113,16 @@ export class lineupDetails extends lineup {
 		let li = document.createElement('li');
 		let artistName;
 
+		if (artistKey[ARTIST_KEYS.ARTIST] && !artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
+			artistName = artistKey[ARTIST_KEYS.ARTIST];
+		} else if (artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
+			artistName = artistKey[ARTIST_KEYS.DISPLAY_NAME];
+		} else {
+			artistName = artistKey;
+		}
+
 		li.classList.add(LINEUP.ARTIST_CLASS);
+
 		if(artistLvl === LINEUP_LEVELS.HEADLINERS) {
 			li.classList.add(`${LINEUP.ARTIST_CLASS}--headliner`);
 		} else {
@@ -146,29 +157,52 @@ export class lineupDetails extends lineup {
 		}
 
 		if (artistKey[ARTIST_KEYS.CANCELED]) {
-			li.classList.add(LINEUP.ARTIST_CANCELED_CLASS);
-		}
-		if (artistKey[ARTIST_KEYS.REPLACEMENT]) {
-			li.classList.add(LINEUP.ARTIST_REPLACEMENT_CLASS);
-		}
+			const span = document.createElement('span');
 
-		if (artistKey[ARTIST_KEYS.ARTIST] && !artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
-			artistName = artistKey[ARTIST_KEYS.ARTIST];
-		} else if (artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
-			artistName = artistKey[ARTIST_KEYS.DISPLAY_NAME];
-		} else {
-			artistName = artistKey;
+			span.classList.add(LINEUP.ARTIST_CANCELED_CLASS);
+			span.textContent = artistName;
+			li.title = ARTIST_CANCELED;
+			li.dataset.canceledArtist = artistName;
+			li.appendChild(span);
+		}
+		if (artistKey[ARTIST_KEYS.REPLACEMENT] && typeof artistKey[ARTIST_KEYS.REPLACEMENT] !== 'string') {
+			li.classList.add(LINEUP.ARTIST_REPLACEMENT_CLASS);
 		}
 
 		if (artistKey[ARTIST_KEYS.SLICE_DECORATOR]) {
 			li.append(this.artistSliceDecorator(artistName, artistKey[ARTIST_KEYS.SLICE_DECORATOR]));
-		} else {
+		} else if (typeof artistKey[ARTIST_KEYS.REPLACEMENT] === 'string') {
+			const spanReplacement = document.createElement('span');
+			const spanCanceled = document.createElement('span');
+			const canceledArtistEl = target.querySelector(`li[data-canceled-artist='${artistKey[ARTIST_KEYS.REPLACEMENT]}']`);
+
+			spanReplacement.textContent = artistName;
+			spanReplacement.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
+			spanCanceled.textContent = canceledArtistEl.textContent;
+			spanCanceled.classList.add(LINEUP.ARTIST_CANCELED_CLASS, LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
+			spanCanceled.title = ARTIST_CANCELED;
+
+			canceledArtistEl.textContent = '';
+			canceledArtistEl.removeAttribute('title');
+			canceledArtistEl.classList.remove(LINEUP.ARTIST_CANCELED_CLASS, LINEUP.ARTIST_COLLAPSED_CLASS, LINEUP.ARTIST_EXPANDED_CLASS);
+			canceledArtistEl.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_CLASS);
+			canceledArtistEl.appendChild(spanCanceled);
+			canceledArtistEl.appendChild(spanReplacement);
+		} else if (!artistKey[ARTIST_KEYS.CANCELED]) {
 			li.textContent = artistName;
 		}
 
-		fragment.appendChild(li);
+		if (artistKey[ARTIST_KEYS.BREAK_LINE]) {
+			const previousEl = target.querySelector(`li:last-child`);
 
-		target.appendChild(fragment);
+			previousEl.classList.add(LINEUP.ARTIST_NEXT_LINE_ARTIST_CLASS);
+			previousEl.dataset[ARTIST_KEYS.NEXT_LINE_ARTIST] = artistKey[ARTIST_KEYS.SLICE_DECORATOR][ARTIST_SLICES_PROPS.SLICE];
+		}
+
+		if (typeof artistKey[ARTIST_KEYS.REPLACEMENT] !== 'string') {
+			fragment.appendChild(li);
+			target.appendChild(fragment);
+		}
 	}
 
 	getLineupByType() {
