@@ -2,7 +2,10 @@
 
 import { lineup } from "../../classes/lineup";
 import { LINEUP, DIALOGBOX, LINK, EDITION } from "../../enums/elementHandlers";
-import { LINEUP_LEVELS, ARTIST_KEYS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_SLICES_PROPS } from '../../enums/lineup';
+import {
+	LINEUP_LEVELS, ARTIST_KEYS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_SLICES_PROPS,
+	ARTIST_ALIGN
+} from '../../enums/lineup';
 import { ARTIST_CANCELED } from '../../enums/content';
 import * as dialogbox from '../../utils/addDialogbox';
 import { setIcon } from "../../utils/setIcon";
@@ -17,6 +20,10 @@ const lineupLvlToClassMap = {
 	[LINEUP_LEVELS.LVL4]: LINEUP.ARTISTS_LVL4_CLASS,
 	[LINEUP_LEVELS.OTHERS]: LINEUP.ARTISTS_OTHERS_CLASS,
 	[LINEUP_LEVELS.DAILY_ARTISTS]: LINEUP.ARTISTS_DAILY_CLASS,
+};
+const alignToClassMap = {
+	[ARTIST_ALIGN.LEFT]: LINEUP.ARTIST_ALIGN_LEFT_CLASS,
+	[ARTIST_ALIGN.RIGHT]: LINEUP.ARTIST_ALIGN_RIGHT_CLASS,
 };
 const artistDecoratorToClassMap = {
 	[ARTIST_DECORATORS.PROMOTED]: LINEUP.ARTIST_PROMOTED_CLASS,
@@ -138,9 +145,11 @@ export class lineupDetails extends lineup {
 		if (artistKey[ARTIST_KEYS.MULTILINE]) {
 			li.classList.add(LINEUP.ARTIST_MULTILINE_CLASS);
 		}
-		if (artistKey[ARTIST_KEYS.SEPARATOR_MIDDLE]) {
-			li.classList.add(LINEUP.ARTIST_SEPARATOR_MIDDLE_CLASS);
+
+		if (artistKey[ARTIST_KEYS.ALIGNED]) {
+			li.classList.add(alignToClassMap[artistKey[ARTIST_KEYS.ALIGNED]])
 		}
+
 		if (artistKey[ARTIST_KEYS.FIRST_ON_LINE]) {
 			li.classList.add(LINEUP.ARTIST_FIRST_ON_LINE_CLASS);
 
@@ -154,6 +163,9 @@ export class lineupDetails extends lineup {
 		}
 		if (artistKey[ARTIST_KEYS.LAST_ON_LINE]) {
 			li.classList.add(LINEUP.ARTIST_LAST_ON_LINE_CLASS);
+		}
+		if (artistKey[ARTIST_KEYS.LAST_ON_DAY]) {
+			li.classList.add(LINEUP.ARTIST_LAST_ON_DAY_CLASS);
 		}
 
 		if (artistKey[ARTIST_KEYS.CANCELED]) {

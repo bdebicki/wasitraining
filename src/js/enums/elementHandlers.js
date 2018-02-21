@@ -1,6 +1,6 @@
 `use strict`;
 
-import { LINEUP_LEVELS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_KEYS } from './lineup';
+import {LINEUP_LEVELS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_KEYS, ARTIST_ALIGN} from './lineup';
 
 export const globalClassBuilders = {
 	active: 'isActive',
@@ -145,9 +145,11 @@ export const LINEUP = {
 	ARTIST_MULTILINE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.MULTILINE}`,
 	ARTIST_CANCELED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.CANCELED}`,
 	ARTIST_REPLACEMENT_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.REPLACEMENT}`, // never used
-	ARTIST_SEPARATOR_MIDDLE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.SEPARATOR_MIDDLE}`,
 	ARTIST_FIRST_ON_LINE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.FIRST_ON_LINE}`,
 	ARTIST_LAST_ON_LINE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.LAST_ON_LINE}`,
+	ARTIST_LAST_ON_DAY_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.LAST_ON_DAY}`,
+	ARTIST_ALIGN_LEFT_CLASS: `${lineupClassBuilder.artist}--${ARTIST_ALIGN.LEFT}Aligned`,
+	ARTIST_ALIGN_RIGHT_CLASS: `${lineupClassBuilder.artist}--${ARTIST_ALIGN.RIGHT}Aligned`,
 	ARTIST_NEXT_LINE_ARTIST_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.NEXT_LINE_ARTIST}`,
 	ARTIST_MULTIPLE_ARTISTS_CLASS: lineupClassBuilder.multipleArtists,
 	ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS: `${lineupClassBuilder.multipleArtists}__artist`,

@@ -21,11 +21,17 @@ export const ARTIST_KEYS = {
 	MULTILINE: 'multiline',
 	CANCELED: 'canceled',
 	REPLACEMENT: 'replacement',
-	SEPARATOR_MIDDLE: 'separatorMiddle',
 	FIRST_ON_LINE: 'firstOnLine',
 	LAST_ON_LINE: 'lastOnLine',
+	LAST_ON_DAY: 'lastOnDay',
 	BREAK_LINE: 'breakLine',
 	NEXT_LINE_ARTIST: 'nextLineArtist',
+	ALIGNED: 'aligned',
+};
+
+export const ARTIST_ALIGN = {
+	LEFT: 'left',
+	RIGHT: 'right',
 };
 
 export const ARTIST_DECORATORS = {

@@ -3,3 +3,104 @@
 		background: @edition2013-leadColor;
 	}
 }
+
+.lineupArtists--edition2013 {
+	font-family: @edition2013-fontFamily;
+	font-weight: @edition2013-fontWeight;
+	text-transform: uppercase;
+
+	.lineupArtists {
+		&__day {
+			&:not(:last-child) {
+				margin-bottom: @edition2013-sectionsSpace;
+			}
+		}
+
+		&__lvl {
+			max-width: 430px;
+
+			&--headliners {
+				margin-bottom: @edition2013-lvlSpace-headliners;
+
+				.lineupArtists__artist--collapsed {
+					letter-spacing: @edition2013-textSpacing-headliners-collapsed;
+				}
+			}
+			&--lvl1 {
+				margin-bottom: @edition2013-lvlSpace-lvl1;
+			}
+			&--others {
+				.lineupArtists__artist--collapsed {
+					letter-spacing: @edition2013-textSpacing-headliners-collapsed;
+				}
+			}
+		}
+
+		&__artist {
+			&:not(.lineupArtists__artist--lastOnDay) {
+				&:after {
+					content: @edition2013-separatorStyle;
+					margin-right: @edition2013-separatorSpace;
+				}
+			}
+
+			&--headliner {
+				font-size: @edition2013-fontSize-headliners;
+				line-height: @edition2013-lineHeight-headliners;
+			}
+			&--lvl1 {
+				font-size: @edition2013-fontSize-lvl1;
+				letter-spacing: @edition2013-textSpacing-lvl1;
+				line-height: @edition2013-lineHeight-lvl1;
+			}
+			&--lvl2 {
+				font-size: @edition2013-fontSize-lvl2;
+				letter-spacing: @edition2013-textSpacing-lvl2;
+				line-height: @edition2013-lineHeight-lvl2;
+			}
+			&--others {
+				font-size: @edition2013-fontSize-others;
+				line-height: @edition2013-lineHeight-others;
+			}
+
+			&--multiline {
+				margin-top: 3px;
+			}
+
+			&--rightAligned {
+				display: grid;
+				grid-column-gap: 0;
+				grid-row-gap: 0;
+				grid-template-columns: auto auto;
+				grid-template-rows: auto auto;
+				grid-template-areas: "artistPt1 separatorPt1"
+									 "artistPt2 separatorPt2";
+				text-align: right;
+
+				.lineupArtists__slice--newLine {
+					grid-area: artistPt2;
+				}
+			}
+			&--leftAligned {
+				display: grid;
+				grid-column-gap: 0;
+				grid-row-gap: 0;
+				grid-template-columns: auto auto;
+				grid-template-rows: auto auto;
+				grid-template-areas: "artistPt1 separatorPt1"
+									 "artistPt2 separatorPt2";
+				text-align: left;
+
+				&:after {
+					grid-area: separatorPt2;
+				}
+				.lineupArtists__slice--newLine {
+					grid-area: artistPt2;
+				}
+				.lineupArtists__slice--indented {
+					text-indent: -0.27em;
+				}
+			}
+		}
+	}
+}

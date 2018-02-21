@@ -1352,7 +1352,7 @@
 						{"artist": "Fox", "decorator": "collapsed"},
 						{"artist": "Mikromusic", "decorator": "collapsed"},
 						{"artist": "Domowe Melodie", "decorator": "collapsed"},
-						{"artist": "Plum", "decorator": "collapsed"},
+						{"artist": "Plum", "decorator": "collapsed", "lastOnDay": true},
 						{"artist": "Dawid Podsiadło", "visible": false},
 						{"artist": "Patrick The Pan", "visible": false},
 						{"artist": "Hipersonik", "visible": false},
@@ -1380,7 +1380,7 @@
 					"others": [
 						"Kim Nowak",
 						"Łąki Łan",
-						"Ras Luta",
+						{"artist": "Ras Luta", "lastOnDay": true},
 						{"artist": "Xxanaxx", "visible": false},
 						{"artist": "Sorry Boys", "visible": false},
 						{"artist": "Modest Mouse", "canceled": true, "visible": false},
@@ -1411,7 +1411,7 @@
 					"lvl2": ["Disclosure", "Hey", "Kaliber 44"],
 					"others": [
 						"These New Puritans",
-						"Palma Violets",
+						{"artist": "Palma Violets", "lastOnDay": true},
 						{"artist": "Rebeka", "visible": false},
 						{"artist": "Skubas", "visible": false},
 						{"artist": "Bobby the Unicorn", "visible": false},
@@ -1445,19 +1445,20 @@
 						{
 							"artist": "Steve Reich & Ensemble Modern",
 							"sliceDecorator": {"slice": "& Ensemble Modern", "style": "newLine"},
-							"separatorMiddle": true,
-							"multiline": true
+							"multiline": true,
+							"aligned": "right"
 						},
 						{
 							"artist": "Jonny Greenwood",
 							"sliceDecorator": {"slice": "Greenwood", "style": ["newLine", "indented"]},
-							"multiline": true
+							"multiline": true,
+							"aligned": "left"
 						}
 					],
 					"lvl2": ["Crystal Fighters", "Devendra Banhart"],
 					"others": [
 						"Mount Kimbie",
-						"Everything Everything",
+						{"artist": "Everything Everything", "lastOnDay": true},
 						{"artist": "Envee", "visible": false},
 						{"artist": "Magnificent Muttley", "visible": false},
 						{"artist": "Novika", "visible": false},
