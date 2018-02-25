@@ -1,5 +1,252 @@
 .lineup--edition2012 {
+	align-self: auto !important;
+
 	.dialogbox__header:after {
 		background: @edition2012-leadColor;
+	}
+}
+
+.lineupArtists--edition2012 {
+	font-family: @edition2012-fontFamily;
+	font-weight: @edition2012-fontWeight;
+	text-transform: uppercase;
+
+	.lineupArtists {
+		&--newLine {
+			&:before {
+				content: '';
+				display: block;
+			}
+		}
+
+		&__day {
+			max-width: 405px;
+
+			&:not(:last-child) {
+				margin-bottom: @edition2012-sectionsSpace;
+			}
+		}
+
+		&__lvl {
+			display: inline;
+
+			&--headliners {
+				margin-bottom: @edition2012-lvlSpace-headliners;
+			}
+			&--lvl1 {
+				margin-bottom: @edition2012-lvlSpace-lvl1;
+
+				.lineupArtists__artist--expanded {
+					letter-spacing: @edition2012-textSpacing-lvl1Expanded;
+				}
+			}
+			&--lvl2 {
+				margin-bottom: @edition2012-lvlSpace-lvl2;
+
+				.lineupArtists__artist--collapsed {
+					letter-spacing: @edition2012-textSpacing-lvl2Collapsed;
+				}
+				.lineupArtists__artist--expanded {
+					letter-spacing: @edition2012-textSpacing-lvl1Expanded;
+				}
+			}
+			&--lvl3 {
+				margin-bottom: @edition2012-lvlSpace-lvl3;
+			}
+			&--lvl4 {
+				margin-bottom: @edition2012-lvlSpace-lvl4;
+			}
+
+			&--day1 {
+				.lineupArtists__artist--headliner {
+					font-size: @edition2012-fontSize-headlinersDay1;
+					letter-spacing: @edition2012-textSpacing-headlinersDay1;
+					line-height: @edition2012-lineHeight-headlinersDay1;
+				}
+				.lineupArtists__artist--lvl1 {
+					margin-left: 12px;
+
+					.lineupArtists__slice--up {
+						margin-right: -5px;
+						position: relative;
+						top: 1px;
+						font-size: 25px;
+						letter-spacing: 13 * @textSpacingToEmMultiplier;
+						line-height: 100%;
+						vertical-align: top;
+					}
+				}
+				.lineupArtists__artist--lvl2 {
+					&:not(:first-of-type) {
+						margin-left: 20px;
+					}
+				}
+				.lineupArtists__artist--lvl3 {
+					&:not(:first-of-type) {
+						margin-left: 25px;
+					}
+
+					.lineupArtists__slice--up {
+						margin-right: -3px;
+						position: relative;
+						top: 2px;
+						font-size: 18px;
+						letter-spacing: 60 * @textSpacingToEmMultiplier;
+						line-height: 100%;
+						vertical-align: top;
+					}
+				}
+				.lineupArtists__artist--others {
+					margin-left: 25px;
+				}
+			}
+			&--day2 {
+				.lineupArtists__artist--headliner {
+					font-size: @edition2012-fontSize-headlinersDay2;
+					letter-spacing: @edition2012-textSpacing-headlinersDay2;
+					line-height: @edition2012-lineHeight-headlinersDay2;
+				}
+				.lineupArtists__artist--lvl1 {
+					margin-left: 15px;
+				}
+				.lineupArtists__artist--lvl2 {
+					.lineupArtists__slice--up {
+						font-size: 19px;
+						letter-spacing: 30 * @textSpacingToEmMultiplier;
+						line-height: 100%;
+						vertical-align: top;
+					}
+				}
+				.lineupArtists__artist--lvl3 {
+					.lineupArtists__slice--middle {
+						font-size: 13px;
+						letter-spacing: 30 * @textSpacingToEmMultiplier;
+						line-height: 100%;
+						vertical-align: middle;
+					}
+				}
+				.lineupArtists__artist--multiline {
+					display: inline-grid;
+					grid-column-gap: 0;
+					grid-row-gap: 0;
+					grid-template-columns: auto auto;
+					grid-template-rows: auto auto;
+					grid-template-areas: "artistPt1 artistPt1"
+										 "separator artistPt2";
+					line-height: 26px;
+				}
+				.lineupArtists__slice--compressed {
+					grid-area: artistPt1;
+					font-weight: normal;
+					text-align: right;
+				}
+				.lineupArtists__slice--collapsed {
+					margin-right: 3px;
+					grid-area: separator;
+					position: relative;
+					top: -1px;
+					font-size: 29px;
+					letter-spacing: -90 * @textSpacingToEmMultiplier;
+				}
+				.lineupArtists__slice--expanded {
+					grid-area: artistPt2;
+					font-size: 33px;
+					letter-spacing: 7 * @textSpacingToEmMultiplier;
+					text-align: right;
+				}
+			}
+			&--day3 {
+				.lineupArtists__artist--headliner {
+					font-size: @edition2012-fontSize-headlinersDay3;
+					letter-spacing: @edition2012-textSpacing-headlinersDay3;
+					line-height: @edition2012-lineHeight-headlinersDay3;
+				}
+				.lineupArtists__artist--lvl1 {
+					font-size: @edition2012-fontSize-lvl1Day3;
+					letter-spacing: @edition2012-textSpacing-lvl1Day3;
+					line-height: @edition2012-lineHeight-lvl1Day3;
+				}
+			}
+			&--day4 {
+				.lineupArtists__artist--headliner {
+					font-size: @edition2012-fontSize-headlinersDay4;
+					letter-spacing: @edition2012-textSpacing-headlinersDay4;
+					line-height: @edition2012-lineHeight-headlinersDay4;
+
+					.lineupArtists__slice--up {
+						font-size: 14px;
+						letter-spacing: 0;
+						line-height: 100%;
+						vertical-align: top;
+					}
+				}
+				.lineupArtists__artist--lvl1 {
+					font-size: @edition2012-fontSize-lvl1Day4;
+					letter-spacing: @edition2012-textSpacing-lvl1Day4;
+					line-height: @edition2012-lineHeight-lvl1Day4;
+
+					.lineupArtists__slice--middle {
+						font-size: 20px;
+						letter-spacing: 0;
+						line-height: 100%;
+						vertical-align: middle;
+					}
+					.lineupArtists__slice--lower {
+						font-size: 32px;
+						letter-spacing: 0;
+						line-height: 100%;
+					}
+				}
+				.lineupArtists__artist--lvl3 {
+					font-size: @edition2012-fontSize-lvl3Day4;
+					letter-spacing: @edition2012-textSpacing-lvl3Day4;
+					line-height: @edition2012-lineHeight-lvl3Day4;
+
+					.lineupArtists__slice--up {
+						font-size: 15px;
+						letter-spacing: 25 * @textSpacingToEmMultiplier;
+						line-height: 100%;
+						vertical-align: top;
+					}
+				}
+				.lineupArtists__artist--others {
+					.lineupArtists__slice--middle {
+						font-size: 10px;
+						letter-spacing: 0;
+						line-height: 100%;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+
+		&__artist {
+			display: inline-block;
+
+			&--lvl1 {
+				font-size: @edition2012-fontSize-lvl1;
+				line-height: @edition2012-lineHeight-lvl1;
+			}
+			&--lvl2 {
+				font-size: @edition2012-fontSize-lvl2;
+				letter-spacing: @edition2012-textSpacing-lvl2;
+				line-height: @edition2012-lineHeight-lvl2;
+			}
+			&--lvl3 {
+				font-size: @edition2012-fontSize-lvl3;
+				letter-spacing: @edition2012-textSpacing-lvl3;
+				line-height: @edition2012-lineHeight-lvl3;
+			}
+			&--lvl4 {
+				font-size: @edition2012-fontSize-lvl4;
+				letter-spacing: @edition2012-textSpacing-lvl4;
+				line-height: @edition2012-lineHeight-lvl4;
+			}
+			&--others {
+				font-size: @edition2012-fontSize-others;
+				letter-spacing: @edition2012-textSpacing-others;
+				line-height: @edition2012-lineHeight-others;
+			}
+		}
 	}
 }

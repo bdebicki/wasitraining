@@ -1162,13 +1162,20 @@
 				],
 				"lineup": {
 					"headliners": ["Björk"],
-					"lvl1": ["New Order", {"artist": "The Kills", "sliceDecorator": {"slice": "The", "style": "up"}}],
+					"lvl1": [
+						{"artist": "New Order", "decorator": "expanded"},
+						{"artist": "The Kills", "sliceDecorator": {"slice": "The", "style": "up"}, "decorator": "expanded"}
+					],
 					"lvl2": [
-						{"artist": "Wiz Khalifa", "decorator": "expanded"},
+						{"artist": "Wiz Khalifa", "decorator": "expanded", "firstOnLine": true},
 						{"artist": "Orbital", "decorator": "expanded"},
 						{"artist": "Gogol Bordello", "decorator": "expanded"}
 					],
-					"lvl3": ["Yeasayer", {"artist": "The Ting Tings", "sliceDecorator": {"slice": "The", "style": "up"}}, "SOJA"],
+					"lvl3": [
+						{"artist": "Yeasayer", "firstOnLine": true},
+						{"artist": "The Ting Tings", "sliceDecorator": {"slice": "The", "style": "up"}},
+						"SOJA"
+					],
 					"others": [
 						{"artist": "Fisz Emade Tworzywo",  "displayName": "Fisz Emade"},
 						{"artist": "June", "visible": false},
@@ -1206,21 +1213,23 @@
 						{
 							"artist": "Penderecki//Greenwood",
 							"sliceDecorator": [
-								{"slice": "Penderecki", "style": ["expanded", "newLine"]},
-								{"slice": "//", "style": "collapsed"}
-							]
+								{"slice": "Penderecki", "style": "compressed"},
+								{"slice": "//", "style": "collapsed"},
+								{"slice": "Greenwood", "style": "expanded"}
+							],
+							"multiline": true
 						},
-						{"artist": "The Maccabees", "sliceDecorator": {"slice": "The", "style": "up"}},
+						{"artist": "The Maccabees", "sliceDecorator": {"slice": "The", "style": "up"}, "firstOnLine": true},
 						"Major Lazer",
 						"Jamie Woon"
 					],
 					"lvl3": [
-						{"artist": "Dry The River", "sliceDecorator": {"slice": "The", "style": "middle"}},
+						{"artist": "Dry The River", "sliceDecorator": {"slice": "The", "style": "middle"}, "firstOnLine": true},
 						"Jessie Ware"
 					],
 					"others": [
 						"Kapela ze Wsi Warszawa",
-						"Pablopavo & Praczas",
+						{"artist": "Pablopavo & Praczas", "firstOnLine": true},
 						{"artist": "Iza Lach", "visible": false},
 						{"artist": "Paula i Karol", "visible": false},
 						{"artist": "The Stubs", "visible": false},
@@ -1249,11 +1258,13 @@
 					"headliners": ["Franz Ferdinand"],
 					"lvl1": ["Bloc Party", "M83"],
 					"lvl2": [
-						"Public Enemy",
+						{"artist": "Public Enemy", "firstOnLine": true},
 						{"artist": "Kasia Nosowska", "displayName": "Nosowska"},
 						"Toro Y Moi"
 					],
-					"lvl4": ["Julia Marcell"],
+					"lvl4": [
+						{"artist": "Julia Marcell", "firstOnLine": true}
+					],
 					"others": [
 						{"artist": "Łona Webber & The Pimps", "displayName": "Łona Webber"},
 						"L.Stadt",
@@ -1291,12 +1302,12 @@
 						{"artist": "The XX", "sliceDecorator": {"slice": "XX", "style": "lower"}}
 					],
 					"lvl2": [
-						{"artist": "Friendly Fires", "decorator": "collapsed"},
+						{"artist": "Friendly Fires", "decorator": "collapsed", "firstOnLine": true},
 						{"artist": "Janelle Monáe", "decorator": "collapsed"},
 						{"artist": "Bat For Lashes", "decorator": "collapsed"}
 					],
 					"lvl3": [
-						{"artist": "SBTRKT Live", "sliceDecorator": {"slice": "Live", "style": "up"}}
+						{"artist": "SBTRKT Live", "sliceDecorator": {"slice": "Live", "style": "up"}, "firstOnLine": true}
 					],
 					"others": [
 						"Świetliki",

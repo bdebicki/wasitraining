@@ -30,7 +30,7 @@ const artistDecoratorToClassMap = {
 	[ARTIST_DECORATORS.EXPANDED]: LINEUP.ARTIST_EXPANDED_CLASS,
 	[ARTIST_DECORATORS.COLLAPSED]: LINEUP.ARTIST_COLLAPSED_CLASS,
 	[ARTIST_DECORATORS.UPPERCASE]: LINEUP.ARTIST_UPPERCASE_CLASS,
-	[ARTIST_DECORATORS.CAPITALIZE]: LINEUP.ARTIST_CAPITALIZE_CLASS,
+	[ARTIST_DECORATORS.COMPRESSED]: LINEUP.ARTIST_COMPRESSED_CLASS,
 };
 const artistSliceDecoratorToClassMap = {
 	[ARTIST_SLICES_STYLES.UP]: LINEUP.ARTIST_SLICE_UP_CLASS,
@@ -41,6 +41,7 @@ const artistSliceDecoratorToClassMap = {
 	[ARTIST_SLICES_STYLES.NEW_LINE]: LINEUP.ARTIST_SLICE_NEW_LINE_CLASS,
 	[ARTIST_SLICES_STYLES.EXPANDED]: LINEUP.ARTIST_SLICE_EXPANDED_CLASS,
 	[ARTIST_SLICES_STYLES.COLLAPSED]: LINEUP.ARTIST_SLICE_COLLAPSED_CLASS,
+	[ARTIST_SLICES_STYLES.COMPRESSED]: LINEUP.ARTIST_SLICE_COMPRESSED_CLASS,
 	[ARTIST_SLICES_STYLES.INDENTED]: LINEUP.ARTIST_SLICE_INDENTED_CLASS,
 	[ARTIST_SLICES_STYLES.PREVIOUS_LINE]: LINEUP.ARTIST_SLICE_PREVIOUS_LINE_CLASS,
 };
@@ -153,10 +154,12 @@ export class lineupDetails extends lineup {
 		if (artistKey[ARTIST_KEYS.FIRST_ON_LINE]) {
 			li.classList.add(LINEUP.ARTIST_FIRST_ON_LINE_CLASS);
 
-			if (index > 0) {
+			if (index === 0) {
+				target.classList.add(LINEUP.ARTISTS_NEW_LINE_CLASS);
+			} else if (index > 0) {
 				let newLine = document.createElement('li');
 
-				newLine.classList.add(LINEUP.ARTISTS_NEW_LINE_CLASS);
+				newLine.classList.add(LINEUP.ARTISTS_NEW_LINE_ELEMENT_CLASS);
 
 				fragment.appendChild(newLine);
 			}
@@ -286,15 +289,16 @@ export class lineupDetails extends lineup {
 		let fragment = document.createDocumentFragment();
 		const lineup = this.lineup;
 
-		lineup.map((item) => {
+		lineup.map((item, index) => {
 			let section = document.createElement('section');
+			const dayCount = index + 1;
 
 			section.classList.add(LINEUP.ARTISTS_DAY_CLASS);
 
 			Object.keys(item).map((key) => {
 				let ul = document.createElement('ul');
 
-				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
+				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key], `${LINEUP.ARTISTS_LEVEL_CLASS}--day${dayCount}`);
 
 				item[key].map((itemKey, index) => {
 					this.decorateArtist(itemKey, ul, index, key);

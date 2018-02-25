@@ -40,6 +40,7 @@ export const ARTIST_DECORATORS = {
 	COLLAPSED: 'collapsed',
 	UPPERCASE: 'uppercase',
 	CAPITALIZE: 'capitalize',
+	COMPRESSED: 'compressed',
 };
 
 export const ARTIST_SLICES_PROPS = {
@@ -56,6 +57,7 @@ export const ARTIST_SLICES_STYLES = {
 	NEW_LINE: 'newLine',
 	EXPANDED: 'expanded',
 	COLLAPSED: 'collapsed',
+	COMPRESSED: 'compressed',
 	INDENTED: 'indented',
 	PREVIOUS_LINE: 'previousLine',
 };
