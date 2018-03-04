@@ -12,49 +12,9 @@
 	text-transform: uppercase;
 
 	.lineupArtists {
-		&--newLine {
-			&:before {
-				content: '';
-				display: block;
-			}
-		}
-
 		&__day {
-			max-width: 405px;
-
 			&:not(:last-child) {
 				margin-bottom: @edition2012-sectionsSpace;
-			}
-		}
-
-		&__lvl {
-			display: inline;
-
-			&--headliners {
-				margin-bottom: @edition2012-lvlSpace-headliners;
-			}
-			&--lvl1 {
-				margin-bottom: @edition2012-lvlSpace-lvl1;
-
-				.lineupArtists__artist--expanded {
-					letter-spacing: @edition2012-textSpacing-lvl1Expanded;
-				}
-			}
-			&--lvl2 {
-				margin-bottom: @edition2012-lvlSpace-lvl2;
-
-				.lineupArtists__artist--collapsed {
-					letter-spacing: @edition2012-textSpacing-lvl2Collapsed;
-				}
-				.lineupArtists__artist--expanded {
-					letter-spacing: @edition2012-textSpacing-lvl1Expanded;
-				}
-			}
-			&--lvl3 {
-				margin-bottom: @edition2012-lvlSpace-lvl3;
-			}
-			&--lvl4 {
-				margin-bottom: @edition2012-lvlSpace-lvl4;
 			}
 
 			&--day1 {
@@ -64,8 +24,6 @@
 					line-height: @edition2012-lineHeight-headlinersDay1;
 				}
 				.lineupArtists__artist--lvl1 {
-					margin-left: 12px;
-
 					.lineupArtists__slice--up {
 						margin-right: -5px;
 						position: relative;
@@ -76,16 +34,7 @@
 						vertical-align: top;
 					}
 				}
-				.lineupArtists__artist--lvl2 {
-					&:not(:first-of-type) {
-						margin-left: 20px;
-					}
-				}
 				.lineupArtists__artist--lvl3 {
-					&:not(:first-of-type) {
-						margin-left: 25px;
-					}
-
 					.lineupArtists__slice--up {
 						margin-right: -3px;
 						position: relative;
@@ -96,18 +45,12 @@
 						vertical-align: top;
 					}
 				}
-				.lineupArtists__artist--others {
-					margin-left: 25px;
-				}
 			}
 			&--day2 {
 				.lineupArtists__artist--headliner {
 					font-size: @edition2012-fontSize-headlinersDay2;
 					letter-spacing: @edition2012-textSpacing-headlinersDay2;
 					line-height: @edition2012-lineHeight-headlinersDay2;
-				}
-				.lineupArtists__artist--lvl1 {
-					margin-left: 15px;
 				}
 				.lineupArtists__artist--lvl2 {
 					.lineupArtists__slice--up {
@@ -137,7 +80,9 @@
 				}
 				.lineupArtists__slice--compressed {
 					grid-area: artistPt1;
+					font-size: 31px;
 					font-weight: normal;
+					letter-spacing: 0;
 					text-align: right;
 				}
 				.lineupArtists__slice--collapsed {
@@ -220,9 +165,36 @@
 			}
 		}
 
-		&__artist {
-			display: inline-block;
+		&__lvl {
+			&--headliners {
+				margin-bottom: @edition2012-lvlSpace-headliners;
+			}
+			&--lvl1 {
+				margin-bottom: @edition2012-lvlSpace-lvl1;
 
+				.lineupArtists__artist--expanded {
+					letter-spacing: @edition2012-textSpacing-lvl1Expanded;
+				}
+			}
+			&--lvl2 {
+				margin-bottom: @edition2012-lvlSpace-lvl2;
+
+				.lineupArtists__artist--collapsed {
+					letter-spacing: @edition2012-textSpacing-lvl2Collapsed;
+				}
+				.lineupArtists__artist--expanded {
+					letter-spacing: @edition2012-textSpacing-lvl1Expanded;
+				}
+			}
+			&--lvl3 {
+				margin-bottom: @edition2012-lvlSpace-lvl3;
+			}
+			&--lvl4 {
+				margin-bottom: @edition2012-lvlSpace-lvl4;
+			}
+		}
+
+		&__artist {
 			&--lvl1 {
 				font-size: @edition2012-fontSize-lvl1;
 				line-height: @edition2012-lineHeight-lvl1;

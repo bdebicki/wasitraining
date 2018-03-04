@@ -27,6 +27,7 @@ export const ARTIST_KEYS = {
 	BREAK_LINE: 'breakLine',
 	NEXT_LINE_ARTIST: 'nextLineArtist',
 	ALIGNED: 'aligned',
+	LINE: 'line',
 };
 
 export const ARTIST_ALIGN = {

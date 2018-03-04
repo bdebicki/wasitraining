@@ -14,6 +14,7 @@ import { LINEUP_LEVELS, ARTIST_KEYS } from '../enums/lineup';
  * 	- false - don't merge artists levels and split lineup on days
  * 	- true - merge artists by levels
  * 	- 'exceptHeadliners' - merge artists from all levels except headliners and display them splited by days
+ * 	- 'customLevels' - create custom levels with mixed artists
  *
  * otherArtists:
  *  - string - display label with information about others artists

@@ -117,9 +117,12 @@ export class lineupDetails extends lineup {
 	}
 
 	decorateArtist(artistKey, target, index, artistLvl) {
-		let fragment = document.createDocumentFragment();
-		let li = document.createElement('li');
+		const fragment = document.createDocumentFragment();
+		const li = document.createElement('li');
+		const artistId = index + 1;
 		let artistName;
+
+		li.dataset.artistId = `${artistLvl}-${artistId}`;
 
 		if (artistKey[ARTIST_KEYS.ARTIST] && !artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
 			artistName = artistKey[ARTIST_KEYS.ARTIST];
@@ -226,6 +229,8 @@ export class lineupDetails extends lineup {
 				return this.decorateLineupByLevels();
 			case 'exceptHeadliners':
 				return this.decorateLineupHeadlinersByDays();
+			case 'customLevels':
+				return this.decorateLineupCustomLevelsByDays();
 			default:
 				return this.decorateLineupByDays();
 		}
@@ -293,12 +298,12 @@ export class lineupDetails extends lineup {
 			let section = document.createElement('section');
 			const dayCount = index + 1;
 
-			section.classList.add(LINEUP.ARTISTS_DAY_CLASS);
+			section.classList.add(LINEUP.ARTISTS_DAY_CLASS, `${LINEUP.ARTISTS_DAY_CLASS}--day${dayCount}`);
 
 			Object.keys(item).map((key) => {
 				let ul = document.createElement('ul');
 
-				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key], `${LINEUP.ARTISTS_LEVEL_CLASS}--day${dayCount}`);
+				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
 
 				item[key].map((itemKey, index) => {
 					this.decorateArtist(itemKey, ul, index, key);
@@ -309,6 +314,20 @@ export class lineupDetails extends lineup {
 
 			fragment.appendChild(section);
 		});
+
+		return fragment;
+	}
+
+	decorateLineupCustomLevelsByDays() {
+		let fragment = document.createDocumentFragment();
+		const lineup = this.lineup;
+
+		// iteruj po dniach
+		// utwórz sekcje dnia
+		// utwórz rząd (linie)
+		// iteruj po wszystkich levelach
+		// jeżeli klucz 'line' zgadza się o odpowiednią linią dekoruj artyste
+
 
 		return fragment;
 	}
