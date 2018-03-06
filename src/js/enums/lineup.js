@@ -28,6 +28,7 @@ export const ARTIST_KEYS = {
 	NEXT_LINE_ARTIST: 'nextLineArtist',
 	ALIGNED: 'aligned',
 	LINE: 'line',
+	LEVEL: 'level',
 };
 
 export const ARTIST_ALIGN = {

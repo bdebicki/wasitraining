@@ -119,10 +119,7 @@ export class lineupDetails extends lineup {
 	decorateArtist(artistKey, target, index, artistLvl) {
 		const fragment = document.createDocumentFragment();
 		const li = document.createElement('li');
-		const artistId = index + 1;
 		let artistName;
-
-		li.dataset.artistId = `${artistLvl}-${artistId}`;
 
 		if (artistKey[ARTIST_KEYS.ARTIST] && !artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
 			artistName = artistKey[ARTIST_KEYS.ARTIST];
@@ -157,9 +154,7 @@ export class lineupDetails extends lineup {
 		if (artistKey[ARTIST_KEYS.FIRST_ON_LINE]) {
 			li.classList.add(LINEUP.ARTIST_FIRST_ON_LINE_CLASS);
 
-			if (index === 0) {
-				target.classList.add(LINEUP.ARTISTS_NEW_LINE_CLASS);
-			} else if (index > 0) {
+			if (index > 0) {
 				let newLine = document.createElement('li');
 
 				newLine.classList.add(LINEUP.ARTISTS_NEW_LINE_ELEMENT_CLASS);
@@ -319,15 +314,48 @@ export class lineupDetails extends lineup {
 	}
 
 	decorateLineupCustomLevelsByDays() {
-		let fragment = document.createDocumentFragment();
+		const fragment = document.createDocumentFragment();
 		const lineup = this.lineup;
+		const tempLineup = [];
 
-		// iteruj po dniach
-		// utwórz sekcje dnia
-		// utwórz rząd (linie)
-		// iteruj po wszystkich levelach
-		// jeżeli klucz 'line' zgadza się o odpowiednią linią dekoruj artyste
+		// merge all day artists in one array
+		lineup.map((day, index) => {
+			tempLineup.push([]); // create day key on tempLineup array
 
+			Object.keys(day).map((level) => { // iterate on day
+				day[level].map((artist) => { // iterate on level of specific day
+					const arrLine = artist[ARTIST_KEYS.LINE] - 1;
+					artist[ARTIST_KEYS.LEVEL] = level;
+
+					if(tempLineup[index][arrLine] === undefined) {
+						tempLineup[index].push([]);
+					}
+
+					tempLineup[index][arrLine].push(artist);
+				});
+			});
+		});
+		tempLineup.map((day, index) => {
+			const section = document.createElement('section');
+			const currentDay = index + 1;
+
+			section.classList.add(LINEUP.ARTISTS_DAY_CLASS, `${LINEUP.ARTISTS_DAY_CLASS}--${currentDay}`);
+
+			day.map((line, index) => {
+				const ul = document.createElement('ul');
+				const currentLine = index + 1;
+
+				ul.classList.add(`${LINEUP.ARTISTS_CLASS}--line${currentLine}`);
+
+				line.map((artist) => {
+					this.decorateArtist(artist, ul, index, artist[ARTIST_KEYS.LEVEL]);
+				});
+
+				section.appendChild(ul);
+			});
+
+			fragment.appendChild(section);
+		});
 
 		return fragment;
 	}
