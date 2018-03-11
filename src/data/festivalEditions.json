@@ -1161,16 +1161,34 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2012"
 				],
 				"lineup": {
-					"headliners": ["Björk"],
-					"lvl1": ["New Order", {"artist": "The Kills", "sliceDecorator": {"slice": "The", "style": "up"}}],
-					"lvl2": [
-						{"artist": "Wiz Khalifa", "decorator": "expanded"},
-						{"artist": "Orbital", "decorator": "expanded"},
-						{"artist": "Gogol Bordello", "decorator": "expanded"}
+					"headliners": [
+						{"artist": "Björk", "line": 1}
 					],
-					"lvl3": ["Yeasayer", {"artist": "The Ting Tings", "sliceDecorator": {"slice": "The", "style": "up"}}, "SOJA"],
+					"lvl1": [
+						{"artist": "New Order", "decorator": "expanded", "line": 1},
+						{
+							"artist": "The Kills",
+							"sliceDecorator": {"slice": "The", "style": "up"},
+							"decorator": "expanded",
+							"line": 1
+						}
+					],
+					"lvl2": [
+						{"artist": "Wiz Khalifa", "decorator": "expanded", "line": 2},
+						{"artist": "Orbital", "decorator": "expanded", "line": 2},
+						{"artist": "Gogol Bordello", "decorator": "expanded", "line": 2}
+					],
+					"lvl3": [
+						{"artist": "Yeasayer", "line": 3},
+						{
+							"artist": "The Ting Tings",
+							"sliceDecorator": {"slice": "The", "style": "up"},
+							"line": 3
+						},
+						{"artist": "SOJA", "line": 3}
+					],
 					"others": [
-						{"artist": "Fisz Emade Tworzywo",  "displayName": "Fisz Emade"},
+						{"artist": "Fisz Emade Tworzywo",  "displayName": "Fisz Emade", "line": 3},
 						{"artist": "June", "visible": false},
 						{"artist": "très.b", "visible": false},
 						{"artist": "Frozen Bird", "visible": false},
@@ -1200,27 +1218,42 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2012"
 				],
 				"lineup": {
-					"headliners": ["Justice"],
-					"lvl1": ["Bon Iver"],
-					"lvl2": [
+					"headliners": [
+						{"artist": "Justice", "line": 1}
+					],
+					"lvl1": [
+						{"artist": "Bon Iver", "line": 1},
 						{
 							"artist": "Penderecki//Greenwood",
 							"sliceDecorator": [
-								{"slice": "Penderecki", "style": ["expanded", "newLine"]},
-								{"slice": "//", "style": "collapsed"}
-							]
+								{"slice": "Penderecki", "style": "compressed"},
+								{"slice": "//", "style": "collapsed"},
+								{"slice": "Greenwood", "style": "expanded"}
+							],
+							"multiline": true,
+							"line": 1
+						}
+					],
+					"lvl2": [
+						{
+							"artist": "The Maccabees",
+							"sliceDecorator": {"slice": "The", "style": "up"},
+							"line": 2
 						},
-						{"artist": "The Maccabees", "sliceDecorator": {"slice": "The", "style": "up"}},
-						"Major Lazer",
-						"Jamie Woon"
+						{"artist": "Major Lazer", "line": 2},
+						{"artist": "Jamie Woon", "line": 2}
 					],
 					"lvl3": [
-						{"artist": "Dry The River", "sliceDecorator": {"slice": "The", "style": "middle"}},
-						"Jessie Ware"
+						{
+							"artist": "Dry The River",
+							"sliceDecorator": {"slice": "The", "style": "middle"},
+							"line": 3
+						},
+						{"artist": "Jessie Ware", "line": 3}
 					],
 					"others": [
-						"Kapela ze Wsi Warszawa",
-						"Pablopavo & Praczas",
+						{"artist": "Kapela ze Wsi Warszawa", "line": 3},
+						{"artist": "Pablopavo & Praczas", "line": 4},
 						{"artist": "Iza Lach", "visible": false},
 						{"artist": "Paula i Karol", "visible": false},
 						{"artist": "The Stubs", "visible": false},
@@ -1246,17 +1279,24 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2012"
 				],
 				"lineup": {
-					"headliners": ["Franz Ferdinand"],
-					"lvl1": ["Bloc Party", "M83"],
-					"lvl2": [
-						"Public Enemy",
-						{"artist": "Kasia Nosowska", "displayName": "Nosowska"},
-						"Toro Y Moi"
+					"headliners": [
+						{"artist": "Franz Ferdinand", "line": 1}
 					],
-					"lvl4": ["Julia Marcell"],
+					"lvl1": [
+						{"artist": "Bloc Party", "line": 1},
+						{"artist": "M83", "line": 1}
+					],
+					"lvl2": [
+						{"artist": "Public Enemy", "decorator": "expanded", "line": 2},
+						{"artist": "Kasia Nosowska", "displayName": "Nosowska", "decorator": "expanded", "line": 2},
+						{"artist": "Toro Y Moi", "decorator": "expanded", "line": 2}
+					],
+					"lvl4": [
+						{"artist": "Julia Marcell", "line": 3}
+					],
 					"others": [
-						{"artist": "Łona Webber & The Pimps", "displayName": "Łona Webber"},
-						"L.Stadt",
+						{"artist": "Łona Webber & The Pimps", "displayName": "Łona Webber", "line": 3},
+						{"artist": "L.Stadt", "line": 3},
 						{"artist": "The Cardigans play Gran Turismo", "visible": false},
 						{"artist": "UL/KR", "visible": false},
 						{"artist": "Klezmafour", "visible": false},
@@ -1284,23 +1324,43 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "The Mars Volta", "sliceDecorator": {"slice": "The", "style": "up"}}
+						{
+							"artist": "The Mars Volta",
+							"sliceDecorator": {"slice": "The", "style": "up"},
+							"line": 1
+						}
 					],
 					"lvl1": [
-						{"artist": "Mumford & Sons", "sliceDecorator": {"slice": "&", "style": "middle"}},
-						{"artist": "The XX", "sliceDecorator": {"slice": "XX", "style": "lower"}}
+						{
+							"artist": "Mumford & Sons",
+							"sliceDecorator": {"slice": "&", "style": "middle"},
+							"line": 1
+						},
+						{
+							"artist": "The XX",
+							"sliceDecorator": {"slice": "XX", "style": "lower"},
+							"line": 1
+						}
 					],
 					"lvl2": [
-						{"artist": "Friendly Fires", "decorator": "collapsed"},
-						{"artist": "Janelle Monáe", "decorator": "collapsed"},
-						{"artist": "Bat For Lashes", "decorator": "collapsed"}
+						{"artist": "Friendly Fires", "decorator": "collapsed", "line": 2},
+						{"artist": "Janelle Monáe", "decorator": "collapsed", "line": 2},
+						{"artist": "Bat For Lashes", "decorator": "collapsed", "line": 2}
 					],
 					"lvl3": [
-						{"artist": "SBTRKT Live", "sliceDecorator": {"slice": "Live", "style": "up"}}
+						{
+							"artist": "SBTRKT Live",
+							"sliceDecorator": {"slice": "Live", "style": "up"},
+							"line": 3
+						}
 					],
 					"others": [
-						"Świetliki",
-						{"artist": "Cool Kids of Death", "sliceDecorator": {"slice": "of", "style": "middle"}},
+						{"artist": "Świetliki", "line": 3},
+						{
+							"artist": "Cool Kids of Death",
+							"sliceDecorator": {"slice": "of", "style": "middle"},
+							"line": 3
+						},
 						{"artist": "The KDMS", "visible": false},
 						{"artist": "Maja Kleszcz & incarNations", "visible": false},
 						{"artist": "Brygada Kryzys", "visible": false},
@@ -1322,7 +1382,7 @@
 		],
 		"lineupSettings": {
 			"sortType": false,
-			"mergeArtists": false,
+			"mergeArtists": "customLevels",
 			"otherArtists": false
 		}
 	},
@@ -1352,7 +1412,7 @@
 						{"artist": "Fox", "decorator": "collapsed"},
 						{"artist": "Mikromusic", "decorator": "collapsed"},
 						{"artist": "Domowe Melodie", "decorator": "collapsed"},
-						{"artist": "Plum", "decorator": "collapsed"},
+						{"artist": "Plum", "decorator": "collapsed", "lastOnDay": true},
 						{"artist": "Dawid Podsiadło", "visible": false},
 						{"artist": "Patrick The Pan", "visible": false},
 						{"artist": "Hipersonik", "visible": false},
@@ -1380,7 +1440,7 @@
 					"others": [
 						"Kim Nowak",
 						"Łąki Łan",
-						"Ras Luta",
+						{"artist": "Ras Luta", "lastOnDay": true},
 						{"artist": "Xxanaxx", "visible": false},
 						{"artist": "Sorry Boys", "visible": false},
 						{"artist": "Modest Mouse", "canceled": true, "visible": false},
@@ -1411,7 +1471,7 @@
 					"lvl2": ["Disclosure", "Hey", "Kaliber 44"],
 					"others": [
 						"These New Puritans",
-						"Palma Violets",
+						{"artist": "Palma Violets", "lastOnDay": true},
 						{"artist": "Rebeka", "visible": false},
 						{"artist": "Skubas", "visible": false},
 						{"artist": "Bobby the Unicorn", "visible": false},
@@ -1445,19 +1505,20 @@
 						{
 							"artist": "Steve Reich & Ensemble Modern",
 							"sliceDecorator": {"slice": "& Ensemble Modern", "style": "newLine"},
-							"separatorMiddle": true,
-							"multiline": true
+							"multiline": true,
+							"aligned": "right"
 						},
 						{
 							"artist": "Jonny Greenwood",
 							"sliceDecorator": {"slice": "Greenwood", "style": ["newLine", "indented"]},
-							"multiline": true
+							"multiline": true,
+							"aligned": "left"
 						}
 					],
 					"lvl2": ["Crystal Fighters", "Devendra Banhart"],
 					"others": [
 						"Mount Kimbie",
-						"Everything Everything",
+						{"artist": "Everything Everything", "lastOnDay": true},
 						{"artist": "Envee", "visible": false},
 						{"artist": "Magnificent Muttley", "visible": false},
 						{"artist": "Novika", "visible": false},
@@ -1556,10 +1617,8 @@
 						{
 							"artist": "Pink Freud Plays Autechre",
 							"breakLine": true,
-							"sliceDecorator": [
-								{"slice": "Pink Freud", "style": "expanded"},
-								{"slice": "Plays Autechre", "style": ["collapsed", "newLine"]}
-							]
+							"decorator": "collapsed",
+							"sliceDecorator": {"slice": "Pink Freud", "style": "previousLine"}
 						},
 						"Bokka",
 						{"artist": "Pustki", "decorator": "collapsed"},
@@ -1633,8 +1692,8 @@
 						"Julio Bashmore"
 					],
 					"lvl2": [
-						{"artist": "The Dumplings", "canceled": true, "decorator": "collapsed"},
-						{"artist": "Domowe Melodie", "replacement": true},
+						{"artist": "The Dumplings", "canceled": true},
+						{"artist": "Domowe Melodie", "sortBy": "The Dumplings Replacement", "replacement": "The Dumplings"},
 						{"artist": "Plastic", "decorator": "collapsed"},
 						"Kari",
 						"Król"
@@ -1679,21 +1738,21 @@
 						{"artist": "Drake", "marked": true}
 					],
 					"lvl1": [
-						{"artist": "Alt-J", "forceOrder": 1},
+						{"artist": "Alt-J", "forceOrder": 1, "firstOnLine": true},
 						{"artist": "Alabama Shakes", "marked": true},
 						{"artist": "A$AP Rocky", "forceOrder": 3},
-						{"artist": "Chet Faker", "marked": true},
+						{"artist": "Chet Faker", "marked": true, "firstOnLine": true},
 						"Die Antwoord",
 						{"artist": "Modest Mouse", "marked": true}
 					],
 					"lvl2": [
-						"Father John Misty",
+						{"artist": "Father John Misty", "firstOnLine": true},
 						{"artist": "Kodaline", "marked": true},
 						"Natalia Przybysz",
 						{"artist": "Two Gallants", "marked": true}
 					],
 					"others": [
-						"HV/NOON",
+						{"artist": "HV/NOON", "firstOnLine": true},
 						{"artist": "Klaves", "marked": true},
 						"Milky Wishlake",
 						{"artist": "W.E.N.A. x E.A.B.S.", "marked": true},
@@ -1713,26 +1772,26 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "The Libertines", "marked": true},
+						{"artist": "The Libertines", "marked": true, "firstOnLine": true},
 						"Major Lazer"
 					],
 					"lvl1": [
-						{"artist": "Enter Shikari", "marked": true},
+						{"artist": "Enter Shikari", "marked": true, "firstOnLine": true},
 						"Faithless 2.0",
 						{"artist": "Refused", "marked": true},
-						{"artist": "Kendrick Lamar", "canceled": true}
+						{"artist": "Kendrick Lamar", "marked": true, "canceled": true, "forceOrder": 4}
 					],
 					"lvl2": [
-						"Curly Heads",
+						{"artist": "Curly Heads", "firstOnLine": true},
 						{"artist": "Django Django", "marked": true},
 						"Eagles Of Death Metal",
-						{"artist": "Fisz Emade Tworzywo", "marked": true},
+						{"artist": "Fisz Emade Tworzywo", "marked": true, "firstOnLine": true},
 						"Marmozets",
 						{"artist": "Of Montreal", "marked": true},
 						"Tom Odell"
 					],
 					"others": [
-						"Fismoll",
+						{"artist": "Fismoll", "firstOnLine": true},
 						{"artist": "Małe Miasta", "marked": true, "forceOrder": 2},
 						"Mary Komasa",
 						{"artist": "Oxford Drama", "marked": true},
@@ -1752,24 +1811,24 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "Mumford & Sons", "marked": true}
+						{"artist": "Mumford & Sons", "marked": true, "firstOnLine": true}
 					],
 					"lvl1": [
-						"D'Angelo and The Vanguard",
-						{"artist": "Of Monsters and Men", "marked": true},
+						{"artist": "D'Angelo and The Vanguard", "firstOnLine": true},
+						{"artist": "Of Monsters and Men", "marked": true, "firstOnLine": true},
 						{"artist": "The Prodigy", "decorator": "promoted"}
 					],
 					"lvl2": [
-						"Jonny Greenwood & LCO",
+						{"artist": "Jonny Greenwood & LCO", "firstOnLine": true},
 						{"artist": "José Gonzalez", "marked": true},
 						"Julia Marcell",
-						{"artist": "Swans", "marked": true},
+						{"artist": "Swans", "marked": true, "firstOnLine": true},
 						"The Dumplings",
 						{"artist": "The Vaccines", "marked": true},
 						"Thurston Moore"
 					],
 					"others": [
-						{"artist": "Agyness B. Marry", "marked": true},
+						{"artist": "Agyness B. Marry", "marked": true, "firstOnLine": true},
 						"Min T",
 						{"artist": "Nervy", "marked": true},
 						{"artist": "Taco Hemingway", "visible": false},
@@ -1788,25 +1847,25 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "Kasabian", "marked": true},
+						{"artist": "Kasabian", "marked": true, "firstOnLine": true},
 						"Disclosure"
 					],
 					"lvl1": [
-						{"artist": "Flume", "marked": true},
+						{"artist": "Flume", "marked": true, "firstOnLine": true},
 						"Hozier",
 						{"artist": "St. Vincent", "marked": true}
 					],
 					"lvl2": [
-						"Domowe Melodie",
+						{"artist": "Domowe Melodie", "firstOnLine": true},
 						{"artist": "George Fitzgerald", "marked": true},
 						{"artist": "Kaytranada", "canceled": true},
-						{"artist": "Lao Che", "marked": true},
+						{"artist": "Lao Che", "marked": true, "firstOnLine": true},
 						{"artist": "Skubas", "forceOrder": 5},
 						{"artist": "Ratking", "marked": true},
 						"Years & Years"
 					],
 					"others": [
-						{"artist": "The Feral Trees", "marked": true},
+						{"artist": "The Feral Trees", "marked": true, "firstOnLine": true},
 						"Trupa Trupa",
 						{"artist": "Patrick The Pan", "visible": false},
 						{"artist": "Hudson Mohawke", "visible": false},
@@ -1842,19 +1901,25 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2016"
 				],
 				"lineup": {
-					"headliners": ["Florence+The Machine"],
+					"headliners": [{"artist": "Florence+The Machine", "firstOnLine": true}],
 					"lvl1": [
 						"Mac Demarco",
 						"PJ Harvey",
 						"Savages",
-						"Skepta",
+						{"artist": "Skepta", "firstOnLine": true},
 						"Tame Impala",
-						"The lvl4 Shadow Puppets"
+						{"artist": "The Last Shadow Puppets", "firstOnLine": true}
 					],
-					"lvl2": ["DJ Tennis", "Flirtini", "Lunice", "Małpa", "Xxanaxx"],
+					"lvl2": [
+						"DJ Tennis",
+						"Flirtini",
+						{"artist": "Lunice", "firstOnLine": true},
+						"Małpa",
+						"Xxanaxx"
+					],
 					"others": [
 						"Chino",
-						"Heroes Get Remembered",
+						{"artist": "Heroes Get Remembered", "firstOnLine": true},
 						"Lxmp",
 						"Otsochodzi",
 						"Shy Albatross",
@@ -1871,10 +1936,18 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2016"
 				],
 				"lineup": {
-					"headliners": ["Red Hot Chili Peppers"],
+					"headliners": [{"artist": "Red Hot Chili Peppers", "firstOnLine": true}],
 					"lvl1": ["Beirut", "Caribou", "Foals", "M83"],
-					"lvl2": ["KAMP!", "Maria Peszek", "Rebeka", "Section Boyz"],
-					"others": ["An On Bast", "Baasch", "Czeluść (Jutro X Kosa)", "Kroki", "Piotr Zioła", "Sonar", "V/O"]
+					"lvl2": ["KAMP!", "Maria Peszek", "Łona Webber", "Rebeka", "Section Boyz"],
+					"others": [
+						{"artist": "An On Bast", "firstOnLine": true},
+						"Baasch",
+						"Czeluść (Jutro X Kosa)",
+						"Kroki",
+						"Piotr Zioła",
+						"Sonar",
+						"V/O"
+					]
 				}
 			}, {
 				"day": "1st July",
@@ -1884,14 +1957,23 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2016"
 				],
 				"lineup": {
-					"headliners": ["Lcd Soundsystem", "Sigur Rós"],
-					"lvl1": ["Dawid Podsiadło", "Kurt Ville & The Violators", "Paul Kalkbrenner", "Wiz Khalifa"],
+					"headliners": [
+						{"artist": "Lcd Soundsystem", "firstOnLine": true},
+						"Sigur Rós"
+					],
+					"lvl1": [
+						"Dawid Podsiadło",
+						{"artist": "Kurt Ville & The Violators", "firstOnLine": true},
+						{"artist": "Paul Kalkbrenner", "firstOnLine": true},
+						"Wiz Khalifa"
+					],
 					"lvl2": [
-						"Catz ’n Dogs", "Kortez",
+						{"artist": "Catz ’n Dogs", "firstOnLine": true},
+						"Kortez",
 						"Nothing but Thieves",
-						"Ptaki",
+						{"artist": "Ptaki", "firstOnLine": true},
 						"Rysy",
-						"Vince Staples",
+						{"artist": "Wince Staples", "firstOnLine": true},
 						{
 							"artist": "Zbigniew Wodeski with Mitch & Mitch Orchestra and Choir",
 							"sliceDecorator": [
@@ -1904,7 +1986,7 @@
 						"Grobel",
 						"Jóga",
 						"Kuba Sojka",
-						"Olivier Heim",
+						{"artist": "Olivier Heim", "firstOnLine": true},
 						"Suumoo",
 						"Zamilska"
 					]
@@ -1917,8 +1999,17 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2016"
 				],
 				"lineup": {
-					"headliners": ["Pharrell Williams", "Kygo"],
-					"lvl1": ["At The Drive-in", "Bastille", "Chvrches", "Grimes", "The 1975"],
+					"headliners": [
+						{"artist": "Pharrell Williams", "firstOnLine": true},
+						"Kygo"
+					],
+					"lvl1": [
+						{"artist": "At The Drive-in", "firstOnLine": true},
+						"Bastille",
+						{"artist": "Chvrches", "firstOnLine": true},
+						"Grimes",
+						"The 1975"
+					],
 					"lvl2": ["Jacek Sienkiewicz", "Rasmentalism"],
 					"others": [
 						"Coldair",
@@ -1927,7 +2018,7 @@
 						"Nagrobki",
 						"Piotr Bejnar",
 						"Soom T",
-						"Spoken Love",
+						{"artist": "Spoken Love", "firstOnLine": true},
 						"Terrific Sunday",
 						"We Draw A"
 					]
@@ -1958,18 +2049,18 @@
 				],
 				"lineup": {
 					"headliners": ["Radiohead"],
-					"lvl1": ["James Blake", "Royal Blood"],
-					"lvl2": ["Michael Kiwanuka", "Rae Sremmurd", "Solange"],
+					"lvl1": [{"artist": "James Blake", "firstOnLine": true}, "Royal Blood"],
+					"lvl2": [{"artist": "Michael Kiwanuka", "firstOnLine": true}, "Rae Sremmurd", "Solange"],
 					"others": [
-						{"artist": "Arca (DJ Set)", "sliceDecorator": {"slice": "(DJ Set)", "style": "down"}},
+						{"artist": "Arca (DJ Set)", "sliceDecorator": {"slice": "(DJ Set)", "style": "down"}, "firstOnLine": true},
 						"Black Coffee",
-						"Natalia Przybysz",
-						"Quebonafide",
-						"Sorry Boys",
+						{"artist": "Natalia Przybysz", "forceOrder": 3},
+						{"artist": "Quebonafide", "forceOrder": 4},
+						{"artist": "Sorry Boys", "forceOrder": 5, "firstOnLine": true},
 						"Enzu",
 						"Flirtini",
-						"Wacław Zimpel/Kuba Ziołek",
-						"Holak",
+						{"artist": "Wacław Zimpel/Kuba Ziołek", "forceOrder": 8},
+						{"artist": "Holak", "forceOrder": 9, "firstOnLine": true},
 						"Gverilla",
 						"Mery Spolsky"
 					]
@@ -1984,18 +2075,22 @@
 				"lineup": {
 					"headliners": ["Foo Fighters"],
 					"lvl1": [
-						"G-Eazy",
+						{"artist": "G-Eazy", "firstOnLine": true},
 						{"artist": "The Kills", "sortBy": "Kills"},
 						"M.I.A."
 					],
-					"lvl2": ["Charli XCX", "Jimmy Eat World", "Trentemøller"],
+					"lvl2": [
+						{"artist": "Charli XCX", "firstOnLine": true},
+						"Jimmy Eat World",
+						"Trentemøller"
+					],
 					"others": [
-						"A_GIM",
+						{"artist": "A_GIM", "firstOnLine": true},
+						{"artist": "Bownik", "firstOnLine": true, "forceOrder": 6},
 						"Bitamina",
 						"Blanck Mass",
 						"Daniel Avery",
 						"Hades",
-						"Bownik",
 						"Kari",
 						"Marcin Krupa",
 						"New People",
@@ -2012,17 +2107,25 @@
 				],
 				"lineup": {
 					"headliners": ["The Weekend"],
-					"lvl1": ["Mac Miller", "Moderat", "Prophets of Rage"],
+					"lvl1": [{"artist": "Mac Miller", "firstOnLine": true}, "Moderat", "Prophets of Rage"],
 					"lvl2": [
-						"Brodka",
+						{"artist": "Brodka", "firstOnLine": true},
 						{"artist": "The Dumplings", "sortBy": "Dumplings"},
 						"Grammatik",
-						"JMSN",
+						{"artist": "JMSN", "firstOnLine": true},
 						"Kiasmos",
 						"Tiga",
 						"Warpaint"
 					],
-					"others": ["Bisz/Radex", "Daria Zawiałow", "Dasein", "Deas", "Hańba!", "Majlo", "Ralph Kaminski"]
+					"others": [
+						{"artist": "Bisz/Radex", "firstOnLine": true},
+						"Daria Zawiałow",
+						"Dasein",
+						"Deas",
+						"Hańba!",
+						{"artist": "Majlo", "firstOnLine": true},
+						"Ralph Kaminski"
+					]
 				}
 			}, {
 				"day": "1st July",
@@ -2032,25 +2135,25 @@
 					"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2017"
 				],
 				"lineup": {
-					"headliners": ["The XX", "Lorde"],
-					"lvl1": ["George Ezra", "Taco Hemingway"],
+					"headliners": [{"artist": "The XX", "firstOnLine": true}, "Lorde"],
+					"lvl1": [{"artist": "George Ezra", "firstOnLine": true}, "Taco Hemingway"],
 					"lvl2": [
-						"Dua Lipa",
+						{"artist": "Dua Lipa", "firstOnLine": true},
 						"Nicolas Jaar",
-						{"artist": "Tyga", "forceOrder": "3"},
+						{"artist": "Tyga", "forceOrder": 3},
 						"O.S.T.R."
 					],
 					"others": [
-						"Benjamin Booker",
+						{"artist": "Benjamin Booker", "firstOnLine": true},
 						"Buslav",
 						"Duit",
 						"Julia Pietrucha",
 						"Kevin Morby",
-						"Krzysztof Zalewski",
+						{"artist": "Krzysztof Zalewski", "firstOnLine": true},
 						"Monki",
 						"Niemoc",
 						"Seltron 400",
-						"The Shelters",
+						{"artist": "The Shelters", "firstOnLine": true},
 						"Urbanski"
 					]
 				}

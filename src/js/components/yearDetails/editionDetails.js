@@ -1,6 +1,6 @@
 'use strict';
 
-import { EDITION, LINK } from '../../enums/elementHandlers';
+import {DIALOGBOX, EDITION, LINK} from '../../enums/elementHandlers';
 import { edition } from '../../classes/edition';
 import { lineup } from '../../classes/lineup';
 import { lineupDetails } from "./lineupDetails";
@@ -45,7 +45,7 @@ export class editionDetails extends edition {
 		let section = document.createElement('section');
 
 		section.id = EDITION.EDITION_DETAILS_ID;
-		section.classList.add(`${EDITION.EDITION_DETAILS_YEAR_CLASS}${this.editionYear}`);
+		section.classList.add(`${EDITION.EDITION_DETAILS_YEAR_CLASS}${this.editionYear}`, DIALOGBOX.INACTIVE_HELPER_CLASS);
 		section.dataset.year = this.editionYear;
 
 		return section;

@@ -6,6 +6,7 @@ import { icons } from './iconsLibrary';
 export function addDialogbox({
 		id,
 		classNames,
+		stretched = false,
 		dataAttr,
 		closeAction = toggleDialogbox,
 		closeTitle = 'hide details',
@@ -24,6 +25,9 @@ export function addDialogbox({
 		classNames.map((item) => {
 			dialogboxClassNames.push(item);
 		});
+	}
+	if(stretched) {
+		dialogboxClassNames.push(DIALOGBOX.STRETCHED_CLASS);
 	}
 	if(dataAttr) {
 		dataAttr.map((item) => {
@@ -55,6 +59,15 @@ export function toggleDialogbox(e) {
 	toggleDialogboxAction(`.${DIALOGBOX.VISIBLE_CLASS}`);
 }
 
-export function toggleDialogboxAction(target) {
+export function toggleDialogboxWithInactive(e) {
+	e.preventDefault();
+	toggleDialogboxAction(`.${DIALOGBOX.VISIBLE_CLASS}`, `.${DIALOGBOX.INACTIVE_HELPER_CLASS}`);
+}
+
+export function toggleDialogboxAction(target, inactiveElement) {
 	document.querySelector(target).classList.toggle(DIALOGBOX.VISIBLE_CLASS);
+
+	if (inactiveElement) {
+		document.querySelector(inactiveElement).classList.toggle(DIALOGBOX.INACTIVE_HELPER_CLASS);
+	}
 }

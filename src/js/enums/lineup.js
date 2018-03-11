@@ -21,7 +21,19 @@ export const ARTIST_KEYS = {
 	MULTILINE: 'multiline',
 	CANCELED: 'canceled',
 	REPLACEMENT: 'replacement',
-	SEPARATOR_MIDDLE: 'separatorMiddle',
+	FIRST_ON_LINE: 'firstOnLine',
+	LAST_ON_LINE: 'lastOnLine',
+	LAST_ON_DAY: 'lastOnDay',
+	BREAK_LINE: 'breakLine',
+	NEXT_LINE_ARTIST: 'nextLineArtist',
+	ALIGNED: 'aligned',
+	LINE: 'line',
+	LEVEL: 'level',
+};
+
+export const ARTIST_ALIGN = {
+	LEFT: 'left',
+	RIGHT: 'right',
 };
 
 export const ARTIST_DECORATORS = {
@@ -30,6 +42,7 @@ export const ARTIST_DECORATORS = {
 	COLLAPSED: 'collapsed',
 	UPPERCASE: 'uppercase',
 	CAPITALIZE: 'capitalize',
+	COMPRESSED: 'compressed',
 };
 
 export const ARTIST_SLICES_PROPS = {
@@ -46,5 +59,7 @@ export const ARTIST_SLICES_STYLES = {
 	NEW_LINE: 'newLine',
 	EXPANDED: 'expanded',
 	COLLAPSED: 'collapsed',
+	COMPRESSED: 'compressed',
 	INDENTED: 'indented',
+	PREVIOUS_LINE: 'previousLine',
 };

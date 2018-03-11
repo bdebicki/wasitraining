@@ -2,7 +2,11 @@
 
 import { lineup } from "../../classes/lineup";
 import { LINEUP, DIALOGBOX, LINK, EDITION } from "../../enums/elementHandlers";
-import { LINEUP_LEVELS, ARTIST_KEYS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_SLICES_PROPS } from '../../enums/lineup';
+import {
+	LINEUP_LEVELS, ARTIST_KEYS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_SLICES_PROPS,
+	ARTIST_ALIGN
+} from '../../enums/lineup';
+import { ARTIST_CANCELED } from '../../enums/content';
 import * as dialogbox from '../../utils/addDialogbox';
 import { setIcon } from "../../utils/setIcon";
 import { icons } from "../../utils/iconsLibrary";
@@ -17,16 +21,16 @@ const lineupLvlToClassMap = {
 	[LINEUP_LEVELS.OTHERS]: LINEUP.ARTISTS_OTHERS_CLASS,
 	[LINEUP_LEVELS.DAILY_ARTISTS]: LINEUP.ARTISTS_DAILY_CLASS,
 };
-const dailyLvlToClassMap = {
-	[LINEUP_LEVELS.HEADLINERS]: LINEUP.ARTISTS_DAILY_HEADLINER_CLASS,
-	[LINEUP_LEVELS.LVL1]: LINEUP.ARTISTS_DAILY_LVL1_CLASS,
+const alignToClassMap = {
+	[ARTIST_ALIGN.LEFT]: LINEUP.ARTIST_ALIGN_LEFT_CLASS,
+	[ARTIST_ALIGN.RIGHT]: LINEUP.ARTIST_ALIGN_RIGHT_CLASS,
 };
 const artistDecoratorToClassMap = {
 	[ARTIST_DECORATORS.PROMOTED]: LINEUP.ARTIST_PROMOTED_CLASS,
 	[ARTIST_DECORATORS.EXPANDED]: LINEUP.ARTIST_EXPANDED_CLASS,
 	[ARTIST_DECORATORS.COLLAPSED]: LINEUP.ARTIST_COLLAPSED_CLASS,
 	[ARTIST_DECORATORS.UPPERCASE]: LINEUP.ARTIST_UPPERCASE_CLASS,
-	[ARTIST_DECORATORS.CAPITALIZE]: LINEUP.ARTIST_CAPITALIZE_CLASS,
+	[ARTIST_DECORATORS.COMPRESSED]: LINEUP.ARTIST_COMPRESSED_CLASS,
 };
 const artistSliceDecoratorToClassMap = {
 	[ARTIST_SLICES_STYLES.UP]: LINEUP.ARTIST_SLICE_UP_CLASS,
@@ -37,7 +41,9 @@ const artistSliceDecoratorToClassMap = {
 	[ARTIST_SLICES_STYLES.NEW_LINE]: LINEUP.ARTIST_SLICE_NEW_LINE_CLASS,
 	[ARTIST_SLICES_STYLES.EXPANDED]: LINEUP.ARTIST_SLICE_EXPANDED_CLASS,
 	[ARTIST_SLICES_STYLES.COLLAPSED]: LINEUP.ARTIST_SLICE_COLLAPSED_CLASS,
+	[ARTIST_SLICES_STYLES.COMPRESSED]: LINEUP.ARTIST_SLICE_COMPRESSED_CLASS,
 	[ARTIST_SLICES_STYLES.INDENTED]: LINEUP.ARTIST_SLICE_INDENTED_CLASS,
+	[ARTIST_SLICES_STYLES.PREVIOUS_LINE]: LINEUP.ARTIST_SLICE_PREVIOUS_LINE_CLASS,
 };
 
 export class lineupDetails extends lineup {
@@ -47,7 +53,7 @@ export class lineupDetails extends lineup {
 
 	toggleLineup(e) {
 		e.preventDefault();
-		dialogbox.toggleDialogboxAction(`#${LINEUP.SECTION_ID}`);
+		dialogbox.toggleDialogboxAction(`#${LINEUP.SECTION_ID}`, `#${EDITION.EDITION_DETAILS_ID}`);
 	}
 
 	renderLineupLink() {
@@ -110,30 +116,10 @@ export class lineupDetails extends lineup {
 		return decoratedName.content;
 	}
 
-	decorateArtist(artistKey, target, artistLvl) {
-		let li = document.createElement('li');
+	decorateArtist(artistKey, target, index, artistLvl) {
+		const fragment = document.createDocumentFragment();
+		const li = document.createElement('li');
 		let artistName;
-
-		li.classList.add(LINEUP.ARTIST_CLASS);
-		if (artistKey[ARTIST_KEYS.DECORATOR]) {
-			li.classList.add(artistDecoratorToClassMap[artistKey[ARTIST_KEYS.DECORATOR]]);
-		}
-		if (artistKey[ARTIST_KEYS.MARKED]) {
-			li.classList.add(LINEUP.ARTIST_MARKED_CLASS);
-		}
-		if (artistKey[ARTIST_KEYS.MULTILINE]) {
-			li.classList.add(LINEUP.ARTIST_MULTILINE_CLASS);
-		}
-		if (artistKey[ARTIST_KEYS.SEPARATOR_MIDDLE]) {
-			li.classList.add(LINEUP.ARTIST_SEPARATOR_MIDDLE_CLASS);
-		}
-
-		if (artistKey[ARTIST_KEYS.CANCELED]) {
-			li.classList.add(LINEUP.ARTIST_CANCELED_CLASS);
-		}
-		if (artistKey[ARTIST_KEYS.REPLACEMENT]) {
-			li.classList.add(LINEUP.ARTIST_REPLACEMENT_CLASS);
-		}
 
 		if (artistKey[ARTIST_KEYS.ARTIST] && !artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
 			artistName = artistKey[ARTIST_KEYS.ARTIST];
@@ -143,17 +129,93 @@ export class lineupDetails extends lineup {
 			artistName = artistKey;
 		}
 
+		li.classList.add(LINEUP.ARTIST_CLASS);
+
+		if(artistLvl === LINEUP_LEVELS.HEADLINERS) {
+			li.classList.add(`${LINEUP.ARTIST_CLASS}--headliner`);
+		} else {
+			li.classList.add(`${LINEUP.ARTIST_CLASS}--${artistLvl}`);
+		}
+
+		if (artistKey[ARTIST_KEYS.DECORATOR]) {
+			li.classList.add(artistDecoratorToClassMap[artistKey[ARTIST_KEYS.DECORATOR]]);
+		}
+		if (artistKey[ARTIST_KEYS.MARKED]) {
+			li.classList.add(LINEUP.ARTIST_MARKED_CLASS);
+		}
+		if (artistKey[ARTIST_KEYS.MULTILINE]) {
+			li.classList.add(LINEUP.ARTIST_MULTILINE_CLASS);
+		}
+
+		if (artistKey[ARTIST_KEYS.ALIGNED]) {
+			li.classList.add(alignToClassMap[artistKey[ARTIST_KEYS.ALIGNED]])
+		}
+
+		if (artistKey[ARTIST_KEYS.FIRST_ON_LINE]) {
+			li.classList.add(LINEUP.ARTIST_FIRST_ON_LINE_CLASS);
+
+			if (index > 0) {
+				let newLine = document.createElement('li');
+
+				newLine.classList.add(LINEUP.ARTISTS_NEW_LINE_ELEMENT_CLASS);
+
+				fragment.appendChild(newLine);
+			}
+		}
+		if (artistKey[ARTIST_KEYS.LAST_ON_LINE]) {
+			li.classList.add(LINEUP.ARTIST_LAST_ON_LINE_CLASS);
+		}
+		if (artistKey[ARTIST_KEYS.LAST_ON_DAY]) {
+			li.classList.add(LINEUP.ARTIST_LAST_ON_DAY_CLASS);
+		}
+
+		if (artistKey[ARTIST_KEYS.CANCELED]) {
+			const span = document.createElement('span');
+
+			span.classList.add(LINEUP.ARTIST_CANCELED_CLASS);
+			span.textContent = artistName;
+			li.title = ARTIST_CANCELED;
+			li.dataset.canceledArtist = artistName;
+			li.appendChild(span);
+		}
+		if (artistKey[ARTIST_KEYS.REPLACEMENT] && typeof artistKey[ARTIST_KEYS.REPLACEMENT] !== 'string') {
+			li.classList.add(LINEUP.ARTIST_REPLACEMENT_CLASS);
+		}
+
 		if (artistKey[ARTIST_KEYS.SLICE_DECORATOR]) {
 			li.append(this.artistSliceDecorator(artistName, artistKey[ARTIST_KEYS.SLICE_DECORATOR]));
-		} else {
+		} else if (typeof artistKey[ARTIST_KEYS.REPLACEMENT] === 'string') {
+			const spanReplacement = document.createElement('span');
+			const spanCanceled = document.createElement('span');
+			const canceledArtistEl = target.querySelector(`li[data-canceled-artist='${artistKey[ARTIST_KEYS.REPLACEMENT]}']`);
+
+			spanReplacement.textContent = artistName;
+			spanReplacement.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
+			spanCanceled.textContent = canceledArtistEl.textContent;
+			spanCanceled.classList.add(LINEUP.ARTIST_CANCELED_CLASS, LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
+			spanCanceled.title = ARTIST_CANCELED;
+
+			canceledArtistEl.textContent = '';
+			canceledArtistEl.removeAttribute('title');
+			canceledArtistEl.classList.remove(LINEUP.ARTIST_CANCELED_CLASS, LINEUP.ARTIST_COLLAPSED_CLASS, LINEUP.ARTIST_EXPANDED_CLASS);
+			canceledArtistEl.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_CLASS);
+			canceledArtistEl.appendChild(spanCanceled);
+			canceledArtistEl.appendChild(spanReplacement);
+		} else if (!artistKey[ARTIST_KEYS.CANCELED]) {
 			li.textContent = artistName;
 		}
 
-		if (artistLvl) {
-			li.classList.add(dailyLvlToClassMap[artistLvl]);
+		if (artistKey[ARTIST_KEYS.BREAK_LINE]) {
+			const previousEl = target.querySelector(`li:last-child`);
+
+			previousEl.classList.add(LINEUP.ARTIST_NEXT_LINE_ARTIST_CLASS);
+			previousEl.dataset[ARTIST_KEYS.NEXT_LINE_ARTIST] = artistKey[ARTIST_KEYS.SLICE_DECORATOR][ARTIST_SLICES_PROPS.SLICE];
 		}
 
-		target.appendChild(li);
+		if (typeof artistKey[ARTIST_KEYS.REPLACEMENT] !== 'string') {
+			fragment.appendChild(li);
+			target.appendChild(fragment);
+		}
 	}
 
 	getLineupByType() {
@@ -162,6 +224,8 @@ export class lineupDetails extends lineup {
 				return this.decorateLineupByLevels();
 			case 'exceptHeadliners':
 				return this.decorateLineupHeadlinersByDays();
+			case 'customLevels':
+				return this.decorateLineupCustomLevelsByDays();
 			default:
 				return this.decorateLineupByDays();
 		}
@@ -176,8 +240,8 @@ export class lineupDetails extends lineup {
 
 			ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
 
-			lineup[key].map((item) => {
-				this.decorateArtist(item, ul);
+			lineup[key].map((item, index) => {
+				this.decorateArtist(item, ul, index, key);
 			});
 
 			fragment.appendChild(ul);
@@ -198,8 +262,8 @@ export class lineupDetails extends lineup {
 					ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
 
 					Object.keys(item).map((key) => {
-						item[key].map((itemKey) => {
-							this.decorateArtist(itemKey, ul, key);
+						item[key].map((itemKey, index) => {
+							this.decorateArtist(itemKey, ul, index, key);
 						});
 					});
 
@@ -210,8 +274,8 @@ export class lineupDetails extends lineup {
 
 				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
 
-				lineup[key].map((item) => {
-					this.decorateArtist(item, ul);
+				lineup[key].map((item, index) => {
+					this.decorateArtist(item, ul, index, key);
 				});
 
 				fragment.appendChild(ul);
@@ -225,18 +289,66 @@ export class lineupDetails extends lineup {
 		let fragment = document.createDocumentFragment();
 		const lineup = this.lineup;
 
-		lineup.map((item) => {
+		lineup.map((item, index) => {
 			let section = document.createElement('section');
+			const dayCount = index + 1;
 
-			section.classList.add(LINEUP.ARTISTS_DAY_CLASS);
+			section.classList.add(LINEUP.ARTISTS_DAY_CLASS, `${LINEUP.ARTISTS_DAY_CLASS}--day${dayCount}`);
 
 			Object.keys(item).map((key) => {
 				let ul = document.createElement('ul');
 
 				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
 
-				item[key].map((itemKey) => {
-					this.decorateArtist(itemKey, ul);
+				item[key].map((itemKey, index) => {
+					this.decorateArtist(itemKey, ul, index, key);
+				});
+
+				section.appendChild(ul);
+			});
+
+			fragment.appendChild(section);
+		});
+
+		return fragment;
+	}
+
+	decorateLineupCustomLevelsByDays() {
+		const fragment = document.createDocumentFragment();
+		const lineup = this.lineup;
+		const tempLineup = [];
+
+		// merge all day artists in one array
+		lineup.map((day, index) => {
+			tempLineup.push([]); // create day key on tempLineup array
+
+			Object.keys(day).map((level) => { // iterate on day
+				day[level].map((artist) => { // iterate on level of specific day
+					const arrLine = artist[ARTIST_KEYS.LINE] - 1;
+					artist[ARTIST_KEYS.LEVEL] = level;
+
+					if(tempLineup[index][arrLine] === undefined) { // create line if doesn't exist
+						tempLineup[index].push([]);
+					}
+
+					tempLineup[index][arrLine].push(artist); // push artist into line
+				});
+			});
+		});
+		tempLineup.map((day, index) => {
+			const section = document.createElement('section');
+			const currentDay = index + 1;
+
+			section.classList.add(LINEUP.ARTISTS_DAY_CLASS, `${LINEUP.ARTISTS_DAY_CLASS}--day${currentDay}`);
+
+			day.map((line, index) => {
+				const ul = document.createElement('ul');
+				const currentLine = index + 1;
+
+				ul.classList.add(LINEUP.ARTISTS_LINE_CLASS, `${LINEUP.ARTISTS_LINE_CLASS}--line${currentLine}`);
+
+				line.map((artist) => {
+					this.decorateArtist(artist, ul, index, artist[ARTIST_KEYS.LEVEL]);
 				});
 
 				section.appendChild(ul);
@@ -271,13 +383,14 @@ export class lineupDetails extends lineup {
 		const dialogboxLineup = dialogbox.addDialogbox({
 			id: LINEUP.SECTION_ID,
 			classNames: [`${LINEUP.EDITION_CLASS}${newYear}`, 'dialogbox--isVisible'],
+			closeAction: dialogbox.toggleDialogboxWithInactive,
 			dataAttr: [['year', `${newYear}`]],
 			title: `${DIALOGBOX_HEADLINE_TEXT} ${newYear}`,
 			content: section,
 			closeTitle: 'hide lineup details'
 		});
 
-		section.classList.add(LINEUP.ARTISTS_CLASS, `${LINEUP.ARTISTS_EDITION_CLASS}${newYear}`);
+		section.classList.add(DIALOGBOX.CONTENT_CLASS, LINEUP.ARTISTS_CLASS, `${LINEUP.ARTISTS_EDITION_CLASS}${newYear}`);
 		section.appendChild(this.getLineupByType());
 
 		return dialogboxLineup;
