@@ -327,11 +327,11 @@ export class lineupDetails extends lineup {
 					const arrLine = artist[ARTIST_KEYS.LINE] - 1;
 					artist[ARTIST_KEYS.LEVEL] = level;
 
-					if(tempLineup[index][arrLine] === undefined) {
+					if(tempLineup[index][arrLine] === undefined) { // create line if doesn't exist
 						tempLineup[index].push([]);
 					}
 
-					tempLineup[index][arrLine].push(artist);
+					tempLineup[index][arrLine].push(artist); // push artist into line
 				});
 			});
 		});
@@ -339,13 +339,13 @@ export class lineupDetails extends lineup {
 			const section = document.createElement('section');
 			const currentDay = index + 1;
 
-			section.classList.add(LINEUP.ARTISTS_DAY_CLASS, `${LINEUP.ARTISTS_DAY_CLASS}--${currentDay}`);
+			section.classList.add(LINEUP.ARTISTS_DAY_CLASS, `${LINEUP.ARTISTS_DAY_CLASS}--day${currentDay}`);
 
 			day.map((line, index) => {
 				const ul = document.createElement('ul');
 				const currentLine = index + 1;
 
-				ul.classList.add(`${LINEUP.ARTISTS_CLASS}--line${currentLine}`);
+				ul.classList.add(LINEUP.ARTISTS_LINE_CLASS, `${LINEUP.ARTISTS_LINE_CLASS}--line${currentLine}`);
 
 				line.map((artist) => {
 					this.decorateArtist(artist, ul, index, artist[ARTIST_KEYS.LEVEL]);

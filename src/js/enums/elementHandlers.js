@@ -115,6 +115,7 @@ export const RAIN = {
 const lineupClassBuilder = {
 	section: 'lineup',
 	artists: 'lineupArtists',
+	line: 'lineupArtists__line',
 	lvl: 'lineupArtists__lvl',
 	artist: 'lineupArtists__artist',
 	slice: 'lineupArtists__slice',
@@ -128,7 +129,8 @@ export const LINEUP = {
 	ARTISTS_EDITION_CLASS: `${lineupClassBuilder.artists}--edition`,
 	ARTISTS_DAY_CLASS: `${lineupClassBuilder.artists}__day`,
 	ARTISTS_NEW_LINE_ELEMENT_CLASS: `${lineupClassBuilder.artists}__newLine`,
-	ARTISTS_LEVEL_CLASS: `${lineupClassBuilder.lvl}`,
+	ARTISTS_LINE_CLASS: lineupClassBuilder.line,
+	ARTISTS_LEVEL_CLASS: lineupClassBuilder.lvl,
 	ARTISTS_HEADLINERS_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.HEADLINERS}`,
 	ARTISTS_LVL1_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.LVL1}`,
 	ARTISTS_LVL2_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.LVL2}`,

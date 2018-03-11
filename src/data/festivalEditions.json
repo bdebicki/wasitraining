@@ -1287,9 +1287,9 @@
 						{"artist": "M83", "line": 1}
 					],
 					"lvl2": [
-						{"artist": "Public Enemy", "line": 2},
-						{"artist": "Kasia Nosowska", "displayName": "Nosowska", "line": 2},
-						{"artist": "Toro Y Moi", "line": 2}
+						{"artist": "Public Enemy", "decorator": "expanded", "line": 2},
+						{"artist": "Kasia Nosowska", "displayName": "Nosowska", "decorator": "expanded", "line": 2},
+						{"artist": "Toro Y Moi", "decorator": "expanded", "line": 2}
 					],
 					"lvl4": [
 						{"artist": "Julia Marcell", "line": 3}
