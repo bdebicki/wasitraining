@@ -1,5 +1,7 @@
 `use strict`;
 
+import { LINEUP_LEVELS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_KEYS } from './lineup';
+
 export const globalClassBuilders = {
 	active: 'isActive',
 	visible: 'isVisible',
@@ -67,11 +69,13 @@ const editionClassBuilders = {
 };
 export const EDITION = {
 	EDITION_DETAILS_ID: editionClassBuilders.details,
+	EDITION_DETAILS_YEAR_CLASS: `${editionClassBuilders.details}--edition`,
 	FULL_NAME_CLASS: `${editionClassBuilders.details}__fullName`,
 	PLACE_CLASS: `${editionClassBuilders.details}__place`,
 	YEAR_CLASS: `${editionClassBuilders.details}__year`,
 	DATES_CLASS: `${editionClassBuilders.details}__date`,
 	LINEUP_CLASS: editionClassBuilders.lineup,
+	LINEUP_EDITION_CLASS: `${editionClassBuilders.lineup}--edition`,
 	HEADLINERS_CLASS: `${editionClassBuilders.lineup}__${editionClassBuilders.headlines}`,
 	HEADLINER_CLASS: `${editionClassBuilders.headlines}__headliner`,
 	LINEUP_LINK_CLASS: `${editionClassBuilders.lineup}__detailsLink`,
@@ -106,6 +110,52 @@ export const RAIN = {
 	DETAILS_ITEM_CLASS: `${rainClassBuilders.detailsList}__item`,
 	DETAILS_ITEM_DAY_CLASS: `${rainClassBuilders.detailsList}__day`,
 	DETAILS_ITEM_RAIN_CLASS: `${rainClassBuilders.detailsList}__rain`,
+};
+
+const lineupClassBuilder = {
+	section: 'lineup',
+	artists: 'lineupArtists',
+	lvl: 'lineupArtists__lvl',
+	artist: 'lineupArtists__artist',
+	slice: 'lineupArtists__slice',
+};
+export const LINEUP = {
+	SECTION_ID: lineupClassBuilder.section,
+	EDITION_CLASS: `${lineupClassBuilder.section}--edition`,
+	ARTISTS_CLASS: lineupClassBuilder.artists,
+	ARTISTS_EDITION_CLASS: `${lineupClassBuilder.artists}--edition`,
+	ARTISTS_DAY_CLASS: `${lineupClassBuilder.artists}__day`,
+	ARTISTS_LEVEL_CLASS: `${lineupClassBuilder.lvl}`,
+	ARTISTS_HEADLINERS_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.HEADLINERS}`,
+	ARTISTS_LVL1_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.LVL1}`,
+	ARTISTS_LVL2_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.LVL2}`,
+	ARTISTS_LVL3_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.LVL3}`,
+	ARTISTS_LVL4_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.LVL4}`,
+	ARTISTS_OTHERS_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.OTHERS}`,
+	ARTISTS_DAILY_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.DAILY_ARTISTS}`,
+	ARTISTS_DAILY_HEADLINER_CLASS: `${lineupClassBuilder.artist}--headliner`,
+	ARTISTS_DAILY_LVL1_CLASS: `${lineupClassBuilder.artist}--lvl1`,
+	ARTIST_CLASS: `${lineupClassBuilder.artist}`,
+	ARTIST_PROMOTED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.PROMOTED}`,
+	ARTIST_EXPANDED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.EXPANDED}`,
+	ARTIST_COLLAPSED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.COLLAPSED}`,
+	ARTIST_UPPERCASE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.UPPERCASE}`,
+	ARTIST_CAPITALIZE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.CAPITALIZE}`,
+	ARTIST_MARKED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.MARKED}`,
+	ARTIST_MULTILINE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.MULTILINE}`,
+	ARTIST_CANCELED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.CANCELED}`,
+	ARTIST_REPLACEMENT_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.REPLACEMENT}`,
+	ARTIST_SEPARATOR_MIDDLE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.SEPARATOR_MIDDLE}`,
+	ARTIST_SLICE_CLASS: `${lineupClassBuilder.slice}`,
+	ARTIST_SLICE_UP_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.UP}`,
+	ARTIST_SLICE_DOWN_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.DOWN}`,
+	ARTIST_SLICE_MIDDLE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.MIDDLE}`,
+	ARTIST_SLICE_LOWER_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.LOWER}`,
+	ARTIST_SLICE_MULTILINE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.MULTILINE}`,
+	ARTIST_SLICE_NEW_LINE_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.NEW_LINE}`,
+	ARTIST_SLICE_EXPANDED_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.EXPANDED}`,
+	ARTIST_SLICE_COLLAPSED_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.COLLAPSED}`,
+	ARTIST_SLICE_INDENTED_CLASS: `${lineupClassBuilder.slice}--${ARTIST_SLICES_STYLES.INDENTED}`,
 };
 
 const bgClassBuilder = LAYOUT.BG_VIDEO_ID;

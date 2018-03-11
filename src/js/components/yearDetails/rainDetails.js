@@ -2,7 +2,7 @@
 
 import { LINK, RAIN, DIALOGBOX} from '../../enums/elementHandlers';
 import { addVideo, addSVGmask, svgType } from '../../utils/addElement';
-import { addDialogbox } from '../../utils/addDialogbox';
+import * as dialogbox from '../../utils/addDialogbox';
 import { setIcon } from '../../utils/setIcon';
 import { icons } from '../../utils/iconsLibrary';
 import { edition } from '../../classes/edition';
@@ -17,10 +17,9 @@ export class rainDetails extends edition {
 
 		const headerEl = document.querySelector(`.${RAIN.HEADER_CLASS}`);
 		const target = this.getAttribute('href').replace('#', '');
-		let targetEl = document.getElementById(target);
 
 		headerEl.classList.toggle(RAIN.HEADER_HIDDEN_CLASS);
-		targetEl.classList.toggle(DIALOGBOX.VISIBLE_CLASS);
+		dialogbox.toggleDialogboxAction(`#${target}`);
 	}
 
 	decorateRainDayDetails() {
@@ -189,20 +188,20 @@ export class rainDetails extends edition {
 
 	renderRainDetails() {
 		let ul = document.createElement('ul');
-		const dialogboxSettings = {
+		const rainDetailsDialogbox = dialogbox.addDialogbox({
 			id: RAIN.DETAILS_ID,
-			classNames: RAIN.DETAILS_CLASS,
+			classNames: [RAIN.DETAILS_CLASS],
 			title: 'Rain',
 			content: ul,
 			closeAction: this.toggleDetails,
 			closeTitle: 'hide rain details',
-		};
+		});
 
 		ul.classList.add(RAIN.DETAILS_LIST_CLASS);
 
 		ul.appendChild(this.decorateRainDayDetails());
 
-		return addDialogbox(dialogboxSettings);
+		return rainDetailsDialogbox;
 	}
 
 	updateRainDetails() {

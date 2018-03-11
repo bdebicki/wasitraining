@@ -3,8 +3,6 @@
 import { EDITION, LINK } from '../../enums/elementHandlers';
 import { edition } from '../../classes/edition';
 import { lineup } from '../../classes/lineup';
-import { setIcon } from '../../utils/setIcon';
-import { icons } from '../../utils/iconsLibrary';
 import { lineupDetails } from "./lineupDetails";
 
 export class editionDetails extends edition {
@@ -14,6 +12,10 @@ export class editionDetails extends edition {
 		this.headlinersDetails = new lineup(editionId);
 		this.lineupDetails = new lineupDetails(editionId);
 	};
+
+	get currentEditionYear() {
+		return document.getElementById(EDITION.EDITION_DETAILS_ID).dataset.year;
+	}
 
 	decorateEditionDates() {
 		const editionDate = this.editionDate;
@@ -39,16 +41,12 @@ export class editionDetails extends edition {
 		return fragment;
 	}
 
-	toggleLineup(e) {
-		e.preventDefault();
-
-		console.log('display lineup');
-	}
-
 	renderEditionContainer() {
 		let section = document.createElement('section');
 
 		section.id = EDITION.EDITION_DETAILS_ID;
+		section.classList.add(`${EDITION.EDITION_DETAILS_YEAR_CLASS}${this.editionYear}`);
+		section.dataset.year = this.editionYear;
 
 		return section;
 	}
@@ -81,19 +79,18 @@ export class editionDetails extends edition {
 	renderShortLineupContainer() {
 		let div = document.createElement('div');
 
-		div.classList.add(EDITION.LINEUP_CLASS);
+		div.classList.add(EDITION.LINEUP_CLASS, `${EDITION.LINEUP_EDITION_CLASS}${this.editionYear}`);
 
 		return div;
 	}
 
-	updateHeadliners() {
+	updateHeadliners(oldYear) {
+		const shortLineupContainer = document.querySelector(`.${EDITION.LINEUP_CLASS}`);
+		shortLineupContainer.classList.remove(`${EDITION.LINEUP_EDITION_CLASS}${oldYear}`);
+		shortLineupContainer.classList.add(`${EDITION.LINEUP_EDITION_CLASS}${this.editionYear}`);
 		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent =''; // to clear rain details list
 
 		return this.decorateEditionHeadliners();
-	}
-
-	updateLineup() {
-		this.lineupDetails.update();
 	}
 
 	renderHeadliners() {
@@ -105,33 +102,20 @@ export class editionDetails extends edition {
 		return ul;
 	}
 
-	renderLineupLink() {
-		let p = document.createElement('p');
-		let a = document.createElement('a');
-
-		p.classList.add(EDITION.LINEUP_LINK_CLASS);
-		a.classList.add(LINK.BASIC_CLASS, LINK.INVERTED_STYLE_CLASS, LINK.SIZE_XS_CLASS, LINK.HAS_ICON_CLASS);
-		a.href = `#lineup`;
-		a.textContent = 'see full lineup';
-		a.appendChild(setIcon(icons.plus(), `${LINK.ICON_CLASS}`));
-		a.addEventListener('click', this.toggleLineup, null);
-
-		p.appendChild(a);
-
-		return p;
-	}
-
-	renderLineup() {
-		this.lineupDetails.render();
-	}
-
 	updateEditionDetails() {
-		document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent = this.editionYear;
+		const detailsContainer = document.getElementById(EDITION.EDITION_DETAILS_ID);
+		const oldYear = this.currentEditionYear;
+		const newYear = this.editionYear;
+
+		detailsContainer.classList.remove(`${EDITION.EDITION_DETAILS_YEAR_CLASS}${oldYear}`);
+		detailsContainer.classList.add(`${EDITION.EDITION_DETAILS_YEAR_CLASS}${newYear}`);
+		detailsContainer.dataset.year = newYear;
+
+		document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent = newYear;
 		document.querySelector(`.${EDITION.DATES_CLASS}`).textContent = this.decorateEditionDates();
 		document.querySelector(`.${EDITION.FULL_NAME_CLASS}`).textContent = this.editionFullName;
 		document.querySelector(`.${EDITION.PLACE_CLASS}`).textContent = this.editionPlace;
-		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(this.updateHeadliners());
-		this.updateLineup();
+		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).appendChild(this.updateHeadliners(oldYear));
 	}
 
 	render() {
@@ -139,8 +123,7 @@ export class editionDetails extends edition {
 		const editionDetails = this.renderEditionDetails();
 		const lineupContainer = this.renderShortLineupContainer();
 		const headliners = this.renderHeadliners();
-		const lineupLink = this.renderLineupLink();
-		const lineup = this.renderLineup();
+		const lineupLink = this.lineupDetails.renderLineupLink();
 
 		lineupContainer.appendChild(headliners);
 		lineupContainer.appendChild(lineupLink);
