@@ -1,5 +1,3 @@
-'use strict';
-
 export class edition {
 	constructor(editionData) {
 		this._id = editionData.id;
@@ -41,17 +39,18 @@ export class edition {
 	get editionDate() {
 		const firstDay = this.editionDetails[0].day;
 
-		if(this.editionLength > 1) {
-			const lastDay =  this.editionDetails[this.editionLength - 1].day;
-			return {firstDay, lastDay};
-		} else {
-			return {firstDay};
+		if (this.editionLength > 1) {
+			const lastDay = this.editionDetails[this.editionLength - 1].day;
+
+			return { firstDay, lastDay };
 		}
+
+		return { firstDay };
 	}
 
 	get editionRain() {
-		for(let day of this.editionDetails) {
-			if(day.rain === true) {
+		for (const day of this.editionDetails) {
+			if (day.rain === true) {
 				return true;
 			}
 		}

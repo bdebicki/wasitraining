@@ -1,5 +1,3 @@
-'use strict';
-
 import { FOOTER, LINK } from '../../enums/elementHandlers';
 import { COPYRIGHTS } from '../../enums/content';
 
@@ -11,7 +9,7 @@ export class moreInfo {
 	}
 
 	renderCopyrights() {
-		let copyrights = document.createElement('p');
+		const copyrights = document.createElement('p');
 
 		copyrights.classList.add(FOOTER.COPYRIGHTS_CLASS);
 		copyrights.textContent = COPYRIGHTS;
@@ -20,7 +18,7 @@ export class moreInfo {
 	}
 
 	renderAboutLink() {
-		let link = document.createElement('a');
+		const link = document.createElement('a');
 
 		link.textContent = 'about';
 		link.href = '#about';
@@ -31,7 +29,7 @@ export class moreInfo {
 	}
 
 	render() {
-		let moreInfoContainer = document.createElement('section');
+		const moreInfoContainer = document.createElement('section');
 
 		moreInfoContainer.classList.add(FOOTER.ABOUT_SECTION_CLASS);
 		moreInfoContainer.appendChild(this.renderCopyrights());

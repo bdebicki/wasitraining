@@ -1,31 +1,29 @@
-'use strict';
 import { DIALOGBOX, LINK } from '../enums/elementHandlers';
 import { setIcon } from './setIcon';
 import { icons } from './iconsLibrary';
 
 export function addDialogbox({
-		id,
-		classNames,
-		dataAttr,
-		closeAction = toggleDialogbox,
-		closeTitle = 'hide details',
-		title,
-		content
-	} = {}) {
-	let div = document.createElement('div');
-	let header = document.createElement('header');
-	let h3 = document.createElement('h3');
-	let closeBtn = document.createElement('a');
-
+	id,
+	classNames,
+	dataAttr,
+	closeAction = toggleDialogbox,
+	closeTitle = 'hide details',
+	title,
+	content,
+} = {}) {
+	const div = document.createElement('div');
+	const header = document.createElement('header');
+	const h3 = document.createElement('h3');
+	const closeBtn = document.createElement('a');
 	const dialogboxId = id;
 	const dialogboxClassNames = [DIALOGBOX.BASIC_CLASS];
 
-	if(classNames) {
+	if (classNames) {
 		classNames.map((item) => {
 			dialogboxClassNames.push(item);
 		});
 	}
-	if(dataAttr) {
+	if (dataAttr) {
 		dataAttr.map((item) => {
 			div.dataset[item[0]] = item[1];
 		});

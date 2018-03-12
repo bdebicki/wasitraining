@@ -1,11 +1,9 @@
-'use strict';
-
 import { LAYOUT, HEADER } from '../enums/elementHandlers';
 import { VIEW_TYPES } from '../enums/viewTypes';
 import { header } from '../components/header/header';
 import { title } from '../components/header/title';
 import { timeline } from '../components/timeline/timeline';
-import { yearDetails } from '../components/yearDetails/yearDetails'
+import { yearDetails } from '../components/yearDetails/yearDetails';
 import { bgVideo } from '../components/bgVideo/bgVideo';
 import { footer } from '../components/footer/footer';
 import { updateViewType } from '../utils/updateView';

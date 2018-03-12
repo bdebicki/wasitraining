@@ -1,5 +1,3 @@
-'use strict';
-
 import { DATA_URL } from '../../enums/data';
 import { TIMELINE } from '../../enums/elementHandlers';
 import { addSVGmask, svgType } from '../../utils/addElement';
@@ -17,7 +15,7 @@ export class timelineItem extends edition {
 		e.preventDefault();
 
 		fetch(DATA_URL)
-			.then(response => response.json())
+			.then((response) => response.json())
 			.then((data) => {
 				const year = new yearView(data, id);
 
@@ -34,7 +32,7 @@ export class timelineItem extends edition {
 		e.preventDefault();
 
 		fetch(DATA_URL)
-			.then(response => response.json())
+			.then((response) => response.json())
 			.then((data) => {
 				const year = new yearView(data, id);
 
@@ -47,7 +45,7 @@ export class timelineItem extends edition {
 
 	renderYearMask() {
 		const editionYear = this.editionYear;
-		let textMask = document.createElementNS(svgType, 'text');
+		const textMask = document.createElementNS(svgType, 'text');
 
 		textMask.classList.add(TIMELINE.MAIN_EDITION_MASK_TEXT_CLASS);
 		textMask.setAttributeNS(null, 'x', '50%');
@@ -65,7 +63,7 @@ export class timelineItem extends edition {
 	}
 
 	renderYear() {
-		let span = document.createElement('span');
+		const span = document.createElement('span');
 
 		span.classList.add(TIMELINE.MAIN_EDITION_YEAR_CLASS);
 		span.textContent = this.editionYear;
@@ -74,7 +72,7 @@ export class timelineItem extends edition {
 	}
 
 	renderMainLink() {
-		let a = document.createElement('a');
+		const a = document.createElement('a');
 		const year = this.renderYear();
 		const mask = this.renderYearMask();
 
@@ -88,7 +86,7 @@ export class timelineItem extends edition {
 	}
 
 	renderNavLink(isActive) {
-		let a = document.createElement('a');
+		const a = document.createElement('a');
 
 		a.href = `#edition${this.editionId}`;
 		a.classList.add(TIMELINE.NAV_EDITION_LINK_CLASS);
@@ -102,20 +100,20 @@ export class timelineItem extends edition {
 	}
 
 	renderMainEdition() {
-		let li = document.createElement('li');
+		const li = document.createElement('li');
 
 		li.classList.add(TIMELINE.MAIN_EDITION_CLASS);
 		li.appendChild(this.renderMainLink());
 
-		return li
+		return li;
 	}
 
 	renderNavEdition(isActive) {
-		let li = document.createElement('li');
+		const li = document.createElement('li');
 
 		li.classList.add(TIMELINE.NAV_EDITION_CLASS);
 		li.appendChild(this.renderNavLink(isActive));
 
-		return li
+		return li;
 	}
 }

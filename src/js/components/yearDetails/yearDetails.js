@@ -1,5 +1,3 @@
-'use strict';
-
 import { LAYOUT } from '../../enums/elementHandlers';
 import { editionDetails } from './editionDetails';
 import { rainDetails } from './rainDetails';
@@ -12,7 +10,7 @@ export class yearDetails {
 	}
 
 	renderYearContainer() {
-		let section = document.createElement('section');
+		const section = document.createElement('section');
 
 		section.id = LAYOUT.YEAR_CONTAINER_ID;
 
@@ -31,7 +29,7 @@ export class yearDetails {
 	}
 
 	render() {
-		let yearBlock = this.renderYearContainer();
+		const yearBlock = this.renderYearContainer();
 		const editionId = this.editionId;
 		const editionBlock = new editionDetails(editionId);
 		const rainBlock = new rainDetails(editionId);

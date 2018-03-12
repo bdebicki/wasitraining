@@ -1,9 +1,7 @@
-'use strict';
-
 import { TITLE } from '../../enums/content';
 import { LAYOUT, HEADER } from '../../enums/elementHandlers';
 import { updateComponentByViewType } from '../../utils/updateView';
-import { title } from './title'
+import { title } from './title';
 
 export class header {
 	constructor(data, target) {
@@ -16,7 +14,7 @@ export class header {
 	}
 
 	renderHeaderContainer() {
-		let header = document.createElement('header');
+		const header = document.createElement('header');
 
 		header.id = LAYOUT.HEADER_ID;
 		header.dataset.bgText = TITLE;
@@ -27,7 +25,7 @@ export class header {
 
 	render() {
 		const pageTitle = new title();
-		let header = this.renderHeaderContainer();
+		const header = this.renderHeaderContainer();
 
 		header.appendChild(pageTitle.render());
 

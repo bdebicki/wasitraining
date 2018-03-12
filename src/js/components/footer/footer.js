@@ -1,5 +1,3 @@
-'use strict';
-
 import { LAYOUT } from '../../enums/elementHandlers';
 import { cookiesInfo } from './cookies';
 import { moreInfo } from './moreInformation';
@@ -10,7 +8,7 @@ export class footer {
 	}
 
 	renderFooterContainer() {
-		let footer = document.createElement('footer');
+		const footer = document.createElement('footer');
 
 		footer.id = LAYOUT.FOOTER_ID;
 
@@ -20,7 +18,7 @@ export class footer {
 	render() {
 		const cookies = new cookiesInfo();
 		const more = new moreInfo();
-		let footer = this.renderFooterContainer();
+		const footer = this.renderFooterContainer();
 
 		footer.appendChild(cookies.render());
 		footer.appendChild(more.render());

@@ -1,5 +1,3 @@
-'use strict';
-
 import { FOOTER, LINK } from '../../enums/elementHandlers';
 import { COOKIES } from '../../enums/content';
 
@@ -11,7 +9,7 @@ export class cookiesInfo {
 	}
 
 	renderCookiesLnk() {
-		let link = document.createElement('a');
+		const link = document.createElement('a');
 
 		link.textContent = 'here';
 		link.href = '#cookies-policy';
@@ -22,7 +20,7 @@ export class cookiesInfo {
 	}
 
 	render() {
-		let cookiesInfo = document.createElement('p');
+		const cookiesInfo = document.createElement('p');
 
 		cookiesInfo.textContent = COOKIES.PT1;
 		cookiesInfo.classList.add(FOOTER.COOKIES_CLASS);

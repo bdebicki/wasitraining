@@ -1,8 +1,6 @@
-'use strict';
-
 export function setIcon(shape, classNames) {
-	const xmlns = "http://www.w3.org/2000/svg";
-	let svg = document.createElementNS(xmlns, 'svg');
+	const xmlns = 'http://www.w3.org/2000/svg';
+	const svg = document.createElementNS(xmlns, 'svg');
 
 	svg.setAttributeNS(null, 'width', `${shape.width}px`);
 	svg.setAttributeNS(null, 'height', `${shape.height}px`);
@@ -10,10 +8,10 @@ export function setIcon(shape, classNames) {
 	svg.classList.add(shape.className);
 	svg.appendChild(shape.icon);
 
-	if(classNames && typeof classNames === 'string') {
+	if (classNames && typeof classNames === 'string') {
 		svg.classList.add(classNames);
 	}
-	if(classNames && Array.isArray(classNames)) {
+	if (classNames && Array.isArray(classNames)) {
 		classNames.map((className) => {
 			svg.classList.add(className);
 		});

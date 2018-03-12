@@ -1,9 +1,7 @@
-'use strict';
-
-import { EDITION, LINK } from '../../enums/elementHandlers';
+import { EDITION } from '../../enums/elementHandlers';
 import { edition } from '../../classes/edition';
 import { lineup } from '../../classes/lineup';
-import { lineupDetails } from "./lineupDetails";
+import { lineupDetails } from './lineupDetails';
 
 export class editionDetails extends edition {
 	constructor(editionId) {
@@ -11,7 +9,7 @@ export class editionDetails extends edition {
 
 		this.headlinersDetails = new lineup(editionId);
 		this.lineupDetails = new lineupDetails(editionId);
-	};
+	}
 
 	get currentEditionYear() {
 		return document.getElementById(EDITION.EDITION_DETAILS_ID).dataset.year;
@@ -22,13 +20,13 @@ export class editionDetails extends edition {
 
 		if (Object.keys(editionDate).length === 1) {
 			return editionDate.firstDay;
-		} else {
-			return `${editionDate.firstDay} - ${editionDate.lastDay}`;
 		}
+
+		return `${editionDate.firstDay} - ${editionDate.lastDay}`;
 	}
 
 	decorateEditionHeadliners() {
-		let fragment = document.createDocumentFragment();
+		const fragment = document.createDocumentFragment();
 
 		this.headlinersDetails.headliners.map((item) => {
 			const li = document.createElement('li');
@@ -42,7 +40,7 @@ export class editionDetails extends edition {
 	}
 
 	renderEditionContainer() {
-		let section = document.createElement('section');
+		const section = document.createElement('section');
 
 		section.id = EDITION.EDITION_DETAILS_ID;
 		section.classList.add(`${EDITION.EDITION_DETAILS_YEAR_CLASS}${this.editionYear}`);
@@ -52,11 +50,11 @@ export class editionDetails extends edition {
 	}
 
 	renderEditionDetails() {
-		let fragment = document.createDocumentFragment();
-		let editionYear = document.createElement('h2');
-		let name = document.createElement('h3');
-		let dates = document.createElement('p');
-		let place = document.createElement('p');
+		const fragment = document.createDocumentFragment();
+		const editionYear = document.createElement('h2');
+		const name = document.createElement('h3');
+		const dates = document.createElement('p');
+		const place = document.createElement('p');
 
 		editionYear.classList.add(EDITION.YEAR_CLASS);
 		dates.classList.add(EDITION.DATES_CLASS);
@@ -74,10 +72,10 @@ export class editionDetails extends edition {
 		fragment.appendChild(place);
 
 		return fragment;
-	};
+	}
 
 	renderShortLineupContainer() {
-		let div = document.createElement('div');
+		const div = document.createElement('div');
 
 		div.classList.add(EDITION.LINEUP_CLASS, `${EDITION.LINEUP_EDITION_CLASS}${this.editionYear}`);
 
@@ -94,7 +92,7 @@ export class editionDetails extends edition {
 	}
 
 	renderHeadliners() {
-		let ul = document.createElement('ul');
+		const ul = document.createElement('ul');
 
 		ul.classList.add(EDITION.HEADLINERS_CLASS);
 		ul.appendChild(this.decorateEditionHeadliners());
@@ -119,7 +117,7 @@ export class editionDetails extends edition {
 	}
 
 	render() {
-		let editionContainer = this.renderEditionContainer();
+		const editionContainer = this.renderEditionContainer();
 		const editionDetails = this.renderEditionDetails();
 		const lineupContainer = this.renderShortLineupContainer();
 		const headliners = this.renderHeadliners();

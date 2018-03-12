@@ -1,5 +1,3 @@
-'use strict';
-
 import { LAYOUT, HEADER } from '../enums/elementHandlers';
 import { VIEW_TYPES } from '../enums/viewTypes';
 import { header } from '../components/header/header';
@@ -11,7 +9,7 @@ import { updateViewType } from '../utils/updateView';
 
 export class introView {
 	constructor(data) {
-		this.data = data
+		this.data = data;
 	}
 
 	updateViewTypeToIntro() {

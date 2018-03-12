@@ -1,5 +1,3 @@
-'use strict';
-
 import { LINEUP_LEVELS, ARTIST_KEYS } from '../enums/lineup';
 
 /**
@@ -48,7 +46,7 @@ export class lineup {
 	}
 
 	get rawLineup() {
-		let lineup = [];
+		const lineup = [];
 
 		this._editionDetails.map((item) => {
 			lineup.push(item.lineup);
@@ -58,35 +56,37 @@ export class lineup {
 	}
 
 	get headliners() {
-		if(this.sortType === 'alphabetical') {
+		if (this.sortType === 'alphabetical') {
 			return this.sortAlphabeticallyHeadliners();
 		} else if (this.sortType === 'customOrder') {
 			return this.sortOrderedHeadliners();
-		} else { // sortType is false, 'customOrderExceptHeadliners' or 'alphabeticalExceptHeadliners'
-			return this.notSortedHeadliners();
 		}
+		// sortType is false, 'customOrderExceptHeadliners' or 'alphabeticalExceptHeadliners'
+		return this.notSortedHeadliners();
 	}
 
 	get lineup() {
+		let preparedLineup;
+
 		if (this.mergeArtists === true) { // merge artists
-			if(this.sortType === 'customOrder') { // & sort by custom order
-				return this.mergeAndSortCustomArtists();
+			if (this.sortType === 'customOrder') { // & sort by custom order
+				preparedLineup = this.mergeAndSortCustomArtists();
 			} else if (this.sortType === 'alphabeticalExceptHeadliners') {
-				return this.mergeAndSortAlphabeticallyExceptHearliners();
+				preparedLineup = this.mergeAndSortAlphabeticallyExceptHearliners();
 			}
 		} else if (this.mergeArtists === 'exceptHeadliners' && this.sortType === 'customOrderExceptHeadliners') {
-			return this.mergeExceptHeadlinersAndSortCustomExceptHeadliners();
-		} else {
-			if(this.sortType === false) {
-				return this.notMergedAndNotSorted();
-			} else if (this.sortType === 'alphabeticalExceptHeadliners') {
-				return this.notMergedAndSortAlpabeticallyExceptHeadliners();
-			}
+			preparedLineup = this.mergeExceptHeadlinersAndSortCustomExceptHeadliners();
+		} else if (this.sortType === false) {
+			preparedLineup = this.notMergedAndNotSorted();
+		} else if (this.sortType === 'alphabeticalExceptHeadliners') {
+			preparedLineup = this.notMergedAndSortAlpabeticallyExceptHeadliners();
 		}
+
+		return preparedLineup;
 	}
 
 	notSortedHeadliners() {
-		let headliners = [];
+		const headliners = [];
 
 		this.rawLineup.map((item) => { // merge headliners from all days into one flat array (with artists only)
 			if (item.headliners) { // check does headliners was on that day
@@ -108,7 +108,7 @@ export class lineup {
 	}
 
 	sortOrderedHeadliners() {
-		let headliners = [];
+		const headliners = [];
 
 		this.rawLineup.map((item) => { // merge headliners from all days in one array
 			if (item.headliners) { // check does headliners was on that day
@@ -118,12 +118,10 @@ export class lineup {
 			}
 		});
 
-		headliners.sort((a, b) => { // sort headliners by order property
-			return a.order - b.order;
-		});
+		headliners.sort((a, b) => a.order - b.order); // sort headliners by order property
 
 		headliners.map((item, index) => { // flattening array - remove objects and displays only artists
-			headliners.splice(index, 1, item[ARTIST_KEYS.ARTIST])
+			headliners.splice(index, 1, item[ARTIST_KEYS.ARTIST]);
 		});
 
 		return headliners;
@@ -137,21 +135,21 @@ export class lineup {
 		skipLvl2 = false,
 		skipLvl3 = false,
 		skipLvl4 = false,
-		skipOthers = false
+		skipOthers = false,
 	}) { // filter artists and build list on only visible artists
 		source.map((item) => {
 			Object.keys(item).map((key) => { // iterate on lineup levels
-				if(key === LINEUP_LEVELS.HEADLINERS && skipHeadliners) {
+				if (key === LINEUP_LEVELS.HEADLINERS && skipHeadliners) {
 					delete item[LINEUP_LEVELS.HEADLINERS];
-				} else if(key === LINEUP_LEVELS.LVL1 && skipLvl1) {
+				} else if (key === LINEUP_LEVELS.LVL1 && skipLvl1) {
 					delete item[LINEUP_LEVELS.LVL1];
-				} else if(key === LINEUP_LEVELS.LVL2 && skipLvl2) {
+				} else if (key === LINEUP_LEVELS.LVL2 && skipLvl2) {
 					delete item[LINEUP_LEVELS.LVL2];
-				} else if(key === LINEUP_LEVELS.LVL3 && skipLvl3) {
+				} else if (key === LINEUP_LEVELS.LVL3 && skipLvl3) {
 					delete item[LINEUP_LEVELS.LVL3];
-				} else if(key === LINEUP_LEVELS.LVL4 && skipLvl4) {
+				} else if (key === LINEUP_LEVELS.LVL4 && skipLvl4) {
 					delete item[LINEUP_LEVELS.LVL4];
-				} else if(key === LINEUP_LEVELS.OTHERS && skipOthers) {
+				} else if (key === LINEUP_LEVELS.OTHERS && skipOthers) {
 					delete item[LINEUP_LEVELS.OTHERS];
 				} else { // leave level artists
 					item[key] = item[key].filter((e) => { // remove hidden elements from levels
@@ -174,7 +172,7 @@ export class lineup {
 		mergeLvl2 = true,
 		mergeLvl3 = true,
 		mergeLvl4 = true,
-		mergeOthers = true
+		mergeOthers = true,
 	}) {
 		const pushToLvl = (item, key) => {
 			item[key].map((subItems) => {
@@ -188,22 +186,22 @@ export class lineup {
 		source.map((item) => { // iterate on days
 			Object.keys(item).map((key) => { // iterate on day artists from different levels
 				// iterate on specific level artists from raw lineup and add push artist to level in sortedLineup
-				if(key === LINEUP_LEVELS.HEADLINERS && mergeHeadliners) {
+				if (key === LINEUP_LEVELS.HEADLINERS && mergeHeadliners) {
 					pushToLvl(item, LINEUP_LEVELS.HEADLINERS);
 				}
-				if(key === LINEUP_LEVELS.LVL1 && mergeLvl1) {
+				if (key === LINEUP_LEVELS.LVL1 && mergeLvl1) {
 					pushToLvl(item, LINEUP_LEVELS.LVL1);
 				}
-				if(key === LINEUP_LEVELS.LVL2 && mergeLvl2) {
+				if (key === LINEUP_LEVELS.LVL2 && mergeLvl2) {
 					pushToLvl(item, LINEUP_LEVELS.LVL2);
 				}
-				if(key === LINEUP_LEVELS.LVL3 && mergeLvl3) {
+				if (key === LINEUP_LEVELS.LVL3 && mergeLvl3) {
 					pushToLvl(item, LINEUP_LEVELS.LVL3);
 				}
-				if(key === LINEUP_LEVELS.LVL4 && mergeLvl4) {
+				if (key === LINEUP_LEVELS.LVL4 && mergeLvl4) {
 					pushToLvl(item, LINEUP_LEVELS.LVL4);
 				}
-				if(key === LINEUP_LEVELS.OTHERS && mergeOthers) {
+				if (key === LINEUP_LEVELS.OTHERS && mergeOthers) {
 					pushToLvl(item, LINEUP_LEVELS.OTHERS);
 				}
 			});
@@ -213,7 +211,7 @@ export class lineup {
 	_clearArtistObject(artist, key) {
 		delete artist[key]; // remove used key from
 
-		if(Object.keys(artist).length === 1) { // leave string if 'artist' key is only one
+		if (Object.keys(artist).length === 1) { // leave string if 'artist' key is only one
 			artist = artist[ARTIST_KEYS.ARTIST];
 		}
 
@@ -221,18 +219,25 @@ export class lineup {
 	}
 
 	_clearEmptyLevels(scope, key) {
-		if(scope[key].length === 0) { // if level has not artist remove empty levels
+		if (scope[key].length === 0) { // if level has not artist remove empty levels
 			delete scope[key];
 		}
 	}
 
-	_updateArtistObjectOnArray({scope, index, place = 1, artist, key, withValidation = false}) {
+	_updateArtistObjectOnArray({
+		scope,
+		index,
+		place = 1,
+		artist,
+		key,
+		withValidation = false,
+	}) {
 		const updateScope = (scope, index, place, artist, key) => {
 			scope.splice(index, place, this._clearArtistObject(artist, key));
 		};
 
 		if (withValidation) {
-			if(artist[key]) {
+			if (artist[key]) {
 				updateScope(scope, index, place, artist, key);
 			}
 		} else {
@@ -243,22 +248,21 @@ export class lineup {
 	_sortAlphabeticallyLevel(sortScope) {
 		sortScope.sort((a, b) => {
 			const val = (input) => {
-				if(typeof input === 'object' && input[ARTIST_KEYS.SORT_BY]) {
+				if (typeof input === 'object' && input[ARTIST_KEYS.SORT_BY]) {
 					return input[ARTIST_KEYS.SORT_BY];
-
-				}
-				if(typeof input === 'object' && !input[ARTIST_KEYS.SORT_BY]) {
+				} else if (typeof input === 'object' && !input[ARTIST_KEYS.SORT_BY]) {
 					return input[ARTIST_KEYS.ARTIST];
 				}
+
 				return input;
 			};
 			const valA = val(a);
 			const valB = val(b);
 
-			if(valA < valB) {
+			if (valA < valB) {
 				return -1;
 			}
-			if(valA > valB) {
+			if (valA > valB) {
 				return 1;
 			}
 			return 0;
@@ -267,7 +271,7 @@ export class lineup {
 		sortScope.map((item, index) => { // clear 'sortBy' key on artist obcject
 			this._updateArtistObjectOnArray({
 				scope: sortScope,
-				index: index,
+				index,
 				artist: item,
 				key: ARTIST_KEYS.SORT_BY,
 				withValidation: true,
@@ -278,13 +282,12 @@ export class lineup {
 	}
 
 	_sortCustomOrderLevel(sortScope) {
-		sortScope.sort((a, b) => { // sort lineup by order property
-			return a.order - b.order;
-		});
+		sortScope.sort((a, b) => a.order - b.order); // sort lineup by order property
+
 		sortScope.map((item, index) => { // remove order indicators
 			this._updateArtistObjectOnArray({
 				scope: sortScope,
-				index: index,
+				index,
 				artist: item,
 				key: ARTIST_KEYS.ORDER,
 			});
@@ -299,7 +302,7 @@ export class lineup {
 		level.map((keyItem, index) => {
 			const artist = keyItem;
 
-			if(artist[ARTIST_KEYS.FORCE_ORDER]) {
+			if (artist[ARTIST_KEYS.FORCE_ORDER]) {
 				const newIndex = artist[ARTIST_KEYS.FORCE_ORDER] - 1; // -1 because array order is from 0
 
 				level.splice(index, 1); // remove artist from current position
@@ -307,30 +310,30 @@ export class lineup {
 					scope: level,
 					index: newIndex,
 					place: 0,
-					artist: artist,
+					artist,
 					key: ARTIST_KEYS.FORCE_ORDER,
 				});
 			}
-		})
+		});
 	}
 
 	mergeAndSortCustomArtists() { // merge artists and sort artists by customOrder
-		let sortedLineup = {
+		const sortedLineup = {
 			[LINEUP_LEVELS.HEADLINERS]: [],
 			[LINEUP_LEVELS.LVL1]: [],
 			[LINEUP_LEVELS.LVL2]: [],
 			[LINEUP_LEVELS.LVL3]: [],
 			[LINEUP_LEVELS.LVL4]: [],
-			[LINEUP_LEVELS.OTHERS]: []
+			[LINEUP_LEVELS.OTHERS]: [],
 		};
 
-		this._mergeArtists({scope: sortedLineup});
+		this._mergeArtists({ scope: sortedLineup });
 
 		Object.keys(sortedLineup).map((key) => {
 			const currentLvl = sortedLineup[key];
 
 			this._clearEmptyLevels(sortedLineup, key); // remove empty levels
-			this._sortCustomOrderLevel(currentLvl)
+			this._sortCustomOrderLevel(currentLvl);
 		});
 
 		console.log('merge artists and sort artists by customOrder');
@@ -339,23 +342,23 @@ export class lineup {
 	}
 
 	mergeAndSortAlphabeticallyExceptHearliners() {
-		let sortedLineup = {
+		const sortedLineup = {
 			[LINEUP_LEVELS.HEADLINERS]: [],
 			[LINEUP_LEVELS.LVL1]: [],
 			[LINEUP_LEVELS.LVL2]: [],
 			[LINEUP_LEVELS.LVL3]: [],
 			[LINEUP_LEVELS.LVL4]: [],
-			[LINEUP_LEVELS.OTHERS]: []
+			[LINEUP_LEVELS.OTHERS]: [],
 		};
 
-		this._mergeArtists({scope: sortedLineup});
+		this._mergeArtists({ scope: sortedLineup });
 
 		Object.keys(sortedLineup).map((key) => {
 			const currentLvl = sortedLineup[key];
 
 			this._clearEmptyLevels(sortedLineup, key); // remove empty levels
 
-			if(key !== LINEUP_LEVELS.HEADLINERS) {
+			if (key !== LINEUP_LEVELS.HEADLINERS) {
 				this._sortAlphabeticallyLevel(currentLvl);
 				this._forceOrder(currentLvl); // force alphabetical order
 			}
@@ -367,23 +370,26 @@ export class lineup {
 	}
 
 	mergeExceptHeadlinersAndSortCustomExceptHeadliners() {
-		let sortedLineup = {
+		const sortedLineup = {
 			[LINEUP_LEVELS.DAILY_ARTISTS]: [], // instead of headliners & lvl1
 			[LINEUP_LEVELS.LVL2]: [],
 			[LINEUP_LEVELS.LVL3]: [],
 			[LINEUP_LEVELS.LVL4]: [],
-			[LINEUP_LEVELS.OTHERS]: []
+			[LINEUP_LEVELS.OTHERS]: [],
 		};
 
-		this._mergeArtists({scope: sortedLineup, mergeHeadliners: false, mergeLvl1: false}); // merge other artists
-		this._noMergeArtists({scope: sortedLineup[LINEUP_LEVELS.DAILY_ARTISTS], skipLvl2: true, skipOthers: true}); // merge headliners & lvl1 into days
+		// merge other artists
+		this._mergeArtists({ scope: sortedLineup, mergeHeadliners: false, mergeLvl1: false });
+
+		// merge headliners & lvl1 into days
+		this._noMergeArtists({ scope: sortedLineup[LINEUP_LEVELS.DAILY_ARTISTS], skipLvl2: true, skipOthers: true });
 
 		Object.keys(sortedLineup).map((key) => {
 			const currentLvl = sortedLineup[key];
 
 			this._clearEmptyLevels(sortedLineup, key); // remove empty levels
 
-			if(key !== LINEUP_LEVELS.DAILY_ARTISTS) {
+			if (key !== LINEUP_LEVELS.DAILY_ARTISTS) {
 				this._sortCustomOrderLevel(currentLvl); // sort artists except daily artists
 			}
 		});
@@ -394,9 +400,9 @@ export class lineup {
 	}
 
 	notMergedAndNotSorted() {
-		let sortedLineup = [];
+		const sortedLineup = [];
 
-		this._noMergeArtists({scope: sortedLineup});
+		this._noMergeArtists({ scope: sortedLineup });
 
 		console.log('don\'t merge artists and don\'t sort artists');
 		console.log(sortedLineup);
@@ -404,15 +410,15 @@ export class lineup {
 	}
 
 	notMergedAndSortAlpabeticallyExceptHeadliners() {
-		let sortedLineup = [];
+		const sortedLineup = [];
 
-		this._noMergeArtists({scope: sortedLineup});
+		this._noMergeArtists({ scope: sortedLineup });
 
 		sortedLineup.map((item) => { // sort artist of levels except
 			Object.keys(item).map((key) => {
 				const currentLvl = item[key];
 
-				if(key !== LINEUP_LEVELS.HEADLINERS) { // sort only not headliner artists
+				if (key !== LINEUP_LEVELS.HEADLINERS) { // sort only not headliner artists
 					this._sortAlphabeticallyLevel(currentLvl);
 					this._forceOrder(currentLvl); // force alphabetical order
 				}
