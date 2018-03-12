@@ -8,6 +8,7 @@
   },
   "description": "Was it raining at Open'er festival?",
   "scripts": {
+    "eslint-check": "eslint ./src --ext .js",
     "build": "webpack",
     "watch": "webpack-dev-server --content-base public"
   },
