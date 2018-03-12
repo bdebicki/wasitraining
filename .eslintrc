@@ -22,6 +22,8 @@
 
     ////////// Stylistic Issues //////////
 
+    "indent": [2, "tab"],
+    "no-tabs": 0,                     // turn on tabs
     "comma-dangle": [                 // enforce consistent comma style (airbnb overrided - functions)
       "error",
       {
