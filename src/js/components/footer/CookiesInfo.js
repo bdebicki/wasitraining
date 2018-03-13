@@ -1,7 +1,7 @@
 import { FOOTER, LINK } from '../../enums/elementHandlers';
 import { COOKIES } from '../../enums/content';
 
-export class cookiesInfo {
+export default class CookiesInfo {
 	showCookiesDetails(e) {
 		e.preventDefault();
 
@@ -20,13 +20,14 @@ export class cookiesInfo {
 	}
 
 	render() {
-		const cookiesInfo = document.createElement('p');
+		const cookiesInfoContainer = document.createElement('p');
 
-		cookiesInfo.textContent = COOKIES.PT1;
-		cookiesInfo.classList.add(FOOTER.COOKIES_CLASS);
-		cookiesInfo.appendChild(this.renderCookiesLnk());
-		cookiesInfo.append(COOKIES.PT2); // textContent parse link to string, innerHtml += clear eventListener from link
+		cookiesInfoContainer.textContent = COOKIES.PT1;
+		cookiesInfoContainer.classList.add(FOOTER.COOKIES_CLASS);
+		cookiesInfoContainer.appendChild(this.renderCookiesLnk());
+		// textContent parse link to string, innerHtml += clear eventListener from link, append works correct
+		cookiesInfoContainer.append(COOKIES.PT2);
 
-		return cookiesInfo;
+		return cookiesInfoContainer;
 	}
 }

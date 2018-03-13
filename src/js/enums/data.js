@@ -1,1 +1,3 @@
-export const DATA_URL = './festivalEditions.json';
+const DATA_URL = './festivalEditions.json';
+
+export { DATA_URL as default };

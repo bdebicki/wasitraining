@@ -1,11 +1,11 @@
 import { LINK, RAIN } from '../../enums/elementHandlers';
 import { addVideo, addSVGmask, svgType } from '../../utils/addElement';
 import * as dialogbox from '../../utils/addDialogbox';
-import { setIcon } from '../../utils/setIcon';
-import { icons } from '../../utils/iconsLibrary';
-import { edition } from '../../classes/edition';
+import setIcon from '../../utils/setIcon';
+import icons from '../../utils/iconsLibrary';
+import Edition from '../../classes/Edition';
 
-export class rainDetails extends edition {
+export default class RainDetails extends Edition {
 	constructor(editionId) {
 		super(editionId);
 	}

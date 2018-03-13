@@ -1,14 +1,14 @@
 import { EDITION } from '../../enums/elementHandlers';
-import { edition } from '../../classes/edition';
-import { lineup } from '../../classes/lineup';
-import { lineupDetails } from './lineupDetails';
+import Edition from '../../classes/Edition';
+import Lineup from '../../classes/Lineup';
+import LineupDetails from './LineupDetails';
 
-export class editionDetails extends edition {
+export default class EditionDetails extends Edition {
 	constructor(editionId) {
 		super(editionId);
 
-		this.headlinersDetails = new lineup(editionId);
-		this.lineupDetails = new lineupDetails(editionId);
+		this.headlinersDetails = new Lineup(editionId);
+		this.lineupDetails = new LineupDetails(editionId);
 	}
 
 	get currentEditionYear() {

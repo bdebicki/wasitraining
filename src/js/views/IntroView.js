@@ -1,13 +1,13 @@
 import { LAYOUT, HEADER } from '../enums/elementHandlers';
-import { VIEW_TYPES } from '../enums/viewTypes';
-import { header } from '../components/header/header';
-import { title } from '../components/header/title';
-import { timeline } from '../components/timeline/timeline';
-import { bgVideo } from '../components/bgVideo/bgVideo';
-import { footer } from '../components/footer/footer';
+import VIEW_TYPES from '../enums/viewTypes';
+import Header from '../components/header/Header';
+import Title from '../components/header/Title';
+import Timeline from '../components/timeline/Timeline';
+import BgVideo from '../components/bgVideo/BgVideo';
+import Footer from '../components/footer/Footer';
 import { updateViewType } from '../utils/updateView';
 
-export class introView {
+export default class IntroView {
 	constructor(data) {
 		this.data = data;
 	}
@@ -17,9 +17,9 @@ export class introView {
 	}
 
 	switchToIntoView() {
-		const titleBlock = new title();
-		const headerBlock = new header();
-		const timelineBlock = new timeline(this.data, LAYOUT.MAIN_CONTAINER_ID);
+		const titleBlock = new Title();
+		const headerBlock = new Header();
+		const timelineBlock = new Timeline(this.data, LAYOUT.MAIN_CONTAINER_ID);
 
 		this.updateViewTypeToIntro();
 		titleBlock.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
@@ -31,10 +31,10 @@ export class introView {
 
 	render() {
 		const body = LAYOUT.MAIN_CONTAINER_ID;
-		const headerBlock = new header(this.data, body);
-		const timelineBlock = new timeline(this.data, body);
-		const bgBlock = new bgVideo(body);
-		const footerBlock = new footer(body);
+		const headerBlock = new Header(this.data, body);
+		const timelineBlock = new Timeline(this.data, body);
+		const bgBlock = new BgVideo(body);
+		const footerBlock = new Footer(body);
 
 		this.updateViewTypeToIntro();
 		headerBlock.render();

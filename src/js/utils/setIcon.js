@@ -1,4 +1,4 @@
-export function setIcon(shape, classNames) {
+export default function setIcon(shape, classNames) {
 	const xmlns = 'http://www.w3.org/2000/svg';
 	const svg = document.createElementNS(xmlns, 'svg');
 

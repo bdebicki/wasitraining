@@ -1,9 +1,9 @@
 import { LAYOUT } from '../../enums/elementHandlers';
-import { editionDetails } from './editionDetails';
-import { rainDetails } from './rainDetails';
-import { lineupDetails } from './lineupDetails';
+import EditionDetails from './EditionDetails';
+import RainDetails from './RainDetails';
+import LineupDetails from './LineupDetails';
 
-export class yearDetails {
+export default class YearDetails {
 	constructor(editionId, target) {
 		this.editionId = editionId;
 		this.target = target;
@@ -19,9 +19,9 @@ export class yearDetails {
 
 	updateYearDetails() {
 		const editionId = this.editionId;
-		const editionBlock = new editionDetails(editionId);
-		const rainBlock = new rainDetails(editionId);
-		const lineupDialogbox = new lineupDetails(editionId);
+		const editionBlock = new EditionDetails(editionId);
+		const rainBlock = new RainDetails(editionId);
+		const lineupDialogbox = new LineupDetails(editionId);
 
 		editionBlock.updateEditionDetails();
 		rainBlock.updateRainDetails();
@@ -31,9 +31,9 @@ export class yearDetails {
 	render() {
 		const yearBlock = this.renderYearContainer();
 		const editionId = this.editionId;
-		const editionBlock = new editionDetails(editionId);
-		const rainBlock = new rainDetails(editionId);
-		const lineupDialogbox = new lineupDetails(editionId);
+		const editionBlock = new EditionDetails(editionId);
+		const rainBlock = new RainDetails(editionId);
+		const lineupDialogbox = new LineupDetails(editionId);
 
 		yearBlock.appendChild(editionBlock.render());
 		yearBlock.appendChild(rainBlock.render());

@@ -1,9 +1,9 @@
-import { lineup } from '../../classes/lineup';
+import Lineup from '../../classes/Lineup';
 import { LINEUP, DIALOGBOX, LINK, EDITION } from '../../enums/elementHandlers';
 import { LINEUP_LEVELS, ARTIST_KEYS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_SLICES_PROPS } from '../../enums/lineup';
 import * as dialogbox from '../../utils/addDialogbox';
-import { setIcon } from '../../utils/setIcon';
-import { icons } from '../../utils/iconsLibrary';
+import setIcon from '../../utils/setIcon';
+import icons from '../../utils/iconsLibrary';
 
 const DIALOGBOX_HEADLINE_TEXT = 'Lineup';
 const lineupLvlToClassMap = {
@@ -38,7 +38,7 @@ const artistSliceDecoratorToClassMap = {
 	[ARTIST_SLICES_STYLES.INDENTED]: LINEUP.ARTIST_SLICE_INDENTED_CLASS,
 };
 
-export class lineupDetails extends lineup {
+export default class LineupDetails extends Lineup {
 	constructor(editionId) {
 		super(editionId);
 	}

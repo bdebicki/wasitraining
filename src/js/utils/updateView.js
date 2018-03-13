@@ -1,4 +1,4 @@
-import { VIEW_TYPES } from '../enums/viewTypes';
+import VIEW_TYPES from '../enums/viewTypes';
 import { LAYOUT, VIEWS } from '../enums/elementHandlers';
 
 function getViewType() {

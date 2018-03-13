@@ -1,7 +1,7 @@
 import { LAYOUT, BG } from '../../enums/elementHandlers';
 import { addVideo } from '../../utils/addElement';
 
-export class bgVideo {
+export default class BgVideo {
 	constructor(target) {
 		this.target = target;
 	}

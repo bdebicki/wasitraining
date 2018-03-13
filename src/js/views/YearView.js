@@ -1,14 +1,14 @@
 import { LAYOUT, HEADER } from '../enums/elementHandlers';
-import { VIEW_TYPES } from '../enums/viewTypes';
-import { header } from '../components/header/header';
-import { title } from '../components/header/title';
-import { timeline } from '../components/timeline/timeline';
-import { yearDetails } from '../components/yearDetails/yearDetails';
-import { bgVideo } from '../components/bgVideo/bgVideo';
-import { footer } from '../components/footer/footer';
+import VIEW_TYPES from '../enums/viewTypes';
+import Header from '../components/header/Header';
+import Title from '../components/header/Title';
+import Timeline from '../components/timeline/Timeline';
+import YearDetails from '../components/yearDetails/YearDetails';
+import BgVideo from '../components/bgVideo/BgVideo';
+import Footer from '../components/footer/Footer';
 import { updateViewType } from '../utils/updateView';
 
-export class yearView {
+export default class YearView {
 	constructor(data, editionId) {
 		this.data = data;
 		this.editionId = editionId;
@@ -20,18 +20,18 @@ export class yearView {
 
 	updateDetails(newEdition) {
 		const newEditionData = this.data[this.editionId];
-		const yearBlock = new yearDetails(newEditionData);
-		const timelineBlock = new timeline();
+		const yearBlock = new YearDetails(newEditionData);
+		const timelineBlock = new Timeline();
 
 		timelineBlock.updateSelectedEdition(newEdition);
 		yearBlock.updateYearDetails();
 	}
 
 	switchToYearView() {
-		const yearBlock = new yearDetails(this.data[this.editionId], LAYOUT.MAIN_CONTAINER_ID);
-		const titleBlock = new title();
-		const headerBlock = new header();
-		const timelineBlock = new timeline(this.data, LAYOUT.HEADER_ID, this.editionId);
+		const yearBlock = new YearDetails(this.data[this.editionId], LAYOUT.MAIN_CONTAINER_ID);
+		const titleBlock = new Title();
+		const headerBlock = new Header();
+		const timelineBlock = new Timeline(this.data, LAYOUT.HEADER_ID, this.editionId);
 
 		this.updateViewTypeToYear();
 		titleBlock.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
@@ -45,11 +45,11 @@ export class yearView {
 		const body = LAYOUT.MAIN_CONTAINER_ID;
 		const data = this.data;
 		const editionId = this.editionId;
-		const headerBlock = new header(data, body);
-		const timelineBlock = new timeline(data, LAYOUT.HEADER_ID, editionId);
-		const yearBlock = new yearDetails(data[editionId], body);
-		const bgBlock = new bgVideo(body);
-		const footerBlock = new footer(body);
+		const headerBlock = new Header(data, body);
+		const timelineBlock = new Timeline(data, LAYOUT.HEADER_ID, editionId);
+		const yearBlock = new YearDetails(data[editionId], body);
+		const bgBlock = new BgVideo(body);
+		const footerBlock = new Footer(body);
 
 		this.updateViewTypeToYear();
 		headerBlock.render();

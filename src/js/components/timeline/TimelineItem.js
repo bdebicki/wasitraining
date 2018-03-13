@@ -1,10 +1,10 @@
-import { DATA_URL } from '../../enums/data';
+import DATA_URL from '../../enums/data';
 import { TIMELINE } from '../../enums/elementHandlers';
 import { addSVGmask, svgType } from '../../utils/addElement';
-import { edition } from '../../classes/edition';
-import { yearView } from '../../views/yearView';
+import Edition from '../../classes/Edition';
+import YearView from '../../views/YearView';
 
-export class timelineItem extends edition {
+export default class TimelineItem extends Edition {
 	constructor(data) {
 		super(data);
 	}
@@ -17,7 +17,7 @@ export class timelineItem extends edition {
 		fetch(DATA_URL)
 			.then((response) => response.json())
 			.then((data) => {
-				const year = new yearView(data, id);
+				const year = new YearView(data, id);
 
 				year.switchToYearView();
 			})
@@ -34,7 +34,7 @@ export class timelineItem extends edition {
 		fetch(DATA_URL)
 			.then((response) => response.json())
 			.then((data) => {
-				const year = new yearView(data, id);
+				const year = new YearView(data, id);
 
 				year.updateDetails(this);
 			})

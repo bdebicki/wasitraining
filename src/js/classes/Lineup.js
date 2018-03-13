@@ -18,7 +18,7 @@ import { LINEUP_LEVELS, ARTIST_KEYS } from '../enums/lineup';
  * 	- false - don't display information about others artists
  */
 
-export class lineup {
+export default class Lineup {
 	constructor(editionId) {
 		this._editionYear = editionId.editionYear;
 		this._editionDetails = editionId.details;

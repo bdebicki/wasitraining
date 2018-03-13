@@ -1,7 +1,7 @@
 import { FOOTER, LINK } from '../../enums/elementHandlers';
 import { COPYRIGHTS } from '../../enums/content';
 
-export class moreInfo {
+export default class MoreInfo {
 	showAboutDetails(e) {
 		e.preventDefault();
 

@@ -1,7 +1,7 @@
 import { LAYOUT, TIMELINE } from '../../enums/elementHandlers';
-import { timelineItem } from './timelineItem';
+import TimelineItem from './TimelineItem';
 
-export class timeline {
+export default class Timeline {
 	constructor(data, target, editionId) {
 		this.data = data;
 		this.target = target;
@@ -40,7 +40,7 @@ export class timeline {
 		const editionsListContainer = this.createEditionsListContainer(TIMELINE.NAV_EDITIONS_CLASS);
 
 		revertedEditionsOrder().map((item) => {
-			const edition = new timelineItem(this.data[item]);
+			const edition = new TimelineItem(this.data[item]);
 
 			if (this.data[item].id === this.editionId) {
 				editionsListContainer.appendChild(edition.renderNavEdition(true));
@@ -59,7 +59,7 @@ export class timeline {
 		const editionsListContainer = this.createEditionsListContainer(TIMELINE.MAIN_EDITIONS_CLASS);
 
 		revertedEditionsOrder().map((item) => {
-			const edition = new timelineItem(this.data[item]);
+			const edition = new TimelineItem(this.data[item]);
 
 			editionsListContainer.appendChild(edition.renderMainEdition());
 		});

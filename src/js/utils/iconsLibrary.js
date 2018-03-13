@@ -2,7 +2,7 @@ import { ICONS } from '../enums/elementHandlers';
 
 const xmlns = 'http://www.w3.org/2000/svg';
 
-export const icons = {
+const icons = {
 	plus: () => {
 		const icon = document.createDocumentFragment();
 		const rectH = document.createElementNS(xmlns, 'rect');
@@ -23,7 +23,9 @@ export const icons = {
 		icon.appendChild(rectH);
 		icon.appendChild(rectV);
 
-		return { icon, width, height, className };
+		return {
+			icon, width, height, className,
+		};
 	},
 
 	close: () => {
@@ -48,6 +50,10 @@ export const icons = {
 		icon.appendChild(rectH);
 		icon.appendChild(rectV);
 
-		return { icon, width, height, className };
+		return {
+			icon, width, height, className,
+		};
 	},
 };
+
+export { icons as default };

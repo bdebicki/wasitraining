@@ -1,6 +1,6 @@
 import { DIALOGBOX, LINK } from '../enums/elementHandlers';
-import { setIcon } from './setIcon';
-import { icons } from './iconsLibrary';
+import setIcon from './setIcon';
+import icons from './iconsLibrary';
 
 export function addDialogbox({
 	id,

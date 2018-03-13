@@ -1,4 +1,4 @@
-export class edition {
+export default class Edition {
 	constructor(editionData) {
 		this._id = editionData.id;
 		this._year = editionData.editionYear;

@@ -1,11 +1,11 @@
-import { DATA_URL } from '../../enums/data';
+import DATA_URL from '../../enums/data';
 import { TITLE } from '../../enums/content';
 import { HEADER } from '../../enums/elementHandlers';
-import { VIEW_TYPES } from '../../enums/viewTypes';
-import { introView } from '../../views/introView';
+import VIEW_TYPES from '../../enums/viewTypes';
+import IntroView from '../../views/IntroView';
 import { updateComponentByViewType } from '../../utils/updateView';
 
-export class title {
+export default class Title {
 	updateTitleLocation(el) {
 		updateComponentByViewType(el, HEADER.TITLE_HEADER_CLASS);
 	}
@@ -15,9 +15,9 @@ export class title {
 
 		if (document.querySelector('html').dataset.view === VIEW_TYPES.YEAR) {
 			fetch(DATA_URL)
-				.then(response => response.json())
+				.then((response) => response.json())
 				.then((data) => {
-					const intro = new introView(data);
+					const intro = new IntroView(data);
 					intro.switchToIntoView();
 				})
 				.catch((error) => {
