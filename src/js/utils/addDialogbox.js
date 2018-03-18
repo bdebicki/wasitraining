@@ -19,13 +19,14 @@ export function addDialogbox({
 	const dialogboxClassNames = [DIALOGBOX.BASIC_CLASS];
 
 	if (classNames) {
-		classNames.map((item) => {
-			dialogboxClassNames.push(item);
-		});
+		classNames.map((className) => dialogboxClassNames.push(className));
 	}
 	if (dataAttr) {
-		dataAttr.map((item) => {
-			div.dataset[item[0]] = item[1];
+		dataAttr.forEach((data) => {
+			const dataName = data[0];
+			const dataValue = data[1];
+
+			div.dataset[dataName] = dataValue;
 		});
 	}
 

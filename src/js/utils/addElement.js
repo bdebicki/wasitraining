@@ -4,7 +4,7 @@ export const svgType = 'http://www.w3.org/2000/svg';
 
 export function addSVGmask(maskSettings) {
 	const settings = maskSettings;
-	const maskId = settings.maskId;
+	const { maskId } = settings;
 	const fragment = document.createDocumentFragment();
 	const svg = document.createElementNS(svgType, 'svg');
 	const defs = document.createElementNS(svgType, 'defs');
@@ -40,9 +40,7 @@ export function addVideo(videoSettings) {
 	const video = document.createElement('video');
 
 	if (Array.isArray(settings.classNames)) {
-		settings.classNames.map((className) => {
-			video.classList.add(className);
-		});
+		settings.classNames.map((className) => video.classList.add(className));
 	} else {
 		video.classList.add(settings.classNames);
 	}

@@ -9,7 +9,7 @@ export default class YearDetails {
 		this.target = target;
 	}
 
-	renderYearContainer() {
+	static renderYearContainer() {
 		const section = document.createElement('section');
 
 		section.id = LAYOUT.YEAR_CONTAINER_ID;
@@ -18,7 +18,7 @@ export default class YearDetails {
 	}
 
 	updateYearDetails() {
-		const editionId = this.editionId;
+		const { editionId } = this;
 		const editionBlock = new EditionDetails(editionId);
 		const rainBlock = new RainDetails(editionId);
 		const lineupDialogbox = new LineupDetails(editionId);
@@ -29,8 +29,8 @@ export default class YearDetails {
 	}
 
 	render() {
-		const yearBlock = this.renderYearContainer();
-		const editionId = this.editionId;
+		const { editionId } = this;
+		const yearBlock = YearDetails.renderYearContainer();
 		const editionBlock = new EditionDetails(editionId);
 		const rainBlock = new RainDetails(editionId);
 		const lineupDialogbox = new LineupDetails(editionId);

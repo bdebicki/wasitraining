@@ -6,10 +6,6 @@ import icons from '../../utils/iconsLibrary';
 import Edition from '../../classes/Edition';
 
 export default class RainDetails extends Edition {
-	constructor(editionId) {
-		super(editionId);
-	}
-
 	toggleDetails(e) {
 		e.preventDefault();
 
@@ -23,14 +19,14 @@ export default class RainDetails extends Edition {
 	decorateRainDayDetails() {
 		const fragment = document.createDocumentFragment();
 
-		this.editionDetails.map((item) => {
+		this.editionDetails.forEach((edition) => {
 			const li = document.createElement('li');
 			const spanDay = document.createElement('span');
 			const spanRain = document.createElement('span');
-			const rain = item.rain ? 'yes' : 'no';
+			const rain = edition.rain ? 'yes' : 'no';
 
 			spanDay.classList.add(RAIN.DETAILS_ITEM_DAY_CLASS);
-			spanDay.textContent = item.day;
+			spanDay.textContent = edition.day;
 			spanRain.classList.add(RAIN.DETAILS_ITEM_RAIN_CLASS);
 			spanRain.textContent = rain;
 			li.classList.add(RAIN.DETAILS_ITEM_CLASS);
@@ -86,7 +82,7 @@ export default class RainDetails extends Edition {
 		return section;
 	}
 
-	renderRainInfoYes() {
+	static renderRainInfoYes() {
 		const fragment = document.createDocumentFragment();
 		const svgMask = document.createElementNS(svgType, 'path');
 		const videoSettings = {
@@ -111,7 +107,7 @@ export default class RainDetails extends Edition {
 		return fragment;
 	}
 
-	renderRainInfoNo() {
+	static renderRainInfoNo() {
 		const fragment = document.createDocumentFragment();
 		const svgMask = document.createElementNS(svgType, 'path');
 		const videoSettings = {
@@ -140,11 +136,11 @@ export default class RainDetails extends Edition {
 		if (this.editionRain === true) {
 			target.classList.remove(RAIN.INFO_NO_CLASS);
 			target.classList.add(RAIN.INFO_YES_CLASS);
-			target.appendChild(this.renderRainInfoYes());
+			target.appendChild(RainDetails.renderRainInfoYes());
 		} else {
 			target.classList.remove(RAIN.INFO_YES_CLASS);
 			target.classList.add(RAIN.INFO_NO_CLASS);
-			target.appendChild(this.renderRainInfoNo());
+			target.appendChild(RainDetails.renderRainInfoNo());
 		}
 	}
 

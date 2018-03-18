@@ -48,9 +48,7 @@ export default class Lineup {
 	get rawLineup() {
 		const lineup = [];
 
-		this._editionDetails.map((item) => {
-			lineup.push(item.lineup);
-		});
+		this._editionDetails.map((item) => lineup.push(item.lineup));
 
 		return lineup;
 	}
@@ -112,9 +110,7 @@ export default class Lineup {
 
 		this.rawLineup.map((item) => { // merge headliners from all days in one array
 			if (item.headliners) { // check does headliners was on that day
-				item.headliners.map((subItems) => {
-					headliners.push(subItems);
-				});
+				item.headliners.map((subItems) => headliners.push(subItems));
 			}
 		});
 
@@ -268,15 +264,16 @@ export default class Lineup {
 			return 0;
 		});
 
-		sortScope.map((item, index) => { // clear 'sortBy' key on artist obcject
+		sortScope.map((item, index) =>
+			// clear 'sortBy' key on artist obcject
 			this._updateArtistObjectOnArray({
 				scope: sortScope,
 				index,
 				artist: item,
 				key: ARTIST_KEYS.SORT_BY,
 				withValidation: true,
-			});
-		});
+			})
+		);
 
 		return sortScope;
 	}
@@ -284,14 +281,15 @@ export default class Lineup {
 	_sortCustomOrderLevel(sortScope) {
 		sortScope.sort((a, b) => a.order - b.order); // sort lineup by order property
 
-		sortScope.map((item, index) => { // remove order indicators
+		sortScope.map((item, index) =>
+			// remove order indicators
 			this._updateArtistObjectOnArray({
 				scope: sortScope,
 				index,
 				artist: item,
 				key: ARTIST_KEYS.ORDER,
-			});
-		});
+			})
+		);
 
 		return sortScope;
 	}

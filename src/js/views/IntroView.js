@@ -12,7 +12,7 @@ export default class IntroView {
 		this.data = data;
 	}
 
-	updateViewTypeToIntro() {
+	static updateViewTypeToIntro() {
 		updateViewType(VIEW_TYPES.INTRO);
 	}
 
@@ -21,7 +21,7 @@ export default class IntroView {
 		const headerBlock = new Header();
 		const timelineBlock = new Timeline(this.data, LAYOUT.MAIN_CONTAINER_ID);
 
-		this.updateViewTypeToIntro();
+		IntroView.updateViewTypeToIntro();
 		titleBlock.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
 		headerBlock.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
 		timelineBlock.renderMainTimeline();
@@ -36,7 +36,7 @@ export default class IntroView {
 		const bgBlock = new BgVideo(body);
 		const footerBlock = new Footer(body);
 
-		this.updateViewTypeToIntro();
+		IntroView.updateViewTypeToIntro();
 		headerBlock.render();
 		timelineBlock.renderMainTimeline();
 		bgBlock.render();
