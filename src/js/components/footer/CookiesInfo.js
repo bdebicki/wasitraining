@@ -5,7 +5,7 @@ export default class CookiesInfo {
 	static showCookiesDetails(e) {
 		e.preventDefault();
 
-		console.log('cookies policy');
+		console.log('cookies policy'); // eslint-disable-line no-console
 	}
 
 	static renderCookiesLnk() {

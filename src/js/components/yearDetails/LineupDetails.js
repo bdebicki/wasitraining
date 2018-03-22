@@ -149,7 +149,7 @@ export default class LineupDetails extends Lineup {
 	}
 
 	getLineupByType() {
-		switch (this.mergeArtists) {
+		switch (this.mergeArtistsType) {
 		case true:
 			return this.decorateLineupByLevels();
 		case 'exceptHeadliners':

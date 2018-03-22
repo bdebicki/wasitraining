@@ -18,7 +18,7 @@ export default class TimelineItem extends Edition {
 				year.switchToYearView();
 			})
 			.catch((error) => {
-				console.log(error);
+				console.log(error); // eslint-disable-line no-console
 			});
 	}
 
@@ -35,7 +35,7 @@ export default class TimelineItem extends Edition {
 				year.updateDetails(this);
 			})
 			.catch((error) => {
-				console.log(error);
+				console.log(error); // eslint-disable-line no-console
 			});
 	}
 

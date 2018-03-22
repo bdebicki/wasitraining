@@ -5,7 +5,7 @@ export default class MoreInfo {
 	static showAboutDetails(e) {
 		e.preventDefault();
 
-		console.log('about dialogbox');
+		console.log('about dialogbox'); // eslint-disable-line no-console
 	}
 
 	static renderCopyrights() {

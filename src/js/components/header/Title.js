@@ -21,7 +21,7 @@ export default class Title {
 					intro.switchToIntoView();
 				})
 				.catch((error) => {
-					console.log(error);
+					console.log(error); // eslint-disable-line no-console
 				});
 		}
 	}
