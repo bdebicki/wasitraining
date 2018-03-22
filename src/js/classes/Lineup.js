@@ -86,13 +86,14 @@ export default class Lineup {
 	notSortedHeadliners() {
 		const headliners = [];
 
-		this.rawLineup.map((item) => { // merge headliners from all days into one flat array (with artists only)
-			if (item.headliners) { // check does headliners was on that day
-				item.headliners.map((subItems) => {
-					if (typeof subItems === 'object') {
-						headliners.push(subItems[ARTIST_KEYS.ARTIST]);
+		// merge headliners from all days into one flat array (with artists only)
+		this.rawLineup.forEach((day) => {
+			if (day.headliners) { // check does headliners was on that day
+				day.headliners.forEach((headlinersArtist) => {
+					if (typeof headlinersArtist === 'object') {
+						headliners.push(headlinersArtist[ARTIST_KEYS.ARTIST]);
 					} else {
-						headliners.push(subItems);
+						headliners.push(headlinersArtist);
 					}
 				});
 			}
@@ -106,17 +107,17 @@ export default class Lineup {
 	}
 
 	sortOrderedHeadliners() {
-		const headliners = [];
+		let headliners = [];
 
-		this.rawLineup.map((item) => { // merge headliners from all days in one array
-			if (item.headliners) { // check does headliners was on that day
-				item.headliners.map((subItems) => headliners.push(subItems));
+		this.rawLineup.forEach((day) => { // merge headliners from all days in one array
+			if (day.headliners) { // check does headliners was on that day
+				headliners = day.headliners.map((headlinersArtist) => headlinersArtist);
 			}
 		});
 
 		headliners.sort((a, b) => a.order - b.order); // sort headliners by order property
 
-		headliners.map((item, index) => { // flattening array - remove objects and displays only artists
+		headliners.forEach((item, index) => { // flattening array - remove objects and displays only artists
 			headliners.splice(index, 1, item[ARTIST_KEYS.ARTIST]);
 		});
 
@@ -272,8 +273,7 @@ export default class Lineup {
 				artist: item,
 				key: ARTIST_KEYS.SORT_BY,
 				withValidation: true,
-			})
-		);
+			}));
 
 		return sortScope;
 	}
@@ -288,8 +288,7 @@ export default class Lineup {
 				index,
 				artist: item,
 				key: ARTIST_KEYS.ORDER,
-			})
-		);
+			}));
 
 		return sortScope;
 	}

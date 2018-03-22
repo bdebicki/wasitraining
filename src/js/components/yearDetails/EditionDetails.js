@@ -16,7 +16,7 @@ export default class EditionDetails extends Edition {
 	}
 
 	decorateEditionDates() {
-		const editionDate = this.editionDate;
+		const { editionDate } = this;
 
 		if (Object.keys(editionDate).length === 1) {
 			return editionDate.firstDay;
@@ -28,7 +28,7 @@ export default class EditionDetails extends Edition {
 	decorateEditionHeadliners() {
 		const fragment = document.createDocumentFragment();
 
-		this.headlinersDetails.headliners.map((item) => {
+		this.headlinersDetails.headliners.forEach((item) => {
 			const li = document.createElement('li');
 
 			li.textContent = item;
@@ -121,7 +121,7 @@ export default class EditionDetails extends Edition {
 		const editionDetails = this.renderEditionDetails();
 		const lineupContainer = this.renderShortLineupContainer();
 		const headliners = this.renderHeadliners();
-		const lineupLink = this.lineupDetails.renderLineupLink();
+		const lineupLink = LineupDetails.renderLineupLink();
 
 		lineupContainer.appendChild(headliners);
 		lineupContainer.appendChild(lineupLink);
