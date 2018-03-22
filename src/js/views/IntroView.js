@@ -17,13 +17,11 @@ export default class IntroView {
 	}
 
 	switchToIntoView() {
-		const titleBlock = new Title();
-		const headerBlock = new Header();
 		const timelineBlock = new Timeline(this.data, LAYOUT.MAIN_CONTAINER_ID);
 
 		IntroView.updateViewTypeToIntro();
-		titleBlock.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
-		headerBlock.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
+		Title.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
+		Header.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
 		timelineBlock.renderMainTimeline();
 		document.getElementById(LAYOUT.NAV_TIMELINE_ID).remove();
 		document.getElementById(LAYOUT.YEAR_CONTAINER_ID).remove();

@@ -21,21 +21,18 @@ export default class YearView {
 	updateDetails(newEdition) {
 		const newEditionData = this.data[this.editionId];
 		const yearBlock = new YearDetails(newEditionData);
-		const timelineBlock = new Timeline();
 
-		timelineBlock.updateSelectedEdition(newEdition);
+		Timeline.updateSelectedEdition(newEdition);
 		yearBlock.updateYearDetails();
 	}
 
 	switchToYearView() {
 		const yearBlock = new YearDetails(this.data[this.editionId], LAYOUT.MAIN_CONTAINER_ID);
-		const titleBlock = new Title();
-		const headerBlock = new Header();
 		const timelineBlock = new Timeline(this.data, LAYOUT.HEADER_ID, this.editionId);
 
 		YearView.updateViewTypeToYear();
-		titleBlock.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
-		headerBlock.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
+		Title.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
+		Header.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
 		timelineBlock.renderNavTimeline();
 		yearBlock.render();
 		document.getElementById(LAYOUT.MAIN_TIMELINE_ID).remove();

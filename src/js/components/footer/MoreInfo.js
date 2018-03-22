@@ -2,13 +2,13 @@ import { FOOTER, LINK } from '../../enums/elementHandlers';
 import { COPYRIGHTS } from '../../enums/content';
 
 export default class MoreInfo {
-	showAboutDetails(e) {
+	static showAboutDetails(e) {
 		e.preventDefault();
 
 		console.log('about dialogbox');
 	}
 
-	renderCopyrights() {
+	static renderCopyrights() {
 		const copyrights = document.createElement('p');
 
 		copyrights.classList.add(FOOTER.COPYRIGHTS_CLASS);
@@ -17,23 +17,23 @@ export default class MoreInfo {
 		return copyrights;
 	}
 
-	renderAboutLink() {
+	static renderAboutLink() {
 		const link = document.createElement('a');
 
 		link.textContent = 'about';
 		link.href = '#about';
 		link.classList.add(LINK.BASIC_CLASS, LINK.INVERTED_STYLE_CLASS, FOOTER.ABOUT_LINK_CLASS);
-		link.addEventListener('click', this.showAboutDetails, null);
+		link.addEventListener('click', MoreInfo.showAboutDetails, null);
 
 		return link;
 	}
 
-	render() {
+	static render() {
 		const moreInfoContainer = document.createElement('section');
 
 		moreInfoContainer.classList.add(FOOTER.ABOUT_SECTION_CLASS);
-		moreInfoContainer.appendChild(this.renderCopyrights());
-		moreInfoContainer.appendChild(this.renderAboutLink());
+		moreInfoContainer.appendChild(MoreInfo.renderCopyrights());
+		moreInfoContainer.appendChild(MoreInfo.renderAboutLink());
 
 		return moreInfoContainer;
 	}

@@ -6,7 +6,7 @@ export default class BgVideo {
 		this.target = target;
 	}
 
-	renderVideoContainer() {
+	static renderVideoContainer() {
 		const div = document.createElement('div');
 
 		div.id = LAYOUT.BG_VIDEO_ID;
@@ -14,7 +14,7 @@ export default class BgVideo {
 		return div;
 	}
 
-	renderVideo() {
+	static renderVideo() {
 		const settings = {
 			classNames: BG.VIDEO_CLASS,
 			src: '/videos/bg-video.webm',
@@ -26,7 +26,7 @@ export default class BgVideo {
 		return addVideo(settings);
 	}
 
-	renderImg() {
+	static renderImg() {
 		const img = document.createElement('img');
 
 		img.classList.add(BG.VIDEO_CLASS);
@@ -38,9 +38,9 @@ export default class BgVideo {
 	}
 
 	render() {
-		const videoBlock = this.renderVideoContainer();
+		const videoBlock = BgVideo.renderVideoContainer();
 
-		videoBlock.appendChild(this.renderVideo());
+		videoBlock.appendChild(BgVideo.renderVideo());
 
 		document.getElementById(this.target).appendChild(videoBlock);
 	}

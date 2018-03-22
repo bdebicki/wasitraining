@@ -6,11 +6,11 @@ import IntroView from '../../views/IntroView';
 import { updateComponentByViewType } from '../../utils/updateView';
 
 export default class Title {
-	updateTitleLocation(el) {
+	static updateTitleLocation(el) {
 		updateComponentByViewType(el, HEADER.TITLE_HEADER_CLASS);
 	}
 
-	backToHome(e) {
+	static backToHome(e) {
 		e.preventDefault();
 
 		if (document.querySelector('html').dataset.view === VIEW_TYPES.YEAR) {
@@ -26,24 +26,24 @@ export default class Title {
 		}
 	}
 
-	renderTitleLink() {
+	static renderTitleLink() {
 		const a = document.createElement('a');
 
 		a.href = '#home';
 		a.classList.add(HEADER.TITLE_LINK_CLASS);
-		a.addEventListener('click', this.backToHome, null);
+		a.addEventListener('click', Title.backToHome, null);
 
 		return a;
 	}
 
-	render() {
+	static render() {
 		const title = document.createElement('h1');
-		const link = this.renderTitleLink();
+		const link = Title.renderTitleLink();
 
 		link.textContent = TITLE;
 		title.classList.add(HEADER.TITLE_CLASS);
 		title.appendChild(link);
-		this.updateTitleLocation(title);
+		Title.updateTitleLocation(title);
 
 		return title;
 	}

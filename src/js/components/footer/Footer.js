@@ -7,7 +7,7 @@ export default class Footer {
 		this.target = target;
 	}
 
-	renderFooterContainer() {
+	static renderFooterContainer() {
 		const footerContainer = document.createElement('footer');
 
 		footerContainer.id = LAYOUT.FOOTER_ID;
@@ -16,12 +16,10 @@ export default class Footer {
 	}
 
 	render() {
-		const cookies = new CookiesInfo();
-		const more = new MoreInfo();
-		const footerContainer = this.renderFooterContainer();
+		const footerContainer = Footer.renderFooterContainer();
 
-		footerContainer.appendChild(cookies.render());
-		footerContainer.appendChild(more.render());
+		footerContainer.appendChild(CookiesInfo.render());
+		footerContainer.appendChild(MoreInfo.render());
 
 		document.getElementById(this.target).appendChild(footerContainer);
 	}

@@ -8,13 +8,13 @@ export default class Timeline {
 		this.editionId = editionId;
 	}
 
-	updateSelectedEdition(newEdition) {
+	static updateSelectedEdition(newEdition) {
 		// eslint-disable-next-line max-len
 		document.querySelector(`.${TIMELINE.NAV_EDITION_ACTIVE_CLASS}`).classList.remove(TIMELINE.NAV_EDITION_ACTIVE_CLASS);
 		newEdition.classList.add(TIMELINE.NAV_EDITION_ACTIVE_CLASS);
 	}
 
-	createTimelineContainer(containerId) {
+	static createTimelineContainer(containerId) {
 		const timelineContainer = document.createElement('nav');
 
 		timelineContainer.id = containerId;
@@ -22,7 +22,7 @@ export default class Timeline {
 		return timelineContainer;
 	}
 
-	createEditionsListContainer(listClass) {
+	static createEditionsListContainer(listClass) {
 		const editionsListContainer = document.createElement('ul');
 
 		editionsListContainer.classList.add(listClass);
@@ -36,8 +36,8 @@ export default class Timeline {
 
 	renderNavTimeline() {
 		const revertedEditionsOrder = () => this.reverseSortEditions();
-		const timelineContainer = this.createTimelineContainer(LAYOUT.NAV_TIMELINE_ID);
-		const editionsListContainer = this.createEditionsListContainer(TIMELINE.NAV_EDITIONS_CLASS);
+		const timelineContainer = Timeline.createTimelineContainer(LAYOUT.NAV_TIMELINE_ID);
+		const editionsListContainer = Timeline.createEditionsListContainer(TIMELINE.NAV_EDITIONS_CLASS);
 
 		revertedEditionsOrder().map((item) => {
 			const edition = new TimelineItem(this.data[item]);
@@ -55,8 +55,8 @@ export default class Timeline {
 
 	renderMainTimeline() {
 		const revertedEditionsOrder = () => this.reverseSortEditions(this.data);
-		const timelineContainer = this.createTimelineContainer(LAYOUT.MAIN_TIMELINE_ID);
-		const editionsListContainer = this.createEditionsListContainer(TIMELINE.MAIN_EDITIONS_CLASS);
+		const timelineContainer = Timeline.createTimelineContainer(LAYOUT.MAIN_TIMELINE_ID);
+		const editionsListContainer = Timeline.createEditionsListContainer(TIMELINE.MAIN_EDITIONS_CLASS);
 
 		revertedEditionsOrder().map((item) => {
 			const edition = new TimelineItem(this.data[item]);

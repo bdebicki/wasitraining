@@ -8,10 +8,9 @@ export default class EditionDetails extends Edition {
 		super(editionId);
 
 		this.headlinersDetails = new Lineup(editionId);
-		this.lineupDetails = new LineupDetails(editionId);
 	}
 
-	get currentEditionYear() {
+	static getCurrentEditionYear() {
 		return document.getElementById(EDITION.EDITION_DETAILS_ID).dataset.year;
 	}
 
@@ -86,7 +85,7 @@ export default class EditionDetails extends Edition {
 		const shortLineupContainer = document.querySelector(`.${EDITION.LINEUP_CLASS}`);
 		shortLineupContainer.classList.remove(`${EDITION.LINEUP_EDITION_CLASS}${oldYear}`);
 		shortLineupContainer.classList.add(`${EDITION.LINEUP_EDITION_CLASS}${this.editionYear}`);
-		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent =''; // to clear rain details list
+		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent = ''; // to clear rain details list
 
 		return this.decorateEditionHeadliners();
 	}
@@ -102,7 +101,7 @@ export default class EditionDetails extends Edition {
 
 	updateEditionDetails() {
 		const detailsContainer = document.getElementById(EDITION.EDITION_DETAILS_ID);
-		const oldYear = this.currentEditionYear;
+		const oldYear = EditionDetails.getCurrentEditionYear();
 		const newYear = this.editionYear;
 
 		detailsContainer.classList.remove(`${EDITION.EDITION_DETAILS_YEAR_CLASS}${oldYear}`);

@@ -9,25 +9,24 @@ export default class Header {
 		this.target = target;
 	}
 
-	updateHeaderLocation(el) {
+	static updateHeaderLocation(el) {
 		updateComponentByViewType(el, HEADER.INTRO_HEADER_CLASS);
 	}
 
-	renderHeaderContainer() {
+	static renderHeaderContainer() {
 		const headerContainer = document.createElement('header');
 
 		headerContainer.id = LAYOUT.HEADER_ID;
 		headerContainer.dataset.bgText = TITLE;
-		this.updateHeaderLocation(headerContainer);
+		Header.updateHeaderLocation(headerContainer);
 
 		return headerContainer;
 	}
 
 	render() {
-		const pageTitle = new Title();
-		const headerContainer = this.renderHeaderContainer();
+		const headerContainer = Header.renderHeaderContainer();
 
-		headerContainer.appendChild(pageTitle.render());
+		headerContainer.appendChild(Title.render());
 
 		document.getElementById(this.target).appendChild(headerContainer);
 	}

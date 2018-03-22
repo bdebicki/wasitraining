@@ -5,10 +5,6 @@ import Edition from '../../classes/Edition';
 import YearView from '../../views/YearView';
 
 export default class TimelineItem extends Edition {
-	constructor(data) {
-		super(data);
-	}
-
 	switchView(e) {
 		const id = this.getAttribute('href').replace('#edition', '');
 
@@ -44,7 +40,7 @@ export default class TimelineItem extends Edition {
 	}
 
 	renderYearMask() {
-		const editionYear = this.editionYear;
+		const { editionYear } = this;
 		const textMask = document.createElementNS(svgType, 'text');
 
 		textMask.classList.add(TIMELINE.MAIN_EDITION_MASK_TEXT_CLASS);
