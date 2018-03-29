@@ -226,7 +226,7 @@ export default class Lineup {
 		}
 	}
 
-	updateArtistObjectOnArray({
+	static updateArtistObjectOnArray({
 		scope,
 		index,
 		place = 1,
@@ -247,7 +247,7 @@ export default class Lineup {
 		}
 	}
 
-	sortAlphabeticallyLevel(sortScope) {
+	static sortAlphabeticallyLevel(sortScope) {
 		sortScope.sort((a, b) => {
 			const val = (input) => {
 				if (typeof input === 'object' && input[ARTIST_KEYS.SORT_BY]) {
@@ -272,7 +272,7 @@ export default class Lineup {
 
 		sortScope.map((item, index) =>
 			// clear 'sortBy' key on artist obcject
-			this.updateArtistObjectOnArray({
+			Lineup.updateArtistObjectOnArray({
 				scope: sortScope,
 				index,
 				artist: item,
@@ -283,12 +283,12 @@ export default class Lineup {
 		return sortScope;
 	}
 
-	sortCustomOrderLevel(sortScope) {
+	static sortCustomOrderLevel(sortScope) {
 		sortScope.sort((a, b) => a.order - b.order); // sort lineup by order property
 
 		sortScope.map((item, index) =>
 			// remove order indicators
-			this.updateArtistObjectOnArray({
+			Lineup.updateArtistObjectOnArray({
 				scope: sortScope,
 				index,
 				artist: item,
@@ -298,7 +298,7 @@ export default class Lineup {
 		return sortScope;
 	}
 
-	forceOrder(input) { // force positions on lineup
+	static forceOrder(input) { // force positions on lineup
 		const level = input;
 
 		level.map((keyItem, index) => {
@@ -308,7 +308,7 @@ export default class Lineup {
 				const newIndex = artist[ARTIST_KEYS.FORCE_ORDER] - 1; // -1 because array order is from 0
 
 				level.splice(index, 1); // remove artist from current position
-				this.updateArtistObjectOnArray({ // move artist to forced order
+				Lineup.updateArtistObjectOnArray({ // move artist to forced order
 					scope: level,
 					index: newIndex,
 					place: 0,
@@ -335,7 +335,7 @@ export default class Lineup {
 			const currentLvl = sortedLineup[key];
 
 			Lineup.clearEmptyLevels(sortedLineup, key); // remove empty levels
-			this.sortCustomOrderLevel(currentLvl);
+			Lineup.sortCustomOrderLevel(currentLvl);
 		});
 
 		console.log('merge artists and sort artists by customOrder');
@@ -361,8 +361,8 @@ export default class Lineup {
 			Lineup.clearEmptyLevels(sortedLineup, key); // remove empty levels
 
 			if (key !== LINEUP_LEVELS.HEADLINERS) {
-				this.sortAlphabeticallyLevel(currentLvl);
-				this.forceOrder(currentLvl); // force alphabetical order
+				Lineup.sortAlphabeticallyLevel(currentLvl);
+				Lineup.forceOrder(currentLvl); // force alphabetical order
 			}
 		});
 
@@ -392,7 +392,7 @@ export default class Lineup {
 			Lineup.clearEmptyLevels(sortedLineup, key); // remove empty levels
 
 			if (key !== LINEUP_LEVELS.DAILY_ARTISTS) {
-				this.sortCustomOrderLevel(currentLvl); // sort artists except daily artists
+				Lineup.sortCustomOrderLevel(currentLvl); // sort artists except daily artists
 			}
 		});
 
@@ -421,8 +421,8 @@ export default class Lineup {
 				const currentLvl = item[key];
 
 				if (key !== LINEUP_LEVELS.HEADLINERS) { // sort only not headliner artists
-					this.sortAlphabeticallyLevel(currentLvl);
-					this.forceOrder(currentLvl); // force alphabetical order
+					Lineup.sortAlphabeticallyLevel(currentLvl);
+					Lineup.forceOrder(currentLvl); // force alphabetical order
 				}
 			});
 		});
