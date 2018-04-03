@@ -79,9 +79,9 @@ export default class LineupDetails extends Lineup {
 			let sliceStyleClassName = '';
 			const setStyleClassName = (styleList) => {
 				if (Array.isArray(styleList[ARTIST_SLICES_PROPS.STYLE])) {
-					styleList[ARTIST_SLICES_PROPS.STYLE].map((style) => {
-						sliceStyleClassName += ` ${artistSliceDecoratorToClassMap[style]}`;
-					});
+					sliceStyleClassName = styleList[ARTIST_SLICES_PROPS.STYLE].map(
+						(style) => artistSliceDecoratorToClassMap[style]
+					).join(' ');
 				} else {
 					sliceStyleClassName = artistSliceDecoratorToClassMap[styleList[ARTIST_SLICES_PROPS.STYLE]];
 				}
@@ -90,9 +90,9 @@ export default class LineupDetails extends Lineup {
 			if (!multipleDecorations) {
 				setStyleClassName(decorations);
 			} else {
-				decorations.map((item) => {
-					if (item[ARTIST_SLICES_PROPS.SLICE] === matched) {
-						setStyleClassName(item);
+				decorations.forEach((decorationSlice) => {
+					if (decorationSlice[ARTIST_SLICES_PROPS.SLICE] === matched) {
+						setStyleClassName(decorationSlice);
 					}
 				});
 			}
@@ -163,12 +163,12 @@ export default class LineupDetails extends Lineup {
 		const fragment = document.createDocumentFragment();
 		const { lineup } = this;
 
-		Object.keys(lineup).map((lvl) => {
+		Object.keys(lineup).forEach((lvl) => {
 			const ul = document.createElement('ul');
 
 			ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[lvl]);
 
-			lineup[lvl].map((artist) => {
+			lineup[lvl].forEach((artist) => {
 				LineupDetails.decorateArtist(artist, ul);
 			});
 
@@ -182,15 +182,15 @@ export default class LineupDetails extends Lineup {
 		const fragment = document.createDocumentFragment();
 		const { lineup } = this;
 
-		Object.keys(lineup).map((lvl) => {
+		Object.keys(lineup).forEach((lvl) => {
 			if (lvl === LINEUP_LEVELS.DAILY_ARTISTS) {
-				lineup[lvl].map((dailyArtists) => {
+				lineup[lvl].forEach((dailyArtists) => {
 					const ul = document.createElement('ul');
 
 					ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[lvl]);
 
-					Object.keys(dailyArtists).map((dailyLvl) => {
-						dailyArtists[dailyLvl].map((dailyArtist) => {
+					Object.keys(dailyArtists).forEach((dailyLvl) => {
+						dailyArtists[dailyLvl].forEach((dailyArtist) => {
 							LineupDetails.decorateArtist(dailyArtist, ul, dailyLvl);
 						});
 					});
@@ -202,7 +202,7 @@ export default class LineupDetails extends Lineup {
 
 				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[lvl]);
 
-				lineup[lvl].map((artist) => {
+				lineup[lvl].forEach((artist) => {
 					LineupDetails.decorateArtist(artist, ul);
 				});
 
@@ -217,17 +217,17 @@ export default class LineupDetails extends Lineup {
 		const fragment = document.createDocumentFragment();
 		const { lineup } = this;
 
-		lineup.map((day) => {
+		lineup.forEach((day) => {
 			const section = document.createElement('section');
 
 			section.classList.add(LINEUP.ARTISTS_DAY_CLASS);
 
-			Object.keys(day).map((lvl) => {
+			Object.keys(day).forEach((lvl) => {
 				const ul = document.createElement('ul');
 
 				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[lvl]);
 
-				day[lvl].map((artist) => {
+				day[lvl].forEach((artist) => {
 					LineupDetails.decorateArtist(artist, ul);
 				});
 
@@ -263,7 +263,7 @@ export default class LineupDetails extends Lineup {
 
 		const dialogboxLineup = dialogbox.addDialogbox({
 			id: LINEUP.SECTION_ID,
-			classNames: [`${LINEUP.EDITION_CLASS}${newYear}`/* , 'dialogbox--isVisible' */],
+			classNames: [`${LINEUP.EDITION_CLASS}${newYear}`, 'dialogbox--isVisible'],
 			dataAttr: [['year', `${newYear}`]],
 			title: `${DIALOGBOX_HEADLINE_TEXT} ${newYear}`,
 			content: section,

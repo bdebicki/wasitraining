@@ -10,12 +10,12 @@ function app() {
 			// const intro = new IntroView(data);
 			//
 			// intro.render();
-			const year = new YearView(data, '16');
+			const year = new YearView(data, '13');
 
 			year.render();
 		})
 		.catch((error) => {
-			console.log(error);
+			console.log(error); // eslint-disable-line no-console
 		});
 }
 app();

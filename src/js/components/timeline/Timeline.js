@@ -39,7 +39,7 @@ export default class Timeline {
 		const timelineContainer = Timeline.createTimelineContainer(LAYOUT.NAV_TIMELINE_ID);
 		const editionsListContainer = Timeline.createEditionsListContainer(TIMELINE.NAV_EDITIONS_CLASS);
 
-		revertedEditionsOrder().map((item) => {
+		revertedEditionsOrder().forEach((item) => {
 			const edition = new TimelineItem(this.data[item]);
 
 			if (this.data[item].id === this.editionId) {
@@ -58,7 +58,7 @@ export default class Timeline {
 		const timelineContainer = Timeline.createTimelineContainer(LAYOUT.MAIN_TIMELINE_ID);
 		const editionsListContainer = Timeline.createEditionsListContainer(TIMELINE.MAIN_EDITIONS_CLASS);
 
-		revertedEditionsOrder().map((item) => {
+		revertedEditionsOrder().forEach((item) => {
 			const edition = new TimelineItem(this.data[item]);
 
 			editionsListContainer.appendChild(edition.renderMainEdition());
