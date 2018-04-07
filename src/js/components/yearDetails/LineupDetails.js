@@ -102,30 +102,31 @@ export default class LineupDetails extends Lineup {
 		return decoratedName.content;
 	}
 
-	static decorateArtist(artist, target, lvl) {
-		const li = document.createElement('li');
+	static getArtistClassNames(artist, artistLvl) {
+		let classNames = [
+			LINEUP.ARTIST_CLASS,
+			artistLvl ? dailyLvlToClassMap[artistLvl] : null,
+			artist[ARTIST_KEYS.DECORATOR] ? artistDecoratorToClassMap[artist[ARTIST_KEYS.DECORATOR]] : null,
+			artist[ARTIST_KEYS.MARKED] ? LINEUP.ARTIST_MARKED_CLASS : null,
+			artist[ARTIST_KEYS.MULTILINE] ? LINEUP.ARTIST_MULTILINE_CLASS : null,
+			artist[ARTIST_KEYS.SEPARATOR_MIDDLE] ? LINEUP.ARTIST_SEPARATOR_MIDDLE_CLASS : null,
+			artist[ARTIST_KEYS.CANCELED] ? LINEUP.ARTIST_CANCELED_CLASS : null,
+			artist[ARTIST_KEYS.REPLACEMENT] ? LINEUP.ARTIST_REPLACEMENT_CLASS : null,
+		];
+
+		classNames = classNames.filter((className) => { // clean null records on array
+			if (className !== null) {
+				return className;
+			}
+
+			return null;
+		});
+
+		return classNames;
+	}
+
+	static getArtistName(artist) {
 		let artistName;
-
-		li.classList.add(LINEUP.ARTIST_CLASS);
-		if (artist[ARTIST_KEYS.DECORATOR]) {
-			li.classList.add(artistDecoratorToClassMap[artist[ARTIST_KEYS.DECORATOR]]);
-		}
-		if (artist[ARTIST_KEYS.MARKED]) {
-			li.classList.add(LINEUP.ARTIST_MARKED_CLASS);
-		}
-		if (artist[ARTIST_KEYS.MULTILINE]) {
-			li.classList.add(LINEUP.ARTIST_MULTILINE_CLASS);
-		}
-		if (artist[ARTIST_KEYS.SEPARATOR_MIDDLE]) {
-			li.classList.add(LINEUP.ARTIST_SEPARATOR_MIDDLE_CLASS);
-		}
-
-		if (artist[ARTIST_KEYS.CANCELED]) {
-			li.classList.add(LINEUP.ARTIST_CANCELED_CLASS);
-		}
-		if (artist[ARTIST_KEYS.REPLACEMENT]) {
-			li.classList.add(LINEUP.ARTIST_REPLACEMENT_CLASS);
-		}
 
 		if (artist[ARTIST_KEYS.ARTIST] && !artist[ARTIST_KEYS.DISPLAY_NAME]) {
 			artistName = artist[ARTIST_KEYS.ARTIST];
@@ -135,15 +136,21 @@ export default class LineupDetails extends Lineup {
 			artistName = artist;
 		}
 
+		return artistName;
+	}
+
+	static decorateArtist(artist, target, artistLvl) {
+		const li = document.createElement('li');
+		const artistName = LineupDetails.getArtistName(artist);
+		const artistClassNames = LineupDetails.getArtistClassNames(artist, artistLvl);
+
 		if (artist[ARTIST_KEYS.SLICE_DECORATOR]) {
 			li.append(LineupDetails.artistSliceDecorator(artistName, artist[ARTIST_KEYS.SLICE_DECORATOR]));
 		} else {
 			li.textContent = artistName;
 		}
 
-		if (lvl) {
-			li.classList.add(dailyLvlToClassMap[lvl]);
-		}
+		li.classList.add(...artistClassNames);
 
 		target.appendChild(li);
 	}
