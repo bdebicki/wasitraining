@@ -49,12 +49,6 @@ export default class Edition {
 	}
 
 	get editionRain() {
-		for (const day of this.editionDetails) {
-			if (day.rain === true) {
-				return true;
-			}
-		}
-
-		return false;
+		return this.editionDetails.some((day) => day.rain === true);
 	}
 }
