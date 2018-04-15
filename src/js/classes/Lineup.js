@@ -334,8 +334,7 @@ export default class Lineup {
 			Lineup.sortCustomOrderLevel(currentLvl);
 		});
 
-		console.log('merge artists and sort artists by customOrder');
-		console.log(sortedLineup);
+		console.log('merge artists and sort artists by customOrder', sortedLineup);
 		return sortedLineup;
 	}
 
@@ -362,8 +361,7 @@ export default class Lineup {
 			}
 		});
 
-		console.log('merge artists and sort artists by alphabeticalExceptHeadliners');
-		console.log(sortedLineup);
+		console.log('merge artists and sort artists by alphabeticalExceptHeadliners', sortedLineup);
 		return sortedLineup;
 	}
 
@@ -376,6 +374,7 @@ export default class Lineup {
 		// merge other artists
 		this.mergeArtists({ scope: sortedLineup, mergeHeadliners: false, mergeLvl1: false });
 
+		// TODO: refactor this part
 		Object.keys(sortedLineup).forEach((lvl) => {
 			const currentLvl = sortedLineup[lvl];
 
@@ -386,16 +385,14 @@ export default class Lineup {
 			}
 		});
 
-		console.log('merge artists except headliners and sort artists by customOrderExceptHeadliners');
-		console.log(sortedLineup);
+		console.log('merge artists except headliners and sort artists by customOrderExceptHeadliners', sortedLineup);
 		return sortedLineup;
 	}
 
 	notMergedAndNotSorted() {
 		const sortedLineup = this.noMergeArtists();
 
-		console.log('don\'t merge artists and don\'t sort artists');
-		console.log(sortedLineup);
+		console.log('don\'t merge artists and don\'t sort artists', sortedLineup);
 		return sortedLineup;
 	}
 
@@ -418,8 +415,7 @@ export default class Lineup {
 		});
 
 
-		console.log('don\'t merge artists and sort artists by alphabeticalExceptHeadliners');
-		console.log(sortedLineup);
+		console.log('don\'t merge artists and sort artists by alphabeticalExceptHeadliners', sortedLineup);
 		return sortedLineup;
 	}
 }
