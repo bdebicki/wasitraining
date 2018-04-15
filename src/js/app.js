@@ -10,7 +10,7 @@ function app() {
 			// const intro = new IntroView(data);
 			//
 			// intro.render();
-			const year = new YearView(data, '13');
+			const year = new YearView(data, '4');
 
 			year.render();
 		})

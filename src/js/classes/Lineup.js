@@ -128,43 +128,29 @@ export default class Lineup {
 		return headliners;
 	}
 
-	// TODO: refactor noMergeArtists
-	noMergeArtists({
-		source = this.rawLineup,
-		scope,
-		skipHeadliners = false,
-		skipLvl1 = false,
-		skipLvl2 = false,
-		skipLvl3 = false,
-		skipLvl4 = false,
-		skipOthers = false,
-	}) { // filter artists and build list on only visible artists
-		source.map((day) => {
+
+	noMergeArtists(lvls = false) {
+		const artists = this.rawLineup.map((day) => { // iterate on days
 			const currentDay = day;
-			Object.keys(day).map((lvl) => { // iterate on lineup levels
-				if (lvl === LINEUP_LEVELS.HEADLINERS && skipHeadliners) {
-					delete currentDay[LINEUP_LEVELS.HEADLINERS];
-				} else if (lvl === LINEUP_LEVELS.LVL1 && skipLvl1) {
-					delete currentDay[LINEUP_LEVELS.LVL1];
-				} else if (lvl === LINEUP_LEVELS.LVL2 && skipLvl2) {
-					delete currentDay[LINEUP_LEVELS.LVL2];
-				} else if (lvl === LINEUP_LEVELS.LVL3 && skipLvl3) {
-					delete currentDay[LINEUP_LEVELS.LVL3];
-				} else if (lvl === LINEUP_LEVELS.LVL4 && skipLvl4) {
-					delete currentDay[LINEUP_LEVELS.LVL4];
-				} else if (lvl === LINEUP_LEVELS.OTHERS && skipOthers) {
-					delete currentDay[LINEUP_LEVELS.OTHERS];
-				} else { // leave level artists
-					currentDay[lvl] = day[lvl].filter((e) => { // remove hidden elements from levels
-						if (e[ARTIST_KEYS.VISIBLE] !== false) {
-							return e;
+
+			Object.keys(currentDay).forEach((lvl) => { // iterate on day levels
+				if (lvls === false || lvls.indexOf(lvl) !== -1) { // check does merge specific lvls or all
+					currentDay[lvl] = currentDay[lvl].filter((artist) => { // remove hidden elements from levels
+						if (artist[ARTIST_KEYS.VISIBLE] !== false) {
+							return artist;
 						}
+
+						return null;
 					});
+				} else {
+					delete currentDay[lvl]; // if lvl is not on a list remove it
 				}
 			});
 
-			scope.push(day); // push filtered day lineup to final structure
+			return currentDay;
 		});
+
+		return artists;
 	}
 
 	// TODO: refactor mergeArtists
@@ -382,17 +368,13 @@ export default class Lineup {
 	}
 
 	mergeExceptHeadlinersAndSortCustomExceptHeadliners() {
-		const sortedLineup = {
-			[LINEUP_LEVELS.DAILY_ARTISTS]: [], // instead of headliners & lvl1
-			[LINEUP_LEVELS.LVL2]: [],
-			[LINEUP_LEVELS.OTHERS]: [],
-		};
+		const sortedLineup = {};
+
+		// merge headliners & lvl1 into days
+		sortedLineup[LINEUP_LEVELS.DAILY_ARTISTS] = this.noMergeArtists([LINEUP_LEVELS.HEADLINERS, LINEUP_LEVELS.LVL1]);
 
 		// merge other artists
 		this.mergeArtists({ scope: sortedLineup, mergeHeadliners: false, mergeLvl1: false });
-
-		// merge headliners & lvl1 into days
-		this.noMergeArtists({ scope: sortedLineup[LINEUP_LEVELS.DAILY_ARTISTS], skipLvl2: true, skipOthers: true });
 
 		Object.keys(sortedLineup).forEach((lvl) => {
 			const currentLvl = sortedLineup[lvl];
@@ -410,9 +392,7 @@ export default class Lineup {
 	}
 
 	notMergedAndNotSorted() {
-		const sortedLineup = [];
-
-		this.noMergeArtists({ scope: sortedLineup });
+		const sortedLineup = this.noMergeArtists();
 
 		console.log('don\'t merge artists and don\'t sort artists');
 		console.log(sortedLineup);
@@ -420,9 +400,7 @@ export default class Lineup {
 	}
 
 	notMergedAndSortAlphabeticallyExceptHeadliners() {
-		const sortedLineup = [];
-
-		this.noMergeArtists({ scope: sortedLineup });
+		const sortedLineup = this.noMergeArtists();
 
 		sortedLineup.forEach((day) => { // sort artist of levels except headliners
 			let currentDay = day;
