@@ -150,52 +150,30 @@ export default class Lineup {
 			return currentDay;
 		});
 
+		console.log('noMergeArtists', artists);
 		return artists;
 	}
 
-	// TODO: refactor mergeArtists
-	mergeArtists({
-		source = this.rawLineup,
-		scope,
-		mergeHeadliners = true,
-		mergeLvl1 = true,
-		mergeLvl2 = true,
-		mergeLvl3 = true,
-		mergeLvl4 = true,
-		mergeOthers = true,
-	}) {
-		const pushToLvl = (day, lvl) => {
-			day[lvl].map((artist) => {
-				if (artist[ARTIST_KEYS.VISIBLE] !== false) { // skip not visible artists
-					scope[lvl].push(artist);
-				}
-			});
-		};
+	mergeArtists(lvls = false) {
+		const artists = {};
 
-		// merge artists from different days into levels
-		source.map((day) => { // iterate on days
-			Object.keys(day).map((lvl) => { // iterate on day artists from different levels
-				// iterate on specific level artists from raw lineup and add push artist to level in sortedLineup
-				if (lvl === LINEUP_LEVELS.HEADLINERS && mergeHeadliners) {
-					pushToLvl(day, LINEUP_LEVELS.HEADLINERS);
-				}
-				if (lvl === LINEUP_LEVELS.LVL1 && mergeLvl1) {
-					pushToLvl(day, LINEUP_LEVELS.LVL1);
-				}
-				if (lvl === LINEUP_LEVELS.LVL2 && mergeLvl2) {
-					pushToLvl(day, LINEUP_LEVELS.LVL2);
-				}
-				if (lvl === LINEUP_LEVELS.LVL3 && mergeLvl3) {
-					pushToLvl(day, LINEUP_LEVELS.LVL3);
-				}
-				if (lvl === LINEUP_LEVELS.LVL4 && mergeLvl4) {
-					pushToLvl(day, LINEUP_LEVELS.LVL4);
-				}
-				if (lvl === LINEUP_LEVELS.OTHERS && mergeOthers) {
-					pushToLvl(day, LINEUP_LEVELS.OTHERS);
+		this.rawLineup.forEach((day) => {
+			Object.keys(day).forEach((lvl) => {
+				if (lvls === false || lvls.indexOf(lvl) !== -1) { // check does merge specific lvls or all
+					day[lvl].forEach((artist) => {
+						if (artists[lvl] === undefined) {
+							artists[lvl] = [];
+						}
+						if (artist[ARTIST_KEYS.VISIBLE] !== false) {
+							artists[lvl].push(artist);
+						}
+					});
 				}
 			});
 		});
+
+		console.log('mergeArtists', artists);
+		return artists;
 	}
 
 	static clearArtistObject(artist, key) {
@@ -316,16 +294,7 @@ export default class Lineup {
 	}
 
 	mergeAndSortCustomArtists() { // merge artists and sort artists by customOrder
-		const sortedLineup = {
-			[LINEUP_LEVELS.HEADLINERS]: [],
-			[LINEUP_LEVELS.LVL1]: [],
-			[LINEUP_LEVELS.LVL2]: [],
-			[LINEUP_LEVELS.LVL3]: [],
-			[LINEUP_LEVELS.LVL4]: [],
-			[LINEUP_LEVELS.OTHERS]: [],
-		};
-
-		this.mergeArtists({ scope: sortedLineup });
+		const sortedLineup = this.mergeArtists();
 
 		Object.keys(sortedLineup).forEach((lvl) => {
 			const currentLvl = sortedLineup[lvl];
@@ -339,16 +308,7 @@ export default class Lineup {
 	}
 
 	mergeAndSortAlphabeticallyExceptHeadliners() {
-		const sortedLineup = {
-			[LINEUP_LEVELS.HEADLINERS]: [],
-			[LINEUP_LEVELS.LVL1]: [],
-			[LINEUP_LEVELS.LVL2]: [],
-			[LINEUP_LEVELS.LVL3]: [],
-			[LINEUP_LEVELS.LVL4]: [],
-			[LINEUP_LEVELS.OTHERS]: [],
-		};
-
-		this.mergeArtists({ scope: sortedLineup });
+		const sortedLineup = this.mergeArtists();
 
 		Object.keys(sortedLineup).forEach((lvl) => {
 			const currentLvl = sortedLineup[lvl];
@@ -366,13 +326,19 @@ export default class Lineup {
 	}
 
 	mergeExceptHeadlinersAndSortCustomExceptHeadliners() {
+		console.log('mergeExceptHeadlinersAndSortCustomExceptHeadliners');
 		const sortedLineup = {};
+		const artistsByLvl = this.mergeArtists(
+			[LINEUP_LEVELS.LVL2, LINEUP_LEVELS.LVL3, LINEUP_LEVELS.LVL4, LINEUP_LEVELS.OTHERS]
+		);
 
-		// merge headliners & lvl1 into days
+		// push daily artists to sorted lineup
 		sortedLineup[LINEUP_LEVELS.DAILY_ARTISTS] = this.noMergeArtists([LINEUP_LEVELS.HEADLINERS, LINEUP_LEVELS.LVL1]);
 
-		// merge other artists
-		this.mergeArtists({ scope: sortedLineup, mergeHeadliners: false, mergeLvl1: false });
+		// push lvl artists to sorted lineup
+		Object.keys(artistsByLvl).forEach((lvl) => {
+			sortedLineup[lvl] = artistsByLvl[lvl];
+		});
 
 		// TODO: refactor this part
 		Object.keys(sortedLineup).forEach((lvl) => {
