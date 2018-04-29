@@ -150,7 +150,6 @@ export default class Lineup {
 			return currentDay;
 		});
 
-		console.log('noMergeArtists', artists);
 		return artists;
 	}
 
@@ -185,7 +184,6 @@ export default class Lineup {
 			}
 		});
 
-		console.log('mergeArtists', artists);
 		return artists;
 	}
 
