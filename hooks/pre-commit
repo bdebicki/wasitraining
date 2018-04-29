@@ -1,0 +1,52 @@
+#!/bin/bash
+
+if [ -z `which node` ]; then
+	export PATH=/usr/local/bin:$PATH
+fi
+
+set -e
+
+highlight() {
+	if [ -t 1 ]; then
+  	tput setaf 6
+  	printf "%s\n" "$1"
+  	tput sgr0
+  else
+  	echo "------------------------------------------------------------------------"
+  	printf " %s\n" "$1"
+  	echo "------------------------------------------------------------------------"
+  fi
+}
+
+pop_stash() {
+  highlight "Reapplying unstaged changes"
+  git stash pop
+}
+
+declare -i ERRORS=0
+
+if [ -e ".git/MERGE_HEAD" ]; then
+  highlight "Merge commit; skipping pre-commit hook"
+  exit 0
+fi
+
+if git diff --quiet --cached HEAD; then
+  highlight "No changes to test; exiting"
+  exit 0
+fi
+
+if [ "$(git status -s | wc -l)" != 0 ]; then
+  highlight "Stashing unstaged changes"
+fi
+
+git stash save --keep-index --include-untracked
+
+trap pop_stash EXIT
+
+highlight "Running ESLint against Airbnb styleguide"
+git diff --cached --name-only --diff-filter=d \
+  | grep -e '.js$' \
+  | xargs ./node_modules/.bin/eslint
+ERRORS+=$?
+
+exit $ERRORS

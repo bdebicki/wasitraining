@@ -1,12 +1,10 @@
-'use strict';
-
 import { ICONS } from '../enums/elementHandlers';
 
-const xmlns = "http://www.w3.org/2000/svg";
+const xmlns = 'http://www.w3.org/2000/svg';
 
-export const icons = {
+const icons = {
 	plus: () => {
-		let icon = document.createDocumentFragment();
+		const icon = document.createDocumentFragment();
 		const rectH = document.createElementNS(xmlns, 'rect');
 		const rectV = document.createElementNS(xmlns, 'rect');
 		const width = 5;
@@ -25,11 +23,13 @@ export const icons = {
 		icon.appendChild(rectH);
 		icon.appendChild(rectV);
 
-		return {icon, width, height, className};
+		return {
+			icon, width, height, className,
+		};
 	},
 
 	close: () => {
-		let icon = document.createDocumentFragment();
+		const icon = document.createDocumentFragment();
 		const rectH = document.createElementNS(xmlns, 'rect');
 		const rectV = document.createElementNS(xmlns, 'rect');
 		const width = 10;
@@ -50,6 +50,10 @@ export const icons = {
 		icon.appendChild(rectH);
 		icon.appendChild(rectV);
 
-		return {icon, width, height, className};
-	}
+		return {
+			icon, width, height, className,
+		};
+	},
 };
+
+export { icons as default };

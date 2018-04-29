@@ -1,6 +1,6 @@
-'use strict';
-
-export const VIEW_TYPES = {
+const VIEW_TYPES = {
 	INTRO: 'intro',
-	YEAR: 'year'
+	YEAR: 'year',
 };
+
+export { VIEW_TYPES as default };

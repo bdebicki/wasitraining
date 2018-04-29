@@ -1,36 +1,33 @@
-'use strict';
+import { EDITION } from '../../enums/elementHandlers';
+import Edition from '../../classes/Edition';
+import Lineup from '../../classes/Lineup';
+import LineupDetails from './LineupDetails';
 
-import { EDITION, LINK } from '../../enums/elementHandlers';
-import { edition } from '../../classes/edition';
-import { lineup } from '../../classes/lineup';
-import { lineupDetails } from "./lineupDetails";
-
-export class editionDetails extends edition {
+export default class EditionDetails extends Edition {
 	constructor(editionId) {
 		super(editionId);
 
-		this.headlinersDetails = new lineup(editionId);
-		this.lineupDetails = new lineupDetails(editionId);
-	};
+		this.headlinersDetails = new Lineup(editionId);
+	}
 
-	get currentEditionYear() {
+	static getCurrentEditionYear() {
 		return document.getElementById(EDITION.EDITION_DETAILS_ID).dataset.year;
 	}
 
 	decorateEditionDates() {
-		const editionDate = this.editionDate;
+		const { editionDate } = this;
 
 		if (Object.keys(editionDate).length === 1) {
 			return editionDate.firstDay;
-		} else {
-			return `${editionDate.firstDay} - ${editionDate.lastDay}`;
 		}
+
+		return `${editionDate.firstDay} - ${editionDate.lastDay}`;
 	}
 
 	decorateEditionHeadliners() {
-		let fragment = document.createDocumentFragment();
+		const fragment = document.createDocumentFragment();
 
-		this.headlinersDetails.headliners.map((item) => {
+		this.headlinersDetails.headliners.forEach((item) => {
 			const li = document.createElement('li');
 
 			li.textContent = item;
@@ -42,7 +39,7 @@ export class editionDetails extends edition {
 	}
 
 	renderEditionContainer() {
-		let section = document.createElement('section');
+		const section = document.createElement('section');
 
 		section.id = EDITION.EDITION_DETAILS_ID;
 		section.classList.add(`${EDITION.EDITION_DETAILS_YEAR_CLASS}${this.editionYear}`);
@@ -52,11 +49,11 @@ export class editionDetails extends edition {
 	}
 
 	renderEditionDetails() {
-		let fragment = document.createDocumentFragment();
-		let editionYear = document.createElement('h2');
-		let name = document.createElement('h3');
-		let dates = document.createElement('p');
-		let place = document.createElement('p');
+		const fragment = document.createDocumentFragment();
+		const editionYear = document.createElement('h2');
+		const name = document.createElement('h3');
+		const dates = document.createElement('p');
+		const place = document.createElement('p');
 
 		editionYear.classList.add(EDITION.YEAR_CLASS);
 		dates.classList.add(EDITION.DATES_CLASS);
@@ -74,10 +71,10 @@ export class editionDetails extends edition {
 		fragment.appendChild(place);
 
 		return fragment;
-	};
+	}
 
 	renderShortLineupContainer() {
-		let div = document.createElement('div');
+		const div = document.createElement('div');
 
 		div.classList.add(EDITION.LINEUP_CLASS, `${EDITION.LINEUP_EDITION_CLASS}${this.editionYear}`);
 
@@ -88,13 +85,13 @@ export class editionDetails extends edition {
 		const shortLineupContainer = document.querySelector(`.${EDITION.LINEUP_CLASS}`);
 		shortLineupContainer.classList.remove(`${EDITION.LINEUP_EDITION_CLASS}${oldYear}`);
 		shortLineupContainer.classList.add(`${EDITION.LINEUP_EDITION_CLASS}${this.editionYear}`);
-		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent =''; // to clear rain details list
+		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent = ''; // to clear rain details list
 
 		return this.decorateEditionHeadliners();
 	}
 
 	renderHeadliners() {
-		let ul = document.createElement('ul');
+		const ul = document.createElement('ul');
 
 		ul.classList.add(EDITION.HEADLINERS_CLASS);
 		ul.appendChild(this.decorateEditionHeadliners());
@@ -104,7 +101,7 @@ export class editionDetails extends edition {
 
 	updateEditionDetails() {
 		const detailsContainer = document.getElementById(EDITION.EDITION_DETAILS_ID);
-		const oldYear = this.currentEditionYear;
+		const oldYear = EditionDetails.getCurrentEditionYear();
 		const newYear = this.editionYear;
 
 		detailsContainer.classList.remove(`${EDITION.EDITION_DETAILS_YEAR_CLASS}${oldYear}`);
@@ -119,11 +116,11 @@ export class editionDetails extends edition {
 	}
 
 	render() {
-		let editionContainer = this.renderEditionContainer();
+		const editionContainer = this.renderEditionContainer();
 		const editionDetails = this.renderEditionDetails();
 		const lineupContainer = this.renderShortLineupContainer();
 		const headliners = this.renderHeadliners();
-		const lineupLink = this.lineupDetails.renderLineupLink();
+		const lineupLink = LineupDetails.renderLineupLink();
 
 		lineupContainer.appendChild(headliners);
 		lineupContainer.appendChild(lineupLink);
