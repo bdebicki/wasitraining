@@ -345,24 +345,13 @@ export default class Lineup {
 			[LINEUP_LEVELS.LVL2, LINEUP_LEVELS.LVL3, LINEUP_LEVELS.LVL4, LINEUP_LEVELS.OTHERS]
 		);
 
+		// sort merged artists
+		Object.keys(artistsByLvl).forEach((lvl) => Lineup.sortCustomOrderLevel(artistsByLvl[lvl]));
+
 		// push daily artists to sorted lineup
 		sortedLineup[LINEUP_LEVELS.DAILY_ARTISTS] = this.noMergeArtists([LINEUP_LEVELS.HEADLINERS, LINEUP_LEVELS.LVL1]);
 
-		// push lvl artists to sorted lineup
-		Object.keys(artistsByLvl).forEach((lvl) => {
-			sortedLineup[lvl] = artistsByLvl[lvl];
-		});
-
-		// TODO: refactor this part
-		Object.keys(sortedLineup).forEach((lvl) => {
-			const currentLvl = sortedLineup[lvl];
-
-			Lineup.clearEmptyLevels(sortedLineup, lvl); // remove empty levels
-
-			if (lvl !== LINEUP_LEVELS.DAILY_ARTISTS) {
-				Lineup.sortCustomOrderLevel(currentLvl); // sort artists except daily artists
-			}
-		});
+		Object.assign(sortedLineup, artistsByLvl); // push lvl artists to sorted lineup
 
 		console.log('merge artists except headliners and sort artists by customOrderExceptHeadliners', sortedLineup);
 		return sortedLineup;
