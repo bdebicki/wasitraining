@@ -155,7 +155,14 @@ export default class Lineup {
 	}
 
 	mergeArtists(lvls = false) {
-		const artists = {};
+		const artists = { // prepared object structure to keep specific order of objects
+			[LINEUP_LEVELS.HEADLINERS]: [],
+			[LINEUP_LEVELS.LVL1]: [],
+			[LINEUP_LEVELS.LVL2]: [],
+			[LINEUP_LEVELS.LVL3]: [],
+			[LINEUP_LEVELS.LVL4]: [],
+			[LINEUP_LEVELS.OTHERS]: [],
+		};
 
 		this.rawLineup.forEach((day) => {
 			Object.keys(day).forEach((lvl) => {
@@ -170,6 +177,12 @@ export default class Lineup {
 					});
 				}
 			});
+		});
+
+		Object.keys(artists).forEach((lvl) => { // clean empty levels
+			if (artists[lvl].length === 0) {
+				delete artists[lvl];
+			}
 		});
 
 		console.log('mergeArtists', artists);
