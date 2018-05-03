@@ -1,6 +1,6 @@
 'use strict';
 
-import { lineup } from "../../classes/lineup";
+import { lineup } from "../../classes/Lineup";
 import { LINEUP, DIALOGBOX, LINK, EDITION } from "../../enums/elementHandlers";
 import {
 	LINEUP_LEVELS, ARTIST_KEYS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_SLICES_PROPS,

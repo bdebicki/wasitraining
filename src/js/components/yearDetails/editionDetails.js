@@ -2,7 +2,7 @@
 
 import {DIALOGBOX, EDITION, LINK} from '../../enums/elementHandlers';
 import { edition } from '../../classes/edition';
-import { lineup } from '../../classes/lineup';
+import { lineup } from '../../classes/Lineup';
 import { lineupDetails } from "./lineupDetails";
 
 export class editionDetails extends edition {
