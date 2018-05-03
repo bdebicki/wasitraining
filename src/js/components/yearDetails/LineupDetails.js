@@ -390,7 +390,7 @@ export default class LineupDetails extends Lineup {
 				ul.classList.add(LINEUP.ARTISTS_LINE_CLASS, `${LINEUP.ARTISTS_LINE_CLASS}--line${currentLine}`);
 
 				line.map((artist) => {
-					this.decorateArtist(artist, ul, index, artist[ARTIST_KEYS.LEVEL]);
+					LineupDetails.decorateArtist(artist, ul, index, artist[ARTIST_KEYS.LEVEL]);
 				});
 
 				section.appendChild(ul);

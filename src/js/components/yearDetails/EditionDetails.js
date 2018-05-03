@@ -1,4 +1,4 @@
-import { EDITION, LINK } from '../../enums/elementHandlers';
+import { DIALOGBOX, EDITION } from '../../enums/elementHandlers';
 import Edition from '../../classes/Edition';
 import Lineup from '../../classes/Lineup';
 import LineupDetails from './LineupDetails';
