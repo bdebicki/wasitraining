@@ -1,11 +1,9 @@
-`use strict`;
-
-import {LINEUP_LEVELS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_KEYS, ARTIST_ALIGN} from './lineup';
+import { LINEUP_LEVELS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_KEYS, ARTIST_ALIGN } from './lineup';
 
 export const globalClassBuilders = {
 	active: 'isActive',
 	visible: 'isVisible',
-	hidden: 'isHidden'
+	hidden: 'isHidden',
 };
 
 export const LAYOUT = {
@@ -19,7 +17,7 @@ export const LAYOUT = {
 };
 
 export const VIEWS = {
-	INTRO_CLASS: `${LAYOUT.MAIN_CONTAINER_ID}--introView`
+	INTRO_CLASS: `${LAYOUT.MAIN_CONTAINER_ID}--introView`,
 };
 
 const headerClassBuilders = {
@@ -35,7 +33,7 @@ export const HEADER = {
 
 const aboutClassBuilder = 'aboutSection';
 export const FOOTER = {
-	COOKIES_CLASS: `cookiesSection`,
+	COOKIES_CLASS: 'cookiesSection',
 	ABOUT_SECTION_CLASS: aboutClassBuilder,
 	COPYRIGHTS_CLASS: `${aboutClassBuilder}__copyrights`,
 	ABOUT_LINK_CLASS: `${aboutClassBuilder}__aboutLink`,
@@ -59,7 +57,7 @@ export const TIMELINE = {
 	NAV_EDITIONS_CLASS: `${timelineClassBuilders.navTimelineItem}List`,
 	NAV_EDITION_CLASS: timelineClassBuilders.navTimelineItem,
 	NAV_EDITION_LINK_CLASS: `${timelineClassBuilders.navTimelineItem}__${timelineClassBuilders.link}`,
-	NAV_EDITION_ACTIVE_CLASS: `${timelineClassBuilders.navTimelineItem}__${timelineClassBuilders.link}--${globalClassBuilders.active}`,
+	NAV_EDITION_ACTIVE_CLASS: `${timelineClassBuilders.navTimelineItem}__${timelineClassBuilders.link}--${globalClassBuilders.active}`, // eslint-disable-line max-len
 };
 
 const editionClassBuilders = {

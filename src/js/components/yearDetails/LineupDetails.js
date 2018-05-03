@@ -1,15 +1,10 @@
-'use strict';
-
-import { lineup } from "../../classes/Lineup";
-import { LINEUP, DIALOGBOX, LINK, EDITION } from "../../enums/elementHandlers";
-import {
-	LINEUP_LEVELS, ARTIST_KEYS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_SLICES_PROPS,
-	ARTIST_ALIGN
-} from '../../enums/lineup';
+import Lineup from '../../classes/Lineup';
+import { LINEUP, DIALOGBOX, LINK, EDITION } from '../../enums/elementHandlers';
+import { LINEUP_LEVELS, ARTIST_KEYS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_SLICES_PROPS, ARTIST_ALIGN } from '../../enums/lineup';
 import { ARTIST_CANCELED } from '../../enums/content';
 import * as dialogbox from '../../utils/addDialogbox';
-import { setIcon } from "../../utils/setIcon";
-import { icons } from "../../utils/iconsLibrary";
+import setIcon from '../../utils/setIcon';
+import icons from '../../utils/iconsLibrary';
 
 const DIALOGBOX_HEADLINE_TEXT = 'Lineup';
 const lineupLvlToClassMap = {
@@ -46,67 +41,61 @@ const artistSliceDecoratorToClassMap = {
 	[ARTIST_SLICES_STYLES.PREVIOUS_LINE]: LINEUP.ARTIST_SLICE_PREVIOUS_LINE_CLASS,
 };
 
-export class lineupDetails extends lineup {
-	constructor(editionId) {
-		super(editionId);
-	}
-
-	toggleLineup(e) {
+export default class LineupDetails extends Lineup {
+	static toggleLineup(e) {
 		e.preventDefault();
 		dialogbox.toggleDialogboxAction(`#${LINEUP.SECTION_ID}`, `#${EDITION.EDITION_DETAILS_ID}`);
 	}
 
-	renderLineupLink() {
-		let p = document.createElement('p');
-		let a = document.createElement('a');
+	static renderLineupLink() {
+		const p = document.createElement('p');
+		const a = document.createElement('a');
 
 		p.classList.add(EDITION.LINEUP_LINK_CLASS);
 		a.classList.add(LINK.BASIC_CLASS, LINK.INVERTED_STYLE_CLASS, LINK.SIZE_XS_CLASS, LINK.HAS_ICON_CLASS);
-		a.href = `#lineup`;
+		a.href = '#lineup';
 		a.textContent = 'see full lineup';
 		a.appendChild(setIcon(icons.plus(), `${LINK.ICON_CLASS}`));
-		a.addEventListener('click', this.toggleLineup, null);
+		a.addEventListener('click', LineupDetails.toggleLineup, null);
 
 		p.appendChild(a);
 
 		return p;
 	}
 
-	artistSliceDecorator(artistName, artistDecorations) {
-		const decorations  = artistDecorations;
+	static artistSliceDecorator(artistName, artistDecorations) {
+		const decorations = artistDecorations;
 		const multipleDecorations = Array.isArray(decorations);
-		let name = artistName;
-		let decoratedName = document.createElement('template'); // document fragment can't be used with innerHtml method
+		const name = artistName;
+		const decoratedName = document.createElement('template'); // can't use document fragment with innerHtml method
 		let replacePattern;
 
-		if(!multipleDecorations) {
+		if (!multipleDecorations) {
 			replacePattern = decorations[ARTIST_SLICES_PROPS.SLICE];
 		} else {
 			replacePattern = new RegExp(
-				decorations.map((item) => {
-					return item[ARTIST_SLICES_PROPS.SLICE];
-				}).join("|"),"gi"
+				decorations.map((item) => item[ARTIST_SLICES_PROPS.SLICE]).join('|'), 'gi'
 			);
 		}
 
-		decoratedName.innerHTML = name.replace(replacePattern, function(matched) {
+		decoratedName.innerHTML = name.replace(replacePattern, (matched) => {
 			let sliceStyleClassName = '';
 			const setStyleClassName = (styleList) => {
 				if (Array.isArray(styleList[ARTIST_SLICES_PROPS.STYLE])) {
-					styleList[ARTIST_SLICES_PROPS.STYLE].map((style) => {
-						sliceStyleClassName += ' ' + artistSliceDecoratorToClassMap[style];
-					});
+					sliceStyleClassName = styleList[ARTIST_SLICES_PROPS.STYLE].map(
+						(style) => artistSliceDecoratorToClassMap[style]
+					).join(' ');
 				} else {
 					sliceStyleClassName = artistSliceDecoratorToClassMap[styleList[ARTIST_SLICES_PROPS.STYLE]];
 				}
 			};
 
-			if(!multipleDecorations) {
+			if (!multipleDecorations) {
 				setStyleClassName(decorations);
 			} else {
-				decorations.map((item) => {
-					if (item[ARTIST_SLICES_PROPS.SLICE] === matched) {
-						setStyleClassName(item);
+				decorations.forEach((decorationSlice) => {
+					if (decorationSlice[ARTIST_SLICES_PROPS.SLICE] === matched) {
+						setStyleClassName(decorationSlice);
 					}
 				});
 			}
@@ -116,7 +105,7 @@ export class lineupDetails extends lineup {
 		return decoratedName.content;
 	}
 
-	decorateArtist(artistKey, target, index, artistLvl) {
+	static decorateArtist(artistKey, target, index, artistLvl) {
 		const fragment = document.createDocumentFragment();
 		const li = document.createElement('li');
 		let artistName;
@@ -218,30 +207,83 @@ export class lineupDetails extends lineup {
 		}
 	}
 
+	// static getArtistClassNames(artist, artistLvl) {
+	// 	let classNames = [
+	// 		LINEUP.ARTIST_CLASS,
+	// 		artistLvl ? dailyLvlToClassMap[artistLvl] : null,
+	// 		artist[ARTIST_KEYS.DECORATOR] ? artistDecoratorToClassMap[artist[ARTIST_KEYS.DECORATOR]] : null,
+	// 		artist[ARTIST_KEYS.MARKED] ? LINEUP.ARTIST_MARKED_CLASS : null,
+	// 		artist[ARTIST_KEYS.MULTILINE] ? LINEUP.ARTIST_MULTILINE_CLASS : null,
+	// 		artist[ARTIST_KEYS.SEPARATOR_MIDDLE] ? LINEUP.ARTIST_SEPARATOR_MIDDLE_CLASS : null,
+	// 		artist[ARTIST_KEYS.CANCELED] ? LINEUP.ARTIST_CANCELED_CLASS : null,
+	// 		artist[ARTIST_KEYS.REPLACEMENT] ? LINEUP.ARTIST_REPLACEMENT_CLASS : null,
+	// 	];
+	//
+	// 	classNames = classNames.filter((className) => { // clean null records on array
+	// 		if (className !== null) {
+	// 			return className;
+	// 		}
+	//
+	// 		return null;
+	// 	});
+	//
+	// 	return classNames;
+	// }
+	//
+	// static getArtistName(artist) {
+	// 	let artistName;
+	//
+	// 	if (artist[ARTIST_KEYS.ARTIST] && !artist[ARTIST_KEYS.DISPLAY_NAME]) {
+	// 		artistName = artist[ARTIST_KEYS.ARTIST];
+	// 	} else if (artist[ARTIST_KEYS.DISPLAY_NAME]) {
+	// 		artistName = artist[ARTIST_KEYS.DISPLAY_NAME];
+	// 	} else {
+	// 		artistName = artist;
+	// 	}
+	//
+	// 	return artistName;
+	// }
+	//
+	// static decorateArtist(artist, target, artistLvl) {
+	// 	const li = document.createElement('li');
+	// 	const artistName = LineupDetails.getArtistName(artist);
+	// 	const artistClassNames = LineupDetails.getArtistClassNames(artist, artistLvl);
+	//
+	// 	if (artist[ARTIST_KEYS.SLICE_DECORATOR]) {
+	// 		li.append(LineupDetails.artistSliceDecorator(artistName, artist[ARTIST_KEYS.SLICE_DECORATOR]));
+	// 	} else {
+	// 		li.textContent = artistName;
+	// 	}
+	//
+	// 	li.classList.add(...artistClassNames);
+	//
+	// 	target.appendChild(li);
+	// }
+
 	getLineupByType() {
-		switch(this.mergeArtists) {
-			case true:
-				return this.decorateLineupByLevels();
-			case 'exceptHeadliners':
-				return this.decorateLineupHeadlinersByDays();
-			case 'customLevels':
-				return this.decorateLineupCustomLevelsByDays();
-			default:
-				return this.decorateLineupByDays();
+		switch (this.mergeArtistsType) {
+		case true:
+			return this.decorateLineupByLevels();
+		case 'exceptHeadliners':
+			return this.decorateLineupHeadlinersByDays();
+		case 'customLevels':
+			return this.decorateLineupCustomLevelsByDays();
+		default:
+			return this.decorateLineupByDays();
 		}
 	}
 
 	decorateLineupByLevels() {
-		let fragment = document.createDocumentFragment();
-		const lineup = this.lineup;
+		const fragment = document.createDocumentFragment();
+		const { lineup } = this;
 
-		Object.keys(lineup).map((key) => {
-			let ul = document.createElement('ul');
+		Object.keys(lineup).forEach((lvl) => {
+			const ul = document.createElement('ul');
 
-			ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
+			ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[lvl]);
 
-			lineup[key].map((item, index) => {
-				this.decorateArtist(item, ul, index, key);
+			lineup[lvl].forEach((artist, index) => {
+				LineupDetails.decorateArtist(artist, ul, index, lvl);
 			});
 
 			fragment.appendChild(ul);
@@ -251,31 +293,31 @@ export class lineupDetails extends lineup {
 	}
 
 	decorateLineupHeadlinersByDays() {
-		let fragment = document.createDocumentFragment();
-		const lineup = this.lineup;
+		const fragment = document.createDocumentFragment();
+		const { lineup } = this;
 
-		Object.keys(lineup).map((key) => {
-			if(key === LINEUP_LEVELS.DAILY_ARTISTS) {
-				lineup[key].map((item) => {
-					let ul = document.createElement('ul');
+		Object.keys(lineup).forEach((lvl) => {
+			if (lvl === LINEUP_LEVELS.DAILY_ARTISTS) {
+				lineup[lvl].forEach((dailyArtists) => {
+					const ul = document.createElement('ul');
 
-					ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
+					ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[lvl]);
 
-					Object.keys(item).map((key) => {
-						item[key].map((itemKey, index) => {
-							this.decorateArtist(itemKey, ul, index, key);
+					Object.keys(dailyArtists).forEach((dailyLvl) => {
+						dailyArtists[dailyLvl].forEach((dailyArtist, index) => {
+							LineupDetails.decorateArtist(dailyArtist, ul, index, dailyLvl);
 						});
 					});
 
 					fragment.appendChild(ul);
 				});
 			} else {
-				let ul = document.createElement('ul');
+				const ul = document.createElement('ul');
 
-				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
+				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[lvl]);
 
-				lineup[key].map((item, index) => {
-					this.decorateArtist(item, ul, index, key);
+				lineup[lvl].forEach((artist, index) => {
+					LineupDetails.decorateArtist(artist, ul, index, lvl);
 				});
 
 				fragment.appendChild(ul);
@@ -286,22 +328,22 @@ export class lineupDetails extends lineup {
 	}
 
 	decorateLineupByDays() {
-		let fragment = document.createDocumentFragment();
-		const lineup = this.lineup;
+		const fragment = document.createDocumentFragment();
+		const { lineup } = this;
 
-		lineup.map((item, index) => {
-			let section = document.createElement('section');
+		lineup.forEach((day, index) => {
+			const section = document.createElement('section');
 			const dayCount = index + 1;
 
 			section.classList.add(LINEUP.ARTISTS_DAY_CLASS, `${LINEUP.ARTISTS_DAY_CLASS}--day${dayCount}`);
 
-			Object.keys(item).map((key) => {
-				let ul = document.createElement('ul');
+			Object.keys(day).forEach((lvl) => {
+				const ul = document.createElement('ul');
 
-				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[key]);
+				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[lvl]);
 
-				item[key].map((itemKey, index) => {
-					this.decorateArtist(itemKey, ul, index, key);
+				day[lvl].forEach((artist, index) => {
+					LineupDetails.decorateArtist(artist, ul, index, lvl);
 				});
 
 				section.appendChild(ul);
@@ -366,6 +408,7 @@ export class lineupDetails extends lineup {
 		const oldYear = lineupContainer.dataset.year;
 		const newYear = this.editionYear;
 
+		// eslint-disable-next-line max-len
 		lineupContainer.querySelector(`.${DIALOGBOX.HEADLINE_CLASS}`).textContent = `${DIALOGBOX_HEADLINE_TEXT} ${newYear}`;
 		lineupContainer.classList.remove(`${LINEUP.EDITION_CLASS}${oldYear}`);
 		lineupContainer.classList.add(`${LINEUP.EDITION_CLASS}${newYear}`);
@@ -377,7 +420,7 @@ export class lineupDetails extends lineup {
 	}
 
 	render() {
-		let section = document.createElement('section');
+		const section = document.createElement('section');
 		const newYear = this.editionYear;
 
 		const dialogboxLineup = dialogbox.addDialogbox({
@@ -387,7 +430,7 @@ export class lineupDetails extends lineup {
 			dataAttr: [['year', `${newYear}`]],
 			title: `${DIALOGBOX_HEADLINE_TEXT} ${newYear}`,
 			content: section,
-			closeTitle: 'hide lineup details'
+			closeTitle: 'hide lineup details',
 		});
 
 		section.classList.add(DIALOGBOX.CONTENT_CLASS, LINEUP.ARTISTS_CLASS, `${LINEUP.ARTISTS_EDITION_CLASS}${newYear}`);

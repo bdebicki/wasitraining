@@ -1,22 +1,20 @@
-'use strict';
-
 import { LAYOUT, BG } from '../../enums/elementHandlers';
 import { addVideo } from '../../utils/addElement';
 
-export class bgVideo {
+export default class BgVideo {
 	constructor(target) {
 		this.target = target;
 	}
 
-	renderVideoContainer() {
-		let div = document.createElement('div');
+	static renderVideoContainer() {
+		const div = document.createElement('div');
 
 		div.id = LAYOUT.BG_VIDEO_ID;
 
 		return div;
 	}
 
-	renderVideo() {
+	static renderVideo() {
 		const settings = {
 			classNames: BG.VIDEO_CLASS,
 			src: '/videos/bg-video.webm',
@@ -25,11 +23,11 @@ export class bgVideo {
 			height: '768',
 		};
 
-		return addVideo(settings)
+		return addVideo(settings);
 	}
 
-	renderImg() {
-		let img = document.createElement('img');
+	static renderImg() {
+		const img = document.createElement('img');
 
 		img.classList.add(BG.VIDEO_CLASS);
 		img.src = '/images/bg-img.png';
@@ -40,9 +38,9 @@ export class bgVideo {
 	}
 
 	render() {
-		let videoBlock = this.renderVideoContainer();
+		const videoBlock = BgVideo.renderVideoContainer();
 
-		videoBlock.appendChild(this.renderVideo());
+		videoBlock.appendChild(BgVideo.renderVideo());
 
 		document.getElementById(this.target).appendChild(videoBlock);
 	}
