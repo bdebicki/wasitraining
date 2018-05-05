@@ -22,7 +22,7 @@ export function addDialogbox({
 	if (classNames) {
 		classNames.map((className) => dialogboxClassNames.push(className));
 	}
-	if(stretched) {
+	if (stretched) {
 		dialogboxClassNames.push(DIALOGBOX.STRETCHED_CLASS);
 	}
 	if (dataAttr) {

@@ -230,12 +230,12 @@ export default class Lineup {
 	}
 
 	static sortAlphabeticallyLevel(sortScope) {
-		let sortArray = sortScope;
-		let newArray = [];
+		const sortArray = sortScope;
+		const newArray = [];
 
-		sortArray.map((item) => { // move artists without 'forceOrder' to new array
-			if ((typeof item === 'object' && !item[ARTIST_KEYS.FORCE_ORDER]) || typeof item === 'string') {
-				newArray.push(item);
+		sortArray.map((artist) => { // move artists without 'forceOrder' to new array
+			if ((typeof artist === 'object' && !artist[ARTIST_KEYS.FORCE_ORDER]) || typeof artist === 'string') {
+				newArray.push(artist);
 			}
 		});
 
@@ -243,39 +243,38 @@ export default class Lineup {
 			const val = (input) => {
 				if (typeof input === 'object' && input[ARTIST_KEYS.SORT_BY]) {
 					return input[ARTIST_KEYS.SORT_BY];
-
 				} else if (typeof input === 'object' && !input[ARTIST_KEYS.SORT_BY]) {
 					return input[ARTIST_KEYS.ARTIST];
 				}
+
 				return input;
 			};
 			const valA = val(a).toLowerCase();
 			const valB = val(b).toLowerCase();
 
-			return valA.localeCompare(valB, 'pl', { sensitivity: 'accent'});
+			return valA.localeCompare(valB, 'pl', { sensitivity: 'accent' });
 		});
 
-		sortArray.map((item) => { // push artists with 'forceOrder' to new array (to right position)
-			if (item[ARTIST_KEYS.FORCE_ORDER]) {
-				const artist = item;
+		sortArray.map((artist) => { // push artists with 'forceOrder' to new array (to right position)
+			if (artist[ARTIST_KEYS.FORCE_ORDER]) {
 				const newIndex = artist[ARTIST_KEYS.FORCE_ORDER] - 1;
 
 				newArray.splice(newIndex, 0, artist);
 			}
 		});
 
-		newArray.map((item, index) => { // clear 'sortBy' & 'forceOrder' keys on artist object
+		newArray.map((artist, index) => { // clear 'sortBy' & 'forceOrder' keys on artist object
 			Lineup.updateArtistObjectOnArray({
 				scope: newArray,
-				index: index,
-				artist: item,
+				index,
+				artist,
 				key: ARTIST_KEYS.SORT_BY,
 				withValidation: true,
 			});
 			Lineup.updateArtistObjectOnArray({
 				scope: newArray,
-				index: index,
-				artist: item,
+				index,
+				artist,
 				key: ARTIST_KEYS.FORCE_ORDER,
 				withValidation: true,
 			});

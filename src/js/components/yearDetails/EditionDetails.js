@@ -42,7 +42,10 @@ export default class EditionDetails extends Edition {
 		const section = document.createElement('section');
 
 		section.id = EDITION.EDITION_DETAILS_ID;
-		section.classList.add(`${EDITION.EDITION_DETAILS_YEAR_CLASS}${this.editionYear}`, DIALOGBOX.INACTIVE_HELPER_CLASS);
+		section.classList.add(
+			`${EDITION.EDITION_DETAILS_YEAR_CLASS}${this.editionYear}`,
+			DIALOGBOX.INACTIVE_HELPER_CLASS
+		);
 		section.dataset.year = this.editionYear;
 
 		return section;
@@ -83,6 +86,7 @@ export default class EditionDetails extends Edition {
 
 	updateHeadliners(oldYear) {
 		const shortLineupContainer = document.querySelector(`.${EDITION.LINEUP_CLASS}`);
+
 		shortLineupContainer.classList.remove(`${EDITION.LINEUP_EDITION_CLASS}${oldYear}`);
 		shortLineupContainer.classList.add(`${EDITION.LINEUP_EDITION_CLASS}${this.editionYear}`);
 		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent = ''; // to clear rain details list
