@@ -209,13 +209,13 @@ export default class Lineup {
 	}
 
 	static updateArtistObjectOnArray({
-										 scope,
-										 index,
-										 place = 1,
-										 artist,
-										 key,
-										 withValidation = false,
-									 }) {
+		scope,
+		index,
+		place = 1,
+		artist,
+		key,
+		withValidation = false,
+	}) {
 		const update = (updateScope, updateIndex, updatePlace, updateArtist, updateKey) => {
 			updateScope.splice(updateIndex, updatePlace, Lineup.clearArtistObject(updateArtist, updateKey));
 		};
@@ -234,17 +234,17 @@ export default class Lineup {
 		let newArray = [];
 
 		sortArray.map((item) => { // move artists without 'forceOrder' to new array
-			if (typeof item === 'object' && !item[ARTIST_KEYS.FORCE_ORDER] || typeof item === 'string') {
+			if ((typeof item === 'object' && !item[ARTIST_KEYS.FORCE_ORDER]) || typeof item === 'string') {
 				newArray.push(item);
 			}
 		});
 
 		newArray.sort((a, b) => { // sort artists without 'forceOrder'
 			const val = (input) => {
-				if(typeof input === 'object' && input[ARTIST_KEYS.SORT_BY]) {
+				if (typeof input === 'object' && input[ARTIST_KEYS.SORT_BY]) {
 					return input[ARTIST_KEYS.SORT_BY];
 
-				} else if(typeof input === 'object' && !input[ARTIST_KEYS.SORT_BY]) {
+				} else if (typeof input === 'object' && !input[ARTIST_KEYS.SORT_BY]) {
 					return input[ARTIST_KEYS.ARTIST];
 				}
 				return input;
@@ -283,44 +283,6 @@ export default class Lineup {
 
 		return newArray;
 	}
-
-	// static sortAlphabeticallyLevel(sortScope) {
-	// 	const scope = sortScope;
-	// 	let sortedLvl = [];
-	//
-	// 	sortedLvl = scope
-	// 		.sort((a, b) => { // sort lvl alphabetically
-	// 			const val = (input) => {
-	// 				if (typeof input === 'object' && input[ARTIST_KEYS.SORT_BY]) {
-	// 					return input[ARTIST_KEYS.SORT_BY];
-	// 				} else if (typeof input === 'object' && !input[ARTIST_KEYS.SORT_BY]) {
-	// 					return input[ARTIST_KEYS.ARTIST];
-	// 				}
-	//
-	// 				return input;
-	// 			};
-	// 			const valA = val(a);
-	// 			const valB = val(b);
-	//
-	// 			if (valA < valB) {
-	// 				return -1;
-	// 			}
-	// 			if (valA > valB) {
-	// 				return 1;
-	// 			}
-	// 			return 0;
-	// 		})
-	// 		.map((artist, index) => // clear 'sortBy' key on artist object
-	// 			Lineup.updateArtistObjectOnArray({
-	// 				scope: sortScope,
-	// 				index,
-	// 				artist,
-	// 				key: ARTIST_KEYS.SORT_BY,
-	// 				withValidation: true,
-	// 			}));
-	//
-	// 	return sortedLvl;
-	// }
 
 	static sortCustomOrderLevel(sortScope) {
 		const scope = sortScope;
@@ -362,7 +324,8 @@ export default class Lineup {
 			Lineup.clearEmptyLevels(sortedLineup, lvl); // remove empty levels
 
 			if (lvl !== LINEUP_LEVELS.HEADLINERS) {
-				Lineup.sortAlphabeticallyLevel(currentLvl);
+				const sortedLvl = Lineup.sortAlphabeticallyLevel(currentLvl);
+				currentLvl.splice(0, currentLvl.length, ...sortedLvl);
 			}
 		});
 
@@ -400,13 +363,12 @@ export default class Lineup {
 		const sortedLineup = this.noMergeArtists();
 
 		sortedLineup.forEach((day) => { // sort artist of levels except headliners
-			let currentDay = day;
-
-			currentDay = Object.keys(currentDay).map((lvl) => {
-				const currentLvl = currentDay[lvl];
+			Object.keys(day).map((lvl) => {
+				const currentLvl = day[lvl];
 
 				if (lvl !== LINEUP_LEVELS.HEADLINERS) { // sort only not headliner artists
-					Lineup.sortAlphabeticallyLevel(currentLvl);
+					const sortedLvl = Lineup.sortAlphabeticallyLevel(currentLvl);
+					currentLvl.splice(0, currentLvl.length, ...sortedLvl);
 				}
 
 				return currentLvl;
