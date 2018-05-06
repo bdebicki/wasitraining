@@ -364,11 +364,11 @@ export default class LineupDetails extends Lineup {
 		const tempLineup = [];
 
 		// merge all day artists in one array
-		lineup.map((day, index) => {
+		lineup.forEach((day, index) => {
 			tempLineup.push([]); // create day key on tempLineup array
 
-			Object.keys(day).map((level) => { // iterate on day
-				day[level].map((artist) => { // iterate on level of specific day
+			Object.keys(day).forEach((level) => { // iterate on day
+				day[level].forEach((artist) => { // iterate on level of specific day
 					const artistObj = artist;
 					const artistLine = artistObj[ARTIST_KEYS.LINE] - 1;
 					artistObj[ARTIST_KEYS.LEVEL] = level;
@@ -381,19 +381,19 @@ export default class LineupDetails extends Lineup {
 				});
 			});
 		});
-		tempLineup.map((day, index) => {
+		tempLineup.forEach((day, index) => {
 			const section = document.createElement('section');
 			const currentDay = index + 1;
 
 			section.classList.add(LINEUP.ARTISTS_DAY_CLASS, `${LINEUP.ARTISTS_DAY_CLASS}--day${currentDay}`);
 
-			day.map((line, lineIndex) => {
+			day.forEach((line, lineIndex) => {
 				const ul = document.createElement('ul');
 				const currentLine = lineIndex + 1;
 
 				ul.classList.add(LINEUP.ARTISTS_LINE_CLASS, `${LINEUP.ARTISTS_LINE_CLASS}--line${currentLine}`);
 
-				line.map((artist) => {
+				line.forEach((artist) => {
 					LineupDetails.decorateArtist(artist, ul, lineIndex, artist[ARTIST_KEYS.LEVEL]);
 				});
 
