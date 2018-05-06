@@ -231,31 +231,29 @@ export default class Lineup {
 
 	static sortAlphabeticallyLevel(sortScope) {
 		const sortArray = sortScope;
-		const newArray = [];
+		let newArray = [];
 
-		sortArray.map((artist) => { // move artists without 'forceOrder' to new array
-			if ((typeof artist === 'object' && !artist[ARTIST_KEYS.FORCE_ORDER]) || typeof artist === 'string') {
-				newArray.push(artist);
-			}
-		});
+		newArray = sortArray
+			.filter((artist) => ( // put artists without 'forceOrder' to new array
+				(typeof artist === 'object' && !artist[ARTIST_KEYS.FORCE_ORDER]) || typeof artist === 'string'
+			))
+			.sort((a, b) => { // sort artists without 'forceOrder'
+				const val = (input) => {
+					if (typeof input === 'object' && input[ARTIST_KEYS.SORT_BY]) {
+						return input[ARTIST_KEYS.SORT_BY];
+					} else if (typeof input === 'object' && !input[ARTIST_KEYS.SORT_BY]) {
+						return input[ARTIST_KEYS.ARTIST];
+					}
 
-		newArray.sort((a, b) => { // sort artists without 'forceOrder'
-			const val = (input) => {
-				if (typeof input === 'object' && input[ARTIST_KEYS.SORT_BY]) {
-					return input[ARTIST_KEYS.SORT_BY];
-				} else if (typeof input === 'object' && !input[ARTIST_KEYS.SORT_BY]) {
-					return input[ARTIST_KEYS.ARTIST];
-				}
+					return input;
+				};
+				const valA = val(a).toLowerCase();
+				const valB = val(b).toLowerCase();
 
-				return input;
-			};
-			const valA = val(a).toLowerCase();
-			const valB = val(b).toLowerCase();
+				return valA.localeCompare(valB, 'pl', { sensitivity: 'accent' });
+			});
 
-			return valA.localeCompare(valB, 'pl', { sensitivity: 'accent' });
-		});
-
-		sortArray.map((artist) => { // push artists with 'forceOrder' to new array (to right position)
+		sortArray.forEach((artist) => { // push artists with 'forceOrder' to new array (to right position)
 			if (artist[ARTIST_KEYS.FORCE_ORDER]) {
 				const newIndex = artist[ARTIST_KEYS.FORCE_ORDER] - 1;
 
@@ -263,7 +261,7 @@ export default class Lineup {
 			}
 		});
 
-		newArray.map((artist, index) => { // clear 'sortBy' & 'forceOrder' keys on artist object
+		newArray.forEach((artist, index) => { // clear 'sortBy' & 'forceOrder' keys on artist object
 			Lineup.updateArtistObjectOnArray({
 				scope: newArray,
 				index,
