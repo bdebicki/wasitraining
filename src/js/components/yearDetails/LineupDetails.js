@@ -105,44 +105,59 @@ export default class LineupDetails extends Lineup {
 		return decoratedName.content;
 	}
 
-	static decorateArtist(artistKey, target, index, artistLvl) {
-		const fragment = document.createDocumentFragment();
-		const li = document.createElement('li');
+	static getArtistClassNames(artist, artistLvl) {
+		const lvlClass = () => {
+			if (artistLvl === LINEUP_LEVELS.HEADLINERS) {
+				return `${LINEUP.ARTIST_CLASS}--headliner`;
+			}
+
+			return `${LINEUP.ARTIST_CLASS}--${artistLvl}`;
+		};
+		let classNames = [
+			LINEUP.ARTIST_CLASS,
+			lvlClass(),
+			artist[ARTIST_KEYS.DECORATOR] ? artistDecoratorToClassMap[artist[ARTIST_KEYS.DECORATOR]] : null,
+			artist[ARTIST_KEYS.MARKED] ? LINEUP.ARTIST_MARKED_CLASS : null,
+			artist[ARTIST_KEYS.MULTILINE] ? LINEUP.ARTIST_MULTILINE_CLASS : null,
+			artist[ARTIST_KEYS.ALIGNED] ? alignToClassMap[artist[ARTIST_KEYS.ALIGNED]] : null,
+			artist[ARTIST_KEYS.FIRST_ON_LINE] ? LINEUP.ARTIST_FIRST_ON_LINE_CLASS : null,
+			artist[ARTIST_KEYS.LAST_ON_LINE] ? LINEUP.ARTIST_LAST_ON_LINE_CLASS : null,
+			artist[ARTIST_KEYS.LAST_ON_DAY] ? LINEUP.ARTIST_LAST_ON_DAY_CLASS : null,
+			artist[ARTIST_KEYS.REPLACEMENT] && typeof artist[ARTIST_KEYS.REPLACEMENT] !== 'string' ? LINEUP.ARTIST_REPLACEMENT_CLASS : null, // eslint-disable-line max-len
+		];
+
+		classNames = classNames.filter((className) => { // clean null records on array
+			if (className !== null) {
+				return className;
+			}
+
+			return null;
+		});
+
+		return classNames;
+	}
+
+	static getArtistName(artist) {
 		let artistName;
 
-		if (artistKey[ARTIST_KEYS.ARTIST] && !artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
-			artistName = artistKey[ARTIST_KEYS.ARTIST];
-		} else if (artistKey[ARTIST_KEYS.DISPLAY_NAME]) {
-			artistName = artistKey[ARTIST_KEYS.DISPLAY_NAME];
+		if (artist[ARTIST_KEYS.ARTIST] && !artist[ARTIST_KEYS.DISPLAY_NAME]) {
+			artistName = artist[ARTIST_KEYS.ARTIST];
+		} else if (artist[ARTIST_KEYS.DISPLAY_NAME]) {
+			artistName = artist[ARTIST_KEYS.DISPLAY_NAME];
 		} else {
-			artistName = artistKey;
+			artistName = artist;
 		}
 
-		li.classList.add(LINEUP.ARTIST_CLASS);
+		return artistName;
+	}
 
-		if (artistLvl === LINEUP_LEVELS.HEADLINERS) {
-			li.classList.add(`${LINEUP.ARTIST_CLASS}--headliner`);
-		} else {
-			li.classList.add(`${LINEUP.ARTIST_CLASS}--${artistLvl}`);
-		}
+	static decorateArtist(artist, target, index, artistLvl) {
+		const fragment = document.createDocumentFragment();
+		const li = document.createElement('li');
+		const artistName = LineupDetails.getArtistName(artist);
+		const artistClassNames = LineupDetails.getArtistClassNames(artist, artistLvl);
 
-		if (artistKey[ARTIST_KEYS.DECORATOR]) {
-			li.classList.add(artistDecoratorToClassMap[artistKey[ARTIST_KEYS.DECORATOR]]);
-		}
-		if (artistKey[ARTIST_KEYS.MARKED]) {
-			li.classList.add(LINEUP.ARTIST_MARKED_CLASS);
-		}
-		if (artistKey[ARTIST_KEYS.MULTILINE]) {
-			li.classList.add(LINEUP.ARTIST_MULTILINE_CLASS);
-		}
-
-		if (artistKey[ARTIST_KEYS.ALIGNED]) {
-			li.classList.add(alignToClassMap[artistKey[ARTIST_KEYS.ALIGNED]]);
-		}
-
-		if (artistKey[ARTIST_KEYS.FIRST_ON_LINE]) {
-			li.classList.add(LINEUP.ARTIST_FIRST_ON_LINE_CLASS);
-
+		if (artist[ARTIST_KEYS.FIRST_ON_LINE]) {
 			if (index > 0) {
 				const newLine = document.createElement('li');
 
@@ -151,14 +166,8 @@ export default class LineupDetails extends Lineup {
 				fragment.appendChild(newLine);
 			}
 		}
-		if (artistKey[ARTIST_KEYS.LAST_ON_LINE]) {
-			li.classList.add(LINEUP.ARTIST_LAST_ON_LINE_CLASS);
-		}
-		if (artistKey[ARTIST_KEYS.LAST_ON_DAY]) {
-			li.classList.add(LINEUP.ARTIST_LAST_ON_DAY_CLASS);
-		}
 
-		if (artistKey[ARTIST_KEYS.CANCELED]) {
+		if (artist[ARTIST_KEYS.CANCELED]) {
 			const span = document.createElement('span');
 
 			span.classList.add(LINEUP.ARTIST_CANCELED_CLASS);
@@ -167,17 +176,20 @@ export default class LineupDetails extends Lineup {
 			li.dataset.canceledArtist = artistName;
 			li.appendChild(span);
 		}
-		if (artistKey[ARTIST_KEYS.REPLACEMENT] && typeof artistKey[ARTIST_KEYS.REPLACEMENT] !== 'string') {
-			li.classList.add(LINEUP.ARTIST_REPLACEMENT_CLASS);
+
+		if (artist[ARTIST_KEYS.BREAK_LINE]) {
+			const previousEl = target.querySelector('li:last-child');
+
+			previousEl.classList.add(LINEUP.ARTIST_NEXT_LINE_ARTIST_CLASS);
+			previousEl.dataset[ARTIST_KEYS.NEXT_LINE_ARTIST] = artist[ARTIST_KEYS.SLICE_DECORATOR][ARTIST_SLICES_PROPS.SLICE]; // eslint-disable-line max-len
 		}
 
-		if (artistKey[ARTIST_KEYS.SLICE_DECORATOR]) {
-			li.append(this.artistSliceDecorator(artistName, artistKey[ARTIST_KEYS.SLICE_DECORATOR]));
-		} else if (typeof artistKey[ARTIST_KEYS.REPLACEMENT] === 'string') {
+		if (artist[ARTIST_KEYS.SLICE_DECORATOR]) {
+			li.append(this.artistSliceDecorator(artistName, artist[ARTIST_KEYS.SLICE_DECORATOR]));
+		} else if (typeof artist[ARTIST_KEYS.REPLACEMENT] === 'string') {
 			const spanReplacement = document.createElement('span');
 			const spanCanceled = document.createElement('span');
-			// eslint-disable-next-line max-len
-			const canceledArtistEl = target.querySelector(`li[data-canceled-artist='${artistKey[ARTIST_KEYS.REPLACEMENT]}']`);
+			const canceledArtistEl = target.querySelector(`li[data-canceled-artist='${artist[ARTIST_KEYS.REPLACEMENT]}']`); // eslint-disable-line max-len
 
 			spanReplacement.textContent = artistName;
 			spanReplacement.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
@@ -187,81 +199,21 @@ export default class LineupDetails extends Lineup {
 
 			canceledArtistEl.textContent = '';
 			canceledArtistEl.removeAttribute('title');
-			// eslint-disable-next-line max-len
-			canceledArtistEl.classList.remove(LINEUP.ARTIST_CANCELED_CLASS, LINEUP.ARTIST_COLLAPSED_CLASS, LINEUP.ARTIST_EXPANDED_CLASS);
+			canceledArtistEl.classList.remove(LINEUP.ARTIST_CANCELED_CLASS, LINEUP.ARTIST_COLLAPSED_CLASS, LINEUP.ARTIST_EXPANDED_CLASS); // eslint-disable-line max-len
 			canceledArtistEl.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_CLASS);
 			canceledArtistEl.appendChild(spanCanceled);
 			canceledArtistEl.appendChild(spanReplacement);
-		} else if (!artistKey[ARTIST_KEYS.CANCELED]) {
+		} else if (!artist[ARTIST_KEYS.CANCELED]) {
 			li.textContent = artistName;
 		}
 
-		if (artistKey[ARTIST_KEYS.BREAK_LINE]) {
-			const previousEl = target.querySelector('li:last-child');
+		li.classList.add(...artistClassNames);
 
-			previousEl.classList.add(LINEUP.ARTIST_NEXT_LINE_ARTIST_CLASS);
-			// eslint-disable-next-line max-len
-			previousEl.dataset[ARTIST_KEYS.NEXT_LINE_ARTIST] = artistKey[ARTIST_KEYS.SLICE_DECORATOR][ARTIST_SLICES_PROPS.SLICE];
-		}
-
-		if (typeof artistKey[ARTIST_KEYS.REPLACEMENT] !== 'string') {
+		if (typeof artist[ARTIST_KEYS.REPLACEMENT] !== 'string') {
 			fragment.appendChild(li);
 			target.appendChild(fragment);
 		}
 	}
-
-	// static getArtistClassNames(artist, artistLvl) {
-	// 	let classNames = [
-	// 		LINEUP.ARTIST_CLASS,
-	// 		artistLvl ? dailyLvlToClassMap[artistLvl] : null,
-	// 		artist[ARTIST_KEYS.DECORATOR] ? artistDecoratorToClassMap[artist[ARTIST_KEYS.DECORATOR]] : null,
-	// 		artist[ARTIST_KEYS.MARKED] ? LINEUP.ARTIST_MARKED_CLASS : null,
-	// 		artist[ARTIST_KEYS.MULTILINE] ? LINEUP.ARTIST_MULTILINE_CLASS : null,
-	// 		artist[ARTIST_KEYS.SEPARATOR_MIDDLE] ? LINEUP.ARTIST_SEPARATOR_MIDDLE_CLASS : null,
-	// 		artist[ARTIST_KEYS.CANCELED] ? LINEUP.ARTIST_CANCELED_CLASS : null,
-	// 		artist[ARTIST_KEYS.REPLACEMENT] ? LINEUP.ARTIST_REPLACEMENT_CLASS : null,
-	// 	];
-	//
-	// 	classNames = classNames.filter((className) => { // clean null records on array
-	// 		if (className !== null) {
-	// 			return className;
-	// 		}
-	//
-	// 		return null;
-	// 	});
-	//
-	// 	return classNames;
-	// }
-	//
-	// static getArtistName(artist) {
-	// 	let artistName;
-	//
-	// 	if (artist[ARTIST_KEYS.ARTIST] && !artist[ARTIST_KEYS.DISPLAY_NAME]) {
-	// 		artistName = artist[ARTIST_KEYS.ARTIST];
-	// 	} else if (artist[ARTIST_KEYS.DISPLAY_NAME]) {
-	// 		artistName = artist[ARTIST_KEYS.DISPLAY_NAME];
-	// 	} else {
-	// 		artistName = artist;
-	// 	}
-	//
-	// 	return artistName;
-	// }
-	//
-	// static decorateArtist(artist, target, artistLvl) {
-	// 	const li = document.createElement('li');
-	// 	const artistName = LineupDetails.getArtistName(artist);
-	// 	const artistClassNames = LineupDetails.getArtistClassNames(artist, artistLvl);
-	//
-	// 	if (artist[ARTIST_KEYS.SLICE_DECORATOR]) {
-	// 		li.append(LineupDetails.artistSliceDecorator(artistName, artist[ARTIST_KEYS.SLICE_DECORATOR]));
-	// 	} else {
-	// 		li.textContent = artistName;
-	// 	}
-	//
-	// 	li.classList.add(...artistClassNames);
-	//
-	// 	target.appendChild(li);
-	// }
 
 	getLineupByType() {
 		switch (this.mergeArtistsType) {
