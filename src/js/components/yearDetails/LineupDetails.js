@@ -63,7 +63,7 @@ export default class LineupDetails extends Lineup {
 		return p;
 	}
 
-	static artistSliceDecorator(artistName, artistDecorations) {
+	static getArtistSliceDecorator(artistName, artistDecorations) {
 		const decorations = artistDecorations;
 		const multipleDecorations = Array.isArray(decorations);
 		const name = artistName;
@@ -103,6 +103,26 @@ export default class LineupDetails extends Lineup {
 		});
 
 		return decoratedName.content;
+	}
+
+	static getArtistReplacementDecorator(artist, artistName, target) {
+		const spanReplacement = document.createElement('span');
+		const spanCanceled = document.createElement('span');
+		const canceledArtistEl = target.querySelector(`li[data-canceled-artist='${artist[ARTIST_KEYS.REPLACEMENT]}']`); // eslint-disable-line max-len
+
+		spanReplacement.textContent = artistName;
+		spanReplacement.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
+		spanCanceled.textContent = canceledArtistEl.textContent;
+		spanCanceled.classList.add(LINEUP.ARTIST_CANCELED_CLASS, LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
+		spanCanceled.title = ARTIST_CANCELED;
+
+		// clean current existing canceled artist and put canceled artist with replacement
+		canceledArtistEl.textContent = '';
+		canceledArtistEl.removeAttribute('title');
+		canceledArtistEl.classList.remove(LINEUP.ARTIST_CANCELED_CLASS, LINEUP.ARTIST_COLLAPSED_CLASS, LINEUP.ARTIST_EXPANDED_CLASS); // eslint-disable-line max-len
+		canceledArtistEl.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_CLASS);
+		canceledArtistEl.appendChild(spanCanceled);
+		canceledArtistEl.appendChild(spanReplacement);
 	}
 
 	static getArtistClassNames(artist, artistLvl) {
@@ -151,65 +171,62 @@ export default class LineupDetails extends Lineup {
 		return artistName;
 	}
 
-	static decorateArtist(artist, target, index, artistLvl) {
-		const fragment = document.createDocumentFragment();
-		const li = document.createElement('li');
-		const artistName = LineupDetails.getArtistName(artist);
-		const artistClassNames = LineupDetails.getArtistClassNames(artist, artistLvl);
-
+	static isArtistFirstOnLine(artist, target, index) {
 		if (artist[ARTIST_KEYS.FIRST_ON_LINE]) {
 			if (index > 0) {
 				const newLine = document.createElement('li');
 
 				newLine.classList.add(LINEUP.ARTISTS_NEW_LINE_ELEMENT_CLASS);
 
-				fragment.appendChild(newLine);
+				target.appendChild(newLine);
 			}
 		}
+	}
 
-		if (artist[ARTIST_KEYS.CANCELED]) {
-			const span = document.createElement('span');
-
-			span.classList.add(LINEUP.ARTIST_CANCELED_CLASS);
-			span.textContent = artistName;
-			li.title = ARTIST_CANCELED;
-			li.dataset.canceledArtist = artistName;
-			li.appendChild(span);
-		}
-
+	static isArtistBreakLine(artist, target) {
 		if (artist[ARTIST_KEYS.BREAK_LINE]) {
 			const previousEl = target.querySelector('li:last-child');
 
 			previousEl.classList.add(LINEUP.ARTIST_NEXT_LINE_ARTIST_CLASS);
 			previousEl.dataset[ARTIST_KEYS.NEXT_LINE_ARTIST] = artist[ARTIST_KEYS.SLICE_DECORATOR][ARTIST_SLICES_PROPS.SLICE]; // eslint-disable-line max-len
 		}
+	}
 
-		if (artist[ARTIST_KEYS.SLICE_DECORATOR]) {
-			li.append(this.artistSliceDecorator(artistName, artist[ARTIST_KEYS.SLICE_DECORATOR]));
-		} else if (typeof artist[ARTIST_KEYS.REPLACEMENT] === 'string') {
-			const spanReplacement = document.createElement('span');
-			const spanCanceled = document.createElement('span');
-			const canceledArtistEl = target.querySelector(`li[data-canceled-artist='${artist[ARTIST_KEYS.REPLACEMENT]}']`); // eslint-disable-line max-len
+	static isArtistCanceled(artist, artistName, target) {
+		if (artist[ARTIST_KEYS.CANCELED]) {
+			const targetEl = target;
+			const span = document.createElement('span');
 
-			spanReplacement.textContent = artistName;
-			spanReplacement.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
-			spanCanceled.textContent = canceledArtistEl.textContent;
-			spanCanceled.classList.add(LINEUP.ARTIST_CANCELED_CLASS, LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
-			spanCanceled.title = ARTIST_CANCELED;
+			span.classList.add(LINEUP.ARTIST_CANCELED_CLASS);
+			span.textContent = artistName;
+			targetEl.title = ARTIST_CANCELED;
+			targetEl.dataset.canceledArtist = artistName;
+			targetEl.appendChild(span);
+		}
+	}
 
-			canceledArtistEl.textContent = '';
-			canceledArtistEl.removeAttribute('title');
-			canceledArtistEl.classList.remove(LINEUP.ARTIST_CANCELED_CLASS, LINEUP.ARTIST_COLLAPSED_CLASS, LINEUP.ARTIST_EXPANDED_CLASS); // eslint-disable-line max-len
-			canceledArtistEl.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_CLASS);
-			canceledArtistEl.appendChild(spanCanceled);
-			canceledArtistEl.appendChild(spanReplacement);
-		} else if (!artist[ARTIST_KEYS.CANCELED]) {
+	static decorateArtist(artist, target, index, artistLvl) {
+		const fragment = document.createDocumentFragment();
+		const li = document.createElement('li');
+		const artistObj = artist;
+		const artistName = LineupDetails.getArtistName(artistObj);
+		const artistClassNames = LineupDetails.getArtistClassNames(artistObj, artistLvl);
+
+		LineupDetails.isArtistFirstOnLine(artistObj, fragment, index);
+		LineupDetails.isArtistBreakLine(artistObj, target);
+		LineupDetails.isArtistCanceled(artistObj, artistName, li);
+
+		if (artistObj[ARTIST_KEYS.SLICE_DECORATOR]) {
+			li.append(LineupDetails.getArtistSliceDecorator(artistName, artistObj[ARTIST_KEYS.SLICE_DECORATOR]));
+		} else if (typeof artistObj[ARTIST_KEYS.REPLACEMENT] === 'string') {
+			LineupDetails.getArtistReplacementDecorator(artistObj, artistName, target);
+		} else if (!artistObj[ARTIST_KEYS.CANCELED]) {
 			li.textContent = artistName;
 		}
 
 		li.classList.add(...artistClassNames);
 
-		if (typeof artist[ARTIST_KEYS.REPLACEMENT] !== 'string') {
+		if (typeof artistObj[ARTIST_KEYS.REPLACEMENT] !== 'string') {
 			fragment.appendChild(li);
 			target.appendChild(fragment);
 		}
