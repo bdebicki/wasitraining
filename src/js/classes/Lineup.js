@@ -208,18 +208,21 @@ export default class Lineup {
 		place = 1,
 		artist,
 		key,
-		withValidation = false,
 	}) {
 		const update = (updateScope, updateIndex, updatePlace, updateArtist, updateKey) => {
 			updateScope.splice(updateIndex, updatePlace, Lineup.clearArtistObject(updateArtist, updateKey));
 		};
 
-		if (withValidation) {
+		if (Array.isArray(key)) {
+			key.forEach((keyItem) => {
+				if (artist[keyItem]) {
+					update(scope, index, place, artist, keyItem);
+				}
+			});
+		} else if (typeof key === 'string') {
 			if (artist[key]) {
 				update(scope, index, place, artist, key);
 			}
-		} else {
-			update(scope, index, place, artist, key);
 		}
 	}
 
@@ -260,15 +263,10 @@ export default class Lineup {
 				scope: newArray,
 				index,
 				artist,
-				key: ARTIST_KEYS.SORT_BY,
-				withValidation: true,
-			});
-			Lineup.updateArtistObjectOnArray({
-				scope: newArray,
-				index,
-				artist,
-				key: ARTIST_KEYS.FORCE_ORDER,
-				withValidation: true,
+				key: [
+					ARTIST_KEYS.SORT_BY,
+					ARTIST_KEYS.FORCE_ORDER,
+				],
 			});
 		});
 
