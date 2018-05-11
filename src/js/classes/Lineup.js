@@ -176,9 +176,7 @@ export default class Lineup {
 		});
 
 		Object.keys(artists).forEach((lvl) => { // clean empty levels
-			if (artists[lvl].length === 0) {
-				delete artists[lvl];
-			}
+			Lineup.clearEmptyLevels(artists, lvl);
 		});
 
 		return artists;
@@ -196,11 +194,11 @@ export default class Lineup {
 		return currentArtist;
 	}
 
-	static clearEmptyLevels(scope, key) {
+	static clearEmptyLevels(scope, lvl) {
 		const currentScope = scope;
 
-		if (currentScope[key].length === 0) { // if level has not artist remove empty levels
-			delete currentScope[key];
+		if (currentScope[lvl].length === 0) { // if level has not artist remove empty levels
+			delete currentScope[lvl];
 		}
 	}
 
