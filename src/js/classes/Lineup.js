@@ -47,11 +47,7 @@ export default class Lineup {
 	}
 
 	get rawLineup() {
-		const lineup = [];
-
-		this._editionDetails.map((item) => lineup.push(item.lineup));
-
-		return lineup;
+		return this._editionDetails.map((item) => item.lineup);
 	}
 
 	get headliners() {
