@@ -977,10 +977,10 @@
 					"lvl1": [
 						{"artist": "The National", "marked": true, "decorator": "collapsed", "order": 1},
 						{"artist": "Two Door Cinema Club", "decorator": "expanded", "order": 6},
-						{"artist": "Simian Mobile Disco Live", "order": 7}
+						{"artist": "Simian Mobile Disco Live", "order": 7, "firstOnLine": true}
 					],
 					"lvl2": [
-						{"artist": "Paolo Nutini", "order": 1},
+						{"artist": "Paolo Nutini", "order": 1, "firstOnLine": true},
 						{"artist": "The Twilight Singers", "marked": true, "order": 6},
 						{"artist": "Caribou", "marked": true, "decorator": "expanded", "order": 9},
 						{"artist": "Fat Freddy's Drop", "marked": true, "order": 12}
@@ -1021,7 +1021,7 @@
 						{"artist": "Foals", "decorator": "collapsed", "order": 3}
 					],
 					"lvl2": [
-						{"artist": "Youssou N’Dour", "decorator": "expanded", "order": 7},
+						{"artist": "Youssou N’Dour", "decorator": "expanded", "order": 7, "firstOnLine": true},
 						{"artist": "Cut Copy", "marked": true, "decorator": "expanded", "order": 8},
 						{"artist": "British Sea Power", "marked": true, "order": 11}
 					],
@@ -1029,16 +1029,16 @@
 						{"artist": "Abraham Inc.", "marked": true, "order": 2},
 						{"artist": "Crystal Fighters", "marked": true, "order": 4},
 						{"artist": "Brodka", "marked": true, "order": 5},
-						{"artist": "Pogodno", "marked": true, "order": 7},
+						{"artist": "Pogodno", "marked": true, "order": 7, "firstOnLine": true},
 						{"artist": "D4D", "marked": true, "order": 11},
 						{"artist": "Ballady i Romanse", "order": 12},
 						{"artist": "Twilite", "marked": true, "order": 15},
-						{"artist": "PFK Kompany", "marked": true, "order": 20},
+						{"artist": "PFK Kompany", "marked": true, "order": 20, "firstOnLine": true},
 						{"artist": "Igor Boxx", "order": 24}
 					],
 					"others": [
 						{"artist": "Plazmatikon", "order": 9},
-						{"artist": "The Phantoms", "marked": true, "order": 14},
+						{"artist": "The Phantoms", "marked": true, "order": 14, "firstOnLine": true},
 						{"artist": "Bipolar Bears", "order": 15},
 						{"artist": "New New", "marked": true, "order": 20},
 						{"artist": "Contemporary Noise Sextet", "visible": false},
@@ -1063,21 +1063,21 @@
 					],
 					"lvl1": [
 						{"artist": "Primus", "decorator": "collapsed", "order": 2},
-						{"artist": "Big Boi", "marked": true, "decorator": "expanded", "order": 5}
+						{"artist": "Big Boi", "marked": true, "decorator": "expanded", "order": 5, "firstOnLine": true}
 					],
 					"lvl2": [
 						{"artist": "Kate Nash", "marked": true, "order": 3}
 					],
 					"lvl3": [
-						{"artist": "Chapel Club", "order": 1},
+						{"artist": "Chapel Club", "order": 1, "firstOnLine": true},
 						{"artist": "The Asteroids Galaxy Tour", "marked": true, "order": 3},
 						{"artist": "Kim Nowak", "marked": true, "order": 9},
-						{"artist": "Paristetris", "marked": true, "order": 13},
+						{"artist": "Paristetris", "marked": true, "order": 13, "firstOnLine": true},
 						{"artist": "R.U.T.A.", "marked": true, "order": 16},
 						{"artist": "Gooral", "order": 18}
 					],
 					"others": [
-						{"artist": "Małe Instrumenty", "marked": true, "order": 1},
+						{"artist": "Małe Instrumenty", "marked": true, "order": 1, "firstOnLine": true},
 						{"artist": "Grabek", "order": 3},
 						{"artist": "Snowman", "marked": true, "order": 6},
 						{"artist": "Nerwowe Wakacje", "marked": true, "order": 8},
@@ -1100,7 +1100,7 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "The Strokes", "marked": true, "order": 3},
+						{"artist": "The Strokes", "marked": true, "order": 3, "firstOnLine": true},
 						{"artist": "M.I.A.", "order": 5}
 					],
 					"lvl1": [
@@ -1110,8 +1110,8 @@
 					"lvl2": [
 						{"artist": "Hurts", "order": 2},
 						{"artist": "James Blake", "marked": true, "order": 4},
-						{"artist": "These New Puritans", "order": 5},
-						{"artist": "Chromeo", "order": 10}
+						{"artist": "These New Puritans", "order": 5, "firstOnLine": true},
+						{"artist": "Chromeo", "order": 10, "firstOnLine": true}
 					],
 					"lvl3": [
 						{"artist": "The Black Tapes", "marked": true, "order": 8},
@@ -1124,7 +1124,7 @@
 						{"artist": "Janusz Prusinowski Trio", "marked": true, "order": 2},
 						{"artist": "Spięty", "order": 4},
 						{"artist": "Wojtek Mazolewski Quintet", "order": 5},
-						{"artist": "Fonovel", "marked": true, "order": 7},
+						{"artist": "Fonovel", "marked": true, "order": 7, "firstOnLine": true},
 						{"artist": "Karolina Cicha", "marked": true, "order": 13},
 						{"artist": "Peter J. Birch", "order": 16},
 						{"artist": "Revlovers", "visible": false},

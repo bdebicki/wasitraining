@@ -3,3 +3,69 @@
 		background: @edition2011-leadColor;
 	}
 }
+
+.lineupArtists--edition2011 {
+	font-family: @edition2011-fontFamily;
+	font-weight: @edition2011-fontWeight;
+	text-transform: uppercase;
+
+	.lineupArtists {
+		&__lvl {
+			max-width: 465px;
+			justify-content: space-between;
+
+			&--headliners {
+				.lineupArtists__artist--promoted {
+					font-size: @edition2011-fontSize-headlinersPromoted;
+					letter-spacing: @edition2011-textSpacing-headlinersPromoted;
+				}
+			}
+			&--lvl1 {
+				.lineupArtists__artist {
+					&--expanded {
+						letter-spacing: @edition2011-textSpacing-lvl1Expanded;
+					}
+					&--collapsed {
+						letter-spacing: @edition2011-textSpacing-lvl1Collapsed;
+					}
+				}
+			}
+			&--lvl2 {
+				.lineupArtists__artist--collapsed {
+					letter-spacing: @edition2011-textSpacing-lvl2Collapsed;
+				}
+			}
+		}
+		&__artist {
+			&--headliner {
+				font-size: @edition2011-fontSize-headliners;
+				letter-spacing: @edition2011-textSpacing-headliners;
+				line-height: @edition2011-lineHeight-headliners;
+			}
+			&--lvl1 {
+				font-size: @edition2011-fontSize-lvl1;
+				letter-spacing: @edition2011-textSpacing-lvl1;
+				line-height: @edition2011-lineHeight-lvl1;
+			}
+			&--lvl2 {
+				font-size: @edition2011-fontSize-lvl2;
+				letter-spacing: @edition2011-textSpacing-lvl1;
+				line-height: @edition2011-textSpacing-lvl1;
+			}
+			&--lvl3 {
+				font-size: @edition2011-fontSize-lvl3;
+				letter-spacing: @edition2011-textSpacing-lvl3;
+				line-height: @edition2011-lineHeight-lvl3;
+			}
+			&--others {
+				font-size: @edition2011-fontSize-others;
+				letter-spacing: @edition2011-textSpacing-others;
+				line-height: @edition2011-lineHeight-others;
+			}
+
+			&--marked {
+				color: @edition2011-fontColor-marked;
+			}
+		}
+	}
+}
