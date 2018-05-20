@@ -3,3 +3,55 @@
 		background: @edition2009-leadColor;
 	}
 }
+
+.lineupArtists--edition2009 {
+	font-family: @edition2009-fontFamily;
+	font-weight: @edition2009-fontWeight;
+	text-transform: uppercase;
+
+	.lineupArtists {
+		&__lvl {
+			max-width: 530px;
+			justify-content: left;
+
+			&--lvl2 {
+				.lineupArtists__artist--collapsed {
+					letter-spacing: @edition2009-textSpacing-lvl2Collapsed;
+				}
+			}
+		}
+
+		&__artist {
+			&--headliner {
+				font-size: @edition2009-fontSize-headliners;
+				line-height: @edition2009-lineHeight-headliners;
+			}
+			&--lvl1 {
+				font-size: @edition2009-fontSize-lvl1;
+				line-height: @edition2009-lineHeight-lvl1;
+			}
+			&--lvl2 {
+				font-size: @edition2009-fontSize-lvl2;
+				letter-spacing: @edition2009-textSpacing-lvl2;
+				line-height: @edition2009-textSpacing-lvl2;
+			}
+			&--lvl3 {
+				font-size: @edition2009-fontSize-lvl3;
+				line-height: @edition2009-lineHeight-lvl3;
+			}
+			&--lvl4 {
+				font-size: @edition2009-fontSize-lvl4;
+				letter-spacing: @edition2009-textSpacing-lvl4;
+				line-height: @edition2009-lineHeight-lvl4;
+			}
+			&--others {
+				font-size: @edition2009-fontSize-others;
+				line-height: @edition2009-lineHeight-others;
+			}
+
+			&--marked {
+				color: @edition2009-fontColor-marked;
+			}
+		}
+	}
+}
