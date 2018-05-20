@@ -774,14 +774,14 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "Pearl Jam", "order": 1}
+						{"artist": "Pearl Jam", "order": 1, "firstOnLine": true}
 					],
 					"lvl2": [
 						{"artist": "Ben Harper and Relentless7", "marked": true, "order": 2},
 						{"artist": "Tricky", "marked": true, "decorator": "collapsed", "order": 7},
 						{"artist": "Groove Armada", "decorator": "collapsed", "order": 9},
 						{"artist": "2manydjs", "decorator": "collapsed", "order": 10},
-						{"artist": "Yeasayer", "marked": true, "order": 14}
+						{"artist": "Yeasayer", "marked": true, "order": 14, "firstOnLine": true}
 					],
 					"lvl3": [
 						{"artist": "Łąki Łan", "marked": true, "order": 7},
@@ -793,9 +793,9 @@
 						{"artist": "Wiracki + Suka Off / BFV", "order": 4}
 					],
 					"others": [
-						{"artist": "Kacezet & Dreadsquad", "marked": true, "order": 1},
+						{"artist": "Kacezet & Dreadsquad", "marked": true, "order": 1, "firstOnLine": true},
 						{"artist": "Paula i Karol", "marked": true, "order": 6},
-						{"artist": "Dead Snow Monster", "marked": true, "order": 7},
+						{"artist": "Dead Snow Monster", "marked": true, "order": 7, "firstOnLine": true},
 						{"artist": "Kiev Office", "order": 14},
 						{"artist": "Natural Born Chillers", "order": 15},
 						{"artist": "Biff", "visible": false},
@@ -816,28 +816,28 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "Massive Attack", "marked": true, "order": 3}
+						{"artist": "Massive Attack", "marked": true, "order": 3, "firstOnLine": true}
 					],
 					"lvl1": [
-						{"artist": "Pavement", "marked": true, "order": 1},
+						{"artist": "Pavement", "marked": true, "order": 1, "firstOnLine": true},
 						{"artist": "Grace Jones", "marked": true, "order": 3}
 					],
 					"lvl2": [
-						{"artist": "Empire of the Sun", "marked": true, "order": 3},
+						{"artist": "Empire of the Sun", "marked": true, "order": 3, "firstOnLine": true},
 						{"artist": "Cypress Hill", "marked": true, "order": 4},
-						{"artist": "Klaxons", "marked": true, "decorator": "collapsed", "order": 6},
+						{"artist": "Klaxons", "marked": true, "decorator": "collapsed", "order": 6, "firstOnLine": true},
 						{"artist": "Mando Diao", "marked": true, "order": 17}
 					],
 					"lvl3": [
 						{"artist": "Die Antwoord", "marked": true, "order": 3},
-						{"artist": "Lao Che", "order": 4},
+						{"artist": "Lao Che", "order": 4, "firstOnLine": true},
 						{"artist": "Fox", "marked": true, "order": 8},
 						{"artist": "Pablopavo i Ludziki", "displayName": "Pablopavo", "order": 14},
 						{"artist": "Psio Crew", "marked": true, "order": 17}
 					],
 					"lvl4": [
-						{"artist": "Jacaszek", "order": 1},
-						{"artist": "Najakotiva", "marked": true, "order": 6},
+						{"artist": "Jacaszek", "order": 1, "firstOnLine": true},
+						{"artist": "Najakotiva", "marked": true, "order": 6, "firstOnLine": true},
 						{"artist": "Muariolanza", "order": 9},
 						{"artist": "Oranżada", "order": 10},
 						{"artist": "52UM", "marked": true, "order": 14},
@@ -869,12 +869,12 @@
 					],
 					"lvl2": [
 						{"artist": "Skunk Anansie", "order": 5},
-						{"artist": "Regina Spektor", "marked": true, "decorator": "collapsed", "order": 11},
+						{"artist": "Regina Spektor", "marked": true, "decorator": "collapsed", "order": 11, "firstOnLine": true},
 						{"artist": "Ellie Goulding", "canceled": true, "decorator": "collapsed", "order": 12},
 						{"artist": "Matisyahu", "order": 15}
 					],
 					"lvl3": [
-						{"artist": "Gorillaz Sound System (DVJ)", "order": 1},
+						{"artist": "Gorillaz Sound System (DVJ)", "order": 1, "firstOnLine": true},
 						{"artist": "L.U.C", "order": 6},
 						{"artist": "Julia Marcell", "order": 10},
 						{"artist": "Novika", "order": 12},
@@ -913,10 +913,10 @@
 					],
 					"lvl1": [
 						{"artist": "Fatboy Slim", "order": 2},
-						{"artist": "Nas & Damian Marley", "order": 4}
+						{"artist": "Nas & Damian Marley", "order": 4, "firstOnLine": true}
 					],
 					"lvl2": [
-						{"artist": "The Hives", "order": 1},
+						{"artist": "The Hives", "order": 1, "firstOnLine": true},
 						{"artist": "Archive", "marked": true, "decorator": "collapsed", "order": 8},
 						{"artist": "Kings of Convenience", "decorator": "collapsed", "order": 13},
 						{"artist": "Wild Beasts", "order": 16}
@@ -924,20 +924,20 @@
 					"lvl3": [
 						{"artist": "Muchy", "order": 5},
 						{"artist": "Pink Freud", "marked": true, "order": 9},
-						{"artist": "L.Stadt", "order": 11},
+						{"artist": "L.Stadt", "order": 11, "firstOnLine": true},
 						{"artist": "Marika", "order": 15},
-						{"artist": "Mitch & Mitch with their Incredible Combo", "displayName": "Mitch & Mitch", "order": 16}
+						{"artist": "Mitch & Mitch with their Incredible Combo", "displayName": "Mitch & Mitch", "order": 16, "firstOnLine": true}
 					],
 					"lvl4": [
 						{"artist": "kIRk", "order": 5},
-						{"artist": "NP", "marked": true, "order": 11},
+						{"artist": "NP", "marked": true, "order": 11, "firstOnLine": true},
 						{"artist": "Pleq", "marked": true, "order": 12}
 					],
 					"others": [
 						{"artist": "Borys Kossakowski", "order": 2},
 						{"artist": "The Lollipops", "marked": true, "order": 5},
 						{"artist": "Ms. No One", "marked": true, "order": 11},
-						{"artist": "3Moonboys", "marked": true, "order": 12},
+						{"artist": "3Moonboys", "marked": true, "order": 12, "firstOnLine": true},
 						{"artist": "Kyst", "marked": true, "order": 17},
 						{"artist": "Gra Pozorów", "marked": true, "order": 18},
 						{"artist": "Niewinni Czarodzieje", "visible": false},
@@ -972,7 +972,7 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "Coldplay", "marked": true, "decorator": "promoted", "order": 1}
+						{"artist": "Coldplay", "marked": true, "decorator": "promoted", "order": 1, "firstOnLine": true}
 					],
 					"lvl1": [
 						{"artist": "The National", "marked": true, "decorator": "collapsed", "order": 1},
