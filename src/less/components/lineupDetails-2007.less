@@ -3,3 +3,52 @@
 		background: @edition2007-leadColor;
 	}
 }
+
+.lineupArtists--edition2007 {
+	font-family: @edition2007-fontFamily;
+	font-weight: @edition2007-fontWeight;
+	text-transform: uppercase;
+
+	.lineupArtists {
+		&__lvl {
+			max-width: 495px;
+
+			&--lvl1 {
+				.lineupArtists__artist--expanded {
+					letter-spacing: @edition2007-textSpacing-lvl1Expanded;
+				}
+			}
+		}
+
+		&__artist {
+			&--headliner {
+				font-size: @edition2007-fontSize-headliners;
+				letter-spacing: @edition2007-textSpacing-headliners;
+				line-height: @edition2007-lineHeight-headliners;
+			}
+			&--lvl1 {
+				font-size: @edition2007-fontSize-lvl1;
+				letter-spacing: @edition2007-textSpacing-lvl1;
+				line-height: @edition2007-lineHeight-lvl1;
+			}
+			&--lvl2 {
+				font-size: @edition2007-fontSize-lvl2;
+				letter-spacing: @edition2007-textSpacing-lvl2;
+				line-height: @edition2007-lineHeight-lvl2;
+			}
+			&--lvl3 {
+				font-size: @edition2007-fontSize-lvl3;
+				line-height: @edition2007-lineHeight-lvl3;
+			}
+			&--lvl4 {
+				font-size: @edition2007-fontSize-lvl4;
+				line-height: @edition2007-lineHeight-lvl4;
+			}
+			&--others {
+				font-size: @edition2007-fontSize-others;
+				letter-spacing: @edition2007-textSpacing-others;
+				line-height: @edition2007-lineHeight-others;
+			}
+		}
+	}
+}
