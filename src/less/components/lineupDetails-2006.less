@@ -3,3 +3,38 @@
 		background: @edition2006-leadColor;
 	}
 }
+
+.lineupArtists--edition2006 {
+	font-family: @edition2006-fontFamily;
+	font-weight: @edition2006-fontWeight;
+
+	.lineupArtists {
+		&__lvl {
+			max-width: 490px;
+
+			&--lvl2 {
+				.lineupArtists__artist--canceled {
+					letter-spacing: @edition2006-textSpacing-lvl2Canceled;
+				}
+			}
+		}
+
+		&__artist {
+			&--headliner {
+				font-size: @edition2006-fontSize-headliners;
+				letter-spacing: @edition2006-textSpacing-headliners;
+				line-height: @edition2006-lineHeight-headliners;
+			}
+			&--lvl2 {
+				font-size: @edition2006-fontSize-lvl2;
+				letter-spacing: @edition2006-textSpacing-lvl2;
+				line-height: @edition2006-lineHeight-lvl2;
+			}
+			&--others {
+				font-size: @edition2006-fontSize-others;
+				letter-spacing: @edition2006-textSpacing-others;
+				line-height: @edition2006-lineHeight-others;
+			}
+		}
+	}
+}

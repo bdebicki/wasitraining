@@ -205,9 +205,9 @@
 				],
 				"lineup": {
 					"headliners": [
-						{"artist": "Placebo", "decorator": "uppercase"},
+						{"artist": "Placebo", "firstOnLine": true, "decorator": "uppercase"},
 						"Pharrell Williams",
-						{"artist": "Manu Chao Radio Bemba Sound System", "sliceDecorator": {"slice": "Radio Bemba Sound System", "style": "down"}}
+						{"artist": "Manu Chao Radio Bemba Sound System", "firstOnLine": true, "sliceDecorator": {"slice": "Radio Bemba Sound System", "style": "down"}}
 					],
 					"lvl2": [
 						{"artist": "Matthew Herbert", "order": 5, "canceled": true},
@@ -221,7 +221,7 @@
 						{"artist": "Masala Soundsystem", "order": 14},
 						{"artist": "Loco Motive Sun", "order": 16},
 						{"artist": "Teatr Klan Grus", "order": 21},
-						{"artist": "Teatr Fire Angels", "order": 20}
+						{"artist": "Teatr Fire Angels", "order": 20, "firstOnLine": true}
 					]
 				}
 			}, {
@@ -232,15 +232,25 @@
 					"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2006-07-8&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 				],
 				"lineup": {
-					"headliners": ["Franz Ferdinand", "Sigur Rós", "Scissor Sisters", "Skin"],
+					"headliners": [
+						{"artist": "Franz Ferdinand", "firstOnLine": true},
+						"Sigur Rós",
+						{"artist": "Scissor Sisters", "firstOnLine": true},
+						"Skin"
+					],
 					"lvl2": [
-						{"artist": "Coldcut", "order": 1},
+						{"artist": "Coldcut", "order": 1, "firstOnLine": true},
 						{"artist": "Ladytron", "order": 3}
 					],
 					"others": [
 						{"artist": "Myslovitz", "order": 2},
 						{"artist": "Maria Peszek", "order": 5},
-						{"artist": "Kanał Audytywny", "order": 8},
+						{
+							"artist": "Kanał Audytywny",
+							"order": 8,
+							"breakLine": true,
+							"sliceDecorator": {"slice": "Kanał", "style": "previousLine"}
+						},
 						{"artist": "Miloopa", "order": 11},
 						{"artist": "Niewinni Czarodzieje", "order": 12},
 						{"artist": "Electricity", "order": 18},
@@ -258,20 +268,20 @@
 				],
 				"lineup": {
 					"headliners": [
-						"Kanye West",
+						{"artist": "Kanye West", "firstOnLine": true},
 						"Basement Jaxx",
-						"The Streets",
+						{"artist": "The Streets", "firstOnLine": true},
 						{"artist": "Groove Armada", "canceled": true}
 					],
 					"lvl2": [
 						{"artist": "Roger Sanchez", "order": 2}
 					],
 					"others": [
-						{"artist": "Peter Greenaway", "order": 1},
+						{"artist": "Peter Greenaway", "order": 1, "firstOnLine": true},
 						{"artist": "Abra dAb", "order": 4},
 						{"artist": "Pustki", "order": 6},
 						{"artist": "Beats Friendly", "order": 13},
-						{"artist": "Freak of Nature", "order": 15},
+						{"artist": "Freak of Nature", "order": 15, "firstOnLine": true},
 						{"artist": "Psychocukier", "order": 17},
 						{"artist": "Teatr Klan Grus", "visible": false},
 						{"artist": "Teatr Fire Angels", "visible": false},
