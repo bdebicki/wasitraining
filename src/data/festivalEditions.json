@@ -18,7 +18,14 @@
 				],
 				"lineup": {
 					"headliners": ["The Chemical Brothers"],
-					"others": ["Glasse", "Sonic Trip", "Harper", "MK Fever", "Smolik", "Fresh"]
+					"others": [
+						{"artist": "Glasse", "firstOnLine": true},
+						"Sonic Trip",
+						{"artist": "Harper", "firstOnLine": true},
+						"MK Fever",
+						{"artist": "Smolik", "firstOnLine": true},
+						"Fresh"
+					]
 				}
 			}
 		],
