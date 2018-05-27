@@ -7,6 +7,10 @@
     "url": "git://github.com/bdebicki/wasitraining"
   },
   "description": "Was it raining at Open'er festival?",
+  "engines": {
+    "node": "9.11.1",
+    "npm": "5.6.0"
+  },
   "scripts": {
     "build": "webpack",
     "eslint-check": "eslint ./src --ext .js",
