@@ -1,0 +1,36 @@
+{
+	"id": "1",
+	"editionYear": "2002",
+	"fullName": "Open Air Festival",
+	"place": {
+		"city": "Warsaw",
+		"object": "Stegny Track"
+	},
+	"details": [
+		{
+			"day": "2nd July",
+			"rain": true,
+			"rainSize": "small",
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPWA/2002/7/2/DailyHistory.html?req_city=Warszawa",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=57321&date=2009-07-02&citynameWarsaw%2C+Masovian+Voivodeship%2C+Poland"
+			],
+			"lineup": {
+				"headliners": ["The Chemical Brothers"],
+				"others": [
+					{"artist": "Glasse", "firstOnLine": true},
+					"Sonic Trip",
+					{"artist": "Harper", "firstOnLine": true},
+					"MK Fever",
+					{"artist": "Smolik", "firstOnLine": true},
+					"Fresh"
+				]
+			}
+		}
+	],
+	"lineupSettings": {
+		"sortType": false,
+		"mergeArtists": false,
+		"otherArtists": false
+	}
+}

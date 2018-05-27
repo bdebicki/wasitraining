@@ -1,0 +1,190 @@
+{
+	"id": "10",
+	"editionYear": "2011",
+	"fullName": "Heineken Music sponsors Open'er Festival",
+	"place": {
+		"city": "Gdynia",
+		"object": "Babie Doły Airport"
+	},
+	"details": [
+		{
+			"day": "30th June",
+			"rain": false,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2011/6/30/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2011-06-30&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2011"
+			],
+			"lineup": {
+				"headliners": [
+					{"artist": "Coldplay", "marked": true, "decorator": "promoted", "order": 1, "firstOnLine": true}
+				],
+				"lvl1": [
+					{"artist": "The National", "marked": true, "decorator": "collapsed", "order": 1},
+					{"artist": "Two Door Cinema Club", "decorator": "expanded", "order": 6},
+					{"artist": "Simian Mobile Disco Live", "order": 7, "firstOnLine": true}
+				],
+				"lvl2": [
+					{"artist": "Paolo Nutini", "order": 1, "firstOnLine": true},
+					{"artist": "The Twilight Singers", "marked": true, "order": 6},
+					{"artist": "Caribou", "marked": true, "decorator": "expanded", "order": 9},
+					{"artist": "Fat Freddy's Drop", "marked": true, "order": 12}
+				],
+				"lvl3": [
+					{"artist": "Pustki", "order": 6},
+					{"artist": "Enej", "marked": true, "order": 17},
+					{"artist": "Tides From Nebula", "order": 19},
+					{"artist": "Marcelina", "order": 23}
+				],
+				"others": [
+					{"artist": "Daktari", "order": 10},
+					{"artist": "Jazzpospolita", "marked": true, "order": 12},
+					{"artist": "Rebeka", "marked": true, "order": 19},
+					{"artist": "Lody", "marked": true, "order": 21},
+					{"artist": "Karbido", "visible": false},
+					{"artist": "Futuristen", "visible": false},
+					{"artist": "Cuba de Zoo", "visible": false},
+					{"artist": "Woody Alien", "visible": false},
+					{"artist": "Mentalcut", "visible": false},
+					{"artist": "Daniel Drumz", "visible": false},
+					{"artist": "My Head is a Dubby", "visible": false}
+				]
+			}
+		}, {
+			"day": "1st July",
+			"rain": true,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2011/7/1/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2011-07-1&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2011"
+			],
+			"lineup": {
+				"headliners": [
+					{"artist": "Pulp", "order": 4}
+				],
+				"lvl1": [
+					{"artist": "Foals", "decorator": "collapsed", "order": 3}
+				],
+				"lvl2": [
+					{"artist": "Youssou N’Dour", "decorator": "expanded", "order": 7, "firstOnLine": true},
+					{"artist": "Cut Copy", "marked": true, "decorator": "expanded", "order": 8},
+					{"artist": "British Sea Power", "marked": true, "order": 11}
+				],
+				"lvl3": [
+					{"artist": "Abraham Inc.", "marked": true, "order": 2},
+					{"artist": "Crystal Fighters", "marked": true, "order": 4},
+					{"artist": "Brodka", "marked": true, "order": 5},
+					{"artist": "Pogodno", "marked": true, "order": 7, "firstOnLine": true},
+					{"artist": "D4D", "marked": true, "order": 11},
+					{"artist": "Ballady i Romanse", "order": 12},
+					{"artist": "Twilite", "marked": true, "order": 15},
+					{"artist": "PFK Kompany", "marked": true, "order": 20, "firstOnLine": true},
+					{"artist": "Igor Boxx", "order": 24}
+				],
+				"others": [
+					{"artist": "Plazmatikon", "order": 9},
+					{"artist": "The Phantoms", "marked": true, "order": 14, "firstOnLine": true},
+					{"artist": "Bipolar Bears", "order": 15},
+					{"artist": "New New", "marked": true, "order": 20},
+					{"artist": "Contemporary Noise Sextet", "visible": false},
+					{"artist": "Tres.B", "visible": false},
+					{"artist": "Harper", "visible": false},
+					{"artist": "Club Collab", "visible": false},
+					{"artist": "Spox", "visible": false},
+					{"artist": "Junkie Punks", "visible": false}
+				]
+			}
+		}, {
+			"day": "2nd July",
+			"rain": true,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2011/7/2/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2011-07-2&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2011"
+			],
+			"lineup": {
+				"headliners": [
+					{"artist": "Prince", "decorator": "promoted", "order": 2}
+				],
+				"lvl1": [
+					{"artist": "Primus", "decorator": "collapsed", "order": 2},
+					{"artist": "Big Boi", "marked": true, "decorator": "expanded", "order": 5, "firstOnLine": true}
+				],
+				"lvl2": [
+					{"artist": "Kate Nash", "marked": true, "order": 3}
+				],
+				"lvl3": [
+					{"artist": "Chapel Club", "order": 1, "firstOnLine": true},
+					{"artist": "The Asteroids Galaxy Tour", "marked": true, "order": 3},
+					{"artist": "Kim Nowak", "marked": true, "order": 9},
+					{"artist": "Paristetris", "marked": true, "order": 13, "firstOnLine": true},
+					{"artist": "R.U.T.A.", "marked": true, "order": 16},
+					{"artist": "Gooral", "order": 18}
+				],
+				"others": [
+					{"artist": "Małe Instrumenty", "marked": true, "order": 1, "firstOnLine": true},
+					{"artist": "Grabek", "order": 3},
+					{"artist": "Snowman", "marked": true, "order": 6},
+					{"artist": "Nerwowe Wakacje", "marked": true, "order": 8},
+					{"artist": "Niechęć", "order": 11},
+					{"artist": "Adre'n'Alin", "order": 17},
+					{"artist": "Ailo In Head", "marked": true, "order": 18},
+					{"artist": "Asi Mina", "visible": false},
+					{"artist": "lvl4 Robots", "visible": false},
+					{"artist": "Mr. Lex & Novika", "visible": false}
+				]
+			}
+		}, {
+			"day": "3rd July",
+			"rain": true,
+			"rainSize": "small",
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2011/7/3/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2011-07-3&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2011"
+			],
+			"lineup": {
+				"headliners": [
+					{"artist": "The Strokes", "marked": true, "order": 3, "firstOnLine": true},
+					{"artist": "M.I.A.", "order": 5}
+				],
+				"lvl1": [
+					{"artist": "deadmau5", "decorator": "collapsed", "order": 4},
+					{"artist": "The Wombats", "marked": true, "order": 8}
+				],
+				"lvl2": [
+					{"artist": "Hurts", "order": 2},
+					{"artist": "James Blake", "marked": true, "order": 4},
+					{"artist": "These New Puritans", "order": 5, "firstOnLine": true},
+					{"artist": "Chromeo", "order": 10, "firstOnLine": true}
+				],
+				"lvl3": [
+					{"artist": "The Black Tapes", "marked": true, "order": 8},
+					{"artist": "Vavamuffin", "marked": true, "order": 10},
+					{"artist": "Baaba Kulka", "marked": true, "order": 14},
+					{"artist": "Sedativa feat. Dawid Portasz", "marked": true, "order": 21},
+					{"artist": "Neony", "order": 22}
+				],
+				"others": [
+					{"artist": "Janusz Prusinowski Trio", "marked": true, "order": 2},
+					{"artist": "Spięty", "order": 4},
+					{"artist": "Wojtek Mazolewski Quintet", "order": 5},
+					{"artist": "Fonovel", "marked": true, "order": 7, "firstOnLine": true},
+					{"artist": "Karolina Cicha", "marked": true, "order": 13},
+					{"artist": "Peter J. Birch", "order": 16},
+					{"artist": "Revlovers", "visible": false},
+					{"artist": "Wilson Square", "visible": false},
+					{"artist": "Eltron John", "visible": false},
+					{"artist": "Envee", "visible": false},
+					{"artist": "Bueno Bros", "visible": false},
+					{"artist": "Catz 'n Dogz", "visible": false}
+				]
+			}
+		}
+	],
+	"lineupSettings": {
+		"sortType": "customOrder",
+		"mergeArtists": true,
+		"otherArtists": false
+	}
+}

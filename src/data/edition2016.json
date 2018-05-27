@@ -1,0 +1,148 @@
+{
+	"id": "15",
+	"editionYear": "2016",
+	"fullName": "Open'er Festival",
+	"place": {
+		"city": "Gdynia",
+		"object": "Babie Doły Airport"
+	},
+	"details": [
+		{
+			"day": "29th June",
+			"rain": true,
+			"rainSize": "small",
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2016/6/29/DailyHistory.html?req_city=Gdynia",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2016"
+			],
+			"lineup": {
+				"headliners": [{"artist": "Florence+The Machine", "firstOnLine": true}],
+				"lvl1": [
+					"Mac Demarco",
+					"PJ Harvey",
+					"Savages",
+					{"artist": "Skepta", "firstOnLine": true},
+					"Tame Impala",
+					{"artist": "The Last Shadow Puppets", "firstOnLine": true}
+				],
+				"lvl2": [
+					"DJ Tennis",
+					"Flirtini",
+					{"artist": "Lunice", "firstOnLine": true},
+					"Małpa",
+					"Xxanaxx"
+				],
+				"others": [
+					"Chino",
+					{"artist": "Heroes Get Remembered", "firstOnLine": true},
+					"Lxmp",
+					"Otsochodzi",
+					"Shy Albatross",
+					"Stara Rzeka",
+					"T’ien Lai"
+				]
+			}
+		}, {
+			"day": "30th June",
+			"rain": true,
+			"rainSize": "small",
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2016/6/30/DailyHistory.html?req_city=Gdynia",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2016"
+			],
+			"lineup": {
+				"headliners": [{"artist": "Red Hot Chili Peppers", "firstOnLine": true}],
+				"lvl1": ["Beirut", "Caribou", "Foals", "M83"],
+				"lvl2": ["KAMP!", "Maria Peszek", "Łona Webber", "Rebeka", "Section Boyz"],
+				"others": [
+					{"artist": "An On Bast", "firstOnLine": true},
+					"Baasch",
+					"Czeluść (Jutro X Kosa)",
+					"Kroki",
+					"Piotr Zioła",
+					"Sonar",
+					"V/O"
+				]
+			}
+		}, {
+			"day": "1st July",
+			"rain": false,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2016/7/1/DailyHistory.html?req_city=Gdynia",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2016"
+			],
+			"lineup": {
+				"headliners": [
+					{"artist": "Lcd Soundsystem", "firstOnLine": true},
+					"Sigur Rós"
+				],
+				"lvl1": [
+					"Dawid Podsiadło",
+					{"artist": "Kurt Ville & The Violators", "firstOnLine": true},
+					{"artist": "Paul Kalkbrenner", "firstOnLine": true},
+					"Wiz Khalifa"
+				],
+				"lvl2": [
+					{"artist": "Catz ’n Dogs", "firstOnLine": true},
+					"Kortez",
+					"Nothing but Thieves",
+					{"artist": "Ptaki", "firstOnLine": true},
+					"Rysy",
+					{"artist": "Wince Staples", "firstOnLine": true},
+					{
+						"artist": "Zbigniew Wodeski with Mitch & Mitch Orchestra and Choir",
+						"sliceDecorator": [
+							{"slice": "with", "style": "down"},
+							{"slice": "Orchestra and Choir", "style": "multiline"}
+						]
+					}
+				],
+				"others": [
+					"Grobel",
+					"Jóga",
+					"Kuba Sojka",
+					{"artist": "Olivier Heim", "firstOnLine": true},
+					"Suumoo",
+					"Zamilska"
+				]
+			}
+		}, {
+			"day": "2nd July",
+			"rain": true,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2016/7/2/DailyHistory.html?req_city=Gdynia",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2016"
+			],
+			"lineup": {
+				"headliners": [
+					{"artist": "Pharrell Williams", "firstOnLine": true},
+					"Kygo"
+				],
+				"lvl1": [
+					{"artist": "At The Drive-in", "firstOnLine": true},
+					"Bastille",
+					{"artist": "Chvrches", "firstOnLine": true},
+					"Grimes",
+					"The 1975"
+				],
+				"lvl2": ["Jacek Sienkiewicz", "Rasmentalism"],
+				"others": [
+					"Coldair",
+					"Hana",
+					"JAAA!",
+					"Nagrobki",
+					"Piotr Bejnar",
+					"Soom T",
+					{"artist": "Spoken Love", "firstOnLine": true},
+					"Terrific Sunday",
+					"We Draw A"
+				]
+			}
+		}
+	],
+	"lineupSettings": {
+		"sortType": "alphabeticalExceptHeadliners",
+		"mergeArtists": true,
+		"otherArtists": false
+	}
+}
