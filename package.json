@@ -12,8 +12,9 @@
     "npm": "5.6.0"
   },
   "scripts": {
+    "build-data": "node tools/builder-festivalData.js",
     "build": "webpack",
-    "eslint-check": "eslint ./src --ext .js",
+    "eslint-check": "eslint ./src ./tools --ext .js",
     "symlink-hooks": "./hooks/symlink-hooks",
     "watch": "webpack-dev-server --content-base public"
   },
