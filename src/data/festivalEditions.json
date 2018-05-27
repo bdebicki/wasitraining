@@ -853,7 +853,7 @@
 						{"artist": "Die Antwoord", "marked": true, "order": 3},
 						{"artist": "Lao Che", "order": 4, "firstOnLine": true},
 						{"artist": "Fox", "marked": true, "order": 8},
-						{"artist": "Pablopavo i Ludziki", "displayName": "Pablopavo", "order": 14},
+						{"artist": "Pablopavo i Ludziki", "displayName": "Pablopavo", "marked": true, "order": 14},
 						{"artist": "Psio Crew", "marked": true, "order": 17}
 					],
 					"lvl4": [
@@ -906,7 +906,7 @@
 					"lvl4": [
 						{"artist": "Karolina Glazer", "marked": true, "order": 2},
 						{"artist": "Kciuk & The Fingers", "marked": true, "order": 7},
-						{"artist": "Niwea", "marked": true, "order": 10}
+						{"artist": "Niwea", "marked": true, "order": 11}
 					],
 					"others": [
 						{"artist": "Merkabah", "order": 3},
@@ -951,7 +951,7 @@
 					],
 					"lvl4": [
 						{"artist": "kIRk", "order": 5},
-						{"artist": "NP", "marked": true, "order": 11, "firstOnLine": true},
+						{"artist": "NP", "marked": true, "order": 10, "firstOnLine": true},
 						{"artist": "Pleq", "marked": true, "order": 12}
 					],
 					"others": [
