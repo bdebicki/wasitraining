@@ -1,0 +1,157 @@
+{
+	"id": 7,
+	"editionYear": "2008",
+	"fullName": "Heineken Music sponsors Open'er Festival",
+	"place": {
+		"city": "Gdynia",
+		"object": "Babie Doły Airport"
+	},
+	"details": [
+		{
+			"day": "4th July",
+			"rain": false,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2008/7/4/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2008-07-4&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
+			],
+			"lineup": {
+				"lvl1": [
+					{"artist": "The Raconteurs", "order": 2},
+					{"artist": "Editors", "order": 3, "firstOnLine": true},
+					{"artist": "Roisin Murphy", "order": 4}
+				],
+				"lvl2": [
+					{"artist": "Fischerspooner", "order": 2, "decorator": "expanded"},
+					{"artist": "DeVotchKa", "order": 3, "decorator": "expanded"},
+					{"artist": "The Cribs", "order": 4, "firstOnLine": true},
+					{"artist": "Dj Vadim Live", "order": 6},
+					{"artist": "Fujiya & Miyagi", "order": 7}
+				],
+				"lvl3": [
+					{"artist": "Muchy", "order": 2, "decorator": "expanded"},
+					{"artist": "Mitch & Mitch Big Band", "order": 10},
+					{"artist": "Muzykoterapia", "order": 7, "firstOnLine": true, "canceled": true},
+					{"artist": "Natu + Envee", "order": 12},
+					{"artist": "L.Stadt", "order": 15}
+				],
+				"others": [
+					{"artist": "Troitsa", "order": 2},
+					{"artist": "Hati", "order": 5},
+					{"artist": "emitter_franczak", "order": 8},
+					{"artist": "Teatr Porywacze Ciał", "order": 11},
+					{"artist": "Teatr Gry i Ludzie", "order": 12},
+					{"artist": "Mamadoo", "order": 14},
+					{"artist": "Fire Angels", "order": 15},
+					{"artist": "Pornohagen", "order": 17},
+					{"artist": "Biff", "order": 20},
+					{"artist": "Kleiber", "order": 23},
+					{"artist": "Ziemianie", "order": 24, "firstOnLine": true},
+					{"artist": "Kolorofon", "order": 29},
+					{"artist": "Chill", "visible": false},
+					{"artist": "Harper", "visible": false},
+					{"artist": "Maceo Wyro", "visible": false},
+					{"artist": "Papa Zura", "visible": false}
+				]
+			}
+		}, {
+			"day": "5th July",
+			"rain": true,
+			"rainSize": "small",
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2008/7/5/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2008-07-5&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
+			],
+			"lineup": {
+				"headliners": [
+					{"artist": "Jay-Z", "order": 3, "firstOnLine": true},
+					{"artist": "Interpol", "order": 4}
+				],
+				"lvl1": [
+					{"artist": "Erykah Badu", "order": 1, "firstOnLine": true},
+					{"artist": "Sex Pistols", "order": 6, "firstOnLine": true},
+					{"artist": "Beirut", "order": 10, "canceled": true, "decorator": "collapsed"}
+				],
+				"lvl2": [
+					{"artist": "Gentleman & The Far East Band", "displayName": "Gentleman", "order": 1, "firstOnLine": true, "decorator": "expanded"},
+					{"artist": "Cocorosie", "order": 5}
+				],
+				"lvl3": [
+					{"artist": "Cool Kids Of Death", "order": 1, "firstOnLine": true, "decorator": "expanded"},
+					{"artist": "Maria Peszek", "order": 5, "decorator": "expanded"},
+					{"artist": "Everything is made in China", "order": 9},
+					{"artist": "Masala Soundsystem", "order": 11, "firstOnLine": true},
+					{"artist": "Loco Star", "order": 13},
+					{"artist": "Rotofobia", "order": 14},
+					{"artist": "Karimski Club", "order": 17}
+				],
+				"others": [
+					{"artist": "Tymański Yass Ensemble", "order": 1, "firstOnLine": true},
+					{"artist": "Alamut", "order": 4},
+					{"artist": "Wolfram", "order": 7},
+					{"artist": "Klan Grus", "order": 13},
+					{"artist": "New York Crasnals", "order": 16},
+					{"artist": "Sekend Hend", "order": 19},
+					{"artist": "California Stories Uncovered", "order": 22},
+					{"artist": "Radio Bagdad", "order": 25},
+					{"artist": "Teatr Porywacze Ciał", "visible": false},
+					{"artist": "Mamadoo", "visible": false},
+					{"artist": "Fire Angels", "visible": false},
+					{"artist": "Ojciec Karol", "visible": false},
+					{"artist": "Harper", "visible": false},
+					{"artist": "Envee", "visible": false},
+					{"artist": "Matman", "visible": false},
+					{"artist": "Ros + Wiosna", "visible": false}
+				]
+			}
+		}, {
+			"day": "6th July",
+			"rain": false,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2008/7/6/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2008-07-6&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
+			],
+			"lineup": {
+				"headliners": [
+					{"artist": "Massive Attack", "order": 1, "firstOnLine": true},
+					{"artist": "The Chemical Brothers", "order": 2}
+				],
+				"lvl1": [
+					{"artist": "Goldfrapp", "order": 5},
+					{"artist": "M.I.A.", "order": 8, "canceled": true, "decorator": "collapsed"},
+					{"artist": "Martina Topley Bird", "order": 9, "replacement": true}
+				],
+				"lvl3": [
+					{"artist": "Lao Che", "order": 3, "decorator": "expanded"},
+					{"artist": "Vavamuffin", "order": 4, "decorator": "expanded"},
+					{"artist": "Ścianka", "order": 6, "decorator": "expanded"},
+					{"artist": "Őszibarack", "order": 8},
+					{"artist": "Kobiety", "order": 12},
+					{"artist": "Hatfinats", "order": 16, "firstOnLine": true},
+					{"artist": "Żywiołak", "order": 18},
+					{"artist": "Benzyna", "order": 19}
+				],
+				"others": [
+					{"artist": "RH+ audiowizualna grupa przyjaciół", "order": 3},
+					{"artist": "Echo TM", "order": 6, "firstOnLine": true},
+					{"artist": "C.H. District", "order": 9},
+					{"artist": "Teatr Ósmego Dnia: \"Arka\"", "displayName": "Teatr Ósmego Dnia", "order": 10},
+					{"artist": "Polpo Motel", "order": 18, "firstOnLine": true},
+					{"artist": "Dav Intergalactic", "order": 21},
+					{"artist": "Bajzel", "order": 26},
+					{"artist": "Setting the Woods on Fire", "order": 28},
+					{"artist": "Gasoline", "order": 27},
+					{"artist": "Teatr Gry i Ludzie", "visible": false, "firstOnLine": true},
+					{"artist": "Teatr Porywacze Ciał", "visible": false},
+					{"artist": "Klan Grus", "visible": false},
+					{"artist": "Mamadoo", "visible": false},
+					{"artist": "V/A Team Hungry Hungry Models", "visible": false}
+				]
+			}
+		}
+	],
+	"lineupSettings": {
+		"sortType": "customOrder",
+		"mergeArtists": true,
+		"otherArtists": false
+	}
+}

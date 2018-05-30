@@ -1,0 +1,56 @@
+{
+	"id": 3,
+	"editionYear": "2004",
+	"fullName": "Heineken Music sponsors Open'er Festival",
+	"place": {
+		"city": "Gdynia",
+		"object": "Kościuszki Square"
+	},
+	"details": [
+		{
+			"day": "2nd July",
+			"rain": true,
+			"rainSize": "small",
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2004/7/2/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2004-07-2&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
+			],
+			"lineup": {
+				"headliners": ["Pink", "Cypress Hill"],
+				"lvl2": ["Sistars"],
+				"lvl3": ["G!MIDI", "Slajd", "Progress"],
+				"others": ["Ojciec Karol", "Charlie Jan"]
+			}
+		}, {
+			"day": "3rd July",
+			"rain": false,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2004/7/3/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2004-07-3&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
+			],
+			"lineup": {
+				"headliners": ["Massive Attack", "Goldfrapp"],
+				"lvl1": ["Adam Freeland"],
+				"lvl2": ["Smolik"],
+				"lvl3": ["Novika", "Harper", "Twinn", "THIRST Winner in Denmark"],
+				"others": [
+					{
+						"artist": "Klinika lalek + Kinior Sky Orkiestra: przedstawienie Anielicje",
+						"sliceDecorator": {"slice": "przedstawienie Anielicje", "style": "newLine"}
+					},
+					{
+						"artist": "Teatr Cinema: Kabaret Olbrzymów Wieczór III. Lekkie czasy ciężkich chorób",
+						"sliceDecorator": {"slice": "Wieczór III. Lekkie czasy ciężkich chorób", "style": "newLine"}
+					},
+					"Teatr Snów: przedstawienie Republika Marzeń",
+					"Klinika Lalek: Parada uliczna"
+				]
+			}
+		}
+	],
+	"lineupSettings": {
+		"sortType": false,
+		"mergeArtists": false,
+		"otherArtists": false
+	}
+}

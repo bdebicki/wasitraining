@@ -1,0 +1,109 @@
+{
+	"id": 5,
+	"editionYear": "2006",
+	"fullName": "Heineken Music sponsors Open'er Festival",
+	"place": {
+		"city": "Gdynia",
+		"object": "Babie Doły Airport"
+	},
+	"details": [
+		{
+			"day": "6th July",
+			"rain": false,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2006/7/8/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2006-07-8&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
+			],
+			"lineup": {
+				"headliners": [
+					{"artist": "Placebo", "firstOnLine": true, "decorator": "uppercase"},
+					"Pharrell Williams",
+					{"artist": "Manu Chao Radio Bemba Sound System", "firstOnLine": true, "sliceDecorator": {"slice": "Radio Bemba Sound System", "style": "down"}}
+				],
+				"lvl2": [
+					{"artist": "Matthew Herbert", "order": 5, "canceled": true},
+					{"artist": "Nightmares on Wax", "order": 5}
+				],
+				"others": [
+					{"artist": "Fisz, Emade i Goście", "order": 3},
+					{"artist": "The Car Is On Fire", "order": 7},
+					{"artist": "Cool Kids of Death", "order": 9},
+					{"artist": "Sofa", "order": 10},
+					{"artist": "Masala Soundsystem", "order": 14},
+					{"artist": "Loco Motive Sun", "order": 16},
+					{"artist": "Teatr Klan Grus", "order": 21},
+					{"artist": "Teatr Fire Angels", "order": 20, "firstOnLine": true}
+				]
+			}
+		}, {
+			"day": "7th July",
+			"rain": false,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2006/7/8/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2006-07-8&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
+			],
+			"lineup": {
+				"headliners": [
+					{"artist": "Franz Ferdinand", "firstOnLine": true},
+					"Sigur Rós",
+					{"artist": "Scissor Sisters", "firstOnLine": true},
+					"Skin"
+				],
+				"lvl2": [
+					{"artist": "Coldcut", "order": 1, "firstOnLine": true},
+					{"artist": "Ladytron", "order": 3}
+				],
+				"others": [
+					{"artist": "Myslovitz", "order": 2},
+					{"artist": "Maria Peszek", "order": 5},
+					{
+						"artist": "Kanał Audytywny",
+						"order": 8,
+						"breakLine": true,
+						"sliceDecorator": {"slice": "Kanał", "style": "previousLine"}
+					},
+					{"artist": "Miloopa", "order": 11},
+					{"artist": "Niewinni Czarodzieje", "order": 12},
+					{"artist": "Electricity", "order": 18},
+					{"artist": "Teatr Klan Grus", "visible": false},
+					{"artist": "Teatr Fire Angels", "visible": false}
+				]
+			}
+		}, {
+			"day": "8th July",
+			"rain": true,
+			"rainSize": "small",
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2006/7/8/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2006-07-8&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
+			],
+			"lineup": {
+				"headliners": [
+					{"artist": "Kanye West", "firstOnLine": true},
+					"Basement Jaxx",
+					{"artist": "The Streets", "firstOnLine": true},
+					{"artist": "Groove Armada", "canceled": true}
+				],
+				"lvl2": [
+					{"artist": "Roger Sanchez", "order": 2}
+				],
+				"others": [
+					{"artist": "Peter Greenaway", "order": 1, "firstOnLine": true},
+					{"artist": "Abra dAb", "order": 4},
+					{"artist": "Pustki", "order": 6},
+					{"artist": "Beats Friendly", "order": 13},
+					{"artist": "Freak of Nature", "order": 15, "firstOnLine": true},
+					{"artist": "Psychocukier", "order": 17},
+					{"artist": "Teatr Klan Grus", "visible": false},
+					{"artist": "Teatr Fire Angels", "visible": false},
+					{"artist": "Usta Bilizowane", "order": 19}
+				]
+			}
+		}
+	],
+	"lineupSettings": {
+		"sortType": "customOrderExceptHeadliners",
+		"mergeArtists": "exceptHeadliners",
+		"otherArtists": "and also:"
+	}
+}

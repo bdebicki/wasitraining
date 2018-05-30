@@ -1,0 +1,37 @@
+{
+	"id": 2,
+	"editionYear": "2003",
+	"fullName": "Heineken Music sponsors Open'er Festival",
+	"place": {
+		"city": "Gdynia",
+		"object": "Kościuszki Square"
+	},
+	"details": [
+		{
+			"day": "26th July",
+			"rain": true,
+			"rainSize": "small",
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2003/7/26/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2003-07-26&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
+			],
+			"lineup": {
+				"headliners": [
+					"Cassius",
+					"Kosheen",
+					{
+						"artist": "Layo & Bushwacka!",
+						"sliceDecorator": {"slice": "& Bushwacka!", "style": "newLine"}
+					}
+				],
+				"lvl1": ["15 Minuk Projekt", "Marika"],
+				"others": ["Finalists of THIRST competition"]
+			}
+		}
+	],
+	"lineupSettings": {
+		"sortType": false,
+		"mergeArtists": false,
+		"otherArtists": false
+	}
+}
