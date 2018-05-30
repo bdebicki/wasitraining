@@ -8,6 +8,10 @@ export default class Timeline {
 		this.editionId = editionId;
 	}
 
+	get reverseSortEditions() {
+		return this.data.reverse();
+	}
+
 	static updateSelectedEdition(newEdition) {
 		// eslint-disable-next-line max-len
 		document.querySelector(`.${TIMELINE.NAV_EDITION_ACTIVE_CLASS}`).classList.remove(TIMELINE.NAV_EDITION_ACTIVE_CLASS);
@@ -30,22 +34,19 @@ export default class Timeline {
 		return editionsListContainer;
 	}
 
-	reverseSortEditions() {
-		return Object.keys(this.data).reverse();
-	}
-
 	renderNavTimeline() {
-		const revertedEditionsOrder = () => this.reverseSortEditions();
+		const revertedEditionsOrder = this.reverseSortEditions;
 		const timelineContainer = Timeline.createTimelineContainer(LAYOUT.NAV_TIMELINE_ID);
 		const editionsListContainer = Timeline.createEditionsListContainer(TIMELINE.NAV_EDITIONS_CLASS);
 
-		revertedEditionsOrder().forEach((item) => {
-			const edition = new TimelineItem(this.data[item]);
+		revertedEditionsOrder.forEach((edition) => {
+			const editionData = edition;
+			const timelineItem = new TimelineItem(editionData);
 
-			if (this.data[item].id === this.editionId) {
-				editionsListContainer.appendChild(edition.renderNavEdition(true));
+			if (editionData.id === this.editionId) {
+				editionsListContainer.appendChild(timelineItem.renderNavEdition(true));
 			} else {
-				editionsListContainer.appendChild(edition.renderNavEdition());
+				editionsListContainer.appendChild(timelineItem.renderNavEdition());
 			}
 		});
 
@@ -54,14 +55,14 @@ export default class Timeline {
 	}
 
 	renderMainTimeline() {
-		const revertedEditionsOrder = () => this.reverseSortEditions(this.data);
+		const revertedEditionsOrder = this.reverseSortEditions;
 		const timelineContainer = Timeline.createTimelineContainer(LAYOUT.MAIN_TIMELINE_ID);
 		const editionsListContainer = Timeline.createEditionsListContainer(TIMELINE.MAIN_EDITIONS_CLASS);
 
-		revertedEditionsOrder().forEach((item) => {
-			const edition = new TimelineItem(this.data[item]);
+		revertedEditionsOrder.forEach((edition) => {
+			const timelineItem = new TimelineItem(edition);
 
-			editionsListContainer.appendChild(edition.renderMainEdition());
+			editionsListContainer.appendChild(timelineItem.renderMainEdition());
 		});
 
 		timelineContainer.appendChild(editionsListContainer);
