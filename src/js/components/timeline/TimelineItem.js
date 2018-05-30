@@ -5,8 +5,12 @@ import Edition from '../../classes/Edition';
 import YearView from '../../views/YearView';
 
 export default class TimelineItem extends Edition {
+	static getEditionIdFromHref(link) {
+		return parseInt(link.getAttribute('href').replace('#edition', ''), 10);
+	}
+
 	switchView(e) {
-		const id = this.getAttribute('href').replace('#edition', '');
+		const id = TimelineItem.getEditionIdFromHref(this);
 
 		e.preventDefault();
 
@@ -23,7 +27,7 @@ export default class TimelineItem extends Edition {
 	}
 
 	switchEdition(e) {
-		const id = this.getAttribute('href').replace('#edition', '');
+		const id = TimelineItem.getEditionIdFromHref(this);
 
 		e.preventDefault();
 

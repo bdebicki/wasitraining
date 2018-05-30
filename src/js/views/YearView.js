@@ -12,6 +12,7 @@ export default class YearView {
 	constructor(data, editionId) {
 		this.data = data;
 		this.editionId = editionId;
+		this.editionIndex = editionId - 1;
 	}
 
 	static updateViewTypeToYear() {
@@ -19,7 +20,7 @@ export default class YearView {
 	}
 
 	updateDetails(newEdition) {
-		const newEditionData = this.data[this.editionId];
+		const newEditionData = this.data[this.editionIndex];
 		const yearBlock = new YearDetails(newEditionData);
 
 		Timeline.updateSelectedEdition(newEdition);
@@ -27,7 +28,7 @@ export default class YearView {
 	}
 
 	switchToYearView() {
-		const yearBlock = new YearDetails(this.data[this.editionId], LAYOUT.MAIN_CONTAINER_ID);
+		const yearBlock = new YearDetails(this.data[this.editionIndex], LAYOUT.MAIN_CONTAINER_ID);
 		const timelineBlock = new Timeline(this.data, LAYOUT.HEADER_ID, this.editionId);
 
 		YearView.updateViewTypeToYear();
@@ -39,11 +40,11 @@ export default class YearView {
 	}
 
 	render() {
-		const { data, editionId } = this;
+		const { data, editionId, editionIndex } = this;
 		const body = LAYOUT.MAIN_CONTAINER_ID;
 		const headerBlock = new Header(data, body);
 		const timelineBlock = new Timeline(data, LAYOUT.HEADER_ID, editionId);
-		const yearBlock = new YearDetails(data[editionId], body);
+		const yearBlock = new YearDetails(data[editionIndex], body);
 		const bgBlock = new BgVideo(body);
 		const footerBlock = new Footer(body);
 

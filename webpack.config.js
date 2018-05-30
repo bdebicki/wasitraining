@@ -37,9 +37,6 @@ const config = {
 			template: 'src/views/index.html',
 		}),
 		new CopyWebpackPlugin([
-			{ from: 'src/data/*.json', to: '[name].json' },
-		]),
-		new CopyWebpackPlugin([
 			{ from: 'src/images/*.png', to: 'images/[name].png' },
 		]),
 		new CopyWebpackPlugin([
