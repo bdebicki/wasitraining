@@ -14,17 +14,56 @@
 			max-width: 530px;
 			justify-content: left;
 
+			&--headliners {
+				margin-bottom: @edition2009-lvlSpace-headliners;
+
+				.lineupArtists__artist--promoted {
+					&:before {
+						margin-right: @edition2009-separatorSpace-headlinersPromoted;
+						margin-left: @edition2009-separatorSpace-headlinersPromoted;
+					}
+				}
+			}
+			&--lvl1 {
+				margin-bottom: @edition2009-lvlSpace-lvl1;
+			}
 			&--lvl2 {
+				margin-bottom: @edition2009-lvlSpace-lvl2;
+
 				.lineupArtists__artist--collapsed {
 					letter-spacing: @edition2009-textSpacing-lvl2Collapsed;
 				}
 			}
+			&--lvl3 {
+				margin-bottom: @edition2009-lvlSpace-lvl3;
+			}
+			&--lvl4 {
+				margin-bottom: @edition2009-lvlSpace-lvl4;
+			}
 		}
 
 		&__artist {
+			display: inline-grid;
+			grid-template-columns: auto auto;
+			grid-template-rows: auto;
+			grid-template-areas: "separator name";
+
+			&:before {
+				content: @edition2009-separatorStyle;
+				margin-right: @edition2009-separatorSpace;
+				margin-left: @edition2009-separatorSpace;
+				grid-area: separator;
+				color: @defaultFontColor;
+				font-size: @edition2009-separatorSize;
+			}
+
 			&--headliner {
 				font-size: @edition2009-fontSize-headliners;
 				line-height: @edition2009-lineHeight-headliners;
+
+				&:before {
+					font-size: @edition2009-separatorSize-headliners;
+				}
 			}
 			&--lvl1 {
 				font-size: @edition2009-fontSize-lvl1;
@@ -33,22 +72,53 @@
 			&--lvl2 {
 				font-size: @edition2009-fontSize-lvl2;
 				letter-spacing: @edition2009-textSpacing-lvl2;
-				line-height: @edition2009-textSpacing-lvl2;
+				line-height: @edition2009-lineHeight-lvl2;
+
+				&[data-canceled-artist] {
+					margin-left: 265px;
+				}
 			}
 			&--lvl3 {
 				font-size: @edition2009-fontSize-lvl3;
 				line-height: @edition2009-lineHeight-lvl3;
+
+				&:before {
+					font-size: @edition2009-separatorSize-lvl3;
+				}
+
+				&[data-canceled-artist] {
+					margin-left: 300px;
+				}
 			}
 			&--lvl4 {
 				font-size: @edition2009-fontSize-lvl4;
 				letter-spacing: @edition2009-textSpacing-lvl4;
 				line-height: @edition2009-lineHeight-lvl4;
+
+				&:before {
+					font-size: @edition2009-separatorSize-lvl4;
+				}
 			}
 			&--others {
 				font-size: @edition2009-fontSize-others;
 				line-height: @edition2009-lineHeight-others;
+
+				&:before {
+					font-size: @edition2009-separatorSize-others;
+				}
 			}
 
+			&--firstOnLine,
+			&[data-canceled-artist] {
+				&:before {
+					display: none;
+				}
+			}
+			&--canceled {
+				&:before {
+					top: 50%;
+				}
+			}
 			&--marked {
 				color: @edition2009-fontColor-marked;
 			}
