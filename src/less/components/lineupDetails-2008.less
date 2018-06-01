@@ -57,13 +57,14 @@
 				font-size: @edition2008-separatorSize;
 			}
 
-			&:not(.lineupArtists__artist--others):not(.lineupArtists__artist--firstOnLine) {
+			&:not(.lineupArtists__artist--others) {
+			&:not(.lineupArtists__artist--firstOnLine) {
 				grid-template-areas: "separator name";
 
 				&:before {
 					content: @edition2008-separatorStyle;
 				}
-			}
+			}}
 
 			&--headliner {
 				font-size: @edition2008-fontSize-headliners;

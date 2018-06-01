@@ -31,9 +31,10 @@
 		}
 
 		&__artist {
-			&:not(:only-child):not(.lineupArtists__artist--firstOnLine) {
+			&:not(:only-child) {
+			&:not(.lineupArtists__artist--firstOnLine) {
 				margin-left: @edition2015-separatorSpace;
-			}
+			}}
 
 			&--headliner {
 				font-size: @edition2015-fontSize-headliners;

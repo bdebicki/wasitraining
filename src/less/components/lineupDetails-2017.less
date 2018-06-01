@@ -31,7 +31,8 @@
 		}
 
 		&__artist {
-			&:not(:only-child):not(.lineupArtists__artist--firstOnLine) {
+			&:not(:only-child) {
+			&:not(.lineupArtists__artist--firstOnLine) {
 				&:before {
 					content: @edition2017-separatorStyle;
 					margin-right: @edition2017-separatorSpace;
@@ -39,7 +40,7 @@
 					color: @edition2017-leadColor;
 					font-weight: @edition2017-fontWeight-headliners;
 				}
-			}
+			}}
 			&--headliner {
 				font-size: @edition2017-fontSize-headliners;
 				font-weight: @edition2017-fontWeight-headliners;

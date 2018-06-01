@@ -77,12 +77,14 @@
 		}
 
 		&__artist {
-			&:not(:only-child):not(:last-child):not(.lineupArtists__artist--headliner) {
+			&:not(:only-child) {
+			&:not(:last-child) {
+			&:not(.lineupArtists__artist--headliner) {
 				&:after {
 					content: @edition2014-separatorStyle;
 					margin-right: @edition2014-separatorSpace;
 				}
-			}
+			}}}
 
 			&--headliner {
 				color: @edition2014-fontColor-headliners;

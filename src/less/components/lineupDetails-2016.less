@@ -25,14 +25,16 @@
 		}
 
 		&__artist {
-			&:not(:only-child):not(.lineupArtists__artist--firstOnLine) {
+			&:not(:only-child) {
+			&:not(.lineupArtists__artist--firstOnLine) {
 				&:before {
 					content: @edition2016-separatorStyle;
 					margin-right: @edition2016-separatorSpace;
 					margin-left: @edition2016-separatorSpace;
 					color: @edition2016-leadColor;
 				}
-			}
+			}}
+
 			&--headliner {
 				font-family: @edition2016-fontFamily-headliners;
 				font-size: @edition2016-fontSize-headliners;
