@@ -59,6 +59,10 @@
 			&--canceled {
 				font-weight: @edition2015-fontWeight-canceled;
 				letter-spacing: @edition2015-textSpacing-canceled;
+
+				&:before {
+					top: ~'calc(50% - 2px)';
+				}
 			}
 			&--marked {
 				color: @edition2015-leadColor;
