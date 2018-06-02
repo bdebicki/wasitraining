@@ -81,6 +81,10 @@ export default class LineupDetails extends Lineup {
 		decoratedName.innerHTML = name.replace(replacePattern, (matched) => {
 			let sliceStyleClassName = '';
 			const setStyleClassName = (styleList) => {
+				if (!styleList[ARTIST_SLICES_PROPS.STYLE]) {
+					return;
+				}
+
 				if (Array.isArray(styleList[ARTIST_SLICES_PROPS.STYLE])) {
 					sliceStyleClassName = styleList[ARTIST_SLICES_PROPS.STYLE].map(
 						(style) => artistSliceDecoratorToClassMap[style]
