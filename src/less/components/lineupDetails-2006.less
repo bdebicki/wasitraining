@@ -11,24 +11,47 @@
 	.lineupArtists {
 		&__lvl {
 			max-width: 490px;
+			position: relative;
 
-			&--lvl2 {
-				.lineupArtists__artist--canceled {
-					letter-spacing: @edition2006-textSpacing-lvl2Canceled;
-				}
+			&--dailyArtists {
+				margin-bottom: @edition2006-lvlSpace-daily;
 			}
 		}
 
 		&__artist {
+			&:not(.lineupArtists__artist--lastOnLine) {
+				&:after {
+					content: @edition2006-separatorStyle;
+					margin-right: @edition2007-separatorSpace;
+				}
+			}
+
 			&--headliner {
 				font-size: @edition2006-fontSize-headliners;
 				letter-spacing: @edition2006-textSpacing-headliners;
 				line-height: @edition2006-lineHeight-headliners;
+
+				.lineupArtists__slice {
+					font-size: @edition2006-fontSize-headlinersSlice;
+					letter-spacing: @edition2006-textSpacing-headlinersSlice;
+				}
 			}
 			&--lvl2 {
 				font-size: @edition2006-fontSize-lvl2;
 				letter-spacing: @edition2006-textSpacing-lvl2;
 				line-height: @edition2006-lineHeight-lvl2;
+
+				&[data-canceled-artist] {
+					&:after {
+						display: none;
+					}
+
+					position: absolute;
+					top: -13px;
+					right: 27px;
+					font-size: @edition2006-fontSize-lvl2Canceled;
+					letter-spacing: @edition2006-textSpacing-lvl2Canceled;
+				}
 			}
 			&--others {
 				font-size: @edition2006-fontSize-others;
