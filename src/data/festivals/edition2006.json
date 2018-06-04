@@ -103,7 +103,7 @@
 	],
 	"lineupSettings": {
 		"sortType": "customOrderExceptHeadliners",
-		"mergeArtists": "exceptHeadliners",
+		"mergeArtists": "mainByDaysAndMergeRest",
 		"otherArtists": "and also:"
 	}
 }

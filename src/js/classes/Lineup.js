@@ -11,7 +11,8 @@ import { LINEUP_LEVELS, ARTIST_KEYS } from '../enums/lineup';
  * mergeArtistsType:
  * 	- false - don't merge artists levels and split lineup on days
  * 	- true - merge artists by levels
- * 	- 'exceptHeadliners' - merge artists from all levels except headliners and display them split by days
+ * 	- 'mainByDaysAndMergeRest' - merge artists from headliners and lvl1 into daily artists, merge other lvls and others
+ * 								 into all artists
  * 	- 'customLevels' - create custom levels with mixed artists
  *
  * otherArtists:
@@ -69,8 +70,11 @@ export default class Lineup {
 			} else if (this.sortType === 'alphabeticalExceptHeadliners') {
 				preparedLineup = this.mergeAndSortAlphabeticallyExceptHeadliners();
 			}
-		} else if (this.mergeArtistsType === 'exceptHeadliners' && this.sortType === 'customOrderExceptHeadliners') {
-			preparedLineup = this.mergeExceptHeadlinersAndSortCustomExceptHeadliners();
+		} else if (
+			this.mergeArtistsType === 'mainByDaysAndMergeRest'
+			&& this.sortType === 'customOrderExceptHeadliners'
+		) {
+			preparedLineup = this.mergeExceptMainAndSortCustomExceptHeadliners();
 		} else if (this.sortType === false) {
 			preparedLineup = this.notMergedAndNotSorted();
 		} else if (this.sortType === 'alphabeticalExceptHeadliners') {
@@ -322,22 +326,21 @@ export default class Lineup {
 		return sortedLineup;
 	}
 
-	mergeExceptHeadlinersAndSortCustomExceptHeadliners() {
-		console.log('mergeExceptHeadlinersAndSortCustomExceptHeadliners');
-		const sortedLineup = {};
-		const artistsByLvl = this.mergeArtists(
+	mergeExceptMainAndSortCustomExceptHeadliners() {
+		const allOthers = this.mergeArtists(
 			[LINEUP_LEVELS.LVL2, LINEUP_LEVELS.LVL3, LINEUP_LEVELS.LVL4, LINEUP_LEVELS.OTHERS]
 		);
 
 		// sort merged artists
-		Object.keys(artistsByLvl).forEach((lvl) => Lineup.sortCustomOrderLevel(artistsByLvl[lvl]));
+		Object.keys(allOthers).forEach((lvl) => Lineup.sortCustomOrderLevel(allOthers[lvl]));
 
-		// push daily artists to sorted lineup
-		sortedLineup[LINEUP_LEVELS.DAILY_ARTISTS] = this.noMergeArtists([LINEUP_LEVELS.HEADLINERS, LINEUP_LEVELS.LVL1]);
+		const sortedLineup = {
+			[LINEUP_LEVELS.DAILY_ARTISTS]: this.noMergeArtists([LINEUP_LEVELS.HEADLINERS, LINEUP_LEVELS.LVL1]),
+			[LINEUP_LEVELS.ALL_OTHERS]: allOthers,
+		};
 
-		Object.assign(sortedLineup, artistsByLvl); // push lvl artists to sorted lineup
-
-		console.log('merge artists except headliners and sort artists by customOrderExceptHeadliners', sortedLineup);
+		// eslint-disable-next-line max-len
+		console.log('merge artists <lvl1 into all days and headliners + lvl1 into daily and sort artists by customOrderExceptHeadliners', sortedLineup);
 		return sortedLineup;
 	}
 

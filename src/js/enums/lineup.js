@@ -6,6 +6,7 @@ export const LINEUP_LEVELS = {
 	LVL4: 'lvl4',
 	OTHERS: 'others',
 	DAILY_ARTISTS: 'dailyArtists',
+	ALL_OTHERS: 'allOthers',
 };
 
 export const ARTIST_KEYS = {

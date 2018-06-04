@@ -15,6 +15,7 @@ const lineupLvlToClassMap = {
 	[LINEUP_LEVELS.LVL4]: LINEUP.ARTISTS_LVL4_CLASS,
 	[LINEUP_LEVELS.OTHERS]: LINEUP.ARTISTS_OTHERS_CLASS,
 	[LINEUP_LEVELS.DAILY_ARTISTS]: LINEUP.ARTISTS_DAILY_CLASS,
+	[LINEUP_LEVELS.ALL_OTHERS]: LINEUP.ARTISTS_ALL_OTHERS_CLASS,
 };
 const alignToClassMap = {
 	[ARTIST_ALIGN.LEFT]: LINEUP.ARTIST_ALIGN_LEFT_CLASS,
@@ -240,8 +241,8 @@ export default class LineupDetails extends Lineup {
 		switch (this.mergeArtistsType) {
 		case true:
 			return this.decorateLineupByLevels();
-		case 'exceptHeadliners':
-			return this.decorateLineupHeadlinersByDays();
+		case 'mainByDaysAndMergeRest':
+			return this.decorateMainByDaysAndMergeRest();
 		case 'customLevels':
 			return this.decorateLineupCustomLevelsByDays();
 		default:
@@ -268,16 +269,16 @@ export default class LineupDetails extends Lineup {
 		return fragment;
 	}
 
-	decorateLineupHeadlinersByDays() {
+	decorateMainByDaysAndMergeRest() {
 		const fragment = document.createDocumentFragment();
 		const { lineup } = this;
 
-		Object.keys(lineup).forEach((lvl) => {
-			if (lvl === LINEUP_LEVELS.DAILY_ARTISTS) {
-				lineup[lvl].forEach((dailyArtists) => {
+		Object.keys(lineup).forEach((section) => {
+			if (section === LINEUP_LEVELS.DAILY_ARTISTS) {
+				lineup[section].forEach((dailyArtists) => {
 					const ul = document.createElement('ul');
 
-					ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[lvl]);
+					ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[section]);
 
 					Object.keys(dailyArtists).forEach((dailyLvl) => {
 						dailyArtists[dailyLvl].forEach((dailyArtist, index) => {
@@ -287,13 +288,15 @@ export default class LineupDetails extends Lineup {
 
 					fragment.appendChild(ul);
 				});
-			} else {
+			} else if (section === LINEUP_LEVELS.ALL_OTHERS) {
 				const ul = document.createElement('ul');
 
-				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[lvl]);
+				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[section]);
 
-				lineup[lvl].forEach((artist, index) => {
-					LineupDetails.decorateArtist(artist, ul, index, lvl);
+				Object.keys(lineup[section]).forEach((lvl) => {
+					lineup[section][lvl].forEach((artist, index) => {
+						LineupDetails.decorateArtist(artist, ul, index, lvl);
+					});
 				});
 
 				fragment.appendChild(ul);

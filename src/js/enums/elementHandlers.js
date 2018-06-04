@@ -136,6 +136,7 @@ export const LINEUP = {
 	ARTISTS_LVL4_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.LVL4}`,
 	ARTISTS_OTHERS_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.OTHERS}`,
 	ARTISTS_DAILY_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.DAILY_ARTISTS}`,
+	ARTISTS_ALL_OTHERS_CLASS: `${lineupClassBuilder.lvl}--${LINEUP_LEVELS.ALL_OTHERS}`,
 	ARTIST_CLASS: `${lineupClassBuilder.artist}`,
 	ARTIST_PROMOTED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.PROMOTED}`,
 	ARTIST_EXPANDED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.EXPANDED}`,
