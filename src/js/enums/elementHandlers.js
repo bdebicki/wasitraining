@@ -140,6 +140,7 @@ export const LINEUP = {
 	ARTIST_CLASS: `${lineupClassBuilder.artist}`,
 	ARTIST_PROMOTED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.PROMOTED}`,
 	ARTIST_EXPANDED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.EXPANDED}`,
+	ARTIST_COMPRESSED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.COMPRESSED}`,
 	ARTIST_COLLAPSED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.COLLAPSED}`,
 	ARTIST_UPPERCASE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.UPPERCASE}`,
 	ARTIST_CAPITALIZE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_DECORATORS.CAPITALIZE}`,

@@ -52,7 +52,7 @@
 					{"artist": "Neo", "decorator": "uppercase", "firstOnLine": true}
 				],
 				"others": [
-					{"artist": "SOFA", "order": 3, "decorator": "capitalize"},
+					{"artist": "Sofa", "order": 3},
 					{"artist": "Őszibarack", "order": 4},
 					{"artist": "Peepol", "order": 5},
 					{"artist": "Tworzywo Sztuczne", "order": 6},

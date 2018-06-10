@@ -26,6 +26,7 @@ const artistDecoratorToClassMap = {
 	[ARTIST_DECORATORS.EXPANDED]: LINEUP.ARTIST_EXPANDED_CLASS,
 	[ARTIST_DECORATORS.COLLAPSED]: LINEUP.ARTIST_COLLAPSED_CLASS,
 	[ARTIST_DECORATORS.UPPERCASE]: LINEUP.ARTIST_UPPERCASE_CLASS,
+	[ARTIST_DECORATORS.CAPITALIZE]: LINEUP.ARTIST_CAPITALIZE_CLASS,
 	[ARTIST_DECORATORS.COMPRESSED]: LINEUP.ARTIST_COMPRESSED_CLASS,
 };
 const artistSliceDecoratorToClassMap = {
@@ -275,14 +276,19 @@ export default class LineupDetails extends Lineup {
 
 		Object.keys(lineup).forEach((section) => {
 			if (section === LINEUP_LEVELS.DAILY_ARTISTS) {
-				lineup[section].forEach((dailyArtists) => {
+				lineup[section].forEach((dailyArtists, dayIndex) => {
 					const ul = document.createElement('ul');
+					const dayCount = dayIndex + 1;
 
-					ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[section]);
+					ul.classList.add(
+						LINEUP.ARTISTS_LEVEL_CLASS,
+						lineupLvlToClassMap[section],
+						`${LINEUP.ARTISTS_LEVEL_CLASS}--day${dayCount}`
+					);
 
 					Object.keys(dailyArtists).forEach((dailyLvl) => {
-						dailyArtists[dailyLvl].forEach((dailyArtist, index) => {
-							LineupDetails.decorateArtist(dailyArtist, ul, index, dailyLvl);
+						dailyArtists[dailyLvl].forEach((dailyArtist, dailyArtistIndex) => {
+							LineupDetails.decorateArtist(dailyArtist, ul, dailyArtistIndex, dailyLvl);
 						});
 					});
 

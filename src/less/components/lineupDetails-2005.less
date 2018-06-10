@@ -19,15 +19,71 @@
 					line-height: @edition2005-lineHeight-headlinersPromoted;
 				}
 			}
+			&--day1 {
+				padding-left: 52px;
+				margin-bottom: @edition2006-lvlSpace-daily;
+
+				.lineupArtists__artist--firstOnLine:nth-child(2n) {
+					margin-left: 180px;
+				}
+
+			}
+			&--day2 {
+				margin-bottom: @edition2006-lvlSpace-others;
+
+				.lineupArtists__artist--firstOnLine:nth-child(2n) {
+					margin-left: 85px;
+				}
+			}
 		}
 
 		&__artist {
+			display: inline-grid;
+			grid-template-columns: auto auto;
+			grid-template-rows: auto;
+
+			&:before {
+				grid-area: separator;
+				color: @defaultFontColor;
+			}
+
+			&:not(.lineupArtists__artist--headliner) {
+			&:not(.lineupArtists__artist--lvl1) {
+				grid-template-areas: "name separator";
+
+				&:before {
+					content: @edition2005-separatorStyle;
+					font-size: @edition2007-separatorSize;
+				}
+
+				&:last-child {
+					&:before {
+						display: none;
+					}
+				}
+			}}
+
+			&--headliner,
+			&--lvl1 {
+				&:not(.lineupArtists__artist--firstOnLine) {
+					grid-template-areas: "separator name";
+
+					&:before {
+						content: @edition2005-separatorStyle-daily;
+						margin-right: @edition2005-separatorSpace-daily;
+						margin-left: @edition2005-separatorSpace-daily;
+						font-size: @edition2007-separatorSize-daily;
+					}
+				}
+			}
+
 			&--headliner {
 				font-size: @edition2005-fontSize-headliners;
 				line-height: @edition2005-lineHeight-headliners;
 				text-transform: lowercase;
 			}
 			&--lvl1 {
+				align-content: end;
 				font-size: @edition2005-fontSize-lvl1;
 				letter-spacing: @edition2005-textSpacing-lvl1;
 				line-height: @edition2005-lineHeight-lvl1;
@@ -38,10 +94,19 @@
 				letter-spacing: @edition2005-textSpacing-lvl2;
 				line-height: @edition2005-lineHeight-lvl2;
 				text-transform: uppercase;
+
+				&:before {
+					margin-right: @edition2005-separatorSpace-lvl2;
+				}
 			}
 			&--others {
+				align-content: end;
 				font-size: @edition2005-fontSize-others;
 				line-height: @edition2005-lineHeight-others;
+
+				&:before {
+					margin-right: @edition2005-separatorSpace;
+				}
 			}
 		}
 	}
