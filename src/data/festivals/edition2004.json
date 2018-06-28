@@ -16,10 +16,22 @@
 				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2004-07-2&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 			],
 			"lineup": {
-				"headliners": ["Pink", "Cypress Hill"],
-				"lvl2": ["Sistars"],
-				"lvl3": ["G!MIDI", "Slajd", "Progress"],
-				"others": ["Ojciec Karol", "Charlie Jan"]
+				"headliners": [
+					{"artist": "Pink", "displayName": "P!nk", "firstOnLine": true, "line": 2},
+					{"artist": "Cypress Hill", "line": 2}
+				],
+				"lvl2": [
+					{"artist": "Sistars", "line": 2}
+				],
+				"lvl3": [
+					{"artist": "G!MIDI", "firstOnLine": true, "line": 4},
+					{"artist": "Slajd", "line": 4},
+					{"artist": "Progress", "line": 4}
+				],
+				"others": [
+					{"artist": "Ojciec Karol", "firstOnLine": true, "line": 1},
+					{"artist": "Charlie Jan", "line": 1}
+				]
 			}
 		}, {
 			"day": "3rd July",
@@ -29,28 +41,43 @@
 				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2004-07-3&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland"
 			],
 			"lineup": {
-				"headliners": ["Massive Attack", "Goldfrapp"],
-				"lvl1": ["Adam Freeland"],
-				"lvl2": ["Smolik"],
-				"lvl3": ["Novika", "Harper", "Twinn", "THIRST Winner in Denmark"],
+				"headliners": [
+					{"artist": "Massive Attack", "firstOnLine": true, "line": 2},
+					{"artist": "Goldfrapp", "line": 2}
+				],
+				"lvl1": [
+					{"artist": "Adam Freeland", "firstOnLine": true, "line": 3}
+				],
+				"lvl2": [
+					{"artist": "Smolik", "line": 3}
+				],
+				"lvl3": [
+					{"artist": "Novika", "firstOnLine": true, "line": 4},
+					{"artist": "Harper", "line": 4},
+					{"artist": "Twinn", "line": 4},
+					{"artist": "THIRST Winner in Denmark", "line": 4}
+				],
 				"others": [
 					{
 						"artist": "Klinika lalek + Kinior Sky Orkiestra: przedstawienie Anielicje",
-						"sliceDecorator": {"slice": "przedstawienie Anielicje", "style": "newLine"}
+						"sliceDecorator": {"slice": "przedstawienie Anielicje", "style": "newLine"},
+						"line": 1
 					},
 					{
 						"artist": "Teatr Cinema: Kabaret Olbrzymów Wieczór III. Lekkie czasy ciężkich chorób",
-						"sliceDecorator": {"slice": "Wieczór III. Lekkie czasy ciężkich chorób", "style": "newLine"}
+						"sliceDecorator": {"slice": "Wieczór III. Lekkie czasy ciężkich chorób", "style": "newLine"},
+						"newLine": true,
+						"line": 1
 					},
-					"Teatr Snów: przedstawienie Republika Marzeń",
-					"Klinika Lalek: Parada uliczna"
+					{"artist": "Teatr Snów: przedstawienie Republika Marzeń", "newLine": true, "line": 1},
+					{"artist": "Klinika Lalek: Parada uliczna", "newLine": true, "line": 1}
 				]
 			}
 		}
 	],
 	"lineupSettings": {
 		"sortType": false,
-		"mergeArtists": false,
+		"mergeArtists": "customLevels",
 		"otherArtists": false
 	}
 }

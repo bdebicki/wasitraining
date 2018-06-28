@@ -178,14 +178,12 @@ export default class LineupDetails extends Lineup {
 	}
 
 	static isArtistFirstOnLine(artist, target, index) {
-		if (artist[ARTIST_KEYS.FIRST_ON_LINE]) {
-			if (index > 0) {
-				const newLine = document.createElement('li');
+		if ((artist[ARTIST_KEYS.FIRST_ON_LINE] && index > 0) || artist[ARTIST_KEYS.NEW_LINE]) {
+			const newLine = document.createElement('li');
 
-				newLine.classList.add(LINEUP.ARTISTS_NEW_LINE_ELEMENT_CLASS);
+			newLine.classList.add(LINEUP.ARTISTS_NEW_LINE_ELEMENT_CLASS);
 
-				target.appendChild(newLine);
-			}
+			target.appendChild(newLine);
 		}
 	}
 
@@ -356,7 +354,12 @@ export default class LineupDetails extends Lineup {
 					artistObj[ARTIST_KEYS.LEVEL] = level;
 
 					if (tempLineup[index][artistLine] === undefined) { // create line if doesn't exist
-						tempLineup[index].push([]);
+						// check does previous line exist; if not add empty arrays for lines above
+						for (let i = 0; i <= artistLine; i++) {
+							if (tempLineup[index][i] === undefined) {
+								tempLineup[index].push([]);
+							}
+						}
 					}
 
 					tempLineup[index][artistLine].push(artistObj); // push artist into line
@@ -370,13 +373,17 @@ export default class LineupDetails extends Lineup {
 			section.classList.add(LINEUP.ARTISTS_DAY_CLASS, `${LINEUP.ARTISTS_DAY_CLASS}--day${currentDay}`);
 
 			day.forEach((line, lineIndex) => {
+				if (line.length === 0) {
+					return;
+				}
+
 				const ul = document.createElement('ul');
 				const currentLine = lineIndex + 1;
 
 				ul.classList.add(LINEUP.ARTISTS_LINE_CLASS, `${LINEUP.ARTISTS_LINE_CLASS}--line${currentLine}`);
 
-				line.forEach((artist) => {
-					LineupDetails.decorateArtist(artist, ul, lineIndex, artist[ARTIST_KEYS.LEVEL]);
+				line.forEach((artist, artistIndex) => {
+					LineupDetails.decorateArtist(artist, ul, artistIndex, artist[ARTIST_KEYS.LEVEL]);
 				});
 
 				section.appendChild(ul);

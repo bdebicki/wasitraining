@@ -20,6 +20,7 @@ export const ARTIST_KEYS = {
 	SLICE_DECORATOR: 'sliceDecorator',
 	MARKED: 'marked',
 	MULTILINE: 'multiline',
+	NEW_LINE: 'newLine',
 	CANCELED: 'canceled',
 	REPLACEMENT: 'replacement',
 	FIRST_ON_LINE: 'firstOnLine',
