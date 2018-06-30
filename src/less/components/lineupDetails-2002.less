@@ -13,6 +13,27 @@
 		&__lvl {
 			max-width: 315px;
 			justify-content: left;
+
+			&--headliners {
+				margin-bottom: @edition2002-lvlSpace-hedliners;
+			}
+
+			&--others {
+				.lineupArtists__artist {
+					&:not(.lineupArtists__artist--firstOnLine) {
+						&:before {
+							content: @edition2002-separatorStyle;
+							margin-right: @edition2002-separatorSpace;
+							margin-left: @edition2002-separatorSpace;
+						}
+					}
+					&--firstOnLine {
+						&:nth-child(2n) {
+							margin-left: 41px;
+						}
+					}
+				}
+			}
 		}
 
 		&__artist {
