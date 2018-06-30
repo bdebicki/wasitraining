@@ -12,8 +12,16 @@
 	.lineupArtists {
 		&__lvl {
 			max-width: 305px;
-			justify-content: right;
+			flex-direction: column;
 			text-align: right;
+
+			&--headliners {
+				margin-bottom: @edition2003-lvlSpace-headliners;
+			}
+
+			&--lvl1 {
+				margin-bottom: @edition2003-lvlSpace-lvl1;
+			}
 		}
 
 		&__artist {
