@@ -1,0 +1,61 @@
+{
+	"id": 17,
+	"editionYear": "2018",
+	"fullName": "Open'er Festival powered by Orange",
+	"place": {
+		"city": "Gdynia",
+		"object": "Babie Doły Airport"
+	},
+	"details": [
+		{
+			"day": "4th July",
+			"rain": false,
+			"rainDataUrl": [
+			],
+			"lineup": {
+				"headliners": [],
+				"lvl1": [],
+				"lvl2": [],
+				"others": []
+			}
+		}, {
+			"day": "5th July",
+			"rain": false,
+			"rainDataUrl": [
+			],
+			"lineup": {
+				"headliners": [],
+				"lvl1": [],
+				"lvl2": [],
+				"others": []
+			}
+		}, {
+			"day": "6th July",
+			"rain": false,
+			"rainDataUrl": [
+			],
+			"lineup": {
+				"headliners": [],
+				"lvl1": [],
+				"lvl2": [],
+				"others": []
+			}
+		}, {
+			"day": "7st July",
+			"rain": false,
+			"rainDataUrl": [
+			],
+			"lineup": {
+				"headliners": [],
+				"lvl1": [],
+				"lvl2": [],
+				"others": []
+			}
+		}
+	],
+	"lineupSettings": {
+		"sortType": "alphabeticalExceptHeadliners",
+		"mergeArtists": false,
+		"otherArtists": false
+	}
+}
