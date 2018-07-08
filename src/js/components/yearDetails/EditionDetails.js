@@ -1,4 +1,4 @@
-import { DIALOGBOX, EDITION } from '../../enums/elementHandlers';
+import { EDITION } from '../../enums/elementHandlers';
 import Edition from '../../classes/Edition';
 import Lineup from '../../classes/Lineup';
 import LineupDetails from './LineupDetails';
@@ -42,10 +42,7 @@ export default class EditionDetails extends Edition {
 		const section = document.createElement('section');
 
 		section.id = EDITION.EDITION_DETAILS_ID;
-		section.classList.add(
-			`${EDITION.EDITION_DETAILS_YEAR_CLASS}${this.editionYear}`,
-			DIALOGBOX.INACTIVE_HELPER_CLASS
-		);
+		section.classList.add(`${EDITION.EDITION_DETAILS_YEAR_CLASS}${this.editionYear}`);
 		section.dataset.year = this.editionYear;
 
 		return section;
