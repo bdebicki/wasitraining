@@ -186,6 +186,7 @@ export default class RainDetails extends Edition {
 		const rainDetailsDialogbox = dialogbox.addDialogbox({
 			id: RAIN.DETAILS_ID,
 			classNames: [RAIN.DETAILS_CLASS],
+			stretched: true,
 			title: 'Rain',
 			content: ul,
 			closeAction: this.toggleDetails,

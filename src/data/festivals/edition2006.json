@@ -17,12 +17,12 @@
 			"lineup": {
 				"headliners": [
 					{"artist": "Placebo", "firstOnLine": true, "decorator": "uppercase"},
-					"Pharrell Williams",
-					{"artist": "Manu Chao Radio Bemba Sound System", "firstOnLine": true, "sliceDecorator": {"slice": "Radio Bemba Sound System", "style": "down"}}
+					{"artist": "Pharrell Williams", "lastOnLine": true},
+					{"artist": "Manu Chao Radio Bemba Sound System", "firstOnLine": true, "lastOnLine": true, "sliceDecorator": {"slice": "Radio Bemba Sound System"}}
 				],
 				"lvl2": [
 					{"artist": "Matthew Herbert", "order": 5, "canceled": true},
-					{"artist": "Nightmares on Wax", "order": 5}
+					{"artist": "Nightmares on Wax", "order": 5, "lastOnLine": true}
 				],
 				"others": [
 					{"artist": "Fisz, Emade i Goście", "order": 3},
@@ -45,9 +45,9 @@
 			"lineup": {
 				"headliners": [
 					{"artist": "Franz Ferdinand", "firstOnLine": true},
-					"Sigur Rós",
+					{"artist": "Sigur Rós", "lastOnLine": true},
 					{"artist": "Scissor Sisters", "firstOnLine": true},
-					"Skin"
+					{"artist": "Skin", "lastOnLine": true}
 				],
 				"lvl2": [
 					{"artist": "Coldcut", "order": 1, "firstOnLine": true},
@@ -80,9 +80,9 @@
 			"lineup": {
 				"headliners": [
 					{"artist": "Kanye West", "firstOnLine": true},
-					"Basement Jaxx",
+					{"artist": "Basement Jaxx", "lastOnLine": true},
 					{"artist": "The Streets", "firstOnLine": true},
-					{"artist": "Groove Armada", "canceled": true}
+					{"artist": "Groove Armada", "canceled": true, "lastOnLine": true}
 				],
 				"lvl2": [
 					{"artist": "Roger Sanchez", "order": 2}
@@ -103,7 +103,8 @@
 	],
 	"lineupSettings": {
 		"sortType": "customOrderExceptHeadliners",
-		"mergeArtists": "exceptHeadliners",
-		"otherArtists": "and also:"
+		"mergeArtists": "mainByDaysAndMergeRest",
+		"otherArtists": "and also:",
+		"separatorElement": false
 	}
 }

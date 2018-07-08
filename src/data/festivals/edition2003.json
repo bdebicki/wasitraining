@@ -32,6 +32,7 @@
 	"lineupSettings": {
 		"sortType": false,
 		"mergeArtists": false,
-		"otherArtists": false
+		"otherArtists": false,
+		"separatorElement": false
 	}
 }

@@ -1,0 +1,44 @@
+.lineup--edition2003 {
+	.dialogbox__header:after {
+		background: @edition2003-leadColor;
+	}
+}
+
+.lineupArtists--edition2003 {
+	font-family: @edition2003-fontFamily;
+	font-weight: @edition2003-fontWeight;
+	text-transform: uppercase;
+
+	.lineupArtists {
+		&__lvl {
+			max-width: 305px;
+			flex-direction: column;
+			text-align: right;
+
+			&--headliners {
+				margin-bottom: @edition2003-lvlSpace-headliners;
+			}
+
+			&--lvl1 {
+				margin-bottom: @edition2003-lvlSpace-lvl1;
+			}
+		}
+
+		&__artist {
+			&--headliner {
+				font-size: @edition2003-fontSize-headliners;
+				letter-spacing: @edition2003-textSpacing-headliners;
+				line-height: @edition2003-lineHeight-headliners;
+			}
+			&--lvl1 {
+				font-size: @edition2003-fontSize-lvl1;
+				letter-spacing: @edition2003-textSpacing-lvl1;
+				line-height: @edition2003-lineHeight-lvl1;
+			}
+			&--others {
+				font-size: @edition2003-fontSize-others;
+				line-height: @edition2003-lineHeight-others;
+			}
+		}
+	}
+}

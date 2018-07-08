@@ -1,0 +1,122 @@
+.lineup--edition2008 {
+	.dialogbox__header:after {
+		background: @edition2008-leadColor;
+	}
+}
+
+.lineupArtists--edition2008 {
+	font-family: @edition2008-fontFamily;
+	font-weight: @edition2008-fontWeight;
+	text-transform: uppercase;
+
+	.lineupArtists {
+		&__lvl {
+			max-width: 490px;
+
+			&--headliners {
+				margin-bottom: @edition2008-lvlSpace-headliners;
+
+				&:after {
+					.separateBorder(@size: 65%, @marginLeft: 0, @marginRight: 0);
+					margin-top: 4px;
+				}
+			}
+			&--lvl1 {
+				margin-bottom: @edition2008-lvlSpace-lvl1;
+
+				.lineupArtists__artist--canceled {
+					letter-spacing: @edition2008-textSpacing-lvl1Canceled;
+				}
+			}
+			&--lvl2 {
+				margin-bottom: @edition2008-lvlSpace-lvl2;
+
+				.lineupArtists__artist--expanded {
+					letter-spacing: @edition2008-textSpacing-lvl2Expanded;
+				}
+			}
+			&--lvl3 {
+				margin-bottom: @edition2008-lvlSpace-lvl3;
+
+				.lineupArtists__artist--expanded {
+					letter-spacing: @edition2008-textSpacing-lvl3Expanded;
+				}
+			}
+		}
+
+		&__artist {
+			display: inline-grid;
+			grid-template-columns: auto auto;
+			grid-template-rows: auto;
+
+			&:before {
+				margin-right: @edition2008-separatorSpace;
+				margin-left: @edition2008-separatorSpace;
+				grid-area: separator;
+				color: @defaultFontColor;
+				font-size: @edition2008-separatorSize;
+			}
+
+			&:not(.lineupArtists__artist--others) {
+			&:not(.lineupArtists__artist--firstOnLine) {
+				grid-template-areas: "separator name";
+
+				&:before {
+					content: @edition2008-separatorStyle;
+				}
+			}}
+
+			&--headliner {
+				font-size: @edition2008-fontSize-headliners;
+				line-height: @edition2008-lineHeight-headliners;
+
+				&:before {
+					margin-right: @edition2008-separatorSpace-headliners;
+					margin-left: @edition2008-separatorSpace-headliners;
+					font-size: @edition2008-separatorSize-headliners;
+				}
+			}
+			&--lvl1 {
+				font-size: @edition2008-fontSize-lvl1;
+				letter-spacing: @edition2008-textSpacing-lvl1;
+				line-height: @edition2008-lineHeight-lvl1;
+			}
+			&--lvl2 {
+				font-size: @edition2008-fontSize-lvl2;
+				letter-spacing: @edition2008-textSpacing-lvl2;
+				line-height: @edition2008-lineHeight-lvl2;
+
+				&:before {
+					font-size: @edition2008-separatorSize-lvl2;
+				}
+			}
+			&--lvl3 {
+				font-size: @edition2008-fontSize-lvl3;
+				letter-spacing: @edition2008-textSpacing-lvl3;
+				line-height: @edition2008-lineHeight-lvl3;
+
+				&:before {
+					font-size: @edition2008-separatorSize-lvl3;
+				}
+			}
+			&--others {
+				grid-template-areas: "name separator";
+				font-size: @edition2008-fontSize-others;
+				letter-spacing: @edition2008-textSpacing-others;
+				line-height: @edition2008-lineHeight-others;
+
+				&:before {
+					content: @edition2008-separatorStyle-others;
+					margin-left: 0;
+					font-size: @edition2008-separatorSize-others;
+				}
+
+				&:last-child {
+					&:before {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

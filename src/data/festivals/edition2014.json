@@ -165,6 +165,7 @@
 	"lineupSettings": {
 		"sortType": "alphabeticalExceptHeadliners",
 		"mergeArtists": true,
-		"otherArtists": false
+		"otherArtists": false,
+		"separatorElement": false
 	}
 }
