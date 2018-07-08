@@ -152,6 +152,7 @@
 	"lineupSettings": {
 		"sortType": "customOrder",
 		"mergeArtists": true,
-		"otherArtists": false
+		"otherArtists": false,
+		"separatorElement": false
 	}
 }

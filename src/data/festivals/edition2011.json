@@ -20,13 +20,13 @@
 					{"artist": "Coldplay", "marked": true, "decorator": "promoted", "order": 1, "firstOnLine": true}
 				],
 				"lvl1": [
-					{"artist": "The National", "marked": true, "decorator": "collapsed", "order": 1},
-					{"artist": "Two Door Cinema Club", "decorator": "expanded", "order": 6},
-					{"artist": "Simian Mobile Disco Live", "order": 7, "firstOnLine": true}
+					{"artist": "The National", "marked": true, "decorator": "collapsed", "order": 1, "firstOnLine": true},
+					{"artist": "Two Door Cinema Club", "decorator": ["expanded", "wordExpandHeavy"], "order": 6},
+					{"artist": "Simian Mobile Disco Live", "decorator": "wordExpandMedium", "order": 7, "firstOnLine": true}
 				],
 				"lvl2": [
 					{"artist": "Paolo Nutini", "order": 1, "firstOnLine": true},
-					{"artist": "The Twilight Singers", "marked": true, "order": 6},
+					{"artist": "The Twilight Singers", "decorator": "wordExpandMedium", "marked": true, "order": 6},
 					{"artist": "Caribou", "marked": true, "decorator": "expanded", "order": 9},
 					{"artist": "Fat Freddy's Drop", "marked": true, "order": 12}
 				],
@@ -66,8 +66,8 @@
 					{"artist": "Foals", "decorator": "collapsed", "order": 3}
 				],
 				"lvl2": [
-					{"artist": "Youssou N’Dour", "decorator": "expanded", "order": 7, "firstOnLine": true},
-					{"artist": "Cut Copy", "marked": true, "decorator": "expanded", "order": 8},
+					{"artist": "Youssou N’Dour", "decorator": ["expanded", "wordExpandHeavy"], "order": 7, "firstOnLine": true},
+					{"artist": "Cut Copy", "decorator": ["expanded", "wordExpandHeavy"], "marked": true, "order": 8},
 					{"artist": "British Sea Power", "marked": true, "order": 11}
 				],
 				"lvl3": [
@@ -104,11 +104,11 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Prince", "decorator": "promoted", "order": 2}
+					{"artist": "Prince", "decorator": "promoted", "skipSeparator": true, "order": 2}
 				],
 				"lvl1": [
 					{"artist": "Primus", "decorator": "collapsed", "order": 2},
-					{"artist": "Big Boi", "marked": true, "decorator": "expanded", "order": 5, "firstOnLine": true}
+					{"artist": "Big Boi", "marked": true, "decorator": ["expanded", "wordExpandHeavy"], "order": 5, "firstOnLine": true}
 				],
 				"lvl2": [
 					{"artist": "Kate Nash", "marked": true, "order": 3}
@@ -150,12 +150,12 @@
 				],
 				"lvl1": [
 					{"artist": "deadmau5", "decorator": "collapsed", "order": 4},
-					{"artist": "The Wombats", "marked": true, "order": 8}
+					{"artist": "The Wombats", "decorator": "wordExpandMedium", "marked": true, "order": 8}
 				],
 				"lvl2": [
 					{"artist": "Hurts", "order": 2},
 					{"artist": "James Blake", "marked": true, "order": 4},
-					{"artist": "These New Puritans", "order": 5, "firstOnLine": true},
+					{"artist": "These New Puritans", "decorator": "wordExpandMedium", "order": 5, "firstOnLine": true},
 					{"artist": "Chromeo", "order": 10, "firstOnLine": true}
 				],
 				"lvl3": [
@@ -185,6 +185,7 @@
 	"lineupSettings": {
 		"sortType": "customOrder",
 		"mergeArtists": true,
-		"otherArtists": false
+		"otherArtists": false,
+		"separatorElement": true
 	}
 }

@@ -47,6 +47,10 @@ export default class Lineup {
 		return this.settings.otherArtists;
 	}
 
+	get separatorElement() {
+		return this.settings.separatorElement;
+	}
+
 	get rawLineup() {
 		return this._editionDetails.map((item) => item.lineup);
 	}

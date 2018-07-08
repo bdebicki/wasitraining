@@ -31,6 +31,7 @@ export const ARTIST_KEYS = {
 	ALIGNED: 'aligned',
 	LINE: 'line',
 	LEVEL: 'level',
+	SKIP_SEPARATOR: 'skipSeparator',
 };
 
 export const ARTIST_ALIGN = {
@@ -45,6 +46,8 @@ export const ARTIST_DECORATORS = {
 	UPPERCASE: 'uppercase',
 	CAPITALIZE: 'capitalize',
 	COMPRESSED: 'compressed',
+	WORD_EXPAND_MEDIUM: 'wordExpandMedium',
+	WORD_EXPAND_HEAVY: 'wordExpandHeavy',
 };
 
 export const ARTIST_SLICES_PROPS = {

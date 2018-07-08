@@ -7,6 +7,7 @@ import setIcon from '../../utils/setIcon';
 import icons from '../../utils/iconsLibrary';
 
 const DIALOGBOX_HEADLINE_TEXT = 'Lineup';
+// TODO: convert to function
 const lineupLvlToClassMap = {
 	[LINEUP_LEVELS.HEADLINERS]: LINEUP.ARTISTS_HEADLINERS_CLASS,
 	[LINEUP_LEVELS.LVL1]: LINEUP.ARTISTS_LVL1_CLASS,
@@ -28,6 +29,8 @@ const artistDecoratorToClassMap = {
 	[ARTIST_DECORATORS.UPPERCASE]: LINEUP.ARTIST_UPPERCASE_CLASS,
 	[ARTIST_DECORATORS.CAPITALIZE]: LINEUP.ARTIST_CAPITALIZE_CLASS,
 	[ARTIST_DECORATORS.COMPRESSED]: LINEUP.ARTIST_COMPRESSED_CLASS,
+	[ARTIST_DECORATORS.WORD_EXPAND_MEDIUM]: LINEUP.ARTIST_WORD_EXPAND_MEDIUM_CLASS,
+	[ARTIST_DECORATORS.WORD_EXPAND_HEAVY]: LINEUP.ARTIST_WORD_EXPAND_HEAVY_CLASS,
 };
 const artistSliceDecoratorToClassMap = {
 	[ARTIST_SLICES_STYLES.UP]: LINEUP.ARTIST_SLICE_UP_CLASS,
@@ -42,6 +45,18 @@ const artistSliceDecoratorToClassMap = {
 	[ARTIST_SLICES_STYLES.INDENTED]: LINEUP.ARTIST_SLICE_INDENTED_CLASS,
 	[ARTIST_SLICES_STYLES.PREVIOUS_LINE]: LINEUP.ARTIST_SLICE_PREVIOUS_LINE_CLASS,
 };
+
+function separatorElementLvlClassName(lvl) {
+	return `${LINEUP.ARTISTS_SEPARATOR_ELEMENT_CLASS}--${lvl}`;
+}
+
+function decoratorClassName(decorator) {
+	if (Array.isArray(decorator)) {
+		return decorator.map((decoratorType) => artistDecoratorToClassMap[decoratorType]);
+	}
+
+	return artistDecoratorToClassMap[decorator];
+}
 
 export default class LineupDetails extends Lineup {
 	static toggleLineup(e) {
@@ -114,7 +129,7 @@ export default class LineupDetails extends Lineup {
 	static getArtistReplacementDecorator(artist, artistName, target) {
 		const spanReplacement = document.createElement('span');
 		const spanCanceled = document.createElement('span');
-		const canceledArtistEl = target.querySelector(`li[data-canceled-artist='${artist[ARTIST_KEYS.REPLACEMENT]}']`); // eslint-disable-line max-len
+		const canceledArtistEl = target.querySelector(`li[data-canceled-artist='${artist[ARTIST_KEYS.REPLACEMENT]}']`);
 
 		spanReplacement.textContent = artistName;
 		spanReplacement.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
@@ -132,6 +147,7 @@ export default class LineupDetails extends Lineup {
 	}
 
 	static getArtistClassNames(artist, artistLvl) {
+		// TODO: move to external function
 		const lvlClass = () => {
 			if (artistLvl === LINEUP_LEVELS.HEADLINERS) {
 				return `${LINEUP.ARTIST_CLASS}--headliner`;
@@ -142,7 +158,7 @@ export default class LineupDetails extends Lineup {
 		let classNames = [
 			LINEUP.ARTIST_CLASS,
 			lvlClass(),
-			artist[ARTIST_KEYS.DECORATOR] ? artistDecoratorToClassMap[artist[ARTIST_KEYS.DECORATOR]] : null,
+			decoratorClassName(artist[ARTIST_KEYS.DECORATOR]),
 			artist[ARTIST_KEYS.MARKED] ? LINEUP.ARTIST_MARKED_CLASS : null,
 			artist[ARTIST_KEYS.MULTILINE] ? LINEUP.ARTIST_MULTILINE_CLASS : null,
 			artist[ARTIST_KEYS.ALIGNED] ? alignToClassMap[artist[ARTIST_KEYS.ALIGNED]] : null,
@@ -152,13 +168,15 @@ export default class LineupDetails extends Lineup {
 			artist[ARTIST_KEYS.REPLACEMENT] && typeof artist[ARTIST_KEYS.REPLACEMENT] !== 'string' ? LINEUP.ARTIST_REPLACEMENT_CLASS : null, // eslint-disable-line max-len
 		];
 
-		classNames = classNames.filter((className) => { // clean null records on array
-			if (className !== null) {
-				return className;
-			}
+		classNames = classNames
+			.reduce((acc, className) => acc.concat(className), [])
+			.filter((className) => { // clean null records on array
+				if (className !== null) {
+					return className;
+				}
 
-			return null;
-		});
+				return null;
+			});
 
 		return classNames;
 	}
@@ -177,64 +195,87 @@ export default class LineupDetails extends Lineup {
 		return artistName;
 	}
 
-	static isArtistFirstOnLine(artist, target, index) {
-		if ((artist[ARTIST_KEYS.FIRST_ON_LINE] && index > 0) || artist[ARTIST_KEYS.NEW_LINE]) {
-			const newLine = document.createElement('li');
+	static isArtistFirstOnLine(artist, target) {
+		const newLine = document.createElement('li');
 
-			newLine.classList.add(LINEUP.ARTISTS_NEW_LINE_ELEMENT_CLASS);
+		newLine.classList.add(LINEUP.ARTISTS_NEW_LINE_ELEMENT_CLASS);
 
-			target.appendChild(newLine);
-		}
+		target.appendChild(newLine);
 	}
 
 	static isArtistBreakLine(artist, target) {
-		if (artist[ARTIST_KEYS.BREAK_LINE]) {
-			const previousEl = target.querySelector('li:last-child');
+		const previousEl = target.querySelector('li:last-child');
 
-			previousEl.classList.add(LINEUP.ARTIST_NEXT_LINE_ARTIST_CLASS);
-			previousEl.dataset[ARTIST_KEYS.NEXT_LINE_ARTIST] = artist[ARTIST_KEYS.SLICE_DECORATOR][ARTIST_SLICES_PROPS.SLICE]; // eslint-disable-line max-len
-		}
+		previousEl.classList.add(LINEUP.ARTIST_NEXT_LINE_ARTIST_CLASS);
+		previousEl.dataset[ARTIST_KEYS.NEXT_LINE_ARTIST] = artist[ARTIST_KEYS.SLICE_DECORATOR][ARTIST_SLICES_PROPS.SLICE]; // eslint-disable-line max-len
 	}
 
 	static isArtistCanceled(artist, artistName, target) {
-		if (artist[ARTIST_KEYS.CANCELED]) {
-			const targetEl = target;
-			const span = document.createElement('span');
+		const targetEl = target;
+		const span = document.createElement('span');
 
-			span.classList.add(LINEUP.ARTIST_CANCELED_CLASS);
-			span.textContent = artistName;
-			targetEl.title = ARTIST_CANCELED;
-			targetEl.dataset.canceledArtist = artistName;
-			targetEl.appendChild(span);
-		}
+		span.classList.add(LINEUP.ARTIST_CANCELED_CLASS);
+		span.textContent = artistName;
+		targetEl.title = ARTIST_CANCELED;
+		targetEl.dataset.canceledArtist = artistName;
+		targetEl.appendChild(span);
 	}
 
-	static decorateArtist(artist, target, index, artistLvl) {
+	static addSeparatorElement(target, lvl, element = 'li') {
+		const separatorEl = document.createElement(element);
+
+		separatorEl.classList.add(LINEUP.ARTISTS_SEPARATOR_ELEMENT_CLASS, separatorElementLvlClassName(lvl));
+
+		target.appendChild(separatorEl);
+	}
+
+	/* eslint-disable complexity */
+	static decorateArtist(artist, target, index, lvl, separatorElement) {
 		const fragment = document.createDocumentFragment();
 		const li = document.createElement('li');
 		const artistObj = artist;
 		const artistName = LineupDetails.getArtistName(artistObj);
-		const artistClassNames = LineupDetails.getArtistClassNames(artistObj, artistLvl);
+		const artistClassNames = LineupDetails.getArtistClassNames(artistObj, lvl);
+		const hasSliceDecorator = artistObj[ARTIST_KEYS.SLICE_DECORATOR];
+		const hasSeparatorElement = separatorElement;
+		const isFirstOnLine = artistObj[ARTIST_KEYS.FIRST_ON_LINE];
+		const isNewLine = artistObj[ARTIST_KEYS.NEW_LINE];
+		const isBreakLine = artistObj[ARTIST_KEYS.BREAK_LINE];
+		const isCanceled = artistObj[ARTIST_KEYS.CANCELED];
+		const artistReplacement = artistObj[ARTIST_KEYS.REPLACEMENT];
 
-		LineupDetails.isArtistFirstOnLine(artistObj, fragment, index);
-		LineupDetails.isArtistBreakLine(artistObj, target);
-		LineupDetails.isArtistCanceled(artistObj, artistName, li);
+		if (hasSeparatorElement && !isFirstOnLine && !artistObj[ARTIST_KEYS.SKIP_SEPARATOR]) {
+			LineupDetails.addSeparatorElement(fragment, lvl);
+		}
 
-		if (artistObj[ARTIST_KEYS.SLICE_DECORATOR]) {
+		if ((isFirstOnLine && index > 0) || isNewLine) {
+			LineupDetails.isArtistFirstOnLine(artistObj, fragment);
+		}
+
+		if (isBreakLine) {
+			LineupDetails.isArtistBreakLine(artistObj, target);
+		}
+
+		if (isCanceled) {
+			LineupDetails.isArtistCanceled(artistObj, artistName, li);
+		}
+
+		if (hasSliceDecorator) {
 			li.append(LineupDetails.getArtistSliceDecorator(artistName, artistObj[ARTIST_KEYS.SLICE_DECORATOR]));
-		} else if (typeof artistObj[ARTIST_KEYS.REPLACEMENT] === 'string') {
+		} else if (typeof artistReplacement === 'string') {
 			LineupDetails.getArtistReplacementDecorator(artistObj, artistName, target);
-		} else if (!artistObj[ARTIST_KEYS.CANCELED]) {
+		} else if (!isCanceled) {
 			li.textContent = artistName;
 		}
 
 		li.classList.add(...artistClassNames);
 
-		if (typeof artistObj[ARTIST_KEYS.REPLACEMENT] !== 'string') {
+		if (typeof artistReplacement !== 'string') {
 			fragment.appendChild(li);
 			target.appendChild(fragment);
 		}
 	}
+	/* eslint-enable complexity */
 
 	getLineupByType() {
 		switch (this.mergeArtistsType) {
@@ -251,7 +292,7 @@ export default class LineupDetails extends Lineup {
 
 	decorateLineupByLevels() {
 		const fragment = document.createDocumentFragment();
-		const { lineup } = this;
+		const { lineup, separatorElement } = this;
 
 		Object.keys(lineup).forEach((lvl) => {
 			const ul = document.createElement('ul');
@@ -259,7 +300,7 @@ export default class LineupDetails extends Lineup {
 			ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[lvl]);
 
 			lineup[lvl].forEach((artist, index) => {
-				LineupDetails.decorateArtist(artist, ul, index, lvl);
+				LineupDetails.decorateArtist(artist, ul, index, lvl, separatorElement);
 			});
 
 			fragment.appendChild(ul);
@@ -270,7 +311,7 @@ export default class LineupDetails extends Lineup {
 
 	decorateMainByDaysAndMergeRest() {
 		const fragment = document.createDocumentFragment();
-		const { lineup } = this;
+		const { lineup, separatorElement } = this;
 
 		Object.keys(lineup).forEach((section) => {
 			if (section === LINEUP_LEVELS.DAILY_ARTISTS) {
@@ -286,7 +327,7 @@ export default class LineupDetails extends Lineup {
 
 					Object.keys(dailyArtists).forEach((dailyLvl) => {
 						dailyArtists[dailyLvl].forEach((dailyArtist, dailyArtistIndex) => {
-							LineupDetails.decorateArtist(dailyArtist, ul, dailyArtistIndex, dailyLvl);
+							LineupDetails.decorateArtist(dailyArtist, ul, dailyArtistIndex, dailyLvl, separatorElement);
 						});
 					});
 
@@ -299,7 +340,7 @@ export default class LineupDetails extends Lineup {
 
 				Object.keys(lineup[section]).forEach((lvl) => {
 					lineup[section][lvl].forEach((artist, index) => {
-						LineupDetails.decorateArtist(artist, ul, index, lvl);
+						LineupDetails.decorateArtist(artist, ul, index, lvl, separatorElement);
 					});
 				});
 
@@ -340,7 +381,7 @@ export default class LineupDetails extends Lineup {
 
 	decorateLineupCustomLevelsByDays() {
 		const fragment = document.createDocumentFragment();
-		const { lineup } = this;
+		const { lineup, separatorElement } = this;
 		const tempLineup = [];
 
 		// merge all day artists in one array
@@ -383,7 +424,7 @@ export default class LineupDetails extends Lineup {
 				ul.classList.add(LINEUP.ARTISTS_LINE_CLASS, `${LINEUP.ARTISTS_LINE_CLASS}--line${currentLine}`);
 
 				line.forEach((artist, artistIndex) => {
-					LineupDetails.decorateArtist(artist, ul, artistIndex, artist[ARTIST_KEYS.LEVEL]);
+					LineupDetails.decorateArtist(artist, ul, artistIndex, artist[ARTIST_KEYS.LEVEL], separatorElement);
 				});
 
 				section.appendChild(ul);

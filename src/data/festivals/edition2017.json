@@ -129,6 +129,7 @@
 	"lineupSettings": {
 		"sortType": "alphabeticalExceptHeadliners",
 		"mergeArtists": false,
-		"otherArtists": "... and otherss"
+		"otherArtists": "... and otherss",
+		"separatorElement": false
 	}
 }

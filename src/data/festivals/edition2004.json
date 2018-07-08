@@ -78,6 +78,7 @@
 	"lineupSettings": {
 		"sortType": false,
 		"mergeArtists": "customLevels",
-		"otherArtists": false
+		"otherArtists": false,
+		"separatorElement": false
 	}
 }
