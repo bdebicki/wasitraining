@@ -1,3 +1,76 @@
 #lineup {
-	grid-area: edition;
+	&,
+	&:before {
+		grid-area: edition;
+	}
+}
+
+.lineupArtists {
+	margin-top: 13px;
+
+	&__lvl {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	&__line {
+		display: flex;
+		align-items: baseline;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	&__newLine {
+		height: 0;
+		flex-basis: 100%;
+		overflow: hidden;
+	}
+
+	&__separatorElement {
+		display: inline-flex;
+		align-items: center;
+		line-height: 100%;
+	}
+
+	&__artist {
+		&--uppercase {
+			text-transform: uppercase;
+		}
+		&--canceled {
+			position: relative;
+			opacity: 0.5;
+
+			&:before {
+				content: '';
+				height: 1px;
+				position: absolute;
+				top: 50%;
+				right: 0;
+				left: 0;
+				background: currentColor;
+			}
+		}
+		&--nextLineArtist {
+			display: flex;
+
+			&:before {
+				content: attr(data-next-line-artist);
+				order: 3;
+			}
+
+			&:after {
+				order: 2;
+			}
+		}
+	}
+
+	&__slice {
+		&--previousLine {
+			display: none;
+		}
+		&--newLine {
+			display: block;
+		}
+	}
 }

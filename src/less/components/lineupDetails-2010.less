@@ -1,0 +1,116 @@
+.lineup--edition2010 {
+	.dialogbox__header:after {
+		background: @edition2010-leadColor;
+	}
+}
+
+.lineupArtists--edition2010 {
+	font-family: @edition2010-fontFamily;
+	font-weight: @edition2010-fontWeight;
+	text-transform: uppercase;
+
+	.lineupArtists {
+		&__lvl {
+			max-width: 500px;
+			justify-content: left;
+
+			&--headliners {
+				margin-bottom: @edition2010-lvlSpace-headliners;
+			}
+			&--lvl1 {
+				margin-bottom: @edition2010-lvlSpace-lvl1;
+			}
+			&--lvl2 {
+				margin-bottom: @edition2010-lvlSpace-lvl2;
+
+				.lineupArtists__artist--collapsed {
+					letter-spacing: @edition2010-textSpacing-lvl2Collapsed;
+				}
+			}
+			&--lvl3 {
+				margin-bottom: @edition2010-lvlSpace-lvl3;
+
+				.lineupArtists__artist--collapsed {
+					letter-spacing: @edition2010-textSpacing-lvl3Collapsed;
+				}
+			}
+		}
+
+		&__artist {
+			display: inline-grid;
+
+			&:not(.lineupArtists__artist--firstOnLine) {
+				grid-template-columns: auto auto;
+				grid-template-rows: auto;
+				grid-template-areas: "separator name";
+
+				&:before {
+					content: @edition2010-separatorStyle;
+					margin-right: @edition2010-separatorSpace;
+					margin-left: @edition2010-separatorSpace;
+					grid-area: separator;
+					color: @defaultFontColor;
+				}
+			}
+
+			&--headliner {
+				font-size: @edition2010-fontSize-headliners;
+				letter-spacing: @edition2010-textSpacing-headliners;
+				line-height: @edition2010-lineHeight-headliners;
+
+				&:before {
+					font-size: @edition2010-separatorSize-headliners;
+				}
+			}
+			&--lvl1 {
+				font-size: @edition2010-fontSize-lvl1;
+				letter-spacing: @edition2010-textSpacing-lvl1;
+				line-height: @edition2010-lineHeight-lvl1;
+
+				&:before {
+					font-size: @edition2010-separatorSize;
+				}
+			}
+			&--lvl2 {
+				font-size: @edition2010-fontSize-lvl2;
+				letter-spacing: @edition2010-textSpacing-lvl2;
+				line-height: @edition2010-lineHeight-lvl2;
+
+				&:before {
+					font-size: @edition2010-separatorSize;
+				}
+			}
+			&--lvl3 {
+				font-size: @edition2010-fontSize-lvl3;
+				letter-spacing: @edition2010-textSpacing-lvl3;
+				line-height: @edition2010-lineHeight-lvl3;
+
+				&:before {
+					font-size: @edition2010-separatorSize-lvl3;
+				}
+			}
+			&--lvl4 {
+				font-size: @edition2010-fontSize-lvl4;
+				letter-spacing: @edition2010-textSpacing-lvl4;
+				line-height: @edition2010-lineHeight-lvl4;
+
+				&:before {
+					font-size: @edition2010-separatorSize-lvl4;
+				}
+			}
+			&--others {
+				font-size: @edition2010-fontSize-others;
+				letter-spacing: @edition2010-textSpacing-others;
+				line-height: @edition2010-lineHeight-others;
+
+				&:before {
+					font-size: @edition2010-separatorSize-others;
+				}
+			}
+
+			&--marked {
+				color: @edition2010-fontColor-marked;
+			}
+		}
+	}
+}

@@ -39,7 +39,7 @@
 					{"artist": "Hati", "order": 5},
 					{"artist": "emitter_franczak", "order": 8},
 					{"artist": "Teatr Porywacze Ciał", "order": 11},
-					{"artist": "Teatr Gry i Ludzie", "order": 12},
+					{"artist": "Teatr Gry i Ludzie", "order": 12, "firstOnLine": true},
 					{"artist": "Mamadoo", "order": 14},
 					{"artist": "Fire Angels", "order": 15},
 					{"artist": "Pornohagen", "order": 17},
@@ -152,6 +152,7 @@
 	"lineupSettings": {
 		"sortType": "customOrder",
 		"mergeArtists": true,
-		"otherArtists": false
+		"otherArtists": false,
+		"separatorElement": false
 	}
 }

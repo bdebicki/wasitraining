@@ -1,0 +1,282 @@
+.lineup--edition2012 {
+	.dialogbox__header:after {
+		background: @edition2012-leadColor;
+	}
+}
+
+.lineupArtists--edition2012 {
+	font-family: @edition2012-fontFamily;
+	font-weight: @edition2012-fontWeight;
+	text-transform: uppercase;
+
+	.lineupArtists {
+		&__day {
+			width: 405px;
+
+			&:not(:last-child) {
+				margin-bottom: @edition2012-sectionsSpace;
+			}
+
+			&--day1 {
+				.lineupArtists__line {
+					&:last-of-type {
+						justify-content: space-between;
+					}
+
+					&--line1 {
+						margin-bottom: -8px;
+					}
+					&--line2 {
+						margin-bottom: -5px;
+					}
+				}
+
+				.lineupArtists__artist--headliner {
+					font-size: @edition2012-fontSize-headlinersDay1;
+					letter-spacing: @edition2012-textSpacing-headlinersDay1;
+					line-height: @edition2012-lineHeight-headlinersDay1;
+				}
+				.lineupArtists__artist--lvl1 {
+					.lineupArtists__slice--up {
+						margin-right: -5px;
+						position: relative;
+						top: 3px;
+						font-size: 25px;
+						letter-spacing: 13 * @textSpacingToEmMultiplier;
+						line-height: 100%;
+						vertical-align: top;
+					}
+				}
+				.lineupArtists__artist--lvl3 {
+					.lineupArtists__slice--up {
+						margin-right: -3px;
+						position: relative;
+						top: 2px;
+						font-size: 18px;
+						letter-spacing: 60 * @textSpacingToEmMultiplier;
+						line-height: 100%;
+						vertical-align: top;
+					}
+				}
+			}
+			&--day2 {
+				.lineupArtists__line {
+					&--line1 {
+						padding-top: 9px;
+						align-items: flex-end;
+					}
+					&--line3 {
+						margin-bottom: @edition2012-lineSpace-line3;
+					}
+				}
+
+				.lineupArtists__artist--headliner {
+					font-size: @edition2012-fontSize-headlinersDay2;
+					letter-spacing: @edition2012-textSpacing-headlinersDay2;
+					line-height: @edition2012-lineHeight-headlinersDay2;
+				}
+				.lineupArtists__artist--lvl2 {
+					.lineupArtists__slice--up {
+						margin-right: -3px;
+						position: relative;
+						top: 1px;
+						font-size: 19px;
+						letter-spacing: 30 * @textSpacingToEmMultiplier;
+						line-height: 100%;
+						vertical-align: top;
+					}
+				}
+				.lineupArtists__artist--lvl3 {
+					.lineupArtists__slice--middle {
+						margin-right: -3px;
+						margin-left: -4px;
+						font-size: 13px;
+						letter-spacing: 30 * @textSpacingToEmMultiplier;
+						line-height: 100%;
+						vertical-align: middle;
+					}
+				}
+				.lineupArtists__artist--multiline {
+					display: inline-grid;
+					position: relative;
+					top: -6px;
+					grid-column-gap: 0;
+					grid-row-gap: 0;
+					grid-template-columns: auto auto;
+					grid-template-rows: auto auto;
+					grid-template-areas: "artistPt1 artistPt1"
+										 "separator artistPt2";
+					line-height: 26px;
+				}
+				.lineupArtists__slice--compressed {
+					grid-area: artistPt1;
+					font-size: 31px;
+					font-weight: normal;
+					letter-spacing: 0;
+					text-align: right;
+				}
+				.lineupArtists__slice--collapsed {
+					margin-right: 3px;
+					grid-area: separator;
+					position: relative;
+					top: -1px;
+					font-size: 29px;
+					letter-spacing: -90 * @textSpacingToEmMultiplier;
+				}
+				.lineupArtists__slice--expanded {
+					grid-area: artistPt2;
+					font-size: 33px;
+					letter-spacing: 7 * @textSpacingToEmMultiplier;
+					text-align: right;
+				}
+			}
+			&--day3 {
+				.lineupArtists__artist--headliner {
+					font-size: @edition2012-fontSize-headlinersDay3;
+					letter-spacing: @edition2012-textSpacing-headlinersDay3;
+					line-height: @edition2012-lineHeight-headlinersDay3;
+				}
+				.lineupArtists__artist--lvl1 {
+					font-size: @edition2012-fontSize-lvl1Day3;
+					letter-spacing: @edition2012-textSpacing-lvl1Day3;
+					line-height: @edition2012-lineHeight-lvl1Day3;
+				}
+				.lineupArtists__artist--lvl4 {
+					margin-right: 0.94em;
+				}
+				.lineupArtists__artist--others {
+					+ .lineupArtists__artist--others {
+						margin-left: 0.15em;
+					}
+				}
+			}
+			&--day4 {
+				.lineupArtists__line {
+					&--line1 {
+						margin-bottom: -2px;
+					}
+				}
+
+				.lineupArtists__artist--headliner {
+					font-size: @edition2012-fontSize-headlinersDay4;
+					letter-spacing: @edition2012-textSpacing-headlinersDay4;
+					line-height: @edition2012-lineHeight-headlinersDay4;
+
+					.lineupArtists__slice--up {
+						margin-right: -6px;
+						position: relative;
+						top: 3px;
+						font-size: 14px;
+						letter-spacing: 0;
+						line-height: 100%;
+						vertical-align: top;
+					}
+				}
+				.lineupArtists__artist--lvl1 {
+					font-size: @edition2012-fontSize-lvl1Day4;
+					letter-spacing: @edition2012-textSpacing-lvl1Day4;
+					line-height: @edition2012-lineHeight-lvl1Day4;
+
+					.lineupArtists__slice--middle {
+						margin-right: -3px;
+						margin-left: -3px;
+						position: relative;
+						top: -2px;
+						font-size: 20px;
+						letter-spacing: 0;
+						line-height: 100%;
+						vertical-align: middle;
+					}
+					.lineupArtists__slice--lower {
+						margin-left: -3px;
+						font-size: 32px;
+						letter-spacing: 0;
+						line-height: 100%;
+					}
+				}
+				.lineupArtists__artist--lvl3 {
+					margin-right: 0.3em;
+					font-size: @edition2012-fontSize-lvl3Day4;
+					letter-spacing: @edition2012-textSpacing-lvl3Day4;
+					line-height: @edition2012-lineHeight-lvl3Day4;
+
+					.lineupArtists__slice--up {
+						margin-left: -1px;
+						position: relative;
+						top: 3px;
+						font-size: 15px;
+						letter-spacing: 25 * @textSpacingToEmMultiplier;
+						line-height: 100%;
+						vertical-align: top;
+					}
+				}
+				.lineupArtists__artist--others {
+					+ .lineupArtists__artist--others {
+						margin-left: 0.34em;
+					}
+					.lineupArtists__slice--middle {
+						position: relative;
+						top: -1px;
+						font-size: 10px;
+						letter-spacing: 0;
+						line-height: 100%;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+
+		&__line {
+			justify-content: space-between;
+
+			&:last-of-type {
+				justify-content: flex-end;
+			}
+
+			&--line1 {
+				margin-bottom: @edition2012-lineSpace-line1;
+
+				.lineupArtists__artist--expanded {
+					letter-spacing: @edition2012-textSpacing-lvl1Expanded;
+				}
+			}
+			&--line2 {
+				margin-bottom: @edition2012-lineSpace-line2;
+
+				.lineupArtists__artist--collapsed {
+					letter-spacing: @edition2012-textSpacing-lvl2Collapsed;
+				}
+				.lineupArtists__artist--expanded {
+					letter-spacing: @edition2012-textSpacing-lvl1Expanded;
+				}
+			}
+		}
+
+		&__artist {
+			&--lvl1 {
+				font-size: @edition2012-fontSize-lvl1;
+				line-height: @edition2012-lineHeight-lvl1;
+			}
+			&--lvl2 {
+				font-size: @edition2012-fontSize-lvl2;
+				letter-spacing: @edition2012-textSpacing-lvl2;
+				line-height: @edition2012-lineHeight-lvl2;
+			}
+			&--lvl3 {
+				font-size: @edition2012-fontSize-lvl3;
+				letter-spacing: @edition2012-textSpacing-lvl3;
+				line-height: @edition2012-lineHeight-lvl3;
+			}
+			&--lvl4 {
+				font-size: @edition2012-fontSize-lvl4;
+				letter-spacing: @edition2012-textSpacing-lvl4;
+				line-height: @edition2012-lineHeight-lvl4;
+			}
+			&--others {
+				font-size: @edition2012-fontSize-others;
+				letter-spacing: @edition2012-textSpacing-others;
+				line-height: @edition2012-lineHeight-others;
+			}
+		}
+	}
+}

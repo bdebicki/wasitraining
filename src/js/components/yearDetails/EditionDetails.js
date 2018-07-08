@@ -83,6 +83,7 @@ export default class EditionDetails extends Edition {
 
 	updateHeadliners(oldYear) {
 		const shortLineupContainer = document.querySelector(`.${EDITION.LINEUP_CLASS}`);
+
 		shortLineupContainer.classList.remove(`${EDITION.LINEUP_EDITION_CLASS}${oldYear}`);
 		shortLineupContainer.classList.add(`${EDITION.LINEUP_EDITION_CLASS}${this.editionYear}`);
 		document.querySelector(`.${EDITION.HEADLINERS_CLASS}`).textContent = ''; // to clear rain details list

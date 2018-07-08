@@ -20,7 +20,11 @@
 @edition2017-textSpacing-lvl2: -42 * @textSpacingToEmMultiplier;
 @edition2017-textSpacing-others: -10 * @textSpacingToEmMultiplier;
 @edition2017-separatorStyle: '/';
+@edition2017-separatorSpace: 0.3em;
 @edition2017-sectionsSpace: 13px;
+@edition2017-lvlSpace-headliners: 5px;
+@edition2017-lvlSpace-lvl1: 5px;
+@edition2017-lvlSpace-lvl2: 3px;
 
 // edition 2016
 @edition2016-leadColor: #964CA2;
@@ -42,16 +46,18 @@
 @edition2016-textSpacing-lvl2: 12 * @textSpacingToEmMultiplier;
 @edition2016-textSpacing-others: 10 * @textSpacingToEmMultiplier;
 @edition2016-separatorStyle: '|';
-@edition2016-sectionsSpace-headliners: 15px;
-@edition2016-sectionsSpace-lvl1: 18px;
-@edition2016-sectionsSpace-lvl2: 15px;
+@edition2016-separatorSpace: 0.23em;
+@edition2016-lvlSpace-headliners: 8px;
+@edition2016-lvlSpace-lvl1: 10px;
+@edition2016-lvlSpace-lvl2: 9px;
 
 // edition 2015
 @edition2015-leadColor: #6A259B;
 @edition2015-fontFamily: 'Stag', @fontFamily-base;
 @edition2015-fontWeight: normal;
-@edition2015-fontWeight-headliners: bold;
 @edition2015-fontWeight-canceled: 200;
+@edition2015-fontWeight-headliners: bold;
+@edition2015-fontWeight-promoted: bold;
 @edition2015-fontSize-headliners: 26px;
 @edition2015-fontSize-lvl1: 21px;
 @edition2015-fontSize-lvl1Collapsed: 20px;
@@ -66,12 +72,17 @@
 @edition2015-textSpacing-lvl1Collapsed: 0;
 @edition2015-textSpacing-lvl2: 11 * @textSpacingToEmMultiplier;
 @edition2015-textSpacing-others: 5 * @textSpacingToEmMultiplier;
-@edition2015-sectionsSpace: 24px;
+@edition2015-textSpacing-canceled: -40 * @textSpacingToEmMultiplier;
+@edition2015-separatorSpace: 0.15em;
+@edition2015-sectionsSpace: 19px;
+@edition2015-lvlSpace-headliners: -2px;
+@edition2015-lvlSpace-lvl1: 0;
+@edition2015-lvlSpace-lvl2: 1px;
 
 // edition 2014
 @edition2014-leadColor: #00ADCA;
 @edition2014-fontColor-headliners: #1C3395;
-@edition2014-fontFamily: 'Bebs Neue', @fontFamily-base;
+@edition2014-fontFamily: 'Bebas Neue', @fontFamily-base;
 @edition2014-fontFamily-headliners: 'Stag', @fontFamily-base;
 @edition2014-fontWeight: normal;
 @edition2014-fontWeight-headliners: bold;
@@ -96,8 +107,10 @@
 @edition2014-textSpacing-lvl2Replacement: 15 * @textSpacingToEmMultiplier;
 @edition2014-textSpacing-others: 5 * @textSpacingToEmMultiplier;
 @edition2014-separatorStyle: ',';
-@edition2014-sectionsSpace: 10px;
-@edition2014-sectionsSpace-headliners: 22px;
+@edition2014-separatorSpace: 0.15em;
+@edition2014-lvlSpace-headliners: 10px;
+@edition2014-lvlSpace-lvl1: 2px;
+@edition2014-lvlSpace-lvl2: 5px;
 
 // edition 2013
 @edition2013-leadColor: #BEF5FF;
@@ -111,15 +124,20 @@
 @edition2013-lineHeight-lvl1: 20px;
 @edition2013-lineHeight-lvl2: 16px;
 @edition2013-lineHeight-others: 13px;
+@edition2013-textSpacing-headliners-collapsed: -30 * @textSpacingToEmMultiplier;
 @edition2013-textSpacing-lvl1: -10 * @textSpacingToEmMultiplier;
 @edition2013-textSpacing-lvl2: 20 * @textSpacingToEmMultiplier;
+@edition2013-textSpacing-others-collapsed: -30 * @textSpacingToEmMultiplier;
 @edition2013-separatorStyle: ',';
-@edition2013-sectionsSpace: 21px;
+@edition2013-separatorSpace: 0.15em;
+@edition2013-sectionsSpace: 20px;
+@edition2013-lvlSpace-headliners: -2px;
+@edition2013-lvlSpace-lvl1: 1px;
 
 // edition 2012
 @edition2012-leadColor: #A1C9E2;
 @edition2012-fontFamily: 'Swiss 911', @fontFamily-base;
-@edition2012-fontWeight: normal;
+@edition2012-fontWeight: 900;
 @edition2012-fontSize-headlinersDay1: 50px;
 @edition2012-fontSize-headlinersDay2: @edition2012-fontSize-lvl1;
 @edition2012-fontSize-headlinersDay3: 43px;
@@ -132,18 +150,18 @@
 @edition2012-fontSize-lvl3Day4: 26px;
 @edition2012-fontSize-lvl4: 23px;
 @edition2012-fontSize-others: 19px;
-@edition2012-lineHeight-headlinersDay1: 50px;
-@edition2012-lineHeight-headlinersDay2: @edition2012-lineHeight-lvl1;
-@edition2012-lineHeight-headlinersDay3: 43px;
-@edition2012-lineHeight-headlinersDay4: 39px;
-@edition2012-lineHeight-lvl1: 47px;
-@edition2012-lineHeight-lvl1Day3: 40px;
-@edition2012-lineHeight-lvl1Day4: @edition2012-lineHeight-headlinersDay4;
-@edition2012-lineHeight-lvl2: 31px;
-@edition2012-lineHeight-lvl3: 28px;
-@edition2012-lineHeight-lvl3Day4: 26px;
-@edition2012-lineHeight-lvl4: 24px;
-@edition2012-lineHeight-others: 19px;
+@edition2012-lineHeight-headlinersDay1: 100%;
+@edition2012-lineHeight-headlinersDay2: 100%;
+@edition2012-lineHeight-headlinersDay3: 100%;
+@edition2012-lineHeight-headlinersDay4: 100%;
+@edition2012-lineHeight-lvl1: 100%;
+@edition2012-lineHeight-lvl1Day3: 100%;
+@edition2012-lineHeight-lvl1Day4: 100%;
+@edition2012-lineHeight-lvl2: 100%;
+@edition2012-lineHeight-lvl3: 100%;
+@edition2012-lineHeight-lvl3Day4: 100%;
+@edition2012-lineHeight-lvl4: 100%;
+@edition2012-lineHeight-others: 100%;
 @edition2012-textSpacing-headlinersDay1: 13 * @textSpacingToEmMultiplier;
 @edition2012-textSpacing-headlinersDay2: 13 * @textSpacingToEmMultiplier;
 @edition2012-textSpacing-headlinersDay3: -20 * @textSpacingToEmMultiplier;
@@ -158,7 +176,10 @@
 @edition2012-textSpacing-lvl3Day4: 0;
 @edition2012-textSpacing-lvl4: 23 * @textSpacingToEmMultiplier;
 @edition2012-textSpacing-others: 7 * @textSpacingToEmMultiplier;
-@edition2012-sectionsSpace: 20px;
+@edition2012-sectionsSpace: 10px;
+@edition2012-lineSpace-line1: -7px;
+@edition2012-lineSpace-line2: -4px;
+@edition2012-lineSpace-line3: -2px;
 
 // edition 2011
 @edition2011-leadColor: #004F24;
@@ -185,7 +206,16 @@
 @edition2011-textSpacing-lvl2Collapsed: -40 * @textSpacingToEmMultiplier;
 @edition2011-textSpacing-lvl3: -85 * @textSpacingToEmMultiplier;
 @edition2011-textSpacing-others: -75 * @textSpacingToEmMultiplier;
+@edition2011-wordSpacing-lvl1Medium: 0.25em;
+@edition2011-wordSpacing-lvl1Heavy: 0.5em;
+@edition2011-wordSpacing-lvl2Medium: 0.4em;
+@edition2011-wordSpacing-lvl2Heavy: 0.7em;
 @edition2011-separatorStyle: '•';
+@edition2011-separatorSize-headliners: 20px;
+@edition2011-separatorSize-lvl1: 16px;
+@edition2011-separatorSize-lvl2: 13px;
+@edition2011-separatorSize-lvl3: 10px;
+@edition2011-separatorSize-others: 8px;
 @edition2011-sectionsSpace-headliners: 22px;
 @edition2011-sectionsSpace-lvl1: 16px;
 @edition2011-sectionsSpace-lvl2: 11px;
@@ -217,11 +247,16 @@
 @edition2010-textSpacing-lvl4: -29 * @textSpacingToEmMultiplier;
 @edition2010-textSpacing-others: -60 * @textSpacingToEmMultiplier;
 @edition2010-separatorStyle: '•';
-@edition2010-sectionsSpace-headliners: 15px;
-@edition2010-sectionsSpace-lvl1: 17px;
-@edition2010-sectionsSpace-lvl2: 15px;
-@edition2010-sectionsSpace-lvl3: 12px;
-@edition2010-sectionsSpace-lvl4: 5px;
+@edition2010-separatorSpace: 0.15em;
+@edition2010-separatorSize: 16px;
+@edition2010-separatorSize-headliners: 17px;
+@edition2010-separatorSize-lvl3: 14px;
+@edition2010-separatorSize-lvl4: 11px;
+@edition2010-separatorSize-others: 9px;
+@edition2010-lvlSpace-headliners: 3px;
+@edition2010-lvlSpace-lvl1: 5px;
+@edition2010-lvlSpace-lvl2: 4px;
+@edition2010-lvlSpace-lvl3: 4px;
 
 // edition 2009
 @edition2009-leadColor: #004F24;
@@ -230,7 +265,7 @@
 @edition2009-fontWeight: normal;
 @edition2009-fontSize-headliners: 32px;
 @edition2009-fontSize-lvl1: 30px;
-@edition2009-fontSize-lvl2: 24px;
+@edition2009-fontSize-lvl2: 23px;
 @edition2009-fontSize-lvl3: 20px;
 @edition2009-fontSize-lvl4: 14px;
 @edition2009-fontSize-others: 11px;
@@ -244,8 +279,20 @@
 @edition2009-textSpacing-lvl2Collapsed: -25 * @textSpacingToEmMultiplier;
 @edition2009-textSpacing-lvl4: 10 * @textSpacingToEmMultiplier;
 @edition2009-separatorStyle: '•';
-@edition2009-sectionsSpace: 19px;
-@edition2009-sectionsSpace-lvl1: 24px;
+@edition2009-separatorSpace: 0.15em;
+@edition2009-separatorSpace-headlinersPromoted: 0.4em;
+@edition2009-separatorSpace-headliners: 0.15em;
+@edition2009-separatorSpace-lvl1: 0.4em;
+@edition2009-separatorSize: 16px;
+@edition2009-separatorSize-headliners: 17px;
+@edition2009-separatorSize-lvl3: 14px;
+@edition2009-separatorSize-lvl4: 11px;
+@edition2009-separatorSize-others: 9px;
+@edition2009-lvlSpace-headliners: 5px;
+@edition2009-lvlSpace-lvl1: 13px;
+@edition2009-lvlSpace-lvl2: 10px;
+@edition2009-lvlSpace-lvl3: 12px;
+@edition2009-lvlSpace-lvl4: 12px;
 
 // edition 2008
 @edition2008-leadColor: #004F24;
@@ -270,8 +317,17 @@
 @edition2008-textSpacing-others: 20 * @textSpacingToEmMultiplier;
 @edition2008-separatorStyle: '•';
 @edition2008-separatorStyle-others: ',';
-@edition2008-sectionsSpace: 14px;
-@edition2008-sectionsSpace-headliners: 26px;
+@edition2008-separatorSpace: 0.2em;
+@edition2008-separatorSpace-headliners: 0.3em;
+@edition2008-separatorSize: 16px;
+@edition2008-separatorSize-headliners: 17px;
+@edition2008-separatorSize-lvl2: 14px;
+@edition2008-separatorSize-lvl3: 10px;
+@edition2008-separatorSize-others: inherit;
+@edition2008-lvlSpace-headliners: 7px;
+@edition2008-lvlSpace-lvl1: 3px;
+@edition2008-lvlSpace-lvl2: 6px;
+@edition2008-lvlSpace-lvl3: 7px;
 
 // edition 2007
 @edition2007-leadColor: #004F24;
@@ -295,21 +351,27 @@
 @edition2007-textSpacing-lvl2: 40 * @textSpacingToEmMultiplier;
 @edition2007-textSpacing-others: 5;
 @edition2007-separatorStyle: ',';
-@edition2007-separatorStyle-headliners: '•';
-@edition2007-separatorStyle-lvl1: '•';
-@edition2007-separatorStyle-lvl2: '•';
-@edition2007-sectionsSpace-headliners: 23px;
-@edition2007-sectionsSpace-lvl1: 22px;
-@edition2007-sectionsSpace-lvl2: 28px;
-@edition2007-sectionsSpace-lvl3: 23px;
-@edition2007-sectionsSpace-lvl4: 9px;
+@edition2007-separatorStyle-alternative: '•';
+@edition2007-separatorSpace: 0.27em;
+@edition2007-separatorSpace-headliners: -0.09em;
+@edition2007-separatorSpace-lvl1: -0.01em;
+@edition2007-separatorSpace-lvl2: -0.05em;
+@edition2007-separatorSize: inherit;
+@edition2007-separatorSize-headliners: 36px;
+@edition2007-separatorSize-lvl1: 19px;
+@edition2007-separatorSize-lvl2: 14px;
+@edition2007-lvlSpace-headliners: 9px;
+@edition2007-lvlSpace-lvl1: 10px;
+@edition2007-lvlSpace-lvl2: 3px;
+@edition2007-lvlSpace-lvl3: 8px;
+@edition2007-lvlSpace-lvl4: 6px;
 
 // edition 2006
 @edition2006-leadColor: #004F24;
 @edition2006-fontFamily: 'Isonorm Becker', @fontFamily-base;
 @edition2006-fontWeight: normal;
 @edition2006-fontSize-headliners: 35px;
-@edition2006-fontSize-headlinersSufix: 20px;
+@edition2006-fontSize-headlinersSlice: 20px;
 @edition2006-fontSize-lvl2: 20px;
 @edition2006-fontSize-lvl2Canceled: 18px;
 @edition2006-fontSize-others: 12px;
@@ -317,14 +379,14 @@
 @edition2006-lineHeight-lvl2: 20px;
 @edition2006-lineHeight-others: 15px;
 @edition2006-textSpacing-headliners: 10 * @textSpacingToEmMultiplier;
-@edition2006-textSpacing-headlinersSufix: 0 * @textSpacingToEmMultiplier;
+@edition2006-textSpacing-headlinersSlice: 0 * @textSpacingToEmMultiplier;
 @edition2006-textSpacing-lvl2: 25 * @textSpacingToEmMultiplier;
 @edition2006-textSpacing-lvl2Canceled: -10 * @textSpacingToEmMultiplier;
 @edition2006-textSpacing-others: 15 * @textSpacingToEmMultiplier;
 @edition2006-separatorStyle: ',';
-@edition2006-sectionsSpace-headliners: 31px;
-@edition2006-sectionsSpace-lvl2: 6px;
-@edition2006-sectionsSpace-lvl2Top: 23px;
+@edition2007-separatorStyle-daily: '•';
+@edition2007-separatorSpace: 0.24em;
+@edition2006-lvlSpace-daily: 13px;
 
 // edition 2005
 @edition2005-leadColor: #004F24;
@@ -336,16 +398,21 @@
 @edition2005-fontSize-others: 13px;
 @edition2005-lineHeight-headliners: 34px;
 @edition2005-lineHeight-headlinersPromoted: 37px;
-@edition2005-lineHeight-lvl1: 34px;
-@edition2005-lineHeight-lvl2: 16px; //?20px
-@edition2005-lineHeight-others: 16px;
+@edition2005-lineHeight-lvl1: 28px;
+@edition2005-lineHeight-lvl2: 16px;
+@edition2005-lineHeight-others: 100%;
 @edition2005-textSpacing-headlinersPromoted: 20 * @textSpacingToEmMultiplier;
 @edition2005-textSpacing-lvl1: 20 * @textSpacingToEmMultiplier;
 @edition2005-textSpacing-lvl2: 60 * @textSpacingToEmMultiplier;
 @edition2005-separatorStyle: ',';
-@edition2005-separatorStyle-headliners: '•';
-@edition2005-sectionsSpace-headliners: 41px;
-@edition2005-sectionsSpace-othersTop: 30px;
+@edition2005-separatorStyle-daily: '•';
+@edition2007-separatorSize: inherit;
+@edition2007-separatorSize-daily: 22px;
+@edition2005-separatorSpace: 0.2em;
+@edition2005-separatorSpace-daily: 0.34em;
+@edition2005-separatorSpace-lvl2: 0.1em;
+@edition2006-lvlSpace-daily: 32px;
+@edition2006-lvlSpace-others: 24px;
 
 // edition 2004
 @edition2004-leadColor: #004F24;
@@ -362,10 +429,13 @@
 @edition2004-lineHeight-lvl3: 15px;
 @edition2004-lineHeight-others: 15px;
 @edition2004-separatorStyle: '•';
-@edition2004-sectionsSpace-headliners: 12px;
-@edition2004-sectionsSpace-lvl1: 12px;
-@edition2004-sectionsSpace-lvl3: 20px;
-@edition2004-sectionsSpace-others: 20px;
+@edition2004-separatorSize: 12px;
+@edition2004-separatorSize-headliners: 30px;
+@edition2004-separatorSpace: 0.25em;
+@edition2004-sectionSpace: 43px;
+@edition2004-lineSpace-line2: 12px;
+@edition2004-lineSpace-line3: 6px;
+@edition2004-lineSpace-line4: 13px;
 
 // edition 2003
 @edition2003-leadColor: #004F24;
@@ -379,8 +449,8 @@
 @edition2003-lineHeight-others: 12px;
 @edition2003-textSpacing-headliners: -40 * @textSpacingToEmMultiplier;
 @edition2003-textSpacing-lvl1: -25 * @textSpacingToEmMultiplier;
-@edition2003-sectionsSpace-headliners: 18px;
-@edition2003-sectionsSpace-lvl1: 11px;
+@edition2003-lvlSpace-headliners: 4px;
+@edition2003-lvlSpace-lvl1: 2px;
 
 // edition 2002
 @edition2002-leadColor: #004F24;
@@ -392,4 +462,5 @@
 @edition2002-lineHeight-others: 24px;
 @edition2002-textSpacing-others: 10 * @textSpacingToEmMultiplier;
 @edition2002-separatorStyle: '/';
-@edition2002-sectionsSpace: 65;
+@edition2002-separatorSpace: 0.3em;
+@edition2002-lvlSpace-hedliners: 25px;

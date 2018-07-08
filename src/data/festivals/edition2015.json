@@ -162,6 +162,7 @@
 	"lineupSettings": {
 		"sortType": "alphabeticalExceptHeadliners",
 		"mergeArtists": false,
-		"otherArtists": "... and many others"
+		"otherArtists": "... and many others",
+		"separatorElement": false
 	}
 }

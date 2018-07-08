@@ -1,0 +1,51 @@
+.lineup--edition2002 {
+	.dialogbox__header:after {
+		background: @edition2002-leadColor;
+	}
+}
+
+.lineupArtists--edition2002 {
+	font-family: @edition2002-fontFamily;
+	font-weight: @edition2002-fontWeight;
+	text-transform: uppercase;
+
+	.lineupArtists {
+		&__lvl {
+			max-width: 315px;
+			justify-content: left;
+
+			&--headliners {
+				margin-bottom: @edition2002-lvlSpace-hedliners;
+			}
+
+			&--others {
+				.lineupArtists__artist {
+					&:not(.lineupArtists__artist--firstOnLine) {
+						&:before {
+							content: @edition2002-separatorStyle;
+							margin-right: @edition2002-separatorSpace;
+							margin-left: @edition2002-separatorSpace;
+						}
+					}
+					&--firstOnLine {
+						&:nth-child(2n) {
+							margin-left: 41px;
+						}
+					}
+				}
+			}
+		}
+
+		&__artist {
+			&--headliner {
+				font-size: @edition2002-fontSize-headliners;
+				line-height: @edition2002-lineHeight-headliners;
+			}
+			&--others {
+				font-size: @edition2002-fontSize-others;
+				letter-spacing: @edition2002-textSpacing-others;
+				line-height: @edition2002-lineHeight-others;
+			}
+		}
+	}
+}
