@@ -1,4 +1,5 @@
-import { LINEUP_LEVELS, ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_KEYS, ARTIST_ALIGN } from './lineup';
+import { LINEUP_LEVELS } from './lineup';
+import { ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_KEYS, ARTIST_ALIGN } from './artist';
 
 export const globalClassBuilders = {
 	active: 'isActive',

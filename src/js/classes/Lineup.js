@@ -1,4 +1,5 @@
-import { LINEUP_LEVELS, ARTIST_KEYS } from '../enums/lineup';
+import { ARTIST_KEYS } from '../enums/artist';
+import { LINEUP_LEVELS } from '../enums/lineup';
 
 /**
  * sort types:

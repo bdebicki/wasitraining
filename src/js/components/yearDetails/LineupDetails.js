@@ -1,14 +1,14 @@
 import Lineup from '../../classes/Lineup';
 import { LINEUP, DIALOGBOX, LINK, EDITION } from '../../enums/elementHandlers';
 import {
-	LINEUP_LEVELS,
 	ARTIST_KEYS,
 	ARTIST_DECORATORS,
 	ARTIST_SLICES_STYLES,
 	ARTIST_SLICES_PROPS,
 	ARTIST_ALIGN,
-} from '../../enums/lineup';
+} from '../../enums/artist';
 import { ARTIST_CANCELED } from '../../enums/content';
+import { LINEUP_LEVELS } from '../../enums/lineup';
 import * as dialogbox from '../../utils/addDialogbox';
 import setIcon from '../../utils/setIcon';
 import icons from '../../utils/iconsLibrary';
