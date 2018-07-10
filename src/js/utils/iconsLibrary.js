@@ -1,4 +1,4 @@
-import { ICONS } from '../elementHandlers/elementHandlers';
+import { ICONS } from '../elementHandlers/icons';
 
 const xmlns = 'http://www.w3.org/2000/svg';
 

@@ -1,11 +1,5 @@
 import globalClassBuilders from './globalClassBuilders';
-
-const iconClassBuilder = 'icon';
-export const ICONS = {
-	PLUS: `${iconClassBuilder}--plus`,
-	CLOSE: `${iconClassBuilder}--close`,
-	CLOSE_RECT: `${iconClassBuilder}--close__line`,
-};
+import { iconClassBuilder } from './icons';
 
 const linkClassBuilder = 'link';
 export const LINK = {
