@@ -8,9 +8,10 @@ import {
 } from '../../enums/artist';
 import { ARTIST_CANCELED } from '../../enums/content';
 import LINEUP_LEVELS from '../../enums/lineupLevels';
-import { DIALOGBOX, LINK } from '../../elementHandlers/elementHandlers';
+import { DIALOGBOX } from '../../elementHandlers/elementHandlers';
 import EDITION from '../../elementHandlers/edition';
 import LINEUP from '../../elementHandlers/lineup';
+import LINK from '../../elementHandlers/link';
 import * as dialogbox from '../../utils/addDialogbox';
 import setIcon from '../../utils/setIcon';
 import icons from '../../utils/iconsLibrary';

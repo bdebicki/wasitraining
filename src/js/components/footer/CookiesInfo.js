@@ -1,4 +1,4 @@
-import { LINK } from '../../elementHandlers/elementHandlers';
+import LINK from '../../elementHandlers/link';
 import FOOTER from '../../elementHandlers/footer';
 import { COOKIES } from '../../enums/content';
 
