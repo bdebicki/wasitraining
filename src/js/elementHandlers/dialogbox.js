@@ -1,7 +1,7 @@
 import globalClassBuilders from './globalClassBuilders';
 
 const dialogboxClassBuilder = 'dialogbox';
-export const DIALOGBOX = {
+const DIALOGBOX = {
 	BASIC_CLASS: dialogboxClassBuilder,
 	STRETCHED_CLASS: `${dialogboxClassBuilder}--stretched`,
 	BG_STRETCHED_CLASS: `${dialogboxClassBuilder}--bg-stretched`,
@@ -12,3 +12,5 @@ export const DIALOGBOX = {
 	CONTENT_CLASS: `${dialogboxClassBuilder}__content`,
 	INACTIVE_HELPER_CLASS: `${dialogboxClassBuilder}__inactive-helper`,
 };
+
+export { DIALOGBOX as default };
