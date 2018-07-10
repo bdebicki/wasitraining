@@ -1,6 +1,6 @@
 import DATA_URL from '../../enums/data';
 import { TITLE } from '../../enums/content';
-import { HEADER } from '../../enums/elementHandlers';
+import { HEADER } from '../../elementHandlers/elementHandlers';
 import VIEW_TYPES from '../../enums/viewTypes';
 import IntroView from '../../views/IntroView';
 import { updateComponentByViewType } from '../../utils/updateView';

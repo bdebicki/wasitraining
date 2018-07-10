@@ -1,4 +1,5 @@
-import { LAYOUT, HEADER } from '../enums/elementHandlers';
+import { HEADER } from '../elementHandlers/elementHandlers';
+import LAYOUT from '../elementHandlers/layout';
 import VIEW_TYPES from '../enums/viewTypes';
 import Header from '../components/header/Header';
 import Title from '../components/header/Title';

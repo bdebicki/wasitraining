@@ -1,4 +1,4 @@
-import { ICONS } from '../enums/elementHandlers';
+import { ICONS } from '../elementHandlers/elementHandlers';
 
 const xmlns = 'http://www.w3.org/2000/svg';
 

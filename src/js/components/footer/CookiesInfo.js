@@ -1,4 +1,4 @@
-import { FOOTER, LINK } from '../../enums/elementHandlers';
+import { FOOTER, LINK } from '../../elementHandlers/elementHandlers';
 import { COOKIES } from '../../enums/content';
 
 export default class CookiesInfo {

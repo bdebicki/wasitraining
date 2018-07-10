@@ -1,4 +1,4 @@
-import { LINK, RAIN } from '../../enums/elementHandlers';
+import { LINK, RAIN } from '../../elementHandlers/elementHandlers';
 import { addVideo, addSVGmask, svgType } from '../../utils/addElement';
 import * as dialogbox from '../../utils/addDialogbox';
 import setIcon from '../../utils/setIcon';

@@ -1,4 +1,4 @@
-import { DIALOGBOX, LINK } from '../enums/elementHandlers';
+import { DIALOGBOX, LINK } from '../elementHandlers/elementHandlers';
 import setIcon from './setIcon';
 import icons from './iconsLibrary';
 

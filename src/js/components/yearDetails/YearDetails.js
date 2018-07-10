@@ -1,4 +1,4 @@
-import { LAYOUT } from '../../enums/elementHandlers';
+import LAYOUT from '../../elementHandlers/layout';
 import EditionDetails from './EditionDetails';
 import RainDetails from './RainDetails';
 import LineupDetails from './LineupDetails';

@@ -1,5 +1,4 @@
 import Lineup from '../../classes/Lineup';
-import { LINEUP, DIALOGBOX, LINK, EDITION } from '../../enums/elementHandlers';
 import {
 	ARTIST_KEYS,
 	ARTIST_DECORATORS,
@@ -9,6 +8,7 @@ import {
 } from '../../enums/artist';
 import { ARTIST_CANCELED } from '../../enums/content';
 import { LINEUP_LEVELS } from '../../enums/lineup';
+import { LINEUP, DIALOGBOX, LINK, EDITION } from '../../elementHandlers/elementHandlers';
 import * as dialogbox from '../../utils/addDialogbox';
 import setIcon from '../../utils/setIcon';
 import icons from '../../utils/iconsLibrary';
