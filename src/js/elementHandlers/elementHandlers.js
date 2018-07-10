@@ -1,10 +1,4 @@
 import globalClassBuilders from './globalClassBuilders';
-import LAYOUT from './layout';
-
-const bgClassBuilder = LAYOUT.BG_VIDEO_ID;
-export const BG = {
-	VIDEO_CLASS: `${bgClassBuilder}__video`,
-};
 
 const iconClassBuilder = 'icon';
 export const ICONS = {

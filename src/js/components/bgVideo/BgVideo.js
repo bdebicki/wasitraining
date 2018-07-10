@@ -1,4 +1,4 @@
-import { BG } from '../../elementHandlers/elementHandlers';
+import BG from '../../elementHandlers/background';
 import LAYOUT from '../../elementHandlers/layout';
 import { addVideo } from '../../utils/addElement';
 
