@@ -1,5 +1,5 @@
 import { TITLE } from '../../enums/content';
-import { HEADER } from '../../elementHandlers/elementHandlers';
+import HEADER from '../../elementHandlers/header';
 import LAYOUT from '../../elementHandlers/layout';
 import { updateComponentByViewType } from '../../utils/updateView';
 import Title from './Title';

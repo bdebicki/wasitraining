@@ -3,17 +3,6 @@ import { ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_KEYS, ARTIST_ALIGN } fr
 import globalClassBuilders from './globalClassBuilders';
 import LAYOUT from './layout';
 
-const headerClassBuilders = {
-	main: LAYOUT.HEADER_ID,
-	title: 'pageName',
-};
-export const HEADER = {
-	INTRO_HEADER_CLASS: `${headerClassBuilders.main}--introHeader`,
-	TITLE_CLASS: headerClassBuilders.title,
-	TITLE_HEADER_CLASS: `${headerClassBuilders.title}--introHeader`,
-	TITLE_LINK_CLASS: `${headerClassBuilders.title}__link`,
-};
-
 const aboutClassBuilder = 'aboutSection';
 export const FOOTER = {
 	COOKIES_CLASS: 'cookiesSection',

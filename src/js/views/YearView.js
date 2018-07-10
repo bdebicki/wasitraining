@@ -1,4 +1,4 @@
-import { HEADER } from '../elementHandlers/elementHandlers';
+import HEADER from '../elementHandlers/header';
 import LAYOUT from '../elementHandlers/layout';
 import VIEW_TYPES from '../enums/viewTypes';
 import Header from '../components/header/Header';
