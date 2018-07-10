@@ -1,4 +1,5 @@
-import { FOOTER, LINK } from '../../elementHandlers/elementHandlers';
+import { LINK } from '../../elementHandlers/elementHandlers';
+import FOOTER from '../../elementHandlers/footer';
 import { COPYRIGHTS } from '../../enums/content';
 
 export default class MoreInfo {

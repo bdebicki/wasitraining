@@ -3,13 +3,6 @@ import { ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_KEYS, ARTIST_ALIGN } fr
 import globalClassBuilders from './globalClassBuilders';
 import LAYOUT from './layout';
 
-const aboutClassBuilder = 'aboutSection';
-export const FOOTER = {
-	COOKIES_CLASS: 'cookiesSection',
-	ABOUT_SECTION_CLASS: aboutClassBuilder,
-	COPYRIGHTS_CLASS: `${aboutClassBuilder}__copyrights`,
-	ABOUT_LINK_CLASS: `${aboutClassBuilder}__aboutLink`,
-};
 
 const timelineClassBuilders = {
 	mainTimelineItem: `${LAYOUT.MAIN_TIMELINE_ID}Item`,
