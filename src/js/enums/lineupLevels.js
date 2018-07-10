@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/prefer-default-export
-export const LINEUP_LEVELS = {
+const LINEUP_LEVELS = {
 	HEADLINERS: 'headliners',
 	LVL1: 'lvl1',
 	LVL2: 'lvl2',
@@ -9,3 +8,5 @@ export const LINEUP_LEVELS = {
 	DAILY_ARTISTS: 'dailyArtists',
 	ALL_OTHERS: 'allOthers',
 };
+
+export { LINEUP_LEVELS as default };

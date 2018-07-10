@@ -1,4 +1,4 @@
-import { LINEUP_LEVELS } from '../enums/lineup';
+import LINEUP_LEVELS from '../enums/lineupLevels';
 import { ARTIST_DECORATORS, ARTIST_SLICES_STYLES, ARTIST_KEYS, ARTIST_ALIGN } from '../enums/artist';
 import globalClassBuilders from './globalClassBuilders';
 import LAYOUT from './layout';

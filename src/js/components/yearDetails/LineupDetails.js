@@ -7,7 +7,7 @@ import {
 	ARTIST_ALIGN,
 } from '../../enums/artist';
 import { ARTIST_CANCELED } from '../../enums/content';
-import { LINEUP_LEVELS } from '../../enums/lineup';
+import LINEUP_LEVELS from '../../enums/lineupLevels';
 import { LINEUP, DIALOGBOX, LINK } from '../../elementHandlers/elementHandlers';
 import EDITION from '../../elementHandlers/edition';
 import * as dialogbox from '../../utils/addDialogbox';
