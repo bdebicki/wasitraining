@@ -1,4 +1,4 @@
-import { EDITION } from '../../elementHandlers/elementHandlers';
+import EDITION from '../../elementHandlers/edition';
 import Edition from '../../classes/Edition';
 import Lineup from '../../classes/Lineup';
 import LineupDetails from './LineupDetails';
