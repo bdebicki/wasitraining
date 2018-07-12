@@ -13,6 +13,7 @@ import * as dialogbox from '../../utils/addDialogbox';
 import setIcon from '../../utils/setIcon';
 import icons from '../../utils/iconsLibrary';
 import getAlignClassName from './getAlignClassName';
+import getArtistModifierClassNameByKey from './getArtistModifierClassNameByKey';
 import getLineupLvlClassName from './getLineupLvlClassName';
 import getDecoratorClassName from './getDecoratorClassName';
 import getSeparatorElementLvlClassName from './getSeparatorElementLvlClassName';
@@ -130,11 +131,11 @@ export default class LineupDetails extends Lineup {
 			lvlClass(),
 			getAlignClassName(artist[ARTIST_KEYS.ALIGNED]),
 			decoratorClassName(artist[ARTIST_KEYS.DECORATOR]),
-			artist[ARTIST_KEYS.MARKED] ? LINEUP.ARTIST_MARKED_CLASS : null,
-			artist[ARTIST_KEYS.MULTILINE] ? LINEUP.ARTIST_MULTILINE_CLASS : null,
-			artist[ARTIST_KEYS.FIRST_ON_LINE] ? LINEUP.ARTIST_FIRST_ON_LINE_CLASS : null,
-			artist[ARTIST_KEYS.LAST_ON_LINE] ? LINEUP.ARTIST_LAST_ON_LINE_CLASS : null,
-			artist[ARTIST_KEYS.LAST_ON_DAY] ? LINEUP.ARTIST_LAST_ON_DAY_CLASS : null,
+			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.MARKED]),
+			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.MULTILINE]),
+			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.FIRST_ON_LINE]),
+			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_LINE]),
+			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_DAY]),
 			artist[ARTIST_KEYS.REPLACEMENT] && typeof artist[ARTIST_KEYS.REPLACEMENT] !== 'string' ? LINEUP.ARTIST_REPLACEMENT_CLASS : null, // eslint-disable-line max-len
 		];
 

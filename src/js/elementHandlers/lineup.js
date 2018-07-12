@@ -21,9 +21,8 @@ const LINEUP = {
 	ARTISTS_LINE_CLASS: lineupClassBuilder.line,
 	ARTISTS_LEVEL_CLASS: lineupClassBuilder.lvl,
 	ARTIST_CLASS: lineupClassBuilder.artist,
-	ARTIST_MARKED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.MARKED}`,
-	ARTIST_MULTILINE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.MULTILINE}`,
 	ARTIST_CANCELED_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.CANCELED}`,
+	ARTIST_REPLACEMENT_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.REPLACEMENT}`, // never used
 	ARTIST_FIRST_ON_LINE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.FIRST_ON_LINE}`,
 	ARTIST_LAST_ON_LINE_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.LAST_ON_LINE}`,
 	ARTIST_LAST_ON_DAY_CLASS: `${lineupClassBuilder.artist}--${ARTIST_KEYS.LAST_ON_DAY}`,
