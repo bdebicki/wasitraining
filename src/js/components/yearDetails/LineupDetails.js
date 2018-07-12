@@ -1,71 +1,31 @@
 import Lineup from '../../classes/Lineup';
 import {
 	ARTIST_KEYS,
-	ARTIST_DECORATORS,
-	ARTIST_SLICES_STYLES,
 	ARTIST_SLICES_PROPS,
-	ARTIST_ALIGN,
 } from '../../enums/artist';
 import { ARTIST_CANCELED } from '../../enums/content';
 import LINEUP_LEVELS from '../../enums/lineupLevels';
 import DIALOGBOX from '../../elementHandlers/dialogbox';
 import EDITION from '../../elementHandlers/edition';
-import LINEUP from '../../elementHandlers/lineup';
+import { LINEUP } from '../../elementHandlers/lineup';
 import LINK from '../../elementHandlers/link';
 import * as dialogbox from '../../utils/addDialogbox';
 import setIcon from '../../utils/setIcon';
 import icons from '../../utils/iconsLibrary';
+import getAlignClassName from './getAlignClassName';
+import getLineupLvlClassName from './getLineupLvlClassName';
+import getDecoratorClassName from './getDecoratorClassName';
+import getSeparatorElementLvlClassName from './getSeparatorElementLvlClassName';
+import getSliceDecoratorClassName from './getSliceDecoratorClassName';
 
 const DIALOGBOX_HEADLINE_TEXT = 'Lineup';
-// TODO: convert to function
-const lineupLvlToClassMap = {
-	[LINEUP_LEVELS.HEADLINERS]: LINEUP.ARTISTS_HEADLINERS_CLASS,
-	[LINEUP_LEVELS.LVL1]: LINEUP.ARTISTS_LVL1_CLASS,
-	[LINEUP_LEVELS.LVL2]: LINEUP.ARTISTS_LVL2_CLASS,
-	[LINEUP_LEVELS.LVL3]: LINEUP.ARTISTS_LVL3_CLASS,
-	[LINEUP_LEVELS.LVL4]: LINEUP.ARTISTS_LVL4_CLASS,
-	[LINEUP_LEVELS.OTHERS]: LINEUP.ARTISTS_OTHERS_CLASS,
-	[LINEUP_LEVELS.DAILY_ARTISTS]: LINEUP.ARTISTS_DAILY_CLASS,
-	[LINEUP_LEVELS.ALL_OTHERS]: LINEUP.ARTISTS_ALL_OTHERS_CLASS,
-};
-const alignToClassMap = {
-	[ARTIST_ALIGN.LEFT]: LINEUP.ARTIST_ALIGN_LEFT_CLASS,
-	[ARTIST_ALIGN.RIGHT]: LINEUP.ARTIST_ALIGN_RIGHT_CLASS,
-};
-const artistDecoratorToClassMap = {
-	[ARTIST_DECORATORS.PROMOTED]: LINEUP.ARTIST_PROMOTED_CLASS,
-	[ARTIST_DECORATORS.EXPANDED]: LINEUP.ARTIST_EXPANDED_CLASS,
-	[ARTIST_DECORATORS.COLLAPSED]: LINEUP.ARTIST_COLLAPSED_CLASS,
-	[ARTIST_DECORATORS.UPPERCASE]: LINEUP.ARTIST_UPPERCASE_CLASS,
-	[ARTIST_DECORATORS.CAPITALIZE]: LINEUP.ARTIST_CAPITALIZE_CLASS,
-	[ARTIST_DECORATORS.COMPRESSED]: LINEUP.ARTIST_COMPRESSED_CLASS,
-	[ARTIST_DECORATORS.WORD_EXPAND_MEDIUM]: LINEUP.ARTIST_WORD_EXPAND_MEDIUM_CLASS,
-	[ARTIST_DECORATORS.WORD_EXPAND_HEAVY]: LINEUP.ARTIST_WORD_EXPAND_HEAVY_CLASS,
-};
-const artistSliceDecoratorToClassMap = {
-	[ARTIST_SLICES_STYLES.UP]: LINEUP.ARTIST_SLICE_UP_CLASS,
-	[ARTIST_SLICES_STYLES.DOWN]: LINEUP.ARTIST_SLICE_DOWN_CLASS,
-	[ARTIST_SLICES_STYLES.MIDDLE]: LINEUP.ARTIST_SLICE_MIDDLE_CLASS,
-	[ARTIST_SLICES_STYLES.LOWER]: LINEUP.ARTIST_SLICE_LOWER_CLASS,
-	[ARTIST_SLICES_STYLES.MULTILINE]: LINEUP.ARTIST_SLICE_MULTILINE_CLASS,
-	[ARTIST_SLICES_STYLES.NEW_LINE]: LINEUP.ARTIST_SLICE_NEW_LINE_CLASS,
-	[ARTIST_SLICES_STYLES.EXPANDED]: LINEUP.ARTIST_SLICE_EXPANDED_CLASS,
-	[ARTIST_SLICES_STYLES.COLLAPSED]: LINEUP.ARTIST_SLICE_COLLAPSED_CLASS,
-	[ARTIST_SLICES_STYLES.COMPRESSED]: LINEUP.ARTIST_SLICE_COMPRESSED_CLASS,
-	[ARTIST_SLICES_STYLES.INDENTED]: LINEUP.ARTIST_SLICE_INDENTED_CLASS,
-	[ARTIST_SLICES_STYLES.PREVIOUS_LINE]: LINEUP.ARTIST_SLICE_PREVIOUS_LINE_CLASS,
-};
-
-function separatorElementLvlClassName(lvl) {
-	return `${LINEUP.ARTISTS_SEPARATOR_ELEMENT_CLASS}--${lvl}`;
-}
 
 function decoratorClassName(decorator) {
 	if (Array.isArray(decorator)) {
-		return decorator.map((decoratorType) => artistDecoratorToClassMap[decoratorType]);
+		return decorator.map((decoratorType) => getDecoratorClassName(decoratorType));
 	}
 
-	return artistDecoratorToClassMap[decorator];
+	return getDecoratorClassName(decorator);
 }
 
 export default class LineupDetails extends Lineup {
@@ -114,10 +74,10 @@ export default class LineupDetails extends Lineup {
 
 				if (Array.isArray(styleList[ARTIST_SLICES_PROPS.STYLE])) {
 					sliceStyleClassName = styleList[ARTIST_SLICES_PROPS.STYLE].map(
-						(style) => artistSliceDecoratorToClassMap[style]
+						(style) => getSliceDecoratorClassName(style)
 					).join(' ');
 				} else {
-					sliceStyleClassName = artistSliceDecoratorToClassMap[styleList[ARTIST_SLICES_PROPS.STYLE]];
+					sliceStyleClassName = getSliceDecoratorClassName(styleList[ARTIST_SLICES_PROPS.STYLE]);
 				}
 			};
 
@@ -168,10 +128,10 @@ export default class LineupDetails extends Lineup {
 		let classNames = [
 			LINEUP.ARTIST_CLASS,
 			lvlClass(),
+			getAlignClassName(artist[ARTIST_KEYS.ALIGNED]),
 			decoratorClassName(artist[ARTIST_KEYS.DECORATOR]),
 			artist[ARTIST_KEYS.MARKED] ? LINEUP.ARTIST_MARKED_CLASS : null,
 			artist[ARTIST_KEYS.MULTILINE] ? LINEUP.ARTIST_MULTILINE_CLASS : null,
-			artist[ARTIST_KEYS.ALIGNED] ? alignToClassMap[artist[ARTIST_KEYS.ALIGNED]] : null,
 			artist[ARTIST_KEYS.FIRST_ON_LINE] ? LINEUP.ARTIST_FIRST_ON_LINE_CLASS : null,
 			artist[ARTIST_KEYS.LAST_ON_LINE] ? LINEUP.ARTIST_LAST_ON_LINE_CLASS : null,
 			artist[ARTIST_KEYS.LAST_ON_DAY] ? LINEUP.ARTIST_LAST_ON_DAY_CLASS : null,
@@ -234,7 +194,7 @@ export default class LineupDetails extends Lineup {
 	static addSeparatorElement(target, lvl, element = 'li') {
 		const separatorEl = document.createElement(element);
 
-		separatorEl.classList.add(LINEUP.ARTISTS_SEPARATOR_ELEMENT_CLASS, separatorElementLvlClassName(lvl));
+		separatorEl.classList.add(LINEUP.ARTISTS_SEPARATOR_ELEMENT_CLASS, getSeparatorElementLvlClassName(lvl));
 
 		target.appendChild(separatorEl);
 	}
@@ -307,7 +267,7 @@ export default class LineupDetails extends Lineup {
 		Object.keys(lineup).forEach((lvl) => {
 			const ul = document.createElement('ul');
 
-			ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[lvl]);
+			ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, getLineupLvlClassName(lvl));
 
 			lineup[lvl].forEach((artist, index) => {
 				LineupDetails.decorateArtist(artist, ul, index, lvl, separatorElement);
@@ -331,7 +291,7 @@ export default class LineupDetails extends Lineup {
 
 					ul.classList.add(
 						LINEUP.ARTISTS_LEVEL_CLASS,
-						lineupLvlToClassMap[section],
+						getLineupLvlClassName(section),
 						`${LINEUP.ARTISTS_LEVEL_CLASS}--day${dayCount}`
 					);
 
@@ -346,7 +306,7 @@ export default class LineupDetails extends Lineup {
 			} else if (section === LINEUP_LEVELS.ALL_OTHERS) {
 				const ul = document.createElement('ul');
 
-				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[section]);
+				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, getLineupLvlClassName(section));
 
 				Object.keys(lineup[section]).forEach((lvl) => {
 					lineup[section][lvl].forEach((artist, index) => {
@@ -374,7 +334,7 @@ export default class LineupDetails extends Lineup {
 			Object.keys(day).forEach((lvl) => {
 				const ul = document.createElement('ul');
 
-				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[lvl]);
+				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, getLineupLvlClassName(lvl));
 
 				day[lvl].forEach((artist, artistIndex) => {
 					LineupDetails.decorateArtist(artist, ul, artistIndex, lvl);
