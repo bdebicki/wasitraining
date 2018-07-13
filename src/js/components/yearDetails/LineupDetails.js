@@ -10,7 +10,7 @@ import * as dialogbox from '../../utils/addDialogbox';
 import setIcon from '../../utils/setIcon';
 import icons from '../../utils/iconsLibrary';
 import getAlignClassName from './getAlignClassName';
-import getArtistModifierClassNameByKey from './getArtistModifierClassNameByKey';
+import getModifierClassNameByKey from './getModifierClassNameByKey';
 import getLineupLvlClassName from './getLineupLvlClassName';
 import getDecoratorClassName from './getDecoratorClassName';
 import getSeparatorElementLvlClassName from './getSeparatorElementLvlClassName';
@@ -18,14 +18,6 @@ import getSliceDecoratorClassName from './getSliceDecoratorClassName';
 import getArtistLvlClassName from './getArtistLvlClassName';
 
 const DIALOGBOX_HEADLINE_TEXT = 'Lineup';
-
-function decoratorClassName(decorator) {
-	if (Array.isArray(decorator)) {
-		return decorator.map((decoratorType) => getDecoratorClassName(decoratorType));
-	}
-
-	return getDecoratorClassName(decorator);
-}
 
 export default class LineupDetails extends Lineup {
 	static toggleLineup(e) {
@@ -99,7 +91,7 @@ export default class LineupDetails extends Lineup {
 		const spanReplacement = document.createElement('span');
 		const spanCanceled = document.createElement('span');
 		const canceledArtistEl = target.querySelector(`li[data-canceled-artist='${artist[ARTIST_KEYS.REPLACEMENT]}']`);
-		const redundantDecoratorClassNames = decoratorClassName([
+		const redundantDecoratorClassNames = getDecoratorClassName([
 			ARTIST_KEYS.CANCELED,
 			ARTIST_KEYS.COLLAPSED,
 			ARTIST_KEYS.EXPANDED,
@@ -128,12 +120,12 @@ export default class LineupDetails extends Lineup {
 			LINEUP.ARTIST_CLASS,
 			getAlignClassName(artist[ARTIST_KEYS.ALIGNED]),
 			getArtistLvlClassName(artistLvl),
-			decoratorClassName(artist[ARTIST_KEYS.DECORATOR]),
-			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.MARKED] ? ARTIST_KEYS.MARKED : false),
-			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.MULTILINE] ? ARTIST_KEYS.MULTILINE : false),
-			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.FIRST_ON_LINE] ? ARTIST_KEYS.FIRST_ON_LINE : false),
-			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_LINE] ? ARTIST_KEYS.LAST_ON_LINE : false),
-			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_DAY] ? ARTIST_KEYS.LAST_ON_DAY : false),
+			getDecoratorClassName(artist[ARTIST_KEYS.DECORATOR]),
+			getModifierClassNameByKey(artist[ARTIST_KEYS.MARKED] ? ARTIST_KEYS.MARKED : false),
+			getModifierClassNameByKey(artist[ARTIST_KEYS.MULTILINE] ? ARTIST_KEYS.MULTILINE : false),
+			getModifierClassNameByKey(artist[ARTIST_KEYS.FIRST_ON_LINE] ? ARTIST_KEYS.FIRST_ON_LINE : false),
+			getModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_LINE] ? ARTIST_KEYS.LAST_ON_LINE : false),
+			getModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_DAY] ? ARTIST_KEYS.LAST_ON_DAY : false),
 		];
 
 		classNames = classNames
