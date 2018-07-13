@@ -15,6 +15,7 @@ import getLineupLvlClassName from './getLineupLvlClassName';
 import getDecoratorClassName from './getDecoratorClassName';
 import getSeparatorElementLvlClassName from './getSeparatorElementLvlClassName';
 import getSliceDecoratorClassName from './getSliceDecoratorClassName';
+import getArtistLvlClassName from './getArtistLvlClassName';
 
 const DIALOGBOX_HEADLINE_TEXT = 'Lineup';
 
@@ -124,17 +125,10 @@ export default class LineupDetails extends Lineup {
 
 	static getArtistClassNames(artist, artistLvl) {
 		// TODO: move to external function
-		const lvlClass = () => {
-			if (artistLvl === LINEUP_LEVELS.HEADLINERS) {
-				return `${LINEUP.ARTIST_CLASS}--headliner`;
-			}
-
-			return `${LINEUP.ARTIST_CLASS}--${artistLvl}`;
-		};
 		let classNames = [
 			LINEUP.ARTIST_CLASS,
-			lvlClass(),
 			getAlignClassName(artist[ARTIST_KEYS.ALIGNED]),
+			getArtistLvlClassName(artistLvl),
 			decoratorClassName(artist[ARTIST_KEYS.DECORATOR]),
 			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.MARKED]),
 			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.MULTILINE]),
