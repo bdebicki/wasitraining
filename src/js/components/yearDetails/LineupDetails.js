@@ -1,8 +1,5 @@
 import Lineup from '../../classes/Lineup';
-import {
-	ARTIST_KEYS,
-	ARTIST_SLICES_PROPS,
-} from '../../enums/artist';
+import { ARTIST_KEYS, ARTIST_SLICES_PROPS } from '../../enums/artist';
 import { ARTIST_CANCELED } from '../../enums/content';
 import LINEUP_LEVELS from '../../enums/lineupLevels';
 import DIALOGBOX from '../../elementHandlers/dialogbox';
@@ -101,17 +98,25 @@ export default class LineupDetails extends Lineup {
 		const spanReplacement = document.createElement('span');
 		const spanCanceled = document.createElement('span');
 		const canceledArtistEl = target.querySelector(`li[data-canceled-artist='${artist[ARTIST_KEYS.REPLACEMENT]}']`);
+		const redundantDecoratorClassNames = decoratorClassName([
+			ARTIST_KEYS.CANCELED,
+			ARTIST_KEYS.COLLAPSED,
+			ARTIST_KEYS.EXPANDED,
+		]);
 
 		spanReplacement.textContent = artistName;
 		spanReplacement.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
 		spanCanceled.textContent = canceledArtistEl.textContent;
-		spanCanceled.classList.add(LINEUP.ARTIST_CANCELED_CLASS, LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
+		spanCanceled.classList.add(
+			getDecoratorClassName(ARTIST_KEYS.CANCELED),
+			LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS
+		);
 		spanCanceled.title = ARTIST_CANCELED;
 
 		// clean current existing canceled artist and put canceled artist with replacement
 		canceledArtistEl.textContent = '';
 		canceledArtistEl.removeAttribute('title');
-		canceledArtistEl.classList.remove(LINEUP.ARTIST_CANCELED_CLASS, LINEUP.ARTIST_COLLAPSED_CLASS, LINEUP.ARTIST_EXPANDED_CLASS); // eslint-disable-line max-len
+		canceledArtistEl.classList.remove(...redundantDecoratorClassNames);
 		canceledArtistEl.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_CLASS);
 		canceledArtistEl.appendChild(spanCanceled);
 		canceledArtistEl.appendChild(spanReplacement);
@@ -136,7 +141,6 @@ export default class LineupDetails extends Lineup {
 			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.FIRST_ON_LINE]),
 			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_LINE]),
 			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_DAY]),
-			artist[ARTIST_KEYS.REPLACEMENT] && typeof artist[ARTIST_KEYS.REPLACEMENT] !== 'string' ? LINEUP.ARTIST_REPLACEMENT_CLASS : null, // eslint-disable-line max-len
 		];
 
 		classNames = classNames
@@ -177,7 +181,7 @@ export default class LineupDetails extends Lineup {
 	static isArtistBreakLine(artist, target) {
 		const previousEl = target.querySelector('li:last-child');
 
-		previousEl.classList.add(LINEUP.ARTIST_NEXT_LINE_ARTIST_CLASS);
+		previousEl.classList.add(getDecoratorClassName(ARTIST_KEYS.NEXT_LINE_ARTIST));
 		previousEl.dataset[ARTIST_KEYS.NEXT_LINE_ARTIST] = artist[ARTIST_KEYS.SLICE_DECORATOR][ARTIST_SLICES_PROPS.SLICE]; // eslint-disable-line max-len
 	}
 
@@ -185,7 +189,7 @@ export default class LineupDetails extends Lineup {
 		const targetEl = target;
 		const span = document.createElement('span');
 
-		span.classList.add(LINEUP.ARTIST_CANCELED_CLASS);
+		span.classList.add(getDecoratorClassName(ARTIST_KEYS.CANCELED));
 		span.textContent = artistName;
 		targetEl.title = ARTIST_CANCELED;
 		targetEl.dataset.canceledArtist = artistName;
@@ -413,8 +417,7 @@ export default class LineupDetails extends Lineup {
 		const oldYear = lineupContainer.dataset.year;
 		const newYear = this.editionYear;
 
-		// eslint-disable-next-line max-len
-		lineupContainer.querySelector(`.${DIALOGBOX.HEADLINE_CLASS}`).textContent = `${DIALOGBOX_HEADLINE_TEXT} ${newYear}`;
+		lineupContainer.querySelector(`.${DIALOGBOX.HEADLINE_CLASS}`).textContent = `${DIALOGBOX_HEADLINE_TEXT} ${newYear}`; // eslint-disable-line max-len
 		lineupContainer.classList.remove(`${LINEUP.EDITION_CLASS}${oldYear}`);
 		lineupContainer.classList.add(`${LINEUP.EDITION_CLASS}${newYear}`);
 		lineupContainer.dataset.year = newYear;

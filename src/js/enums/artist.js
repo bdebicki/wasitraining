@@ -21,6 +21,8 @@ export const ARTIST_KEYS = {
 	LINE: 'line',
 	LEVEL: 'level',
 	SKIP_SEPARATOR: 'skipSeparator',
+	COLLAPSED: 'collapsed',
+	EXPANDED: 'expanded',
 };
 
 export const ARTIST_SLICES_PROPS = {
