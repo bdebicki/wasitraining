@@ -1,6 +1,6 @@
 import VIEW_TYPES from '../enums/viewTypes';
 import LAYOUT from '../elementHandlers/layout';
-import VIEWS from '../elementHandlers/views';
+import VIEWS from '../views/elementHandlers/views';
 
 function getViewType() {
 	return document.querySelector('html').dataset.view;

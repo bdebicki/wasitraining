@@ -1,4 +1,4 @@
-import LAYOUT from './layout';
+import LAYOUT from '../../../elementHandlers/layout';
 
 const headerClassBuilders = {
 	main: LAYOUT.HEADER_ID,

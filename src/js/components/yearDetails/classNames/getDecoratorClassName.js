@@ -1,4 +1,4 @@
-import { lineupClassBuilder } from '../../elementHandlers/lineup';
+import { lineupClassBuilder } from '../elementHandlers/lineup';
 
 function prepareClassName(modifierName) {
 	return `${lineupClassBuilder.artist}--${modifierName}`;

@@ -1,4 +1,4 @@
-import globalClassBuilders from './globalClassBuilders';
+import globalClassBuilders from '../../elementHandlers/globalClassBuilders';
 
 const dialogboxClassBuilder = 'dialogbox';
 const DIALOGBOX = {

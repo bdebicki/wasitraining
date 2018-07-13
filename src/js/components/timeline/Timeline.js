@@ -1,4 +1,4 @@
-import TIMELINE from '../../elementHandlers/timeline';
+import TIMELINE from './elementHandlers/timeline';
 import LAYOUT from '../../elementHandlers/layout';
 import TimelineItem from './TimelineItem';
 

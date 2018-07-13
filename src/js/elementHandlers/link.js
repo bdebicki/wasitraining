@@ -1,4 +1,4 @@
-import { iconClassBuilder } from './icons';
+import { iconClassBuilder } from '../utils/elementHandlers/icons';
 
 const linkClassBuilder = 'link';
 const LINK = {

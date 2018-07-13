@@ -1,5 +1,5 @@
-import globalClassBuilders from './globalClassBuilders';
-import LAYOUT from './layout';
+import globalClassBuilders from '../../../elementHandlers/globalClassBuilders';
+import LAYOUT from '../../../elementHandlers/layout';
 
 const timelineClassBuilders = {
 	mainTimelineItem: `${LAYOUT.MAIN_TIMELINE_ID}Item`,

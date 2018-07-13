@@ -1,4 +1,4 @@
-import { lineupClassBuilder } from '../../elementHandlers/lineup';
+import { lineupClassBuilder } from '../elementHandlers/lineup';
 
 export default function(align) {
 	if (!align) {
