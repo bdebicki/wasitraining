@@ -11,7 +11,6 @@ const LINEUP = {
 	SECTION_ID: lineupClassBuilder.section,
 	EDITION_CLASS: `${lineupClassBuilder.section}--edition`,
 	ARTISTS_CLASS: lineupClassBuilder.artists,
-	ARTISTS_NEW_LINE_CLASS: `${lineupClassBuilder.artists}--newLine`,
 	ARTISTS_EDITION_CLASS: `${lineupClassBuilder.artists}--edition`,
 	ARTISTS_DAY_CLASS: `${lineupClassBuilder.artists}__day`,
 	ARTISTS_NEW_LINE_ELEMENT_CLASS: `${lineupClassBuilder.artists}__newLine`,
