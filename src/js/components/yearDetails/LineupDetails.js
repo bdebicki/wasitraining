@@ -124,17 +124,16 @@ export default class LineupDetails extends Lineup {
 	}
 
 	static getArtistClassNames(artist, artistLvl) {
-		// TODO: move to external function
 		let classNames = [
 			LINEUP.ARTIST_CLASS,
 			getAlignClassName(artist[ARTIST_KEYS.ALIGNED]),
 			getArtistLvlClassName(artistLvl),
 			decoratorClassName(artist[ARTIST_KEYS.DECORATOR]),
-			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.MARKED]),
-			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.MULTILINE]),
-			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.FIRST_ON_LINE]),
-			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_LINE]),
-			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_DAY]),
+			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.MARKED] ? ARTIST_KEYS.MARKED : false),
+			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.MULTILINE] ? ARTIST_KEYS.MULTILINE : false),
+			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.FIRST_ON_LINE] ? ARTIST_KEYS.FIRST_ON_LINE : false),
+			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_LINE] ? ARTIST_KEYS.LAST_ON_LINE : false),
+			getArtistModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_DAY] ? ARTIST_KEYS.LAST_ON_DAY : false),
 		];
 
 		classNames = classNames
