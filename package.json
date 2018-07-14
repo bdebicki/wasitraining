@@ -21,6 +21,7 @@
     "watch:festival-data": "npm-watch build:festival-data"
   },
   "jest": {
+    "collectCoverage": true,
     "collectCoverageFrom": [
       "src/js/**/*.js"
     ],
