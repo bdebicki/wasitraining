@@ -1,4 +1,5 @@
-import { LAYOUT, TIMELINE } from '../../enums/elementHandlers';
+import TIMELINE from './elementHandlers/timeline';
+import LAYOUT from '../../elementHandlers/layout';
 import TimelineItem from './TimelineItem';
 
 export default class Timeline {

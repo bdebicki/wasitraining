@@ -1,4 +1,4 @@
-import { LAYOUT } from '../../enums/elementHandlers';
+import LAYOUT from '../../elementHandlers/layout';
 import CookiesInfo from './CookiesInfo';
 import MoreInfo from './MoreInfo';
 

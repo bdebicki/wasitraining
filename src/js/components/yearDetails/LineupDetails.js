@@ -1,69 +1,23 @@
 import Lineup from '../../classes/Lineup';
-import { LINEUP, DIALOGBOX, LINK, EDITION } from '../../enums/elementHandlers';
-import {
-	LINEUP_LEVELS,
-	ARTIST_KEYS,
-	ARTIST_DECORATORS,
-	ARTIST_SLICES_STYLES,
-	ARTIST_SLICES_PROPS,
-	ARTIST_ALIGN,
-} from '../../enums/lineup';
+import { ARTIST_KEYS, ARTIST_SLICES_PROPS } from '../../enums/artist';
 import { ARTIST_CANCELED } from '../../enums/content';
+import LINEUP_LEVELS from '../../enums/lineupLevels';
+import DIALOGBOX from '../../utils/elementHandlers/dialogbox';
+import EDITION from './elementHandlers/edition';
+import { LINEUP } from './elementHandlers/lineup';
+import LINK from '../../elementHandlers/link';
 import * as dialogbox from '../../utils/addDialogbox';
 import setIcon from '../../utils/setIcon';
 import icons from '../../utils/iconsLibrary';
+import getAlignClassName from './classNames/getAlignClassName';
+import getModifierClassNameByKey from './classNames/getModifierClassNameByKey';
+import getLineupLvlClassName from './classNames/getLineupLvlClassName';
+import getDecoratorClassName from './classNames/getDecoratorClassName';
+import getSeparatorElementLvlClassName from './classNames/getSeparatorElementLvlClassName';
+import getSliceDecoratorClassName from './classNames/getSliceDecoratorClassName';
+import getArtistLvlClassName from './classNames/getArtistLvlClassName';
 
 const DIALOGBOX_HEADLINE_TEXT = 'Lineup';
-// TODO: convert to function
-const lineupLvlToClassMap = {
-	[LINEUP_LEVELS.HEADLINERS]: LINEUP.ARTISTS_HEADLINERS_CLASS,
-	[LINEUP_LEVELS.LVL1]: LINEUP.ARTISTS_LVL1_CLASS,
-	[LINEUP_LEVELS.LVL2]: LINEUP.ARTISTS_LVL2_CLASS,
-	[LINEUP_LEVELS.LVL3]: LINEUP.ARTISTS_LVL3_CLASS,
-	[LINEUP_LEVELS.LVL4]: LINEUP.ARTISTS_LVL4_CLASS,
-	[LINEUP_LEVELS.OTHERS]: LINEUP.ARTISTS_OTHERS_CLASS,
-	[LINEUP_LEVELS.DAILY_ARTISTS]: LINEUP.ARTISTS_DAILY_CLASS,
-	[LINEUP_LEVELS.ALL_OTHERS]: LINEUP.ARTISTS_ALL_OTHERS_CLASS,
-};
-const alignToClassMap = {
-	[ARTIST_ALIGN.LEFT]: LINEUP.ARTIST_ALIGN_LEFT_CLASS,
-	[ARTIST_ALIGN.RIGHT]: LINEUP.ARTIST_ALIGN_RIGHT_CLASS,
-};
-const artistDecoratorToClassMap = {
-	[ARTIST_DECORATORS.PROMOTED]: LINEUP.ARTIST_PROMOTED_CLASS,
-	[ARTIST_DECORATORS.EXPANDED]: LINEUP.ARTIST_EXPANDED_CLASS,
-	[ARTIST_DECORATORS.COLLAPSED]: LINEUP.ARTIST_COLLAPSED_CLASS,
-	[ARTIST_DECORATORS.UPPERCASE]: LINEUP.ARTIST_UPPERCASE_CLASS,
-	[ARTIST_DECORATORS.CAPITALIZE]: LINEUP.ARTIST_CAPITALIZE_CLASS,
-	[ARTIST_DECORATORS.COMPRESSED]: LINEUP.ARTIST_COMPRESSED_CLASS,
-	[ARTIST_DECORATORS.WORD_EXPAND_MEDIUM]: LINEUP.ARTIST_WORD_EXPAND_MEDIUM_CLASS,
-	[ARTIST_DECORATORS.WORD_EXPAND_HEAVY]: LINEUP.ARTIST_WORD_EXPAND_HEAVY_CLASS,
-};
-const artistSliceDecoratorToClassMap = {
-	[ARTIST_SLICES_STYLES.UP]: LINEUP.ARTIST_SLICE_UP_CLASS,
-	[ARTIST_SLICES_STYLES.DOWN]: LINEUP.ARTIST_SLICE_DOWN_CLASS,
-	[ARTIST_SLICES_STYLES.MIDDLE]: LINEUP.ARTIST_SLICE_MIDDLE_CLASS,
-	[ARTIST_SLICES_STYLES.LOWER]: LINEUP.ARTIST_SLICE_LOWER_CLASS,
-	[ARTIST_SLICES_STYLES.MULTILINE]: LINEUP.ARTIST_SLICE_MULTILINE_CLASS,
-	[ARTIST_SLICES_STYLES.NEW_LINE]: LINEUP.ARTIST_SLICE_NEW_LINE_CLASS,
-	[ARTIST_SLICES_STYLES.EXPANDED]: LINEUP.ARTIST_SLICE_EXPANDED_CLASS,
-	[ARTIST_SLICES_STYLES.COLLAPSED]: LINEUP.ARTIST_SLICE_COLLAPSED_CLASS,
-	[ARTIST_SLICES_STYLES.COMPRESSED]: LINEUP.ARTIST_SLICE_COMPRESSED_CLASS,
-	[ARTIST_SLICES_STYLES.INDENTED]: LINEUP.ARTIST_SLICE_INDENTED_CLASS,
-	[ARTIST_SLICES_STYLES.PREVIOUS_LINE]: LINEUP.ARTIST_SLICE_PREVIOUS_LINE_CLASS,
-};
-
-function separatorElementLvlClassName(lvl) {
-	return `${LINEUP.ARTISTS_SEPARATOR_ELEMENT_CLASS}--${lvl}`;
-}
-
-function decoratorClassName(decorator) {
-	if (Array.isArray(decorator)) {
-		return decorator.map((decoratorType) => artistDecoratorToClassMap[decoratorType]);
-	}
-
-	return artistDecoratorToClassMap[decorator];
-}
 
 export default class LineupDetails extends Lineup {
 	static toggleLineup(e) {
@@ -111,10 +65,10 @@ export default class LineupDetails extends Lineup {
 
 				if (Array.isArray(styleList[ARTIST_SLICES_PROPS.STYLE])) {
 					sliceStyleClassName = styleList[ARTIST_SLICES_PROPS.STYLE].map(
-						(style) => artistSliceDecoratorToClassMap[style]
+						(style) => getSliceDecoratorClassName(style)
 					).join(' ');
 				} else {
-					sliceStyleClassName = artistSliceDecoratorToClassMap[styleList[ARTIST_SLICES_PROPS.STYLE]];
+					sliceStyleClassName = getSliceDecoratorClassName(styleList[ARTIST_SLICES_PROPS.STYLE]);
 				}
 			};
 
@@ -137,42 +91,41 @@ export default class LineupDetails extends Lineup {
 		const spanReplacement = document.createElement('span');
 		const spanCanceled = document.createElement('span');
 		const canceledArtistEl = target.querySelector(`li[data-canceled-artist='${artist[ARTIST_KEYS.REPLACEMENT]}']`);
+		const redundantDecoratorClassNames = getDecoratorClassName([
+			ARTIST_KEYS.CANCELED,
+			ARTIST_KEYS.COLLAPSED,
+			ARTIST_KEYS.EXPANDED,
+		]);
 
 		spanReplacement.textContent = artistName;
 		spanReplacement.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
 		spanCanceled.textContent = canceledArtistEl.textContent;
-		spanCanceled.classList.add(LINEUP.ARTIST_CANCELED_CLASS, LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
+		spanCanceled.classList.add(
+			getDecoratorClassName(ARTIST_KEYS.CANCELED),
+			LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS
+		);
 		spanCanceled.title = ARTIST_CANCELED;
 
 		// clean current existing canceled artist and put canceled artist with replacement
 		canceledArtistEl.textContent = '';
 		canceledArtistEl.removeAttribute('title');
-		canceledArtistEl.classList.remove(LINEUP.ARTIST_CANCELED_CLASS, LINEUP.ARTIST_COLLAPSED_CLASS, LINEUP.ARTIST_EXPANDED_CLASS); // eslint-disable-line max-len
+		canceledArtistEl.classList.remove(...redundantDecoratorClassNames);
 		canceledArtistEl.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_CLASS);
 		canceledArtistEl.appendChild(spanCanceled);
 		canceledArtistEl.appendChild(spanReplacement);
 	}
 
 	static getArtistClassNames(artist, artistLvl) {
-		// TODO: move to external function
-		const lvlClass = () => {
-			if (artistLvl === LINEUP_LEVELS.HEADLINERS) {
-				return `${LINEUP.ARTIST_CLASS}--headliner`;
-			}
-
-			return `${LINEUP.ARTIST_CLASS}--${artistLvl}`;
-		};
 		let classNames = [
 			LINEUP.ARTIST_CLASS,
-			lvlClass(),
-			decoratorClassName(artist[ARTIST_KEYS.DECORATOR]),
-			artist[ARTIST_KEYS.MARKED] ? LINEUP.ARTIST_MARKED_CLASS : null,
-			artist[ARTIST_KEYS.MULTILINE] ? LINEUP.ARTIST_MULTILINE_CLASS : null,
-			artist[ARTIST_KEYS.ALIGNED] ? alignToClassMap[artist[ARTIST_KEYS.ALIGNED]] : null,
-			artist[ARTIST_KEYS.FIRST_ON_LINE] ? LINEUP.ARTIST_FIRST_ON_LINE_CLASS : null,
-			artist[ARTIST_KEYS.LAST_ON_LINE] ? LINEUP.ARTIST_LAST_ON_LINE_CLASS : null,
-			artist[ARTIST_KEYS.LAST_ON_DAY] ? LINEUP.ARTIST_LAST_ON_DAY_CLASS : null,
-			artist[ARTIST_KEYS.REPLACEMENT] && typeof artist[ARTIST_KEYS.REPLACEMENT] !== 'string' ? LINEUP.ARTIST_REPLACEMENT_CLASS : null, // eslint-disable-line max-len
+			getAlignClassName(artist[ARTIST_KEYS.ALIGNED]),
+			getArtistLvlClassName(artistLvl),
+			getDecoratorClassName(artist[ARTIST_KEYS.DECORATOR]),
+			getModifierClassNameByKey(artist[ARTIST_KEYS.MARKED] ? ARTIST_KEYS.MARKED : false),
+			getModifierClassNameByKey(artist[ARTIST_KEYS.MULTILINE] ? ARTIST_KEYS.MULTILINE : false),
+			getModifierClassNameByKey(artist[ARTIST_KEYS.FIRST_ON_LINE] ? ARTIST_KEYS.FIRST_ON_LINE : false),
+			getModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_LINE] ? ARTIST_KEYS.LAST_ON_LINE : false),
+			getModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_DAY] ? ARTIST_KEYS.LAST_ON_DAY : false),
 		];
 
 		classNames = classNames
@@ -213,7 +166,7 @@ export default class LineupDetails extends Lineup {
 	static isArtistBreakLine(artist, target) {
 		const previousEl = target.querySelector('li:last-child');
 
-		previousEl.classList.add(LINEUP.ARTIST_NEXT_LINE_ARTIST_CLASS);
+		previousEl.classList.add(getDecoratorClassName(ARTIST_KEYS.NEXT_LINE_ARTIST));
 		previousEl.dataset[ARTIST_KEYS.NEXT_LINE_ARTIST] = artist[ARTIST_KEYS.SLICE_DECORATOR][ARTIST_SLICES_PROPS.SLICE]; // eslint-disable-line max-len
 	}
 
@@ -221,7 +174,7 @@ export default class LineupDetails extends Lineup {
 		const targetEl = target;
 		const span = document.createElement('span');
 
-		span.classList.add(LINEUP.ARTIST_CANCELED_CLASS);
+		span.classList.add(getDecoratorClassName(ARTIST_KEYS.CANCELED));
 		span.textContent = artistName;
 		targetEl.title = ARTIST_CANCELED;
 		targetEl.dataset.canceledArtist = artistName;
@@ -231,7 +184,7 @@ export default class LineupDetails extends Lineup {
 	static addSeparatorElement(target, lvl, element = 'li') {
 		const separatorEl = document.createElement(element);
 
-		separatorEl.classList.add(LINEUP.ARTISTS_SEPARATOR_ELEMENT_CLASS, separatorElementLvlClassName(lvl));
+		separatorEl.classList.add(LINEUP.ARTISTS_SEPARATOR_ELEMENT_CLASS, getSeparatorElementLvlClassName(lvl));
 
 		target.appendChild(separatorEl);
 	}
@@ -304,7 +257,7 @@ export default class LineupDetails extends Lineup {
 		Object.keys(lineup).forEach((lvl) => {
 			const ul = document.createElement('ul');
 
-			ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[lvl]);
+			ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, getLineupLvlClassName(lvl));
 
 			lineup[lvl].forEach((artist, index) => {
 				LineupDetails.decorateArtist(artist, ul, index, lvl, separatorElement);
@@ -328,7 +281,7 @@ export default class LineupDetails extends Lineup {
 
 					ul.classList.add(
 						LINEUP.ARTISTS_LEVEL_CLASS,
-						lineupLvlToClassMap[section],
+						getLineupLvlClassName(section),
 						`${LINEUP.ARTISTS_LEVEL_CLASS}--day${dayCount}`
 					);
 
@@ -343,7 +296,7 @@ export default class LineupDetails extends Lineup {
 			} else if (section === LINEUP_LEVELS.ALL_OTHERS) {
 				const ul = document.createElement('ul');
 
-				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[section]);
+				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, getLineupLvlClassName(section));
 
 				Object.keys(lineup[section]).forEach((lvl) => {
 					lineup[section][lvl].forEach((artist, index) => {
@@ -371,7 +324,7 @@ export default class LineupDetails extends Lineup {
 			Object.keys(day).forEach((lvl) => {
 				const ul = document.createElement('ul');
 
-				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, lineupLvlToClassMap[lvl]);
+				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, getLineupLvlClassName(lvl));
 
 				day[lvl].forEach((artist, artistIndex) => {
 					LineupDetails.decorateArtist(artist, ul, artistIndex, lvl);
@@ -449,8 +402,7 @@ export default class LineupDetails extends Lineup {
 		const oldYear = lineupContainer.dataset.year;
 		const newYear = this.editionYear;
 
-		// eslint-disable-next-line max-len
-		lineupContainer.querySelector(`.${DIALOGBOX.HEADLINE_CLASS}`).textContent = `${DIALOGBOX_HEADLINE_TEXT} ${newYear}`;
+		lineupContainer.querySelector(`.${DIALOGBOX.HEADLINE_CLASS}`).textContent = `${DIALOGBOX_HEADLINE_TEXT} ${newYear}`; // eslint-disable-line max-len
 		lineupContainer.classList.remove(`${LINEUP.EDITION_CLASS}${oldYear}`);
 		lineupContainer.classList.add(`${LINEUP.EDITION_CLASS}${newYear}`);
 		lineupContainer.dataset.year = newYear;

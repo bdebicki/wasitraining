@@ -1,4 +1,5 @@
-import { LAYOUT, BG } from '../../enums/elementHandlers';
+import BG from './elementHandlers/background';
+import LAYOUT from '../../elementHandlers/layout';
 import { addVideo } from '../../utils/addElement';
 
 export default class BgVideo {

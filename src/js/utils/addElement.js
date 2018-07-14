@@ -1,4 +1,4 @@
-import { SVG_MASK } from '../enums/elementHandlers';
+import SVG_MASK from './elementHandlers/svg';
 
 export const svgType = 'http://www.w3.org/2000/svg';
 
