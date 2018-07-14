@@ -12,7 +12,6 @@ import icons from '../../utils/iconsLibrary';
 import getAlignClassName from './classNames/getAlignClassName';
 import getModifierClassNameByKey from './classNames/getModifierClassNameByKey';
 import getLineupLvlClassName from './classNames/getLineupLvlClassName';
-import getDecoratorClassName from './classNames/getDecoratorClassName';
 import getSeparatorElementLvlClassName from './classNames/getSeparatorElementLvlClassName';
 import getSliceDecoratorClassName from './classNames/getSliceDecoratorClassName';
 import getArtistLvlClassName from './classNames/getArtistLvlClassName';
@@ -91,7 +90,7 @@ export default class LineupDetails extends Lineup {
 		const spanReplacement = document.createElement('span');
 		const spanCanceled = document.createElement('span');
 		const canceledArtistEl = target.querySelector(`li[data-canceled-artist='${artist[ARTIST_KEYS.REPLACEMENT]}']`);
-		const redundantDecoratorClassNames = getDecoratorClassName([
+		const redundantDecoratorClassNames = getModifierClassNameByKey([
 			ARTIST_KEYS.CANCELED,
 			ARTIST_KEYS.COLLAPSED,
 			ARTIST_KEYS.EXPANDED,
@@ -101,7 +100,7 @@ export default class LineupDetails extends Lineup {
 		spanReplacement.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
 		spanCanceled.textContent = canceledArtistEl.textContent;
 		spanCanceled.classList.add(
-			getDecoratorClassName(ARTIST_KEYS.CANCELED),
+			getModifierClassNameByKey(ARTIST_KEYS.CANCELED),
 			LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS
 		);
 		spanCanceled.title = ARTIST_CANCELED;
@@ -120,7 +119,7 @@ export default class LineupDetails extends Lineup {
 			LINEUP.ARTIST_CLASS,
 			getAlignClassName(artist[ARTIST_KEYS.ALIGNED]),
 			getArtistLvlClassName(artistLvl),
-			getDecoratorClassName(artist[ARTIST_KEYS.DECORATOR]),
+			getModifierClassNameByKey(artist[ARTIST_KEYS.DECORATOR]),
 			getModifierClassNameByKey(artist[ARTIST_KEYS.MARKED] ? ARTIST_KEYS.MARKED : false),
 			getModifierClassNameByKey(artist[ARTIST_KEYS.MULTILINE] ? ARTIST_KEYS.MULTILINE : false),
 			getModifierClassNameByKey(artist[ARTIST_KEYS.FIRST_ON_LINE] ? ARTIST_KEYS.FIRST_ON_LINE : false),
@@ -166,7 +165,7 @@ export default class LineupDetails extends Lineup {
 	static isArtistBreakLine(artist, target) {
 		const previousEl = target.querySelector('li:last-child');
 
-		previousEl.classList.add(getDecoratorClassName(ARTIST_KEYS.NEXT_LINE_ARTIST));
+		previousEl.classList.add(getModifierClassNameByKey(ARTIST_KEYS.NEXT_LINE_ARTIST));
 		previousEl.dataset[ARTIST_KEYS.NEXT_LINE_ARTIST] = artist[ARTIST_KEYS.SLICE_DECORATOR][ARTIST_SLICES_PROPS.SLICE]; // eslint-disable-line max-len
 	}
 
@@ -174,7 +173,7 @@ export default class LineupDetails extends Lineup {
 		const targetEl = target;
 		const span = document.createElement('span');
 
-		span.classList.add(getDecoratorClassName(ARTIST_KEYS.CANCELED));
+		span.classList.add(getModifierClassNameByKey(ARTIST_KEYS.CANCELED));
 		span.textContent = artistName;
 		targetEl.title = ARTIST_CANCELED;
 		targetEl.dataset.canceledArtist = artistName;

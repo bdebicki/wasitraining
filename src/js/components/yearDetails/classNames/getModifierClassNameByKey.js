@@ -1,9 +1,17 @@
 import { lineupClassBuilder } from '../elementHandlers/lineup';
 
-export default function(modifier) {
-	if (!modifier) {
+function prepareClassName(modifierName) {
+	return `${lineupClassBuilder.artist}--${modifierName}`;
+}
+
+export default function(decorator) {
+	if (!decorator) {
 		return null;
 	}
 
-	return `${lineupClassBuilder.artist}--${modifier}`;
+	if (Array.isArray(decorator)) {
+		return decorator.map((decoratorType) => prepareClassName(decoratorType));
+	}
+
+	return prepareClassName(decorator);
 }
