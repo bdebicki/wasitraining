@@ -31,7 +31,8 @@
     "moduleFileExtensions": [
       "js",
       "json"
-    ]
+    ],
+    "verbose": true
   },
   "watch": {
     "build:festival-data": {
