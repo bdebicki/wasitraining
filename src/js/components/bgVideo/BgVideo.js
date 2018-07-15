@@ -1,6 +1,6 @@
 import BG from './elementHandlers/background';
 import LAYOUT from '../../elementHandlers/layout';
-import { addVideo } from '../../utils/addElement';
+import addVideo from '../../utils/addVideo';
 
 export default class BgVideo {
 	constructor(target) {

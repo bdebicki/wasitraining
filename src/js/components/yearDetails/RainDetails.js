@@ -1,6 +1,7 @@
 import LINK from '../../elementHandlers/link';
 import RAIN from './elementHandlers/rain';
-import { addVideo, addSVGmask, svgType } from '../../utils/addElement';
+import addVideo from '../../utils/addVideo';
+import { addSVGmask, svgType } from '../../utils/addSvgMask';
 import * as dialogbox from '../../utils/addDialogbox';
 import setIcon from '../../utils/setIcon';
 import icons from '../../utils/iconsLibrary';

@@ -1,6 +1,6 @@
 import DATA_URL from '../../enums/data';
 import TIMELINE from './elementHandlers/timeline';
-import { addSVGmask, svgType } from '../../utils/addElement';
+import { addSVGmask, svgType } from '../../utils/addSvgMask';
 import Edition from '../../classes/Edition';
 import YearView from '../../views/YearView';
 
