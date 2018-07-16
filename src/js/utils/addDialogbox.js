@@ -18,10 +18,10 @@ export function addDialogbox({
 	const h3 = document.createElement('h3');
 	const closeBtn = document.createElement('a');
 	const dialogboxId = id;
-	const dialogboxClassNames = [DIALOGBOX.BASIC_CLASS];
+	let dialogboxClassNames = [DIALOGBOX.BASIC_CLASS];
 
 	if (classNames) {
-		classNames.map((className) => dialogboxClassNames.push(className));
+		dialogboxClassNames = classNames.map((className) => className);
 	}
 	if (stretched) {
 		dialogboxClassNames.push(DIALOGBOX.STRETCHED_CLASS);
