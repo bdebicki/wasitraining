@@ -1,0 +1,135 @@
+{
+	"id": 16,
+	"editionYear": "2017",
+	"fullName": "Open'er Festival powered by Orange",
+	"place": {
+		"city": "Gdynia",
+		"object": "Babie Doły Airport"
+	},
+	"details": [
+		{
+			"day": "28th June",
+			"rain": false,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2017/6/28/DailyHistory.html?req_city=Gdynia",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2017"
+			],
+			"lineup": {
+				"headliners": ["Radiohead"],
+				"lvl1": [{"artist": "James Blake", "firstOnLine": true}, "Royal Blood"],
+				"lvl2": [{"artist": "Michael Kiwanuka", "firstOnLine": true}, "Rae Sremmurd", "Solange"],
+				"others": [
+					{"artist": "Arca (DJ Set)", "sliceDecorator": {"slice": "(DJ Set)", "style": "down"}, "firstOnLine": true},
+					"Black Coffee",
+					{"artist": "Natalia Przybysz", "forceOrder": 3},
+					{"artist": "Quebonafide", "forceOrder": 4},
+					{"artist": "Sorry Boys", "forceOrder": 5, "firstOnLine": true},
+					"Enzu",
+					"Flirtini",
+					{"artist": "Wacław Zimpel/Kuba Ziołek", "forceOrder": 8},
+					{"artist": "Holak", "forceOrder": 9, "firstOnLine": true},
+					"Gverilla",
+					"Mery Spolsky"
+				]
+			}
+		}, {
+			"day": "29th June",
+			"rain": true,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2017/6/29/DailyHistory.html?req_city=Gdynia",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2017"
+			],
+			"lineup": {
+				"headliners": ["Foo Fighters"],
+				"lvl1": [
+					{"artist": "G-Eazy", "firstOnLine": true},
+					{"artist": "The Kills", "sortBy": "Kills"},
+					"M.I.A."
+				],
+				"lvl2": [
+					{"artist": "Charli XCX", "firstOnLine": true},
+					"Jimmy Eat World",
+					"Trentemøller"
+				],
+				"others": [
+					{"artist": "A_GIM", "firstOnLine": true},
+					{"artist": "Bownik", "firstOnLine": true, "forceOrder": 6},
+					"Bitamina",
+					"Blanck Mass",
+					"Daniel Avery",
+					"Hades",
+					"Kari",
+					"Marcin Krupa",
+					"New People",
+					"Salk",
+					"Suwal"
+				]
+			}
+		}, {
+			"day": "30th June",
+			"rain": true,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2017/6/30/DailyHistory.html?req_city=Gdynia",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2017"
+			],
+			"lineup": {
+				"headliners": ["The Weekend"],
+				"lvl1": [{"artist": "Mac Miller", "firstOnLine": true}, "Moderat", "Prophets of Rage"],
+				"lvl2": [
+					{"artist": "Brodka", "firstOnLine": true},
+					{"artist": "The Dumplings", "sortBy": "Dumplings"},
+					"Grammatik",
+					{"artist": "JMSN", "firstOnLine": true},
+					"Kiasmos",
+					"Tiga",
+					"Warpaint"
+				],
+				"others": [
+					{"artist": "Bisz/Radex", "firstOnLine": true},
+					"Daria Zawiałow",
+					"Dasein",
+					"Deas",
+					"Hańba!",
+					{"artist": "Majlo", "firstOnLine": true},
+					"Ralph Kaminski"
+				]
+			}
+		}, {
+			"day": "1st July",
+			"rain": true,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2017/7/1/DailyHistory.html?req_city=Gdynia",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2017"
+			],
+			"lineup": {
+				"headliners": [{"artist": "The XX", "firstOnLine": true}, "Lorde"],
+				"lvl1": [{"artist": "George Ezra", "firstOnLine": true}, "Taco Hemingway"],
+				"lvl2": [
+					{"artist": "Dua Lipa", "firstOnLine": true},
+					"Nicolas Jaar",
+					{"artist": "Tyga", "forceOrder": 3},
+					"O.S.T.R."
+				],
+				"others": [
+					{"artist": "Benjamin Booker", "firstOnLine": true},
+					"Buslav",
+					"Duit",
+					"Julia Pietrucha",
+					"Kevin Morby",
+					{"artist": "Krzysztof Zalewski", "firstOnLine": true},
+					"Monki",
+					"Niemoc",
+					"Seltron 400",
+					{"artist": "The Shelters", "firstOnLine": true},
+					"Urbanski"
+				]
+			}
+		}
+	],
+	"lineupSettings": {
+		"sortType": "alphabeticalExceptHeadliners",
+		"mergeArtists": false,
+		"otherArtists": "... and otherss",
+		"separatorElement": false
+	}
+}

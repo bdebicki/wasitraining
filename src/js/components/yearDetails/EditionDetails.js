@@ -17,8 +17,8 @@ export default class EditionDetails extends Edition {
 	decorateEditionDates() {
 		const { editionDate } = this;
 
-		if (Object.keys(editionDate).length === 1) {
-			return editionDate.firstDay;
+		if (typeof editionDate === 'string') {
+			return editionDate;
 		}
 
 		return `${editionDate.firstDay} - ${editionDate.lastDay}`;
