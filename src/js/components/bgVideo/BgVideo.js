@@ -27,17 +27,6 @@ export default class BgVideo {
 		return addVideo(settings);
 	}
 
-	static renderImg() {
-		const img = document.createElement('img');
-
-		img.classList.add(BG.VIDEO_CLASS);
-		img.src = '/images/bg-img.png';
-		img.width = '1366';
-		img.height = '768';
-
-		return img;
-	}
-
 	render() {
 		const videoBlock = BgVideo.renderVideoContainer();
 
