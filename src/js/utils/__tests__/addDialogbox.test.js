@@ -63,7 +63,6 @@ function mockDOMwithDialogbox(withCustomEl = false) {
 	}
 }
 
-// eslint-disable-next-line no-undef
 afterAll(() => cleanDOM());
 
 describe('tests for addDialogbox', () => {
