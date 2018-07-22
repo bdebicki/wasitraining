@@ -2,7 +2,7 @@
 
 exports[`tests for addDialogbox test how dialogbox element is rendered render dialogbox with additional properties (classNames, adataAttr) 1`] = `
 <div
-  class="dialogbox-visible lineup--edition2018"
+  class="dialogbox dialogbox-visible lineup--edition2018"
   data-year="2018"
   id="lineupDialogbox"
 >
