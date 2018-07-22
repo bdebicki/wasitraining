@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`tests for addDialogbox render dialogbox element render dialogbox with additional properties (classNames, adataAttr) 1`] = `
+exports[`tests for addDialogbox test how dialogbox element is rendered render dialogbox with additional properties (classNames, adataAttr) 1`] = `
 <div
   class="dialogbox-visible lineup--edition2018"
   data-year="2018"
@@ -48,7 +48,7 @@ exports[`tests for addDialogbox render dialogbox element render dialogbox with a
 </div>
 `;
 
-exports[`tests for addDialogbox render dialogbox element render dialogbox with default and required propertis settings 1`] = `
+exports[`tests for addDialogbox test how dialogbox element is rendered render dialogbox with default and required propertis settings 1`] = `
 <div
   class="dialogbox"
   id="lineupDialogbox"
@@ -95,7 +95,7 @@ exports[`tests for addDialogbox render dialogbox element render dialogbox with d
 </div>
 `;
 
-exports[`tests for addDialogbox render dialogbox element render dialogbox with overwrite propertis with default values (stretched, closeTitle) 1`] = `
+exports[`tests for addDialogbox test how dialogbox element is rendered render dialogbox with overwrite propertis with default values (stretched, closeTitle) 1`] = `
 <div
   class="dialogbox dialogbox--stretched"
   id="lineupDialogbox"

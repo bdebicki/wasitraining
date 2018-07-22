@@ -40,45 +40,46 @@ function mockDialogboxContent() {
 
 	return dialogboxContent;
 }
-function mockDOMwithDialogbox() {
-	const dialogboxEl = addDialogbox({
+function mockDOMwithDialogbox(withCustomEl = false) {
+	const settings = {
 		classNames: [dialogboxElClassName],
-		id: 'lineupDialogbox',
+		id: withCustomEl ? 'lineupDialogboxOverEl' : 'lineupDialogbox',
 		title: 'Lineup 2018',
 		content: mockDialogboxContent(),
-	});
-	document.body.appendChild(dialogboxEl);
-}
-function mockDOMwithDialogboxAndCustomEl() {
-	const dialogboxEl = addDialogbox({
-		classNames: [dialogboxElClassName],
-		id: 'lineupDialogboxOverEl',
-		title: 'Lineup 2018',
-		closeAction: toggleDialogboxWithInactive,
-		content: mockDialogboxContent(),
-	});
-	const customEl = document.createElement('div');
+	};
 
-	customEl.classList.add(customElClassName);
+	if (withCustomEl) {
+		Object.assign(settings, { closeAction: toggleDialogboxWithInactive });
+	}
 
+	const dialogboxEl = addDialogbox(settings);
 	document.body.appendChild(dialogboxEl);
-	document.body.appendChild(customEl);
+
+	if (withCustomEl) {
+		const customEl = document.createElement('div');
+
+		customEl.classList.add(customElClassName);
+		document.body.appendChild(customEl);
+	}
 }
 
 // eslint-disable-next-line no-undef
 afterAll(() => cleanDOM());
 
 describe('tests for addDialogbox', () => {
-	using(dialogboxCases).describe('render dialogbox element', ({ description, settings }) => {
+	using(dialogboxCases).describe('test how dialogbox element is rendered', ({ description, settings }) => {
 		it(description, () => {
 			const dialogboxEl = addDialogbox(settings);
 
 			expect(dialogboxEl).toMatchSnapshot();
 		});
 	});
-	describe('test dialogbox simple toggle actions', () => {
+	it('check does dialogbox element has been added to body', () => {
 		mockDOMwithDialogbox();
 
+		expect(document.querySelector(`.${dialogboxElClassName}`)).toBeTruthy();
+	});
+	describe('test dialogbox simple toggle actions', () => {
 		it('show dialogbox', () => {
 			toggleDialogboxAction('#lineupDialogbox');
 
@@ -91,7 +92,7 @@ describe('tests for addDialogbox', () => {
 		});
 	});
 	describe('test dialogbox toggle actions with inactive some component', () => {
-		mockDOMwithDialogboxAndCustomEl();
+		mockDOMwithDialogbox(true);
 
 		it('show dialogbox and set inactive container under dialobox', () => {
 			toggleDialogboxAction('#lineupDialogboxOverEl', `.${customElClassName}`);
