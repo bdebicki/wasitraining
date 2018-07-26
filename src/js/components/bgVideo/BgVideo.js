@@ -3,10 +3,6 @@ import LAYOUT from '../../elementHandlers/layout';
 import addVideo from '../../utils/addVideo';
 
 export default class BgVideo {
-	constructor(target) {
-		this.target = target;
-	}
-
 	static renderVideoContainer() {
 		const div = document.createElement('div');
 
@@ -27,11 +23,11 @@ export default class BgVideo {
 		return addVideo(settings);
 	}
 
-	render() {
+	static render() {
 		const videoBlock = BgVideo.renderVideoContainer();
 
 		videoBlock.appendChild(BgVideo.renderVideo());
 
-		document.getElementById(this.target).appendChild(videoBlock);
+		return videoBlock;
 	}
 }

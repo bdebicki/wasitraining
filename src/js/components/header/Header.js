@@ -5,11 +5,6 @@ import { updateComponentByViewType } from '../../utils/updateView';
 import Title from './Title';
 
 export default class Header {
-	constructor(data, target) {
-		this.data = data;
-		this.target = target;
-	}
-
 	static updateHeaderLocation(el) {
 		updateComponentByViewType(el, HEADER.INTRO_HEADER_CLASS);
 	}
@@ -24,11 +19,11 @@ export default class Header {
 		return headerContainer;
 	}
 
-	render() {
+	static render() {
 		const headerContainer = Header.renderHeaderContainer();
 
 		headerContainer.appendChild(Title.render());
 
-		document.getElementById(this.target).appendChild(headerContainer);
+		return headerContainer;
 	}
 }

@@ -3,9 +3,8 @@ import LAYOUT from '../../elementHandlers/layout';
 import TimelineItem from './TimelineItem';
 
 export default class Timeline {
-	constructor(data, target, editionId) {
+	constructor(data, editionId) {
 		this.data = data;
-		this.target = target;
 		this.editionId = editionId;
 	}
 
@@ -52,7 +51,8 @@ export default class Timeline {
 		});
 
 		timelineContainer.appendChild(editionsListContainer);
-		document.getElementById(this.target).appendChild(timelineContainer);
+
+		return timelineContainer;
 	}
 
 	renderMainTimeline() {
@@ -67,6 +67,7 @@ export default class Timeline {
 		});
 
 		timelineContainer.appendChild(editionsListContainer);
-		document.getElementById(this.target).appendChild(timelineContainer);
+
+		return timelineContainer;
 	}
 }
