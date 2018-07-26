@@ -1,6 +1,6 @@
-import editionData, { details } from '../../../../mocks/edition.json';
-import editionOneDay from '../../../../mocks/editionOneDay.json';
-import editionWithoutRain from '../../../../mocks/editionWithoutRain.json';
+import editionData, { details } from '../../../../__mocks__/edition.json';
+import editionOneDay from '../../../../__mocks__/editionOneDay.json';
+import editionWithoutRain from '../../../../__mocks__/editionWithoutRain.json';
 import Edition from '../Edition';
 
 const mockedEdition = new Edition(editionData);
