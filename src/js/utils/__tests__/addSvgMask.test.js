@@ -1,5 +1,5 @@
 import { addSVGmask, svgType } from '../addSvgMask';
-import using from '../../../../testUtils/using';
+import using from '../../../../tests/utils/using';
 
 function getMaskShape() {
 	const shape = document.createElementNS(svgType, 'text');

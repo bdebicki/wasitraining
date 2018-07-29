@@ -1,5 +1,5 @@
-import cleanDOM from '../../../../testUtils/cleanDOM';
-import using from '../../../../testUtils/using';
+import cleanDOM from '../../../../tests/utils/cleanDOM';
+import using from '../../../../tests/utils/using';
 import { addDialogbox, toggleDialogboxAction, toggleDialogboxWithInactive } from '../addDialogbox';
 import DIALOGBOX from '../elementHandlers/dialogbox';
 

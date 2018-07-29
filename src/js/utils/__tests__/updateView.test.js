@@ -1,4 +1,4 @@
-import cleanDOM from '../../../../testUtils/cleanDOM';
+import cleanDOM from '../../../../tests/utils/cleanDOM';
 import VIEW_TYPES from '../../enums/viewTypes';
 import LAYOUT from '../../elementHandlers/layout';
 import VIEWS from '../../views/elementHandlers/views';

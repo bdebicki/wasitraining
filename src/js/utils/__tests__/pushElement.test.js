@@ -1,6 +1,6 @@
-import cleanDOM from '../../../../testUtils/cleanDOM';
-import createDiv from '../../../../testUtils/createDiv';
-import prepareContainer from '../../../../testUtils/prepareContainer';
+import cleanDOM from '../../../../tests/utils/cleanDOM';
+import createDiv from '../../../../tests/utils/createDiv';
+import prepareContainer from '../../../../tests/utils/prepareContainer';
 import pushElements from '../pushElement';
 
 const pushContainerId = 'pushContainer';

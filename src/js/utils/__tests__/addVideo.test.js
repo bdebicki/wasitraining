@@ -1,4 +1,4 @@
-import using from '../../../../testUtils/using';
+import using from '../../../../tests/utils/using';
 import addVideo from '../addVideo';
 
 const videoElCases = [
