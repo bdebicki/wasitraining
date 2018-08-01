@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test title component check dose title component renders correct 1`] = `
+<h1
+  class="pageName"
+>
+  <a
+    class="pageName__link"
+    href="#home"
+  >
+    was it raining at the open'er festival?
+  </a>
+</h1>
+`;
