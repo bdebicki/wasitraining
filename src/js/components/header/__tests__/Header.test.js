@@ -1,15 +1,15 @@
 import cleanDOM from '../../../../../tests/utils/cleanDOM';
 import mockView from '../../../../../tests/utils/mockView';
-import VIEW_TYPES from '../../../enums/viewTypes';
 import HEADER from '../elementHandlers/header';
-import Title from '../Title';
+import VIEW_TYPES from '../../../enums/viewTypes';
+import Header from '../Header';
 
 afterAll(() => cleanDOM());
 
-describe('test title component', () => {
+describe('tests header component', () => {
 	it('check dose title component renders correct', () => {
 		// when
-		const title = Title.render();
+		const title = Header.render();
 
 		// then
 		expect(title).toMatchSnapshot();
@@ -20,9 +20,9 @@ describe('test title component', () => {
 		mockView(VIEW_TYPES.INTRO);
 
 		// when
-		const title = Title.render();
+		const title = Header.render();
 
 		// then
-		expect(title.classList.contains(HEADER.TITLE_HEADER_CLASS)).toBeTruthy();
+		expect(title.classList.contains(HEADER.INTRO_HEADER_CLASS)).toBeTruthy();
 	});
 });
