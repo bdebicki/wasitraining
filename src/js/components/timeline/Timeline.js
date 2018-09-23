@@ -3,14 +3,15 @@ import LAYOUT from '../../elementHandlers/layout';
 import TimelineItem from './TimelineItem';
 
 export default class Timeline {
-	constructor(data, target, editionId) {
+	constructor(data, editionId) {
 		this.data = data;
-		this.target = target;
 		this.editionId = editionId;
 	}
 
-	get reverseSortEditions() {
-		return this.data.reverse();
+	reverseSortEditions() {
+		const { data } = this;
+
+		return data.reverse();
 	}
 
 	static updateSelectedEdition(newEdition) {
@@ -36,7 +37,7 @@ export default class Timeline {
 	}
 
 	renderNavTimeline() {
-		const revertedEditionsOrder = this.reverseSortEditions;
+		const revertedEditionsOrder = this.reverseSortEditions();
 		const timelineContainer = Timeline.createTimelineContainer(LAYOUT.NAV_TIMELINE_ID);
 		const editionsListContainer = Timeline.createEditionsListContainer(TIMELINE.NAV_EDITIONS_CLASS);
 
@@ -52,11 +53,12 @@ export default class Timeline {
 		});
 
 		timelineContainer.appendChild(editionsListContainer);
-		document.getElementById(this.target).appendChild(timelineContainer);
+
+		return timelineContainer;
 	}
 
 	renderMainTimeline() {
-		const revertedEditionsOrder = this.reverseSortEditions;
+		const revertedEditionsOrder = this.reverseSortEditions();
 		const timelineContainer = Timeline.createTimelineContainer(LAYOUT.MAIN_TIMELINE_ID);
 		const editionsListContainer = Timeline.createEditionsListContainer(TIMELINE.MAIN_EDITIONS_CLASS);
 
@@ -67,6 +69,7 @@ export default class Timeline {
 		});
 
 		timelineContainer.appendChild(editionsListContainer);
-		document.getElementById(this.target).appendChild(timelineContainer);
+
+		return timelineContainer;
 	}
 }

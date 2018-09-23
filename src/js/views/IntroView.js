@@ -7,6 +7,7 @@ import Timeline from '../components/timeline/Timeline';
 import BgVideo from '../components/bgVideo/BgVideo';
 import Footer from '../components/footer/Footer';
 import { updateViewType } from '../utils/updateView';
+import pushElement from '../utils/pushElement';
 
 export default class IntroView {
 	constructor(data) {
@@ -18,27 +19,27 @@ export default class IntroView {
 	}
 
 	switchToIntoView() {
-		const timelineBlock = new Timeline(this.data, LAYOUT.MAIN_CONTAINER_ID);
+		const bodyEl = `#${LAYOUT.MAIN_CONTAINER_ID}`;
+		const timelineBlock = new Timeline(this.data);
 
 		IntroView.updateViewTypeToIntro();
 		Title.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
 		Header.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
-		timelineBlock.renderMainTimeline();
+		pushElement(bodyEl, timelineBlock.renderMainTimeline());
 		document.getElementById(LAYOUT.NAV_TIMELINE_ID).remove();
 		document.getElementById(LAYOUT.YEAR_CONTAINER_ID).remove();
 	}
 
 	render() {
-		const body = LAYOUT.MAIN_CONTAINER_ID;
-		const headerBlock = new Header(this.data, body);
-		const timelineBlock = new Timeline(this.data, body);
-		const bgBlock = new BgVideo(body);
-		const footerBlock = new Footer(body);
+		const bodyEl = `#${LAYOUT.MAIN_CONTAINER_ID}`;
+		const timelineBlock = new Timeline(this.data);
 
 		IntroView.updateViewTypeToIntro();
-		headerBlock.render();
-		timelineBlock.renderMainTimeline();
-		bgBlock.render();
-		footerBlock.render();
+		pushElement(bodyEl, [
+			Header.render(),
+			timelineBlock.renderMainTimeline(),
+			BgVideo.render(),
+			Footer.render(),
+		]);
 	}
 }

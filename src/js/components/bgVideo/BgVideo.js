@@ -1,12 +1,8 @@
 import BG from './elementHandlers/background';
 import LAYOUT from '../../elementHandlers/layout';
-import { addVideo } from '../../utils/addElement';
+import addVideo from '../../utils/addVideo';
 
 export default class BgVideo {
-	constructor(target) {
-		this.target = target;
-	}
-
 	static renderVideoContainer() {
 		const div = document.createElement('div');
 
@@ -27,22 +23,11 @@ export default class BgVideo {
 		return addVideo(settings);
 	}
 
-	static renderImg() {
-		const img = document.createElement('img');
-
-		img.classList.add(BG.VIDEO_CLASS);
-		img.src = '/images/bg-img.png';
-		img.width = '1366';
-		img.height = '768';
-
-		return img;
-	}
-
-	render() {
+	static render() {
 		const videoBlock = BgVideo.renderVideoContainer();
 
 		videoBlock.appendChild(BgVideo.renderVideo());
 
-		document.getElementById(this.target).appendChild(videoBlock);
+		return videoBlock;
 	}
 }

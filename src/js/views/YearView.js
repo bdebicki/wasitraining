@@ -8,6 +8,7 @@ import YearDetails from '../components/yearDetails/YearDetails';
 import BgVideo from '../components/bgVideo/BgVideo';
 import Footer from '../components/footer/Footer';
 import { updateViewType } from '../utils/updateView';
+import pushElement from '../utils/pushElement';
 
 export default class YearView {
 	constructor(data, editionId) {
@@ -29,31 +30,33 @@ export default class YearView {
 	}
 
 	switchToYearView() {
-		const yearBlock = new YearDetails(this.data[this.editionIndex], LAYOUT.MAIN_CONTAINER_ID);
-		const timelineBlock = new Timeline(this.data, LAYOUT.HEADER_ID, this.editionId);
+		const bodyEl = `#${LAYOUT.MAIN_CONTAINER_ID}`;
+		const headerEl = `#${LAYOUT.HEADER_ID}`;
+		const timelineBlock = new Timeline(this.data, this.editionId);
+		const yearBlock = new YearDetails(this.data[this.editionIndex]);
 
 		YearView.updateViewTypeToYear();
 		Title.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
 		Header.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
-		timelineBlock.renderNavTimeline();
-		yearBlock.render();
+		pushElement(headerEl, timelineBlock.renderNavTimeline());
+		pushElement(bodyEl, yearBlock.render());
 		document.getElementById(LAYOUT.MAIN_TIMELINE_ID).remove();
 	}
 
 	render() {
 		const { data, editionId, editionIndex } = this;
-		const body = LAYOUT.MAIN_CONTAINER_ID;
-		const headerBlock = new Header(data, body);
-		const timelineBlock = new Timeline(data, LAYOUT.HEADER_ID, editionId);
-		const yearBlock = new YearDetails(data[editionIndex], body);
-		const bgBlock = new BgVideo(body);
-		const footerBlock = new Footer(body);
+		const bodyEl = `#${LAYOUT.MAIN_CONTAINER_ID}`;
+		const headerEl = `#${LAYOUT.HEADER_ID}`;
+		const timelineBlock = new Timeline(data, editionId);
+		const yearBlock = new YearDetails(data[editionIndex]);
 
 		YearView.updateViewTypeToYear();
-		headerBlock.render();
-		timelineBlock.renderNavTimeline();
-		yearBlock.render();
-		bgBlock.render();
-		footerBlock.render();
+		pushElement(headerEl, timelineBlock.renderNavTimeline());
+		pushElement(bodyEl, [
+			Header.render(),
+			yearBlock.render(),
+			BgVideo.render(),
+			Footer.render(),
+		]);
 	}
 }

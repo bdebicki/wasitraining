@@ -21,7 +21,7 @@ export function addDialogbox({
 	const dialogboxClassNames = [DIALOGBOX.BASIC_CLASS];
 
 	if (classNames) {
-		classNames.map((className) => dialogboxClassNames.push(className));
+		classNames.forEach((className) => dialogboxClassNames.push(className));
 	}
 	if (stretched) {
 		dialogboxClassNames.push(DIALOGBOX.STRETCHED_CLASS);

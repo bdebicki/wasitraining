@@ -4,7 +4,6 @@ export default class Edition {
 		this._year = editionData.editionYear;
 		this._place = editionData.place;
 		this._name = editionData.fullName;
-		this._headliners = editionData.headliners;
 		this._details = editionData.details;
 	}
 
@@ -32,10 +31,6 @@ export default class Edition {
 		return this.editionDetails.length;
 	}
 
-	get headliners() {
-		return this._headliners;
-	}
-
 	get editionDate() {
 		const firstDay = this.editionDetails[0].day;
 
@@ -45,7 +40,7 @@ export default class Edition {
 			return { firstDay, lastDay };
 		}
 
-		return { firstDay };
+		return firstDay;
 	}
 
 	get editionRain() {

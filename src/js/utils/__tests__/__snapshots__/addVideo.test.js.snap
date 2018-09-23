@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render video element  with multiple class names 1`] = `
+<video
+  autoplay=""
+  class="bgVideo videoFullScreen"
+  height="100"
+  loop=""
+  poster="./placeholder.png"
+  src="./video.webm"
+  width="200"
+/>
+`;
+
+exports[`render video element  with one class name 1`] = `
+<video
+  autoplay=""
+  class="bgVideo"
+  height="100"
+  loop=""
+  poster="./placeholder.png"
+  src="./video.webm"
+  width="200"
+/>
+`;

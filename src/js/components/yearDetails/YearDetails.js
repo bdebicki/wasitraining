@@ -4,9 +4,8 @@ import RainDetails from './RainDetails';
 import LineupDetails from './LineupDetails';
 
 export default class YearDetails {
-	constructor(editionId, target) {
+	constructor(editionId) {
 		this.editionId = editionId;
-		this.target = target;
 	}
 
 	static renderYearContainer() {
@@ -38,6 +37,7 @@ export default class YearDetails {
 		yearBlock.appendChild(editionBlock.render());
 		yearBlock.appendChild(rainBlock.render());
 		yearBlock.appendChild(lineupDialogbox.render());
-		document.getElementById(this.target).appendChild(yearBlock);
+
+		return yearBlock;
 	}
 }
