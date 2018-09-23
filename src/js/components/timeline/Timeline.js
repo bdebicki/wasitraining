@@ -8,8 +8,10 @@ export default class Timeline {
 		this.editionId = editionId;
 	}
 
-	get reverseSortEditions() {
-		return this.data.reverse();
+	reverseSortEditions() {
+		const { data } = this;
+
+		return data.reverse();
 	}
 
 	static updateSelectedEdition(newEdition) {
@@ -35,7 +37,7 @@ export default class Timeline {
 	}
 
 	renderNavTimeline() {
-		const revertedEditionsOrder = this.reverseSortEditions;
+		const revertedEditionsOrder = this.reverseSortEditions();
 		const timelineContainer = Timeline.createTimelineContainer(LAYOUT.NAV_TIMELINE_ID);
 		const editionsListContainer = Timeline.createEditionsListContainer(TIMELINE.NAV_EDITIONS_CLASS);
 
@@ -56,7 +58,7 @@ export default class Timeline {
 	}
 
 	renderMainTimeline() {
-		const revertedEditionsOrder = this.reverseSortEditions;
+		const revertedEditionsOrder = this.reverseSortEditions();
 		const timelineContainer = Timeline.createTimelineContainer(LAYOUT.MAIN_TIMELINE_ID);
 		const editionsListContainer = Timeline.createEditionsListContainer(TIMELINE.MAIN_EDITIONS_CLASS);
 
