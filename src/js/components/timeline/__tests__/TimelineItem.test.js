@@ -3,7 +3,7 @@ import TimelineItem from '../TimelineItem';
 
 const timelineItem = new TimelineItem(editionData);
 
-describe('render timeline item', () => {
+describe('timeline item component', () => {
 	it('render main timeline item', () => {
 		expect(timelineItem.renderMainEdition()).toMatchSnapshot();
 	});

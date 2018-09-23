@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render timeline item render active nav timeline item 1`] = `
+exports[`timeline item component render active nav timeline item 1`] = `
 <li
   class="navTimelineItem"
 >
@@ -13,7 +13,7 @@ exports[`render timeline item render active nav timeline item 1`] = `
 </li>
 `;
 
-exports[`render timeline item render main timeline item 1`] = `
+exports[`timeline item component render main timeline item 1`] = `
 <li
   class="mainTimelineItem"
 >
@@ -55,7 +55,7 @@ exports[`render timeline item render main timeline item 1`] = `
 </li>
 `;
 
-exports[`render timeline item render nav timeline item 1`] = `
+exports[`timeline item component render nav timeline item 1`] = `
 <li
   class="navTimelineItem"
 >
