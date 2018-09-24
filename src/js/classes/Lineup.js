@@ -1,5 +1,6 @@
 import { ARTIST_KEYS } from '../enums/artist';
 import LINEUP_LEVELS from '../enums/lineupLevels';
+import AbstractLineup from './AbstractLineup';
 
 /**
  * sort types:
@@ -21,23 +22,15 @@ import LINEUP_LEVELS from '../enums/lineupLevels';
  * 	- false - don't display information about others artists
  */
 
-export default class Lineup {
+export default class Lineup extends AbstractLineup {
 	constructor(editionId) {
+		super(editionId);
+
 		this._editionYear = editionId.editionYear;
-		this._editionDetails = editionId.details;
-		this._settings = editionId.lineupSettings;
 	}
 
 	get editionYear() {
 		return this._editionYear;
-	}
-
-	get settings() {
-		return this._settings;
-	}
-
-	get sortType() {
-		return this.settings.sortType;
 	}
 
 	get mergeArtistsType() {
@@ -46,24 +39,6 @@ export default class Lineup {
 
 	get otherArtists() {
 		return this.settings.otherArtists;
-	}
-
-	get separatorElement() {
-		return this.settings.separatorElement;
-	}
-
-	get rawLineup() {
-		return this._editionDetails.map((item) => item.lineup);
-	}
-
-	get headliners() {
-		if (this.sortType === 'alphabetical') {
-			return this.sortAlphabeticallyHeadliners();
-		} else if (this.sortType === 'customOrder') {
-			return this.sortOrderedHeadliners();
-		}
-		// sortType is false, 'customOrderExceptHeadliners' or 'alphabeticalExceptHeadliners'
-		return this.notSortedHeadliners();
 	}
 
 	get lineup() {
@@ -88,52 +63,6 @@ export default class Lineup {
 
 		return preparedLineup;
 	}
-
-	getFlatHeadlinersList() {
-		let flatHeadliners = [];
-
-		flatHeadliners = this.rawLineup
-			.reduce((acc, day) => { // push headliners from days
-				if (day.headliners) { // check does headliners was on that day
-					acc.push(day.headliners);
-				}
-
-				return acc;
-			}, [])
-			.reduce((acc, artist) => acc.concat(artist), []); // flat array with headliners (remove nester arrays)
-
-		return flatHeadliners;
-	}
-
-	notSortedHeadliners() { // merge headliners from all days into one flat array (with artists only)
-		let headliners = [];
-
-		headliners = this.getFlatHeadlinersList()
-			.map((headlinersArtist) => { // change object artists to sting
-				if (typeof headlinersArtist === 'object') {
-					return headlinersArtist[ARTIST_KEYS.ARTIST];
-				}
-
-				return headlinersArtist;
-			});
-
-		return headliners;
-	}
-
-	sortAlphabeticallyHeadliners() {
-		return this.notSortedHeadliners.sort(); // sort alphabetically flat array
-	}
-
-	sortOrderedHeadliners() {
-		let headliners = [];
-
-		headliners = this.getFlatHeadlinersList()
-			.sort((a, b) => a.order - b.order) // sort headliners by order property
-			.map((artist) => artist[ARTIST_KEYS.ARTIST]); // flattening array - remove objects and displays only artists
-
-		return headliners;
-	}
-
 
 	noMergeArtists(lvls = false) {
 		const artists = this.rawLineup.map((day) => { // iterate on days
