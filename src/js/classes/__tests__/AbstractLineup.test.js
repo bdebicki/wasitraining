@@ -1,4 +1,4 @@
-import editionData, { lineupSettings } from '../../../../tests/__mocks__/edition.json';
+import editionData, { lineupSettings } from '../../../../tests/__mocks__/edition-alphabeticalExceptHeadliners-noMergeArtists.json';
 import rawLineup from '../../../../tests/__mocks__/rawLineup.json';
 import AbstractLineup from '../AbstractLineup';
 
