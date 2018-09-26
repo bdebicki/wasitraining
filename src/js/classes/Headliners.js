@@ -4,18 +4,14 @@ import { ARTIST_KEYS } from '../enums/artist';
 /**
  * sort types:
  *	- false - don't sort artists
- *	- 'alphabetical' - sort alphabetical
  *	- 'alphabeticalExceptHeadliners' - sort alphabetical artists from all groups except headliners
  *	- 'customOrder' - sort by 'order' props from artist object
  *	- 'customOrderExceptHeadliners' - sort by 'order' props from artist object but don't touch headliners
- *
  */
 
 export default class Headliners extends AbstractLineup {
 	get headliners() {
-		if (this.sortType === 'alphabetical') {
-			return this.sortAlphabeticallyHeadliners();
-		} else if (this.sortType === 'customOrder') {
+		if (this.sortType === 'customOrder') {
 			return this.sortOrderedHeadliners();
 		}
 		// sortType is false, 'customOrderExceptHeadliners' or 'alphabeticalExceptHeadliners'
@@ -51,10 +47,6 @@ export default class Headliners extends AbstractLineup {
 			});
 
 		return headliners;
-	}
-
-	sortAlphabeticallyHeadliners() {
-		return this.notSortedHeadliners.sort(); // sort alphabetically flat array
 	}
 
 	sortOrderedHeadliners() {
