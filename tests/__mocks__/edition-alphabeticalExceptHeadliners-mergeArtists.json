@@ -1,0 +1,171 @@
+{
+	"id": 13,
+	"editionYear": "2014",
+	"fullName": "Heineken sponsors Open'er Festival",
+	"place": {
+		"city": "Gdynia",
+		"object": "Babie Doły Airport"
+	},
+	"details": [
+		{
+			"day": "2nd July",
+			"rain": true,
+			"rainSize": "small",
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2014/7/2/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2014-07-2&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2014"
+			],
+			"lineup": {
+				"headliners": ["The Black Keys"],
+				"lvl1": [
+					{"artist": "Foster the People", "decorator": "collapsed"},
+					"Interpol",
+					"Jamie xx",
+					{"artist": "Earl Sweatshirt", "decorator": "collapsed"},
+					{"artist": "Haim", "decorator": "collapsed"},
+					{"artist": "Metronomy", "decorator": "expanded"}
+				],
+				"lvl2": [
+					"Eldo",
+					{"artist": "Pablopavo i Ludziki", "decorator": "expanded"},
+					"Fair Weather Friends",
+					{"artist": "Night Marks Electric Trio & Archeo", "decorator": "expanded"},
+					"Coldair",
+					{"artist": "Mooryc", "decorator": "expanded"}
+				],
+				"others": [
+					"Hanimal",
+					"Niewidzialna Nerka",
+					{"artist": "Oxford Drama", "visible": false},
+					"Eric Shoves Them In His Pocket",
+					"Żółte Kalendarze",
+					"Wild Books",
+					{"artist": "Sande Mölder", "sortBy": "Mölder"},
+					"Tasker"
+				]
+			}
+		}, {
+			"day": "3rd July",
+			"rain": true,
+			"rainSize": "small",
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2014/7/3/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2014-07-3&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2014"
+			],
+			"lineup": {
+				"headliners": ["Pearl Jam"],
+				"lvl1": [
+					{"artist": "MGMT", "decorator": "expanded"},
+					{"artist": "MØ", "decorator": "expanded"},
+					"Rudimental",
+					"Darkside",
+					{"artist": "The Afghan Whigs", "decorator": "expanded"},
+					{"artist": "Maya Jane Coles", "decorator": "expanded"},
+					"Jagwar Ma"
+				],
+				"lvl2": [
+					{
+						"artist": "Pink Freud Plays Autechre",
+						"breakLine": true,
+						"decorator": "collapsed",
+						"sliceDecorator": {"slice": "Pink Freud", "style": "previousLine"}
+					},
+					"Bokka",
+					{"artist": "Pustki", "decorator": "collapsed"},
+					"Kuroma",
+					{"artist": "Rasmentalism", "decorator": "collapsed"}
+				],
+				"others": [
+					"Call the Sun",
+					"Jerz Igor",
+					"Weeping Birds",
+					{"artist": "Kuba Sojka Live", "sortBy": "Sojka"},
+					{"artist": "Piotr Bejnar", "sortBy": "Bejnar"},
+					{"artist": "Flirtini", "canceled": true},
+					"We Draw A"
+				]
+			}
+		}, {
+			"day": "4th July",
+			"rain": false,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2014/7/4/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2014-07-4&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2014"
+			],
+			"lineup": {
+				"headliners": ["Jack White"],
+				"lvl1": [
+					"Lykke Li",
+					{"artist": "Foals", "decorator": "collapsed"},
+					{"artist": "Mela Koteluk", "decorator": "expanded"},
+					"Ben Howard",
+					"Banks",
+					{"artist": "Wild Beasts", "decorator": "expanded"},
+					"Royal Blood",
+					"Chromeo"
+				],
+				"lvl2": [
+					"KAMP!",
+					"Misia FF",
+					{"artist": "Tourist", "decorator": "collapsed"},
+					{"artist": "Rubber Dots", "decorator": "collapsed"}
+				],
+				"others": [
+					"Bulbwires",
+					"Carnival Youth",
+					"Hatti Vatti & Lady Katee",
+					"Hello Mark",
+					"Robert Piotrowicz",
+					"Viadrina",
+					"Kixnare"
+				]
+			}
+		}, {
+			"day": "5th July",
+			"rain": false,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2014/7/5/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2014-07-5&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2014"
+			],
+			"lineup": {
+				"headliners": ["Faith No More"],
+				"lvl1": [
+					{"artist": "The Horrors", "decorator": "expanded"},
+					"Phoenix",
+					"Bastille",
+					"Pusha T",
+					{"artist": "Artur Rojek", "sortBy": "Rojek"},
+					{"artist": "Daughter", "decorator": "collapsed"},
+					{"artist": "Warpaint", "decorator": "expanded"},
+					"Julio Bashmore"
+				],
+				"lvl2": [
+					{"artist": "The Dumplings", "canceled": true},
+					{"artist": "Domowe Melodie", "sortBy": "The Dumplings Replacement", "replacement": "The Dumplings"},
+					{"artist": "Plastic", "decorator": "collapsed"},
+					"Kari",
+					"Król"
+				],
+				"others": [
+					{"artist": "Daniel Spaleniak", "sortBy": "Spaleniak"},
+					"Kaseciarz",
+					"Szezlong",
+					"Terrific Sunday",
+					"ZAMILSKA",
+					"Mr. Lex",
+					"SLG"
+				]
+			}
+		}
+	],
+	"lineupSettings": {
+		"sortType": "alphabeticalExceptHeadliners",
+		"mergeArtists": true,
+		"otherArtists": false,
+		"separatorElement": false
+	}
+}

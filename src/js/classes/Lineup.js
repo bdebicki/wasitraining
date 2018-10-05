@@ -102,9 +102,6 @@ export default class Lineup extends AbstractLineup {
 			Object.keys(day).forEach((lvl) => {
 				if (lvls === false || lvls.indexOf(lvl) !== -1) { // check does merge specific lvls or all
 					day[lvl].forEach((artist) => {
-						if (artists[lvl] === undefined) {
-							artists[lvl] = [];
-						}
 						if (artist[ARTIST_KEYS.VISIBLE] !== false) {
 							artists[lvl].push(artist);
 						}

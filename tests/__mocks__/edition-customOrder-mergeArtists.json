@@ -16,81 +16,32 @@
 			],
 			"lineup": {
 				"lvl1": [
-					{
-						"artist": "Sonic Youth",
-						"order": 2
-					},
-					{
-						"artist": "The Roots",
-						"order": 4,
-						"firstOnLine": true,
-						"decorator": "expanded"
-					}
+					{"artist": "Sonic Youth", "order": 2},
+					{"artist": "The Roots", "order": 4,  "firstOnLine": true, "decorator": "expanded"}
 				],
 				"lvl2": [
-					{
-						"artist": "Laurent Garnier (Live)",
-						"order": 1,
-						"firstOnLine": true
-					},
-					{
-						"artist": "Dizzee Rascal",
-						"order": 2
-					}
+					{"artist": "Laurent Garnier (Live)", "order": 1, "firstOnLine": true},
+					{"artist": "Dizzee Rascal", "order": 2}
 				],
 				"lvl3": [
-					{
-						"artist": "Freeform Five",
-						"order": 3
-					},
-					{
-						"artist": "The Strike Boys",
-						"order": 5
-					},
-					{
-						"artist": "The Car Is on Fire",
-						"order": 6
-					},
-					{
-						"artist": "Afro Kolektyw",
-						"order": 10
-					},
-					{
-						"artist": "Pink Freud",
-						"order": 12
-					},
-					{
-						"artist": "EastWest Rockers",
-						"order": 13
-					}
+					{"artist": "Freeform Five", "order": 3},
+					{"artist": "The Strike Boys", "order": 5},
+					{"artist": "The Car Is on Fire", "order": 6},
+					{"artist": "Afro Kolektyw", "order": 10},
+					{"artist": "Pink Freud", "order": 12},
+					{"artist": "EastWest Rockers", "order": 13}
 				],
 				"lvl4": [
-					{
-						"artist": "Bruno Schulz",
-						"order": 2
-					},
-					{
-						"artist": "Cała Góra Barwinków",
-						"order": 3
-					}
+					{"artist": "Bruno Schulz", "order": 2},
+					{"artist": "Cała Góra Barwinków", "order": 3}
 				],
 				"others": [
-					{
-						"artist": "Managga",
-						"order": 3
-					},
-					{
-						"artist": "Organizm",
-						"order": 7
-					},
-					{
-						"artist": "The Poise Rite",
-						"order": 9
-					}
+					{"artist": "Managga", "order": 3},
+					{"artist": "Organizm", "order": 7},
+					{"artist": "The Poise Rite", "order": 9}
 				]
 			}
-		},
-		{
+		}, {
 			"day": "30th June",
 			"rain": true,
 			"rainSize": "small",
@@ -100,90 +51,34 @@
 			],
 			"lineup": {
 				"headliners": [
-					{
-						"artist": "Beastie Boys",
-						"order": 2
-					},
-					{
-						"artist": "Muse",
-						"order": 3
-					}
+					{"artist": "Beastie Boys", "order": 2},
+					{"artist": "Muse", "order": 3}
 				],
 				"lvl1": [
-					{
-						"artist": "Groove Armada",
-						"order": 1,
-						"firstOnLine": true
-					}
+					{"artist": "Groove Armada", "order": 1, "firstOnLine": true}
 				],
 				"lvl3": [
-					{
-						"artist": "Crazy P",
-						"order": 1,
-						"firstOnLine": true
-					},
-					{
-						"artist": "O.S.T.R.",
-						"order": 2
-					},
-					{
-						"artist": "Apteka",
-						"order": 8,
-						"firstOnLine": true
-					},
-					{
-						"artist": "Kombajn do Zbierania Kur po Wioskach",
-						"order": 14,
-						"firstOnLine": true
-					},
-					{
-						"artist": "Łąki Łan",
-						"order": 16
-					},
-					{
-						"artist": "Kapitan DA",
-						"order": 17
-					},
-					{
-						"artist": "Me Myself and I",
-						"order": 18
-					}
+					{"artist": "Crazy P", "order": 1, "firstOnLine": true},
+					{"artist": "O.S.T.R.", "order": 2},
+					{"artist": "Apteka", "order": 8, "firstOnLine": true},
+					{"artist": "Kombajn do Zbierania Kur po Wioskach", "order": 14, "firstOnLine": true},
+					{"artist": "Łąki Łan", "order": 16},
+					{"artist": "Kapitan DA", "order": 17},
+					{"artist": "Me Myself and I", "order": 18}
 				],
 				"lvl4": [
-					{
-						"artist": "Dezodorant Squad",
-						"order": 4
-					},
-					{
-						"artist": "Dick 4 Dick",
-						"order": 5
-					}
+					{"artist": "Dezodorant Squad", "order": 4},
+					{"artist": "Dick 4 Dick", "order": 5}
 				],
 				"others": [
-					{
-						"artist": "Lars",
-						"order": 2
-					},
-					{
-						"artist": "Mikrowafle",
-						"order": 5
-					},
-					{
-						"artist": "NOT",
-						"order": 6
-					},
-					{
-						"artist": "Out of Tune",
-						"order": 8
-					},
-					{
-						"artist": "Farel Gott & White Rabbit's Trip",
-						"visible": false
-					}
+					{"artist": "Lars", "order": 2},
+					{"artist": "Mikrowafle", "order": 5},
+					{"artist": "NOT", "order": 6},
+					{"artist": "Out of Tune", "order": 8},
+					{"artist": "Farel Gott & White Rabbit's Trip", "visible": false}
 				]
 			}
-		},
-		{
+		}, {
 			"day": "1st July",
 			"rain": true,
 			"rainSize": "small",
@@ -193,66 +88,26 @@
 			],
 			"lineup": {
 				"headliners": [
-					{
-						"artist": "Björk",
-						"order": 1,
-						"firstOnLine": true
-					}
+					{"artist": "Björk", "order": 1, "firstOnLine": true}
 				],
 				"lvl1": [
-					{
-						"artist": "Bloc Party",
-						"order": 3
-					},
-					{
-						"artist": "LCD Soundsystem",
-						"order": 5,
-						"decorator": "expanded"
-					}
+					{"artist": "Bloc Party", "order": 3},
+					{"artist": "LCD Soundsystem", "order": 5, "decorator": "expanded"}
 				],
 				"lvl3": [
-					{
-						"artist": "Smolik",
-						"order": 4
-					},
-					{
-						"artist": "Indios Bravos",
-						"order": 7
-					},
-					{
-						"artist": "Novika",
-						"order": 9
-					},
-					{
-						"artist": "Bassisters Orchestra",
-						"order": 11
-					},
-					{
-						"artist": "Renton",
-						"order": 15
-					}
+					{"artist": "Smolik", "order": 4},
+					{"artist": "Indios Bravos", "order": 7},
+					{"artist": "Novika", "order": 9},
+					{"artist": "Bassisters Orchestra", "order": 11},
+					{"artist": "Renton", "order": 15}
 				],
 				"lvl4": [
-					{
-						"artist": "Andy",
-						"order": 1,
-						"firstOnLine": true
-					},
-					{
-						"artist": "Erijef Massiv",
-						"order": 6
-					}
+					{"artist": "Andy", "order": 1, "firstOnLine": true},
+					{"artist": "Erijef Massiv", "order": 6}
 				],
 				"others": [
-					{
-						"artist": "Gentleman!",
-						"order": 1,
-						"firstOnLine": true
-					},
-					{
-						"artist": "Mikromusic",
-						"order": 4
-					}
+					{"artist": "Gentleman!", "order": 1, "firstOnLine": true},
+					{"artist": "Mikromusic", "order": 4}
 				]
 			}
 		}
