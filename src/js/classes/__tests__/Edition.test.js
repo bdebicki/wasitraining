@@ -1,8 +1,9 @@
-import editionData, { details } from '../../../../tests/__mocks__/edition.json';
+import editionData, { details } from '../../../../tests/__mocks__/edition-alphabeticalExceptHeadliners-noMergeArtists.json';
 import editionOneDay from '../../../../tests/__mocks__/editionOneDay.json';
 import editionWithoutRain from '../../../../tests/__mocks__/editionWithoutRain.json';
 import Edition from '../Edition';
 
+// having
 const mockedEdition = new Edition(editionData);
 
 describe('test returns data from edition class', () => {

@@ -1,13 +1,13 @@
 import EDITION from './elementHandlers/edition';
 import Edition from '../../classes/Edition';
-import Lineup from '../../classes/Lineup';
+import Headliners from '../../classes/Headliners';
 import LineupDetails from './LineupDetails';
 
 export default class EditionDetails extends Edition {
 	constructor(editionId) {
 		super(editionId);
 
-		this.headlinersDetails = new Lineup(editionId);
+		this.headlinersDetails = new Headliners(editionId);
 	}
 
 	static getCurrentEditionYear() {

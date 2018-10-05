@@ -1,4 +1,4 @@
-import editionData from '../../../../../tests/__mocks__/edition.json';
+import editionData from '../../../../../tests/__mocks__/edition-alphabeticalExceptHeadliners-noMergeArtists.json';
 import TimelineItem from '../TimelineItem';
 
 const timelineItem = new TimelineItem(editionData);

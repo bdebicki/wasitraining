@@ -1,0 +1,244 @@
+{
+	"id": 11,
+	"editionYear": "2012",
+	"fullName": "Heineken sponsors Open'er Festival",
+	"place": {
+		"city": "Gdynia",
+		"object": "Babie Doły Airport"
+	},
+	"details": [
+		{
+			"day": "4th July",
+			"rain": true,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2012/7/4/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2012-07-4&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2012"
+			],
+			"lineup": {
+				"headliners": [
+					{"artist": "Björk", "line": 1}
+				],
+				"lvl1": [
+					{"artist": "New Order", "decorator": "expanded", "line": 1},
+					{
+						"artist": "The Kills",
+						"sliceDecorator": {"slice": "The", "style": "up"},
+						"decorator": "expanded",
+						"line": 1
+					}
+				],
+				"lvl2": [
+					{"artist": "Wiz Khalifa", "decorator": "expanded", "line": 2},
+					{"artist": "Orbital", "decorator": "expanded", "line": 2},
+					{"artist": "Gogol Bordello", "decorator": "expanded", "line": 2}
+				],
+				"lvl3": [
+					{"artist": "Yeasayer", "line": 3},
+					{
+						"artist": "The Ting Tings",
+						"sliceDecorator": {"slice": "The", "style": "up"},
+						"line": 3
+					},
+					{"artist": "SOJA", "line": 3}
+				],
+				"others": [
+					{"artist": "Fisz Emade Tworzywo",  "displayName": "Fisz Emade", "line": 3},
+					{"artist": "June", "visible": false},
+					{"artist": "très.b", "visible": false},
+					{"artist": "Frozen Bird", "visible": false},
+					{"artist": "Mela Koteluk", "visible": false},
+					{"artist": "Jacaszek", "visible": false},
+					{"artist": "Chłopcy Kontra Basia", "visible": false},
+					{"artist": "Galus", "visible": false},
+					{"artist": "Sobura", "visible": false},
+					{"artist": "TEIELTE", "visible": false},
+					{"artist": "En2ak", "visible": false},
+					{"artist": "Ment XXL", "visible": false},
+					{"artist": "Praktik", "visible": false},
+					{"artist": "Groh + Eltron John", "visible": false},
+					{"artist": "Sonar Soul", "visible": false},
+					{"artist": "BEZSENSU", "visible": false},
+					{"artist": "Sjøn", "visible": false},
+					{"artist": "Enchanted Hunters", "visible": false},
+					{"artist": "Dva", "visible": false}
+				]
+			}
+		}, {
+			"day": "5th July",
+			"rain": false,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2012/7/5/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2012-07-5&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2012"
+			],
+			"lineup": {
+				"headliners": [
+					{"artist": "Justice", "line": 1}
+				],
+				"lvl1": [
+					{"artist": "Bon Iver", "line": 1},
+					{
+						"artist": "Penderecki//Greenwood",
+						"sliceDecorator": [
+							{"slice": "Penderecki", "style": "compressed"},
+							{"slice": "//", "style": "collapsed"},
+							{"slice": "Greenwood", "style": "expanded"}
+						],
+						"multiline": true,
+						"line": 1
+					}
+				],
+				"lvl2": [
+					{
+						"artist": "The Maccabees",
+						"sliceDecorator": {"slice": "The", "style": "up"},
+						"line": 2
+					},
+					{"artist": "Major Lazer", "line": 2},
+					{"artist": "Jamie Woon", "line": 2}
+				],
+				"lvl3": [
+					{
+						"artist": "Dry The River",
+						"sliceDecorator": {"slice": "The", "style": "middle"},
+						"line": 3
+					},
+					{"artist": "Jessie Ware", "line": 3}
+				],
+				"others": [
+					{"artist": "Kapela ze Wsi Warszawa", "line": 3},
+					{"artist": "Pablopavo & Praczas", "line": 4},
+					{"artist": "Iza Lach", "visible": false},
+					{"artist": "Paula i Karol", "visible": false},
+					{"artist": "The Stubs", "visible": false},
+					{"artist": "KROJC", "visible": false},
+					{"artist": "Kari Amirian", "visible": false},
+					{"artist": "Napszykłat", "visible": false},
+					{"artist": "Good Paul", "visible": false},
+					{"artist": "Axmusique", "visible": false},
+					{"artist": "Ros", "visible": false},
+					{"artist": "Twin Prix", "visible": false},
+					{"artist": "Little White Lies", "visible": false},
+					{"artist": "Miąższ", "visible": false},
+					{"artist": "Minerals", "visible": false},
+					{"artist": "Pipes & Pints", "visible": false}
+				]
+			}
+		}, {
+			"day": "6th July",
+			"rain": true,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2012/7/6/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2012-07-6&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2012"
+			],
+			"lineup": {
+				"headliners": [
+					{"artist": "Franz Ferdinand", "line": 1}
+				],
+				"lvl1": [
+					{"artist": "Bloc Party", "line": 1},
+					{"artist": "M83", "line": 1}
+				],
+				"lvl2": [
+					{"artist": "Public Enemy", "decorator": "expanded", "line": 2},
+					{"artist": "Kasia Nosowska", "displayName": "Nosowska", "decorator": "expanded", "line": 2},
+					{"artist": "Toro Y Moi", "decorator": "expanded", "line": 2}
+				],
+				"lvl4": [
+					{"artist": "Julia Marcell", "line": 3}
+				],
+				"others": [
+					{"artist": "Łona Webber & The Pimps", "displayName": "Łona Webber", "line": 3},
+					{"artist": "L.Stadt", "line": 3},
+					{"artist": "The Cardigans play Gran Turismo", "visible": false},
+					{"artist": "UL/KR", "visible": false},
+					{"artist": "Klezmafour", "visible": false},
+					{"artist": "Yula", "visible": false},
+					{"artist": "Trupa Trupa", "visible": false},
+					{"artist": "The Saintbox", "visible": false},
+					{"artist": "Profesjonalizm", "visible": false},
+					{"artist": "The Phantom", "visible": false},
+					{"artist": "Bueno Bros", "visible": false},
+					{"artist": "Viadrina", "visible": false},
+					{"artist": "Bshosa", "visible": false},
+					{"artist": "Camero Cat", "visible": false},
+					{"artist": "Crab Invasion", "visible": false},
+					{"artist": "Sinusoidal", "visible": false},
+					{"artist": "Kerekes Band", "visible": false}
+				]
+			}
+		}, {
+			"day": "7th July",
+			"rain": true,
+			"rainDataUrl": [
+				"https://www.wunderground.com/history/airport/EPGD/2012/7/7/DailyHistory.html?req_city=Gdynia",
+				"http://www.weatherbase.com/weather/weatherhourly.php3?s=5121&date=2012-07-7&citynameGdansk%2C+Pomeranian+Voivodeship%2C+Poland",
+				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2012"
+			],
+			"lineup": {
+				"headliners": [
+					{
+						"artist": "The Mars Volta",
+						"sliceDecorator": {"slice": "The", "style": "up"},
+						"line": 1
+					}
+				],
+				"lvl1": [
+					{
+						"artist": "Mumford & Sons",
+						"sliceDecorator": {"slice": "&", "style": "middle"},
+						"line": 1
+					},
+					{
+						"artist": "The XX",
+						"sliceDecorator": {"slice": "XX", "style": "lower"},
+						"line": 1
+					}
+				],
+				"lvl2": [
+					{"artist": "Friendly Fires", "decorator": "collapsed", "line": 2},
+					{"artist": "Janelle Monáe", "decorator": "collapsed", "line": 2},
+					{"artist": "Bat For Lashes", "decorator": "collapsed", "line": 2}
+				],
+				"lvl3": [
+					{
+						"artist": "SBTRKT Live",
+						"sliceDecorator": {"slice": "Live", "style": "up"},
+						"line": 3
+					}
+				],
+				"others": [
+					{"artist": "Świetliki", "line": 3},
+					{
+						"artist": "Cool Kids of Death",
+						"sliceDecorator": {"slice": "of", "style": "middle"},
+						"line": 3
+					},
+					{"artist": "The KDMS", "visible": false},
+					{"artist": "Maja Kleszcz & incarNations", "visible": false},
+					{"artist": "Brygada Kryzys", "visible": false},
+					{"artist": "Psychocukier", "visible": false},
+					{"artist": "kIRk", "visible": false},
+					{"artist": "Volume", "visible": false},
+					{"artist": "Coldair", "visible": false},
+					{"artist": "Spox", "visible": false},
+					{"artist": "Maximilian Skiba", "visible": false},
+					{"artist": "L.A.N.S.", "visible": false},
+					{"artist": "Kamp! (DJ set)", "visible": false},
+					{"artist": "Vermones", "visible": false},
+					{"artist": "Fair Weather Friends", "visible": false},
+					{"artist": "Keira Is You", "visible": false},
+					{"artist": "Instrumenti", "visible": false}
+				]
+			}
+		}
+	],
+	"lineupSettings": {
+		"sortType": false,
+		"mergeArtists": "customLevels",
+		"otherArtists": false,
+		"separatorElement": false
+	}
+}
