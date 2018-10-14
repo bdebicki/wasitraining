@@ -44,22 +44,16 @@ export default class RainDetails extends Edition {
 	renderRainDetailsLink() {
 		const a = document.createElement('a');
 
-		// eslint-disable-next-line max-len
-		a.classList.add(LINK.BASIC_CLASS, LINK.INVERTED_STYLE_CLASS, LINK.SIZE_S_CLASS, LINK.HAS_ICON_CLASS, RAIN.DETAILS_LINK_CLASS);
+		a.classList.add(
+			LINK.BASIC_CLASS,
+			LINK.INVERTED_STYLE_CLASS,
+			LINK.SIZE_S_CLASS,
+			LINK.HAS_ICON_CLASS,
+			RAIN.DETAILS_LINK_CLASS
+		);
 		a.href = `#${RAIN.DETAILS_ID}`;
 		a.textContent = 'more';
 		a.appendChild(setIcon(icons.plus(), `${LINK.ICON_CLASS}`));
-		a.addEventListener('click', this.toggleDetails, null);
-
-		return a;
-	}
-
-	renderCloseRainDetails() {
-		const a = document.createElement('a');
-
-		a.classList.add(RAIN.CLOSE_DETAILS_CLASS);
-		a.href = `#${RAIN.DETAILS_ID}`;
-		a.textContent = 'close details';
 		a.addEventListener('click', this.toggleDetails, null);
 
 		return a;
@@ -157,10 +151,10 @@ export default class RainDetails extends Edition {
 
 	updateRainInfo() {
 		const rainInfo = document.querySelector(`.${RAIN.INFO_CLASS}`);
-		const currentRain = rainInfo.classList.contains(RAIN.INFO_YES_CLASS);
+		const isRainy = rainInfo.classList.contains(RAIN.INFO_YES_CLASS);
 		const newRain = this.editionRain;
 
-		if (currentRain !== newRain) {
+		if (isRainy !== newRain) {
 			rainInfo.textContent = ''; // to clear rain info container
 			this.selectRainInfo(rainInfo);
 		}
