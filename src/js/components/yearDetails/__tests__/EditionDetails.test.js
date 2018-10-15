@@ -2,14 +2,14 @@ import cleanDOM from '../../../../../tests/utils/cleanDOM';
 import editionOneDay from '../../../../../tests/__mocks__/editionOneDay.json';
 import editionMultipleDays from '../../../../../tests/__mocks__/edition-notSort-noMergeArtists.json';
 import editionNewEdition from '../../../../../tests/__mocks__/edition-notSort-customLevels.json';
-import EditionDetails from '../EditionDetails';
 import EDITION from '../elementHandlers/edition';
-
-afterAll(() => cleanDOM());
-
-const details = new EditionDetails(editionMultipleDays);
+import EditionDetails from '../EditionDetails';
 
 describe('yeaar details - edition details', () => {
+	afterAll(() => cleanDOM());
+
+	const details = new EditionDetails(editionMultipleDays);
+
 	describe('return edition date', () => {
 		it('return date for one day edition', () => {
 			// when

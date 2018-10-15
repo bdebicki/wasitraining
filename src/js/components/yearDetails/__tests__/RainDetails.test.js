@@ -1,11 +1,11 @@
+import cleanDOM from '../../../../../tests/utils/cleanDOM';
 import rainyEdition from '../../../../../tests/__mocks__/edition-notSort-noMergeArtists.json';
 import newRainyEdition from '../../../../../tests/__mocks__/edition-notSort-customLevels.json';
 import sunnyEdition from '../../../../../tests/__mocks__/edition-customOrderExceptHeadliners-mainByDaysAndMergeRest.json';
-import cleanDOM from '../../../../../tests/utils/cleanDOM';
-import RainDetails from '../RainDetails';
 import RAIN from '../elementHandlers/rain';
 import LINK from '../../../elementHandlers/link';
 import DIALOGBOX from '../../../utils/elementHandlers/dialogbox';
+import RainDetails from '../RainDetails';
 
 function prepareDOM(edition) {
 	const rainDetails = new RainDetails(edition);

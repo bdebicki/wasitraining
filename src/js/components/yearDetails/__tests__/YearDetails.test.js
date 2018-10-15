@@ -1,9 +1,9 @@
 import cleanDOM from '../../../../../tests/utils/cleanDOM';
+import rainyEdition from '../../../../../tests/__mocks__/edition-notSort-noMergeArtists.json';
+import sunnyEdition from '../../../../../tests/__mocks__/edition-customOrderExceptHeadliners-mainByDaysAndMergeRest.json';
 import EDITION from '../elementHandlers/edition';
 import RAIN from '../elementHandlers/rain';
 import { LINEUP } from '../elementHandlers/lineup';
-import rainyEdition from '../../../../../tests/__mocks__/edition-notSort-noMergeArtists.json';
-import sunnyEdition from '../../../../../tests/__mocks__/edition-customOrderExceptHeadliners-mainByDaysAndMergeRest.json';
 import YearDetails from '../YearDetails';
 
 describe('check year details component', () => {
