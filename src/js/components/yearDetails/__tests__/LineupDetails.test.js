@@ -1,16 +1,17 @@
 import * as artistsMock from '../../../../../tests/__mocks__/artists';
 import mockedEdition from '../../../../../tests/__mocks__/edition-notSort-noMergeArtists.json';
 import LineupDetails from '../LineupDetails';
+import { LINEUP, lineupClassBuilder } from '../elementHandlers/lineup';
+import { ARTIST_KEYS } from '../../../enums/artist';
 
 describe('lineup details tests', () => {
 	describe('single decorated artist (decorateArtist)', () => {
 		// having
+		let fragment;
 		const lineup = new LineupDetails(mockedEdition);
+		beforeEach(() => { fragment = document.createDocumentFragment(); });
 
 		it('renders decorated artist element', () => {
-			// having
-			const fragment = document.createDocumentFragment();
-
 			// when
 			lineup.decorateArtist(artistsMock.artistObject, fragment);
 
@@ -27,9 +28,6 @@ describe('lineup details tests', () => {
 
 		describe('artist name', () => {
 			it('return artist from object', () => {
-				// having
-				const fragment = document.createDocumentFragment();
-
 				// when
 				lineup.decorateArtist(artistsMock.artistObject, fragment);
 
@@ -38,9 +36,6 @@ describe('lineup details tests', () => {
 			});
 
 			it('return artist from string', () => {
-				// having
-				const fragment = document.createDocumentFragment();
-
 				// when
 				lineup.decorateArtist(artistsMock.artistString, fragment);
 
@@ -49,9 +44,6 @@ describe('lineup details tests', () => {
 			});
 
 			it('return artist alternative display name', () => {
-				// having
-				const fragment = document.createDocumentFragment();
-
 				// when
 				lineup.decorateArtist(artistsMock.artistDisplayName, fragment);
 
@@ -61,7 +53,26 @@ describe('lineup details tests', () => {
 		});
 
 		describe('return canceled artist', () => {
+			it('return clean canceled artist', () => {
+				// when
+				lineup.decorateArtist(artistsMock.canceled, fragment);
 
+				// then
+				expect(fragment.querySelector(`.${lineupClassBuilder.artist}--${ARTIST_KEYS.CANCELED}`)).toBeTruthy();
+				expect(fragment.querySelector(`.${lineupClassBuilder.artist}`).title)
+					.toBe('This artist\'s performance has been canceled');
+			});
+
+			it('return canceled artist with replacement', () => {
+				// when
+				lineup.decorateArtist(artistsMock.canceledWithReplacement, fragment);
+
+				// then
+				const artist = fragment.querySelector(`.${lineupClassBuilder.artist}--${ARTIST_KEYS.CANCELED}`);
+				expect(artist).toBeTruthy();
+				expect(artist.title).toBe('This artist\'s performance has been canceled');
+				expect(fragment.querySelectorAll(`.${LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS}`)).toHaveLength(2);
+			});
 		});
 
 		it('display artist first on line', () => {
