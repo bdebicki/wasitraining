@@ -189,7 +189,8 @@ export default class LineupDetails extends Lineup {
 	}
 
 	/* eslint-disable complexity */
-	static decorateArtist(artist, target, index, lvl, separatorElement) {
+	/* eslint-disable class-methods-use-this */
+	decorateArtist(artist, target, index, lvl, separatorElement) {
 		const fragment = document.createDocumentFragment();
 		const li = document.createElement('li');
 		const artistObj = artist;
@@ -235,6 +236,7 @@ export default class LineupDetails extends Lineup {
 		}
 	}
 	/* eslint-enable complexity */
+	/* eslint-enable class-methods-use-this */
 
 	getLineupByType() {
 		switch (this.mergeArtistsType) {
@@ -259,7 +261,7 @@ export default class LineupDetails extends Lineup {
 			ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, getLineupLvlClassName(lvl));
 
 			lineup[lvl].forEach((artist, index) => {
-				LineupDetails.decorateArtist(artist, ul, index, lvl, separatorElement);
+				this.decorateArtist(artist, ul, index, lvl, separatorElement);
 			});
 
 			fragment.appendChild(ul);
@@ -286,7 +288,7 @@ export default class LineupDetails extends Lineup {
 
 					Object.keys(dailyArtists).forEach((dailyLvl) => {
 						dailyArtists[dailyLvl].forEach((dailyArtist, dailyArtistIndex) => {
-							LineupDetails.decorateArtist(dailyArtist, ul, dailyArtistIndex, dailyLvl, separatorElement);
+							this.decorateArtist(dailyArtist, ul, dailyArtistIndex, dailyLvl, separatorElement);
 						});
 					});
 
@@ -299,7 +301,7 @@ export default class LineupDetails extends Lineup {
 
 				Object.keys(lineup[section]).forEach((lvl) => {
 					lineup[section][lvl].forEach((artist, index) => {
-						LineupDetails.decorateArtist(artist, ul, index, lvl, separatorElement);
+						this.decorateArtist(artist, ul, index, lvl, separatorElement);
 					});
 				});
 
@@ -326,7 +328,7 @@ export default class LineupDetails extends Lineup {
 				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, getLineupLvlClassName(lvl));
 
 				day[lvl].forEach((artist, artistIndex) => {
-					LineupDetails.decorateArtist(artist, ul, artistIndex, lvl);
+					this.decorateArtist(artist, ul, artistIndex, lvl);
 				});
 
 				section.appendChild(ul);
@@ -383,7 +385,7 @@ export default class LineupDetails extends Lineup {
 				ul.classList.add(LINEUP.ARTISTS_LINE_CLASS, `${LINEUP.ARTISTS_LINE_CLASS}--line${currentLine}`);
 
 				line.forEach((artist, artistIndex) => {
-					LineupDetails.decorateArtist(artist, ul, artistIndex, artist[ARTIST_KEYS.LEVEL], separatorElement);
+					this.decorateArtist(artist, ul, artistIndex, artist[ARTIST_KEYS.LEVEL], separatorElement);
 				});
 
 				section.appendChild(ul);
