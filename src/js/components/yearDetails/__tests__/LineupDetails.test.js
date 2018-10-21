@@ -65,7 +65,7 @@ describe('lineup details tests', () => {
 
 			it('return canceled artist with replacement', () => {
 				// when
-				lineup.decorateArtist(artistsMock.canceledWithReplacement, fragment);
+				artistsMock.canceledWithReplacement.forEach((artist) => lineup.decorateArtist(artist, fragment));
 
 				// then
 				const artist = fragment.querySelector(`.${lineupClassBuilder.artist}--${ARTIST_KEYS.CANCELED}`);
