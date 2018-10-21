@@ -16,11 +16,38 @@ describe('lineup details tests', () => {
 			lineup.decorateArtist(artistsMock.artistObject, fragment);
 
 			// then
-			expect(fragment.querySelectorAll('li')).toHaveLength(1);
+			expect(fragment.querySelectorAll(`.${LINEUP.ARTIST_CLASS}`)).toHaveLength(1);
 		});
 
 		describe('artist with slice', () => {
+			it('return artist with single slice decorator', () => {
+				// when
+				lineup.decorateArtist(artistsMock.slice, fragment);
 
+				// then
+				const slice = fragment.querySelectorAll(`.${LINEUP.ARTIST_SLICE_CLASS}`);
+				expect(slice).toHaveLength(1);
+				expect(slice[0].classList.contains(`${lineupClassBuilder.slice}--up`)).toBeTruthy();
+				expect(slice[0].textContent).toBe('The');
+			});
+
+			it('return artist with multiple slice decorators', () => {
+				// when
+				lineup.decorateArtist(artistsMock.multipleSlice, fragment);
+
+				// then
+				const artist = fragment.querySelector(`.${LINEUP.ARTIST_CLASS}`).innerHTML;
+				const slice = fragment.querySelectorAll(`.${LINEUP.ARTIST_SLICE_CLASS}`);
+				const firstSlice = '<span class="lineupArtists__slice lineupArtists__slice--down">with</span>';
+				const secondSlice = '<span class="lineupArtists__slice lineupArtists__slice--multiline">Orchestra and Choir</span>'; // eslint-disable-line max-len
+				expect(slice).toHaveLength(2);
+				expect(slice[0].classList.contains(`${lineupClassBuilder.slice}--down`)).toBeTruthy();
+				expect(slice[0].textContent).toBe('with');
+				expect(slice[1].classList.contains(`${lineupClassBuilder.slice}--multiline`)).toBeTruthy();
+				expect(slice[1].textContent).toBe('Orchestra and Choir');
+				expect(artist.indexOf(firstSlice)).toBe(17);
+				expect(artist.indexOf(secondSlice)).toBe(109);
+			});
 		});
 
 		describe('artist class names', () => {

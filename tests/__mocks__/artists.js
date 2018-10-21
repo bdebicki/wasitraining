@@ -16,3 +16,25 @@ export const canceledWithReplacement = [
 		replacement: 'The Dumplings',
 	},
 ];
+
+export const slice = {
+	artist: 'The Kills',
+	sliceDecorator: {
+		slice: 'The',
+		style: 'up',
+	},
+};
+
+export const multipleSlice = {
+	artist: 'Zbigniew Wodeski with Mitch & Mitch Orchestra and Choir',
+	sliceDecorator: [
+		{
+			slice: 'with',
+			style: 'down',
+		},
+		{
+			slice: 'Orchestra and Choir',
+			style: 'multiline',
+		},
+	],
+};
