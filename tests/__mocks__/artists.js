@@ -41,6 +41,10 @@ export const multipleSlice = {
 export const firstOnLine = { artist: 'Swans', firstOnLine: true };
 export const lastOnLine = { artist: 'Sigur Rós', lastOnLine: true };
 export const lastOnDay = { artist: 'Plum', lastOnDay: true };
+export const newLine = {
+	artist: 'Teatr Snów: przedstawienie Republika Marzeń',
+	newLine: true,
+};
 export const twoLines = [
 	'Bokka',
 	{

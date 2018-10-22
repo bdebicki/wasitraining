@@ -19,6 +19,28 @@ describe('lineup details tests', () => {
 			expect(fragment.querySelectorAll(`.${LINEUP.ARTIST_CLASS}`)).toHaveLength(1);
 		});
 
+		describe('artist additional classes', () => {
+			it('add align class name', () => {
+
+			});
+
+			it('add lvl class name', () => {
+
+			});
+
+			it('add decorator class name', () => {
+
+			});
+
+			it('add marked class name', () => {
+
+			});
+
+			it('add multiline class name', () => {
+
+			});
+		});
+
 		describe('artist with slice', () => {
 			it('return artist with single slice decorator', () => {
 				// when
@@ -38,9 +60,6 @@ describe('lineup details tests', () => {
 				// then
 				expect(fragment).toMatchSnapshot();
 			});
-		});
-
-		describe('artist decorators', () => {
 		});
 
 		describe('artist name', () => {
@@ -118,6 +137,14 @@ describe('lineup details tests', () => {
 				// then
 				expect(fragment.querySelector(`.${lineupClassBuilder.artist}--${ARTIST_KEYS.LAST_ON_DAY}`))
 					.toBeTruthy();
+			});
+
+			it('display artist with new line', () => {
+				// when
+				lineup.decorateArtist(artistsMock.newLine, fragment);
+
+				// then
+				expect(fragment).toMatchSnapshot();
 			});
 
 			it('display artist broken on two lines', () => {

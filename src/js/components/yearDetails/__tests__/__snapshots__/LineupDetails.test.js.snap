@@ -42,6 +42,19 @@ exports[`lineup details tests single decorated artist (decorateArtist) return ar
 </DocumentFragment>
 `;
 
+exports[`lineup details tests single decorated artist (decorateArtist) return artist with position options display artist with new line 1`] = `
+<DocumentFragment>
+  <li
+    class="lineupArtists__newLine"
+  />
+  <li
+    class="lineupArtists__artist lineupArtists__artist--undefined"
+  >
+    Teatr Snów: przedstawienie Republika Marzeń
+  </li>
+</DocumentFragment>
+`;
+
 exports[`lineup details tests single decorated artist (decorateArtist) return artist with position options display artist with separator 1`] = `
 <DocumentFragment>
   <li
