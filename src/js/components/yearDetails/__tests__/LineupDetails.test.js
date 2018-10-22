@@ -33,14 +33,14 @@ describe('lineup details tests', () => {
 
 			it('return artist with multiple slice decorators', () => {
 				// when
-				lineup.decorateArtist(artistsMock.multipleSlice, fragment);
+				lineup.decorateArtist(artistsMock.multipleSlice, fragment, 1, 'lvl1');
 
 				// then
 				expect(fragment).toMatchSnapshot();
 			});
 		});
 
-		describe('artist class names', () => {
+		describe('artist decorators', () => {
 		});
 
 		describe('artist name', () => {
@@ -92,25 +92,56 @@ describe('lineup details tests', () => {
 			});
 		});
 
-		describe('return artist with position on line', () => {
+		describe('return artist with position options', () => {
 			it('display artist first on line', () => {
+				// when
+				lineup.decorateArtist(artistsMock.firstOnLine, fragment);
 
+				// then
+				expect(fragment.querySelector(`.${lineupClassBuilder.artist}--${ARTIST_KEYS.FIRST_ON_LINE}`))
+					.toBeTruthy();
 			});
 
 			it('display artist last on line', () => {
+				// when
+				lineup.decorateArtist(artistsMock.lastOnLine, fragment);
 
+				// then
+				expect(fragment.querySelector(`.${lineupClassBuilder.artist}--${ARTIST_KEYS.LAST_ON_LINE}`))
+					.toBeTruthy();
+			});
+
+			it('display artist last on day', () => {
+				// when
+				lineup.decorateArtist(artistsMock.lastOnDay, fragment);
+
+				// then
+				expect(fragment.querySelector(`.${lineupClassBuilder.artist}--${ARTIST_KEYS.LAST_ON_DAY}`))
+					.toBeTruthy();
 			});
 
 			it('display artist broken on two lines', () => {
+				// when
+				artistsMock.twoLines.forEach((artist, index) => lineup.decorateArtist(artist, fragment, index, 'lvl1'));
 
+				// then
+				expect(fragment).toMatchSnapshot();
 			});
 
 			it('display artist with separator', () => {
+				// when
+				lineup.decorateArtist(artistsMock.artistString, fragment, 1, 'lvl1', true);
 
+				// then
+				expect(fragment).toMatchSnapshot();
 			});
 
 			it('display artist with turned off separator', () => {
+				// when
+				lineup.decorateArtist(artistsMock.turnedOffSeparator, fragment, 1, 'lvl1', true);
 
+				// then
+				expect(fragment).toMatchSnapshot();
 			});
 		});
 	});

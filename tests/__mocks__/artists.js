@@ -24,7 +24,6 @@ export const slice = {
 		style: 'up',
 	},
 };
-
 export const multipleSlice = {
 	artist: 'Zbigniew Wodeski with Mitch & Mitch Orchestra and Choir',
 	sliceDecorator: [
@@ -38,3 +37,19 @@ export const multipleSlice = {
 		},
 	],
 };
+
+export const firstOnLine = { artist: 'Swans', firstOnLine: true };
+export const lastOnLine = { artist: 'Sigur Rós', lastOnLine: true };
+export const lastOnDay = { artist: 'Plum', lastOnDay: true };
+export const twoLines = [
+	'Bokka',
+	{
+		artist: 'Pink Freud Plays Autechre',
+		breakLine: true,
+		sliceDecorator: {
+			slice: 'Pink Freud',
+			style: 'previousLine',
+		},
+	},
+];
+export const turnedOffSeparator = { artist: 'Prince', skipSeparator: true };
