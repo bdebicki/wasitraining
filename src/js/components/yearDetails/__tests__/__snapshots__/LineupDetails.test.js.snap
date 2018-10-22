@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lineup details tests single decorated artist (decorateArtist) artist with slice return artist with multiple slice decorators 1`] = `
+<DocumentFragment>
+  <li
+    class="lineupArtists__artist lineupArtists__artist--undefined"
+  >
+    Zbigniew Wodeski 
+    <span
+      class="lineupArtists__slice lineupArtists__slice--down"
+    >
+      with
+    </span>
+     Mitch & Mitch 
+    <span
+      class="lineupArtists__slice lineupArtists__slice--multiline"
+    >
+      Orchestra and Choir
+    </span>
+  </li>
+</DocumentFragment>
+`;

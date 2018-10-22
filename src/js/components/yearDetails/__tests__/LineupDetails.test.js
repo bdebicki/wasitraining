@@ -36,17 +36,7 @@ describe('lineup details tests', () => {
 				lineup.decorateArtist(artistsMock.multipleSlice, fragment);
 
 				// then
-				const artist = fragment.querySelector(`.${LINEUP.ARTIST_CLASS}`).innerHTML;
-				const slice = fragment.querySelectorAll(`.${LINEUP.ARTIST_SLICE_CLASS}`);
-				const firstSlice = '<span class="lineupArtists__slice lineupArtists__slice--down">with</span>';
-				const secondSlice = '<span class="lineupArtists__slice lineupArtists__slice--multiline">Orchestra and Choir</span>'; // eslint-disable-line max-len
-				expect(slice).toHaveLength(2);
-				expect(slice[0].classList.contains(`${lineupClassBuilder.slice}--down`)).toBeTruthy();
-				expect(slice[0].textContent).toBe('with');
-				expect(slice[1].classList.contains(`${lineupClassBuilder.slice}--multiline`)).toBeTruthy();
-				expect(slice[1].textContent).toBe('Orchestra and Choir');
-				expect(artist.indexOf(firstSlice)).toBe(17);
-				expect(artist.indexOf(secondSlice)).toBe(109);
+				expect(fragment).toMatchSnapshot();
 			});
 		});
 
@@ -102,20 +92,26 @@ describe('lineup details tests', () => {
 			});
 		});
 
-		it('display artist first on line', () => {
+		describe('return artist with position on line', () => {
+			it('display artist first on line', () => {
 
-		});
+			});
 
-		it('display artist on multiple lines', () => {
+			it('display artist last on line', () => {
 
-		});
+			});
 
-		it('display artist with separator', () => {
+			it('display artist broken on two lines', () => {
 
-		});
+			});
 
-		it('display only visible artists', () => {
+			it('display artist with separator', () => {
 
+			});
+
+			it('display artist with turned off separator', () => {
+
+			});
 		});
 	});
 
