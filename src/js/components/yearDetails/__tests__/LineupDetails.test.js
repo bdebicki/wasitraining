@@ -1,5 +1,8 @@
 import * as artistsMock from '../../../../../tests/__mocks__/artists';
-import mockedEdition from '../../../../../tests/__mocks__/edition-notSort-noMergeArtists.json';
+import editionCustomLevels from '../../../../../tests/__mocks__/edition-notSort-customLevels.json';
+import editionMerged from '../../../../../tests/__mocks__/edition-customOrder-mergeArtists.json';
+import editionMainByDaysAndMergeRest from '../../../../../tests/__mocks__/edition-customOrderExceptHeadliners-mainByDaysAndMergeRest.json';
+import editionNotMerged from '../../../../../tests/__mocks__/edition-alphabeticalExceptHeadliners-noMergeArtists.json';
 import LineupDetails from '../LineupDetails';
 import { LINEUP, lineupClassBuilder } from '../elementHandlers/lineup';
 import { ARTIST_KEYS } from '../../../enums/artist';
@@ -8,7 +11,7 @@ describe('lineup details tests', () => {
 	describe('single decorated artist (decorateArtist)', () => {
 		// having
 		let fragment;
-		const lineup = new LineupDetails(mockedEdition);
+		const lineup = new LineupDetails(editionCustomLevels);
 		beforeEach(() => { fragment = document.createDocumentFragment(); });
 
 		it('renders decorated artist element', () => {
@@ -214,19 +217,47 @@ describe('lineup details tests', () => {
 
 	describe('decorated lineup by type', () => {
 		it('artists on lineup by levels', () => {
+			// having
+			const lineup = new LineupDetails(editionMerged);
 
+			// when
+			const decoratedLineup = lineup.getLineupByType();
+
+			// then
+			expect(decoratedLineup).toMatchSnapshot();
 		});
 
 		it('main artists by days and merge others', () => {
+			// having
+			const lineup = new LineupDetails(editionMainByDaysAndMergeRest);
 
+			// when
+			const decoratedLineup = lineup.getLineupByType();
+
+			// then
+			expect(decoratedLineup).toMatchSnapshot();
 		});
 
 		it('artist on custom levels', () => {
+			// having
+			const lineup = new LineupDetails(editionCustomLevels);
 
+			// when
+			const decoratedLineup = lineup.getLineupByType();
+
+			// then
+			expect(decoratedLineup).toMatchSnapshot();
 		});
 
 		it('artists on days', () => {
+			// having
+			const lineup = new LineupDetails(editionNotMerged);
 
+			// when
+			const decoratedLineup = lineup.getLineupByType();
+
+			// then
+			expect(decoratedLineup).toMatchSnapshot();
 		});
 	});
 

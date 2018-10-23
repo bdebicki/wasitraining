@@ -1,5 +1,1203 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`lineup details tests decorated lineup by type artist on custom levels 1`] = `
+<DocumentFragment>
+  <section
+    class="lineupArtists__day lineupArtists__day--day1"
+  >
+    <ul
+      class="lineupArtists__line lineupArtists__line--line1"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--headliner"
+      >
+        Björk
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1 lineupArtists__artist--expanded"
+      >
+        New Order
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1 lineupArtists__artist--expanded"
+      >
+        <span
+          class="lineupArtists__slice lineupArtists__slice--up"
+        >
+          The
+        </span>
+         Kills
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__line lineupArtists__line--line2"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--expanded"
+      >
+        Wiz Khalifa
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--expanded"
+      >
+        Orbital
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--expanded"
+      >
+        Gogol Bordello
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__line lineupArtists__line--line3"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl3"
+      >
+        Yeasayer
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl3"
+      >
+        <span
+          class="lineupArtists__slice lineupArtists__slice--up"
+        >
+          The
+        </span>
+         Ting Tings
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl3"
+      >
+        SOJA
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Fisz Emade
+      </li>
+    </ul>
+  </section>
+  <section
+    class="lineupArtists__day lineupArtists__day--day2"
+  >
+    <ul
+      class="lineupArtists__line lineupArtists__line--line1"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--headliner"
+      >
+        Justice
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1"
+      >
+        Bon Iver
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1 lineupArtists__artist--multiline"
+      >
+        <span
+          class="lineupArtists__slice lineupArtists__slice--compressed"
+        >
+          Penderecki
+        </span>
+        <span
+          class="lineupArtists__slice lineupArtists__slice--collapsed"
+        >
+          //
+        </span>
+        <span
+          class="lineupArtists__slice lineupArtists__slice--expanded"
+        >
+          Greenwood
+        </span>
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__line lineupArtists__line--line2"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
+      >
+        <span
+          class="lineupArtists__slice lineupArtists__slice--up"
+        >
+          The
+        </span>
+         Maccabees
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
+      >
+        Major Lazer
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
+      >
+        Jamie Woon
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__line lineupArtists__line--line3"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl3"
+      >
+        Dry 
+        <span
+          class="lineupArtists__slice lineupArtists__slice--middle"
+        >
+          The
+        </span>
+         River
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl3"
+      >
+        Jessie Ware
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Kapela ze Wsi Warszawa
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__line lineupArtists__line--line4"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Pablopavo & Praczas
+      </li>
+    </ul>
+  </section>
+  <section
+    class="lineupArtists__day lineupArtists__day--day3"
+  >
+    <ul
+      class="lineupArtists__line lineupArtists__line--line1"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--headliner"
+      >
+        Franz Ferdinand
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1"
+      >
+        Bloc Party
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1"
+      >
+        M83
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__line lineupArtists__line--line2"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--expanded"
+      >
+        Public Enemy
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--expanded"
+      >
+        Nosowska
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--expanded"
+      >
+        Toro Y Moi
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__line lineupArtists__line--line3"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl4"
+      >
+        Julia Marcell
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Łona Webber
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        L.Stadt
+      </li>
+    </ul>
+  </section>
+  <section
+    class="lineupArtists__day lineupArtists__day--day4"
+  >
+    <ul
+      class="lineupArtists__line lineupArtists__line--line1"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--headliner"
+      >
+        <span
+          class="lineupArtists__slice lineupArtists__slice--up"
+        >
+          The
+        </span>
+         Mars Volta
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1"
+      >
+        Mumford 
+        <span
+          class="lineupArtists__slice lineupArtists__slice--middle"
+        >
+          &
+        </span>
+         Sons
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1"
+      >
+        The 
+        <span
+          class="lineupArtists__slice lineupArtists__slice--lower"
+        >
+          XX
+        </span>
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__line lineupArtists__line--line2"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--collapsed"
+      >
+        Friendly Fires
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--collapsed"
+      >
+        Janelle Monáe
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--collapsed"
+      >
+        Bat For Lashes
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__line lineupArtists__line--line3"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl3"
+      >
+        SBTRKT 
+        <span
+          class="lineupArtists__slice lineupArtists__slice--up"
+        >
+          Live
+        </span>
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Świetliki
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Cool Kids 
+        <span
+          class="lineupArtists__slice lineupArtists__slice--middle"
+        >
+          of
+        </span>
+         Death
+      </li>
+    </ul>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`lineup details tests decorated lineup by type artists on days 1`] = `
+<DocumentFragment>
+  <section
+    class="lineupArtists__day lineupArtists__day--day1"
+  >
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--headliners"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--headliner"
+      >
+        Radiohead
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--lvl1"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1 lineupArtists__artist--firstOnLine"
+      >
+        James Blake
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1"
+      >
+        Royal Blood
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--lvl2"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--firstOnLine"
+      >
+        Michael Kiwanuka
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
+      >
+        Rae Sremmurd
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
+      >
+        Solange
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--others"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others lineupArtists__artist--firstOnLine"
+      >
+        Arca 
+        <span
+          class="lineupArtists__slice lineupArtists__slice--down"
+        >
+          (DJ Set)
+        </span>
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Black Coffee
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Natalia Przybysz
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Quebonafide
+      </li>
+      <li
+        class="lineupArtists__newLine"
+      />
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others lineupArtists__artist--firstOnLine"
+      >
+        Sorry Boys
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Enzu
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Flirtini
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Wacław Zimpel/Kuba Ziołek
+      </li>
+      <li
+        class="lineupArtists__newLine"
+      />
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others lineupArtists__artist--firstOnLine"
+      >
+        Holak
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Gverilla
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Mery Spolsky
+      </li>
+    </ul>
+  </section>
+  <section
+    class="lineupArtists__day lineupArtists__day--day2"
+  >
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--headliners"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--headliner"
+      >
+        Foo Fighters
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--lvl1"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1 lineupArtists__artist--firstOnLine"
+      >
+        G-Eazy
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1"
+      >
+        The Kills
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1"
+      >
+        M.I.A.
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--lvl2"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--firstOnLine"
+      >
+        Charli XCX
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
+      >
+        Jimmy Eat World
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
+      >
+        Trentemøller
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--others"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others lineupArtists__artist--firstOnLine"
+      >
+        A_GIM
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Bitamina
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Blanck Mass
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Daniel Avery
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Hades
+      </li>
+      <li
+        class="lineupArtists__newLine"
+      />
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others lineupArtists__artist--firstOnLine"
+      >
+        Bownik
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Kari
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Marcin Krupa
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        New People
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Salk
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Suwal
+      </li>
+    </ul>
+  </section>
+  <section
+    class="lineupArtists__day lineupArtists__day--day3"
+  >
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--headliners"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--headliner"
+      >
+        The Weekend
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--lvl1"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1 lineupArtists__artist--firstOnLine"
+      >
+        Mac Miller
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1"
+      >
+        Moderat
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1"
+      >
+        Prophets of Rage
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--lvl2"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--firstOnLine"
+      >
+        Brodka
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
+      >
+        The Dumplings
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
+      >
+        Grammatik
+      </li>
+      <li
+        class="lineupArtists__newLine"
+      />
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--firstOnLine"
+      >
+        JMSN
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
+      >
+        Kiasmos
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
+      >
+        Tiga
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
+      >
+        Warpaint
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--others"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others lineupArtists__artist--firstOnLine"
+      >
+        Bisz/Radex
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Daria Zawiałow
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Dasein
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Deas
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Hańba!
+      </li>
+      <li
+        class="lineupArtists__newLine"
+      />
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others lineupArtists__artist--firstOnLine"
+      >
+        Majlo
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Ralph Kaminski
+      </li>
+    </ul>
+  </section>
+  <section
+    class="lineupArtists__day lineupArtists__day--day4"
+  >
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--headliners"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--headliner lineupArtists__artist--firstOnLine"
+      >
+        The XX
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--headliner"
+      >
+        Lorde
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--lvl1"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1 lineupArtists__artist--firstOnLine"
+      >
+        George Ezra
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl1"
+      >
+        Taco Hemingway
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--lvl2"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--firstOnLine"
+      >
+        Dua Lipa
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
+      >
+        Nicolas Jaar
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
+      >
+        Tyga
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
+      >
+        O.S.T.R.
+      </li>
+    </ul>
+    <ul
+      class="lineupArtists__lvl lineupArtists__lvl--others"
+    >
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others lineupArtists__artist--firstOnLine"
+      >
+        Benjamin Booker
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Buslav
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Duit
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Julia Pietrucha
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Kevin Morby
+      </li>
+      <li
+        class="lineupArtists__newLine"
+      />
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others lineupArtists__artist--firstOnLine"
+      >
+        Krzysztof Zalewski
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Monki
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Niemoc
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Seltron 400
+      </li>
+      <li
+        class="lineupArtists__newLine"
+      />
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others lineupArtists__artist--firstOnLine"
+      >
+        The Shelters
+      </li>
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Urbanski
+      </li>
+    </ul>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`lineup details tests decorated lineup by type artists on lineup by levels 1`] = `
+<DocumentFragment>
+  <ul
+    class="lineupArtists__lvl lineupArtists__lvl--headliners"
+  >
+    <li
+      class="lineupArtists__artist lineupArtists__artist--headliner lineupArtists__artist--firstOnLine"
+    >
+      Björk
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--headliner"
+    >
+      Beastie Boys
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--headliner"
+    >
+      Muse
+    </li>
+  </ul>
+  <ul
+    class="lineupArtists__lvl lineupArtists__lvl--lvl1"
+  >
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl1 lineupArtists__artist--firstOnLine"
+    >
+      Groove Armada
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl1"
+    >
+      Sonic Youth
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl1"
+    >
+      Bloc Party
+    </li>
+    <li
+      class="lineupArtists__newLine"
+    />
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl1 lineupArtists__artist--expanded lineupArtists__artist--firstOnLine"
+    >
+      The Roots
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl1 lineupArtists__artist--expanded"
+    >
+      LCD Soundsystem
+    </li>
+  </ul>
+  <ul
+    class="lineupArtists__lvl lineupArtists__lvl--lvl2"
+  >
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--firstOnLine"
+    >
+      Laurent Garnier (Live)
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl2"
+    >
+      Dizzee Rascal
+    </li>
+  </ul>
+  <ul
+    class="lineupArtists__lvl lineupArtists__lvl--lvl3"
+  >
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3 lineupArtists__artist--firstOnLine"
+    >
+      Crazy P
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3"
+    >
+      O.S.T.R.
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3"
+    >
+      Freeform Five
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3"
+    >
+      Smolik
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3"
+    >
+      The Strike Boys
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3"
+    >
+      The Car Is on Fire
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3"
+    >
+      Indios Bravos
+    </li>
+    <li
+      class="lineupArtists__newLine"
+    />
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3 lineupArtists__artist--firstOnLine"
+    >
+      Apteka
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3"
+    >
+      Novika
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3"
+    >
+      Afro Kolektyw
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3"
+    >
+      Bassisters Orchestra
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3"
+    >
+      Pink Freud
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3"
+    >
+      EastWest Rockers
+    </li>
+    <li
+      class="lineupArtists__newLine"
+    />
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3 lineupArtists__artist--firstOnLine"
+    >
+      Kombajn do Zbierania Kur po Wioskach
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3"
+    >
+      Renton
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3"
+    >
+      Łąki Łan
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3"
+    >
+      Kapitan DA
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl3"
+    >
+      Me Myself and I
+    </li>
+  </ul>
+  <ul
+    class="lineupArtists__lvl lineupArtists__lvl--lvl4"
+  >
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl4 lineupArtists__artist--firstOnLine"
+    >
+      Andy
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl4"
+    >
+      Bruno Schulz
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl4"
+    >
+      Cała Góra Barwinków
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl4"
+    >
+      Dezodorant Squad
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl4"
+    >
+      Dick 4 Dick
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl4"
+    >
+      Erijef Massiv
+    </li>
+  </ul>
+  <ul
+    class="lineupArtists__lvl lineupArtists__lvl--others"
+  >
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others lineupArtists__artist--firstOnLine"
+    >
+      Gentleman!
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Lars
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Managga
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Mikromusic
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Mikrowafle
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      NOT
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Organizm
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Out of Tune
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      The Poise Rite
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`lineup details tests decorated lineup by type main artists by days and merge others 1`] = `
+<DocumentFragment>
+  <ul
+    class="lineupArtists__lvl lineupArtists__lvl--dailyArtists lineupArtists__lvl--day1"
+  >
+    <li
+      class="lineupArtists__artist lineupArtists__artist--headliner lineupArtists__artist--promoted lineupArtists__artist--firstOnLine"
+    >
+      Snoop Dogg
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--headliner lineupArtists__artist--promoted"
+    >
+      Fatboy Slim
+    </li>
+    <li
+      class="lineupArtists__newLine"
+    />
+    <li
+      class="lineupArtists__artist lineupArtists__artist--headliner lineupArtists__artist--promoted lineupArtists__artist--firstOnLine"
+    >
+      Faithless
+    </li>
+  </ul>
+  <ul
+    class="lineupArtists__lvl lineupArtists__lvl--dailyArtists lineupArtists__lvl--day2"
+  >
+    <li
+      class="lineupArtists__artist lineupArtists__artist--headliner lineupArtists__artist--firstOnLine"
+    >
+      The White Stripes
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--headliner"
+    >
+      Lauryn Hill
+    </li>
+    <li
+      class="lineupArtists__newLine"
+    />
+    <li
+      class="lineupArtists__artist lineupArtists__artist--headliner lineupArtists__artist--firstOnLine"
+    >
+      Underworld
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl1"
+    >
+      The Music
+    </li>
+  </ul>
+  <ul
+    class="lineupArtists__lvl lineupArtists__lvl--allOthers"
+  >
+    <li
+      class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--uppercase lineupArtists__artist--firstOnLine"
+    >
+      Neo
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Pogodno
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      O.S.T.R.
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Sofa
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Őszibarack
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Peepol
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Tworzywo Sztuczne
+    </li>
+    <li
+      class="lineupArtists__newLine"
+    />
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others lineupArtists__artist--firstOnLine"
+    >
+      Boogiemafia
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Less Is More
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Hariasen
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Rotofobia
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Lili Marlene
+    </li>
+    <li
+      class="lineupArtists__newLine"
+    />
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others lineupArtists__artist--firstOnLine"
+    >
+      teatry
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Strefa Ciszy
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Porywacze Ciał
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Akt Okazjonalny
+    </li>
+    <li
+      class="lineupArtists__artist lineupArtists__artist--others"
+    >
+      Good Girl Killer
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
 exports[`lineup details tests single decorated artist (decorateArtist) artist with slice return artist with multiple slice decorators 1`] = `
 <DocumentFragment>
   <li
