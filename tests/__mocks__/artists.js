@@ -37,6 +37,16 @@ export const multipleSlice = {
 		},
 	],
 };
+export const multipleSliceStyles = {
+	artist: 'Jonny Greenwood',
+	sliceDecorator: {
+		slice: 'Greenwood',
+		style: [
+			'newLine',
+			'indented',
+		],
+	},
+};
 
 export const firstOnLine = { artist: 'Swans', firstOnLine: true };
 export const lastOnLine = { artist: 'Sigur Rós', lastOnLine: true };
@@ -57,3 +67,27 @@ export const twoLines = [
 	},
 ];
 export const turnedOffSeparator = { artist: 'Prince', skipSeparator: true };
+
+export const aligned = {
+	artist: 'Steve Reich & Ensemble Modern',
+	aligned: 'right',
+};
+export const decorator = {
+	artist: 'The Prodigy',
+	decorator: 'promoted',
+};
+export const multipleDecorator = {
+	artist: 'Youssou N’Dour',
+	decorator: [
+		'expanded',
+		'wordExpandHeavy',
+	],
+};
+export const marked = {
+	artist: 'Drake',
+	marked: true,
+};
+export const multiline = {
+	artist: 'Penderecki//Greenwood',
+	multiline: true,
+};

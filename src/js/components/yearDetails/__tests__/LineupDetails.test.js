@@ -20,24 +20,53 @@ describe('lineup details tests', () => {
 		});
 
 		describe('artist additional classes', () => {
-			it('add align class name', () => {
+			it('add lvl class name', () => {
+				// when
+				lineup.decorateArtist(artistsMock.artistString, fragment, 1, 'headliners');
 
+				// then
+				expect(fragment.querySelector(`.${LINEUP.ARTIST_CLASS}--headliner`)).toBeTruthy();
 			});
 
-			it('add lvl class name', () => {
+			it('add align class name', () => {
+				// when
+				lineup.decorateArtist(artistsMock.aligned, fragment);
 
+				// then
+				expect(fragment.querySelector(`.${LINEUP.ARTIST_CLASS}--rightAligned`)).toBeTruthy();
 			});
 
 			it('add decorator class name', () => {
+				// when
+				lineup.decorateArtist(artistsMock.decorator, fragment);
 
+				// then
+				expect(fragment.querySelector(`.${LINEUP.ARTIST_CLASS}--promoted`)).toBeTruthy();
+			});
+
+			it('add multiple decorators class name', () => {
+				// when
+				lineup.decorateArtist(artistsMock.multipleDecorator, fragment);
+
+				// then
+				expect(fragment.querySelector(`.${LINEUP.ARTIST_CLASS}--expanded`)).toBeTruthy();
+				expect(fragment.querySelector(`.${LINEUP.ARTIST_CLASS}--wordExpandHeavy`)).toBeTruthy();
 			});
 
 			it('add marked class name', () => {
+				// when
+				lineup.decorateArtist(artistsMock.marked, fragment);
 
+				// then
+				expect(fragment.querySelector(`.${LINEUP.ARTIST_CLASS}--marked`)).toBeTruthy();
 			});
 
 			it('add multiline class name', () => {
+				// when
+				lineup.decorateArtist(artistsMock.multiline, fragment);
 
+				// then
+				expect(fragment.querySelector(`.${LINEUP.ARTIST_CLASS}--multiline`)).toBeTruthy();
 			});
 		});
 
@@ -59,6 +88,16 @@ describe('lineup details tests', () => {
 
 				// then
 				expect(fragment).toMatchSnapshot();
+			});
+
+			it('return artist with multiple decorators for slice', () => {
+				// when
+				lineup.decorateArtist(artistsMock.multipleSliceStyles, fragment, 1, 'lvl1');
+
+				// then
+				const slice = fragment.querySelector(`.${LINEUP.ARTIST_SLICE_CLASS}`);
+				expect(slice.classList.contains(`${LINEUP.ARTIST_SLICE_CLASS}--newLine`)).toBeTruthy();
+				expect(slice.classList.contains(`${LINEUP.ARTIST_SLICE_CLASS}--indented`)).toBeTruthy();
 			});
 		});
 
