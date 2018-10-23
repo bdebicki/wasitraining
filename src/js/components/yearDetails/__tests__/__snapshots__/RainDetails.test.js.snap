@@ -278,7 +278,7 @@ exports[`tests for RainDetails class update rain details section update rain day
       <span
         class="rainDetailsList__day"
       >
-        4th July
+        2nd July
       </span>
       <span
         class="rainDetailsList__rain"
@@ -292,40 +292,12 @@ exports[`tests for RainDetails class update rain details section update rain day
       <span
         class="rainDetailsList__day"
       >
-        5th July
+        3rd July
       </span>
       <span
         class="rainDetailsList__rain"
       >
         no
-      </span>
-    </li>
-    <li
-      class="rainDetailsList__item"
-    >
-      <span
-        class="rainDetailsList__day"
-      >
-        6th July
-      </span>
-      <span
-        class="rainDetailsList__rain"
-      >
-        yes
-      </span>
-    </li>
-    <li
-      class="rainDetailsList__item"
-    >
-      <span
-        class="rainDetailsList__day"
-      >
-        7th July
-      </span>
-      <span
-        class="rainDetailsList__rain"
-      >
-        yes
       </span>
     </li>
   </ul>

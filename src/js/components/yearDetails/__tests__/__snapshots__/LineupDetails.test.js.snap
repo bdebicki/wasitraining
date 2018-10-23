@@ -9,72 +9,52 @@ exports[`lineup details tests decorated lineup by type artist on custom levels 1
       class="lineupArtists__line lineupArtists__line--line1"
     >
       <li
-        class="lineupArtists__artist lineupArtists__artist--headliner"
+        class="lineupArtists__artist lineupArtists__artist--others lineupArtists__artist--firstOnLine"
       >
-        Björk
+        Ojciec Karol
       </li>
       <li
-        class="lineupArtists__artist lineupArtists__artist--lvl1 lineupArtists__artist--expanded"
+        class="lineupArtists__artist lineupArtists__artist--others"
       >
-        New Order
-      </li>
-      <li
-        class="lineupArtists__artist lineupArtists__artist--lvl1 lineupArtists__artist--expanded"
-      >
-        <span
-          class="lineupArtists__slice lineupArtists__slice--up"
-        >
-          The
-        </span>
-         Kills
+        Charlie Jan
       </li>
     </ul>
     <ul
       class="lineupArtists__line lineupArtists__line--line2"
     >
       <li
-        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--expanded"
+        class="lineupArtists__artist lineupArtists__artist--headliner lineupArtists__artist--firstOnLine"
       >
-        Wiz Khalifa
+        P!nk
       </li>
       <li
-        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--expanded"
+        class="lineupArtists__artist lineupArtists__artist--headliner"
       >
-        Orbital
+        Cypress Hill
       </li>
       <li
-        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--expanded"
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
       >
-        Gogol Bordello
+        Sistars
       </li>
     </ul>
     <ul
-      class="lineupArtists__line lineupArtists__line--line3"
+      class="lineupArtists__line lineupArtists__line--line4"
     >
       <li
-        class="lineupArtists__artist lineupArtists__artist--lvl3"
+        class="lineupArtists__artist lineupArtists__artist--lvl3 lineupArtists__artist--firstOnLine"
       >
-        Yeasayer
+        G!MIDI
       </li>
       <li
         class="lineupArtists__artist lineupArtists__artist--lvl3"
       >
-        <span
-          class="lineupArtists__slice lineupArtists__slice--up"
-        >
-          The
-        </span>
-         Ting Tings
+        Slajd
       </li>
       <li
         class="lineupArtists__artist lineupArtists__artist--lvl3"
       >
-        SOJA
-      </li>
-      <li
-        class="lineupArtists__artist lineupArtists__artist--others"
-      >
-        Fisz Emade
+        Progress
       </li>
     </ul>
   </section>
@@ -85,240 +65,95 @@ exports[`lineup details tests decorated lineup by type artist on custom levels 1
       class="lineupArtists__line lineupArtists__line--line1"
     >
       <li
-        class="lineupArtists__artist lineupArtists__artist--headliner"
+        class="lineupArtists__artist lineupArtists__artist--others"
       >
-        Justice
+        Klinika lalek + Kinior Sky Orkiestra: 
+        <span
+          class="lineupArtists__slice lineupArtists__slice--newLine"
+        >
+          przedstawienie Anielicje
+        </span>
       </li>
       <li
-        class="lineupArtists__artist lineupArtists__artist--lvl1"
+        class="lineupArtists__newLine"
+      />
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
       >
-        Bon Iver
+        Teatr Cinema: Kabaret Olbrzymów 
+        <span
+          class="lineupArtists__slice lineupArtists__slice--newLine"
+        >
+          Wieczór III. Lekkie czasy ciężkich chorób
+        </span>
       </li>
       <li
-        class="lineupArtists__artist lineupArtists__artist--lvl1 lineupArtists__artist--multiline"
+        class="lineupArtists__newLine"
+      />
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
       >
-        <span
-          class="lineupArtists__slice lineupArtists__slice--compressed"
-        >
-          Penderecki
-        </span>
-        <span
-          class="lineupArtists__slice lineupArtists__slice--collapsed"
-        >
-          //
-        </span>
-        <span
-          class="lineupArtists__slice lineupArtists__slice--expanded"
-        >
-          Greenwood
-        </span>
+        Teatr Snów: przedstawienie Republika Marzeń
+      </li>
+      <li
+        class="lineupArtists__newLine"
+      />
+      <li
+        class="lineupArtists__artist lineupArtists__artist--others"
+      >
+        Klinika Lalek: Parada uliczna
       </li>
     </ul>
     <ul
       class="lineupArtists__line lineupArtists__line--line2"
     >
       <li
-        class="lineupArtists__artist lineupArtists__artist--lvl2"
+        class="lineupArtists__artist lineupArtists__artist--headliner lineupArtists__artist--firstOnLine"
       >
-        <span
-          class="lineupArtists__slice lineupArtists__slice--up"
-        >
-          The
-        </span>
-         Maccabees
+        Massive Attack
       </li>
       <li
-        class="lineupArtists__artist lineupArtists__artist--lvl2"
+        class="lineupArtists__artist lineupArtists__artist--headliner"
       >
-        Major Lazer
-      </li>
-      <li
-        class="lineupArtists__artist lineupArtists__artist--lvl2"
-      >
-        Jamie Woon
+        Goldfrapp
       </li>
     </ul>
     <ul
       class="lineupArtists__line lineupArtists__line--line3"
     >
       <li
-        class="lineupArtists__artist lineupArtists__artist--lvl3"
+        class="lineupArtists__artist lineupArtists__artist--lvl1 lineupArtists__artist--firstOnLine"
       >
-        Dry 
-        <span
-          class="lineupArtists__slice lineupArtists__slice--middle"
-        >
-          The
-        </span>
-         River
+        Adam Freeland
       </li>
       <li
-        class="lineupArtists__artist lineupArtists__artist--lvl3"
+        class="lineupArtists__artist lineupArtists__artist--lvl2"
       >
-        Jessie Ware
-      </li>
-      <li
-        class="lineupArtists__artist lineupArtists__artist--others"
-      >
-        Kapela ze Wsi Warszawa
+        Smolik
       </li>
     </ul>
     <ul
       class="lineupArtists__line lineupArtists__line--line4"
     >
       <li
-        class="lineupArtists__artist lineupArtists__artist--others"
+        class="lineupArtists__artist lineupArtists__artist--lvl3 lineupArtists__artist--firstOnLine"
       >
-        Pablopavo & Praczas
+        Novika
       </li>
-    </ul>
-  </section>
-  <section
-    class="lineupArtists__day lineupArtists__day--day3"
-  >
-    <ul
-      class="lineupArtists__line lineupArtists__line--line1"
-    >
-      <li
-        class="lineupArtists__artist lineupArtists__artist--headliner"
-      >
-        Franz Ferdinand
-      </li>
-      <li
-        class="lineupArtists__artist lineupArtists__artist--lvl1"
-      >
-        Bloc Party
-      </li>
-      <li
-        class="lineupArtists__artist lineupArtists__artist--lvl1"
-      >
-        M83
-      </li>
-    </ul>
-    <ul
-      class="lineupArtists__line lineupArtists__line--line2"
-    >
-      <li
-        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--expanded"
-      >
-        Public Enemy
-      </li>
-      <li
-        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--expanded"
-      >
-        Nosowska
-      </li>
-      <li
-        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--expanded"
-      >
-        Toro Y Moi
-      </li>
-    </ul>
-    <ul
-      class="lineupArtists__line lineupArtists__line--line3"
-    >
-      <li
-        class="lineupArtists__artist lineupArtists__artist--lvl4"
-      >
-        Julia Marcell
-      </li>
-      <li
-        class="lineupArtists__artist lineupArtists__artist--others"
-      >
-        Łona Webber
-      </li>
-      <li
-        class="lineupArtists__artist lineupArtists__artist--others"
-      >
-        L.Stadt
-      </li>
-    </ul>
-  </section>
-  <section
-    class="lineupArtists__day lineupArtists__day--day4"
-  >
-    <ul
-      class="lineupArtists__line lineupArtists__line--line1"
-    >
-      <li
-        class="lineupArtists__artist lineupArtists__artist--headliner"
-      >
-        <span
-          class="lineupArtists__slice lineupArtists__slice--up"
-        >
-          The
-        </span>
-         Mars Volta
-      </li>
-      <li
-        class="lineupArtists__artist lineupArtists__artist--lvl1"
-      >
-        Mumford 
-        <span
-          class="lineupArtists__slice lineupArtists__slice--middle"
-        >
-          &
-        </span>
-         Sons
-      </li>
-      <li
-        class="lineupArtists__artist lineupArtists__artist--lvl1"
-      >
-        The 
-        <span
-          class="lineupArtists__slice lineupArtists__slice--lower"
-        >
-          XX
-        </span>
-      </li>
-    </ul>
-    <ul
-      class="lineupArtists__line lineupArtists__line--line2"
-    >
-      <li
-        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--collapsed"
-      >
-        Friendly Fires
-      </li>
-      <li
-        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--collapsed"
-      >
-        Janelle Monáe
-      </li>
-      <li
-        class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--collapsed"
-      >
-        Bat For Lashes
-      </li>
-    </ul>
-    <ul
-      class="lineupArtists__line lineupArtists__line--line3"
-    >
       <li
         class="lineupArtists__artist lineupArtists__artist--lvl3"
       >
-        SBTRKT 
-        <span
-          class="lineupArtists__slice lineupArtists__slice--up"
-        >
-          Live
-        </span>
+        Harper
       </li>
       <li
-        class="lineupArtists__artist lineupArtists__artist--others"
+        class="lineupArtists__artist lineupArtists__artist--lvl3"
       >
-        Świetliki
+        Twinn
       </li>
       <li
-        class="lineupArtists__artist lineupArtists__artist--others"
+        class="lineupArtists__artist lineupArtists__artist--lvl3"
       >
-        Cool Kids 
-        <span
-          class="lineupArtists__slice lineupArtists__slice--middle"
-        >
-          of
-        </span>
-         Death
+        THIRST Winner in Denmark
       </li>
     </ul>
   </section>

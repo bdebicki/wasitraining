@@ -140,32 +140,32 @@ exports[`yeaar details - edition details render code parts renders headliners se
 
 exports[`yeaar details - edition details update actions update edition details 1`] = `
 <section
-  class="editionDetails--edition2012"
-  data-year="2012"
+  class="editionDetails--edition2004"
+  data-year="2004"
   id="editionDetails"
 >
   <h2
     class="editionDetails__year"
   >
-    2012
+    2004
   </h2>
   <h3
     class="editionDetails__fullName"
   >
-    Heineken sponsors Open'er Festival
+    Heineken Music sponsors Open'er Festival
   </h3>
   <p
     class="editionDetails__date"
   >
-    4th July - 7th July
+    2nd July - 3rd July
   </p>
   <p
     class="editionDetails__place"
   >
-    Babie Doły Airport, Gdynia
+    Kościuszki Square, Gdynia
   </p>
   <div
-    class="shortLineup shortLineup--edition2012"
+    class="shortLineup shortLineup--edition2004"
   >
     <ul
       class="shortLineup__headliners"
@@ -173,22 +173,22 @@ exports[`yeaar details - edition details update actions update edition details 1
       <li
         class="headliners__headliner"
       >
-        Björk
+        Pink
       </li>
       <li
         class="headliners__headliner"
       >
-        Justice
+        Cypress Hill
       </li>
       <li
         class="headliners__headliner"
       >
-        Franz Ferdinand
+        Massive Attack
       </li>
       <li
         class="headliners__headliner"
       >
-        The Mars Volta
+        Goldfrapp
       </li>
     </ul>
     <p
