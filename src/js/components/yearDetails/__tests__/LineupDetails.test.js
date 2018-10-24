@@ -6,6 +6,7 @@ import editionNotMerged from '../../../../../tests/__mocks__/edition-alphabetica
 import LineupDetails from '../LineupDetails';
 import { LINEUP, lineupClassBuilder } from '../elementHandlers/lineup';
 import { ARTIST_KEYS } from '../../../enums/artist';
+import EDITION from '../elementHandlers/edition';
 
 describe('lineup details tests', () => {
 	describe('single decorated artist (decorateArtist)', () => {
@@ -262,19 +263,38 @@ describe('lineup details tests', () => {
 	});
 
 	describe('lineup dialogbox', () => {
-		it('renders lineup dialogbox', () => {
+		const lineup = new LineupDetails(editionCustomLevels);
 
+		it('renders lineup dialogbox', () => {
+			// having
+			const basicLineup = new LineupDetails(editionMerged);
+
+			// when
+			document.body.appendChild(basicLineup.render());
+
+			// then
+			const dialogbox = document.getElementById(LINEUP.SECTION_ID);
+			expect(dialogbox).toBeTruthy();
+			expect(dialogbox.dataset.year).toBe('2007');
 		});
 
 		it('update lineup dialogbox', () => {
+			// when
+			lineup.updateLineupDetails();
 
+			// then
+			expect(document.getElementById(LINEUP.SECTION_ID).dataset.year).toBe('2004');
 		});
 
-		it('rengers lineup link', () => {
+		it('renders lineup link', () => {
+			// having
+			document.body.appendChild(LineupDetails.renderLineupLink());
 
+			// then
+			expect(document.querySelectorAll(`.${EDITION.LINEUP_LINK_CLASS}`)).toHaveLength(1);
 		});
-		it('toggle lineup dialogbox visibility', () => {
 
+		it('toggle (show) lineup dialogbox visibility', () => {
 		});
 	});
 });
