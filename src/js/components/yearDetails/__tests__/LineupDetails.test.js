@@ -4,9 +4,12 @@ import editionMerged from '../../../../../tests/__mocks__/edition-customOrder-me
 import editionMainByDaysAndMergeRest from '../../../../../tests/__mocks__/edition-customOrderExceptHeadliners-mainByDaysAndMergeRest.json';
 import editionNotMerged from '../../../../../tests/__mocks__/edition-alphabeticalExceptHeadliners-noMergeArtists.json';
 import LineupDetails from '../LineupDetails';
-import { LINEUP, lineupClassBuilder } from '../elementHandlers/lineup';
+import EditionDetails from '../EditionDetails';
 import { ARTIST_KEYS } from '../../../enums/artist';
+import DIALOGBOX from '../../../utils/elementHandlers/dialogbox';
+import { LINEUP, lineupClassBuilder } from '../elementHandlers/lineup';
 import EDITION from '../elementHandlers/edition';
+import LINK from '../../../elementHandlers/link';
 
 describe('lineup details tests', () => {
 	describe('single decorated artist (decorateArtist)', () => {
@@ -303,6 +306,15 @@ describe('lineup details tests', () => {
 		});
 
 		it('toggle (show) lineup dialogbox visibility', () => {
+			// having
+			const details = new EditionDetails(editionCustomLevels);
+			document.body.appendChild(details.renderEditionContainer());
+
+			// when
+			document.querySelector(`.${EDITION.LINEUP_LINK_CLASS} .${LINK.BASIC_CLASS}`).click();
+
+			// then
+			expect(document.getElementById(LINEUP.SECTION_ID).classList.contains(DIALOGBOX.VISIBLE_CLASS)).toBeTruthy();
 		});
 	});
 });
