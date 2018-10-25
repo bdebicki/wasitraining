@@ -53,7 +53,7 @@ describe('tests headliners class', () => {
 		const sortedHeadliners = headliners.headliners;
 
 		// then
-		const expectedHeadliners = ['Björk', 'Justice', 'Franz Ferdinand', 'The Mars Volta'];
+		const expectedHeadliners = ['Pink', 'Cypress Hill', 'Massive Attack', 'Goldfrapp'];
 		expect(sortedHeadliners).toEqual(expectedHeadliners);
 	});
 });
