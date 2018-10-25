@@ -86,6 +86,14 @@ describe('lineup details tests', () => {
 				expect(slice[0].textContent).toBe('The');
 			});
 
+			it('return artist with slice and without slice style', () => {
+				// when
+				lineup.decorateArtist(artistsMock.sliceWithoutStyles, fragment);
+
+				// then
+				expect(fragment.querySelector(`.${LINEUP.ARTIST_SLICE_CLASS}`).classList).toHaveLength(1);
+			});
+
 			it('return artist with multiple slice decorators', () => {
 				// when
 				lineup.decorateArtist(artistsMock.multipleSlice, fragment, 1, 'lvl1');

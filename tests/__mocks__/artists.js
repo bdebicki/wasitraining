@@ -47,6 +47,12 @@ export const multipleSliceStyles = {
 		],
 	},
 };
+export const sliceWithoutStyles = {
+	artist: 'Manu Chao Radio Bemba Sound System',
+	sliceDecorator: {
+		slice: 'Radio Bemba Sound System',
+	},
+};
 
 export const firstOnLine = { artist: 'Swans', firstOnLine: true };
 export const lastOnLine = { artist: 'Sigur Rós', lastOnLine: true };
