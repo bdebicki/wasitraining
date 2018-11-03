@@ -51,12 +51,12 @@ export default class YearView {
 		const yearBlock = new YearDetails(data[editionIndex]);
 
 		YearView.updateViewTypeToYear();
-		pushElement(headerEl, timelineBlock.renderNavTimeline());
 		pushElement(bodyEl, [
 			Header.render(),
 			yearBlock.render(),
 			BgVideo.render(),
 			Footer.render(),
 		]);
+		pushElement(headerEl, timelineBlock.renderNavTimeline());
 	}
 }
