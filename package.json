@@ -12,7 +12,7 @@
     "npm": "5.6.0"
   },
   "scripts": {
-    "init": "npm run build:festival-data npm run build:app",
+    "init": "npm run build:festival-data && npm run build:app",
     "symlink-hooks": "./hooks/symlink-hooks",
     "eslint-check": "eslint ./src ./tools --ext .js",
     "test": "jest",
