@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for set icon it renders icon with multiple class names 1`] = `
+<svg
+  class="icon--close iconClose additionalClass"
+  height="10px"
+  viewBox="0 0 10 10"
+  width="10px"
+>
+  <rect
+    class="icon--close__line"
+    height="2"
+    width="12"
+    x="-1"
+    y="4"
+  />
+  <rect
+    class="icon--close__line"
+    height="12"
+    width="2"
+    x="4"
+    y="-1"
+  />
+</svg>
+`;
+
+exports[`tests for set icon it renders icon with single class name 1`] = `
+<svg
+  class="icon--close iconClose"
+  height="10px"
+  viewBox="0 0 10 10"
+  width="10px"
+>
+  <rect
+    class="icon--close__line"
+    height="2"
+    width="12"
+    x="-1"
+    y="4"
+  />
+  <rect
+    class="icon--close__line"
+    height="12"
+    width="2"
+    x="4"
+    y="-1"
+  />
+</svg>
+`;

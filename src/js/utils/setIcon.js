@@ -10,9 +10,8 @@ export default function setIcon(shape, classNames) {
 
 	if (classNames && typeof classNames === 'string') {
 		svg.classList.add(classNames);
-	}
-	if (classNames && Array.isArray(classNames)) {
-		classNames.map((className) => svg.classList.add(className));
+	} else if (classNames && Array.isArray(classNames)) {
+		classNames.forEach((className) => svg.classList.add(className));
 	}
 
 	return svg;
