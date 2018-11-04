@@ -9,6 +9,7 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npm run init
+      - run: node tools/builder-festivalData.js
+      - run: webpack
       - run: npm run test
       - run: npm run eslint-check
