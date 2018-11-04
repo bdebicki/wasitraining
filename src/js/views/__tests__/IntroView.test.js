@@ -1,7 +1,7 @@
 import cleanDOM from '../../../../tests/utils/cleanDOM';
 import prepareContainer from '../../../../tests/utils/prepareContainer';
 import spyConsole from '../../../../tests/utils/spyConsole';
-import editionData from '../../../../tests/__mocks__/edition-notSort-customLevels.json';
+import complexEditions from '../../../../tests/utils/complexEditions';
 import editionsData from '../../../../tests/__mocks__/editions.json';
 import HEADER from '../../components/header/elementHandlers/header';
 import LAYOUT from '../../elementHandlers/layout';
@@ -10,11 +10,7 @@ import IntroView from '../IntroView';
 import YearView from '../YearView';
 
 function mockEditionView() {
-	const editions = editionsData;
-
-	editionsData.splice(2, 1, editionData);
-
-	const edition = new YearView(editions, 3);
+	const edition = new YearView(complexEditions(), 3);
 
 	edition.render();
 }

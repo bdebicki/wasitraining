@@ -1,9 +1,7 @@
 import cleanDOM from '../../../../tests/utils/cleanDOM';
 import prepareContainer from '../../../../tests/utils/prepareContainer';
 import spyConsole from '../../../../tests/utils/spyConsole';
-import edition2004 from '../../../../tests/__mocks__/edition-notSort-customLevels.json';
-import edition2005 from '../../../../tests/__mocks__/edition-customOrderExceptHeadliners-mainByDaysAndMergeRest.json';
-import editionsData from '../../../../tests/__mocks__/editions.json';
+import complexEditions from '../../../../tests/utils/complexEditions';
 import EDITION from '../../components/yearDetails/elementHandlers/edition';
 import HEADER from '../../components/header/elementHandlers/header';
 import LAYOUT from '../../elementHandlers/layout';
@@ -13,23 +11,13 @@ import IntroView from '../IntroView';
 import YearView from '../YearView';
 
 let yearView;
-let editions;
-
-function prepareData() {
-	editions = editionsData;
-
-	editionsData.splice(2, 1, edition2004);
-	editionsData.splice(3, 0, edition2005);
-
-	yearView = new YearView(editions, 3);
-}
 
 describe('edition year view tests', () => {
 	spyConsole();
 
 	beforeEach(() => {
 		prepareContainer(LAYOUT.MAIN_CONTAINER_ID);
-		prepareData();
+		yearView = new YearView(complexEditions(), 3);
 	});
 	afterEach(() => cleanDOM());
 
@@ -54,7 +42,7 @@ describe('edition year view tests', () => {
 	});
 	it('update view to year', () => {
 		// having
-		const intro = new IntroView(editions);
+		const intro = new IntroView(complexEditions());
 		intro.render();
 
 		// when
@@ -75,7 +63,7 @@ describe('edition year view tests', () => {
 
 		// when
 		const newEditionItem = document.querySelector('a[href="#edition4"]');
-		const newEdition = new YearView(editions, 4);
+		const newEdition = new YearView(complexEditions(), 4);
 		newEdition.updateDetails(newEditionItem);
 
 		// then
