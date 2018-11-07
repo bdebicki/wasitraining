@@ -10,9 +10,5 @@ jobs:
           name: 'Install dependencies'
           command: npm install
       - run:
-          name: 'Check code corectness'
-          command: npm run eslint-check
-
-      - run:
           name: 'Run tests'
           command: npm run test
