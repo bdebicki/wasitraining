@@ -19,3 +19,4 @@ jobs:
       - run:
           name: 'Run tests'
           command: npm run test
+          no_output_timeout: 25m
