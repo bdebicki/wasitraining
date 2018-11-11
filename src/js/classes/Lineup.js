@@ -11,15 +11,15 @@ import AbstractLineup from './AbstractLineup';
  *	- 'customOrderExceptHeadliners' - sort by 'order' props from artist object but don't touch headliners
  *
  * mergeArtistsType:
- * 	- false - don't merge artists levels and split lineup on days
- * 	- true - merge artists by levels
- * 	- 'mainByDaysAndMergeRest' - merge artists from headliners and lvl1 into daily artists, merge other lvls and others
- * 								 into all artists
- * 	- 'customLevels' - create custom levels with mixed artists
+ *	 - false - don't merge artists levels and split lineup on days
+ *	 - true - merge artists by levels
+ *	 - 'mainByDaysAndMergeRest' - merge artists from headliners and lvl1 into daily artists, merge other lvls and others
+ *									into all artists
+ *	 - 'customLevels' - create custom levels with mixed artists
  *
  * otherArtists:
- *  - string - display label with information about others artists
- * 	- false - don't display information about others artists
+ *	- string - display label with information about others artists
+ *	 - false - don't display information about others artists
  */
 
 export default class Lineup extends AbstractLineup {
@@ -235,7 +235,7 @@ export default class Lineup extends AbstractLineup {
 			Lineup.sortCustomOrderLevel(currentLvl);
 		});
 
-		console.log('merge artists and sort artists by customOrder', sortedLineup);
+		// console.log('merge artists and sort artists by customOrder', sortedLineup);
 		return sortedLineup;
 	}
 
@@ -253,7 +253,7 @@ export default class Lineup extends AbstractLineup {
 			}
 		});
 
-		console.log('merge artists and sort artists by alphabeticalExceptHeadliners', sortedLineup);
+		// console.log('merge artists and sort artists by alphabeticalExceptHeadliners', sortedLineup);
 		return sortedLineup;
 	}
 
@@ -271,14 +271,14 @@ export default class Lineup extends AbstractLineup {
 		};
 
 		// eslint-disable-next-line max-len
-		console.log('merge artists <lvl1 into all days and headliners + lvl1 into daily and sort artists by customOrderExceptHeadliners', sortedLineup);
+		// console.log('merge artists <lvl1 into all days and headliners + lvl1 into daily and sort artists by customOrderExceptHeadliners', sortedLineup);
 		return sortedLineup;
 	}
 
 	notMergedAndNotSorted() {
 		const sortedLineup = this.noMergeArtists();
 
-		console.log('don\'t merge artists and don\'t sort artists', sortedLineup);
+		// console.log('don\'t merge artists and don\'t sort artists', sortedLineup);
 		return sortedLineup;
 	}
 
@@ -299,7 +299,7 @@ export default class Lineup extends AbstractLineup {
 		});
 
 
-		console.log('don\'t merge artists and sort artists by alphabeticalExceptHeadliners', sortedLineup);
+		// console.log('don\'t merge artists and sort artists by alphabeticalExceptHeadliners', sortedLineup);
 		return sortedLineup;
 	}
 }

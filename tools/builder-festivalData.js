@@ -10,3 +10,4 @@ const festivalsDataList = getFestivalsDataList(sourceFilesPath);
 const dataFromFiles = getDataFromFiles(festivalsDataList);
 
 fs.writeFileSync(dataFile, JSON.stringify(dataFromFiles, null, '\t'), 'utf-8');
+console.log('festival data has been build');

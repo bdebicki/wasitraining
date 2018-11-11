@@ -10,6 +10,7 @@
     "node": true,
     "jest": true
   },
+  "root": true,
   "rules": {
 
     ////////// Variables //////////
