@@ -1,9 +1,9 @@
 import { lineupClassBuilder } from '../elementHandlers/lineup';
 
 export default function(align) {
-	if (!align) {
-		return null;
-	}
+  if (!align) {
+    return null;
+  }
 
-	return `${lineupClassBuilder.artist}--${align}Aligned`;
+  return `${lineupClassBuilder.artist}--${align}Aligned`;
 }

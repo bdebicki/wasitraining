@@ -7,22 +7,22 @@ import Header from '../Header';
 afterAll(() => cleanDOM());
 
 describe('tests header component', () => {
-	it('check dose title component renders correct', () => {
-		// when
-		const title = Header.render();
+  it('check dose title component renders correct', () => {
+    // when
+    const title = Header.render();
 
-		// then
-		expect(title).toMatchSnapshot();
-	});
+    // then
+    expect(title).toMatchSnapshot();
+  });
 
-	it('check does title on home view has modifier class name', () => {
-		// having
-		mockView(VIEW_TYPES.INTRO);
+  it('check does title on home view has modifier class name', () => {
+    // having
+    mockView(VIEW_TYPES.INTRO);
 
-		// when
-		const title = Header.render();
+    // when
+    const title = Header.render();
 
-		// then
-		expect(title.classList.contains(HEADER.INTRO_HEADER_CLASS)).toBeTruthy();
-	});
+    // then
+    expect(title.classList.contains(HEADER.INTRO_HEADER_CLASS)).toBeTruthy();
+  });
 });

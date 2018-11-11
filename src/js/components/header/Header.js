@@ -5,25 +5,25 @@ import { updateComponentByViewType } from '../../utils/updateView';
 import Title from './Title';
 
 export default class Header {
-	static updateHeaderLocation(el) {
-		updateComponentByViewType(el, HEADER.INTRO_HEADER_CLASS);
-	}
+  static updateHeaderLocation(el) {
+    updateComponentByViewType(el, HEADER.INTRO_HEADER_CLASS);
+  }
 
-	static renderHeaderContainer() {
-		const headerContainer = document.createElement('header');
+  static renderHeaderContainer() {
+    const headerContainer = document.createElement('header');
 
-		headerContainer.id = LAYOUT.HEADER_ID;
-		headerContainer.dataset.bgText = TITLE;
-		Header.updateHeaderLocation(headerContainer);
+    headerContainer.id = LAYOUT.HEADER_ID;
+    headerContainer.dataset.bgText = TITLE;
+    Header.updateHeaderLocation(headerContainer);
 
-		return headerContainer;
-	}
+    return headerContainer;
+  }
 
-	static render() {
-		const headerContainer = Header.renderHeaderContainer();
+  static render() {
+    const headerContainer = Header.renderHeaderContainer();
 
-		headerContainer.appendChild(Title.render());
+    headerContainer.appendChild(Title.render());
 
-		return headerContainer;
-	}
+    return headerContainer;
+  }
 }

@@ -7,31 +7,31 @@ import { LINEUP } from '../elementHandlers/lineup';
 import YearDetails from '../YearDetails';
 
 describe('check year details component', () => {
-	afterAll(() => cleanDOM());
+  afterAll(() => cleanDOM());
 
-	it('renders year details', () => {
-		// having
-		const details = new YearDetails(rainyEdition);
+  it('renders year details', () => {
+    // having
+    const details = new YearDetails(rainyEdition);
 
-		// when
-		document.body.appendChild(details.render());
+    // when
+    document.body.appendChild(details.render());
 
-		// then
-		expect(document.getElementById(EDITION.EDITION_DETAILS_ID)).toBeTruthy();
-		expect(document.getElementById(RAIN.SECTION_ID)).toBeTruthy();
-		expect(document.getElementById(LINEUP.SECTION_ID)).toBeTruthy();
-	});
+    // then
+    expect(document.getElementById(EDITION.EDITION_DETAILS_ID)).toBeTruthy();
+    expect(document.getElementById(RAIN.SECTION_ID)).toBeTruthy();
+    expect(document.getElementById(LINEUP.SECTION_ID)).toBeTruthy();
+  });
 
-	it('check doeas update year details happen', () => {
-		// having
-		const updatedDetails = new YearDetails(sunnyEdition);
+  it('check doeas update year details happen', () => {
+    // having
+    const updatedDetails = new YearDetails(sunnyEdition);
 
-		// when
-		updatedDetails.updateYearDetails();
+    // when
+    updatedDetails.updateYearDetails();
 
-		// then
-		expect(document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent).toBe('2005');
-		expect(document.querySelector(`.${RAIN.INFO_NO_CLASS}`)).toBeTruthy();
-		expect(document.querySelector(`.${LINEUP.EDITION_CLASS}2005`)).toBeTruthy();
-	});
+    // then
+    expect(document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent).toBe('2005');
+    expect(document.querySelector(`.${RAIN.INFO_NO_CLASS}`)).toBeTruthy();
+    expect(document.querySelector(`.${LINEUP.EDITION_CLASS}2005`)).toBeTruthy();
+  });
 });

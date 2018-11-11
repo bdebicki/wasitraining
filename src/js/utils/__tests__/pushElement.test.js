@@ -11,19 +11,19 @@ const multipleElClassName = 'multipleElement';
 afterAll(() => cleanDOM());
 
 describe('test append child into element', () => {
-	prepareContainer(pushContainerId);
+  prepareContainer(pushContainerId);
 
-	it('append one element to container', () => {
-		pushElements(pushContainerEl, createDiv(simpleElClassName));
+  it('append one element to container', () => {
+    pushElements(pushContainerEl, createDiv(simpleElClassName));
 
-		expect(document.querySelector(`.${simpleElClassName}`)).toBeTruthy();
-	});
-	it('append multiple elements into container', () => {
-		pushElements(pushContainerEl, [
-			createDiv(multipleElClassName),
-			createDiv(multipleElClassName),
-		]);
+    expect(document.querySelector(`.${simpleElClassName}`)).toBeTruthy();
+  });
+  it('append multiple elements into container', () => {
+    pushElements(pushContainerEl, [
+      createDiv(multipleElClassName),
+      createDiv(multipleElClassName),
+    ]);
 
-		expect(document.querySelectorAll(`.${multipleElClassName}`).length).toBe(2);
-	});
+    expect(document.querySelectorAll(`.${multipleElClassName}`).length).toBe(2);
+  });
 });

@@ -3,25 +3,25 @@ import LAYOUT from '../elementHandlers/layout';
 import VIEWS from '../views/elementHandlers/views';
 
 function getViewType() {
-	return document.querySelector('html').dataset.view;
+  return document.querySelector('html').dataset.view;
 }
 
 export function updateViewType(viewType) {
-	document.querySelector('html').dataset.view = viewType;
+  document.querySelector('html').dataset.view = viewType;
 
-	if (viewType === VIEW_TYPES.INTRO) {
-		document.getElementById(LAYOUT.MAIN_CONTAINER_ID).classList.add(VIEWS.INTRO_CLASS);
-	} else {
-		document.getElementById(LAYOUT.MAIN_CONTAINER_ID).classList.remove(VIEWS.INTRO_CLASS);
-	}
+  if (viewType === VIEW_TYPES.INTRO) {
+    document.getElementById(LAYOUT.MAIN_CONTAINER_ID).classList.add(VIEWS.INTRO_CLASS);
+  } else {
+    document.getElementById(LAYOUT.MAIN_CONTAINER_ID).classList.remove(VIEWS.INTRO_CLASS);
+  }
 }
 
 export function updateComponentByViewType(el, modifierClass) {
-	const viewType = () => getViewType();
+  const viewType = () => getViewType();
 
-	if (viewType() === VIEW_TYPES.INTRO) {
-		el.classList.add(modifierClass);
-	} else {
-		el.classList.remove(modifierClass);
-	}
+  if (viewType() === VIEW_TYPES.INTRO) {
+    el.classList.add(modifierClass);
+  } else {
+    el.classList.remove(modifierClass);
+  }
 }

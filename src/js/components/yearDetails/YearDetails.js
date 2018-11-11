@@ -4,40 +4,40 @@ import RainDetails from './RainDetails';
 import LineupDetails from './LineupDetails';
 
 export default class YearDetails {
-	constructor(editionId) {
-		this.editionId = editionId;
-	}
+  constructor(editionId) {
+    this.editionId = editionId;
+  }
 
-	static renderYearContainer() {
-		const section = document.createElement('section');
+  static renderYearContainer() {
+    const section = document.createElement('section');
 
-		section.id = LAYOUT.YEAR_CONTAINER_ID;
+    section.id = LAYOUT.YEAR_CONTAINER_ID;
 
-		return section;
-	}
+    return section;
+  }
 
-	updateYearDetails() {
-		const { editionId } = this;
-		const editionBlock = new EditionDetails(editionId);
-		const rainBlock = new RainDetails(editionId);
-		const lineupDialogbox = new LineupDetails(editionId);
+  updateYearDetails() {
+    const { editionId } = this;
+    const editionBlock = new EditionDetails(editionId);
+    const rainBlock = new RainDetails(editionId);
+    const lineupDialogbox = new LineupDetails(editionId);
 
-		editionBlock.updateEditionDetails();
-		rainBlock.updateRainDetails();
-		lineupDialogbox.updateLineupDetails();
-	}
+    editionBlock.updateEditionDetails();
+    rainBlock.updateRainDetails();
+    lineupDialogbox.updateLineupDetails();
+  }
 
-	render() {
-		const { editionId } = this;
-		const yearBlock = YearDetails.renderYearContainer();
-		const editionBlock = new EditionDetails(editionId);
-		const rainBlock = new RainDetails(editionId);
-		const lineupDialogbox = new LineupDetails(editionId);
+  render() {
+    const { editionId } = this;
+    const yearBlock = YearDetails.renderYearContainer();
+    const editionBlock = new EditionDetails(editionId);
+    const rainBlock = new RainDetails(editionId);
+    const lineupDialogbox = new LineupDetails(editionId);
 
-		yearBlock.appendChild(editionBlock.render());
-		yearBlock.appendChild(rainBlock.render());
-		yearBlock.appendChild(lineupDialogbox.render());
+    yearBlock.appendChild(editionBlock.render());
+    yearBlock.appendChild(rainBlock.render());
+    yearBlock.appendChild(lineupDialogbox.render());
 
-		return yearBlock;
-	}
+    return yearBlock;
+  }
 }

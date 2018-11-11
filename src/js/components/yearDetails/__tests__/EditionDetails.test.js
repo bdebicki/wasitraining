@@ -6,51 +6,51 @@ import EDITION from '../elementHandlers/edition';
 import EditionDetails from '../EditionDetails';
 
 describe('yeaar details - edition details', () => {
-	afterAll(() => cleanDOM());
+  afterAll(() => cleanDOM());
 
-	const details = new EditionDetails(editionMultipleDays);
+  const details = new EditionDetails(editionMultipleDays);
 
-	describe('return edition date', () => {
-		it('return date for one day edition', () => {
-			// when
-			const oneDayDetails = new EditionDetails(editionOneDay);
+  describe('return edition date', () => {
+    it('return date for one day edition', () => {
+      // when
+      const oneDayDetails = new EditionDetails(editionOneDay);
 
-			// then
-			expect(oneDayDetails.decorateEditionDates()).toBe('2nd July');
-		});
+      // then
+      expect(oneDayDetails.decorateEditionDates()).toBe('2nd July');
+    });
 
-		it('return date for multiple days edition', () => {
-			// then
-			expect(details.decorateEditionDates()).toBe('3rd July - 6th July');
-		});
-	});
+    it('return date for multiple days edition', () => {
+      // then
+      expect(details.decorateEditionDates()).toBe('3rd July - 6th July');
+    });
+  });
 
-	describe('render code parts', () => {
-		it('renders headliners section', () => {
-			expect(details.renderHeadliners()).toMatchSnapshot();
-		});
+  describe('render code parts', () => {
+    it('renders headliners section', () => {
+      expect(details.renderHeadliners()).toMatchSnapshot();
+    });
 
-		it('renders edition details section', () => {
-			expect(details.renderEditionDetails()).toMatchSnapshot();
-		});
+    it('renders edition details section', () => {
+      expect(details.renderEditionDetails()).toMatchSnapshot();
+    });
 
-		it('renders composed edition details section', () => {
-			expect(details.render()).toMatchSnapshot();
-		});
-	});
+    it('renders composed edition details section', () => {
+      expect(details.render()).toMatchSnapshot();
+    });
+  });
 
-	describe('update actions', () => {
-		// having
-		document.body.appendChild(details.render());
-		const newEdition = new EditionDetails(editionNewEdition);
+  describe('update actions', () => {
+    // having
+    document.body.appendChild(details.render());
+    const newEdition = new EditionDetails(editionNewEdition);
 
-		newEdition.updateEditionDetails();
-		it('update edition details', () => {
-			// when
-			newEdition.updateEditionDetails();
+    newEdition.updateEditionDetails();
+    it('update edition details', () => {
+      // when
+      newEdition.updateEditionDetails();
 
-			// then
-			expect(document.getElementById(EDITION.EDITION_DETAILS_ID)).toMatchSnapshot();
-		});
-	});
+      // then
+      expect(document.getElementById(EDITION.EDITION_DETAILS_ID)).toMatchSnapshot();
+    });
+  });
 });
