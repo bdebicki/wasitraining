@@ -11,3 +11,4 @@ script:
   - npm run eslint-check
   - npm run test
   - npm run build:app
+  - npm run build:fetival-data
