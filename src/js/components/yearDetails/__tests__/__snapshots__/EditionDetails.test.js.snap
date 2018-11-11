@@ -2,224 +2,224 @@
 
 exports[`yeaar details - edition details render code parts renders composed edition details section 1`] = `
 <section
-  class="editionDetails--edition2013"
-  data-year="2013"
-  id="editionDetails"
+	class="editionDetails--edition2013"
+	data-year="2013"
+	id="editionDetails"
 >
-  <h2
-    class="editionDetails__year"
-  >
-    2013
-  </h2>
-  <h3
-    class="editionDetails__fullName"
-  >
-    Heineken sponsors Open'er Festival
-  </h3>
-  <p
-    class="editionDetails__date"
-  >
-    3rd July - 6th July
-  </p>
-  <p
-    class="editionDetails__place"
-  >
-    Babie Doły Airport, Gdynia
-  </p>
-  <div
-    class="shortLineup shortLineup--edition2013"
-  >
-    <ul
-      class="shortLineup__headliners"
-    >
-      <li
-        class="headliners__headliner"
-      >
-        Blur
-      </li>
-      <li
-        class="headliners__headliner"
-      >
-        Arctic Monkeys
-      </li>
-      <li
-        class="headliners__headliner"
-      >
-        Queens of the Stone Age
-      </li>
-      <li
-        class="headliners__headliner"
-      >
-        Kings of Leon
-      </li>
-    </ul>
-    <p
-      class="shortLineup__detailsLink"
-    >
-      <a
-        class="link link--inverted link--sizeXS link--hasIcon"
-        href="#lineup"
-      >
-        see full lineup
-        <svg
-          class="icon--plus link__icon"
-          height="5px"
-          viewBox="0 0 5 5"
-          width="5px"
-        >
-          <rect
-            height="1"
-            width="5"
-            x="0"
-            y="2"
-          />
-          <rect
-            height="5"
-            width="1"
-            x="2"
-            y="0"
-          />
-        </svg>
-      </a>
-    </p>
-  </div>
+	<h2
+		class="editionDetails__year"
+	>
+		2013
+	</h2>
+	<h3
+		class="editionDetails__fullName"
+	>
+		Heineken sponsors Open'er Festival
+	</h3>
+	<p
+		class="editionDetails__date"
+	>
+		3rd July - 6th July
+	</p>
+	<p
+		class="editionDetails__place"
+	>
+		Babie Doły Airport, Gdynia
+	</p>
+	<div
+		class="shortLineup shortLineup--edition2013"
+	>
+		<ul
+			class="shortLineup__headliners"
+		>
+			<li
+				class="headliners__headliner"
+			>
+				Blur
+			</li>
+			<li
+				class="headliners__headliner"
+			>
+				Arctic Monkeys
+			</li>
+			<li
+				class="headliners__headliner"
+			>
+				Queens of the Stone Age
+			</li>
+			<li
+				class="headliners__headliner"
+			>
+				Kings of Leon
+			</li>
+		</ul>
+		<p
+			class="shortLineup__detailsLink"
+		>
+			<a
+				class="link link--inverted link--sizeXS link--hasIcon"
+				href="#lineup"
+			>
+				see full lineup
+				<svg
+					class="icon--plus link__icon"
+					height="5px"
+					viewBox="0 0 5 5"
+					width="5px"
+				>
+					<rect
+						height="1"
+						width="5"
+						x="0"
+						y="2"
+					/>
+					<rect
+						height="5"
+						width="1"
+						x="2"
+						y="0"
+					/>
+				</svg>
+			</a>
+		</p>
+	</div>
 </section>
 `;
 
 exports[`yeaar details - edition details render code parts renders edition details section 1`] = `
 <DocumentFragment>
-  <h2
-    class="editionDetails__year"
-  >
-    2013
-  </h2>
-  <h3
-    class="editionDetails__fullName"
-  >
-    Heineken sponsors Open'er Festival
-  </h3>
-  <p
-    class="editionDetails__date"
-  >
-    3rd July - 6th July
-  </p>
-  <p
-    class="editionDetails__place"
-  >
-    Babie Doły Airport, Gdynia
-  </p>
+	<h2
+		class="editionDetails__year"
+	>
+		2013
+	</h2>
+	<h3
+		class="editionDetails__fullName"
+	>
+		Heineken sponsors Open'er Festival
+	</h3>
+	<p
+		class="editionDetails__date"
+	>
+		3rd July - 6th July
+	</p>
+	<p
+		class="editionDetails__place"
+	>
+		Babie Doły Airport, Gdynia
+	</p>
 </DocumentFragment>
 `;
 
 exports[`yeaar details - edition details render code parts renders headliners section 1`] = `
 <ul
-  class="shortLineup__headliners"
+	class="shortLineup__headliners"
 >
-  <li
-    class="headliners__headliner"
-  >
-    Blur
-  </li>
-  <li
-    class="headliners__headliner"
-  >
-    Arctic Monkeys
-  </li>
-  <li
-    class="headliners__headliner"
-  >
-    Queens of the Stone Age
-  </li>
-  <li
-    class="headliners__headliner"
-  >
-    Kings of Leon
-  </li>
+	<li
+		class="headliners__headliner"
+	>
+		Blur
+	</li>
+	<li
+		class="headliners__headliner"
+	>
+		Arctic Monkeys
+	</li>
+	<li
+		class="headliners__headliner"
+	>
+		Queens of the Stone Age
+	</li>
+	<li
+		class="headliners__headliner"
+	>
+		Kings of Leon
+	</li>
 </ul>
 `;
 
 exports[`yeaar details - edition details update actions update edition details 1`] = `
 <section
-  class="editionDetails--edition2004"
-  data-year="2004"
-  id="editionDetails"
+	class="editionDetails--edition2004"
+	data-year="2004"
+	id="editionDetails"
 >
-  <h2
-    class="editionDetails__year"
-  >
-    2004
-  </h2>
-  <h3
-    class="editionDetails__fullName"
-  >
-    Heineken Music sponsors Open'er Festival
-  </h3>
-  <p
-    class="editionDetails__date"
-  >
-    2nd July - 3rd July
-  </p>
-  <p
-    class="editionDetails__place"
-  >
-    Kościuszki Square, Gdynia
-  </p>
-  <div
-    class="shortLineup shortLineup--edition2004"
-  >
-    <ul
-      class="shortLineup__headliners"
-    >
-      <li
-        class="headliners__headliner"
-      >
-        Pink
-      </li>
-      <li
-        class="headliners__headliner"
-      >
-        Cypress Hill
-      </li>
-      <li
-        class="headliners__headliner"
-      >
-        Massive Attack
-      </li>
-      <li
-        class="headliners__headliner"
-      >
-        Goldfrapp
-      </li>
-    </ul>
-    <p
-      class="shortLineup__detailsLink"
-    >
-      <a
-        class="link link--inverted link--sizeXS link--hasIcon"
-        href="#lineup"
-      >
-        see full lineup
-        <svg
-          class="icon--plus link__icon"
-          height="5px"
-          viewBox="0 0 5 5"
-          width="5px"
-        >
-          <rect
-            height="1"
-            width="5"
-            x="0"
-            y="2"
-          />
-          <rect
-            height="5"
-            width="1"
-            x="2"
-            y="0"
-          />
-        </svg>
-      </a>
-    </p>
-  </div>
+	<h2
+		class="editionDetails__year"
+	>
+		2004
+	</h2>
+	<h3
+		class="editionDetails__fullName"
+	>
+		Heineken Music sponsors Open'er Festival
+	</h3>
+	<p
+		class="editionDetails__date"
+	>
+		2nd July - 3rd July
+	</p>
+	<p
+		class="editionDetails__place"
+	>
+		Kościuszki Square, Gdynia
+	</p>
+	<div
+		class="shortLineup shortLineup--edition2004"
+	>
+		<ul
+			class="shortLineup__headliners"
+		>
+			<li
+				class="headliners__headliner"
+			>
+				Pink
+			</li>
+			<li
+				class="headliners__headliner"
+			>
+				Cypress Hill
+			</li>
+			<li
+				class="headliners__headliner"
+			>
+				Massive Attack
+			</li>
+			<li
+				class="headliners__headliner"
+			>
+				Goldfrapp
+			</li>
+		</ul>
+		<p
+			class="shortLineup__detailsLink"
+		>
+			<a
+				class="link link--inverted link--sizeXS link--hasIcon"
+				href="#lineup"
+			>
+				see full lineup
+				<svg
+					class="icon--plus link__icon"
+					height="5px"
+					viewBox="0 0 5 5"
+					width="5px"
+				>
+					<rect
+						height="1"
+						width="5"
+						x="0"
+						y="2"
+					/>
+					<rect
+						height="5"
+						width="1"
+						x="2"
+						y="0"
+					/>
+				</svg>
+			</a>
+		</p>
+	</div>
 </section>
 `;

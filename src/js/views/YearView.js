@@ -11,52 +11,52 @@ import { updateViewType } from '../utils/updateView';
 import pushElement from '../utils/pushElement';
 
 export default class YearView {
-  constructor(data, editionId) {
-    this.data = data;
-    this.editionId = editionId;
-    this.editionIndex = editionId - 1;
-  }
+	constructor(data, editionId) {
+		this.data = data;
+		this.editionId = editionId;
+		this.editionIndex = editionId - 1;
+	}
 
-  static updateViewTypeToYear() {
-    updateViewType(VIEW_TYPES.YEAR);
-  }
+	static updateViewTypeToYear() {
+		updateViewType(VIEW_TYPES.YEAR);
+	}
 
-  updateDetails(newEdition) {
-    const newEditionData = this.data[this.editionIndex];
-    const yearBlock = new YearDetails(newEditionData);
+	updateDetails(newEdition) {
+		const newEditionData = this.data[this.editionIndex];
+		const yearBlock = new YearDetails(newEditionData);
 
-    Timeline.updateSelectedEdition(newEdition);
-    yearBlock.updateYearDetails();
-  }
+		Timeline.updateSelectedEdition(newEdition);
+		yearBlock.updateYearDetails();
+	}
 
-  switchToYearView() {
-    const bodyEl = `#${LAYOUT.MAIN_CONTAINER_ID}`;
-    const headerEl = `#${LAYOUT.HEADER_ID}`;
-    const timelineBlock = new Timeline(this.data, this.editionId);
-    const yearBlock = new YearDetails(this.data[this.editionIndex]);
+	switchToYearView() {
+		const bodyEl = `#${LAYOUT.MAIN_CONTAINER_ID}`;
+		const headerEl = `#${LAYOUT.HEADER_ID}`;
+		const timelineBlock = new Timeline(this.data, this.editionId);
+		const yearBlock = new YearDetails(this.data[this.editionIndex]);
 
-    YearView.updateViewTypeToYear();
-    Title.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
-    Header.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
-    pushElement(headerEl, timelineBlock.renderNavTimeline());
-    pushElement(bodyEl, yearBlock.render());
-    document.getElementById(LAYOUT.MAIN_TIMELINE_ID).remove();
-  }
+		YearView.updateViewTypeToYear();
+		Title.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
+		Header.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
+		pushElement(headerEl, timelineBlock.renderNavTimeline());
+		pushElement(bodyEl, yearBlock.render());
+		document.getElementById(LAYOUT.MAIN_TIMELINE_ID).remove();
+	}
 
-  render() {
-    const { data, editionId, editionIndex } = this;
-    const bodyEl = `#${LAYOUT.MAIN_CONTAINER_ID}`;
-    const headerEl = `#${LAYOUT.HEADER_ID}`;
-    const timelineBlock = new Timeline(data, editionId);
-    const yearBlock = new YearDetails(data[editionIndex]);
+	render() {
+		const { data, editionId, editionIndex } = this;
+		const bodyEl = `#${LAYOUT.MAIN_CONTAINER_ID}`;
+		const headerEl = `#${LAYOUT.HEADER_ID}`;
+		const timelineBlock = new Timeline(data, editionId);
+		const yearBlock = new YearDetails(data[editionIndex]);
 
-    YearView.updateViewTypeToYear();
-    pushElement(bodyEl, [
-      Header.render(),
-      yearBlock.render(),
-      BgVideo.render(),
-      Footer.render(),
-    ]);
-    pushElement(headerEl, timelineBlock.renderNavTimeline());
-  }
+		YearView.updateViewTypeToYear();
+		pushElement(bodyEl, [
+			Header.render(),
+			yearBlock.render(),
+			BgVideo.render(),
+			Footer.render(),
+		]);
+		pushElement(headerEl, timelineBlock.renderNavTimeline());
+	}
 }

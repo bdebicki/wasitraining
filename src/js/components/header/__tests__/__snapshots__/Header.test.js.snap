@@ -2,18 +2,18 @@
 
 exports[`tests header component check dose title component renders correct 1`] = `
 <header
-  data-bg-text="was it raining at the open'er festival?"
-  id="header"
+	data-bg-text="was it raining at the open'er festival?"
+	id="header"
 >
-  <h1
-    class="pageName"
-  >
-    <a
-      class="pageName__link"
-      href="#home"
-    >
-      was it raining at the open'er festival?
-    </a>
-  </h1>
+	<h1
+		class="pageName"
+	>
+		<a
+			class="pageName__link"
+			href="#home"
+		>
+			was it raining at the open'er festival?
+		</a>
+	</h1>
 </header>
 `;

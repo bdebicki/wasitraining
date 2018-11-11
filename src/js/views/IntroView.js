@@ -10,36 +10,36 @@ import { updateViewType } from '../utils/updateView';
 import pushElement from '../utils/pushElement';
 
 export default class IntroView {
-  constructor(data) {
-    this.data = data;
-  }
+	constructor(data) {
+		this.data = data;
+	}
 
-  static updateViewTypeToIntro() {
-    updateViewType(VIEW_TYPES.INTRO);
-  }
+	static updateViewTypeToIntro() {
+		updateViewType(VIEW_TYPES.INTRO);
+	}
 
-  switchToIntoView() {
-    const bodyEl = `#${LAYOUT.MAIN_CONTAINER_ID}`;
-    const timelineBlock = new Timeline(this.data);
+	switchToIntoView() {
+		const bodyEl = `#${LAYOUT.MAIN_CONTAINER_ID}`;
+		const timelineBlock = new Timeline(this.data);
 
-    IntroView.updateViewTypeToIntro();
-    Title.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
-    Header.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
-    pushElement(bodyEl, timelineBlock.renderMainTimeline());
-    document.getElementById(LAYOUT.NAV_TIMELINE_ID).remove();
-    document.getElementById(LAYOUT.YEAR_CONTAINER_ID).remove();
-  }
+		IntroView.updateViewTypeToIntro();
+		Title.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
+		Header.updateHeaderLocation(document.getElementById(LAYOUT.HEADER_ID));
+		pushElement(bodyEl, timelineBlock.renderMainTimeline());
+		document.getElementById(LAYOUT.NAV_TIMELINE_ID).remove();
+		document.getElementById(LAYOUT.YEAR_CONTAINER_ID).remove();
+	}
 
-  render() {
-    const bodyEl = `#${LAYOUT.MAIN_CONTAINER_ID}`;
-    const timelineBlock = new Timeline(this.data);
+	render() {
+		const bodyEl = `#${LAYOUT.MAIN_CONTAINER_ID}`;
+		const timelineBlock = new Timeline(this.data);
 
-    IntroView.updateViewTypeToIntro();
-    pushElement(bodyEl, [
-      Header.render(),
-      timelineBlock.renderMainTimeline(),
-      BgVideo.render(),
-      Footer.render(),
-    ]);
-  }
+		IntroView.updateViewTypeToIntro();
+		pushElement(bodyEl, [
+			Header.render(),
+			timelineBlock.renderMainTimeline(),
+			BgVideo.render(),
+			Footer.render(),
+		]);
+	}
 }

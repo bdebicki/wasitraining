@@ -7,22 +7,22 @@ import Title from '../Title';
 afterAll(() => cleanDOM());
 
 describe('test title component', () => {
-  it('check dose title component renders correct', () => {
-    // when
-    const title = Title.render();
+	it('check dose title component renders correct', () => {
+		// when
+		const title = Title.render();
 
-    // then
-    expect(title).toMatchSnapshot();
-  });
+		// then
+		expect(title).toMatchSnapshot();
+	});
 
-  it('check does title on home view has modifier class name', () => {
-    // having
-    mockView(VIEW_TYPES.INTRO);
+	it('check does title on home view has modifier class name', () => {
+		// having
+		mockView(VIEW_TYPES.INTRO);
 
-    // when
-    const title = Title.render();
+		// when
+		const title = Title.render();
 
-    // then
-    expect(title.classList.contains(HEADER.TITLE_HEADER_CLASS)).toBeTruthy();
-  });
+		// then
+		expect(title.classList.contains(HEADER.TITLE_HEADER_CLASS)).toBeTruthy();
+	});
 });

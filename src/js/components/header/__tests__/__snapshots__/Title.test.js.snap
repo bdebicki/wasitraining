@@ -2,13 +2,13 @@
 
 exports[`test title component check dose title component renders correct 1`] = `
 <h1
-  class="pageName"
+	class="pageName"
 >
-  <a
-    class="pageName__link"
-    href="#home"
-  >
-    was it raining at the open'er festival?
-  </a>
+	<a
+		class="pageName__link"
+		href="#home"
+	>
+		was it raining at the open'er festival?
+	</a>
 </h1>
 `;

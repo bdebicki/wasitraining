@@ -2,18 +2,18 @@
 
 exports[`test more info section render more info section 1`] = `
 <section
-  class="aboutSection"
+	class="aboutSection"
 >
-  <p
-    class="aboutSection__copyrights"
-  >
-    made with ❤ in Gdynia 2017
-  </p>
-  <a
-    class="link link--inverted aboutSection__aboutLink"
-    href="#about"
-  >
-    about
-  </a>
+	<p
+		class="aboutSection__copyrights"
+	>
+		made with ❤ in Gdynia 2017
+	</p>
+	<a
+		class="link link--inverted aboutSection__aboutLink"
+		href="#about"
+	>
+		about
+	</a>
 </section>
 `;

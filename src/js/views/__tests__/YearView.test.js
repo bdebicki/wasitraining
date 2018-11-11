@@ -13,61 +13,61 @@ import YearView from '../YearView';
 let yearView;
 
 describe('edition year view tests', () => {
-  spyConsole();
+	spyConsole();
 
-  beforeEach(() => {
-    prepareContainer(LAYOUT.MAIN_CONTAINER_ID);
-    yearView = new YearView(complexEditions(), 3);
-  });
-  afterEach(() => cleanDOM());
+	beforeEach(() => {
+		prepareContainer(LAYOUT.MAIN_CONTAINER_ID);
+		yearView = new YearView(complexEditions(), 3);
+	});
+	afterEach(() => cleanDOM());
 
-  it('render year view', () => {
-    // when
-    yearView.render();
+	it('render year view', () => {
+		// when
+		yearView.render();
 
-    // then
-    expect(console.error).not.toHaveBeenCalled();
-  });
-  it('render year view correctly', () => {
-    // when
-    yearView.render();
+		// then
+		expect(console.error).not.toHaveBeenCalled();
+	});
+	it('render year view correctly', () => {
+		// when
+		yearView.render();
 
-    // then
-    expect(document.querySelector('html').dataset.view).toBe(VIEW_TYPES.YEAR);
-    expect(document.getElementById(LAYOUT.HEADER_ID)).toBeTruthy();
-    expect(document.getElementById(LAYOUT.NAV_TIMELINE_ID)).toBeTruthy();
-    expect(document.getElementById(LAYOUT.YEAR_CONTAINER_ID)).toBeTruthy();
-    expect(document.getElementById(LAYOUT.BG_VIDEO_ID)).toBeTruthy();
-    expect(document.getElementById(LAYOUT.FOOTER_ID)).toBeTruthy();
-  });
-  it('update view to year', () => {
-    // having
-    const intro = new IntroView(complexEditions());
-    intro.render();
+		// then
+		expect(document.querySelector('html').dataset.view).toBe(VIEW_TYPES.YEAR);
+		expect(document.getElementById(LAYOUT.HEADER_ID)).toBeTruthy();
+		expect(document.getElementById(LAYOUT.NAV_TIMELINE_ID)).toBeTruthy();
+		expect(document.getElementById(LAYOUT.YEAR_CONTAINER_ID)).toBeTruthy();
+		expect(document.getElementById(LAYOUT.BG_VIDEO_ID)).toBeTruthy();
+		expect(document.getElementById(LAYOUT.FOOTER_ID)).toBeTruthy();
+	});
+	it('update view to year', () => {
+		// having
+		const intro = new IntroView(complexEditions());
+		intro.render();
 
-    // when
-    yearView.switchToYearView();
+		// when
+		yearView.switchToYearView();
 
-    // then
-    expect(document.querySelector('html').dataset.view).toBe(VIEW_TYPES.YEAR);
-    expect(document.querySelector(`.${HEADER.TITLE_CLASS}`).classList.contains(HEADER.TITLE_HEADER_CLASS))
-      .toBeFalsy();
-    expect(document.getElementById(LAYOUT.HEADER_ID).classList.contains(HEADER.INTRO_HEADER_CLASS)).toBeFalsy();
-    expect(document.getElementById(LAYOUT.NAV_TIMELINE_ID)).toBeTruthy();
-    expect(document.getElementById(LAYOUT.YEAR_CONTAINER_ID)).toBeTruthy();
-    expect(document.getElementById(LAYOUT.MAIN_TIMELINE_ID)).toBeFalsy();
-  });
-  it('update year view by new edition', () => {
-    // having
-    yearView.render();
+		// then
+		expect(document.querySelector('html').dataset.view).toBe(VIEW_TYPES.YEAR);
+		expect(document.querySelector(`.${HEADER.TITLE_CLASS}`).classList.contains(HEADER.TITLE_HEADER_CLASS))
+			.toBeFalsy();
+		expect(document.getElementById(LAYOUT.HEADER_ID).classList.contains(HEADER.INTRO_HEADER_CLASS)).toBeFalsy();
+		expect(document.getElementById(LAYOUT.NAV_TIMELINE_ID)).toBeTruthy();
+		expect(document.getElementById(LAYOUT.YEAR_CONTAINER_ID)).toBeTruthy();
+		expect(document.getElementById(LAYOUT.MAIN_TIMELINE_ID)).toBeFalsy();
+	});
+	it('update year view by new edition', () => {
+		// having
+		yearView.render();
 
-    // when
-    const newEditionItem = document.querySelector('a[href="#edition4"]');
-    const newEdition = new YearView(complexEditions(), 4);
-    newEdition.updateDetails(newEditionItem);
+		// when
+		const newEditionItem = document.querySelector('a[href="#edition4"]');
+		const newEdition = new YearView(complexEditions(), 4);
+		newEdition.updateDetails(newEditionItem);
 
-    // then
-    expect(newEditionItem.classList.contains(TIMELINE.NAV_EDITION_ACTIVE_CLASS)).toBeTruthy();
-    expect(document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent).toBe('2005');
-  });
+		// then
+		expect(newEditionItem.classList.contains(TIMELINE.NAV_EDITION_ACTIVE_CLASS)).toBeTruthy();
+		expect(document.querySelector(`.${EDITION.YEAR_CLASS}`).textContent).toBe('2005');
+	});
 });

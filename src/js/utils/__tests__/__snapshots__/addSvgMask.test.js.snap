@@ -1,49 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render svg element  render svg mask with additional classes dor svg and mackBg 1`] = `
+exports[`render svg element	render svg mask with additional classes dor svg and mackBg 1`] = `
 <svg
-  class="svgMask mainTimelineItemMask"
+	class="svgMask mainTimelineItemMask"
 >
-  <defs>
-    <mask
-      id="yearMask2018"
-      maskUnits="userSpaceOnUse"
-    >
-      <rect
-        class="svgMask__base"
-      />
-      <text>
-        2018
-      </text>
-    </mask>
-  </defs>
-  <rect
-    class="svgMask__bg mainTimelineItemMask__bg"
-    mask="url(#yearMask2018)"
-  />
+	<defs>
+		<mask
+			id="yearMask2018"
+			maskUnits="userSpaceOnUse"
+		>
+			<rect
+				class="svgMask__base"
+			/>
+			<text>
+				2018
+			</text>
+		</mask>
+	</defs>
+	<rect
+		class="svgMask__bg mainTimelineItemMask__bg"
+		mask="url(#yearMask2018)"
+	/>
 </svg>
 `;
 
-exports[`render svg element  render svg mask without addidional classes 1`] = `
+exports[`render svg element	render svg mask without addidional classes 1`] = `
 <svg
-  class="svgMask"
+	class="svgMask"
 >
-  <defs>
-    <mask
-      id="yearMask2018"
-      maskUnits="userSpaceOnUse"
-    >
-      <rect
-        class="svgMask__base"
-      />
-      <text>
-        2018
-      </text>
-    </mask>
-  </defs>
-  <rect
-    class="svgMask__bg"
-    mask="url(#yearMask2018)"
-  />
+	<defs>
+		<mask
+			id="yearMask2018"
+			maskUnits="userSpaceOnUse"
+		>
+			<rect
+				class="svgMask__base"
+			/>
+			<text>
+				2018
+			</text>
+		</mask>
+	</defs>
+	<rect
+		class="svgMask__bg"
+		mask="url(#yearMask2018)"
+	/>
 </svg>
 `;

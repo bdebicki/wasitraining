@@ -3,20 +3,20 @@ import CookiesInfo from './CookiesInfo';
 import MoreInfo from './MoreInfo';
 
 export default class Footer {
-  static renderFooterContainer() {
-    const footerContainer = document.createElement('footer');
+	static renderFooterContainer() {
+		const footerContainer = document.createElement('footer');
 
-    footerContainer.id = LAYOUT.FOOTER_ID;
+		footerContainer.id = LAYOUT.FOOTER_ID;
 
-    return footerContainer;
-  }
+		return footerContainer;
+	}
 
-  static render() {
-    const footerContainer = Footer.renderFooterContainer();
+	static render() {
+		const footerContainer = Footer.renderFooterContainer();
 
-    footerContainer.appendChild(CookiesInfo.render());
-    footerContainer.appendChild(MoreInfo.render());
+		footerContainer.appendChild(CookiesInfo.render());
+		footerContainer.appendChild(MoreInfo.render());
 
-    return footerContainer;
-  }
+		return footerContainer;
+	}
 }

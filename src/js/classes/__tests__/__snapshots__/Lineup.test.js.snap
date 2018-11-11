@@ -1,657 +1,657 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`tests lineup class  test returned lineup sort: alphabeticalExceptHeadliners and merge: false 1`] = `
+exports[`tests lineup class	test returned lineup sort: alphabeticalExceptHeadliners and merge: false 1`] = `
 Array [
-  Object {
-    "headliners": Array [
-      "Radiohead",
-    ],
-    "lvl1": Array [
-      Object {
-        "artist": "James Blake",
-        "firstOnLine": true,
-      },
-      "Royal Blood",
-    ],
-    "lvl2": Array [
-      Object {
-        "artist": "Michael Kiwanuka",
-        "firstOnLine": true,
-      },
-      "Rae Sremmurd",
-      "Solange",
-    ],
-    "others": Array [
-      Object {
-        "artist": "Arca (DJ Set)",
-        "firstOnLine": true,
-        "sliceDecorator": Object {
-          "slice": "(DJ Set)",
-          "style": "down",
-        },
-      },
-      "Black Coffee",
-      "Natalia Przybysz",
-      "Quebonafide",
-      Object {
-        "artist": "Sorry Boys",
-        "firstOnLine": true,
-      },
-      "Enzu",
-      "Flirtini",
-      "Wacław Zimpel/Kuba Ziołek",
-      Object {
-        "artist": "Holak",
-        "firstOnLine": true,
-      },
-      "Gverilla",
-      "Mery Spolsky",
-    ],
-  },
-  Object {
-    "headliners": Array [
-      "Foo Fighters",
-    ],
-    "lvl1": Array [
-      Object {
-        "artist": "G-Eazy",
-        "firstOnLine": true,
-      },
-      "The Kills",
-      "M.I.A.",
-    ],
-    "lvl2": Array [
-      Object {
-        "artist": "Charli XCX",
-        "firstOnLine": true,
-      },
-      "Jimmy Eat World",
-      "Trentemøller",
-    ],
-    "others": Array [
-      Object {
-        "artist": "A_GIM",
-        "firstOnLine": true,
-      },
-      "Bitamina",
-      "Blanck Mass",
-      "Daniel Avery",
-      "Hades",
-      Object {
-        "artist": "Bownik",
-        "firstOnLine": true,
-      },
-      "Kari",
-      "Marcin Krupa",
-      "New People",
-      "Salk",
-      "Suwal",
-    ],
-  },
-  Object {
-    "headliners": Array [
-      "The Weekend",
-    ],
-    "lvl1": Array [
-      Object {
-        "artist": "Mac Miller",
-        "firstOnLine": true,
-      },
-      "Moderat",
-      "Prophets of Rage",
-    ],
-    "lvl2": Array [
-      Object {
-        "artist": "Brodka",
-        "firstOnLine": true,
-      },
-      "The Dumplings",
-      "Grammatik",
-      Object {
-        "artist": "JMSN",
-        "firstOnLine": true,
-      },
-      "Kiasmos",
-      "Tiga",
-      "Warpaint",
-    ],
-    "others": Array [
-      Object {
-        "artist": "Bisz/Radex",
-        "firstOnLine": true,
-      },
-      "Daria Zawiałow",
-      "Dasein",
-      "Deas",
-      "Hańba!",
-      Object {
-        "artist": "Majlo",
-        "firstOnLine": true,
-      },
-      "Ralph Kaminski",
-    ],
-  },
-  Object {
-    "headliners": Array [
-      Object {
-        "artist": "The XX",
-        "firstOnLine": true,
-      },
-      "Lorde",
-    ],
-    "lvl1": Array [
-      Object {
-        "artist": "George Ezra",
-        "firstOnLine": true,
-      },
-      "Taco Hemingway",
-    ],
-    "lvl2": Array [
-      Object {
-        "artist": "Dua Lipa",
-        "firstOnLine": true,
-      },
-      "Nicolas Jaar",
-      "Tyga",
-      "O.S.T.R.",
-    ],
-    "others": Array [
-      Object {
-        "artist": "Benjamin Booker",
-        "firstOnLine": true,
-      },
-      "Buslav",
-      "Duit",
-      "Julia Pietrucha",
-      "Kevin Morby",
-      Object {
-        "artist": "Krzysztof Zalewski",
-        "firstOnLine": true,
-      },
-      "Monki",
-      "Niemoc",
-      "Seltron 400",
-      Object {
-        "artist": "The Shelters",
-        "firstOnLine": true,
-      },
-      "Urbanski",
-    ],
-  },
+	Object {
+		"headliners": Array [
+			"Radiohead",
+		],
+		"lvl1": Array [
+			Object {
+				"artist": "James Blake",
+				"firstOnLine": true,
+			},
+			"Royal Blood",
+		],
+		"lvl2": Array [
+			Object {
+				"artist": "Michael Kiwanuka",
+				"firstOnLine": true,
+			},
+			"Rae Sremmurd",
+			"Solange",
+		],
+		"others": Array [
+			Object {
+				"artist": "Arca (DJ Set)",
+				"firstOnLine": true,
+				"sliceDecorator": Object {
+					"slice": "(DJ Set)",
+					"style": "down",
+				},
+			},
+			"Black Coffee",
+			"Natalia Przybysz",
+			"Quebonafide",
+			Object {
+				"artist": "Sorry Boys",
+				"firstOnLine": true,
+			},
+			"Enzu",
+			"Flirtini",
+			"Wacław Zimpel/Kuba Ziołek",
+			Object {
+				"artist": "Holak",
+				"firstOnLine": true,
+			},
+			"Gverilla",
+			"Mery Spolsky",
+		],
+	},
+	Object {
+		"headliners": Array [
+			"Foo Fighters",
+		],
+		"lvl1": Array [
+			Object {
+				"artist": "G-Eazy",
+				"firstOnLine": true,
+			},
+			"The Kills",
+			"M.I.A.",
+		],
+		"lvl2": Array [
+			Object {
+				"artist": "Charli XCX",
+				"firstOnLine": true,
+			},
+			"Jimmy Eat World",
+			"Trentemøller",
+		],
+		"others": Array [
+			Object {
+				"artist": "A_GIM",
+				"firstOnLine": true,
+			},
+			"Bitamina",
+			"Blanck Mass",
+			"Daniel Avery",
+			"Hades",
+			Object {
+				"artist": "Bownik",
+				"firstOnLine": true,
+			},
+			"Kari",
+			"Marcin Krupa",
+			"New People",
+			"Salk",
+			"Suwal",
+		],
+	},
+	Object {
+		"headliners": Array [
+			"The Weekend",
+		],
+		"lvl1": Array [
+			Object {
+				"artist": "Mac Miller",
+				"firstOnLine": true,
+			},
+			"Moderat",
+			"Prophets of Rage",
+		],
+		"lvl2": Array [
+			Object {
+				"artist": "Brodka",
+				"firstOnLine": true,
+			},
+			"The Dumplings",
+			"Grammatik",
+			Object {
+				"artist": "JMSN",
+				"firstOnLine": true,
+			},
+			"Kiasmos",
+			"Tiga",
+			"Warpaint",
+		],
+		"others": Array [
+			Object {
+				"artist": "Bisz/Radex",
+				"firstOnLine": true,
+			},
+			"Daria Zawiałow",
+			"Dasein",
+			"Deas",
+			"Hańba!",
+			Object {
+				"artist": "Majlo",
+				"firstOnLine": true,
+			},
+			"Ralph Kaminski",
+		],
+	},
+	Object {
+		"headliners": Array [
+			Object {
+				"artist": "The XX",
+				"firstOnLine": true,
+			},
+			"Lorde",
+		],
+		"lvl1": Array [
+			Object {
+				"artist": "George Ezra",
+				"firstOnLine": true,
+			},
+			"Taco Hemingway",
+		],
+		"lvl2": Array [
+			Object {
+				"artist": "Dua Lipa",
+				"firstOnLine": true,
+			},
+			"Nicolas Jaar",
+			"Tyga",
+			"O.S.T.R.",
+		],
+		"others": Array [
+			Object {
+				"artist": "Benjamin Booker",
+				"firstOnLine": true,
+			},
+			"Buslav",
+			"Duit",
+			"Julia Pietrucha",
+			"Kevin Morby",
+			Object {
+				"artist": "Krzysztof Zalewski",
+				"firstOnLine": true,
+			},
+			"Monki",
+			"Niemoc",
+			"Seltron 400",
+			Object {
+				"artist": "The Shelters",
+				"firstOnLine": true,
+			},
+			"Urbanski",
+		],
+	},
 ]
 `;
 
-exports[`tests lineup class  test returned lineup sort: alphabeticalExceptHeadliners and merge: true 1`] = `
+exports[`tests lineup class	test returned lineup sort: alphabeticalExceptHeadliners and merge: true 1`] = `
 Object {
-  "headliners": Array [
-    "The Black Keys",
-    "Pearl Jam",
-    "Jack White",
-    "Faith No More",
-  ],
-  "lvl1": Array [
-    "Banks",
-    "Bastille",
-    "Ben Howard",
-    "Chromeo",
-    "Darkside",
-    Object {
-      "artist": "Daughter",
-      "decorator": "collapsed",
-    },
-    Object {
-      "artist": "Earl Sweatshirt",
-      "decorator": "collapsed",
-    },
-    Object {
-      "artist": "Foals",
-      "decorator": "collapsed",
-    },
-    Object {
-      "artist": "Foster the People",
-      "decorator": "collapsed",
-    },
-    Object {
-      "artist": "Haim",
-      "decorator": "collapsed",
-    },
-    "Interpol",
-    "Jagwar Ma",
-    "Jamie xx",
-    "Julio Bashmore",
-    "Lykke Li",
-    Object {
-      "artist": "Maya Jane Coles",
-      "decorator": "expanded",
-    },
-    Object {
-      "artist": "Mela Koteluk",
-      "decorator": "expanded",
-    },
-    Object {
-      "artist": "Metronomy",
-      "decorator": "expanded",
-    },
-    Object {
-      "artist": "MGMT",
-      "decorator": "expanded",
-    },
-    Object {
-      "artist": "MØ",
-      "decorator": "expanded",
-    },
-    "Phoenix",
-    "Pusha T",
-    "Artur Rojek",
-    "Royal Blood",
-    "Rudimental",
-    Object {
-      "artist": "The Afghan Whigs",
-      "decorator": "expanded",
-    },
-    Object {
-      "artist": "The Horrors",
-      "decorator": "expanded",
-    },
-    Object {
-      "artist": "Warpaint",
-      "decorator": "expanded",
-    },
-    Object {
-      "artist": "Wild Beasts",
-      "decorator": "expanded",
-    },
-  ],
-  "lvl2": Array [
-    "Bokka",
-    "Coldair",
-    "Eldo",
-    "Fair Weather Friends",
-    "KAMP!",
-    "Kari",
-    "Król",
-    "Kuroma",
-    "Misia FF",
-    Object {
-      "artist": "Mooryc",
-      "decorator": "expanded",
-    },
-    Object {
-      "artist": "Night Marks Electric Trio & Archeo",
-      "decorator": "expanded",
-    },
-    Object {
-      "artist": "Pablopavo i Ludziki",
-      "decorator": "expanded",
-    },
-    Object {
-      "artist": "Pink Freud Plays Autechre",
-      "breakLine": true,
-      "decorator": "collapsed",
-      "sliceDecorator": Object {
-        "slice": "Pink Freud",
-        "style": "previousLine",
-      },
-    },
-    Object {
-      "artist": "Plastic",
-      "decorator": "collapsed",
-    },
-    Object {
-      "artist": "Pustki",
-      "decorator": "collapsed",
-    },
-    Object {
-      "artist": "Rasmentalism",
-      "decorator": "collapsed",
-    },
-    Object {
-      "artist": "Rubber Dots",
-      "decorator": "collapsed",
-    },
-    Object {
-      "artist": "The Dumplings",
-      "canceled": true,
-    },
-    Object {
-      "artist": "Domowe Melodie",
-      "replacement": "The Dumplings",
-    },
-    Object {
-      "artist": "Tourist",
-      "decorator": "collapsed",
-    },
-  ],
-  "others": Array [
-    "Piotr Bejnar",
-    "Bulbwires",
-    "Call the Sun",
-    "Carnival Youth",
-    "Eric Shoves Them In His Pocket",
-    Object {
-      "artist": "Flirtini",
-      "canceled": true,
-    },
-    "Hanimal",
-    "Hatti Vatti & Lady Katee",
-    "Hello Mark",
-    "Jerz Igor",
-    "Kaseciarz",
-    "Kixnare",
-    "Sande Mölder",
-    "Mr. Lex",
-    "Niewidzialna Nerka",
-    "Robert Piotrowicz",
-    "SLG",
-    "Kuba Sojka Live",
-    "Daniel Spaleniak",
-    "Szezlong",
-    "Tasker",
-    "Terrific Sunday",
-    "Viadrina",
-    "We Draw A",
-    "Weeping Birds",
-    "Wild Books",
-    "ZAMILSKA",
-    "Żółte Kalendarze",
-  ],
+	"headliners": Array [
+		"The Black Keys",
+		"Pearl Jam",
+		"Jack White",
+		"Faith No More",
+	],
+	"lvl1": Array [
+		"Banks",
+		"Bastille",
+		"Ben Howard",
+		"Chromeo",
+		"Darkside",
+		Object {
+			"artist": "Daughter",
+			"decorator": "collapsed",
+		},
+		Object {
+			"artist": "Earl Sweatshirt",
+			"decorator": "collapsed",
+		},
+		Object {
+			"artist": "Foals",
+			"decorator": "collapsed",
+		},
+		Object {
+			"artist": "Foster the People",
+			"decorator": "collapsed",
+		},
+		Object {
+			"artist": "Haim",
+			"decorator": "collapsed",
+		},
+		"Interpol",
+		"Jagwar Ma",
+		"Jamie xx",
+		"Julio Bashmore",
+		"Lykke Li",
+		Object {
+			"artist": "Maya Jane Coles",
+			"decorator": "expanded",
+		},
+		Object {
+			"artist": "Mela Koteluk",
+			"decorator": "expanded",
+		},
+		Object {
+			"artist": "Metronomy",
+			"decorator": "expanded",
+		},
+		Object {
+			"artist": "MGMT",
+			"decorator": "expanded",
+		},
+		Object {
+			"artist": "MØ",
+			"decorator": "expanded",
+		},
+		"Phoenix",
+		"Pusha T",
+		"Artur Rojek",
+		"Royal Blood",
+		"Rudimental",
+		Object {
+			"artist": "The Afghan Whigs",
+			"decorator": "expanded",
+		},
+		Object {
+			"artist": "The Horrors",
+			"decorator": "expanded",
+		},
+		Object {
+			"artist": "Warpaint",
+			"decorator": "expanded",
+		},
+		Object {
+			"artist": "Wild Beasts",
+			"decorator": "expanded",
+		},
+	],
+	"lvl2": Array [
+		"Bokka",
+		"Coldair",
+		"Eldo",
+		"Fair Weather Friends",
+		"KAMP!",
+		"Kari",
+		"Król",
+		"Kuroma",
+		"Misia FF",
+		Object {
+			"artist": "Mooryc",
+			"decorator": "expanded",
+		},
+		Object {
+			"artist": "Night Marks Electric Trio & Archeo",
+			"decorator": "expanded",
+		},
+		Object {
+			"artist": "Pablopavo i Ludziki",
+			"decorator": "expanded",
+		},
+		Object {
+			"artist": "Pink Freud Plays Autechre",
+			"breakLine": true,
+			"decorator": "collapsed",
+			"sliceDecorator": Object {
+				"slice": "Pink Freud",
+				"style": "previousLine",
+			},
+		},
+		Object {
+			"artist": "Plastic",
+			"decorator": "collapsed",
+		},
+		Object {
+			"artist": "Pustki",
+			"decorator": "collapsed",
+		},
+		Object {
+			"artist": "Rasmentalism",
+			"decorator": "collapsed",
+		},
+		Object {
+			"artist": "Rubber Dots",
+			"decorator": "collapsed",
+		},
+		Object {
+			"artist": "The Dumplings",
+			"canceled": true,
+		},
+		Object {
+			"artist": "Domowe Melodie",
+			"replacement": "The Dumplings",
+		},
+		Object {
+			"artist": "Tourist",
+			"decorator": "collapsed",
+		},
+	],
+	"others": Array [
+		"Piotr Bejnar",
+		"Bulbwires",
+		"Call the Sun",
+		"Carnival Youth",
+		"Eric Shoves Them In His Pocket",
+		Object {
+			"artist": "Flirtini",
+			"canceled": true,
+		},
+		"Hanimal",
+		"Hatti Vatti & Lady Katee",
+		"Hello Mark",
+		"Jerz Igor",
+		"Kaseciarz",
+		"Kixnare",
+		"Sande Mölder",
+		"Mr. Lex",
+		"Niewidzialna Nerka",
+		"Robert Piotrowicz",
+		"SLG",
+		"Kuba Sojka Live",
+		"Daniel Spaleniak",
+		"Szezlong",
+		"Tasker",
+		"Terrific Sunday",
+		"Viadrina",
+		"We Draw A",
+		"Weeping Birds",
+		"Wild Books",
+		"ZAMILSKA",
+		"Żółte Kalendarze",
+	],
 }
 `;
 
-exports[`tests lineup class  test returned lineup sort: customOrder and merge: true 1`] = `
+exports[`tests lineup class	test returned lineup sort: customOrder and merge: true 1`] = `
 Object {
-  "headliners": Array [
-    Object {
-      "artist": "Björk",
-      "firstOnLine": true,
-    },
-    "Beastie Boys",
-    "Muse",
-  ],
-  "lvl1": Array [
-    Object {
-      "artist": "Groove Armada",
-      "firstOnLine": true,
-    },
-    "Sonic Youth",
-    "Bloc Party",
-    Object {
-      "artist": "The Roots",
-      "decorator": "expanded",
-      "firstOnLine": true,
-    },
-    Object {
-      "artist": "LCD Soundsystem",
-      "decorator": "expanded",
-    },
-  ],
-  "lvl2": Array [
-    Object {
-      "artist": "Laurent Garnier (Live)",
-      "firstOnLine": true,
-    },
-    "Dizzee Rascal",
-  ],
-  "lvl3": Array [
-    Object {
-      "artist": "Crazy P",
-      "firstOnLine": true,
-    },
-    "O.S.T.R.",
-    "Freeform Five",
-    "Smolik",
-    "The Strike Boys",
-    "The Car Is on Fire",
-    "Indios Bravos",
-    Object {
-      "artist": "Apteka",
-      "firstOnLine": true,
-    },
-    "Novika",
-    "Afro Kolektyw",
-    "Bassisters Orchestra",
-    "Pink Freud",
-    "EastWest Rockers",
-    Object {
-      "artist": "Kombajn do Zbierania Kur po Wioskach",
-      "firstOnLine": true,
-    },
-    "Renton",
-    "Łąki Łan",
-    "Kapitan DA",
-    "Me Myself and I",
-  ],
-  "lvl4": Array [
-    Object {
-      "artist": "Andy",
-      "firstOnLine": true,
-    },
-    "Bruno Schulz",
-    "Cała Góra Barwinków",
-    "Dezodorant Squad",
-    "Dick 4 Dick",
-    "Erijef Massiv",
-  ],
-  "others": Array [
-    Object {
-      "artist": "Gentleman!",
-      "firstOnLine": true,
-    },
-    "Lars",
-    "Managga",
-    "Mikromusic",
-    "Mikrowafle",
-    "NOT",
-    "Organizm",
-    "Out of Tune",
-    "The Poise Rite",
-  ],
+	"headliners": Array [
+		Object {
+			"artist": "Björk",
+			"firstOnLine": true,
+		},
+		"Beastie Boys",
+		"Muse",
+	],
+	"lvl1": Array [
+		Object {
+			"artist": "Groove Armada",
+			"firstOnLine": true,
+		},
+		"Sonic Youth",
+		"Bloc Party",
+		Object {
+			"artist": "The Roots",
+			"decorator": "expanded",
+			"firstOnLine": true,
+		},
+		Object {
+			"artist": "LCD Soundsystem",
+			"decorator": "expanded",
+		},
+	],
+	"lvl2": Array [
+		Object {
+			"artist": "Laurent Garnier (Live)",
+			"firstOnLine": true,
+		},
+		"Dizzee Rascal",
+	],
+	"lvl3": Array [
+		Object {
+			"artist": "Crazy P",
+			"firstOnLine": true,
+		},
+		"O.S.T.R.",
+		"Freeform Five",
+		"Smolik",
+		"The Strike Boys",
+		"The Car Is on Fire",
+		"Indios Bravos",
+		Object {
+			"artist": "Apteka",
+			"firstOnLine": true,
+		},
+		"Novika",
+		"Afro Kolektyw",
+		"Bassisters Orchestra",
+		"Pink Freud",
+		"EastWest Rockers",
+		Object {
+			"artist": "Kombajn do Zbierania Kur po Wioskach",
+			"firstOnLine": true,
+		},
+		"Renton",
+		"Łąki Łan",
+		"Kapitan DA",
+		"Me Myself and I",
+	],
+	"lvl4": Array [
+		Object {
+			"artist": "Andy",
+			"firstOnLine": true,
+		},
+		"Bruno Schulz",
+		"Cała Góra Barwinków",
+		"Dezodorant Squad",
+		"Dick 4 Dick",
+		"Erijef Massiv",
+	],
+	"others": Array [
+		Object {
+			"artist": "Gentleman!",
+			"firstOnLine": true,
+		},
+		"Lars",
+		"Managga",
+		"Mikromusic",
+		"Mikrowafle",
+		"NOT",
+		"Organizm",
+		"Out of Tune",
+		"The Poise Rite",
+	],
 }
 `;
 
-exports[`tests lineup class  test returned lineup sort: customOrderExceptHeadliners and merge: mainByDaysAndMergeRest 1`] = `
+exports[`tests lineup class	test returned lineup sort: customOrderExceptHeadliners and merge: mainByDaysAndMergeRest 1`] = `
 Object {
-  "allOthers": Object {
-    "lvl2": Array [
-      Object {
-        "artist": "Neo",
-        "decorator": "uppercase",
-        "firstOnLine": true,
-      },
-    ],
-    "others": Array [
-      "Pogodno",
-      "O.S.T.R.",
-      "Sofa",
-      "Őszibarack",
-      "Peepol",
-      "Tworzywo Sztuczne",
-      Object {
-        "artist": "Boogiemafia",
-        "firstOnLine": true,
-      },
-      "Less Is More",
-      "Hariasen",
-      "Rotofobia",
-      "Lili Marlene",
-      Object {
-        "artist": "teatry",
-        "firstOnLine": true,
-      },
-      "Strefa Ciszy",
-      "Porywacze Ciał",
-      "Akt Okazjonalny",
-      "Good Girl Killer",
-    ],
-  },
-  "dailyArtists": Array [
-    Object {
-      "headliners": Array [
-        Object {
-          "artist": "Snoop Dogg",
-          "decorator": "promoted",
-          "firstOnLine": true,
-        },
-        Object {
-          "artist": "Fatboy Slim",
-          "decorator": "promoted",
-        },
-        Object {
-          "artist": "Faithless",
-          "decorator": "promoted",
-          "firstOnLine": true,
-        },
-      ],
-    },
-    Object {
-      "headliners": Array [
-        Object {
-          "artist": "The White Stripes",
-          "firstOnLine": true,
-        },
-        "Lauryn Hill",
-        Object {
-          "artist": "Underworld",
-          "firstOnLine": true,
-        },
-      ],
-      "lvl1": Array [
-        "The Music",
-      ],
-    },
-  ],
+	"allOthers": Object {
+		"lvl2": Array [
+			Object {
+				"artist": "Neo",
+				"decorator": "uppercase",
+				"firstOnLine": true,
+			},
+		],
+		"others": Array [
+			"Pogodno",
+			"O.S.T.R.",
+			"Sofa",
+			"Őszibarack",
+			"Peepol",
+			"Tworzywo Sztuczne",
+			Object {
+				"artist": "Boogiemafia",
+				"firstOnLine": true,
+			},
+			"Less Is More",
+			"Hariasen",
+			"Rotofobia",
+			"Lili Marlene",
+			Object {
+				"artist": "teatry",
+				"firstOnLine": true,
+			},
+			"Strefa Ciszy",
+			"Porywacze Ciał",
+			"Akt Okazjonalny",
+			"Good Girl Killer",
+		],
+	},
+	"dailyArtists": Array [
+		Object {
+			"headliners": Array [
+				Object {
+					"artist": "Snoop Dogg",
+					"decorator": "promoted",
+					"firstOnLine": true,
+				},
+				Object {
+					"artist": "Fatboy Slim",
+					"decorator": "promoted",
+				},
+				Object {
+					"artist": "Faithless",
+					"decorator": "promoted",
+					"firstOnLine": true,
+				},
+			],
+		},
+		Object {
+			"headliners": Array [
+				Object {
+					"artist": "The White Stripes",
+					"firstOnLine": true,
+				},
+				"Lauryn Hill",
+				Object {
+					"artist": "Underworld",
+					"firstOnLine": true,
+				},
+			],
+			"lvl1": Array [
+				"The Music",
+			],
+		},
+	],
 }
 `;
 
-exports[`tests lineup class  test returned lineup sort: false and merge: false 1`] = `
+exports[`tests lineup class	test returned lineup sort: false and merge: false 1`] = `
 Array [
-  Object {
-    "headliners": Array [
-      "Blur",
-    ],
-    "lvl1": Array [
-      "Editors",
-      "Crystal Castles",
-      "Kendrick Lamar",
-      "Alt-J",
-      "Savages",
-    ],
-    "others": Array [
-      Object {
-        "artist": "Vavamuffin",
-        "decorator": "collapsed",
-      },
-      Object {
-        "artist": "Vienio Profil Pokoleń",
-        "decorator": "collapsed",
-        "displayName": "Vienio",
-      },
-      Object {
-        "artist": "Fox",
-        "decorator": "collapsed",
-      },
-      Object {
-        "artist": "Mikromusic",
-        "decorator": "collapsed",
-      },
-      Object {
-        "artist": "Domowe Melodie",
-        "decorator": "collapsed",
-      },
-      Object {
-        "artist": "Plum",
-        "decorator": "collapsed",
-        "lastOnDay": true,
-      },
-    ],
-  },
-  Object {
-    "headliners": Array [
-      "Arctic Monkeys",
-    ],
-    "lvl1": Array [
-      "Nick Cave & The Bad Seeds",
-    ],
-    "lvl2": Array [
-      "Tame Impala",
-      "Matisyahu",
-      "Junip",
-      "Maria Peszek",
-    ],
-    "others": Array [
-      "Kim Nowak",
-      "Łąki Łan",
-      Object {
-        "artist": "Ras Luta",
-        "lastOnDay": true,
-      },
-    ],
-  },
-  Object {
-    "headliners": Array [
-      Object {
-        "artist": "Queens of the Stone Age",
-        "decorator": "collapsed",
-      },
-    ],
-    "lvl1": Array [
-      "The National",
-      "Skunk Anansie",
-      "Nas",
-    ],
-    "lvl2": Array [
-      "Disclosure",
-      "Hey",
-      "Kaliber 44",
-    ],
-    "others": Array [
-      "These New Puritans",
-      Object {
-        "artist": "Palma Violets",
-        "lastOnDay": true,
-      },
-    ],
-  },
-  Object {
-    "headliners": Array [
-      "Kings of Leon",
-    ],
-    "lvl1": Array [
-      "Animal Collective",
-      "Miguel",
-      Object {
-        "aligned": "right",
-        "artist": "Steve Reich & Ensemble Modern",
-        "multiline": true,
-        "sliceDecorator": Object {
-          "slice": "& Ensemble Modern",
-          "style": "newLine",
-        },
-      },
-      Object {
-        "aligned": "left",
-        "artist": "Jonny Greenwood",
-        "multiline": true,
-        "sliceDecorator": Object {
-          "slice": "Greenwood",
-          "style": Array [
-            "newLine",
-            "indented",
-          ],
-        },
-      },
-    ],
-    "lvl2": Array [
-      "Crystal Fighters",
-      "Devendra Banhart",
-    ],
-    "others": Array [
-      "Mount Kimbie",
-      Object {
-        "artist": "Everything Everything",
-        "lastOnDay": true,
-      },
-    ],
-  },
+	Object {
+		"headliners": Array [
+			"Blur",
+		],
+		"lvl1": Array [
+			"Editors",
+			"Crystal Castles",
+			"Kendrick Lamar",
+			"Alt-J",
+			"Savages",
+		],
+		"others": Array [
+			Object {
+				"artist": "Vavamuffin",
+				"decorator": "collapsed",
+			},
+			Object {
+				"artist": "Vienio Profil Pokoleń",
+				"decorator": "collapsed",
+				"displayName": "Vienio",
+			},
+			Object {
+				"artist": "Fox",
+				"decorator": "collapsed",
+			},
+			Object {
+				"artist": "Mikromusic",
+				"decorator": "collapsed",
+			},
+			Object {
+				"artist": "Domowe Melodie",
+				"decorator": "collapsed",
+			},
+			Object {
+				"artist": "Plum",
+				"decorator": "collapsed",
+				"lastOnDay": true,
+			},
+		],
+	},
+	Object {
+		"headliners": Array [
+			"Arctic Monkeys",
+		],
+		"lvl1": Array [
+			"Nick Cave & The Bad Seeds",
+		],
+		"lvl2": Array [
+			"Tame Impala",
+			"Matisyahu",
+			"Junip",
+			"Maria Peszek",
+		],
+		"others": Array [
+			"Kim Nowak",
+			"Łąki Łan",
+			Object {
+				"artist": "Ras Luta",
+				"lastOnDay": true,
+			},
+		],
+	},
+	Object {
+		"headliners": Array [
+			Object {
+				"artist": "Queens of the Stone Age",
+				"decorator": "collapsed",
+			},
+		],
+		"lvl1": Array [
+			"The National",
+			"Skunk Anansie",
+			"Nas",
+		],
+		"lvl2": Array [
+			"Disclosure",
+			"Hey",
+			"Kaliber 44",
+		],
+		"others": Array [
+			"These New Puritans",
+			Object {
+				"artist": "Palma Violets",
+				"lastOnDay": true,
+			},
+		],
+	},
+	Object {
+		"headliners": Array [
+			"Kings of Leon",
+		],
+		"lvl1": Array [
+			"Animal Collective",
+			"Miguel",
+			Object {
+				"aligned": "right",
+				"artist": "Steve Reich & Ensemble Modern",
+				"multiline": true,
+				"sliceDecorator": Object {
+					"slice": "& Ensemble Modern",
+					"style": "newLine",
+				},
+			},
+			Object {
+				"aligned": "left",
+				"artist": "Jonny Greenwood",
+				"multiline": true,
+				"sliceDecorator": Object {
+					"slice": "Greenwood",
+					"style": Array [
+						"newLine",
+						"indented",
+					],
+				},
+			},
+		],
+		"lvl2": Array [
+			"Crystal Fighters",
+			"Devendra Banhart",
+		],
+		"others": Array [
+			"Mount Kimbie",
+			Object {
+				"artist": "Everything Everything",
+				"lastOnDay": true,
+			},
+		],
+	},
 ]
 `;

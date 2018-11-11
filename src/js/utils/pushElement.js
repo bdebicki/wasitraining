@@ -1,9 +1,9 @@
 export default function(target, elements) {
-  if (Array.isArray(elements)) {
-    elements.forEach((el) => document.querySelector(target).appendChild(el));
+	if (Array.isArray(elements)) {
+		elements.forEach((el) => document.querySelector(target).appendChild(el));
 
-    return;
-  }
+		return;
+	}
 
-  document.querySelector(target).appendChild(elements);
+	document.querySelector(target).appendChild(elements);
 }

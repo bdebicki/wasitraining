@@ -2,16 +2,16 @@
 
 exports[`test background video component render background video component 1`] = `
 <div
-  id="bgVideo"
+	id="bgVideo"
 >
-  <video
-    autoplay=""
-    class="bgVideo__video"
-    height="768"
-    loop=""
-    poster="/images/bg-img.png"
-    src="/videos/bg-video.webm"
-    width="1366"
-  />
+	<video
+		autoplay=""
+		class="bgVideo__video"
+		height="768"
+		loop=""
+		poster="/images/bg-img.png"
+		src="/videos/bg-video.webm"
+		width="1366"
+	/>
 </div>
 `;

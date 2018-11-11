@@ -2,15 +2,15 @@
 
 exports[`test cookies info section render cookies section 1`] = `
 <p
-  class="cookiesSection"
+	class="cookiesSection"
 >
-  yep. this site uses cookies. click 
-  <a
-    class="link"
-    href="#cookies-policy"
-  >
-    here
-  </a>
-   for more.
+	yep. this site uses cookies. click
+	<a
+		class="link"
+		href="#cookies-policy"
+	>
+		here
+	</a>
+	 for more.
 </p>
 `;

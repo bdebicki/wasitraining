@@ -8,107 +8,107 @@ import DIALOGBOX from '../../../utils/elementHandlers/dialogbox';
 import RainDetails from '../RainDetails';
 
 function prepareDOM(edition) {
-  const rainDetails = new RainDetails(edition);
-  document.body.appendChild(rainDetails.render());
+	const rainDetails = new RainDetails(edition);
+	document.body.appendChild(rainDetails.render());
 }
 
 describe('tests for RainDetails class', () => {
-  afterAll(() => cleanDOM());
+	afterAll(() => cleanDOM());
 
-  describe('render rain details section', () => {
-    afterEach(() => cleanDOM());
+	describe('render rain details section', () => {
+		afterEach(() => cleanDOM());
 
-    it('renders rain details section for rainy edition', () => {
-      // having
-      const rainDetails = new RainDetails(rainyEdition);
+		it('renders rain details section for rainy edition', () => {
+			// having
+			const rainDetails = new RainDetails(rainyEdition);
 
-      // then
-      expect(rainDetails.render()).toMatchSnapshot();
-    });
+			// then
+			expect(rainDetails.render()).toMatchSnapshot();
+		});
 
-    it('renders rain details section for sunny edition', () => {
-      // having
-      const rainDetails = new RainDetails(sunnyEdition);
+		it('renders rain details section for sunny edition', () => {
+			// having
+			const rainDetails = new RainDetails(sunnyEdition);
 
-      // then
-      expect(rainDetails.render()).toMatchSnapshot();
-    });
-  });
-  describe('update rain details section', () => {
-    afterEach(() => cleanDOM());
+			// then
+			expect(rainDetails.render()).toMatchSnapshot();
+		});
+	});
+	describe('update rain details section', () => {
+		afterEach(() => cleanDOM());
 
-    it('uptade rain info', () => {
-      // having
-      prepareDOM(rainyEdition);
-      const updatedRainDetails = new RainDetails(sunnyEdition);
+		it('uptade rain info', () => {
+			// having
+			prepareDOM(rainyEdition);
+			const updatedRainDetails = new RainDetails(sunnyEdition);
 
-      // when
-      updatedRainDetails.updateRainInfo();
+			// when
+			updatedRainDetails.updateRainInfo();
 
-      // then
-      expect(document.querySelector(`.${RAIN.INFO_CLASS}`)).toMatchSnapshot();
-    });
-    it('update rain day details: from rainy to sunny', () => {
-      // having
-      prepareDOM(rainyEdition);
-      const updatedRainDetails = new RainDetails(sunnyEdition);
+			// then
+			expect(document.querySelector(`.${RAIN.INFO_CLASS}`)).toMatchSnapshot();
+		});
+		it('update rain day details: from rainy to sunny', () => {
+			// having
+			prepareDOM(rainyEdition);
+			const updatedRainDetails = new RainDetails(sunnyEdition);
 
-      // when
-      updatedRainDetails.updateRainDayDetails();
+			// when
+			updatedRainDetails.updateRainDayDetails();
 
-      // then
-      expect(document.getElementById(RAIN.DETAILS_ID)).toBeFalsy();
-    });
-    it('update rain day details: from sunny to rainy', () => {
-      // having
-      prepareDOM(sunnyEdition);
-      const updatedRainDetails = new RainDetails(rainyEdition);
+			// then
+			expect(document.getElementById(RAIN.DETAILS_ID)).toBeFalsy();
+		});
+		it('update rain day details: from sunny to rainy', () => {
+			// having
+			prepareDOM(sunnyEdition);
+			const updatedRainDetails = new RainDetails(rainyEdition);
 
-      // when
-      updatedRainDetails.updateRainDayDetails();
+			// when
+			updatedRainDetails.updateRainDayDetails();
 
-      // then
-      expect(document.getElementById(RAIN.DETAILS_ID)).toBeTruthy();
-    });
-    it('update rain day details: from rainy to rainy', () => {
-      // having
-      prepareDOM(rainyEdition);
-      const updatedRainDetails = new RainDetails(newRainyEdition);
+			// then
+			expect(document.getElementById(RAIN.DETAILS_ID)).toBeTruthy();
+		});
+		it('update rain day details: from rainy to rainy', () => {
+			// having
+			prepareDOM(rainyEdition);
+			const updatedRainDetails = new RainDetails(newRainyEdition);
 
-      // when
-      updatedRainDetails.updateRainDayDetails();
+			// when
+			updatedRainDetails.updateRainDayDetails();
 
-      // then
-      expect(document.getElementById(RAIN.DETAILS_ID)).toMatchSnapshot();
-    });
-    it('update rain details', () => {
-      // having
-      prepareDOM(rainyEdition);
-      const updatedRainDetails = new RainDetails(sunnyEdition);
+			// then
+			expect(document.getElementById(RAIN.DETAILS_ID)).toMatchSnapshot();
+		});
+		it('update rain details', () => {
+			// having
+			prepareDOM(rainyEdition);
+			const updatedRainDetails = new RainDetails(sunnyEdition);
 
-      // when
-      updatedRainDetails.updateRainDetails();
+			// when
+			updatedRainDetails.updateRainDetails();
 
-      expect(document.querySelector(`.${RAIN.INFO_YES_CLASS}`)).toBeFalsy();
-      expect(document.getElementById(RAIN.DETAILS_ID)).toBeFalsy();
-    });
-  });
-  describe('toggle details dialogbox', () => {
-    beforeAll(() => prepareDOM(rainyEdition));
+			expect(document.querySelector(`.${RAIN.INFO_YES_CLASS}`)).toBeFalsy();
+			expect(document.getElementById(RAIN.DETAILS_ID)).toBeFalsy();
+		});
+	});
+	describe('toggle details dialogbox', () => {
+		beforeAll(() => prepareDOM(rainyEdition));
 
-    it('show details dialogbox', () => {
-      // when
-      document.querySelector(`.${RAIN.HEADER_CLASS} .${LINK.BASIC_CLASS}`).click();
+		it('show details dialogbox', () => {
+			// when
+			document.querySelector(`.${RAIN.HEADER_CLASS} .${LINK.BASIC_CLASS}`).click();
 
-      // then
-      expect(document.getElementById(RAIN.DETAILS_ID).classList.contains(DIALOGBOX.VISIBLE_CLASS)).toBeTruthy();
-    });
-    it('hide details dialogbox', () => {
-      // when
-      document.querySelector(`.${RAIN.DETAILS_ID} .${DIALOGBOX.CLOSE_CLASS}`).click();
+			// then
+			expect(document.getElementById(RAIN.DETAILS_ID).classList.contains(DIALOGBOX.VISIBLE_CLASS)).toBeTruthy();
+		});
+		it('hide details dialogbox', () => {
+			// when
+			document.querySelector(`.${RAIN.DETAILS_ID} .${DIALOGBOX.CLOSE_CLASS}`).click();
 
-      // then
-      expect(document.getElementById(RAIN.DETAILS_ID).classList.contains(DIALOGBOX.VISIBLE_CLASS)).toBeFalsy();
-    });
-  });
+			// then
+			expect(document.getElementById(RAIN.DETAILS_ID).classList.contains(DIALOGBOX.VISIBLE_CLASS)).toBeFalsy();
+		});
+	});
 });
