@@ -15,7 +15,7 @@
     "init": "npm run build:festival-data && npm run build:app",
     "symlink-hooks": "./hooks/symlink-hooks",
     "eslint-check": "eslint ./src ./tools --ext .js",
-    "test": "jest --env=jsdom",
+    "test": "jest",
     "build:app": "webpack",
     "build:festival-data": "node tools/builder-festivalData.js",
     "watch:app": "webpack-dev-server --content-base public",
