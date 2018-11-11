@@ -1,6 +1,6 @@
 {
-  "parser": "babel-eslint",
   "extends": "airbnb-base",
+  "parser": "babel-eslint",
   "plugins": [
     "import",
     "filenames"
@@ -10,6 +10,7 @@
     "node": true,
     "jest": true
   },
+  "root": true,
   "rules": {
 
     ////////// Variables //////////
