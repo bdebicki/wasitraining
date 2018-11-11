@@ -2,34 +2,34 @@
 
 exports[`tests for footer component render footer component 1`] = `
 <footer
-	id="footer"
+  id="footer"
 >
-	<p
-		class="cookiesSection"
-	>
-		yep. this site uses cookies. click
-		<a
-			class="link"
-			href="#cookies-policy"
-		>
-			here
-		</a>
-		 for more.
-	</p>
-	<section
-		class="aboutSection"
-	>
-		<p
-			class="aboutSection__copyrights"
-		>
-			made with ❤ in Gdynia 2017
-		</p>
-		<a
-			class="link link--inverted aboutSection__aboutLink"
-			href="#about"
-		>
-			about
-		</a>
-	</section>
+  <p
+    class="cookiesSection"
+  >
+    yep. this site uses cookies. click 
+    <a
+      class="link"
+      href="#cookies-policy"
+    >
+      here
+    </a>
+     for more.
+  </p>
+  <section
+    class="aboutSection"
+  >
+    <p
+      class="aboutSection__copyrights"
+    >
+      made with ❤ in Gdynia 2017
+    </p>
+    <a
+      class="link link--inverted aboutSection__aboutLink"
+      href="#about"
+    >
+      about
+    </a>
+  </section>
 </footer>
 `;

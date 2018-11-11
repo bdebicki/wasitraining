@@ -2,68 +2,68 @@
 
 exports[`timeline item component render active nav timeline item 1`] = `
 <li
-	class="navTimelineItem"
+  class="navTimelineItem"
 >
-	<a
-		class="navTimelineItem__link navTimelineItem__link--isActive"
-		href="#edition16"
-	>
-		2017
-	</a>
+  <a
+    class="navTimelineItem__link navTimelineItem__link--isActive"
+    href="#edition16"
+  >
+    2017
+  </a>
 </li>
 `;
 
 exports[`timeline item component render main timeline item 1`] = `
 <li
-	class="mainTimelineItem"
+  class="mainTimelineItem"
 >
-	<a
-		class="mainTimelineItem__link"
-		href="#edition16"
-	>
-		<span
-			class="mainTimelineItem__year"
-		>
-			2017
-		</span>
-		<svg
-			class="svgMask mainTimelineItemMask"
-		>
-			<defs>
-				<mask
-					id="yearMask2017"
-					maskUnits="userSpaceOnUse"
-				>
-					<rect
-						class="svgMask__base"
-					/>
-					<text
-						class="mainTimelineItemMask__text"
-						x="50%"
-						y="50%"
-					>
-						2017
-					</text>
-				</mask>
-			</defs>
-			<rect
-				class="svgMask__bg mainTimelineItemMask__bg"
-				mask="url(#yearMask2017)"
-			/>
-		</svg>
-	</a>
+  <a
+    class="mainTimelineItem__link"
+    href="#edition16"
+  >
+    <span
+      class="mainTimelineItem__year"
+    >
+      2017
+    </span>
+    <svg
+      class="svgMask mainTimelineItemMask"
+    >
+      <defs>
+        <mask
+          id="yearMask2017"
+          maskUnits="userSpaceOnUse"
+        >
+          <rect
+            class="svgMask__base"
+          />
+          <text
+            class="mainTimelineItemMask__text"
+            x="50%"
+            y="50%"
+          >
+            2017
+          </text>
+        </mask>
+      </defs>
+      <rect
+        class="svgMask__bg mainTimelineItemMask__bg"
+        mask="url(#yearMask2017)"
+      />
+    </svg>
+  </a>
 </li>
 `;
 
 exports[`timeline item component render nav timeline item 1`] = `
 <li
-	class="navTimelineItem"
+  class="navTimelineItem"
 >
-	<a
-		class="navTimelineItem__link"
-		href="#edition16"
-	>
-		2017
-	</a>
+  <a
+    class="navTimelineItem__link"
+    href="#edition16"
+  >
+    2017
+  </a>
 </li>
 `;

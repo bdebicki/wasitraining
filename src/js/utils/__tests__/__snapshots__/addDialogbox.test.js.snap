@@ -2,142 +2,142 @@
 
 exports[`tests for addDialogbox test how dialogbox element is rendered render dialogbox with additional properties (classNames, adataAttr) 1`] = `
 <div
-	class="dialogbox dialogbox-visible lineup--edition2018"
-	data-year="2018"
-	id="lineupDialogbox"
+  class="dialogbox dialogbox-visible lineup--edition2018"
+  data-year="2018"
+  id="lineupDialogbox"
 >
-	<header
-		class="dialogbox__header"
-	>
-		<h3
-			class="dialogbox__headline"
-		>
-			Lineup 2018
-		</h3>
-		<a
-			class="dialogbox__close"
-			href="lineupDialogbox"
-			title="hide details"
-		>
-			<svg
-				class="icon--close link__icon"
-				height="10px"
-				viewBox="0 0 10 10"
-				width="10px"
-			>
-				<rect
-					class="icon--close__line"
-					height="2"
-					width="12"
-					x="-1"
-					y="4"
-				/>
-				<rect
-					class="icon--close__line"
-					height="12"
-					width="2"
-					x="4"
-					y="-1"
-				/>
-			</svg>
-		</a>
-	</header>
-	<div>
-		Simple dialogbox content
-	</div>
+  <header
+    class="dialogbox__header"
+  >
+    <h3
+      class="dialogbox__headline"
+    >
+      Lineup 2018
+    </h3>
+    <a
+      class="dialogbox__close"
+      href="lineupDialogbox"
+      title="hide details"
+    >
+      <svg
+        class="icon--close link__icon"
+        height="10px"
+        viewBox="0 0 10 10"
+        width="10px"
+      >
+        <rect
+          class="icon--close__line"
+          height="2"
+          width="12"
+          x="-1"
+          y="4"
+        />
+        <rect
+          class="icon--close__line"
+          height="12"
+          width="2"
+          x="4"
+          y="-1"
+        />
+      </svg>
+    </a>
+  </header>
+  <div>
+    Simple dialogbox content
+  </div>
 </div>
 `;
 
 exports[`tests for addDialogbox test how dialogbox element is rendered render dialogbox with default and required propertis settings 1`] = `
 <div
-	class="dialogbox"
-	id="lineupDialogbox"
+  class="dialogbox"
+  id="lineupDialogbox"
 >
-	<header
-		class="dialogbox__header"
-	>
-		<h3
-			class="dialogbox__headline"
-		>
-			Lineup 2018
-		</h3>
-		<a
-			class="dialogbox__close"
-			href="lineupDialogbox"
-			title="hide details"
-		>
-			<svg
-				class="icon--close link__icon"
-				height="10px"
-				viewBox="0 0 10 10"
-				width="10px"
-			>
-				<rect
-					class="icon--close__line"
-					height="2"
-					width="12"
-					x="-1"
-					y="4"
-				/>
-				<rect
-					class="icon--close__line"
-					height="12"
-					width="2"
-					x="4"
-					y="-1"
-				/>
-			</svg>
-		</a>
-	</header>
-	<div>
-		Simple dialogbox content
-	</div>
+  <header
+    class="dialogbox__header"
+  >
+    <h3
+      class="dialogbox__headline"
+    >
+      Lineup 2018
+    </h3>
+    <a
+      class="dialogbox__close"
+      href="lineupDialogbox"
+      title="hide details"
+    >
+      <svg
+        class="icon--close link__icon"
+        height="10px"
+        viewBox="0 0 10 10"
+        width="10px"
+      >
+        <rect
+          class="icon--close__line"
+          height="2"
+          width="12"
+          x="-1"
+          y="4"
+        />
+        <rect
+          class="icon--close__line"
+          height="12"
+          width="2"
+          x="4"
+          y="-1"
+        />
+      </svg>
+    </a>
+  </header>
+  <div>
+    Simple dialogbox content
+  </div>
 </div>
 `;
 
 exports[`tests for addDialogbox test how dialogbox element is rendered render dialogbox with overwrite propertis with default values (stretched, closeTitle) 1`] = `
 <div
-	class="dialogbox dialogbox--stretched"
-	id="lineupDialogbox"
+  class="dialogbox dialogbox--stretched"
+  id="lineupDialogbox"
 >
-	<header
-		class="dialogbox__header"
-	>
-		<h3
-			class="dialogbox__headline"
-		>
-			Lineup 2018
-		</h3>
-		<a
-			class="dialogbox__close"
-			href="lineupDialogbox"
-			title="close dialogbox"
-		>
-			<svg
-				class="icon--close link__icon"
-				height="10px"
-				viewBox="0 0 10 10"
-				width="10px"
-			>
-				<rect
-					class="icon--close__line"
-					height="2"
-					width="12"
-					x="-1"
-					y="4"
-				/>
-				<rect
-					class="icon--close__line"
-					height="12"
-					width="2"
-					x="4"
-					y="-1"
-				/>
-			</svg>
-		</a>
-	</header>
-	<div>
-		Simple dialogbox content
-	</div>
+  <header
+    class="dialogbox__header"
+  >
+    <h3
+      class="dialogbox__headline"
+    >
+      Lineup 2018
+    </h3>
+    <a
+      class="dialogbox__close"
+      href="lineupDialogbox"
+      title="close dialogbox"
+    >
+      <svg
+        class="icon--close link__icon"
+        height="10px"
+        viewBox="0 0 10 10"
+        width="10px"
+      >
+        <rect
+          class="icon--close__line"
+          height="2"
+          width="12"
+          x="-1"
+          y="4"
+        />
+        <rect
+          class="icon--close__line"
+          height="12"
+          width="2"
+          x="4"
+          y="-1"
+        />
+      </svg>
+    </a>
+  </header>
+  <div>
+    Simple dialogbox content
+  </div>
 </div>
 `;
