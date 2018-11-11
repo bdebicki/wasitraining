@@ -1,6 +1,6 @@
 {
-  "extends": "airbnb-base",
   "parser": "babel-eslint",
+  "extends": "airbnb-base",
   "plugins": [
     "import",
     "filenames"
