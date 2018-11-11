@@ -25,6 +25,7 @@
     "collectCoverageFrom": [
       "src/js/**/*.js"
     ],
+    "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "transform": {
       ".*": "babel-jest"
