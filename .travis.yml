@@ -10,4 +10,4 @@ install:
 script:
   - npm run eslint-check
   - npm run test
-  - npm run init
+  - npm run build:app
