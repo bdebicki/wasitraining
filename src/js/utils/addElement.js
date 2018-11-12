@@ -1,5 +1,5 @@
 export default function(tag, {
-	clsssNames,
+	classNames,
 	id,
 	data,
 	children,
@@ -10,10 +10,10 @@ export default function(tag, {
 		element.dataset[dataName] = dataAttr[dataName];
 	};
 
-	if (typeof (clsssNames) === 'string') {
-		element.classList.add(clsssNames);
-	} else if (Array.isArray(clsssNames)) {
-		clsssNames.forEach((className) => element.classList.add(className));
+	if (typeof (classNames) === 'string') {
+		element.classList.add(classNames);
+	} else if (Array.isArray(classNames)) {
+		classNames.forEach((className) => element.classList.add(className));
 	}
 
 	if (id) {
