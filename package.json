@@ -12,11 +12,11 @@
     "npm": "5.6.0"
   },
   "scripts": {
-    "init": "npm run build:festival-data && npm run build:app",
+    "init": "npm run build:app && npm run build:festival-data",
     "symlink-hooks": "./hooks/symlink-hooks",
     "eslint-check": "eslint ./src ./tools --ext .js",
     "test": "jest",
-    "build:app": "webpack",
+    "build:app": "webpack --mode production",
     "build:festival-data": "node tools/builder-festivalData.js",
     "watch:app": "webpack-dev-server --content-base public",
     "watch:festival-data": "npm-watch build:festival-data"
@@ -53,22 +53,23 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "browserslist": "^4.3.4",
-    "copy-webpack-plugin": "^4.5.2",
-    "css-loader": "^0.28.11",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-filenames": "^1.3.2",
     "eslint-plugin-import": "^2.13.0",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "html-webpack-plugin": "^2.30.1",
+    "html-webpack-plugin": "^3.2.0",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.4.4",
     "npm-watch": "^0.3.0",
-    "style-loader": "^0.18.2",
-    "webpack": "^3.12.0",
-    "webpack-dev-server": "^2.11.2",
-    "write-file-webpack-plugin": "^4.3.2"
+    "style-loader": "^0.23.1",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "write-file-webpack-plugin": "^4.4.1"
   }
 }

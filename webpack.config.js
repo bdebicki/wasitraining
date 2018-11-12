@@ -1,13 +1,13 @@
 /* eslint-disable filenames/match-exported */
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
 const config = {
 	devtool: 'eval',
-	entry: './src/js/app.js',
+	entry: ['./src/js/app.js', './src/less/app.less'],
 	output: {
 		path: path.resolve(__dirname, 'public'),
 		filename: 'wiraof.js',
@@ -23,14 +23,16 @@ const config = {
 			},
 			{
 				test: /\.less$/i,
-				use: ExtractTextPlugin.extract({
-					use: ['css-loader', 'less-loader'],
-				}),
+				use: [
+					MiniCssExtractPlugin.loader,
+					'css-loader',
+					'less-loader',
+				],
 			},
 		],
 	},
 	plugins: [
-		new ExtractTextPlugin({
+		new MiniCssExtractPlugin({
 			filename: 'wiraof.css',
 		}),
 		new HtmlWebpackPlugin({
