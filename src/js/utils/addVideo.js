@@ -1,3 +1,5 @@
+import addElement from './addElement';
+
 export default function({
 	classNames,
 	src,
@@ -5,13 +7,8 @@ export default function({
 	width,
 	height,
 }) {
-	const video = document.createElement('video');
+	const video = addElement('video', { classNames });
 
-	if (Array.isArray(classNames)) {
-		classNames.forEach((className) => video.classList.add(className));
-	} else {
-		video.classList.add(classNames);
-	}
 	video.setAttribute('src', src);
 	video.setAttribute('poster', placeholder);
 	video.width = width;
