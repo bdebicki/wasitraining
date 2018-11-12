@@ -171,9 +171,11 @@ export default class Lineup extends AbstractLineup {
 			))
 			.sort((a, b) => { // sort artists without 'forceOrder'
 				const val = (input) => {
-					if (typeof input === 'object' && input[ARTIST_KEYS.SORT_BY]) {
-						return input[ARTIST_KEYS.SORT_BY];
-					} else if (typeof input === 'object' && !input[ARTIST_KEYS.SORT_BY]) {
+					if (typeof input === 'object') {
+						if (input[ARTIST_KEYS.SORT_BY]) {
+							return input[ARTIST_KEYS.SORT_BY];
+						}
+
 						return input[ARTIST_KEYS.ARTIST];
 					}
 
@@ -214,13 +216,12 @@ export default class Lineup extends AbstractLineup {
 
 		sortedLvl = scope
 			.sort((a, b) => a.order - b.order) // sort lineup lvl by order property
-			.map((artist, index) => // remove order indicators
-				Lineup.updateArtistObjectOnArray({
-					scope,
-					index,
-					artist,
-					key: ARTIST_KEYS.ORDER,
-				}));
+			.map((artist, index) => Lineup.updateArtistObjectOnArray({ // remove order indicators
+				scope,
+				index,
+				artist,
+				key: ARTIST_KEYS.ORDER,
+			}));
 
 		return sortedLvl;
 	}
