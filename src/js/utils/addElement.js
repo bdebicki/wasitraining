@@ -1,13 +1,17 @@
+/* eslint-disable complexity */
 export default function(tag, {
-	classNames,
-	id,
-	data,
 	children,
-}) {
+	classNames,
+	dataAttr,
+	id,
+	href,
+	onClick,
+	title,
+} = {}) {
 	const element = document.createElement(tag);
-	const setData = (dataAttr) => {
-		const dataName = Object.keys(dataAttr)[0];
-		element.dataset[dataName] = dataAttr[dataName];
+	const setData = (data) => {
+		const dataName = Object.keys(data)[0];
+		element.dataset[dataName] = data[dataName];
 	};
 
 	if (typeof (classNames) === 'string') {
@@ -20,19 +24,36 @@ export default function(tag, {
 		element.id = id;
 	}
 
-	if (typeof (data) === 'object' && !Array.isArray(data)) {
-		setData(data);
-	} else if (Array.isArray(data)) {
-		data.forEach((dataAttr) => {
-			setData(dataAttr);
+	if (typeof (dataAttr) === 'object' && !Array.isArray(dataAttr)) {
+		setData(dataAttr);
+	} else if (Array.isArray(dataAttr)) {
+		dataAttr.forEach((attr) => {
+			setData(attr);
 		});
 	}
 
 	if (typeof (children) === 'string') {
 		element.textContent = children;
 	} else if (typeof (children) === 'object') {
-		element.appendChild(children);
+		if (Array.isArray(children)) {
+			children.forEach((childrenEl) => element.appendChild(childrenEl));
+		} else {
+			element.appendChild(children);
+		}
+	}
+
+	if (title) {
+		element.title = title;
+	}
+
+	if (href) {
+		element.setAttribute('href', href);
+	}
+
+	if (onClick) {
+		element.addEventListener('click', onClick, null);
 	}
 
 	return element;
 }
+/* eslint-enable complexity */
