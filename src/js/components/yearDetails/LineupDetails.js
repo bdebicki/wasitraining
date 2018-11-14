@@ -419,7 +419,7 @@ export default class LineupDetails extends Lineup {
 			id: LINEUP.SECTION_ID,
 			classNames: [`${LINEUP.EDITION_CLASS}${newYear}`],
 			closeAction: dialogbox.toggleDialogboxWithInactive,
-			dataAttr: [['year', `${newYear}`]],
+			dataAttr: { year: newYear },
 			title: `${DIALOGBOX_HEADLINE_TEXT} ${newYear}`,
 			content: section,
 			closeTitle: 'hide lineup details',

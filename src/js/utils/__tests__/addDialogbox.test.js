@@ -1,5 +1,6 @@
 import cleanDOM from '../../../../tests/utils/cleanDOM';
 import using from '../../../../tests/utils/using';
+import addElement from '../addElement';
 import { addDialogbox, toggleDialogboxAction, toggleDialogboxWithInactive } from '../addDialogbox';
 import DIALOGBOX from '../elementHandlers/dialogbox';
 
@@ -27,7 +28,7 @@ const dialogboxCases = [
 			title: 'Lineup 2018',
 			content: mockDialogboxContent(),
 			classNames: ['dialogbox-visible', 'lineup--edition2018'],
-			dataAttr: [['year', '2018']],
+			dataAttr: { year: '2018' },
 		},
 	},
 ];
@@ -35,10 +36,9 @@ const dialogboxElClassName = 'dialogboxEl';
 const customElClassName = 'customEl';
 
 function mockDialogboxContent() {
-	const dialogboxContent = document.createElement('div');
-	dialogboxContent.textContent = 'Simple dialogbox content';
-
-	return dialogboxContent;
+	return addElement('div', {
+		children: 'Simple dialogbox content',
+	});
 }
 function mockDOMwithDialogbox(withCustomEl = false) {
 	const settings = {
@@ -56,9 +56,10 @@ function mockDOMwithDialogbox(withCustomEl = false) {
 	document.body.appendChild(dialogboxEl);
 
 	if (withCustomEl) {
-		const customEl = document.createElement('div');
+		const customEl = addElement('div', {
+			classNames: customElClassName,
+		});
 
-		customEl.classList.add(customElClassName);
 		document.body.appendChild(customEl);
 	}
 }
