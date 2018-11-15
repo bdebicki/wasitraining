@@ -3,6 +3,7 @@ import { TITLE } from '../../enums/content';
 import HEADER from './elementHandlers/header';
 import VIEW_TYPES from '../../enums/viewTypes';
 import IntroView from '../../views/IntroView';
+import addElement from '../../utils/addElement';
 import { updateComponentByViewType } from '../../utils/updateView';
 
 export default class Title {
@@ -27,22 +28,20 @@ export default class Title {
 	}
 
 	static renderTitleLink() {
-		const a = document.createElement('a');
-
-		a.href = '#home';
-		a.classList.add(HEADER.TITLE_LINK_CLASS);
-		a.addEventListener('click', Title.backToHome, null);
-
-		return a;
+		return addElement('a', {
+			children: TITLE,
+			classNames: HEADER.TITLE_LINK_CLASS,
+			href: '#home',
+			onClick: Title.backToHome,
+		});
 	}
 
 	static render() {
-		const title = document.createElement('h1');
-		const link = Title.renderTitleLink();
+		const title = addElement('h1', {
+			children: Title.renderTitleLink(),
+			classNames: HEADER.TITLE_CLASS,
+		});
 
-		link.textContent = TITLE;
-		title.classList.add(HEADER.TITLE_CLASS);
-		title.appendChild(link);
 		Title.updateTitleLocation(title);
 
 		return title;
