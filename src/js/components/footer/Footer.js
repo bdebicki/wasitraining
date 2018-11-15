@@ -1,22 +1,16 @@
 import LAYOUT from '../../elementHandlers/layout';
+import addElement from '../../utils/addElement';
 import CookiesInfo from './CookiesInfo';
 import MoreInfo from './MoreInfo';
 
 export default class Footer {
-	static renderFooterContainer() {
-		const footerContainer = document.createElement('footer');
-
-		footerContainer.id = LAYOUT.FOOTER_ID;
-
-		return footerContainer;
-	}
-
 	static render() {
-		const footerContainer = Footer.renderFooterContainer();
-
-		footerContainer.appendChild(CookiesInfo.render());
-		footerContainer.appendChild(MoreInfo.render());
-
-		return footerContainer;
+		return addElement('footer', {
+			id: LAYOUT.FOOTER_ID,
+			children: [
+				CookiesInfo.render(),
+				MoreInfo.render(),
+			],
+		});
 	}
 }
