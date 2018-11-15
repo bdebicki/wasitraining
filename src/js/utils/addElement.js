@@ -17,7 +17,11 @@ export default function(tag, {
 	if (typeof (classNames) === 'string') {
 		element.classList.add(classNames);
 	} else if (Array.isArray(classNames)) {
-		classNames.forEach((className) => element.classList.add(className));
+		classNames.forEach((className) => {
+			if (className) {
+				element.classList.add(className);
+			}
+		});
 	}
 
 	if (id) {
