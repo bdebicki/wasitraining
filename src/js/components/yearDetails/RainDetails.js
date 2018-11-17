@@ -1,5 +1,6 @@
 import LINK from '../../elementHandlers/link';
 import RAIN from './elementHandlers/rain';
+import addElement from '../../utils/addElement';
 import addVideo from '../../utils/addVideo';
 import { addSVGmask, svgType } from '../../utils/addSvgMask';
 import * as dialogbox from '../../utils/addDialogbox';
@@ -22,19 +23,23 @@ export default class RainDetails extends Edition {
 		const fragment = document.createDocumentFragment();
 
 		this.editionDetails.forEach((edition) => {
-			const li = document.createElement('li');
-			const spanDay = document.createElement('span');
-			const spanRain = document.createElement('span');
 			const rain = edition.rain ? 'yes' : 'no';
+			const spanDay = addElement('span', {
+				children: edition.day,
+				classNames: RAIN.DETAILS_ITEM_DAY_CLASS,
+			});
+			const spanRain = addElement('span', {
+				children: rain,
+				classNames: RAIN.DETAILS_ITEM_RAIN_CLASS,
+			});
+			const li = addElement('li', {
+				children: [
+					spanDay,
+					spanRain,
+				],
+				classNames: RAIN.DETAILS_ITEM_CLASS,
+			});
 
-			spanDay.classList.add(RAIN.DETAILS_ITEM_DAY_CLASS);
-			spanDay.textContent = edition.day;
-			spanRain.classList.add(RAIN.DETAILS_ITEM_RAIN_CLASS);
-			spanRain.textContent = rain;
-			li.classList.add(RAIN.DETAILS_ITEM_CLASS);
-
-			li.appendChild(spanDay);
-			li.appendChild(spanRain);
 			fragment.appendChild(li);
 		});
 
@@ -42,40 +47,41 @@ export default class RainDetails extends Edition {
 	}
 
 	renderRainDetailsLink() {
-		const a = document.createElement('a');
-
-		a.classList.add(
-			LINK.BASIC_CLASS,
-			LINK.INVERTED_STYLE_CLASS,
-			LINK.SIZE_S_CLASS,
-			LINK.HAS_ICON_CLASS,
-			RAIN.DETAILS_LINK_CLASS
-		);
-		a.href = `#${RAIN.DETAILS_ID}`;
-		a.textContent = 'more';
-		a.appendChild(setIcon(icons.plus(), `${LINK.ICON_CLASS}`));
-		a.addEventListener('click', this.toggleDetails, null);
-
-		return a;
+		return addElement('a', {
+			children: [
+				'more',
+				setIcon(icons.plus(), `${LINK.ICON_CLASS}`),
+			],
+			classNames: [
+				LINK.BASIC_CLASS,
+				LINK.INVERTED_STYLE_CLASS,
+				LINK.SIZE_S_CLASS,
+				LINK.HAS_ICON_CLASS,
+				RAIN.DETAILS_LINK_CLASS,
+			],
+			href: `#${RAIN.DETAILS_ID}`,
+			onClick: this.toggleDetails,
+		});
 	}
 
 	renderRainContainer() {
-		const section = document.createElement('section');
-		const header = document.createElement('header');
-		const rainHeadline = document.createElement('h3');
-		const moreLink = this.renderRainDetailsLink();
+		const rainDetailsLink = this.editionRain ? this.renderRainDetailsLink() : null;
+		const rainHeadline = addElement('h3', {
+			children: 'Rain',
+			classNames: RAIN.HEADLINE_CLASS,
+		});
+		const header = addElement('header', {
+			children: [
+				rainHeadline,
+				rainDetailsLink,
+			],
+			classNames: RAIN.HEADER_CLASS,
+		});
 
-		section.id = RAIN.SECTION_ID;
-		header.classList.add(RAIN.HEADER_CLASS);
-		rainHeadline.textContent = 'Rain';
-		rainHeadline.classList.add(RAIN.HEADLINE_CLASS);
-		header.appendChild(rainHeadline);
-		if (this.editionRain) {
-			header.appendChild(moreLink);
-		}
-		section.appendChild(header);
-
-		return section;
+		return addElement('section', {
+			children: header,
+			id: RAIN.SECTION_ID,
+		});
 	}
 
 	static renderRainInfoYes() {
@@ -141,9 +147,10 @@ export default class RainDetails extends Edition {
 	}
 
 	renderRainInfo() {
-		const div = document.createElement('div');
+		const div = addElement('div', {
+			classNames: RAIN.INFO_CLASS,
+		});
 
-		div.classList.add(RAIN.INFO_CLASS);
 		this.selectRainInfo(div);
 
 		return div;
@@ -178,8 +185,12 @@ export default class RainDetails extends Edition {
 	}
 
 	renderRainDetails() {
-		const ul = document.createElement('ul');
-		const rainDetailsDialogbox = dialogbox.addDialogbox({
+		const ul = addElement('ul', {
+			children: this.decorateRainDayDetails(),
+			classNames: RAIN.DETAILS_LIST_CLASS,
+		});
+
+		return dialogbox.addDialogbox({
 			id: RAIN.DETAILS_ID,
 			classNames: [RAIN.DETAILS_CLASS],
 			stretched: true,
@@ -188,12 +199,6 @@ export default class RainDetails extends Edition {
 			closeAction: this.toggleDetails,
 			closeTitle: 'hide rain details',
 		});
-
-		ul.classList.add(RAIN.DETAILS_LIST_CLASS);
-
-		ul.appendChild(this.decorateRainDayDetails());
-
-		return rainDetailsDialogbox;
 	}
 
 	updateRainDetails() {
