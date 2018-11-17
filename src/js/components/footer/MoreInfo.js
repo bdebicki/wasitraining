@@ -20,7 +20,11 @@ export default class MoreInfo {
 	static renderAboutLink() {
 		return addElement('a', {
 			children: 'about',
-			classNames: [LINK.BASIC_CLASS, LINK.INVERTED_STYLE_CLASS, FOOTER.ABOUT_LINK_CLASS],
+			classNames: [
+				LINK.BASIC_CLASS,
+				LINK.INVERTED_STYLE_CLASS,
+				FOOTER.ABOUT_LINK_CLASS,
+			],
 			href: '#about',
 			onClick: MoreInfo.showAboutDetails,
 		});
