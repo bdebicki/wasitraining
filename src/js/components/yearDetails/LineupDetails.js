@@ -6,6 +6,7 @@ import DIALOGBOX from '../../utils/elementHandlers/dialogbox';
 import EDITION from './elementHandlers/edition';
 import { LINEUP } from './elementHandlers/lineup';
 import LINK from '../../elementHandlers/link';
+import addElement from '../../utils/addElement';
 import * as dialogbox from '../../utils/addDialogbox';
 import setIcon from '../../utils/setIcon';
 import icons from '../../utils/iconsLibrary';
@@ -25,19 +26,25 @@ export default class LineupDetails extends Lineup {
 	}
 
 	static renderLineupLink() {
-		const p = document.createElement('p');
-		const a = document.createElement('a');
+		const a = addElement('a', {
+			children: [
+				'see full lineup',
+				setIcon(icons.plus(), `${LINK.ICON_CLASS}`),
+			],
+			classNames: [
+				LINK.BASIC_CLASS,
+				LINK.INVERTED_STYLE_CLASS,
+				LINK.SIZE_XS_CLASS,
+				LINK.HAS_ICON_CLASS,
+			],
+			href: '#lineup',
+			onClick: LineupDetails.toggleLineup,
+		});
 
-		p.classList.add(EDITION.LINEUP_LINK_CLASS);
-		a.classList.add(LINK.BASIC_CLASS, LINK.INVERTED_STYLE_CLASS, LINK.SIZE_XS_CLASS, LINK.HAS_ICON_CLASS);
-		a.href = '#lineup';
-		a.textContent = 'see full lineup';
-		a.appendChild(setIcon(icons.plus(), `${LINK.ICON_CLASS}`));
-		a.addEventListener('click', LineupDetails.toggleLineup, null);
-
-		p.appendChild(a);
-
-		return p;
+		return addElement('p', {
+			children: a,
+			classNames: EDITION.LINEUP_LINK_CLASS,
+		});
 	}
 
 	static getArtistSliceDecorator(artistName, artistDecorations) {
@@ -87,23 +94,24 @@ export default class LineupDetails extends Lineup {
 	}
 
 	static getArtistReplacementDecorator(artist, artistName, target) {
-		const spanReplacement = document.createElement('span');
-		const spanCanceled = document.createElement('span');
 		const canceledArtistEl = target.querySelector(`li[data-canceled-artist='${artist[ARTIST_KEYS.REPLACEMENT]}']`);
 		const redundantDecoratorClassNames = getModifierClassNameByKey([
 			ARTIST_KEYS.CANCELED,
 			ARTIST_KEYS.COLLAPSED,
 			ARTIST_KEYS.EXPANDED,
 		]);
-
-		spanReplacement.textContent = artistName;
-		spanReplacement.classList.add(LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS);
-		spanCanceled.textContent = canceledArtistEl.textContent;
-		spanCanceled.classList.add(
-			getModifierClassNameByKey(ARTIST_KEYS.CANCELED),
-			LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS
-		);
-		spanCanceled.title = ARTIST_CANCELED;
+		const spanReplacement = addElement('span', {
+			children: artistName,
+			classNames: LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS,
+		});
+		const spanCanceled = addElement('span', {
+			children: canceledArtistEl.textContent,
+			classNames: [
+				getModifierClassNameByKey(ARTIST_KEYS.CANCELED),
+				LINEUP.ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS,
+			],
+			title: ARTIST_CANCELED,
+		});
 
 		// clean current existing canceled artist and put canceled artist with replacement
 		canceledArtistEl.textContent = '';
@@ -155,9 +163,9 @@ export default class LineupDetails extends Lineup {
 	}
 
 	static isArtistFirstOnLine(artist, target) {
-		const newLine = document.createElement('li');
-
-		newLine.classList.add(LINEUP.ARTISTS_NEW_LINE_ELEMENT_CLASS);
+		const newLine = addElement('li', {
+			classNames: LINEUP.ARTISTS_NEW_LINE_ELEMENT_CLASS,
+		});
 
 		target.appendChild(newLine);
 	}
@@ -171,19 +179,23 @@ export default class LineupDetails extends Lineup {
 
 	static isArtistCanceled(artist, artistName, target) {
 		const targetEl = target;
-		const span = document.createElement('span');
+		const span = addElement('span', {
+			children: artistName,
+			classNames: getModifierClassNameByKey(ARTIST_KEYS.CANCELED),
+		});
 
-		span.classList.add(getModifierClassNameByKey(ARTIST_KEYS.CANCELED));
-		span.textContent = artistName;
 		targetEl.title = ARTIST_CANCELED;
 		targetEl.dataset.canceledArtist = artistName;
 		targetEl.appendChild(span);
 	}
 
 	static addSeparatorElement(target, lvl, element = 'li') {
-		const separatorEl = document.createElement(element);
-
-		separatorEl.classList.add(LINEUP.ARTISTS_SEPARATOR_ELEMENT_CLASS, getSeparatorElementLvlClassName(lvl));
+		const separatorEl = addElement(element, {
+			classNames: [
+				LINEUP.ARTISTS_SEPARATOR_ELEMENT_CLASS,
+				getSeparatorElementLvlClassName(lvl),
+			],
+		});
 
 		target.appendChild(separatorEl);
 	}
@@ -254,9 +266,12 @@ export default class LineupDetails extends Lineup {
 		const { lineup, separatorElement } = this;
 
 		Object.keys(lineup).forEach((lvl) => {
-			const ul = document.createElement('ul');
-
-			ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, getLineupLvlClassName(lvl));
+			const ul = addElement('ul', {
+				classNames: [
+					LINEUP.ARTISTS_LEVEL_CLASS,
+					getLineupLvlClassName(lvl),
+				],
+			});
 
 			lineup[lvl].forEach((artist, index) => {
 				LineupDetails.decorateArtist(artist, ul, index, lvl, separatorElement);
@@ -275,14 +290,14 @@ export default class LineupDetails extends Lineup {
 		Object.keys(lineup).forEach((section) => {
 			if (section === LINEUP_LEVELS.DAILY_ARTISTS) {
 				lineup[section].forEach((dailyArtists, dayIndex) => {
-					const ul = document.createElement('ul');
 					const dayCount = dayIndex + 1;
-
-					ul.classList.add(
-						LINEUP.ARTISTS_LEVEL_CLASS,
-						getLineupLvlClassName(section),
-						`${LINEUP.ARTISTS_LEVEL_CLASS}--day${dayCount}`
-					);
+					const ul = addElement('ul', {
+						classNames: [
+							LINEUP.ARTISTS_LEVEL_CLASS,
+							getLineupLvlClassName(section),
+							`${LINEUP.ARTISTS_LEVEL_CLASS}--day${dayCount}`,
+						],
+					});
 
 					Object.keys(dailyArtists).forEach((dailyLvl) => {
 						dailyArtists[dailyLvl].forEach((dailyArtist, dailyArtistIndex) => {
@@ -293,9 +308,12 @@ export default class LineupDetails extends Lineup {
 					fragment.appendChild(ul);
 				});
 			} else if (section === LINEUP_LEVELS.ALL_OTHERS) {
-				const ul = document.createElement('ul');
-
-				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, getLineupLvlClassName(section));
+				const ul = addElement('ul', {
+					classNames: [
+						LINEUP.ARTISTS_LEVEL_CLASS,
+						getLineupLvlClassName(section),
+					],
+				});
 
 				Object.keys(lineup[section]).forEach((lvl) => {
 					lineup[section][lvl].forEach((artist, index) => {
@@ -315,15 +333,21 @@ export default class LineupDetails extends Lineup {
 		const { lineup } = this;
 
 		lineup.forEach((day, index) => {
-			const section = document.createElement('section');
 			const dayCount = index + 1;
-
-			section.classList.add(LINEUP.ARTISTS_DAY_CLASS, `${LINEUP.ARTISTS_DAY_CLASS}--day${dayCount}`);
+			const section = addElement('section', {
+				classNames: [
+					LINEUP.ARTISTS_DAY_CLASS,
+					`${LINEUP.ARTISTS_DAY_CLASS}--day${dayCount}`,
+				],
+			});
 
 			Object.keys(day).forEach((lvl) => {
-				const ul = document.createElement('ul');
-
-				ul.classList.add(LINEUP.ARTISTS_LEVEL_CLASS, getLineupLvlClassName(lvl));
+				const ul = addElement('ul', {
+					classNames: [
+						LINEUP.ARTISTS_LEVEL_CLASS,
+						getLineupLvlClassName(lvl),
+					],
+				});
 
 				day[lvl].forEach((artist, artistIndex) => {
 					LineupDetails.decorateArtist(artist, ul, artistIndex, lvl);
@@ -367,20 +391,26 @@ export default class LineupDetails extends Lineup {
 			});
 		});
 		tempLineup.forEach((day, index) => {
-			const section = document.createElement('section');
 			const currentDay = index + 1;
-
-			section.classList.add(LINEUP.ARTISTS_DAY_CLASS, `${LINEUP.ARTISTS_DAY_CLASS}--day${currentDay}`);
+			const section = addElement('section', {
+				classNames: [
+					LINEUP.ARTISTS_DAY_CLASS,
+					`${LINEUP.ARTISTS_DAY_CLASS}--day${currentDay}`,
+				],
+			});
 
 			day.forEach((line, lineIndex) => {
 				if (line.length === 0) {
 					return;
 				}
 
-				const ul = document.createElement('ul');
 				const currentLine = lineIndex + 1;
-
-				ul.classList.add(LINEUP.ARTISTS_LINE_CLASS, `${LINEUP.ARTISTS_LINE_CLASS}--line${currentLine}`);
+				const ul = addElement('ul', {
+					classNames: [
+						LINEUP.ARTISTS_LINE_CLASS,
+						`${LINEUP.ARTISTS_LINE_CLASS}--line${currentLine}`,
+					],
+				});
 
 				line.forEach((artist, artistIndex) => {
 					LineupDetails.decorateArtist(artist, ul, artistIndex, artist[ARTIST_KEYS.LEVEL], separatorElement);
@@ -412,10 +442,17 @@ export default class LineupDetails extends Lineup {
 	}
 
 	render() {
-		const section = document.createElement('section');
 		const newYear = this.editionYear;
+		const section = addElement('section', {
+			children: this.getLineupByType(),
+			classNames: [
+				DIALOGBOX.CONTENT_CLASS,
+				LINEUP.ARTISTS_CLASS,
+				`${LINEUP.ARTISTS_EDITION_CLASS}${newYear}`,
+			],
+		});
 
-		const dialogboxLineup = dialogbox.addDialogbox({
+		return dialogbox.addDialogbox({
 			id: LINEUP.SECTION_ID,
 			classNames: [`${LINEUP.EDITION_CLASS}${newYear}`],
 			closeAction: dialogbox.toggleDialogboxWithInactive,
@@ -424,14 +461,5 @@ export default class LineupDetails extends Lineup {
 			content: section,
 			closeTitle: 'hide lineup details',
 		});
-
-		section.classList.add(
-			DIALOGBOX.CONTENT_CLASS,
-			LINEUP.ARTISTS_CLASS,
-			`${LINEUP.ARTISTS_EDITION_CLASS}${newYear}`
-		);
-		section.appendChild(this.getLineupByType());
-
-		return dialogboxLineup;
 	}
 }
