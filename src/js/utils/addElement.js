@@ -40,7 +40,13 @@ export default function(tag, {
 		element.textContent = children;
 	} else if (typeof (children) === 'object') {
 		if (Array.isArray(children)) {
-			children.forEach((childrenEl) => element.appendChild(childrenEl));
+			children.forEach((childrenEl) => {
+				if (typeof (childrenEl) === 'string') {
+					element.append(childrenEl);
+				} else if (childrenEl && typeof (childrenEl) !== 'string') {
+					element.appendChild(childrenEl);
+				}
+			});
 		} else {
 			element.appendChild(children);
 		}
