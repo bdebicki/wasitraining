@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`addElement function tests render html element using addElement <span> element with id and title 1`] = `
+<span
+  id="spanId"
+  title="span element tile"
+/>
+`;
+
+exports[`addElement function tests render html element using addElement element wit another element 1`] = `
+<span>
+  <span />
+</span>
+`;
+
+exports[`addElement function tests render html element using addElement element with multiple class name 1`] = `
+<span
+  class="spanEl spanEl--modifier"
+/>
+`;
+
+exports[`addElement function tests render html element using addElement element with multiple data attribute 1`] = `
+<span
+  data-first-data-attr="first data attr value"
+  data-second-data-attr="second data attr value"
+/>
+`;
+
+exports[`addElement function tests render html element using addElement element with multiple html element 1`] = `
+<span>
+  <span />
+  <em />
+</span>
+`;
+
+exports[`addElement function tests render html element using addElement element with single class name 1`] = `
+<span
+  class="spanEl"
+/>
+`;
+
+exports[`addElement function tests render html element using addElement element with single data attribute 1`] = `
+<span
+  data-span-el-data-attr="data value"
+/>
+`;
+
+exports[`addElement function tests render html element using addElement element with text 1`] = `
+<span>
+  span element
+</span>
+`;
+
+exports[`addElement function tests render html element using addElement element with text and html element 1`] = `
+<span>
+  span element
+  <span />
+</span>
+`;
+
+exports[`addElement function tests render html element using addElement link <a> element with href attribute 1`] = `
+<a
+  href="http://google.com"
+/>
+`;
+
+exports[`addElement function tests render html element using addElement simple <span> element 1`] = `<span />`;
