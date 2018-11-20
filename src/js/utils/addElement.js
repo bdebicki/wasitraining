@@ -1,3 +1,6 @@
+import setChildren from './setChildren';
+import setClassName from './setClassName';
+
 /* eslint-disable complexity */
 export default function(tag, {
 	children,
@@ -14,15 +17,8 @@ export default function(tag, {
 		element.dataset[dataName] = data[dataName];
 	};
 
-	if (typeof (classNames) === 'string') {
-		element.classList.add(classNames);
-	} else if (Array.isArray(classNames)) {
-		classNames.forEach((className) => {
-			if (className) {
-				element.classList.add(className);
-			}
-		});
-	}
+	setChildren(element, children);
+	setClassName(element, classNames);
 
 	if (id) {
 		element.id = id;
@@ -34,22 +30,6 @@ export default function(tag, {
 		dataAttr.forEach((attr) => {
 			setData(attr);
 		});
-	}
-
-	if (typeof (children) === 'string') {
-		element.textContent = children;
-	} else if (typeof (children) === 'object') {
-		if (Array.isArray(children)) {
-			children.forEach((childrenEl) => {
-				if (typeof (childrenEl) === 'string') {
-					element.append(childrenEl);
-				} else if (childrenEl && typeof (childrenEl) !== 'string') {
-					element.appendChild(childrenEl);
-				}
-			});
-		} else {
-			element.appendChild(children);
-		}
 	}
 
 	if (title) {
