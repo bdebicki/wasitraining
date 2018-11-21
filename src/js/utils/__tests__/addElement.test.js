@@ -32,16 +32,6 @@ const addElementCases = [
 		},
 	},
 	{
-		description: 'element with multiple class name',
-		tag: elementTag,
-		settings: {
-			classNames: [
-				'spanEl',
-				'spanEl--modifier',
-			],
-		},
-	},
-	{
 		description: 'element with single data attribute',
 		tag: elementTag,
 		settings: {
@@ -63,33 +53,6 @@ const addElementCases = [
 		tag: elementTag,
 		settings: {
 			children: 'span element',
-		},
-	},
-	{
-		description: 'element wit another element',
-		tag: elementTag,
-		settings: {
-			children: document.createElement('span'),
-		},
-	},
-	{
-		description: 'element with text and html element',
-		tag: elementTag,
-		settings: {
-			children: [
-				'span element',
-				document.createElement('span'),
-			],
-		},
-	},
-	{
-		description: 'element with multiple html element',
-		tag: elementTag,
-		settings: {
-			children: [
-				document.createElement('span'),
-				document.createElement('em'),
-			],
 		},
 	},
 ];

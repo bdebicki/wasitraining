@@ -1,5 +1,5 @@
-import setChildren from './setChildren';
-import setClassName from './setClassName';
+import setChildren from '../helpers/setChildren';
+import setClassName from '../helpers/setClassName';
 
 /* eslint-disable complexity */
 export default function(tag, {

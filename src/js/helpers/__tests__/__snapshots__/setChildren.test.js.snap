@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for set children helper function render <span> element with node element wit another element 1`] = `
+<span>
+  <span />
+</span>
+`;
+
+exports[`tests for set children helper function render <span> element with node element with multiple html element 1`] = `
+<span>
+  <span />
+  <em />
+</span>
+`;
+
+exports[`tests for set children helper function render <span> element with node element with text 1`] = `
+<span>
+  span element
+</span>
+`;
+
+exports[`tests for set children helper function render <span> element with node element with text and html element 1`] = `
+<span>
+  span element
+  <span />
+</span>
+`;

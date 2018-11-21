@@ -7,30 +7,11 @@ exports[`addElement function tests render html element using addElement <span> e
 />
 `;
 
-exports[`addElement function tests render html element using addElement element wit another element 1`] = `
-<span>
-  <span />
-</span>
-`;
-
-exports[`addElement function tests render html element using addElement element with multiple class name 1`] = `
-<span
-  class="spanEl spanEl--modifier"
-/>
-`;
-
 exports[`addElement function tests render html element using addElement element with multiple data attribute 1`] = `
 <span
   data-first-data-attr="first data attr value"
   data-second-data-attr="second data attr value"
 />
-`;
-
-exports[`addElement function tests render html element using addElement element with multiple html element 1`] = `
-<span>
-  <span />
-  <em />
-</span>
 `;
 
 exports[`addElement function tests render html element using addElement element with single class name 1`] = `
@@ -48,13 +29,6 @@ exports[`addElement function tests render html element using addElement element 
 exports[`addElement function tests render html element using addElement element with text 1`] = `
 <span>
   span element
-</span>
-`;
-
-exports[`addElement function tests render html element using addElement element with text and html element 1`] = `
-<span>
-  span element
-  <span />
 </span>
 `;
 
