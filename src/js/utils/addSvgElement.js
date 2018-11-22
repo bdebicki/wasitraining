@@ -4,15 +4,15 @@ import setClassName from '../helpers/setClassName';
 const svgType = 'http://www.w3.org/2000/svg';
 
 export default function(tag, {
-	attrs,
 	children,
 	classNames,
 	id,
+	properties,
 } = {}) {
 	const svgElement = document.createElementNS(svgType, tag);
-	const setAttr = (attr) => {
-		const attrName = Object.keys(attr)[0];
-		svgElement.setAttributeNS(null, attrName, attr[attrName]);
+	const setProperties = (props) => {
+		const attrName = Object.keys(props)[0];
+		svgElement.setAttributeNS(null, attrName, props[attrName]);
 	};
 
 	setChildren(svgElement, children);
@@ -22,11 +22,11 @@ export default function(tag, {
 		svgElement.id = id;
 	}
 
-	if (typeof (attrs) === 'object' && !Array.isArray(attrs)) {
-		setAttr(attrs);
-	} else if (Array.isArray(attrs)) {
-		attrs.forEach((attr) => {
-			setAttr(attr);
+	if (typeof (properties) === 'object' && !Array.isArray(properties)) {
+		setProperties(properties);
+	} else if (Array.isArray(properties)) {
+		properties.forEach((property) => {
+			setProperties(property);
 		});
 	}
 

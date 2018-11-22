@@ -8,7 +8,7 @@ const icons = {
 		const height = 5;
 		const className = ICONS.PLUS;
 		const rectH = addSvgElement('rect', {
-			attrs: [
+			properties: [
 				{ x: '0' },
 				{ y: '2' },
 				{ width: '5' },
@@ -16,7 +16,7 @@ const icons = {
 			],
 		});
 		const rectV = addSvgElement('rect', {
-			attrs: [
+			properties: [
 				{ x: '2' },
 				{ y: '0' },
 				{ width: '1' },
@@ -39,7 +39,7 @@ const icons = {
 		const className = ICONS.CLOSE;
 		const rectH = addSvgElement('rect', {
 			classNames: ICONS.CLOSE_RECT,
-			attrs: [
+			properties: [
 				{ x: '-1' },
 				{ y: '4' },
 				{ width: '12' },
@@ -48,7 +48,7 @@ const icons = {
 		});
 		const rectV = addSvgElement('rect', {
 			classNames: ICONS.CLOSE_RECT,
-			attrs: [
+			properties: [
 				{ x: '4' },
 				{ y: '-1' },
 				{ width: '2' },
