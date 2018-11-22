@@ -2,7 +2,7 @@ import DIALOGBOX from './elementHandlers/dialogbox';
 import LINK from '../elementHandlers/link';
 import addElement from './addElement';
 import setIcon from './setIcon';
-import icons from './iconsLibrary';
+import icons from '../helpers/iconsLibrary';
 
 export function addDialogbox({
 	id,

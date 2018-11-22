@@ -9,7 +9,7 @@ import LINK from '../../elementHandlers/link';
 import addElement from '../../utils/addElement';
 import * as dialogbox from '../../utils/addDialogbox';
 import setIcon from '../../utils/setIcon';
-import icons from '../../utils/iconsLibrary';
+import icons from '../../helpers/iconsLibrary';
 import getAlignClassName from './classNames/getAlignClassName';
 import getModifierClassNameByKey from './classNames/getModifierClassNameByKey';
 import getLineupLvlClassName from './classNames/getLineupLvlClassName';

@@ -5,7 +5,7 @@ import addVideo from '../../utils/addVideo';
 import { addSVGmask, svgType } from '../../utils/addSvgMask';
 import * as dialogbox from '../../utils/addDialogbox';
 import setIcon from '../../utils/setIcon';
-import icons from '../../utils/iconsLibrary';
+import icons from '../../helpers/iconsLibrary';
 import Edition from '../../classes/Edition';
 
 export default class RainDetails extends Edition {

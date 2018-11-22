@@ -1,5 +1,5 @@
-import addSvgElement from './addSvgElement';
-import { ICONS } from './elementHandlers/icons';
+import addSvgElement from '../utils/addSvgElement';
+import { ICONS } from '../utils/elementHandlers/icons';
 
 const icons = {
 	plus: () => {

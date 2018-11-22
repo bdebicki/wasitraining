@@ -1,5 +1,5 @@
 import setIcon from '../setIcon';
-import icons from '../iconsLibrary';
+import icons from '../../helpers/iconsLibrary';
 
 describe('tests for set icon', () => {
 	it('it renders icon with single class name', () => {
