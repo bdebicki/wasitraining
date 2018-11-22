@@ -2,7 +2,7 @@ import DATA_URL from '../../enums/data';
 import TIMELINE from './elementHandlers/timeline';
 import addElement from '../../utils/addElement';
 import addSvgElement from '../../utils/addSvgElement';
-import addSVGmask from '../../utils/addSvgMask';
+import addSvgMask from '../../utils/addSvgMask';
 import Edition from '../../classes/Edition';
 import YearView from '../../views/YearView';
 
@@ -56,7 +56,7 @@ export default class TimelineItem extends Edition {
 			],
 		});
 
-		return addSVGmask({
+		return addSvgMask({
 			svgClass: TIMELINE.MAIN_EDITION_MASK_CLASS,
 			maskId: `yearMask${editionYear}`,
 			maskShape: textMask,

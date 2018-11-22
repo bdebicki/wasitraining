@@ -1,5 +1,5 @@
 import svgType from '../../constants/svgType';
-import addSVGmask from '../addSvgMask';
+import addSvgMask from '../addSvgMask';
 import using from '../../../../tests/utils/using';
 
 function getMaskShape() {
@@ -31,7 +31,7 @@ const svgMaskCases = [
 describe('render svg element', () => {
 	using(svgMaskCases).describe('', ({ description, settings }) => {
 		it(description, () => {
-			const svgEl = addSVGmask(settings);
+			const svgEl = addSvgMask(settings);
 
 			expect(svgEl).toMatchSnapshot();
 		});

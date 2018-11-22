@@ -3,7 +3,7 @@ import RAIN from './elementHandlers/rain';
 import addElement from '../../utils/addElement';
 import addSvgElement from '../../utils/addSvgElement';
 import addVideo from '../../utils/addVideo';
-import addSVGmask from '../../utils/addSvgMask';
+import addSvgMask from '../../utils/addSvgMask';
 import * as dialogbox from '../../utils/addDialogbox';
 import setIcon from '../../utils/setIcon';
 import icons from '../../helpers/iconsLibrary';
@@ -105,7 +105,7 @@ export default class RainDetails extends Edition {
 		};
 
 		fragment.appendChild(addVideo(videoSettings));
-		fragment.appendChild(addSVGmask(maskSettings));
+		fragment.appendChild(addSvgMask(maskSettings));
 
 		return fragment;
 	}
@@ -130,7 +130,7 @@ export default class RainDetails extends Edition {
 		};
 
 		fragment.appendChild(addVideo(videoSettings));
-		fragment.appendChild(addSVGmask(maskSettings));
+		fragment.appendChild(addSvgMask(maskSettings));
 
 		return fragment;
 	}
