@@ -2,7 +2,7 @@ import DATA_URL from '../../enums/data';
 import TIMELINE from './elementHandlers/timeline';
 import addElement from '../../utils/addElement';
 import addSvgElement from '../../utils/addSvgElement';
-import { addSVGmask } from '../../utils/addSvgMask';
+import addSVGmask from '../../utils/addSvgMask';
 import Edition from '../../classes/Edition';
 import YearView from '../../views/YearView';
 

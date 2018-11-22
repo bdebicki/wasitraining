@@ -1,7 +1,6 @@
+import svgType from '../constants/svgType';
 import setChildren from '../helpers/setChildren';
 import setClassName from '../helpers/setClassName';
-
-const svgType = 'http://www.w3.org/2000/svg';
 
 export default function(tag, {
 	children,

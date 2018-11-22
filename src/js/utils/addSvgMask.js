@@ -1,9 +1,7 @@
 import addSvgElement from './addSvgElement';
 import SVG_MASK from './elementHandlers/svg';
 
-export const svgType = 'http://www.w3.org/2000/svg';
-
-export function addSVGmask({
+export default function({
 	maskBgClass,
 	maskId,
 	maskShape,

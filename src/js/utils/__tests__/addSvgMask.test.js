@@ -1,4 +1,5 @@
-import { addSVGmask, svgType } from '../addSvgMask';
+import svgType from '../../constants/svgType';
+import addSVGmask from '../addSvgMask';
 import using from '../../../../tests/utils/using';
 
 function getMaskShape() {
