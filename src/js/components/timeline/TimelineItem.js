@@ -1,7 +1,8 @@
 import DATA_URL from '../../enums/data';
 import TIMELINE from './elementHandlers/timeline';
 import addElement from '../../utils/addElement';
-import { addSVGmask, svgType } from '../../utils/addSvgMask';
+import addSvgElement from '../../utils/addSvgElement';
+import { addSVGmask } from '../../utils/addSvgMask';
 import Edition from '../../classes/Edition';
 import YearView from '../../views/YearView';
 
@@ -46,21 +47,21 @@ export default class TimelineItem extends Edition {
 
 	renderYearMask() {
 		const { editionYear } = this;
-		const textMask = document.createElementNS(svgType, 'text');
+		const textMask = addSvgElement('text', {
+			children: editionYear,
+			classNames: TIMELINE.MAIN_EDITION_MASK_TEXT_CLASS,
+			properties: [
+				{ x: '50%' },
+				{ y: '50%' },
+			],
+		});
 
-		textMask.classList.add(TIMELINE.MAIN_EDITION_MASK_TEXT_CLASS);
-		textMask.setAttributeNS(null, 'x', '50%');
-		textMask.setAttributeNS(null, 'y', '50%');
-		textMask.textContent = editionYear;
-
-		const maskOptions = {
+		return addSVGmask({
 			svgClass: TIMELINE.MAIN_EDITION_MASK_CLASS,
 			maskId: `yearMask${editionYear}`,
 			maskShape: textMask,
 			maskBgClass: TIMELINE.MAIN_EDITION_MASK_BG_CLASS,
-		};
-
-		return addSVGmask(maskOptions);
+		});
 	}
 
 	renderYear() {
