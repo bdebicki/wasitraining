@@ -5,9 +5,11 @@ import addVideo from '../../utils/addVideo';
 
 export default class BgVideo {
 	static renderVideoContainer() {
-		return addElement('div', {
+		const settings = {
 			id: LAYOUT.BG_VIDEO_ID,
-		});
+		};
+
+		return addElement('div', settings);
 	}
 
 	static renderVideo() {

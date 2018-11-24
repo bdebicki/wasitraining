@@ -11,14 +11,16 @@ export default class MoreInfo {
 	}
 
 	static renderCopyrights() {
-		return addElement('p', {
+		const settings = {
 			children: COPYRIGHTS,
 			classNames: FOOTER.COPYRIGHTS_CLASS,
-		});
+		};
+
+		return addElement('p', settings);
 	}
 
 	static renderAboutLink() {
-		return addElement('a', {
+		const settings = {
 			children: 'about',
 			classNames: [
 				LINK.BASIC_CLASS,
@@ -27,16 +29,20 @@ export default class MoreInfo {
 			],
 			href: '#about',
 			onClick: MoreInfo.showAboutDetails,
-		});
+		};
+
+		return addElement('a', settings);
 	}
 
 	static render() {
-		return addElement('section', {
+		const settings = {
 			children: [
 				MoreInfo.renderCopyrights(),
 				MoreInfo.renderAboutLink(),
 			],
 			classNames: FOOTER.ABOUT_SECTION_CLASS,
-		});
+		};
+
+		return addElement('section', settings);
 	}
 }

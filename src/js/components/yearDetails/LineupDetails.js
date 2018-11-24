@@ -26,7 +26,7 @@ export default class LineupDetails extends Lineup {
 	}
 
 	static renderLineupLink() {
-		const a = addElement('a', {
+		const aSettings = {
 			children: [
 				'see full lineup',
 				setIcon(icons.plus(), `${LINK.ICON_CLASS}`),
@@ -39,12 +39,13 @@ export default class LineupDetails extends Lineup {
 			],
 			href: '#lineup',
 			onClick: LineupDetails.toggleLineup,
-		});
-
-		return addElement('p', {
-			children: a,
+		};
+		const pSettings = {
+			children: addElement('a', aSettings),
 			classNames: EDITION.LINEUP_LINK_CLASS,
-		});
+		};
+
+		return addElement('p', pSettings);
 	}
 
 	static getArtistSliceDecorator(artistName, artistDecorations) {

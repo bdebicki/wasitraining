@@ -28,12 +28,14 @@ export default class Title {
 	}
 
 	static renderTitleLink() {
-		return addElement('a', {
+		const settings = {
 			children: TITLE,
 			classNames: HEADER.TITLE_LINK_CLASS,
 			href: '#home',
 			onClick: Title.backToHome,
-		});
+		};
+
+		return addElement('a', settings);
 	}
 
 	static render() {

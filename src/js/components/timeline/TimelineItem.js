@@ -47,32 +47,35 @@ export default class TimelineItem extends Edition {
 
 	renderYearMask() {
 		const { editionYear } = this;
-		const textMask = addSvgElement('text', {
+		const textMaskSettings = {
 			children: editionYear,
 			classNames: TIMELINE.MAIN_EDITION_MASK_TEXT_CLASS,
 			properties: [
 				{ x: '50%' },
 				{ y: '50%' },
 			],
-		});
-
-		return addSvgMask({
+		};
+		const yearMaskSettings = {
 			svgClass: TIMELINE.MAIN_EDITION_MASK_CLASS,
 			maskId: `yearMask${editionYear}`,
-			maskShape: textMask,
+			maskShape: addSvgElement('text', textMaskSettings),
 			maskBgClass: TIMELINE.MAIN_EDITION_MASK_BG_CLASS,
-		});
+		};
+
+		return addSvgMask(yearMaskSettings);
 	}
 
 	renderYear() {
-		return addElement('span', {
+		const settings = {
 			children: this.editionYear,
 			classNames: TIMELINE.MAIN_EDITION_YEAR_CLASS,
-		});
+		};
+
+		return addElement('span', settings);
 	}
 
 	renderMainLink() {
-		return addElement('a', {
+		const settings = {
 			children: [
 				this.renderYear(),
 				this.renderYearMask(),
@@ -80,11 +83,13 @@ export default class TimelineItem extends Edition {
 			classNames: TIMELINE.MAIN_EDITION_LINK_CLASS,
 			href: `#edition${this.editionId}`,
 			onClick: this.switchView,
-		});
+		};
+
+		return addElement('a', settings);
 	}
 
 	renderNavLink(isActive) {
-		return addElement('a', {
+		const settings = {
 			children: this.editionYear,
 			classNames: [
 				TIMELINE.NAV_EDITION_LINK_CLASS,
@@ -92,20 +97,26 @@ export default class TimelineItem extends Edition {
 			],
 			href: `#edition${this.editionId}`,
 			onClick: this.switchEdition,
-		});
+		};
+
+		return addElement('a', settings);
 	}
 
 	renderMainEdition() {
-		return addElement('li', {
+		const settings = {
 			children: this.renderMainLink(),
 			classNames: TIMELINE.MAIN_EDITION_CLASS,
-		});
+		};
+
+		return addElement('li', settings);
 	}
 
 	renderNavEdition(isActive) {
-		return addElement('li', {
+		const settings = {
 			children: this.renderNavLink(isActive),
 			classNames: TIMELINE.NAV_EDITION_CLASS,
-		});
+		};
+
+		return addElement('li', settings);
 	}
 }

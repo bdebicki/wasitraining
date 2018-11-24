@@ -24,35 +24,35 @@ export function addDialogbox({
 		dialogboxClassNames.push(DIALOGBOX.STRETCHED_CLASS);
 	}
 
-	const h3 = addElement('h3', {
+	const h3Settings = {
 		children: title,
 		classNames: DIALOGBOX.HEADLINE_CLASS,
-	});
-	const closeBtn = addElement('a', {
+	};
+	const closeBtnSettings = {
 		children: setIcon(icons.close(), `${LINK.ICON_CLASS}`),
 		classNames: DIALOGBOX.CLOSE_CLASS,
 		href: dialogboxId,
 		onClick: closeAction,
 		title: closeTitle,
-	});
-	const header = addElement('header', {
+	};
+	const headerSettings = {
 		classNames: DIALOGBOX.HEADER_CLASS,
 		children: [
-			h3,
-			closeBtn,
+			addElement('h3', h3Settings),
+			addElement('a', closeBtnSettings),
 		],
-	});
-	const div = addElement('div', {
+	};
+	const divSettings = {
 		classNames: dialogboxClassNames,
 		dataAttr,
 		id: dialogboxId,
 		children: [
-			header,
+			addElement('header', headerSettings),
 			content,
 		],
-	});
+	};
 
-	return div;
+	return addElement('div', divSettings);
 }
 
 export function toggleDialogbox(e) {

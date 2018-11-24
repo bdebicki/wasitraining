@@ -22,15 +22,19 @@ export default class Timeline {
 	}
 
 	static createTimelineContainer(containerId) {
-		return addElement('nav', {
+		const settings = {
 			id: containerId,
-		});
+		};
+
+		return addElement('nav', settings);
 	}
 
 	static createEditionsListContainer(listClass) {
-		return addElement('ul', {
+		const settings = {
 			classNames: listClass,
-		});
+		};
+
+		return addElement('ul', settings);
 	}
 
 	renderNavTimeline() {

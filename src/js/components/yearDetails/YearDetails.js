@@ -10,9 +10,11 @@ export default class YearDetails {
 	}
 
 	static renderYearContainer() {
-		return addElement('section', {
+		const settings = {
 			id: LAYOUT.YEAR_CONTAINER_ID,
-		});
+		};
+
+		return addElement('section', settings);
 	}
 
 	updateYearDetails() {

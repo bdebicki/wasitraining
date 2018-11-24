@@ -1,7 +1,7 @@
 import addSvgElement from './addSvgElement';
 
 export default function setIcon(shape, classNames) {
-	return addSvgElement('svg', {
+	const settings = {
 		children: shape.icon,
 		classNames: [shape.className].concat(classNames),
 		properties: [
@@ -9,5 +9,7 @@ export default function setIcon(shape, classNames) {
 			{ height: `${shape.height}px` },
 			{ viewBox: `0 0 ${shape.width} ${shape.height}` },
 		],
-	});
+	};
+
+	return addSvgElement('svg', settings);
 }

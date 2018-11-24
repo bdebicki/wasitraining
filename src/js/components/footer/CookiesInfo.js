@@ -4,22 +4,7 @@ import { COOKIES } from '../../enums/content';
 import addElement from '../../utils/addElement';
 
 export default class CookiesInfo {
-	static showCookiesDetails(e) {
-		e.preventDefault();
-
-		console.log('cookies policy'); // eslint-disable-line no-console
-	}
-
-	static renderCookiesLnk() {
-		return addElement('a', {
-			children: 'here',
-			classNames: LINK.BASIC_CLASS,
-			href: '#cookies-policy',
-			onClick: CookiesInfo.showCookiesDetails,
-		});
-	}
-
-	static render() {
+	static getInfoContent() {
 		const content = document.createDocumentFragment();
 
 		content.textContent = COOKIES.PT1;
@@ -27,9 +12,32 @@ export default class CookiesInfo {
 		// textContent parse link to string, innerHtml += clear eventListener from link, append works correct
 		content.append(COOKIES.PT2);
 
-		return addElement('p', {
-			children: content,
+		return content;
+	}
+
+	static showCookiesDetails(e) {
+		e.preventDefault();
+
+		console.log('cookies policy'); // eslint-disable-line no-console
+	}
+
+	static renderCookiesLnk() {
+		const settings = {
+			children: 'here',
+			classNames: LINK.BASIC_CLASS,
+			href: '#cookies-policy',
+			onClick: CookiesInfo.showCookiesDetails,
+		};
+
+		return addElement('a', settings);
+	}
+
+	static render() {
+		const settings = {
+			children: CookiesInfo.getInfoContent(),
 			classNames: FOOTER.COOKIES_CLASS,
-		});
+		};
+
+		return addElement('p', settings);
 	}
 }

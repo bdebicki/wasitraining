@@ -41,11 +41,13 @@ export default class EditionDetails extends Edition {
 	}
 
 	renderEditionContainer() {
-		return addElement('section', {
+		const settings = {
 			classNames: `${EDITION.EDITION_DETAILS_YEAR_CLASS}${this.editionYear}`,
 			dataAttr: { year: this.editionYear },
 			id: EDITION.EDITION_DETAILS_ID,
-		});
+		};
+
+		return addElement('section', settings);
 	}
 
 	renderEditionDetails() {
@@ -76,12 +78,14 @@ export default class EditionDetails extends Edition {
 	}
 
 	renderShortLineupContainer() {
-		return addElement('div', {
+		const settings = {
 			classNames: [
 				EDITION.LINEUP_CLASS,
 				`${EDITION.LINEUP_EDITION_CLASS}${this.editionYear}`,
 			],
-		});
+		};
+
+		return addElement('div', settings);
 	}
 
 	updateHeadliners(oldYear) {
@@ -95,10 +99,12 @@ export default class EditionDetails extends Edition {
 	}
 
 	renderHeadliners() {
-		return addElement('ul', {
+		const settings = {
 			children: this.decorateEditionHeadliners(),
 			classNames: EDITION.HEADLINERS_CLASS,
-		});
+		};
+
+		return addElement('ul', settings);
 	}
 
 	updateEditionDetails() {

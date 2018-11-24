@@ -48,7 +48,7 @@ export default class RainDetails extends Edition {
 	}
 
 	renderRainDetailsLink() {
-		return addElement('a', {
+		const settings = {
 			children: [
 				'more',
 				setIcon(icons.plus(), `${LINK.ICON_CLASS}`),
@@ -62,7 +62,9 @@ export default class RainDetails extends Edition {
 			],
 			href: `#${RAIN.DETAILS_ID}`,
 			onClick: this.toggleDetails,
-		});
+		};
+
+		return addElement('a', settings);
 	}
 
 	renderRainContainer() {
@@ -78,11 +80,12 @@ export default class RainDetails extends Edition {
 			],
 			classNames: RAIN.HEADER_CLASS,
 		});
-
-		return addElement('section', {
+		const settings = {
 			children: header,
 			id: RAIN.SECTION_ID,
-		});
+		};
+
+		return addElement('section', settings);
 	}
 
 	static renderRainInfoYes() {

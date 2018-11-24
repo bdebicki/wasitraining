@@ -5,12 +5,14 @@ import MoreInfo from './MoreInfo';
 
 export default class Footer {
 	static render() {
-		return addElement('footer', {
+		const settings = {
 			id: LAYOUT.FOOTER_ID,
 			children: [
 				CookiesInfo.render(),
 				MoreInfo.render(),
 			],
-		});
+		};
+
+		return addElement('footer', settings);
 	}
 }
