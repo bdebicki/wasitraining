@@ -1,6 +1,7 @@
 import { TITLE } from '../../enums/content';
 import HEADER from './elementHandlers/header';
 import LAYOUT from '../../elementHandlers/layout';
+import addElement from '../../utils/addElement';
 import { updateComponentByViewType } from '../../utils/updateView';
 import Title from './Title';
 
@@ -10,10 +11,11 @@ export default class Header {
 	}
 
 	static renderHeaderContainer() {
-		const headerContainer = document.createElement('header');
+		const headerContainer = addElement('header', {
+			id: LAYOUT.HEADER_ID,
+			dataAttr: { bgText: TITLE },
+		});
 
-		headerContainer.id = LAYOUT.HEADER_ID;
-		headerContainer.dataset.bgText = TITLE;
 		Header.updateHeaderLocation(headerContainer);
 
 		return headerContainer;

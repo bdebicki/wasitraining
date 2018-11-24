@@ -1,3 +1,4 @@
+import addElement from '../../utils/addElement';
 import LAYOUT from '../../elementHandlers/layout';
 import EditionDetails from './EditionDetails';
 import RainDetails from './RainDetails';
@@ -9,11 +10,11 @@ export default class YearDetails {
 	}
 
 	static renderYearContainer() {
-		const section = document.createElement('section');
+		const settings = {
+			id: LAYOUT.YEAR_CONTAINER_ID,
+		};
 
-		section.id = LAYOUT.YEAR_CONTAINER_ID;
-
-		return section;
+		return addElement('section', settings);
 	}
 
 	updateYearDetails() {

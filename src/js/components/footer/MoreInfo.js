@@ -1,6 +1,7 @@
 import LINK from '../../elementHandlers/link';
 import FOOTER from './elementHandlers/footer';
 import { COPYRIGHTS } from '../../enums/content';
+import addElement from '../../utils/addElement';
 
 export default class MoreInfo {
 	static showAboutDetails(e) {
@@ -10,32 +11,38 @@ export default class MoreInfo {
 	}
 
 	static renderCopyrights() {
-		const copyrights = document.createElement('p');
+		const settings = {
+			children: COPYRIGHTS,
+			classNames: FOOTER.COPYRIGHTS_CLASS,
+		};
 
-		copyrights.classList.add(FOOTER.COPYRIGHTS_CLASS);
-		copyrights.textContent = COPYRIGHTS;
-
-		return copyrights;
+		return addElement('p', settings);
 	}
 
 	static renderAboutLink() {
-		const link = document.createElement('a');
+		const settings = {
+			children: 'about',
+			classNames: [
+				LINK.BASIC_CLASS,
+				LINK.INVERTED_STYLE_CLASS,
+				FOOTER.ABOUT_LINK_CLASS,
+			],
+			href: '#about',
+			onClick: MoreInfo.showAboutDetails,
+		};
 
-		link.textContent = 'about';
-		link.href = '#about';
-		link.classList.add(LINK.BASIC_CLASS, LINK.INVERTED_STYLE_CLASS, FOOTER.ABOUT_LINK_CLASS);
-		link.addEventListener('click', MoreInfo.showAboutDetails, null);
-
-		return link;
+		return addElement('a', settings);
 	}
 
 	static render() {
-		const moreInfoContainer = document.createElement('section');
+		const settings = {
+			children: [
+				MoreInfo.renderCopyrights(),
+				MoreInfo.renderAboutLink(),
+			],
+			classNames: FOOTER.ABOUT_SECTION_CLASS,
+		};
 
-		moreInfoContainer.classList.add(FOOTER.ABOUT_SECTION_CLASS);
-		moreInfoContainer.appendChild(MoreInfo.renderCopyrights());
-		moreInfoContainer.appendChild(MoreInfo.renderAboutLink());
-
-		return moreInfoContainer;
+		return addElement('section', settings);
 	}
 }

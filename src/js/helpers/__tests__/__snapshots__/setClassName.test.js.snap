@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for set children helper function render <span> element with specific class names element with multiple class name 1`] = `
+<span
+  class="spanEl spanEl--modifier"
+/>
+`;
+
+exports[`tests for set children helper function render <span> element with specific class names element with single class name 1`] = `
+<span
+  class="spanEl"
+/>
+`;

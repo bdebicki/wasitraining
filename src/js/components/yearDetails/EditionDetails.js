@@ -1,4 +1,5 @@
 import EDITION from './elementHandlers/edition';
+import addElement from '../../utils/addElement';
 import Edition from '../../classes/Edition';
 import Headliners from '../../classes/Headliners';
 import LineupDetails from './LineupDetails';
@@ -28,10 +29,11 @@ export default class EditionDetails extends Edition {
 		const fragment = document.createDocumentFragment();
 
 		this.headlinersDetails.headliners.forEach((item) => {
-			const li = document.createElement('li');
+			const li = addElement('li', {
+				children: item,
+				classNames: EDITION.HEADLINER_CLASS,
+			});
 
-			li.textContent = item;
-			li.classList.add(EDITION.HEADLINER_CLASS);
 			fragment.appendChild(li);
 		});
 
@@ -39,31 +41,33 @@ export default class EditionDetails extends Edition {
 	}
 
 	renderEditionContainer() {
-		const section = document.createElement('section');
+		const settings = {
+			classNames: `${EDITION.EDITION_DETAILS_YEAR_CLASS}${this.editionYear}`,
+			dataAttr: { year: this.editionYear },
+			id: EDITION.EDITION_DETAILS_ID,
+		};
 
-		section.id = EDITION.EDITION_DETAILS_ID;
-		section.classList.add(`${EDITION.EDITION_DETAILS_YEAR_CLASS}${this.editionYear}`);
-		section.dataset.year = this.editionYear;
-
-		return section;
+		return addElement('section', settings);
 	}
 
 	renderEditionDetails() {
 		const fragment = document.createDocumentFragment();
-		const editionYear = document.createElement('h2');
-		const name = document.createElement('h3');
-		const dates = document.createElement('p');
-		const place = document.createElement('p');
-
-		editionYear.classList.add(EDITION.YEAR_CLASS);
-		dates.classList.add(EDITION.DATES_CLASS);
-		name.classList.add(EDITION.FULL_NAME_CLASS);
-		place.classList.add(EDITION.PLACE_CLASS);
-
-		editionYear.textContent = this.editionYear;
-		dates.textContent = this.decorateEditionDates();
-		name.textContent = this.editionFullName;
-		place.textContent = this.editionPlace;
+		const editionYear = addElement('h2', {
+			children: this.editionYear,
+			classNames: EDITION.YEAR_CLASS,
+		});
+		const name = addElement('h3', {
+			children: this.editionFullName,
+			classNames: EDITION.FULL_NAME_CLASS,
+		});
+		const dates = addElement('p', {
+			children: this.decorateEditionDates(),
+			classNames: EDITION.DATES_CLASS,
+		});
+		const place = addElement('p', {
+			children: this.editionPlace,
+			classNames: EDITION.PLACE_CLASS,
+		});
 
 		fragment.appendChild(editionYear);
 		fragment.appendChild(name);
@@ -74,11 +78,14 @@ export default class EditionDetails extends Edition {
 	}
 
 	renderShortLineupContainer() {
-		const div = document.createElement('div');
+		const settings = {
+			classNames: [
+				EDITION.LINEUP_CLASS,
+				`${EDITION.LINEUP_EDITION_CLASS}${this.editionYear}`,
+			],
+		};
 
-		div.classList.add(EDITION.LINEUP_CLASS, `${EDITION.LINEUP_EDITION_CLASS}${this.editionYear}`);
-
-		return div;
+		return addElement('div', settings);
 	}
 
 	updateHeadliners(oldYear) {
@@ -92,12 +99,12 @@ export default class EditionDetails extends Edition {
 	}
 
 	renderHeadliners() {
-		const ul = document.createElement('ul');
+		const settings = {
+			children: this.decorateEditionHeadliners(),
+			classNames: EDITION.HEADLINERS_CLASS,
+		};
 
-		ul.classList.add(EDITION.HEADLINERS_CLASS);
-		ul.appendChild(this.decorateEditionHeadliners());
-
-		return ul;
+		return addElement('ul', settings);
 	}
 
 	updateEditionDetails() {

@@ -1,0 +1,68 @@
+import addSvgElement from '../utils/addSvgElement';
+import { ICONS } from '../utils/elementHandlers/icons';
+
+const icons = {
+	plus: () => {
+		const icon = document.createDocumentFragment();
+		const width = 5;
+		const height = 5;
+		const className = ICONS.PLUS;
+		const rectH = addSvgElement('rect', {
+			properties: [
+				{ x: '0' },
+				{ y: '2' },
+				{ width: '5' },
+				{ height: '1' },
+			],
+		});
+		const rectV = addSvgElement('rect', {
+			properties: [
+				{ x: '2' },
+				{ y: '0' },
+				{ width: '1' },
+				{ height: '5' },
+			],
+		});
+
+		icon.appendChild(rectH);
+		icon.appendChild(rectV);
+
+		return {
+			icon, width, height, className,
+		};
+	},
+
+	close: () => {
+		const icon = document.createDocumentFragment();
+		const width = 10;
+		const height = 10;
+		const className = ICONS.CLOSE;
+		const rectH = addSvgElement('rect', {
+			classNames: ICONS.CLOSE_RECT,
+			properties: [
+				{ x: '-1' },
+				{ y: '4' },
+				{ width: '12' },
+				{ height: '2' },
+			],
+		});
+		const rectV = addSvgElement('rect', {
+			classNames: ICONS.CLOSE_RECT,
+			properties: [
+				{ x: '4' },
+				{ y: '-1' },
+				{ width: '2' },
+				{ height: '12' },
+			],
+		});
+
+		icon.appendChild(rectH);
+		icon.appendChild(rectV);
+
+		return {
+			icon, width, height, className,
+		};
+	},
+};
+
+export { icons as default };

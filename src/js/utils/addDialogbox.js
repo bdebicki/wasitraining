@@ -1,7 +1,8 @@
 import DIALOGBOX from './elementHandlers/dialogbox';
 import LINK from '../elementHandlers/link';
+import addElement from './addElement';
 import setIcon from './setIcon';
-import icons from './iconsLibrary';
+import icons from '../helpers/iconsLibrary';
 
 export function addDialogbox({
 	id,
@@ -13,10 +14,6 @@ export function addDialogbox({
 	title,
 	content,
 } = {}) {
-	const div = document.createElement('div');
-	const header = document.createElement('header');
-	const h3 = document.createElement('h3');
-	const closeBtn = document.createElement('a');
 	const dialogboxId = id;
 	const dialogboxClassNames = [DIALOGBOX.BASIC_CLASS];
 
@@ -26,32 +23,36 @@ export function addDialogbox({
 	if (stretched) {
 		dialogboxClassNames.push(DIALOGBOX.STRETCHED_CLASS);
 	}
-	if (dataAttr) {
-		dataAttr.forEach((data) => {
-			const dataName = data[0];
-			const dataValue = data[1];
 
-			div.dataset[dataName] = dataValue;
-		});
-	}
+	const h3Settings = {
+		children: title,
+		classNames: DIALOGBOX.HEADLINE_CLASS,
+	};
+	const closeBtnSettings = {
+		children: setIcon(icons.close(), `${LINK.ICON_CLASS}`),
+		classNames: DIALOGBOX.CLOSE_CLASS,
+		href: dialogboxId,
+		onClick: closeAction,
+		title: closeTitle,
+	};
+	const headerSettings = {
+		classNames: DIALOGBOX.HEADER_CLASS,
+		children: [
+			addElement('h3', h3Settings),
+			addElement('a', closeBtnSettings),
+		],
+	};
+	const divSettings = {
+		classNames: dialogboxClassNames,
+		dataAttr,
+		id: dialogboxId,
+		children: [
+			addElement('header', headerSettings),
+			content,
+		],
+	};
 
-	div.id = dialogboxId;
-	div.classList.add(...dialogboxClassNames);
-	closeBtn.classList.add(DIALOGBOX.CLOSE_CLASS);
-	closeBtn.appendChild(setIcon(icons.close(), `${LINK.ICON_CLASS}`));
-	closeBtn.setAttribute('href', dialogboxId);
-	closeBtn.addEventListener('click', closeAction, null);
-	closeBtn.title = closeTitle;
-	header.classList.add(DIALOGBOX.HEADER_CLASS);
-	h3.classList.add(DIALOGBOX.HEADLINE_CLASS);
-	h3.textContent = title;
-
-	header.appendChild(h3);
-	header.appendChild(closeBtn);
-	div.appendChild(header);
-	div.appendChild(content);
-
-	return div;
+	return addElement('div', divSettings);
 }
 
 export function toggleDialogbox(e) {

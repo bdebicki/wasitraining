@@ -1,8 +1,20 @@
 import LINK from '../../elementHandlers/link';
 import FOOTER from './elementHandlers/footer';
 import { COOKIES } from '../../enums/content';
+import addElement from '../../utils/addElement';
 
 export default class CookiesInfo {
+	static getInfoContent() {
+		const content = document.createDocumentFragment();
+
+		content.textContent = COOKIES.PT1;
+		content.appendChild(CookiesInfo.renderCookiesLnk());
+		// textContent parse link to string, innerHtml += clear eventListener from link, append works correct
+		content.append(COOKIES.PT2);
+
+		return content;
+	}
+
 	static showCookiesDetails(e) {
 		e.preventDefault();
 
@@ -10,25 +22,22 @@ export default class CookiesInfo {
 	}
 
 	static renderCookiesLnk() {
-		const link = document.createElement('a');
+		const settings = {
+			children: 'here',
+			classNames: LINK.BASIC_CLASS,
+			href: '#cookies-policy',
+			onClick: CookiesInfo.showCookiesDetails,
+		};
 
-		link.textContent = 'here';
-		link.href = '#cookies-policy';
-		link.classList.add(LINK.BASIC_CLASS);
-		link.addEventListener('click', CookiesInfo.showCookiesDetails, null);
-
-		return link;
+		return addElement('a', settings);
 	}
 
 	static render() {
-		const cookiesInfoContainer = document.createElement('p');
+		const settings = {
+			children: CookiesInfo.getInfoContent(),
+			classNames: FOOTER.COOKIES_CLASS,
+		};
 
-		cookiesInfoContainer.textContent = COOKIES.PT1;
-		cookiesInfoContainer.classList.add(FOOTER.COOKIES_CLASS);
-		cookiesInfoContainer.appendChild(CookiesInfo.renderCookiesLnk());
-		// textContent parse link to string, innerHtml += clear eventListener from link, append works correct
-		cookiesInfoContainer.append(COOKIES.PT2);
-
-		return cookiesInfoContainer;
+		return addElement('p', settings);
 	}
 }

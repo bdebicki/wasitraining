@@ -1,6 +1,8 @@
 import DATA_URL from '../../enums/data';
 import TIMELINE from './elementHandlers/timeline';
-import { addSVGmask, svgType } from '../../utils/addSvgMask';
+import addElement from '../../utils/addElement';
+import addSvgElement from '../../utils/addSvgElement';
+import addSvgMask from '../../utils/addSvgMask';
 import Edition from '../../classes/Edition';
 import YearView from '../../views/YearView';
 
@@ -45,75 +47,76 @@ export default class TimelineItem extends Edition {
 
 	renderYearMask() {
 		const { editionYear } = this;
-		const textMask = document.createElementNS(svgType, 'text');
-
-		textMask.classList.add(TIMELINE.MAIN_EDITION_MASK_TEXT_CLASS);
-		textMask.setAttributeNS(null, 'x', '50%');
-		textMask.setAttributeNS(null, 'y', '50%');
-		textMask.textContent = editionYear;
-
-		const maskOptions = {
+		const textMaskSettings = {
+			children: editionYear,
+			classNames: TIMELINE.MAIN_EDITION_MASK_TEXT_CLASS,
+			properties: [
+				{ x: '50%' },
+				{ y: '50%' },
+			],
+		};
+		const yearMaskSettings = {
 			svgClass: TIMELINE.MAIN_EDITION_MASK_CLASS,
 			maskId: `yearMask${editionYear}`,
-			maskShape: textMask,
+			maskShape: addSvgElement('text', textMaskSettings),
 			maskBgClass: TIMELINE.MAIN_EDITION_MASK_BG_CLASS,
 		};
 
-		return addSVGmask(maskOptions);
+		return addSvgMask(yearMaskSettings);
 	}
 
 	renderYear() {
-		const span = document.createElement('span');
+		const settings = {
+			children: this.editionYear,
+			classNames: TIMELINE.MAIN_EDITION_YEAR_CLASS,
+		};
 
-		span.classList.add(TIMELINE.MAIN_EDITION_YEAR_CLASS);
-		span.textContent = this.editionYear;
-
-		return span;
+		return addElement('span', settings);
 	}
 
 	renderMainLink() {
-		const a = document.createElement('a');
-		const year = this.renderYear();
-		const mask = this.renderYearMask();
+		const settings = {
+			children: [
+				this.renderYear(),
+				this.renderYearMask(),
+			],
+			classNames: TIMELINE.MAIN_EDITION_LINK_CLASS,
+			href: `#edition${this.editionId}`,
+			onClick: this.switchView,
+		};
 
-		a.href = `#edition${this.editionId}`;
-		a.classList.add(TIMELINE.MAIN_EDITION_LINK_CLASS);
-		a.addEventListener('click', this.switchView, null);
-		a.appendChild(year);
-		a.appendChild(mask);
-
-		return a;
+		return addElement('a', settings);
 	}
 
 	renderNavLink(isActive) {
-		const a = document.createElement('a');
+		const settings = {
+			children: this.editionYear,
+			classNames: [
+				TIMELINE.NAV_EDITION_LINK_CLASS,
+				isActive ? TIMELINE.NAV_EDITION_ACTIVE_CLASS : '',
+			],
+			href: `#edition${this.editionId}`,
+			onClick: this.switchEdition,
+		};
 
-		a.href = `#edition${this.editionId}`;
-		a.classList.add(TIMELINE.NAV_EDITION_LINK_CLASS);
-		if (isActive) {
-			a.classList.add(TIMELINE.NAV_EDITION_ACTIVE_CLASS);
-		}
-		a.addEventListener('click', this.switchEdition, null);
-		a.textContent = this.editionYear;
-
-		return a;
+		return addElement('a', settings);
 	}
 
 	renderMainEdition() {
-		const li = document.createElement('li');
+		const settings = {
+			children: this.renderMainLink(),
+			classNames: TIMELINE.MAIN_EDITION_CLASS,
+		};
 
-		li.classList.add(TIMELINE.MAIN_EDITION_CLASS);
-		li.appendChild(this.renderMainLink());
-
-		return li;
+		return addElement('li', settings);
 	}
 
 	renderNavEdition(isActive) {
-		const li = document.createElement('li');
+		const settings = {
+			children: this.renderNavLink(isActive),
+			classNames: TIMELINE.NAV_EDITION_CLASS,
+		};
 
-		li.classList.add(TIMELINE.NAV_EDITION_CLASS);
-		li.appendChild(this.renderNavLink(isActive));
-
-		return li;
+		return addElement('li', settings);
 	}
 }

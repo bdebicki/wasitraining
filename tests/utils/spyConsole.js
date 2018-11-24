@@ -4,6 +4,7 @@ export default function() {
 
 	beforeAll(() => {
 		spy.console = jest.spyOn(console, 'error').mockImplementation(() => {});
+		spy.console = jest.spyOn(console, 'log').mockImplementation(() => {});
 	});
 	afterAll(() => {
 		spy.console.mockRestore();

@@ -1,5 +1,6 @@
 import TIMELINE from './elementHandlers/timeline';
 import LAYOUT from '../../elementHandlers/layout';
+import addElement from '../../utils/addElement';
 import TimelineItem from './TimelineItem';
 
 export default class Timeline {
@@ -21,19 +22,19 @@ export default class Timeline {
 	}
 
 	static createTimelineContainer(containerId) {
-		const timelineContainer = document.createElement('nav');
+		const settings = {
+			id: containerId,
+		};
 
-		timelineContainer.id = containerId;
-
-		return timelineContainer;
+		return addElement('nav', settings);
 	}
 
 	static createEditionsListContainer(listClass) {
-		const editionsListContainer = document.createElement('ul');
+		const settings = {
+			classNames: listClass,
+		};
 
-		editionsListContainer.classList.add(listClass);
-
-		return editionsListContainer;
+		return addElement('ul', settings);
 	}
 
 	renderNavTimeline() {

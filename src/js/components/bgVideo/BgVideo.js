@@ -1,14 +1,15 @@
 import BG from './elementHandlers/background';
 import LAYOUT from '../../elementHandlers/layout';
+import addElement from '../../utils/addElement';
 import addVideo from '../../utils/addVideo';
 
 export default class BgVideo {
 	static renderVideoContainer() {
-		const div = document.createElement('div');
+		const settings = {
+			id: LAYOUT.BG_VIDEO_ID,
+		};
 
-		div.id = LAYOUT.BG_VIDEO_ID;
-
-		return div;
+		return addElement('div', settings);
 	}
 
 	static renderVideo() {

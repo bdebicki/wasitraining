@@ -2,6 +2,7 @@ import cleanDOM from '../../../../tests/utils/cleanDOM';
 import VIEW_TYPES from '../../enums/viewTypes';
 import LAYOUT from '../../elementHandlers/layout';
 import VIEWS from '../../views/elementHandlers/views';
+import addElement from '../addElement';
 import { updateViewType, updateComponentByViewType } from '../updateView';
 
 
@@ -9,18 +10,18 @@ const mockedComponentClassName = 'component';
 const mockedComponentModifierClassName = 'component--modified';
 
 function mockIntroView() {
-	const main = document.createElement('div');
-
-	main.id = LAYOUT.MAIN_CONTAINER_ID;
+	const main = addElement('div', {
+		id: LAYOUT.MAIN_CONTAINER_ID,
+	});
 
 	document.body.appendChild(main);
 	document.querySelector('html').dataset.view = VIEW_TYPES.INTRO;
 }
 
 function mockComponent() {
-	const component = document.createElement('div');
-
-	component.classList.add(mockedComponentClassName);
+	const component = addElement('div', {
+		classNames: mockedComponentClassName,
+	});
 
 	document.body.appendChild(component);
 }
