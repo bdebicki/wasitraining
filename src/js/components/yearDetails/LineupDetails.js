@@ -2,6 +2,7 @@ import Lineup from '../../classes/Lineup';
 import { ARTIST_KEYS, ARTIST_SLICES_PROPS } from '../../enums/artist';
 import { ARTIST_CANCELED } from '../../enums/content';
 import LINEUP_LEVELS from '../../enums/lineupLevels';
+import { OTHER_ARTISTS, LOCATION_TYPES } from '../../enums/otherArtists';
 import DIALOGBOX from '../../utils/elementHandlers/dialogbox';
 import EDITION from './elementHandlers/edition';
 import { LINEUP } from './elementHandlers/lineup';
@@ -262,10 +263,12 @@ export default class LineupDetails extends Lineup {
 		}
 	}
 
-	getOtherArtistsInfo() {
-		if (this.otherArtists) {
+	getOtherArtistsLabel() {
+		const { otherArtists } = this;
+
+		if (otherArtists[OTHER_ARTISTS.LOCATION] === LOCATION_TYPES.BELOW_LINEUP) {
 			const settings = {
-				children: this.otherArtists,
+				children: this.otherArtists[OTHER_ARTISTS.LABEL],
 				classNames: LINEUP.ARTISTS_OTHERS_CLASS,
 			};
 
@@ -328,6 +331,11 @@ export default class LineupDetails extends Lineup {
 						getLineupLvlClassName(section),
 					],
 				});
+
+				if (this.otherArtists[OTHER_ARTISTS.LOCATION] === LOCATION_TYPES.OTHERS_LVL) {
+					ul.classList.add('lineupArtists__lvl--hasOthersLabel');
+					ul.dataset.otherArtistsLabel = this.otherArtists[OTHER_ARTISTS.LABEL];
+				}
 
 				Object.keys(lineup[section]).forEach((lvl) => {
 					lineup[section][lvl].forEach((artist, index) => {
@@ -453,8 +461,8 @@ export default class LineupDetails extends Lineup {
 		artistsContainer.classList.remove(`${LINEUP.ARTISTS_EDITION_CLASS}${oldYear}`);
 		artistsContainer.classList.add(`${LINEUP.ARTISTS_EDITION_CLASS}${newYear}`);
 		artistsContainer.appendChild(this.getLineupByType());
-		if (this.otherArtists) {
-			artistsContainer.appendChild(this.getOtherArtistsInfo());
+		if (this.otherArtists[OTHER_ARTISTS.LOCATION] === LOCATION_TYPES.BELOW_LINEUP) {
+			artistsContainer.appendChild(this.getOtherArtistsLabel());
 		}
 	}
 
@@ -463,7 +471,7 @@ export default class LineupDetails extends Lineup {
 		const section = addElement('section', {
 			children: [
 				this.getLineupByType(),
-				this.getOtherArtistsInfo(),
+				this.getOtherArtistsLabel(),
 			],
 			classNames: [
 				DIALOGBOX.CONTENT_CLASS,
