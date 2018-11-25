@@ -17,6 +17,7 @@ const LINEUP = {
 	ARTISTS_SEPARATOR_ELEMENT_CLASS: `${lineupClassBuilder.artists}__separatorElement`,
 	ARTISTS_LINE_CLASS: lineupClassBuilder.line,
 	ARTISTS_LEVEL_CLASS: lineupClassBuilder.lvl,
+	ARTISTS_OTHERS_CLASS: `${lineupClassBuilder.artists}__otherArtists`,
 	ARTIST_CLASS: lineupClassBuilder.artist,
 	ARTIST_MULTIPLE_ARTISTS_CLASS: lineupClassBuilder.multipleArtists,
 	ARTIST_MULTIPLE_ARTISTS_ARTIST_CLASS: `${lineupClassBuilder.multipleArtists}__artist`,

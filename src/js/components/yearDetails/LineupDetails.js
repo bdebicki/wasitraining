@@ -262,6 +262,19 @@ export default class LineupDetails extends Lineup {
 		}
 	}
 
+	getOtherArtistsInfo() {
+		if (this.otherArtists) {
+			const settings = {
+				children: this.otherArtists,
+				classNames: LINEUP.ARTISTS_OTHERS_CLASS,
+			};
+
+			return addElement('p', settings);
+		}
+
+		return null;
+	}
+
 	decorateLineupByLevels() {
 		const fragment = document.createDocumentFragment();
 		const { lineup, separatorElement } = this;
@@ -440,12 +453,18 @@ export default class LineupDetails extends Lineup {
 		artistsContainer.classList.remove(`${LINEUP.ARTISTS_EDITION_CLASS}${oldYear}`);
 		artistsContainer.classList.add(`${LINEUP.ARTISTS_EDITION_CLASS}${newYear}`);
 		artistsContainer.appendChild(this.getLineupByType());
+		if (this.otherArtists) {
+			artistsContainer.appendChild(this.getOtherArtistsInfo());
+		}
 	}
 
 	render() {
 		const newYear = this.editionYear;
 		const section = addElement('section', {
-			children: this.getLineupByType(),
+			children: [
+				this.getLineupByType(),
+				this.getOtherArtistsInfo(),
+			],
 			classNames: [
 				DIALOGBOX.CONTENT_CLASS,
 				LINEUP.ARTISTS_CLASS,
