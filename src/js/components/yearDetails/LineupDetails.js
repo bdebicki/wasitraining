@@ -250,6 +250,26 @@ export default class LineupDetails extends Lineup {
 	}
 	/* eslint-enable complexity */
 
+	static decorateOtherArtistsInfo(target, otherArtists) {
+		if (otherArtists[OTHER_ARTISTS.LOCATION] === LOCATION_TYPES.BELOW_LINEUP) {
+			const settings = {
+				children: otherArtists[OTHER_ARTISTS.LABEL],
+				classNames: LINEUP.ARTISTS_OTHERS_CLASS,
+			};
+
+			target.appendChild(addElement('p', settings));
+		}
+	}
+
+	static decorateOtherArtistsLabel(target, otherArtists) {
+		if (otherArtists[OTHER_ARTISTS.LOCATION] === LOCATION_TYPES.OTHERS_LVL) {
+			const el = target;
+
+			el.classList.add(LINEUP.ARTISTS_LEVEL_OTHERS_LABEL_CLASS);
+			el.dataset.otherArtistsLabel = otherArtists[OTHER_ARTISTS.LABEL];
+		}
+	}
+
 	getLineupByType() {
 		switch (this.mergeArtistsType) {
 		case true:
@@ -261,21 +281,6 @@ export default class LineupDetails extends Lineup {
 		default:
 			return this.decorateLineupByDays();
 		}
-	}
-
-	getOtherArtistsLabel() {
-		const { otherArtists } = this;
-
-		if (otherArtists[OTHER_ARTISTS.LOCATION] === LOCATION_TYPES.BELOW_LINEUP) {
-			const settings = {
-				children: this.otherArtists[OTHER_ARTISTS.LABEL],
-				classNames: LINEUP.ARTISTS_OTHERS_CLASS,
-			};
-
-			return addElement('p', settings);
-		}
-
-		return null;
 	}
 
 	decorateLineupByLevels() {
@@ -302,7 +307,7 @@ export default class LineupDetails extends Lineup {
 
 	decorateMainByDaysAndMergeRest() {
 		const fragment = document.createDocumentFragment();
-		const { lineup, separatorElement } = this;
+		const { lineup, otherArtists, separatorElement } = this;
 
 		Object.keys(lineup).forEach((section) => {
 			if (section === LINEUP_LEVELS.DAILY_ARTISTS) {
@@ -332,16 +337,13 @@ export default class LineupDetails extends Lineup {
 					],
 				});
 
-				if (this.otherArtists[OTHER_ARTISTS.LOCATION] === LOCATION_TYPES.OTHERS_LVL) {
-					ul.classList.add('lineupArtists__lvl--hasOthersLabel');
-					ul.dataset.otherArtistsLabel = this.otherArtists[OTHER_ARTISTS.LABEL];
-				}
-
 				Object.keys(lineup[section]).forEach((lvl) => {
 					lineup[section][lvl].forEach((artist, index) => {
 						LineupDetails.decorateArtist(artist, ul, index, lvl, separatorElement);
 					});
 				});
+
+				LineupDetails.decorateOtherArtistsLabel(ul, otherArtists);
 
 				fragment.appendChild(ul);
 			}
@@ -352,7 +354,7 @@ export default class LineupDetails extends Lineup {
 
 	decorateLineupByDays() {
 		const fragment = document.createDocumentFragment();
-		const { lineup } = this;
+		const { lineup, otherArtists } = this;
 
 		lineup.forEach((day, index) => {
 			const dayCount = index + 1;
@@ -380,6 +382,8 @@ export default class LineupDetails extends Lineup {
 
 			fragment.appendChild(section);
 		});
+
+		LineupDetails.decorateOtherArtistsInfo(fragment, otherArtists);
 
 		return fragment;
 	}
@@ -461,18 +465,12 @@ export default class LineupDetails extends Lineup {
 		artistsContainer.classList.remove(`${LINEUP.ARTISTS_EDITION_CLASS}${oldYear}`);
 		artistsContainer.classList.add(`${LINEUP.ARTISTS_EDITION_CLASS}${newYear}`);
 		artistsContainer.appendChild(this.getLineupByType());
-		if (this.otherArtists[OTHER_ARTISTS.LOCATION] === LOCATION_TYPES.BELOW_LINEUP) {
-			artistsContainer.appendChild(this.getOtherArtistsLabel());
-		}
 	}
 
 	render() {
 		const newYear = this.editionYear;
 		const section = addElement('section', {
-			children: [
-				this.getLineupByType(),
-				this.getOtherArtistsLabel(),
-			],
+			children: this.getLineupByType(),
 			classNames: [
 				DIALOGBOX.CONTENT_CLASS,
 				LINEUP.ARTISTS_CLASS,
