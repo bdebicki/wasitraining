@@ -11,7 +11,7 @@
 
 	.lineupArtists {
 		&__day {
-			&:not(:last-child) {
+			&:not(:last-of-type) {
 				margin-bottom: @edition2013-sectionsSpace;
 			}
 		}
@@ -101,6 +101,13 @@
 					text-indent: -0.27em;
 				}
 			}
+		}
+
+
+		&__otherArtists {
+			margin-top: @edition2013-sectionsSpace-otherArtists;
+			font-size: @edition2013-fontSize-otherArtists;
+			line-height: @edition2013-lineHeight-otherArtists;
 		}
 	}
 }

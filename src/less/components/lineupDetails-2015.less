@@ -11,7 +11,7 @@
 
 	.lineupArtists {
 		&__day {
-			&:not(:last-child) {
+			&:not(:last-of-type) {
 				margin-bottom: @edition2015-sectionsSpace;
 			}
 		}
@@ -71,6 +71,13 @@
 			&--promoted {
 				font-weight: @edition2015-fontWeight-promoted;
 			}
+		}
+
+		&__otherArtists {
+			margin-top: @edition2015-sectionsSpace-otherArtists;
+			font-size: @edition2015-fontSize-otherArtists;
+			line-height: @edition2015-lineHeight-otherArtists;
+			text-transform: none;
 		}
 	}
 }

@@ -16,13 +16,22 @@
 			&--dailyArtists {
 				margin-bottom: @edition2006-lvlSpace-daily;
 			}
+
+			&--hasOthersLabel {
+				&:before {
+					margin-right: @edition2006-separatorSpace;
+					font-size: @edition2006-fontSize-otherArtists;
+					letter-spacing: @edition2006-textSpacing-otherArtists;
+					line-height: @edition2006-lineHeight-otherArtists;
+				}
+			}
 		}
 
 		&__artist {
 			&:not(.lineupArtists__artist--lastOnLine) {
 				&:after {
 					content: @edition2006-separatorStyle;
-					margin-right: @edition2007-separatorSpace;
+					margin-right: @edition2006-separatorSpace;
 				}
 			}
 

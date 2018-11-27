@@ -12,6 +12,14 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+
+		&--hasOthersLabel {
+			&:before {
+				content: attr(data-other-artists-label);
+				display: flex;
+				align-items: flex-end;
+			}
+		}
 	}
 
 	&__line {
@@ -31,6 +39,10 @@
 		display: inline-flex;
 		align-items: center;
 		line-height: 100%;
+	}
+
+	&__otherArtists {
+		text-align: center;
 	}
 
 	&__artist {
