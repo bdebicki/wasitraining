@@ -35,6 +35,14 @@
 					margin-left: 85px;
 				}
 			}
+			&--hasOthersLabel {
+				&:before {
+					margin-right: @edition2005-separatorSpace;
+					font-size: @edition2005-fontSize-otherArtists;
+					letter-spacing: @edition2005-textSpacing-otherArtists;
+					line-height: @edition2005-lineHeight-otherArtists;
+				}
+			}
 		}
 
 		&__artist {
@@ -90,6 +98,7 @@
 				text-transform: lowercase;
 			}
 			&--lvl2 {
+				margin-top: -2px;
 				font-size: @edition2005-fontSize-lvl2;
 				letter-spacing: @edition2005-textSpacing-lvl2;
 				line-height: @edition2005-lineHeight-lvl2;

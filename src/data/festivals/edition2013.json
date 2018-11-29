@@ -155,7 +155,10 @@
 	"lineupSettings": {
 		"sortType": false,
 		"mergeArtists": false,
-		"otherArtists": "... and many others",
+		"otherArtists": {
+			"label": "... and many others",
+			"location": "below"
+		},
 		"separatorElement": false
 	}
 }

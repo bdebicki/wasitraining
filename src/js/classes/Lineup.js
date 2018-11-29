@@ -18,8 +18,8 @@ import AbstractLineup from './AbstractLineup';
  *	 - 'customLevels' - create custom levels with mixed artists
  *
  * otherArtists:
- *	- string - display label with information about others artists
- *	 - false - don't display information about others artists
+ *  - object - contains label content and location
+ *	- false - don't display information about others artists
  */
 
 export default class Lineup extends AbstractLineup {
