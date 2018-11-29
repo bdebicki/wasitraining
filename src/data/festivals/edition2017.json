@@ -130,7 +130,7 @@
 		"sortType": "alphabeticalExceptHeadliners",
 		"mergeArtists": false,
 		"otherArtists": {
-			"label": "... and otherss",
+			"label": "... and others",
 			"location": "below"
 		},
 		"separatorElement": false

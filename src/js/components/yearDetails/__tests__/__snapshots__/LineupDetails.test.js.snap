@@ -628,6 +628,11 @@ exports[`lineup details tests decorated lineup by type artists on days 1`] = `
       </li>
     </ul>
   </section>
+  <p
+    class="lineupArtists__otherArtists"
+  >
+    ... and others
+  </p>
 </DocumentFragment>
 `;
 
@@ -936,7 +941,8 @@ exports[`lineup details tests decorated lineup by type main artists by days and 
     </li>
   </ul>
   <ul
-    class="lineupArtists__lvl lineupArtists__lvl--allOthers"
+    class="lineupArtists__lvl lineupArtists__lvl--allOthers lineupArtists__lvl--hasOthersLabel"
+    data-other-artists-label="And also:"
   >
     <li
       class="lineupArtists__artist lineupArtists__artist--lvl2 lineupArtists__artist--uppercase lineupArtists__artist--firstOnLine"
