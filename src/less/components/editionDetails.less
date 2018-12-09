@@ -2,60 +2,59 @@
 	grid-area: edition;
 	align-self: center;
 	justify-self: center;
+}
+.editionDetails {
+	&__year {
+		margin-bottom: 6px;
+	}
+	&__fullName {
+		margin-bottom: 22px;
+		padding-bottom: 10px;
+		position: relative;
+		font-family: 'ADAM.CG PRO', sans-serif;
+		font-size: @fontSize-l;
+		font-weight: normal;
+		letter-spacing: 0.3px;
+		line-height: @lineHeight-l;
 
-	.editionDetails {
-		&__year {
-			margin-bottom: 6px;
-		}
-		&__fullName {
-			margin-bottom: 22px;
-			padding-bottom: 10px;
-			position: relative;
-			font-family: 'ADAM.CG PRO', sans-serif;
-			font-size: @fontSize-l;
-			font-weight: normal;
-			letter-spacing: 0.3px;
-			line-height: @lineHeight-l;
-
-			&:after {
-				.separateBorder(@size: 150px, @marginRight: 0, @marginLeft: 0);
-				position: absolute;
-				left: 0;
-				bottom: 0;
-			}
-		}
-		&__date,
-		&__place {
-			color: @gray-lighten10;
-			font-size: @fontSize-s;
-			line-height: @lineHeight-s;
+		&:after {
+			.separateBorder(@size: 150px, @marginRight: 0, @marginLeft: 0);
+			position: absolute;
+			left: 0;
+			bottom: 0;
 		}
 	}
-	.shortLineup {
+	&__date,
+	&__place {
+		color: @gray-lighten10;
+		font-size: @fontSize-s;
+		line-height: @lineHeight-s;
+	}
+}
+.shortLineup {
+	display: flex;
+	width: 300px;
+	margin-top: 8px;
+	flex-direction: column;
+	justify-content: flex-end;
+
+	&__headliners {
 		display: flex;
-		width: 300px;
-		margin-top: 8px;
-		flex-direction: column;
-		justify-content: flex-end;
-
-		&__headliners {
-			display: flex;
-			margin-bottom: 1px;
-			flex-wrap: wrap;
-			color: @gray-lighten35;
-			font-size: @fontSize-xl;
-			font-weight: 900;
-			line-height: @lineHeight-xl;
-		}
-		&__detailsLink {
-			display: flex;
-			justify-content: flex-end;
-		}
+		margin-bottom: 1px;
+		flex-wrap: wrap;
+		color: @gray-lighten35;
+		font-size: @fontSize-xl;
+		font-weight: 900;
+		line-height: @lineHeight-xl;
 	}
-	.headliners {
-		&__headliner {
-			margin-right: 15px;
-			white-space: nowrap;
-		}
+	&__detailsLink {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+.headliners {
+	&__headliner {
+		margin-right: 15px;
+		white-space: nowrap;
 	}
 }
