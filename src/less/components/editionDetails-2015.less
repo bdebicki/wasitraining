@@ -6,6 +6,14 @@
 	}
 
 	.shortLineup__headliners {
-		font-family: @edition2016-fontFamily-headliners;
+		font-family: @edition2015-fontFamily;
+	}
+
+	.headliners__headliner {
+		margin-right: @edition2015-separatorSpace;
+
+		&:nth-child(2n) {
+			color: fade(@edition2015-leadColor, 50%);
+		}
 	}
 }
