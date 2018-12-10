@@ -8,4 +8,14 @@
 	.shortLineup__headliners {
 		font-family: @edition2016-fontFamily-headliners;
 	}
+
+	.headliners--day3 + .headliners--day3,
+	.headliners--day4 + .headliners--day4 {
+		&:before {
+			content: @edition2016-separatorStyle;
+			margin-right: @edition2016-separatorSpace;
+			margin-left: @edition2016-separatorSpace;
+			color: @edition2016-leadColor;
+		}
+	}
 }
