@@ -14,6 +14,7 @@ const EDITION = {
 	LINEUP_EDITION_CLASS: `${editionClassBuilders.lineup}--edition`,
 	HEADLINERS_CLASS: `${editionClassBuilders.lineup}__${editionClassBuilders.headlines}`,
 	HEADLINER_CLASS: `${editionClassBuilders.headlines}__headliner`,
+	HEADLINERS_DAY_CLASS: `${editionClassBuilders.headlines}--day`,
 	LINEUP_LINK_CLASS: `${editionClassBuilders.lineup}__detailsLink`,
 };
 

@@ -3,6 +3,7 @@ import addElement from '../../utils/addElement';
 import Edition from '../../classes/Edition';
 import Headliners from '../../classes/Headliners';
 import LineupDetails from './LineupDetails';
+import { ARTIST_KEYS } from '../../enums/artist';
 
 export default class EditionDetails extends Edition {
 	constructor(editionId) {
@@ -28,10 +29,10 @@ export default class EditionDetails extends Edition {
 	decorateEditionHeadliners() {
 		const fragment = document.createDocumentFragment();
 
-		this.headlinersDetails.headliners.forEach((item) => {
+		this.headlinersDetails.headliners.forEach((headliner) => {
 			const li = addElement('li', {
-				children: item,
-				classNames: EDITION.HEADLINER_CLASS,
+				children: headliner[ARTIST_KEYS.ARTIST],
+				classNames: [EDITION.HEADLINER_CLASS, `${EDITION.HEADLINERS_DAY_CLASS}${headliner[ARTIST_KEYS.DAY]}`],
 			});
 
 			fragment.appendChild(li);

@@ -29,24 +29,28 @@ export default class Headliners extends AbstractLineup {
 
 				return acc;
 			}, [])
-			.reduce((acc, artist) => acc.concat(artist), []); // flat array with headliners (remove nester arrays)
+			.reduce((acc, day, dayIndex) => { // flat array with headliners (remove nester arrays) + add day count
+				day.forEach((artist) => {
+					const dayArtist = artist;
+					if (typeof dayArtist === 'string') {
+						const newArtist = { [ARTIST_KEYS.ARTIST]: dayArtist, [ARTIST_KEYS.DAY]: dayIndex + 1 };
+
+						acc.push(newArtist);
+					} else {
+						dayArtist[ARTIST_KEYS.DAY] = dayIndex + 1;
+
+						acc.push(dayArtist);
+					}
+				});
+
+				return acc;
+			}, []);
 
 		return flatHeadliners;
 	}
 
 	notSortedHeadliners() { // merge headliners from all days into one flat array (with artists only)
-		let headliners = [];
-
-		headliners = this.getFlatHeadlinersList()
-			.map((headlinersArtist) => { // change object artists to sting
-				if (typeof headlinersArtist === 'object') {
-					return headlinersArtist[ARTIST_KEYS.ARTIST];
-				}
-
-				return headlinersArtist;
-			});
-
-		return headliners;
+		return this.getFlatHeadlinersList();
 	}
 
 	sortOrderedHeadliners() {
@@ -54,7 +58,7 @@ export default class Headliners extends AbstractLineup {
 
 		headliners = this.getFlatHeadlinersList()
 			.sort((a, b) => a.order - b.order) // sort headliners by order property
-			.map((artist) => artist[ARTIST_KEYS.ARTIST]); // flattening array - remove objects and displays only artists
+			.map((artist) => artist); // flattening array - remove objects and displays only artists
 
 		return headliners;
 	}

@@ -1,6 +1,7 @@
 export const ARTIST_KEYS = {
 	ARTIST: 'artist',
 	DISPLAY_NAME: 'displayName',
+	DAY: 'day',
 	ORDER: 'order',
 	FORCE_ORDER: 'forceOrder',
 	SORT_BY: 'sortBy',
