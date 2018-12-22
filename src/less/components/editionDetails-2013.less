@@ -8,4 +8,14 @@
 	.shortLineup__headliners {
 		font-family: @edition2013-fontFamily;
 	}
+
+	.headliners__headliner {
+		&:not(:last-of-type) {
+			&:after {
+				content: @edition2013-separatorStyle;
+				margin-right: 0.25em;
+
+			}
+		}
+	}
 }
