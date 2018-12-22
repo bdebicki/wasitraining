@@ -5,7 +5,23 @@
 		}
 	}
 
-	.shortLineup__headliners {
-		font-family: @edition2014-fontFamily-headliners;
+	.shortLineup {
+		width: 237px;
+
+		&__headliners {
+			flex-direction: column;
+			font-family: @edition2014-fontFamily-headliners;
+		}
+	}
+
+	.headliners {
+		&__headliner {
+			&:nth-child(2n) {
+				align-self: flex-end;
+			}
+		}
+		&--day3 {
+			margin-left: 10px;
+		}
 	}
 }
