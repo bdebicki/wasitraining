@@ -6,6 +6,36 @@
 	}
 
 	.shortLineup__headliners {
+		width: 235px;
 		font-family: @edition2011-fontFamily;
+	}
+
+	.headliners {
+		&--day1,
+		&--day3 {
+			width: 50%;
+		}
+		&--day3 {
+			text-align: right;
+		}
+		&--day2 {
+			display: inline-flex;
+			flex-grow: 1;
+			text-align: center;
+			justify-content: space-evenly;
+
+			&:after,
+			&:before {
+				content: @edition2011-separatorStyle;
+				font-size: 12px;
+				color: @gray-darken10;
+			}
+		}
+		&--day4:first-of-type {
+			flex-grow: 0;
+		}
+		&--day4:last-of-type {
+			flex-grow: 0;
+		}
 	}
 }
