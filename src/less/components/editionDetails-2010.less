@@ -5,7 +5,24 @@
 		}
 	}
 
-	.shortLineup__headliners {
-		font-family: @edition2010-fontFamily;
+	.shortLineup {
+		width: 295px;
+
+		&__headliners {
+			font-family: @edition2010-fontFamily;
+		}
+	}
+
+	.headliners {
+		&--day1,
+		&--day2 {
+			&:after {
+				content: @edition2010-separatorStyle;
+				margin-right: @edition2010-separatorSpace;
+				margin-left: @edition2010-separatorSpace;
+				color: @gray-darken10;
+				font-size: 12px;
+			}
+		}
 	}
 }

@@ -5,9 +5,12 @@
 		}
 	}
 
-	.shortLineup__headliners {
+	.shortLineup {
 		width: 235px;
-		font-family: @edition2011-fontFamily;
+
+		&__headliners {
+			font-family: @edition2011-fontFamily;
+		}
 	}
 
 	.headliners {
@@ -27,8 +30,10 @@
 			&:after,
 			&:before {
 				content: @edition2011-separatorStyle;
-				font-size: 12px;
+				position: relative;
+				top: -2px;
 				color: @gray-darken10;
+				font-size: 12px;
 			}
 		}
 		&--day4:first-of-type {
