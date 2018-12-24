@@ -1,11 +1,33 @@
 .editionDetails--edition2009 {
+	@separatorSpacing: 3px;
+
 	.editionDetails__fullName {
 		&:after {
 			background: @edition2009-leadColor;
 		}
 	}
 
-	.shortLineup__headliners {
-		font-family: @edition2009-fontFamily;
+	.shortLineup {
+		width: 320px;
+
+		&__headliners {
+			font-family: @edition2009-fontFamily;
+		}
+	}
+
+	.headliners {
+		&__headliner {
+			display: inline-flex;
+		}
+
+		&--day3 {
+			&:after {
+				content: @edition2009-separatorStyle;
+				margin-right: @separatorSpacing;
+				margin-left: @separatorSpacing;
+				color: @gray-darken10;
+				font-size: 12px;
+			}
+		}
 	}
 }
