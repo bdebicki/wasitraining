@@ -1,4 +1,6 @@
 .editionDetails--edition2010 {
+	@separatorSpacing: 3px;
+
 	.editionDetails__fullName {
 		&:after {
 			background: @edition2010-leadColor;
@@ -14,12 +16,16 @@
 	}
 
 	.headliners {
+		&__headliner {
+			display: inline-flex;
+		}
+
 		&--day1,
 		&--day2 {
 			&:after {
 				content: @edition2010-separatorStyle;
-				margin-right: @edition2010-separatorSpace;
-				margin-left: @edition2010-separatorSpace;
+				margin-right: @separatorSpacing;
+				margin-left: @separatorSpacing;
 				color: @gray-darken10;
 				font-size: 12px;
 			}
