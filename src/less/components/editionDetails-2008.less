@@ -1,11 +1,31 @@
 .editionDetails--edition2008 {
+	@separatorSpacing: 3px;
+
 	.editionDetails__fullName {
 		&:after {
 			background: @edition2008-leadColor;
 		}
 	}
 
-	.shortLineup__headliners {
-		font-family: @edition2008-fontFamily;
+	.shortLineup {
+		&__headliners {
+			justify-content: center;
+			font-family: @edition2008-fontFamily;
+		}
+	}
+
+	.headliners {
+		&__headliner {
+			display: inline-flex;
+		}
+
+		&--day1:last-of-type:before ,
+		&--day2:first-of-type:after {
+			content: @edition2008-separatorStyle;
+			margin-right: @separatorSpacing;
+			margin-left: @separatorSpacing;
+			color: @gray-darken10;
+			font-size: 12px;
+		}
 	}
 }
