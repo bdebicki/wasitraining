@@ -8,4 +8,13 @@
 	.shortLineup__headliners {
 		font-family: @edition2008-fontFamily;
 	}
+
+	.headliners__headliner {
+		&:not(:last-of-type) {
+			&:after {
+				content: @edition2006-separatorStyle;
+				margin-right: @edition2006-separatorSpace;
+			}
+		}
+	}
 }
