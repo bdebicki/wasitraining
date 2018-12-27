@@ -29,17 +29,21 @@ export default class Headliners extends AbstractLineup {
 
 				return acc;
 			}, [])
-			.reduce((acc, day, dayIndex) => { // flat array with headliners (remove nester arrays) + add day count
+			.reduce((acc, day, dayIndex) => {
+				// flat array with headliners (remove nester arrays) + add day count + return only not canceled artists
 				day.forEach((artist) => {
 					const dayArtist = artist;
-					if (typeof dayArtist === 'string') {
-						const newArtist = { [ARTIST_KEYS.ARTIST]: dayArtist, [ARTIST_KEYS.DAY]: dayIndex + 1 };
 
-						acc.push(newArtist);
-					} else {
-						dayArtist[ARTIST_KEYS.DAY] = dayIndex + 1;
+					if (!dayArtist[ARTIST_KEYS.CANCELED]) { // check does artist is not canceled
+						if (typeof dayArtist === 'string') {
+							const newArtist = { [ARTIST_KEYS.ARTIST]: dayArtist, [ARTIST_KEYS.DAY]: dayIndex + 1 };
 
-						acc.push(dayArtist);
+							acc.push(newArtist);
+						} else {
+							dayArtist[ARTIST_KEYS.DAY] = dayIndex + 1;
+
+							acc.push(dayArtist);
+						}
 					}
 				});
 
