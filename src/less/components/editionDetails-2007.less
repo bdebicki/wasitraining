@@ -8,4 +8,18 @@
 	.shortLineup__headliners {
 		font-family: @edition2007-fontFamily;
 	}
+
+	.headliners {
+		&__headliner {
+			display: inline-flex;
+		}
+
+		&--day1 {
+			&:before {
+				content: @edition2007-separatorStyle-alternative;
+				color: @gray-darken10;
+				font-size: 22px;
+			}
+		}
+	}
 }
