@@ -17,7 +17,7 @@
 			"lineup": {
 				"headliners": [
 					{"artist": "Snoop Dogg", "decorator": "promoted", "firstOnLine": true},
-					{"artist": "Fatboy Slim", "decorator": "promoted"},
+					{"artist": "Fatboy Slim", "decorator": "promoted", "canceled": true},
 					{"artist": "Faithless", "decorator": "promoted", "firstOnLine": true}
 				],
 				"others": [

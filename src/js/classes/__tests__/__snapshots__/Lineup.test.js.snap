@@ -494,6 +494,7 @@ Object {
         },
         Object {
           "artist": "Fatboy Slim",
+          "canceled": true,
           "decorator": "promoted",
         },
         Object {

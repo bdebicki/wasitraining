@@ -1,4 +1,4 @@
-import editionAlphabeticalExceptHeadliners from '../../../../tests/__mocks__/edition-alphabeticalExceptHeadliners-noMergeArtists.json';
+import editionAlphabeticalExceptHeadliners from '../../../../tests/__mocks__/edition-alphabeticalExceptHeadliners-mergeArtists.json';
 import editionCustomOrder from '../../../../tests/__mocks__/edition-customOrder-mergeArtists.json';
 import editionCustomOrderExceptHeadliners from '../../../../tests/__mocks__/edition-customOrderExceptHeadliners-mainByDaysAndMergeRest.json';
 import editionNotSorted from '../../../../tests/__mocks__/edition-notSort-customLevels.json';

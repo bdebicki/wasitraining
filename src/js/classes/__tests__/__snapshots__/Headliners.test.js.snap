@@ -31,24 +31,19 @@ Array [
 exports[`tests headliners class return headliners sorted by alphabeticalExceptHeadliners type 1`] = `
 Array [
   Object {
-    "artist": "Radiohead",
+    "artist": "The Black Keys",
     "day": 1,
   },
   Object {
-    "artist": "Foo Fighters",
+    "artist": "Pearl Jam",
     "day": 2,
   },
   Object {
-    "artist": "The Weekend",
+    "artist": "Jack White",
     "day": 3,
   },
   Object {
-    "artist": "The XX",
-    "day": 4,
-    "firstOnLine": true,
-  },
-  Object {
-    "artist": "Lorde",
+    "artist": "Faith No More",
     "day": 4,
   },
 ]
@@ -82,11 +77,6 @@ Array [
     "day": 1,
     "decorator": "promoted",
     "firstOnLine": true,
-  },
-  Object {
-    "artist": "Fatboy Slim",
-    "day": 1,
-    "decorator": "promoted",
   },
   Object {
     "artist": "Faithless",
