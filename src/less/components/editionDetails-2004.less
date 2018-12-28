@@ -5,7 +5,20 @@
 		}
 	}
 
-	.shortLineup__headliners {
-		font-family: @edition2004-fontFamily;
+	.shortLineup {
+		width: 360px;
+
+		&__headliners {
+			font-family: @edition2004-fontFamily;
+		}
+	}
+
+	.headliners--day1 + .headliners--day1,
+	.headliners--day2 + .headliners--day2 {
+		&:before {
+			content: @edition2004-separatorStyle;
+			margin-right: @edition2004-separatorSpace;
+			margin-left: @edition2004-separatorSpace;
+		}
 	}
 }
