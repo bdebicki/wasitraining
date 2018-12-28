@@ -30,8 +30,11 @@ export default class EditionDetails extends Edition {
 		const fragment = document.createDocumentFragment();
 
 		this.headlinersDetails.headliners.forEach((headliner) => {
+			const headlinerName = headliner[ARTIST_KEYS.DISPLAY_NAME]
+				? headliner[ARTIST_KEYS.DISPLAY_NAME]
+				: headliner[ARTIST_KEYS.ARTIST];
 			const li = addElement('li', {
-				children: headliner[ARTIST_KEYS.ARTIST],
+				children: headlinerName,
 				classNames: [EDITION.HEADLINER_CLASS, `${EDITION.HEADLINERS_DAY_CLASS}${headliner[ARTIST_KEYS.DAY]}`],
 			});
 
