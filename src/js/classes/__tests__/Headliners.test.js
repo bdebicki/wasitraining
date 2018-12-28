@@ -13,8 +13,7 @@ describe('tests headliners class', () => {
 		const sortedHeadliners = headliners.headliners;
 
 		// then
-		const expectedHeadliners = ['Radiohead', 'Foo Fighters', 'The Weekend', 'The XX', 'Lorde'];
-		expect(sortedHeadliners).toEqual(expectedHeadliners);
+		expect(sortedHeadliners).toMatchSnapshot();
 	});
 	it('return headliners sorted by customOrder type', () => {
 		// having
@@ -24,8 +23,7 @@ describe('tests headliners class', () => {
 		const sortedHeadliners = headliners.headliners;
 
 		// then
-		const expectedHeadliners = ['Björk', 'Beastie Boys', 'Muse'];
-		expect(sortedHeadliners).toEqual(expectedHeadliners);
+		expect(sortedHeadliners).toMatchSnapshot();
 	});
 	it('return headliners sorted by customOrderExceptHeadliners type', () => {
 		// having
@@ -35,15 +33,7 @@ describe('tests headliners class', () => {
 		const sortedHeadliners = headliners.headliners;
 
 		// then
-		const expectedHeadliners = [
-			'Snoop Dogg',
-			'Fatboy Slim',
-			'Faithless',
-			'The White Stripes',
-			'Lauryn Hill',
-			'Underworld',
-		];
-		expect(sortedHeadliners).toEqual(expectedHeadliners);
+		expect(sortedHeadliners).toMatchSnapshot();
 	});
 	it('return headliners not sorted', () => {
 		// having
@@ -53,7 +43,6 @@ describe('tests headliners class', () => {
 		const sortedHeadliners = headliners.headliners;
 
 		// then
-		const expectedHeadliners = ['Pink', 'Cypress Hill', 'Massive Attack', 'Goldfrapp'];
-		expect(sortedHeadliners).toEqual(expectedHeadliners);
+		expect(sortedHeadliners).toMatchSnapshot();
 	});
 });
