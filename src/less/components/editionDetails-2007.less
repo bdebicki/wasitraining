@@ -5,9 +5,13 @@
 		}
 	}
 
-	.shortLineup__headliners {
-		font-family: @edition2007-fontFamily;
-		line-height: 22px;
+	.shortLineup {
+		width: 230px;
+
+		&__headliners {
+			font-family: @edition2007-fontFamily;
+			line-height: 22px;
+		}
 	}
 
 	.headliners {
@@ -18,7 +22,7 @@
 		&--day1 {
 			&:before {
 				content: @edition2007-separatorStyle-alternative;
-				color: @gray-darken10;
+				color: @gray-lighten10;
 				font-size: 22px;
 			}
 		}
