@@ -5,7 +5,20 @@
 		}
 	}
 
-	.shortLineup__headliners {
-		font-family: @edition2005-fontFamily;
+	.shortLineup {
+		width: 310px;
+		&__headliners {
+			font-family: @edition2005-fontFamily;
+		}
+	}
+
+	.headliners {
+		&__headliner {
+			&:not(:first-of-type):not(:last-of-type):not(:nth-child(4)) {
+				&:before {
+					content: @edition2005-separatorStyle-daily;
+				}
+			}
+		}
 	}
 }
