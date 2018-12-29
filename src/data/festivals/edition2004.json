@@ -17,19 +17,19 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Pink", "displayName": "P!nk", "firstOnLine": true, "line": 2},
+					{"artist": "Pink", "displayName": "P!nk", "firstOnLine": "lineup", "line": 2},
 					{"artist": "Cypress Hill", "line": 2}
 				],
 				"lvl2": [
 					{"artist": "Sistars", "line": 2}
 				],
 				"lvl3": [
-					{"artist": "G!MIDI", "firstOnLine": true, "line": 4},
+					{"artist": "G!MIDI", "firstOnLine": "lineup", "line": 4},
 					{"artist": "Slajd", "line": 4},
 					{"artist": "Progress", "line": 4}
 				],
 				"others": [
-					{"artist": "Ojciec Karol", "firstOnLine": true, "line": 1},
+					{"artist": "Ojciec Karol", "firstOnLine": "lineup", "line": 1},
 					{"artist": "Charlie Jan", "line": 1}
 				]
 			}
@@ -42,17 +42,17 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Massive Attack", "firstOnLine": true, "line": 2},
+					{"artist": "Massive Attack", "firstOnLine": "lineup", "line": 2},
 					{"artist": "Goldfrapp", "line": 2}
 				],
 				"lvl1": [
-					{"artist": "Adam Freeland", "firstOnLine": true, "line": 3}
+					{"artist": "Adam Freeland", "firstOnLine": "lineup", "line": 3}
 				],
 				"lvl2": [
 					{"artist": "Smolik", "line": 3}
 				],
 				"lvl3": [
-					{"artist": "Novika", "firstOnLine": true, "line": 4},
+					{"artist": "Novika", "firstOnLine": "lineup", "line": 4},
 					{"artist": "Harper", "line": 4},
 					{"artist": "Twinn", "line": 4},
 					{"artist": "THIRST Winner in Denmark", "line": 4}

@@ -18,4 +18,7 @@ const EDITION = {
 	LINEUP_LINK_CLASS: `${editionClassBuilders.lineup}__detailsLink`,
 };
 
-export { EDITION as default };
+export {
+	editionClassBuilders,
+	EDITION,
+};

@@ -8,7 +8,7 @@ import EditionDetails from '../EditionDetails';
 import { ARTIST_KEYS } from '../../../enums/artist';
 import DIALOGBOX from '../../../utils/elementHandlers/dialogbox';
 import { LINEUP, lineupClassBuilder } from '../elementHandlers/lineup';
-import EDITION from '../elementHandlers/edition';
+import { EDITION } from '../elementHandlers/edition';
 import LINK from '../../../elementHandlers/link';
 
 describe('lineup details tests', () => {

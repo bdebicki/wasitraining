@@ -23,16 +23,16 @@
 				],
 				"lvl2": [
 					{"artist": "Peter Bjorn and John", "marked": true, "order": 11},
-					{"artist": "Late of the Pier", "order": 13, "firstOnLine": true}
+					{"artist": "Late of the Pier", "order": 13, "firstOnLine": "lineup"}
 				],
 				"lvl3": [
 					{"artist": "Renton", "order": 8}
 				],
 				"lvl4": [
-					{"artist": "The Car Is On Fire", "marked": true, "order": 1, "firstOnLine": true},
+					{"artist": "The Car Is On Fire", "marked": true, "order": 1, "firstOnLine": "lineup"},
 					{"artist": "Łąki Łan", "order": 2},
-					{"artist": "Skinny Patrini", "marked": true, "order": 10, "firstOnLine": true},
-					{"artist": "Old Time Radio", "order": 17, "firstOnLine": true},
+					{"artist": "Skinny Patrini", "marked": true, "order": 10, "firstOnLine": "lineup"},
+					{"artist": "Old Time Radio", "order": 17, "firstOnLine": "lineup"},
 					{"artist": "Wariacje.pl", "order": 22},
 					{"artist": "Grabek", "marked": true, "order": 23}
 				],
@@ -54,7 +54,7 @@
 			],
 			"lineup": {
 				"lvl1": [
-					{"artist": "Moby", "order": 1, "firstOnLine": true},
+					{"artist": "Moby", "order": 1, "firstOnLine": "lineup"},
 					{"artist": "Duffy", "marked": true, "order": 2}
 				],
 				"lvl2": [
@@ -67,12 +67,12 @@
 					{"artist": "Hjaltalín", "marked": true, "order": 2},
 					{"artist": "Speed Caravan", "marked": true, "order": 3},
 					{"artist": "Maria Peszek", "marked": true, "order": 5},
-					{"artist": "Kapela Ze Wsi Warszawa", "marked": true, "order": 9, "firstOnLine": true},
+					{"artist": "Kapela Ze Wsi Warszawa", "marked": true, "order": 9, "firstOnLine": "lineup"},
 					{"artist": "Thievery Corporation", "canceled": true, "order": 11}
 				],
 				"lvl4": [
 					{"artist": "Pati Yang", "marked": true, "order": 4},
-					{"artist": "Gaba Kulka", "marked": true, "order": 5, "firstOnLine": true},
+					{"artist": "Gaba Kulka", "marked": true, "order": 5, "firstOnLine": "lineup"},
 					{"artist": "100nka", "order": 15},
 					{"artist": "Paristetris", "order": 18},
 					{"artist": "Wiolonczele z Miasta", "marked": true, "order": 19},
@@ -103,9 +103,9 @@
 					{"artist": "Faith No More", "order": 5}
 				],
 				"lvl2": [
-					{"artist": "Q-Tip", "marked": true, "order": 1, "firstOnLine": true},
+					{"artist": "Q-Tip", "marked": true, "order": 1, "firstOnLine": "lineup"},
 					{"artist": "White Lies", "order": 7},
-					{"artist": "Emiliana Torrini", "order": 10, "firstOnLine": true},
+					{"artist": "Emiliana Torrini", "order": 10, "firstOnLine": "lineup"},
 					{"artist": "M83", "marked": true, "order": 12},
 					{"artist": "Buraka Som Sistema", "marked": true, "order": 14},
 					{"artist": "Madness", "marked": true, "order": 2}
@@ -118,14 +118,14 @@
 					{"artist": "Village Kollektiv", "order": 3},
 					{"artist": "Kamp!", "marked": true, "order": 9},
 					{"artist": "Kormorany", "marked": true, "order": 12},
-					{"artist": "Szelest Spadających Papierków", "order": 13, "firstOnLine": true},
+					{"artist": "Szelest Spadających Papierków", "order": 13, "firstOnLine": "lineup"},
 					{"artist": "Betty Be", "marked": true, "order": 16},
 					{"artist": "Dagadana", "marked": true, "order": 20}
 				],
 				"others": [
 					{"artist": "Kawałek Kulki", "marked": true, "order": 3},
 					{"artist": "Twilite", "marked": true, "order": 4},
-					{"artist": "Jazzus", "order": 7, "firstOnLine": true},
+					{"artist": "Jazzus", "order": 7, "firstOnLine": "lineup"},
 					{"artist": "Enchantia", "marked": true, "order": 9},
 					{"artist": "Berlin Calling", "visible": false},
 					{"artist": "Heima", "visible": false},
@@ -143,21 +143,21 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Kings of Leon", "decorator": "promoted", "order": 1, "firstOnLine": true},
-					{"artist": "Placebo", "order": 3, "firstOnLine": true},
+					{"artist": "Kings of Leon", "decorator": "promoted", "order": 1, "firstOnLine": "lineup"},
+					{"artist": "Placebo", "order": 3, "firstOnLine": "lineup"},
 					{"artist": "The Prodigy", "marked": true, "order": 4}
 				],
 				"lvl1": [
 					{"artist": "Lily Allen", "order": 3}
 				],
 				"lvl2": [
-					{"artist": "The Ting Tings", "marked": true, "order": 6, "firstOnLine": true},
+					{"artist": "The Ting Tings", "marked": true, "order": 6, "firstOnLine": "lineup"},
 					{"artist": "Santigold", "order": 8},
 					{"artist": "Fat Freddy's Drop", "canceled": true, "decorator": "collapsed", "order": 15}
 				],
 				"lvl3": [
-					{"artist": "Jazzanova (live)", "order": 1, "firstOnLine": true},
-					{"artist": "Priscilla Ahn", "order": 4, "firstOnLine": true},
+					{"artist": "Jazzanova (live)", "order": 1, "firstOnLine": "lineup"},
+					{"artist": "Priscilla Ahn", "order": 4, "firstOnLine": "lineup"},
 					{"artist": "O.S.T.R.", "marked": true, "order": 6}
 				],
 				"lvl4": [
@@ -166,11 +166,11 @@
 					{"artist": "Kumka Olik", "order": 8},
 					{"artist": "Contemporary Noise Sextet", "order": 11},
 					{"artist": "Lady Aarp", "order": 14},
-					{"artist": "Mass Kotki", "order": 21, "firstOnLine": true},
+					{"artist": "Mass Kotki", "order": 21, "firstOnLine": "lineup"},
 					{"artist": "Gadająca Tykwa", "marked": true, "order": 25}
 				],
 				"others": [
-					{"artist": "Iowa Super Soccer", "order": 1, "firstOnLine": true},
+					{"artist": "Iowa Super Soccer", "order": 1, "firstOnLine": "lineup"},
 					{"artist": "The Calog", "order": 6},
 					{"artist": "Plug and Play", "marked": true, "order": 8},
 					{"artist": "Letko", "order": 11},

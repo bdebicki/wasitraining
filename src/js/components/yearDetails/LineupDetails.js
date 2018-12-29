@@ -1,10 +1,10 @@
 import Lineup from '../../classes/Lineup';
-import { ARTIST_KEYS, ARTIST_SLICES_PROPS } from '../../enums/artist';
+import { ARTIST_KEYS, ARTIST_SLICES_PROPS, ARTIST_ON_LINE_KEYS } from '../../enums/artist';
 import { ARTIST_CANCELED } from '../../enums/content';
 import LINEUP_LEVELS from '../../enums/lineupLevels';
 import { OTHER_ARTISTS, LOCATION_TYPES } from '../../enums/otherArtists';
 import DIALOGBOX from '../../utils/elementHandlers/dialogbox';
-import EDITION from './elementHandlers/edition';
+import { EDITION } from './elementHandlers/edition';
 import { LINEUP } from './elementHandlers/lineup';
 import LINK from '../../elementHandlers/link';
 import addElement from '../../utils/addElement';
@@ -125,6 +125,8 @@ export default class LineupDetails extends Lineup {
 	}
 
 	static getArtistClassNames(artist, artistLvl) {
+		const isFirstOnLine = artist[ARTIST_KEYS.FIRST_ON_LINE] === ARTIST_ON_LINE_KEYS.LINEUP;
+		const isLastOnLine = artist[ARTIST_KEYS.LAST_ON_LINE] === ARTIST_ON_LINE_KEYS.LINEUP;
 		let classNames = [
 			LINEUP.ARTIST_CLASS,
 			getAlignClassName(artist[ARTIST_KEYS.ALIGNED]),
@@ -132,8 +134,8 @@ export default class LineupDetails extends Lineup {
 			getModifierClassNameByKey(artist[ARTIST_KEYS.DECORATOR]),
 			getModifierClassNameByKey(artist[ARTIST_KEYS.MARKED] ? ARTIST_KEYS.MARKED : false),
 			getModifierClassNameByKey(artist[ARTIST_KEYS.MULTILINE] ? ARTIST_KEYS.MULTILINE : false),
-			getModifierClassNameByKey(artist[ARTIST_KEYS.FIRST_ON_LINE] ? ARTIST_KEYS.FIRST_ON_LINE : false),
-			getModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_LINE] ? ARTIST_KEYS.LAST_ON_LINE : false),
+			getModifierClassNameByKey(isFirstOnLine ? ARTIST_KEYS.FIRST_ON_LINE : false),
+			getModifierClassNameByKey(isLastOnLine ? ARTIST_KEYS.LAST_ON_LINE : false),
 			getModifierClassNameByKey(artist[ARTIST_KEYS.LAST_ON_DAY] ? ARTIST_KEYS.LAST_ON_DAY : false),
 		];
 

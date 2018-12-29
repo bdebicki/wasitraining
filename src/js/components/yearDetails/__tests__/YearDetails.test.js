@@ -1,7 +1,7 @@
 import cleanDOM from '../../../../../tests/utils/cleanDOM';
 import rainyEdition from '../../../../../tests/__mocks__/edition-notSort-noMergeArtists.json';
 import sunnyEdition from '../../../../../tests/__mocks__/edition-customOrderExceptHeadliners-mainByDaysAndMergeRest.json';
-import EDITION from '../elementHandlers/edition';
+import { EDITION } from '../elementHandlers/edition';
 import RAIN from '../elementHandlers/rain';
 import { LINEUP } from '../elementHandlers/lineup';
 import YearDetails from '../YearDetails';

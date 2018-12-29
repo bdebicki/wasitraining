@@ -1,36 +1,36 @@
 [
 	{
 		"headliners": ["Radiohead"],
-		"lvl1": [{"artist": "James Blake", "firstOnLine": true}, "Royal Blood"],
-		"lvl2": [{"artist": "Michael Kiwanuka", "firstOnLine": true}, "Rae Sremmurd", "Solange"],
+		"lvl1": [{"artist": "James Blake", "firstOnLine": "lineup"}, "Royal Blood"],
+		"lvl2": [{"artist": "Michael Kiwanuka", "firstOnLine": "lineup"}, "Rae Sremmurd", "Solange"],
 		"others": [
-			{"artist": "Arca (DJ Set)", "sliceDecorator": {"slice": "(DJ Set)", "style": "down"}, "firstOnLine": true},
+			{"artist": "Arca (DJ Set)", "sliceDecorator": {"slice": "(DJ Set)", "style": "down"}, "firstOnLine": "lineup"},
 			"Black Coffee",
 			{"artist": "Natalia Przybysz", "forceOrder": 3},
 			{"artist": "Quebonafide", "forceOrder": 4},
-			{"artist": "Sorry Boys", "forceOrder": 5, "firstOnLine": true},
+			{"artist": "Sorry Boys", "forceOrder": 5, "firstOnLine": "lineup"},
 			"Enzu",
 			"Flirtini",
 			{"artist": "Wacław Zimpel/Kuba Ziołek", "forceOrder": 8},
-			{"artist": "Holak", "forceOrder": 9, "firstOnLine": true},
+			{"artist": "Holak", "forceOrder": 9, "firstOnLine": "lineup"},
 			"Gverilla",
 			"Mery Spolsky"
 		]
 	}, {
 		"headliners": ["Foo Fighters"],
 		"lvl1": [
-			{"artist": "G-Eazy", "firstOnLine": true},
+			{"artist": "G-Eazy", "firstOnLine": "lineup"},
 			{"artist": "The Kills", "sortBy": "Kills"},
 			"M.I.A."
 		],
 		"lvl2": [
-			{"artist": "Charli XCX", "firstOnLine": true},
+			{"artist": "Charli XCX", "firstOnLine": "lineup"},
 			"Jimmy Eat World",
 			"Trentemøller"
 		],
 		"others": [
-			{"artist": "A_GIM", "firstOnLine": true},
-			{"artist": "Bownik", "firstOnLine": true, "forceOrder": 6},
+			{"artist": "A_GIM", "firstOnLine": "lineup"},
+			{"artist": "Bownik", "firstOnLine": "lineup", "forceOrder": 6},
 			"Bitamina",
 			"Blanck Mass",
 			"Daniel Avery",
@@ -43,45 +43,45 @@
 		]
 	}, {
 		"headliners": ["The Weekend"],
-		"lvl1": [{"artist": "Mac Miller", "firstOnLine": true}, "Moderat", "Prophets of Rage"],
+		"lvl1": [{"artist": "Mac Miller", "firstOnLine": "lineup"}, "Moderat", "Prophets of Rage"],
 		"lvl2": [
-			{"artist": "Brodka", "firstOnLine": true},
+			{"artist": "Brodka", "firstOnLine": "lineup"},
 			{"artist": "The Dumplings", "sortBy": "Dumplings"},
 			"Grammatik",
-			{"artist": "JMSN", "firstOnLine": true},
+			{"artist": "JMSN", "firstOnLine": "lineup"},
 			"Kiasmos",
 			"Tiga",
 			"Warpaint"
 		],
 		"others": [
-			{"artist": "Bisz/Radex", "firstOnLine": true},
+			{"artist": "Bisz/Radex", "firstOnLine": "lineup"},
 			"Daria Zawiałow",
 			"Dasein",
 			"Deas",
 			"Hańba!",
-			{"artist": "Majlo", "firstOnLine": true},
+			{"artist": "Majlo", "firstOnLine": "lineup"},
 			"Ralph Kaminski"
 		]
 	}, {
-		"headliners": [{"artist": "The XX", "firstOnLine": true}, "Lorde"],
-		"lvl1": [{"artist": "George Ezra", "firstOnLine": true}, "Taco Hemingway"],
+		"headliners": [{"artist": "The XX", "firstOnLine": "lineup"}, "Lorde"],
+		"lvl1": [{"artist": "George Ezra", "firstOnLine": "lineup"}, "Taco Hemingway"],
 		"lvl2": [
-			{"artist": "Dua Lipa", "firstOnLine": true},
+			{"artist": "Dua Lipa", "firstOnLine": "lineup"},
 			"Nicolas Jaar",
 			{"artist": "Tyga", "forceOrder": 3},
 			"O.S.T.R."
 		],
 		"others": [
-			{"artist": "Benjamin Booker", "firstOnLine": true},
+			{"artist": "Benjamin Booker", "firstOnLine": "lineup"},
 			"Buslav",
 			"Duit",
 			"Julia Pietrucha",
 			"Kevin Morby",
-			{"artist": "Krzysztof Zalewski", "firstOnLine": true},
+			{"artist": "Krzysztof Zalewski", "firstOnLine": "lineup"},
 			"Monki",
 			"Niemoc",
 			"Seltron 400",
-			{"artist": "The Shelters", "firstOnLine": true},
+			{"artist": "The Shelters", "firstOnLine": "lineup"},
 			"Urbanski"
 		]
 	}

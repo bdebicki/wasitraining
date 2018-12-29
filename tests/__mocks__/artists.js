@@ -54,8 +54,8 @@ export const sliceWithoutStyles = {
 	},
 };
 
-export const firstOnLine = { artist: 'Swans', firstOnLine: true };
-export const lastOnLine = { artist: 'Sigur Rós', lastOnLine: true };
+export const firstOnLine = { artist: 'Swans', firstOnLine: 'lineup' };
+export const lastOnLine = { artist: 'Sigur Rós', lastOnLine: 'lineup' };
 export const lastOnDay = { artist: 'Plum', lastOnDay: true };
 export const newLine = {
 	artist: 'Teatr Snów: przedstawienie Republika Marzeń',

@@ -17,20 +17,20 @@
 			"lineup": {
 				"lvl1": [
 					{"artist": "The Raconteurs", "order": 2},
-					{"artist": "Editors", "order": 3, "firstOnLine": true},
+					{"artist": "Editors", "order": 3, "firstOnLine": "lineup"},
 					{"artist": "Roisin Murphy", "order": 4}
 				],
 				"lvl2": [
 					{"artist": "Fischerspooner", "order": 2, "decorator": "expanded"},
 					{"artist": "DeVotchKa", "order": 3, "decorator": "expanded"},
-					{"artist": "The Cribs", "order": 4, "firstOnLine": true},
+					{"artist": "The Cribs", "order": 4, "firstOnLine": "lineup"},
 					{"artist": "Dj Vadim Live", "order": 6},
 					{"artist": "Fujiya & Miyagi", "order": 7}
 				],
 				"lvl3": [
 					{"artist": "Muchy", "order": 2, "decorator": "expanded"},
 					{"artist": "Mitch & Mitch Big Band", "order": 10},
-					{"artist": "Muzykoterapia", "order": 7, "firstOnLine": true, "canceled": true},
+					{"artist": "Muzykoterapia", "order": 7, "firstOnLine": "lineup", "canceled": true},
 					{"artist": "Natu + Envee", "order": 12},
 					{"artist": "L.Stadt", "order": 15}
 				],
@@ -39,13 +39,13 @@
 					{"artist": "Hati", "order": 5},
 					{"artist": "emitter_franczak", "order": 8},
 					{"artist": "Teatr Porywacze Ciał", "order": 11},
-					{"artist": "Teatr Gry i Ludzie", "order": 12, "firstOnLine": true},
+					{"artist": "Teatr Gry i Ludzie", "order": 12, "firstOnLine": "lineup"},
 					{"artist": "Mamadoo", "order": 14},
 					{"artist": "Fire Angels", "order": 15},
 					{"artist": "Pornohagen", "order": 17},
 					{"artist": "Biff", "order": 20},
 					{"artist": "Kleiber", "order": 23},
-					{"artist": "Ziemianie", "order": 24, "firstOnLine": true},
+					{"artist": "Ziemianie", "order": 24, "firstOnLine": "lineup"},
 					{"artist": "Kolorofon", "order": 29},
 					{"artist": "Chill", "visible": false},
 					{"artist": "Harper", "visible": false},
@@ -63,29 +63,29 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Jay-Z", "order": 3, "firstOnLine": true},
+					{"artist": "Jay-Z", "order": 3, "firstOnLine": "lineup"},
 					{"artist": "Interpol", "order": 4}
 				],
 				"lvl1": [
-					{"artist": "Erykah Badu", "order": 1, "firstOnLine": true},
-					{"artist": "Sex Pistols", "order": 6, "firstOnLine": true},
+					{"artist": "Erykah Badu", "order": 1, "firstOnLine": "lineup"},
+					{"artist": "Sex Pistols", "order": 6, "firstOnLine": "lineup"},
 					{"artist": "Beirut", "order": 10, "canceled": true, "decorator": "collapsed"}
 				],
 				"lvl2": [
-					{"artist": "Gentleman & The Far East Band", "displayName": "Gentleman", "order": 1, "firstOnLine": true, "decorator": "expanded"},
+					{"artist": "Gentleman & The Far East Band", "displayName": "Gentleman", "order": 1, "firstOnLine": "lineup", "decorator": "expanded"},
 					{"artist": "Cocorosie", "order": 5}
 				],
 				"lvl3": [
-					{"artist": "Cool Kids Of Death", "order": 1, "firstOnLine": true, "decorator": "expanded"},
+					{"artist": "Cool Kids Of Death", "order": 1, "firstOnLine": "lineup", "decorator": "expanded"},
 					{"artist": "Maria Peszek", "order": 5, "decorator": "expanded"},
 					{"artist": "Everything is made in China", "order": 9},
-					{"artist": "Masala Soundsystem", "order": 11, "firstOnLine": true},
+					{"artist": "Masala Soundsystem", "order": 11, "firstOnLine": "lineup"},
 					{"artist": "Loco Star", "order": 13},
 					{"artist": "Rotofobia", "order": 14},
 					{"artist": "Karimski Club", "order": 17}
 				],
 				"others": [
-					{"artist": "Tymański Yass Ensemble", "order": 1, "firstOnLine": true},
+					{"artist": "Tymański Yass Ensemble", "order": 1, "firstOnLine": "lineup"},
 					{"artist": "Alamut", "order": 4},
 					{"artist": "Wolfram", "order": 7},
 					{"artist": "Klan Grus", "order": 13},
@@ -112,7 +112,7 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Massive Attack", "order": 1, "firstOnLine": true},
+					{"artist": "Massive Attack", "order": 1, "firstOnLine": "lineup"},
 					{"artist": "The Chemical Brothers", "order": 2}
 				],
 				"lvl1": [
@@ -126,21 +126,21 @@
 					{"artist": "Ścianka", "order": 6, "decorator": "expanded"},
 					{"artist": "Őszibarack", "order": 8},
 					{"artist": "Kobiety", "order": 12},
-					{"artist": "Hatfinats", "order": 16, "firstOnLine": true},
+					{"artist": "Hatfinats", "order": 16, "firstOnLine": "lineup"},
 					{"artist": "Żywiołak", "order": 18},
 					{"artist": "Benzyna", "order": 19}
 				],
 				"others": [
 					{"artist": "RH+ audiowizualna grupa przyjaciół", "order": 3},
-					{"artist": "Echo TM", "order": 6, "firstOnLine": true},
+					{"artist": "Echo TM", "order": 6, "firstOnLine": "lineup"},
 					{"artist": "C.H. District", "order": 9},
 					{"artist": "Teatr Ósmego Dnia: \"Arka\"", "displayName": "Teatr Ósmego Dnia", "order": 10},
-					{"artist": "Polpo Motel", "order": 18, "firstOnLine": true},
+					{"artist": "Polpo Motel", "order": 18, "firstOnLine": "lineup"},
 					{"artist": "Dav Intergalactic", "order": 21},
 					{"artist": "Bajzel", "order": 26},
 					{"artist": "Setting the Woods on Fire", "order": 28},
 					{"artist": "Gasoline", "order": 27},
-					{"artist": "Teatr Gry i Ludzie", "visible": false, "firstOnLine": true},
+					{"artist": "Teatr Gry i Ludzie", "visible": false, "firstOnLine": "lineup"},
 					{"artist": "Teatr Porywacze Ciał", "visible": false},
 					{"artist": "Klan Grus", "visible": false},
 					{"artist": "Mamadoo", "visible": false},

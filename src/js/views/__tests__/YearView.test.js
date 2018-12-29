@@ -2,7 +2,7 @@ import cleanDOM from '../../../../tests/utils/cleanDOM';
 import prepareContainer from '../../../../tests/utils/prepareContainer';
 import spyConsole from '../../../../tests/utils/spyConsole';
 import complexEditions from '../../../../tests/utils/complexEditions';
-import EDITION from '../../components/yearDetails/elementHandlers/edition';
+import { EDITION } from '../../components/yearDetails/elementHandlers/edition';
 import HEADER from '../../components/header/elementHandlers/header';
 import LAYOUT from '../../elementHandlers/layout';
 import TIMELINE from '../../components/timeline/elementHandlers/timeline';

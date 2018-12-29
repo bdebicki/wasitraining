@@ -1,4 +1,4 @@
-import EDITION from './elementHandlers/edition';
+import { EDITION } from './elementHandlers/edition';
 import addElement from '../../utils/addElement';
 import Edition from '../../classes/Edition';
 import Headliners from '../../classes/Headliners';
