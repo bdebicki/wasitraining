@@ -164,7 +164,7 @@ export default class LineupDetails extends Lineup {
 		return artistName;
 	}
 
-	static isArtistFirstOnLine(artist, target) {
+	static artistFirstOnLineDecorator(artist, target) {
 		const newLine = addElement('li', {
 			classNames: LINEUP.ARTISTS_NEW_LINE_ELEMENT_CLASS,
 		});
@@ -172,14 +172,14 @@ export default class LineupDetails extends Lineup {
 		target.appendChild(newLine);
 	}
 
-	static isArtistBreakLine(artist, target) {
+	static artistBreakLineDecorator(artist, target) {
 		const previousEl = target.querySelector('li:last-child');
 
 		previousEl.classList.add(getModifierClassNameByKey(ARTIST_KEYS.NEXT_LINE_ARTIST));
 		previousEl.dataset[ARTIST_KEYS.NEXT_LINE_ARTIST] = artist[ARTIST_KEYS.SLICE_DECORATOR][ARTIST_SLICES_PROPS.SLICE]; // eslint-disable-line max-len
 	}
 
-	static isArtistCanceled(artist, artistName, target) {
+	static artistCanceledDecorator(artist, artistName, target) {
 		const targetEl = target;
 		const span = addElement('span', {
 			children: artistName,
@@ -222,15 +222,15 @@ export default class LineupDetails extends Lineup {
 		}
 
 		if ((isFirstOnLine && index > 0) || isNewLine) {
-			LineupDetails.isArtistFirstOnLine(artistObj, fragment);
+			LineupDetails.artistFirstOnLineDecorator(artistObj, fragment);
 		}
 
 		if (isBreakLine) {
-			LineupDetails.isArtistBreakLine(artistObj, target);
+			LineupDetails.artistBreakLineDecorator(artistObj, target);
 		}
 
 		if (isCanceled) {
-			LineupDetails.isArtistCanceled(artistObj, artistName, li);
+			LineupDetails.artistCanceledDecorator(artistObj, artistName, li);
 		}
 
 		if (hasSliceDecorator) {
