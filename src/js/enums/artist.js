@@ -31,7 +31,7 @@ export const ARTIST_SLICES_PROPS = {
 	STYLE: 'style',
 };
 
-export const ARTIST_ON_LINE_KEYS = {
+export const ARTIST_ON_LINE_VALUES = {
 	LINEUP: 'lineup',
 	HEADLINERS: 'headliners',
 };
