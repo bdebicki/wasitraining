@@ -11,14 +11,14 @@
 		line-height: 24px;
 	}
 
-	.headliners__headliner {
-		&:not(:last-of-type):not(.headliners--day2) {
+	.headliner {
+		&:not(:last-of-type):not(.headliner--day2) {
 			&:after {
 				content: @edition2017-separatorStyle;
 				color: @edition2017-leadColor;
 			}
 
-			&:not(.headliners--day4) {
+			&:not(.headliner--day4) {
 				&:after {
 					margin-right: @edition2017-separatorSpace;
 					margin-left: @edition2017-separatorSpace;

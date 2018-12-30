@@ -33,22 +33,22 @@ exports[`yeaar details - edition details render code parts renders composed edit
       class="shortLineup__headliners"
     >
       <li
-        class="headliners__headliner headliners--day1"
+        class="headliner headliner--day1"
       >
         Blur
       </li>
       <li
-        class="headliners__headliner headliners--day2"
+        class="headliner headliner--day2"
       >
         Arctic Monkeys
       </li>
       <li
-        class="headliners__headliner headliners--day3"
+        class="headliner headliner--day3"
       >
         Queens of the Stone Age
       </li>
       <li
-        class="headliners__headliner headliners--day4"
+        class="headliner headliner--day4"
       >
         Kings of Leon
       </li>
@@ -116,22 +116,22 @@ exports[`yeaar details - edition details render code parts renders headliners se
   class="shortLineup__headliners"
 >
   <li
-    class="headliners__headliner headliners--day1"
+    class="headliner headliner--day1"
   >
     Blur
   </li>
   <li
-    class="headliners__headliner headliners--day2"
+    class="headliner headliner--day2"
   >
     Arctic Monkeys
   </li>
   <li
-    class="headliners__headliner headliners--day3"
+    class="headliner headliner--day3"
   >
     Queens of the Stone Age
   </li>
   <li
-    class="headliners__headliner headliners--day4"
+    class="headliner headliner--day4"
   >
     Kings of Leon
   </li>
@@ -171,22 +171,22 @@ exports[`yeaar details - edition details update actions update edition details 1
       class="shortLineup__headliners"
     >
       <li
-        class="headliners__headliner headliners--day1"
+        class="headliner headliner--day1"
       >
         P!nk
       </li>
       <li
-        class="headliners__headliner headliners--day1"
+        class="headliner headliner--day1"
       >
         Cypress Hill
       </li>
       <li
-        class="headliners__headliner headliners--day2"
+        class="headliner headliner--day2"
       >
         Massive Attack
       </li>
       <li
-        class="headliners__headliner headliners--day2"
+        class="headliner headliner--day2"
       >
         Goldfrapp
       </li>
