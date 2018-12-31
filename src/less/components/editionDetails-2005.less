@@ -16,7 +16,7 @@
 	}
 
 	.headliner {
-		&:not(:first-of-type):not(:nth-child(4)) {
+		&:not(.headliner--firstOnLine) {
 			&:before {
 				content: @edition2005-separatorStyle-daily;
 				color: @gray-lighten10;

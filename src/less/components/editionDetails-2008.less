@@ -16,8 +16,7 @@
 	.headliner {
 		display: inline-flex;
 
-		&--day1:last-of-type:before ,
-		&--day2:first-of-type:after {
+		&:not(.headliner--firstOnLine):before {
 			content: @edition2008-separatorStyle;
 			margin-right: @separatorSpacing;
 			margin-left: @separatorSpacing;

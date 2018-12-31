@@ -19,9 +19,8 @@
 	.headliner {
 		display: inline-flex;
 
-		&--day1,
-		&--day2 {
-			&:after {
+		&:not(.headliner--firstOnLine) {
+			&:before {
 				content: @edition2010-separatorStyle;
 				margin-right: @separatorSpacing;
 				margin-left: @separatorSpacing;

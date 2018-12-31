@@ -4,7 +4,7 @@ import { ARTIST_ON_LINE_VALUES } from '../../../enums/artist';
 
 const blockToBuilderMap = {
 	[ARTIST_ON_LINE_VALUES.LINEUP]: lineupClassBuilder.artist,
-	[ARTIST_ON_LINE_VALUES.HEADLINERS]: editionClassBuilders.headlines,
+	[ARTIST_ON_LINE_VALUES.HEADLINERS]: editionClassBuilders.headliner,
 };
 
 function prepareClassName(modifierName, blockName) {

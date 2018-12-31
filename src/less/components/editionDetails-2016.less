@@ -10,13 +10,14 @@
 		line-height: 23px;
 	}
 
-	.headliner--day3 + .headliner--day3,
-	.headliner--day4 + .headliner--day4 {
-		&:before {
-			content: @edition2016-separatorStyle;
-			margin-right: @edition2016-separatorSpace;
-			margin-left: @edition2016-separatorSpace;
-			color: @edition2016-leadColor;
+	.headliner {
+		&:not(.headliner--firstOnLine) {
+			&:before {
+				content: @edition2016-separatorStyle;
+				margin-right: @edition2016-separatorSpace;
+				margin-left: @edition2016-separatorSpace;
+				color: @edition2016-leadColor;
+			}
 		}
 	}
 }

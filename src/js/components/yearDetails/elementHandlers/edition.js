@@ -2,7 +2,6 @@ const editionClassBuilders = {
 	details: 'editionDetails',
 	lineup: 'shortLineup',
 	headliner: 'headliner',
-	headlines: 'headliners',
 };
 const EDITION = {
 	EDITION_DETAILS_ID: editionClassBuilders.details,
@@ -13,7 +12,7 @@ const EDITION = {
 	DATES_CLASS: `${editionClassBuilders.details}__date`,
 	LINEUP_CLASS: editionClassBuilders.lineup,
 	LINEUP_EDITION_CLASS: `${editionClassBuilders.lineup}--edition`,
-	HEADLINERS_CLASS: `${editionClassBuilders.lineup}__${editionClassBuilders.headlines}`,
+	HEADLINERS_CLASS: `${editionClassBuilders.lineup}__headliners`,
 	HEADLINER_CLASS: editionClassBuilders.headliner,
 	HEADLINERS_DAY_CLASS: `${editionClassBuilders.headliner}--day`,
 	LINEUP_LINK_CLASS: `${editionClassBuilders.lineup}__detailsLink`,

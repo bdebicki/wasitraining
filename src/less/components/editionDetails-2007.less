@@ -17,7 +17,7 @@
 	.headliner {
 		display: inline-flex;
 
-		&--day1 {
+		&:not(.headliner--firstOnLine) {
 			&:before {
 				content: @edition2007-separatorStyle-alternative;
 				color: @gray-lighten10;

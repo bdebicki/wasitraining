@@ -63,7 +63,7 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Jay-Z", "order": 3, "firstOnLine": "lineup"},
+					{"artist": "Jay-Z", "order": 3,  "firstOnLine": ["headliners", "lineup"]},
 					{"artist": "Interpol", "order": 4}
 				],
 				"lvl1": [
@@ -112,7 +112,7 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Massive Attack", "order": 1, "firstOnLine": "lineup"},
+					{"artist": "Massive Attack", "order": 1,  "firstOnLine": ["headliners", "lineup"]},
 					{"artist": "The Chemical Brothers", "order": 2}
 				],
 				"lvl1": [

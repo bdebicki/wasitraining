@@ -16,7 +16,7 @@
 				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2016"
 			],
 			"lineup": {
-				"headliners": [{"artist": "Florence+The Machine", "firstOnLine": "lineup"}],
+				"headliners": [{"artist": "Florence+The Machine", "firstOnLine": ["headliners", "lineup"]}],
 				"lvl1": [
 					"Mac Demarco",
 					"PJ Harvey",
@@ -51,7 +51,7 @@
 				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2016"
 			],
 			"lineup": {
-				"headliners": [{"artist": "Red Hot Chili Peppers", "firstOnLine": "lineup"}],
+				"headliners": [{"artist": "Red Hot Chili Peppers", "firstOnLine": ["headliners", "lineup"]}],
 				"lvl1": ["Beirut", "Caribou", "Foals", "M83"],
 				"lvl2": ["KAMP!", "Maria Peszek", "Łona Webber", "Rebeka", "Section Boyz"],
 				"others": [
@@ -73,7 +73,7 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Lcd Soundsystem", "firstOnLine": "lineup"},
+					{"artist": "Lcd Soundsystem", "firstOnLine": ["headliners", "lineup"]},
 					"Sigur Rós"
 				],
 				"lvl1": [
@@ -115,7 +115,7 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Pharrell Williams", "firstOnLine": "lineup"},
+					{"artist": "Pharrell Williams", "firstOnLine": ["headliners", "lineup"]},
 					"Kygo"
 				],
 				"lvl1": [

@@ -17,7 +17,7 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Pearl Jam", "order": 1, "firstOnLine": "lineup"}
+					{"artist": "Pearl Jam", "order": 1,  "firstOnLine": ["headliners", "lineup"]}
 				],
 				"lvl2": [
 					{"artist": "Ben Harper and Relentless7", "marked": true, "order": 2},
@@ -59,7 +59,7 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Massive Attack", "marked": true, "order": 3, "firstOnLine": "lineup"}
+					{"artist": "Massive Attack", "marked": true, "order": 3,  "firstOnLine": ["headliners", "lineup"]}
 				],
 				"lvl1": [
 					{"artist": "Pavement", "marked": true, "order": 1, "firstOnLine": "lineup"},

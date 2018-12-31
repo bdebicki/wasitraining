@@ -1,9 +1,12 @@
+import { ARTIST_KEYS, ARTIST_ON_LINE_VALUES } from '../../enums/artist';
 import { EDITION } from './elementHandlers/edition';
+import getModifierClassNameByKey from './classNames/getModifierClassNameByKey';
+import getFirstOnLineValue from './helpers/getFirstOnLineValue';
+import getLastOnLineValue from './helpers/getLastOnLineValue';
 import addElement from '../../utils/addElement';
 import Edition from '../../classes/Edition';
 import Headliners from '../../classes/Headliners';
 import LineupDetails from './LineupDetails';
-import { ARTIST_KEYS } from '../../enums/artist';
 
 export default class EditionDetails extends Edition {
 	constructor(editionId) {
@@ -30,12 +33,22 @@ export default class EditionDetails extends Edition {
 		const fragment = document.createDocumentFragment();
 
 		this.headlinersDetails.headliners.forEach((headliner) => {
+			const isFirstOnLine = getFirstOnLineValue(headliner, ARTIST_ON_LINE_VALUES.HEADLINERS)
+				? ARTIST_KEYS.FIRST_ON_LINE : false;
+			const isLastOnLine = getLastOnLineValue(headliner, ARTIST_ON_LINE_VALUES.HEADLINERS)
+				? ARTIST_KEYS.LAST_ON_LINE : false;
 			const headlinerName = headliner[ARTIST_KEYS.DISPLAY_NAME]
 				? headliner[ARTIST_KEYS.DISPLAY_NAME]
 				: headliner[ARTIST_KEYS.ARTIST];
+			const headlinerClassName = [
+				EDITION.HEADLINER_CLASS,
+				`${EDITION.HEADLINERS_DAY_CLASS}${headliner[ARTIST_KEYS.DAY]}`,
+				getModifierClassNameByKey(isFirstOnLine, ARTIST_ON_LINE_VALUES.HEADLINERS),
+				getModifierClassNameByKey(isLastOnLine, ARTIST_ON_LINE_VALUES.HEADLINERS),
+			];
 			const li = addElement('li', {
 				children: headlinerName,
-				classNames: [EDITION.HEADLINER_CLASS, `${EDITION.HEADLINERS_DAY_CLASS}${headliner[ARTIST_KEYS.DAY]}`],
+				classNames: headlinerClassName,
 			});
 
 			fragment.appendChild(li);

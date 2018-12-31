@@ -143,8 +143,8 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Kings of Leon", "decorator": "promoted", "order": 1, "firstOnLine": "lineup"},
-					{"artist": "Placebo", "order": 3, "firstOnLine": "lineup"},
+					{"artist": "Kings of Leon", "decorator": "promoted", "order": 1,  "firstOnLine": ["headliners", "lineup"]},
+					{"artist": "Placebo", "order": 3,  "firstOnLine": ["headliners", "lineup"]},
 					{"artist": "The Prodigy", "marked": true, "order": 4}
 				],
 				"lvl1": [
