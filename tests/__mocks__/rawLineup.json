@@ -17,7 +17,7 @@
 			"Mery Spolsky"
 		]
 	}, {
-		"headliners": ["Foo Fighters"],
+		"headliners": [{"artist": "Foo Fighters", "lastOnLine": "headliners"}],
 		"lvl1": [
 			{"artist": "G-Eazy", "firstOnLine": "lineup"},
 			{"artist": "The Kills", "sortBy": "Kills"},
@@ -63,7 +63,10 @@
 			"Ralph Kaminski"
 		]
 	}, {
-		"headliners": [{"artist": "The XX", "firstOnLine": "lineup"}, "Lorde"],
+		"headliners": [
+			{"artist": "The XX", "firstOnLine": "lineup"},
+			{"artist": "Lorde", "lastOnLine": "headliners"}
+		],
 		"lvl1": [{"artist": "George Ezra", "firstOnLine": "lineup"}, "Taco Hemingway"],
 		"lvl2": [
 			{"artist": "Dua Lipa", "firstOnLine": "lineup"},

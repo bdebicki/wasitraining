@@ -88,7 +88,7 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Björk", "order": 1, "firstOnLine": "lineup"}
+					{"artist": "Björk", "order": 1,  "firstOnLine": ["headliners", "lineup"]}
 				],
 				"lvl1": [
 					{"artist": "Bloc Party", "order": 3},

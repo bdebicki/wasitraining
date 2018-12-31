@@ -16,8 +16,8 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Snoop Dogg", "decorator": "promoted", "firstOnLine": "lineup"},
-					{"artist": "Fatboy Slim", "decorator": "promoted", "canceled": true},
+					{"artist": "Snoop Dogg", "decorator": "promoted",  "firstOnLine": ["headliners", "lineup"]},
+					{"artist": "Fatboy Slim", "decorator": "promoted"},
 					{"artist": "Faithless", "decorator": "promoted", "firstOnLine": "lineup"}
 				],
 				"others": [
@@ -43,7 +43,7 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "The White Stripes", "firstOnLine": "lineup"},
+					{"artist": "The White Stripes",  "firstOnLine": ["headliners", "lineup"]},
 					"Lauryn Hill",
 					{"artist": "Underworld", "firstOnLine": "lineup"}
 				],

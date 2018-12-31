@@ -50,7 +50,10 @@ Array [
   },
   Object {
     "headliners": Array [
-      "Foo Fighters",
+      Object {
+        "artist": "Foo Fighters",
+        "lastOnLine": "headliners",
+      },
     ],
     "lvl1": Array [
       Object {
@@ -137,7 +140,10 @@ Array [
         "artist": "The XX",
         "firstOnLine": "lineup",
       },
-      "Lorde",
+      Object {
+        "artist": "Lorde",
+        "lastOnLine": "headliners",
+      },
     ],
     "lvl1": Array [
       Object {
@@ -363,7 +369,10 @@ Object {
   "headliners": Array [
     Object {
       "artist": "Björk",
-      "firstOnLine": "lineup",
+      "firstOnLine": Array [
+        "headliners",
+        "lineup",
+      ],
     },
     "Beastie Boys",
     "Muse",
@@ -490,11 +499,13 @@ Object {
         Object {
           "artist": "Snoop Dogg",
           "decorator": "promoted",
-          "firstOnLine": "lineup",
+          "firstOnLine": Array [
+            "headliners",
+            "lineup",
+          ],
         },
         Object {
           "artist": "Fatboy Slim",
-          "canceled": true,
           "decorator": "promoted",
         },
         Object {
@@ -508,7 +519,10 @@ Object {
       "headliners": Array [
         Object {
           "artist": "The White Stripes",
-          "firstOnLine": "lineup",
+          "firstOnLine": Array [
+            "headliners",
+            "lineup",
+          ],
         },
         "Lauryn Hill",
         Object {

@@ -901,14 +901,8 @@ exports[`lineup details tests decorated lineup by type main artists by days and 
     </li>
     <li
       class="lineupArtists__artist lineupArtists__artist--headliner lineupArtists__artist--promoted"
-      data-canceled-artist="Fatboy Slim"
-      title="This artist's performance has been canceled"
     >
-      <span
-        class="lineupArtists__artist--canceled"
-      >
-        Fatboy Slim
-      </span>
+      Fatboy Slim
     </li>
     <li
       class="lineupArtists__newLine"

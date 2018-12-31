@@ -40,7 +40,7 @@
 				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2017"
 			],
 			"lineup": {
-				"headliners": ["Foo Fighters"],
+				"headliners": [{"artist": "Foo Fighters", "lastOnLine": "headliners"}],
 				"lvl1": [
 					{"artist": "G-Eazy", "firstOnLine": "lineup"},
 					{"artist": "The Kills", "sortBy": "Kills"},
@@ -102,7 +102,10 @@
 				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2017"
 			],
 			"lineup": {
-				"headliners": [{"artist": "The XX", "firstOnLine": "lineup"}, "Lorde"],
+				"headliners": [
+					{"artist": "The XX", "firstOnLine": "lineup"},
+					{"artist": "Lorde", "lastOnLine": "headliners"}
+				],
 				"lvl1": [{"artist": "George Ezra", "firstOnLine": "lineup"}, "Taco Hemingway"],
 				"lvl2": [
 					{"artist": "Dua Lipa", "firstOnLine": "lineup"},

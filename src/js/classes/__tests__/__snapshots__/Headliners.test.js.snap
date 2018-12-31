@@ -6,7 +6,10 @@ Array [
     "artist": "Pink",
     "day": 1,
     "displayName": "P!nk",
-    "firstOnLine": "lineup",
+    "firstOnLine": Array [
+      "headliners",
+      "lineup",
+    ],
     "line": 2,
   },
   Object {
@@ -17,7 +20,10 @@ Array [
   Object {
     "artist": "Massive Attack",
     "day": 2,
-    "firstOnLine": "lineup",
+    "firstOnLine": Array [
+      "headliners",
+      "lineup",
+    ],
     "line": 2,
   },
   Object {
@@ -54,7 +60,10 @@ Array [
   Object {
     "artist": "Björk",
     "day": 2,
-    "firstOnLine": "lineup",
+    "firstOnLine": Array [
+      "headliners",
+      "lineup",
+    ],
     "order": 1,
   },
   Object {
@@ -76,7 +85,15 @@ Array [
     "artist": "Snoop Dogg",
     "day": 1,
     "decorator": "promoted",
-    "firstOnLine": "lineup",
+    "firstOnLine": Array [
+      "headliners",
+      "lineup",
+    ],
+  },
+  Object {
+    "artist": "Fatboy Slim",
+    "day": 1,
+    "decorator": "promoted",
   },
   Object {
     "artist": "Faithless",
@@ -87,7 +104,10 @@ Array [
   Object {
     "artist": "The White Stripes",
     "day": 2,
-    "firstOnLine": "lineup",
+    "firstOnLine": Array [
+      "headliners",
+      "lineup",
+    ],
   },
   Object {
     "artist": "Lauryn Hill",
