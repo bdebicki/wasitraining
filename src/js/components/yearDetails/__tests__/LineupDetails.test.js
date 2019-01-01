@@ -167,7 +167,7 @@ describe('lineup details tests', () => {
 		describe('return artist with position options', () => {
 			it('display artist first on line', () => {
 				// when
-				LineupDetails.decorateArtist(artistsMock.firstOnLine, fragment);
+				LineupDetails.decorateArtist(artistsMock.firstOnLineLineup, fragment);
 
 				// then
 				expect(fragment.querySelector(`.${lineupClassBuilder.artist}--${ARTIST_KEYS.FIRST_ON_LINE}`))
@@ -176,7 +176,7 @@ describe('lineup details tests', () => {
 
 			it('display artist last on line', () => {
 				// when
-				LineupDetails.decorateArtist(artistsMock.lastOnLine, fragment);
+				LineupDetails.decorateArtist(artistsMock.lastOnLineLineup, fragment);
 
 				// then
 				expect(fragment.querySelector(`.${lineupClassBuilder.artist}--${ARTIST_KEYS.LAST_ON_LINE}`))

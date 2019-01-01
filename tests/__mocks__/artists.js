@@ -54,8 +54,12 @@ export const sliceWithoutStyles = {
 	},
 };
 
-export const firstOnLine = { artist: 'Swans', firstOnLine: 'lineup' };
-export const lastOnLine = { artist: 'Sigur Rós', lastOnLine: 'lineup' };
+export const firstOnLineLineup = { artist: 'Swans', firstOnLine: 'lineup' };
+export const firstOnLineHeadliners = { artist: 'Swans', firstOnLine: 'headliners' };
+export const firstOnLineArray = { artist: 'Swans', firstOnLine: ['headliners', 'lineup'] };
+export const lastOnLineLineup = { artist: 'Sigur Rós', lastOnLine: 'lineup' };
+export const lastOnLineHeadliners = { artist: 'Sigur Rós', lastOnLine: 'headliners' };
+export const lastOnLineArray = { artist: 'Sigur Rós', lastOnLine: ['headliners', 'lineup'] };
 export const lastOnDay = { artist: 'Plum', lastOnDay: true };
 export const newLine = {
 	artist: 'Teatr Snów: przedstawienie Republika Marzeń',
