@@ -16,7 +16,7 @@
 				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2013"
 			],
 			"lineup": {
-				"headliners": ["Blur"],
+				"headliners": [{"artist": "Blur", "firstOnLine": "headliners"}],
 				"lvl1": ["Editors", "Crystal Castles", "Kendrick Lamar", "Alt-J", "Savages"],
 				"others": [
 					{"artist": "Vavamuffin", "decorator": "collapsed"},
@@ -46,7 +46,7 @@
 				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=7&year=2013"
 			],
 			"lineup": {
-				"headliners": ["Arctic Monkeys"],
+				"headliners": [{"artist": "Arctic Monkeys", "lastOnLine": "headliners"}],
 				"lvl1": ["Nick Cave & The Bad Seeds"],
 				"lvl2": ["Tame Impala", "Matisyahu", "Junip", "Maria Peszek"],
 				"others": [

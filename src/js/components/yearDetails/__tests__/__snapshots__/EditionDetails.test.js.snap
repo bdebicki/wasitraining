@@ -33,12 +33,12 @@ exports[`yeaar details - edition details render code parts renders composed edit
       class="shortLineup__headliners"
     >
       <li
-        class="headliner headliner--day1"
+        class="headliner headliner--day1 headliner--firstOnLine"
       >
         Blur
       </li>
       <li
-        class="headliner headliner--day2"
+        class="headliner headliner--day2 headliner--lastOnLine"
       >
         Arctic Monkeys
       </li>
@@ -116,12 +116,12 @@ exports[`yeaar details - edition details render code parts renders headliners se
   class="shortLineup__headliners"
 >
   <li
-    class="headliner headliner--day1"
+    class="headliner headliner--day1 headliner--firstOnLine"
   >
     Blur
   </li>
   <li
-    class="headliner headliner--day2"
+    class="headliner headliner--day2 headliner--lastOnLine"
   >
     Arctic Monkeys
   </li>

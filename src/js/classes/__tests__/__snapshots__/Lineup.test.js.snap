@@ -542,7 +542,10 @@ exports[`tests lineup class  test returned lineup sort: false and merge: false 1
 Array [
   Object {
     "headliners": Array [
-      "Blur",
+      Object {
+        "artist": "Blur",
+        "firstOnLine": "headliners",
+      },
     ],
     "lvl1": Array [
       "Editors",
@@ -582,7 +585,10 @@ Array [
   },
   Object {
     "headliners": Array [
-      "Arctic Monkeys",
+      Object {
+        "artist": "Arctic Monkeys",
+        "lastOnLine": "headliners",
+      },
     ],
     "lvl1": Array [
       "Nick Cave & The Bad Seeds",
