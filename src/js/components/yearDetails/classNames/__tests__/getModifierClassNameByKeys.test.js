@@ -14,4 +14,7 @@ describe('test return value from getModifierClassNameByKey function', () => {
 	it('return single class name', () => {
 		expect(getModifierClassNameByKey('collapsed')).toBe('lineupArtists__artist--collapsed');
 	});
+	it('return single class name for headliners', () => {
+		expect(getModifierClassNameByKey('day1', 'headliners')).toBe('headliner--day1');
+	});
 });

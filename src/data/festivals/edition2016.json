@@ -16,25 +16,25 @@
 				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2016"
 			],
 			"lineup": {
-				"headliners": [{"artist": "Florence+The Machine", "firstOnLine": true}],
+				"headliners": [{"artist": "Florence+The Machine", "firstOnLine": ["headliners", "lineup"]}],
 				"lvl1": [
 					"Mac Demarco",
 					"PJ Harvey",
 					"Savages",
-					{"artist": "Skepta", "firstOnLine": true},
+					{"artist": "Skepta", "firstOnLine": "lineup"},
 					"Tame Impala",
-					{"artist": "The Last Shadow Puppets", "firstOnLine": true}
+					{"artist": "The Last Shadow Puppets", "firstOnLine": "lineup"}
 				],
 				"lvl2": [
 					"DJ Tennis",
 					"Flirtini",
-					{"artist": "Lunice", "firstOnLine": true},
+					{"artist": "Lunice", "firstOnLine": "lineup"},
 					"Małpa",
 					"Xxanaxx"
 				],
 				"others": [
 					"Chino",
-					{"artist": "Heroes Get Remembered", "firstOnLine": true},
+					{"artist": "Heroes Get Remembered", "firstOnLine": "lineup"},
 					"Lxmp",
 					"Otsochodzi",
 					"Shy Albatross",
@@ -51,11 +51,11 @@
 				"https://www.timeanddate.com/weather/poland/gdynia/historic?month=6&year=2016"
 			],
 			"lineup": {
-				"headliners": [{"artist": "Red Hot Chili Peppers", "firstOnLine": true}],
+				"headliners": [{"artist": "Red Hot Chili Peppers", "firstOnLine": ["headliners", "lineup"]}],
 				"lvl1": ["Beirut", "Caribou", "Foals", "M83"],
 				"lvl2": ["KAMP!", "Maria Peszek", "Łona Webber", "Rebeka", "Section Boyz"],
 				"others": [
-					{"artist": "An On Bast", "firstOnLine": true},
+					{"artist": "An On Bast", "firstOnLine": "lineup"},
 					"Baasch",
 					"Czeluść (Jutro X Kosa)",
 					"Kroki",
@@ -73,22 +73,22 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Lcd Soundsystem", "firstOnLine": true},
+					{"artist": "Lcd Soundsystem", "firstOnLine": ["headliners", "lineup"]},
 					"Sigur Rós"
 				],
 				"lvl1": [
 					"Dawid Podsiadło",
-					{"artist": "Kurt Ville & The Violators", "firstOnLine": true},
-					{"artist": "Paul Kalkbrenner", "firstOnLine": true},
+					{"artist": "Kurt Ville & The Violators", "firstOnLine": "lineup"},
+					{"artist": "Paul Kalkbrenner", "firstOnLine": "lineup"},
 					"Wiz Khalifa"
 				],
 				"lvl2": [
-					{"artist": "Catz ’n Dogs", "firstOnLine": true},
+					{"artist": "Catz ’n Dogs", "firstOnLine": "lineup"},
 					"Kortez",
 					"Nothing but Thieves",
-					{"artist": "Ptaki", "firstOnLine": true},
+					{"artist": "Ptaki", "firstOnLine": "lineup"},
 					"Rysy",
-					{"artist": "Wince Staples", "firstOnLine": true},
+					{"artist": "Wince Staples", "firstOnLine": "lineup"},
 					{
 						"artist": "Zbigniew Wodeski with Mitch & Mitch Orchestra and Choir",
 						"sliceDecorator": [
@@ -101,7 +101,7 @@
 					"Grobel",
 					"Jóga",
 					"Kuba Sojka",
-					{"artist": "Olivier Heim", "firstOnLine": true},
+					{"artist": "Olivier Heim", "firstOnLine": "lineup"},
 					"Suumoo",
 					"Zamilska"
 				]
@@ -115,13 +115,13 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Pharrell Williams", "firstOnLine": true},
+					{"artist": "Pharrell Williams", "firstOnLine": ["headliners", "lineup"]},
 					"Kygo"
 				],
 				"lvl1": [
-					{"artist": "At The Drive-in", "firstOnLine": true},
+					{"artist": "At The Drive-in", "firstOnLine": "lineup"},
 					"Bastille",
-					{"artist": "Chvrches", "firstOnLine": true},
+					{"artist": "Chvrches", "firstOnLine": "lineup"},
 					"Grimes",
 					"The 1975"
 				],
@@ -133,7 +133,7 @@
 					"Nagrobki",
 					"Piotr Bejnar",
 					"Soom T",
-					{"artist": "Spoken Love", "firstOnLine": true},
+					{"artist": "Spoken Love", "firstOnLine": "lineup"},
 					"Terrific Sunday",
 					"We Draw A"
 				]

@@ -1,0 +1,25 @@
+.editionDetails--edition2013 {
+	.editionDetails__fullName {
+		&:after {
+			background: @edition2013-leadColor;
+		}
+	}
+
+	.shortLineup {
+		width: 295px;
+
+		&__headliners {
+			font-family: @edition2013-fontFamily;
+			line-height: 20px;
+		}
+	}
+
+	.headliner {
+		&:not(:last-of-type) {
+			&:after {
+				content: @edition2013-separatorStyle;
+				margin-right: 0.25em;
+			}
+		}
+	}
+}

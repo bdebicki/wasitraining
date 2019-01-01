@@ -16,13 +16,13 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Placebo", "firstOnLine": true, "decorator": "uppercase"},
-					{"artist": "Pharrell Williams", "lastOnLine": true},
-					{"artist": "Manu Chao Radio Bemba Sound System", "firstOnLine": true, "lastOnLine": true, "sliceDecorator": {"slice": "Radio Bemba Sound System"}}
+					{"artist": "Placebo", "firstOnLine": "lineup", "decorator": "uppercase"},
+					{"artist": "Pharrell Williams", "lastOnLine": "lineup"},
+					{"artist": "Manu Chao Radio Bemba Sound System", "firstOnLine": "lineup", "lastOnLine": "lineup", "sliceDecorator": {"slice": "Radio Bemba Sound System"}}
 				],
 				"lvl2": [
 					{"artist": "Matthew Herbert", "order": 5, "canceled": true},
-					{"artist": "Nightmares on Wax", "order": 5, "lastOnLine": true}
+					{"artist": "Nightmares on Wax", "order": 5, "lastOnLine": "lineup"}
 				],
 				"others": [
 					{"artist": "Fisz, Emade i Goście", "order": 3},
@@ -32,7 +32,7 @@
 					{"artist": "Masala Soundsystem", "order": 14},
 					{"artist": "Loco Motive Sun", "order": 16},
 					{"artist": "Teatr Klan Grus", "order": 21},
-					{"artist": "Teatr Fire Angels", "order": 20, "firstOnLine": true}
+					{"artist": "Teatr Fire Angels", "order": 20, "firstOnLine": "lineup"}
 				]
 			}
 		}, {
@@ -44,13 +44,13 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Franz Ferdinand", "firstOnLine": true},
-					{"artist": "Sigur Rós", "lastOnLine": true},
-					{"artist": "Scissor Sisters", "firstOnLine": true},
-					{"artist": "Skin", "lastOnLine": true}
+					{"artist": "Franz Ferdinand", "firstOnLine": "lineup"},
+					{"artist": "Sigur Rós", "lastOnLine": "lineup"},
+					{"artist": "Scissor Sisters", "firstOnLine": "lineup"},
+					{"artist": "Skin", "lastOnLine": "lineup"}
 				],
 				"lvl2": [
-					{"artist": "Coldcut", "order": 1, "firstOnLine": true},
+					{"artist": "Coldcut", "order": 1, "firstOnLine": "lineup"},
 					{"artist": "Ladytron", "order": 3}
 				],
 				"others": [
@@ -79,20 +79,20 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Kanye West", "firstOnLine": true},
-					{"artist": "Basement Jaxx", "lastOnLine": true},
-					{"artist": "The Streets", "firstOnLine": true},
-					{"artist": "Groove Armada", "canceled": true, "lastOnLine": true}
+					{"artist": "Kanye West", "firstOnLine": "lineup"},
+					{"artist": "Basement Jaxx", "lastOnLine": "lineup"},
+					{"artist": "The Streets", "firstOnLine": "lineup"},
+					{"artist": "Groove Armada", "canceled": true, "lastOnLine": "lineup"}
 				],
 				"lvl2": [
 					{"artist": "Roger Sanchez", "order": 2}
 				],
 				"others": [
-					{"artist": "Peter Greenaway", "order": 1, "firstOnLine": true},
+					{"artist": "Peter Greenaway", "order": 1, "firstOnLine": "lineup"},
 					{"artist": "Abra dAb", "order": 4},
 					{"artist": "Pustki", "order": 6},
 					{"artist": "Beats Friendly", "order": 13},
-					{"artist": "Freak of Nature", "order": 15, "firstOnLine": true},
+					{"artist": "Freak of Nature", "order": 15, "firstOnLine": "lineup"},
 					{"artist": "Psychocukier", "order": 17},
 					{"artist": "Teatr Klan Grus", "visible": false},
 					{"artist": "Teatr Fire Angels", "visible": false},

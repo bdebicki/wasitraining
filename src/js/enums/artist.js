@@ -1,6 +1,7 @@
 export const ARTIST_KEYS = {
 	ARTIST: 'artist',
 	DISPLAY_NAME: 'displayName',
+	DAY: 'day',
 	ORDER: 'order',
 	FORCE_ORDER: 'forceOrder',
 	SORT_BY: 'sortBy',
@@ -28,4 +29,9 @@ export const ARTIST_KEYS = {
 export const ARTIST_SLICES_PROPS = {
 	SLICE: 'slice',
 	STYLE: 'style',
+};
+
+export const ARTIST_ON_LINE_VALUES = {
+	LINEUP: 'lineup',
+	HEADLINERS: 'headliners',
 };

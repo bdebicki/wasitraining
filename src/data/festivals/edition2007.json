@@ -17,10 +17,10 @@
 			"lineup": {
 				"lvl1": [
 					{"artist": "Sonic Youth", "order": 2},
-					{"artist": "The Roots", "order": 4,  "firstOnLine": true, "decorator": "expanded"}
+					{"artist": "The Roots", "order": 4,  "firstOnLine": "lineup", "decorator": "expanded"}
 				],
 				"lvl2": [
-					{"artist": "Laurent Garnier (Live)", "order": 1, "firstOnLine": true},
+					{"artist": "Laurent Garnier (Live)", "order": 1, "firstOnLine": "lineup"},
 					{"artist": "Dizzee Rascal", "order": 2}
 				],
 				"lvl3": [
@@ -55,13 +55,13 @@
 					{"artist": "Muse", "order": 3}
 				],
 				"lvl1": [
-					{"artist": "Groove Armada", "order": 1, "firstOnLine": true}
+					{"artist": "Groove Armada", "order": 1, "firstOnLine": "lineup"}
 				],
 				"lvl3": [
-					{"artist": "Crazy P", "order": 1, "firstOnLine": true},
+					{"artist": "Crazy P", "order": 1, "firstOnLine": "lineup"},
 					{"artist": "O.S.T.R.", "order": 2},
-					{"artist": "Apteka", "order": 8, "firstOnLine": true},
-					{"artist": "Kombajn do Zbierania Kur po Wioskach", "order": 14, "firstOnLine": true},
+					{"artist": "Apteka", "order": 8, "firstOnLine": "lineup"},
+					{"artist": "Kombajn do Zbierania Kur po Wioskach", "order": 14, "firstOnLine": "lineup"},
 					{"artist": "Łąki Łan", "order": 16},
 					{"artist": "Kapitan DA", "order": 17},
 					{"artist": "Me Myself and I", "order": 18}
@@ -88,7 +88,7 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Björk", "order": 1, "firstOnLine": true}
+					{"artist": "Björk", "order": 1,  "firstOnLine": ["headliners", "lineup"]}
 				],
 				"lvl1": [
 					{"artist": "Bloc Party", "order": 3},
@@ -102,11 +102,11 @@
 					{"artist": "Renton", "order": 15}
 				],
 				"lvl4": [
-					{"artist": "Andy", "order": 1, "firstOnLine": true},
+					{"artist": "Andy", "order": 1, "firstOnLine": "lineup"},
 					{"artist": "Erijef Massiv", "order": 6}
 				],
 				"others": [
-					{"artist": "Gentleman!", "order": 1, "firstOnLine": true},
+					{"artist": "Gentleman!", "order": 1, "firstOnLine": "lineup"},
 					{"artist": "Mikromusic", "order": 4}
 				]
 			}

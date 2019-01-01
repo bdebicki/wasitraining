@@ -1,0 +1,27 @@
+.editionDetails--edition2008 {
+	@separatorSpacing: 3px;
+
+	.editionDetails__fullName {
+		&:after {
+			background: @edition2008-leadColor;
+		}
+	}
+
+	.shortLineup__headliners {
+		justify-content: center;
+		font-family: @edition2008-fontFamily;
+		line-height: 22px;
+	}
+
+	.headliner {
+		display: inline-flex;
+
+		&:not(.headliner--firstOnLine):before {
+			content: @edition2008-separatorStyle;
+			margin-right: @separatorSpacing;
+			margin-left: @separatorSpacing;
+			color: @gray-lighten10;
+			font-size: 12px;
+		}
+	}
+}

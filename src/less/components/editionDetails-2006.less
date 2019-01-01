@@ -1,0 +1,22 @@
+.editionDetails--edition2006 {
+	.editionDetails__fullName {
+		&:after {
+			background: @edition2008-leadColor;
+		}
+	}
+
+	.shortLineup__headliners {
+		font-family: @edition2008-fontFamily;
+		line-height: 23px;
+		text-transform: none;
+	}
+
+	.headliner {
+		&:not(:last-of-type) {
+			&:after {
+				content: @edition2006-separatorStyle;
+				margin-right: @edition2006-separatorSpace;
+			}
+		}
+	}
+}

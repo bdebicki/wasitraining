@@ -1,0 +1,28 @@
+.editionDetails--edition2007 {
+	.editionDetails__fullName {
+		&:after {
+			background: @edition2007-leadColor;
+		}
+	}
+
+	.shortLineup {
+		width: 230px;
+
+		&__headliners {
+			font-family: @edition2007-fontFamily;
+			line-height: 22px;
+		}
+	}
+
+	.headliner {
+		display: inline-flex;
+
+		&:not(.headliner--firstOnLine) {
+			&:before {
+				content: @edition2007-separatorStyle-alternative;
+				color: @gray-lighten10;
+				font-size: 22px;
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+.editionDetails--edition2017 {
+	.editionDetails__fullName {
+		&:after {
+			background: @edition2017-leadColor;
+		}
+	}
+
+	.shortLineup__headliners {
+		font-family: @edition2017-fontFamily;
+		font-weight: @edition2017-fontWeight-headliners;
+		line-height: 24px;
+	}
+
+	.headliner {
+		&:not(.headliner--lastOnLine) {
+			&:after {
+				content: @edition2017-separatorStyle;
+				color: @edition2017-leadColor;
+			}
+		}
+
+		&:not(:nth-last-child(2)) {
+			&:after {
+				margin-right: @edition2017-separatorSpace;
+				margin-left: @edition2017-separatorSpace;
+			}
+		}
+	}
+}

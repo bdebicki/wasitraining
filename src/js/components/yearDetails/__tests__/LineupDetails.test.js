@@ -8,7 +8,7 @@ import EditionDetails from '../EditionDetails';
 import { ARTIST_KEYS } from '../../../enums/artist';
 import DIALOGBOX from '../../../utils/elementHandlers/dialogbox';
 import { LINEUP, lineupClassBuilder } from '../elementHandlers/lineup';
-import EDITION from '../elementHandlers/edition';
+import { EDITION } from '../elementHandlers/edition';
 import LINK from '../../../elementHandlers/link';
 
 describe('lineup details tests', () => {
@@ -167,7 +167,7 @@ describe('lineup details tests', () => {
 		describe('return artist with position options', () => {
 			it('display artist first on line', () => {
 				// when
-				LineupDetails.decorateArtist(artistsMock.firstOnLine, fragment);
+				LineupDetails.decorateArtist(artistsMock.firstOnLineLineup, fragment);
 
 				// then
 				expect(fragment.querySelector(`.${lineupClassBuilder.artist}--${ARTIST_KEYS.FIRST_ON_LINE}`))
@@ -176,7 +176,7 @@ describe('lineup details tests', () => {
 
 			it('display artist last on line', () => {
 				// when
-				LineupDetails.decorateArtist(artistsMock.lastOnLine, fragment);
+				LineupDetails.decorateArtist(artistsMock.lastOnLineLineup, fragment);
 
 				// then
 				expect(fragment.querySelector(`.${lineupClassBuilder.artist}--${ARTIST_KEYS.LAST_ON_LINE}`))

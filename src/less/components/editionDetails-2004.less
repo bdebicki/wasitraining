@@ -1,0 +1,25 @@
+.editionDetails--edition2004 {
+	.editionDetails__fullName {
+		&:after {
+			background: @edition2004-leadColor;
+		}
+	}
+
+	.shortLineup {
+		width: 360px;
+
+		&__headliners {
+			font-family: @edition2004-fontFamily;
+			line-height: 23px;
+		}
+	}
+
+	.headliner:not(.headliner--firstOnLine) {
+		&:before {
+			content: @edition2004-separatorStyle;
+			margin-right: @edition2004-separatorSpace;
+			margin-left: @edition2004-separatorSpace;
+			color: @gray-lighten10;
+		}
+	}
+}

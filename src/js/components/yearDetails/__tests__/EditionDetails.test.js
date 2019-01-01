@@ -2,7 +2,7 @@ import cleanDOM from '../../../../../tests/utils/cleanDOM';
 import editionOneDay from '../../../../../tests/__mocks__/editionOneDay.json';
 import editionMultipleDays from '../../../../../tests/__mocks__/edition-notSort-noMergeArtists.json';
 import editionNewEdition from '../../../../../tests/__mocks__/edition-notSort-customLevels.json';
-import EDITION from '../elementHandlers/edition';
+import { EDITION } from '../elementHandlers/edition';
 import EditionDetails from '../EditionDetails';
 
 describe('yeaar details - edition details', () => {

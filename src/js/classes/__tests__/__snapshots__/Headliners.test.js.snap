@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests headliners class return headliners not sorted 1`] = `
+Array [
+  Object {
+    "artist": "Pink",
+    "day": 1,
+    "displayName": "P!nk",
+    "firstOnLine": Array [
+      "headliners",
+      "lineup",
+    ],
+    "line": 2,
+  },
+  Object {
+    "artist": "Cypress Hill",
+    "day": 1,
+    "line": 2,
+  },
+  Object {
+    "artist": "Massive Attack",
+    "day": 2,
+    "firstOnLine": Array [
+      "headliners",
+      "lineup",
+    ],
+    "line": 2,
+  },
+  Object {
+    "artist": "Goldfrapp",
+    "day": 2,
+    "line": 2,
+  },
+]
+`;
+
+exports[`tests headliners class return headliners sorted by alphabeticalExceptHeadliners type 1`] = `
+Array [
+  Object {
+    "artist": "The Black Keys",
+    "day": 1,
+  },
+  Object {
+    "artist": "Pearl Jam",
+    "day": 2,
+  },
+  Object {
+    "artist": "Jack White",
+    "day": 3,
+  },
+  Object {
+    "artist": "Faith No More",
+    "day": 4,
+  },
+]
+`;
+
+exports[`tests headliners class return headliners sorted by customOrder type 1`] = `
+Array [
+  Object {
+    "artist": "Björk",
+    "day": 2,
+    "firstOnLine": Array [
+      "headliners",
+      "lineup",
+    ],
+    "order": 1,
+  },
+  Object {
+    "artist": "Beastie Boys",
+    "day": 1,
+    "order": 2,
+  },
+  Object {
+    "artist": "Muse",
+    "day": 1,
+    "order": 3,
+  },
+]
+`;
+
+exports[`tests headliners class return headliners sorted by customOrderExceptHeadliners type 1`] = `
+Array [
+  Object {
+    "artist": "Snoop Dogg",
+    "day": 1,
+    "decorator": "promoted",
+    "firstOnLine": Array [
+      "headliners",
+      "lineup",
+    ],
+  },
+  Object {
+    "artist": "Fatboy Slim",
+    "day": 1,
+    "decorator": "promoted",
+  },
+  Object {
+    "artist": "Faithless",
+    "day": 1,
+    "decorator": "promoted",
+    "firstOnLine": "lineup",
+  },
+  Object {
+    "artist": "The White Stripes",
+    "day": 2,
+    "firstOnLine": Array [
+      "headliners",
+      "lineup",
+    ],
+  },
+  Object {
+    "artist": "Lauryn Hill",
+    "day": 2,
+  },
+  Object {
+    "artist": "Underworld",
+    "day": 2,
+    "firstOnLine": "lineup",
+  },
+]
+`;

@@ -1,0 +1,32 @@
+.editionDetails--edition2010 {
+	@separatorSpacing: 3px;
+
+	.editionDetails__fullName {
+		&:after {
+			background: @edition2010-leadColor;
+		}
+	}
+
+	.shortLineup {
+		width: 295px;
+
+		&__headliners {
+			font-family: @edition2010-fontFamily;
+			line-height: 22px;
+		}
+	}
+
+	.headliner {
+		display: inline-flex;
+
+		&:not(.headliner--firstOnLine) {
+			&:before {
+				content: @edition2010-separatorStyle;
+				margin-right: @separatorSpacing;
+				margin-left: @separatorSpacing;
+				color: @gray-lighten10;
+				font-size: 12px;
+			}
+		}
+	}
+}

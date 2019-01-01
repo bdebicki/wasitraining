@@ -1,0 +1,46 @@
+.editionDetails--edition2011 {
+	.editionDetails__fullName {
+		&:after {
+			background: @edition2011-leadColor;
+		}
+	}
+
+	.shortLineup {
+		width: 230px;
+
+		&__headliners {
+			font-family: @edition2011-fontFamily;
+			font-weight: @edition2011-fontWeight;
+			line-height: 20px;
+		}
+	}
+
+	.headliner {
+		&--day1,
+		&--day3 {
+			width: 50%;
+		}
+		&--day3 {
+			text-align: right;
+		}
+		&--day2 {
+			display: inline-flex;
+			flex-grow: 1;
+			text-align: center;
+			justify-content: space-evenly;
+
+			&:after,
+			&:before {
+				content: @edition2011-separatorStyle;
+				color: @gray-lighten10;
+				font-size: 12px;
+			}
+		}
+		&--day4:first-of-type {
+			flex-grow: 0;
+		}
+		&--day4:last-of-type {
+			flex-grow: 0;
+		}
+	}
+}

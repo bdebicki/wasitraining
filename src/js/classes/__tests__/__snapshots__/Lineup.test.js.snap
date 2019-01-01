@@ -9,14 +9,14 @@ Array [
     "lvl1": Array [
       Object {
         "artist": "James Blake",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Royal Blood",
     ],
     "lvl2": Array [
       Object {
         "artist": "Michael Kiwanuka",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Rae Sremmurd",
       "Solange",
@@ -24,7 +24,7 @@ Array [
     "others": Array [
       Object {
         "artist": "Arca (DJ Set)",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
         "sliceDecorator": Object {
           "slice": "(DJ Set)",
           "style": "down",
@@ -35,14 +35,14 @@ Array [
       "Quebonafide",
       Object {
         "artist": "Sorry Boys",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Enzu",
       "Flirtini",
       "Wacław Zimpel/Kuba Ziołek",
       Object {
         "artist": "Holak",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Gverilla",
       "Mery Spolsky",
@@ -50,12 +50,15 @@ Array [
   },
   Object {
     "headliners": Array [
-      "Foo Fighters",
+      Object {
+        "artist": "Foo Fighters",
+        "lastOnLine": "headliners",
+      },
     ],
     "lvl1": Array [
       Object {
         "artist": "G-Eazy",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "The Kills",
       "M.I.A.",
@@ -63,7 +66,7 @@ Array [
     "lvl2": Array [
       Object {
         "artist": "Charli XCX",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Jimmy Eat World",
       "Trentemøller",
@@ -71,7 +74,7 @@ Array [
     "others": Array [
       Object {
         "artist": "A_GIM",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Bitamina",
       "Blanck Mass",
@@ -79,7 +82,7 @@ Array [
       "Hades",
       Object {
         "artist": "Bownik",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Kari",
       "Marcin Krupa",
@@ -95,7 +98,7 @@ Array [
     "lvl1": Array [
       Object {
         "artist": "Mac Miller",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Moderat",
       "Prophets of Rage",
@@ -103,13 +106,13 @@ Array [
     "lvl2": Array [
       Object {
         "artist": "Brodka",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "The Dumplings",
       "Grammatik",
       Object {
         "artist": "JMSN",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Kiasmos",
       "Tiga",
@@ -118,7 +121,7 @@ Array [
     "others": Array [
       Object {
         "artist": "Bisz/Radex",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Daria Zawiałow",
       "Dasein",
@@ -126,7 +129,7 @@ Array [
       "Hańba!",
       Object {
         "artist": "Majlo",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Ralph Kaminski",
     ],
@@ -135,21 +138,24 @@ Array [
     "headliners": Array [
       Object {
         "artist": "The XX",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
-      "Lorde",
+      Object {
+        "artist": "Lorde",
+        "lastOnLine": "headliners",
+      },
     ],
     "lvl1": Array [
       Object {
         "artist": "George Ezra",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Taco Hemingway",
     ],
     "lvl2": Array [
       Object {
         "artist": "Dua Lipa",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Nicolas Jaar",
       "Tyga",
@@ -158,7 +164,7 @@ Array [
     "others": Array [
       Object {
         "artist": "Benjamin Booker",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Buslav",
       "Duit",
@@ -166,14 +172,14 @@ Array [
       "Kevin Morby",
       Object {
         "artist": "Krzysztof Zalewski",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Monki",
       "Niemoc",
       "Seltron 400",
       Object {
         "artist": "The Shelters",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Urbanski",
     ],
@@ -363,7 +369,10 @@ Object {
   "headliners": Array [
     Object {
       "artist": "Björk",
-      "firstOnLine": true,
+      "firstOnLine": Array [
+        "headliners",
+        "lineup",
+      ],
     },
     "Beastie Boys",
     "Muse",
@@ -371,14 +380,14 @@ Object {
   "lvl1": Array [
     Object {
       "artist": "Groove Armada",
-      "firstOnLine": true,
+      "firstOnLine": "lineup",
     },
     "Sonic Youth",
     "Bloc Party",
     Object {
       "artist": "The Roots",
       "decorator": "expanded",
-      "firstOnLine": true,
+      "firstOnLine": "lineup",
     },
     Object {
       "artist": "LCD Soundsystem",
@@ -388,14 +397,14 @@ Object {
   "lvl2": Array [
     Object {
       "artist": "Laurent Garnier (Live)",
-      "firstOnLine": true,
+      "firstOnLine": "lineup",
     },
     "Dizzee Rascal",
   ],
   "lvl3": Array [
     Object {
       "artist": "Crazy P",
-      "firstOnLine": true,
+      "firstOnLine": "lineup",
     },
     "O.S.T.R.",
     "Freeform Five",
@@ -405,7 +414,7 @@ Object {
     "Indios Bravos",
     Object {
       "artist": "Apteka",
-      "firstOnLine": true,
+      "firstOnLine": "lineup",
     },
     "Novika",
     "Afro Kolektyw",
@@ -414,7 +423,7 @@ Object {
     "EastWest Rockers",
     Object {
       "artist": "Kombajn do Zbierania Kur po Wioskach",
-      "firstOnLine": true,
+      "firstOnLine": "lineup",
     },
     "Renton",
     "Łąki Łan",
@@ -424,7 +433,7 @@ Object {
   "lvl4": Array [
     Object {
       "artist": "Andy",
-      "firstOnLine": true,
+      "firstOnLine": "lineup",
     },
     "Bruno Schulz",
     "Cała Góra Barwinków",
@@ -435,7 +444,7 @@ Object {
   "others": Array [
     Object {
       "artist": "Gentleman!",
-      "firstOnLine": true,
+      "firstOnLine": "lineup",
     },
     "Lars",
     "Managga",
@@ -456,7 +465,7 @@ Object {
       Object {
         "artist": "Neo",
         "decorator": "uppercase",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
     ],
     "others": Array [
@@ -468,7 +477,7 @@ Object {
       "Tworzywo Sztuczne",
       Object {
         "artist": "Boogiemafia",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Less Is More",
       "Hariasen",
@@ -476,7 +485,7 @@ Object {
       "Lili Marlene",
       Object {
         "artist": "teatry",
-        "firstOnLine": true,
+        "firstOnLine": "lineup",
       },
       "Strefa Ciszy",
       "Porywacze Ciał",
@@ -490,7 +499,10 @@ Object {
         Object {
           "artist": "Snoop Dogg",
           "decorator": "promoted",
-          "firstOnLine": true,
+          "firstOnLine": Array [
+            "headliners",
+            "lineup",
+          ],
         },
         Object {
           "artist": "Fatboy Slim",
@@ -499,7 +511,7 @@ Object {
         Object {
           "artist": "Faithless",
           "decorator": "promoted",
-          "firstOnLine": true,
+          "firstOnLine": "lineup",
         },
       ],
     },
@@ -507,12 +519,15 @@ Object {
       "headliners": Array [
         Object {
           "artist": "The White Stripes",
-          "firstOnLine": true,
+          "firstOnLine": Array [
+            "headliners",
+            "lineup",
+          ],
         },
         "Lauryn Hill",
         Object {
           "artist": "Underworld",
-          "firstOnLine": true,
+          "firstOnLine": "lineup",
         },
       ],
       "lvl1": Array [
@@ -527,7 +542,10 @@ exports[`tests lineup class  test returned lineup sort: false and merge: false 1
 Array [
   Object {
     "headliners": Array [
-      "Blur",
+      Object {
+        "artist": "Blur",
+        "firstOnLine": "headliners",
+      },
     ],
     "lvl1": Array [
       "Editors",
@@ -567,7 +585,10 @@ Array [
   },
   Object {
     "headliners": Array [
-      "Arctic Monkeys",
+      Object {
+        "artist": "Arctic Monkeys",
+        "lastOnLine": "headliners",
+      },
     ],
     "lvl1": Array [
       "Nick Cave & The Bad Seeds",

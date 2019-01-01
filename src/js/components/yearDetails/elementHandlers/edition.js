@@ -1,7 +1,7 @@
 const editionClassBuilders = {
 	details: 'editionDetails',
 	lineup: 'shortLineup',
-	headlines: 'headliners',
+	headliner: 'headliner',
 };
 const EDITION = {
 	EDITION_DETAILS_ID: editionClassBuilders.details,
@@ -12,9 +12,13 @@ const EDITION = {
 	DATES_CLASS: `${editionClassBuilders.details}__date`,
 	LINEUP_CLASS: editionClassBuilders.lineup,
 	LINEUP_EDITION_CLASS: `${editionClassBuilders.lineup}--edition`,
-	HEADLINERS_CLASS: `${editionClassBuilders.lineup}__${editionClassBuilders.headlines}`,
-	HEADLINER_CLASS: `${editionClassBuilders.headlines}__headliner`,
+	HEADLINERS_CLASS: `${editionClassBuilders.lineup}__headliners`,
+	HEADLINER_CLASS: editionClassBuilders.headliner,
+	HEADLINERS_DAY_CLASS: `${editionClassBuilders.headliner}--day`,
 	LINEUP_LINK_CLASS: `${editionClassBuilders.lineup}__detailsLink`,
 };
 
-export { EDITION as default };
+export {
+	editionClassBuilders,
+	EDITION,
+};

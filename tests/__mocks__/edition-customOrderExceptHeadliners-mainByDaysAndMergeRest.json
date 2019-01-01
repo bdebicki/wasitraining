@@ -16,19 +16,19 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "Snoop Dogg", "decorator": "promoted", "firstOnLine": true},
+					{"artist": "Snoop Dogg", "decorator": "promoted",  "firstOnLine": ["headliners", "lineup"]},
 					{"artist": "Fatboy Slim", "decorator": "promoted"},
-					{"artist": "Faithless", "decorator": "promoted", "firstOnLine": true}
+					{"artist": "Faithless", "decorator": "promoted", "firstOnLine": "lineup"}
 				],
 				"others": [
 					{"artist": "Pogodno", "order": 1},
 					{"artist": "O.S.T.R.", "order": 2},
-					{"artist": "Boogiemafia", "order": 7, "firstOnLine": true},
+					{"artist": "Boogiemafia", "order": 7, "firstOnLine": "lineup"},
 					{"artist": "Less Is More", "order": 8},
 					{"artist": "Hariasen", "order": 9},
 					{"artist": "Rotofobia", "order": 10},
 					{"artist": "Lili Marlene", "order": 11},
-					{"artist": "teatry", "order": 12, "firstOnLine": true},
+					{"artist": "teatry", "order": 12, "firstOnLine": "lineup"},
 					{"artist": "Strefa Ciszy", "order": 13},
 					{"artist": "Porywacze Ciał", "order": 14},
 					{"artist": "Akt Okazjonalny", "order": 15}
@@ -43,13 +43,13 @@
 			],
 			"lineup": {
 				"headliners": [
-					{"artist": "The White Stripes", "firstOnLine": true},
+					{"artist": "The White Stripes",  "firstOnLine": ["headliners", "lineup"]},
 					"Lauryn Hill",
-					{"artist": "Underworld", "firstOnLine": true}
+					{"artist": "Underworld", "firstOnLine": "lineup"}
 				],
 				"lvl1": ["The Music"],
 				"lvl2": [
-					{"artist": "Neo", "decorator": "uppercase", "firstOnLine": true}
+					{"artist": "Neo", "decorator": "uppercase", "firstOnLine": "lineup"}
 				],
 				"others": [
 					{"artist": "Sofa", "order": 3},

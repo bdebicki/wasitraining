@@ -1,0 +1,23 @@
+.editionDetails--edition2016 {
+	.editionDetails__fullName {
+		&:after {
+			background: @edition2016-leadColor;
+		}
+	}
+
+	.shortLineup__headliners {
+		font-family: @edition2016-fontFamily-headliners;
+		line-height: 23px;
+	}
+
+	.headliner {
+		&:not(.headliner--firstOnLine) {
+			&:before {
+				content: @edition2016-separatorStyle;
+				margin-right: @edition2016-separatorSpace;
+				margin-left: @edition2016-separatorSpace;
+				color: @edition2016-leadColor;
+			}
+		}
+	}
+}
