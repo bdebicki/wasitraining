@@ -1,25 +1,41 @@
 import BG from './elementHandlers/background';
 import LAYOUT from '../../elementHandlers/layout';
+import addElement from '../../utils/addElement';
 import addSvgElement from '../../utils/addSvgElement';
 
 export default class BgCover {
+	static renderCoverContainer() {
+		const settings = {
+			id: LAYOUT.BG_COVER_ID,
+		};
+
+		return addElement('div', settings);
+	}
+
 	static renderCover() {
 		const rectSettings = {
-			classNames: BG.COVER_CLASS,
 			properties: [
 				{ height: '100%' },
 				{ width: '100%' },
 			],
 		};
 		const svgSettings = {
-			id: LAYOUT.BG_COVER_ID,
+			classNames: BG.COVER_CLASS,
 			children: addSvgElement('rect', rectSettings),
+			properties: [
+				{ height: '100%' },
+				{ width: '100%' },
+			],
 		};
 
 		return addSvgElement('svg', svgSettings);
 	}
 
 	static render() {
-		return BgCover.renderCover();
+		const coverBlock = BgCover.renderCoverContainer();
+
+		coverBlock.appendChild(BgCover.renderCover());
+
+		return coverBlock;
 	}
 }
