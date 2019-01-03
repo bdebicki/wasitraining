@@ -1,8 +1,9 @@
 #bgVideo {
+	@videoOpacityIntro: 0.4;
+	@videoOpacityYear: 0.6;
+
 	.strechPosition();
 	z-index: -1;
-	background-image: url('/images/bg-img.png');
-	background-size: cover;
 	overflow: hidden;
 
 	[data-view='year'] & {
@@ -13,13 +14,35 @@
 			background: #fff;
 		}
 	}
-	
+
+	//@supports not (object-fit: cover) { temporary turned off video for development
+		&:after {
+			.strechPosition();
+			content: '';
+			opacity: @videoOpacityIntro;
+			background-image: url('/images/bg-img.png');
+			background-size: cover;
+			z-index: 1;
+
+			[data-view='year'] & {
+				opacity: @videoOpacityYear;
+				filter: blur(8px);
+			}
+		}
+	//}
+
 	@supports (object-fit: cover) {
 		.bgVideo__video {
 			display: none; // temporary hide video for development
+			opacity: @videoOpacityIntro;
 			object-fit: cover;
 			width: 100%;
 			height: 100%;
+
+			[data-view='year'] & {
+				opacity: @videoOpacityYear;
+				filter: blur(8px);
+			}
 		}
 	}
 }
