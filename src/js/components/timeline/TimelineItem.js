@@ -1,5 +1,6 @@
 import DATA_URL from '../../enums/data';
 import TIMELINE from './elementHandlers/timeline';
+import SVG_MASK from '../../utils/elementHandlers/svg';
 import addElement from '../../utils/addElement';
 import addSvgElement from '../../utils/addSvgElement';
 import addSvgMask from '../../utils/addSvgMask';
@@ -47,6 +48,7 @@ export default class TimelineItem extends Edition {
 
 	renderYearMask() {
 		const { editionYear } = this;
+		const maskId = `yearMask${editionYear}`;
 		const textMaskSettings = {
 			children: editionYear,
 			classNames: TIMELINE.MAIN_EDITION_MASK_TEXT_CLASS,
@@ -56,13 +58,26 @@ export default class TimelineItem extends Edition {
 			],
 		};
 		const yearMaskSettings = {
-			svgClass: TIMELINE.MAIN_EDITION_MASK_CLASS,
-			maskId: `yearMask${editionYear}`,
+			maskId,
 			maskShape: addSvgElement('text', textMaskSettings),
-			maskBgClass: TIMELINE.MAIN_EDITION_MASK_BG_CLASS,
+		};
+		const rectSettings = {
+			classNames: [
+				SVG_MASK.MASK_BG_CLASS,
+				TIMELINE.MAIN_EDITION_MASK_BG_CLASS,
+			],
+			maskId,
+		};
+		const maskSettings = {
+			children: addSvgElement('rect', rectSettings),
+			classNames: [
+				TIMELINE.MAIN_EDITION_MASK_CLASS,
+				SVG_MASK.MASK_CLASS,
+			],
+			defs: addSvgMask(yearMaskSettings),
 		};
 
-		return addSvgMask(yearMaskSettings);
+		return addSvgElement('svg', maskSettings);
 	}
 
 	renderYear() {

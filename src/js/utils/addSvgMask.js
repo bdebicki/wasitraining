@@ -39,5 +39,6 @@ export default function({
 		],
 	};
 
-	return addSvgElement('svg', svgSettings);
+	// return addSvgElement('svg', svgSettings);
+	return addSvgElement('mask', maskSettings);
 }
