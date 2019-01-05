@@ -51,19 +51,43 @@ export default class RainDetails extends Edition {
 		return fragment;
 	}
 
-	decorateBgCoverByRainMask() {
-		const bgCoverEl = document.querySelector(`.${BG.COVER_SHAPE_CLASS}`);
-		const maskId = this.editionRain ? RAIN_INFO_MASK_TYPES.TRUE : RAIN_INFO_MASK_TYPES.FALSE;
+	getBgRainMaskPosition() {
+		const rainMaskPlaceholder = document.querySelector(`.${RAIN.INFO_CLASS}`);
+		const { x, bottom } = rainMaskPlaceholder.getBoundingClientRect();
+		const bgCoverOffset = 20;
+		const maskYesXoffset = 3;
+		const maskYesYoffset = 2;
+		const maskNoXoffset = 7;
+		const maskNoYoffset = 7;
+		const maskXoffset = this.editionRain ? maskYesXoffset : maskNoXoffset;
+		const maskYoffset = this.editionRain ? maskYesYoffset : maskNoYoffset;
+		const placeholderX = x - bgCoverOffset - maskXoffset;
+		const placeholderY = bottom - bgCoverOffset - maskYoffset;
 
+		return { placeholderX, placeholderY };
+	}
+
+	decorateBgCoverByRainMask() {
+		const maskId = this.editionRain ? RAIN_INFO_MASK_TYPES.TRUE : RAIN_INFO_MASK_TYPES.FALSE;
+		const maskClass = this.editionRain ? BG.MASK_SHAPE_YES : BG.MASK_SHAPE_NO;
+		const bgCoverEl = document.querySelector(`.${BG.COVER_SHAPE_CLASS}`);
+		const bgMaskEl = document.querySelector(`.${maskClass}`);
+		const { placeholderX, placeholderY } = this.getBgRainMaskPosition();
+
+		bgMaskEl.style.transform = `translate(${placeholderX}px, ${placeholderY}px)`;
 		bgCoverEl.setAttributeNS(null, 'mask', `url(#${maskId})`);
 	}
 
 	updateBgCoverByRainMask() {
+		const newMaskId = this.editionRain ? RAIN_INFO_MASK_TYPES.TRUE : RAIN_INFO_MASK_TYPES.FALSE;
+		const maskClass = this.editionRain ? BG.MASK_SHAPE_YES : BG.MASK_SHAPE_NO;
 		const bgCoverEl = document.querySelector(`.${BG.COVER_SHAPE_CLASS}`);
 		const currentMaskId = bgCoverEl.getAttributeNS(null, 'mask');
-		const newMaskId = this.editionRain ? RAIN_INFO_MASK_TYPES.TRUE : RAIN_INFO_MASK_TYPES.FALSE;
+		const bgMaskEl = document.querySelector(`.${maskClass}`);
+		const { placeholderX, placeholderY } = this.getBgRainMaskPosition();
 
 		if (currentMaskId !== newMaskId) {
+			bgMaskEl.style.transform = `translate(${placeholderX}px, ${placeholderY}px)`;
 			bgCoverEl.setAttributeNS(null, 'mask', `url(#${newMaskId})`);
 		}
 	}
