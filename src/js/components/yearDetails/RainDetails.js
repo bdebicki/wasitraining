@@ -1,5 +1,7 @@
+import BG from '../background/elementHandlers/background';
 import LINK from '../../elementHandlers/link';
 import RAIN from './elementHandlers/rain';
+import RAIN_INFO_MASK_TYPES from '../../enums/rainInfoMask';
 import addElement from '../../utils/addElement';
 import * as dialogbox from '../../utils/addDialogbox';
 import setIcon from '../../utils/setIcon';
@@ -47,6 +49,23 @@ export default class RainDetails extends Edition {
 		});
 
 		return fragment;
+	}
+
+	decorateBgCoverByRainMask() {
+		const bgCoverEl = document.querySelector(`.${BG.COVER_SHAPE_CLASS}`);
+		const maskId = this.editionRain ? RAIN_INFO_MASK_TYPES.TRUE : RAIN_INFO_MASK_TYPES.FALSE;
+
+		bgCoverEl.setAttributeNS(null, 'mask', `url(#${maskId})`);
+	}
+
+	updateBgCoverByRainMask() {
+		const bgCoverEl = document.querySelector(`.${BG.COVER_SHAPE_CLASS}`);
+		const currentMaskId = bgCoverEl.getAttributeNS(null, 'mask');
+		const newMaskId = this.editionRain ? RAIN_INFO_MASK_TYPES.TRUE : RAIN_INFO_MASK_TYPES.FALSE;
+
+		if (currentMaskId !== newMaskId) {
+			bgCoverEl.setAttributeNS(null, 'mask', `url(#${newMaskId})`);
+		}
 	}
 
 	renderRainDetailsLink() {

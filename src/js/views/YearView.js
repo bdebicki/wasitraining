@@ -5,6 +5,7 @@ import Header from '../components/header/Header';
 import Title from '../components/header/Title';
 import Timeline from '../components/timeline/Timeline';
 import YearDetails from '../components/yearDetails/YearDetails';
+import RainDetails from '../components/yearDetails/RainDetails';
 import BgCover from '../components/background/BgCover';
 import BgVideo from '../components/background/BgVideo';
 import Footer from '../components/footer/Footer';
@@ -25,16 +26,21 @@ export default class YearView {
 	updateDetails(newEdition) {
 		const newEditionData = this.data[this.editionIndex];
 		const yearBlock = new YearDetails(newEditionData);
+		const rainBlock = new RainDetails(newEditionData);
 
 		Timeline.updateSelectedEdition(newEdition);
 		yearBlock.updateYearDetails();
+		rainBlock.updateBgCoverByRainMask();
 	}
 
 	switchToYearView() {
+		const { data, editionId, editionIndex } = this;
+		const editionData = data[editionIndex];
 		const bodyEl = `#${LAYOUT.MAIN_CONTAINER_ID}`;
 		const headerEl = `#${LAYOUT.HEADER_ID}`;
-		const timelineBlock = new Timeline(this.data, this.editionId);
-		const yearBlock = new YearDetails(this.data[this.editionIndex]);
+		const timelineBlock = new Timeline(data, editionId);
+		const yearBlock = new YearDetails(editionData);
+		const rainBlock = new RainDetails(editionData);
 
 		YearView.updateViewTypeToYear();
 		Title.updateTitleLocation(document.querySelector(`.${HEADER.TITLE_CLASS}`));
@@ -42,14 +48,17 @@ export default class YearView {
 		pushElement(headerEl, timelineBlock.renderNavTimeline());
 		pushElement(bodyEl, [yearBlock.render(), BgCover.render()]);
 		document.getElementById(LAYOUT.MAIN_TIMELINE_ID).remove();
+		rainBlock.decorateBgCoverByRainMask();
 	}
 
 	render() {
 		const { data, editionId, editionIndex } = this;
+		const editionData = data[editionIndex];
 		const bodyEl = `#${LAYOUT.MAIN_CONTAINER_ID}`;
 		const headerEl = `#${LAYOUT.HEADER_ID}`;
 		const timelineBlock = new Timeline(data, editionId);
-		const yearBlock = new YearDetails(data[editionIndex]);
+		const yearBlock = new YearDetails(editionData);
+		const rainBlock = new RainDetails(editionData);
 
 		YearView.updateViewTypeToYear();
 		pushElement(bodyEl, [
@@ -60,5 +69,6 @@ export default class YearView {
 			Footer.render(),
 		]);
 		pushElement(headerEl, timelineBlock.renderNavTimeline());
+		rainBlock.decorateBgCoverByRainMask();
 	}
 }
