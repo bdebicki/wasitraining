@@ -49,6 +49,8 @@ export default class YearView {
 		pushElement(bodyEl, [yearBlock.render(), BgCover.render()]);
 		document.getElementById(LAYOUT.MAIN_TIMELINE_ID).remove();
 		rainBlock.decorateBgCoverByRainMask();
+
+		window.addEventListener('resize', RainDetails.updateBgCoverRainMaskPosition, null);
 	}
 
 	render() {
@@ -70,5 +72,7 @@ export default class YearView {
 		]);
 		pushElement(headerEl, timelineBlock.renderNavTimeline());
 		rainBlock.decorateBgCoverByRainMask();
+
+		window.addEventListener('resize', RainDetails.updateBgCoverRainMaskPosition, null);
 	}
 }
