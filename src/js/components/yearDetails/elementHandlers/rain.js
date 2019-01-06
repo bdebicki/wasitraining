@@ -2,7 +2,7 @@ import globalClassBuilders from '../../../elementHandlers/globalClassBuilders';
 
 const rainClassBuilders = {
 	section: 'rainSection',
-	info: 'rainInfo',
+	info: 'rainInfoPlaceholder',
 	header: 'rainHeader',
 	details: 'rainDetails',
 	detailsList: 'rainDetailsList',
