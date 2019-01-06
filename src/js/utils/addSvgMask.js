@@ -7,6 +7,10 @@ export default function({
 }) {
 	const rectMaskSettings = {
 		classNames: SVG_MASK.MASK_BASE_CLASS,
+		properties: [
+			{ width: '100%' },
+			{ height: '100%' },
+		],
 	};
 	const maskSettings = {
 		children: [
