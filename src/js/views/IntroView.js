@@ -6,6 +6,7 @@ import Title from '../components/header/Title';
 import Timeline from '../components/timeline/Timeline';
 import BgVideo from '../components/background/BgVideo';
 import Footer from '../components/footer/Footer';
+import RainDetails from '../components/yearDetails/RainDetails';
 import { updateViewType } from '../utils/updateView';
 import pushElement from '../utils/pushElement';
 
@@ -29,6 +30,8 @@ export default class IntroView {
 		document.getElementById(LAYOUT.NAV_TIMELINE_ID).remove();
 		document.getElementById(LAYOUT.YEAR_CONTAINER_ID).remove();
 		document.getElementById(LAYOUT.BG_COVER_ID).remove();
+
+		window.removeEventListener('resize', RainDetails.updateBgCoverRainMaskPosition, null);
 	}
 
 	render() {
