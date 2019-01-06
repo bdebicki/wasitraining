@@ -54,16 +54,16 @@ export default class RainDetails extends Edition {
 	getBgRainMaskPosition() {
 		const bgCoverOffset = 20;
 		const maskYesXoffset = 3;
-		const maskYesYoffset = 2;
+		const maskYesYoffset = 3;
 		const maskNoXoffset = 7;
-		const maskNoYoffset = 7;
+		const maskNoYoffset = 13;
 		const { editionRain } = this;
 		const rainMaskPlaceholder = document.querySelector(`.${RAIN.INFO_CLASS}`);
 		const { x, bottom } = rainMaskPlaceholder.getBoundingClientRect();
 		const maskXoffset = editionRain ? maskYesXoffset : maskNoXoffset;
 		const maskYoffset = editionRain ? maskYesYoffset : maskNoYoffset;
-		const placeholderX = x - bgCoverOffset - maskXoffset;
-		const placeholderY = bottom - bgCoverOffset - maskYoffset;
+		const placeholderX = Math.ceil(x - bgCoverOffset - maskXoffset);
+		const placeholderY = Math.ceil(bottom - bgCoverOffset - maskYoffset);
 
 		return { placeholderX, placeholderY };
 	}
