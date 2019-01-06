@@ -14,6 +14,31 @@ const RAIN_LABEL = {
 };
 
 export default class RainDetails extends Edition {
+	static getBgRainMaskPosition(isRainy) {
+		const bgCoverOffset = 20;
+		const maskYesXoffset = 3;
+		const maskYesYoffset = 3;
+		const maskNoXoffset = 7;
+		const maskNoYoffset = 13;
+		const rainMaskPlaceholder = document.querySelector(`.${RAIN.INFO_CLASS}`);
+		const { x, bottom } = rainMaskPlaceholder.getBoundingClientRect();
+		const maskXoffset = isRainy ? maskYesXoffset : maskNoXoffset;
+		const maskYoffset = isRainy ? maskYesYoffset : maskNoYoffset;
+		const placeholderX = Math.ceil(x - bgCoverOffset - maskXoffset);
+		const placeholderY = Math.ceil(bottom - bgCoverOffset - maskYoffset);
+
+		return { placeholderX, placeholderY };
+	}
+
+	static updateBgCoverRainMaskPosition() {
+		const isRainy = document.querySelector(`.${RAIN.INFO_CLASS}`).classList.contains(RAIN.INFO_YES_CLASS);
+		const maskClass = isRainy ? BG.MASK_SHAPE_YES : BG.MASK_SHAPE_NO;
+		const bgMaskEl = document.querySelector(`.${maskClass}`);
+		const { placeholderX, placeholderY } = RainDetails.getBgRainMaskPosition(isRainy);
+
+		bgMaskEl.style.transform = `translate(${placeholderX}px, ${placeholderY}px)`;
+	}
+
 	toggleDetails(e) {
 		e.preventDefault();
 
@@ -49,31 +74,6 @@ export default class RainDetails extends Edition {
 		});
 
 		return fragment;
-	}
-
-	static getBgRainMaskPosition(isRainy) {
-		const bgCoverOffset = 20;
-		const maskYesXoffset = 3;
-		const maskYesYoffset = 3;
-		const maskNoXoffset = 7;
-		const maskNoYoffset = 13;
-		const rainMaskPlaceholder = document.querySelector(`.${RAIN.INFO_CLASS}`);
-		const { x, bottom } = rainMaskPlaceholder.getBoundingClientRect();
-		const maskXoffset = isRainy ? maskYesXoffset : maskNoXoffset;
-		const maskYoffset = isRainy ? maskYesYoffset : maskNoYoffset;
-		const placeholderX = Math.ceil(x - bgCoverOffset - maskXoffset);
-		const placeholderY = Math.ceil(bottom - bgCoverOffset - maskYoffset);
-
-		return { placeholderX, placeholderY };
-	}
-
-	static updateBgCoverRainMaskPosition() {
-		const isRainy = document.querySelector(`.${RAIN.INFO_CLASS}`).classList.contains(RAIN.INFO_YES_CLASS);
-		const maskClass = isRainy ? BG.MASK_SHAPE_YES : BG.MASK_SHAPE_NO;
-		const bgMaskEl = document.querySelector(`.${maskClass}`);
-		const { placeholderX, placeholderY } = RainDetails.getBgRainMaskPosition(isRainy);
-
-		bgMaskEl.style.transform = `translate(${placeholderX}px, ${placeholderY}px)`;
 	}
 
 	decorateBgCoverByRainMask() {
