@@ -2,14 +2,25 @@ import cleanDOM from '../../../../../tests/utils/cleanDOM';
 import rainyEdition from '../../../../../tests/__mocks__/edition-notSort-noMergeArtists.json';
 import newRainyEdition from '../../../../../tests/__mocks__/edition-notSort-customLevels.json';
 import sunnyEdition from '../../../../../tests/__mocks__/edition-customOrderExceptHeadliners-mainByDaysAndMergeRest.json';
+import BG from '../../background/elementHandlers/background';
 import RAIN from '../elementHandlers/rain';
 import LINK from '../../../elementHandlers/link';
 import DIALOGBOX from '../../../utils/elementHandlers/dialogbox';
+import RAIN_INFO_MASK_TYPES from '../../../enums/rainInfoMask';
 import RainDetails from '../RainDetails';
+import BgCover from '../../background/BgCover';
 
 function prepareDOM(edition) {
 	const rainDetails = new RainDetails(edition);
+
 	document.body.appendChild(rainDetails.render());
+}
+
+function prepareBgMask(edition) {
+	const rainDetails = new RainDetails(edition);
+
+	document.body.appendChild(BgCover.render());
+	rainDetails.decorateBgCoverByRainMask();
 }
 
 describe('tests for RainDetails class', () => {
@@ -109,6 +120,42 @@ describe('tests for RainDetails class', () => {
 
 			// then
 			expect(document.getElementById(RAIN.DETAILS_ID).classList.contains(DIALOGBOX.VISIBLE_CLASS)).toBeFalsy();
+		});
+	});
+	describe('decorate rain mask', () => {
+		afterEach(() => cleanDOM());
+
+		it('decorate bg cover by yes mask', () => {
+			prepareDOM(rainyEdition);
+			prepareBgMask(rainyEdition);
+
+			const maskId = document.querySelector(`.${BG.COVER_SHAPE_CLASS}`).getAttributeNS(null, 'mask');
+
+			expect(maskId).toBe(`url(#${RAIN_INFO_MASK_TYPES.TRUE})`);
+		});
+		it('decorate bg cover by no mask', () => {
+			prepareDOM(sunnyEdition);
+			prepareBgMask(sunnyEdition);
+
+			const maskId = document.querySelector(`.${BG.COVER_SHAPE_CLASS}`).getAttributeNS(null, 'mask');
+
+			expect(maskId).toBe(`url(#${RAIN_INFO_MASK_TYPES.FALSE})`);
+		});
+	});
+	describe('update rain mask', () => {
+		it('update bg cover mask to yes', () => {
+
+		});
+		it('update bg cover mask to no', () => {
+
+		});
+		it('do not update mask in case of same mask type', () => {
+
+		});
+	});
+	describe('update mask position', () => {
+		it('update mask position', () => {
+
 		});
 	});
 });
