@@ -21,10 +21,10 @@ export default class RainDetails extends Edition {
 		const maskNoXoffset = 7;
 		const maskNoYoffset = 13;
 		const rainMaskPlaceholder = document.querySelector(`.${RAIN.INFO_CLASS}`);
-		const { x, bottom } = rainMaskPlaceholder.getBoundingClientRect();
+		const { left, bottom } = rainMaskPlaceholder.getBoundingClientRect();
 		const maskXoffset = isRainy ? maskYesXoffset : maskNoXoffset;
 		const maskYoffset = isRainy ? maskYesYoffset : maskNoYoffset;
-		const placeholderX = Math.ceil(x - bgCoverOffset - maskXoffset);
+		const placeholderX = Math.ceil(left - bgCoverOffset - maskXoffset);
 		const placeholderY = Math.ceil(bottom - bgCoverOffset - maskYoffset);
 
 		return { placeholderX, placeholderY };
