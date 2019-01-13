@@ -55,5 +55,6 @@ describe('intro view tests', () => {
 		expect(document.getElementById(LAYOUT.MAIN_TIMELINE_ID)).toBeTruthy();
 		expect(document.getElementById(LAYOUT.NAV_TIMELINE_ID)).toBeFalsy();
 		expect(document.getElementById(LAYOUT.YEAR_CONTAINER_ID)).toBeFalsy();
+		expect(document.getElementById(LAYOUT.BG_COVER_ID)).toBeFalsy();
 	});
 });

@@ -27,7 +27,7 @@ exports[`timeline item component render main timeline item 1`] = `
       2017
     </span>
     <svg
-      class="svgMask mainTimelineItemMask"
+      class="mainTimelineItemMask svgMask"
     >
       <defs>
         <mask
@@ -36,6 +36,8 @@ exports[`timeline item component render main timeline item 1`] = `
         >
           <rect
             class="svgMask__base"
+            height="100%"
+            width="100%"
           />
           <text
             class="mainTimelineItemMask__text"

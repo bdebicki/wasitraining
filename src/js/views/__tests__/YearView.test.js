@@ -38,6 +38,7 @@ describe('edition year view tests', () => {
 		expect(document.getElementById(LAYOUT.NAV_TIMELINE_ID)).toBeTruthy();
 		expect(document.getElementById(LAYOUT.YEAR_CONTAINER_ID)).toBeTruthy();
 		expect(document.getElementById(LAYOUT.BG_VIDEO_ID)).toBeTruthy();
+		expect(document.getElementById(LAYOUT.BG_COVER_ID)).toBeTruthy();
 		expect(document.getElementById(LAYOUT.FOOTER_ID)).toBeTruthy();
 	});
 	it('update view to year', () => {
@@ -56,6 +57,7 @@ describe('edition year view tests', () => {
 		expect(document.getElementById(LAYOUT.NAV_TIMELINE_ID)).toBeTruthy();
 		expect(document.getElementById(LAYOUT.YEAR_CONTAINER_ID)).toBeTruthy();
 		expect(document.getElementById(LAYOUT.MAIN_TIMELINE_ID)).toBeFalsy();
+		expect(document.getElementById(LAYOUT.BG_COVER_ID)).toBeTruthy();
 	});
 	it('update year view by new edition', () => {
 		// having

@@ -1,28 +1,20 @@
+@bgVideoZindex: @bgCoverZindex - 1;
+
 #bgVideo {
 	@videoOpacityIntro: 0.4;
 	@videoOpacityYear: 0.6;
 
 	.strechPosition();
-	z-index: -1;
+	z-index: @bgVideoZindex;
 	overflow: hidden;
 
-	[data-view='year'] & {
-		&:before { // cover for a video and display only border
-			.strechPosition(@offset: @bodyOffset);
-			content: '';
-			z-index: 2;
-			background: #fff;
-		}
-	}
-
-	//@supports not (object-fit: cover) { temporary turned off video for development
+	//@supports not (object-fit: cover) { // temporary turned off video for development
 		&:after {
 			.strechPosition();
 			content: '';
 			opacity: @videoOpacityIntro;
 			background-image: url('/images/bg-img.png');
 			background-size: cover;
-			z-index: 1;
 
 			[data-view='year'] & {
 				opacity: @videoOpacityYear;

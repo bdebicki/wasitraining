@@ -1,0 +1,18 @@
+@bgCoverZindex: @layoutBaseZindex - 1;
+
+#bgCover {
+	.strechPosition(@offset: @bodyOffset);
+	z-index: @bgCoverZindex;
+}
+
+.bgCover {
+	&__cover {
+		width: 100%;
+		height: 100%;
+	}
+	&__coverShape {
+		width: 100%;
+		height: 100%;
+		fill: #fff;
+	}
+}

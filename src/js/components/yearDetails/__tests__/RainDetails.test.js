@@ -2,14 +2,41 @@ import cleanDOM from '../../../../../tests/utils/cleanDOM';
 import rainyEdition from '../../../../../tests/__mocks__/edition-notSort-noMergeArtists.json';
 import newRainyEdition from '../../../../../tests/__mocks__/edition-notSort-customLevels.json';
 import sunnyEdition from '../../../../../tests/__mocks__/edition-customOrderExceptHeadliners-mainByDaysAndMergeRest.json';
+import BG from '../../background/elementHandlers/background';
 import RAIN from '../elementHandlers/rain';
 import LINK from '../../../elementHandlers/link';
 import DIALOGBOX from '../../../utils/elementHandlers/dialogbox';
+import RAIN_INFO_MASK_TYPES from '../../../enums/rainInfoMask';
 import RainDetails from '../RainDetails';
+import BgCover from '../../background/BgCover';
 
-function prepareDOM(edition) {
+function mockRainDetails(edition) {
 	const rainDetails = new RainDetails(edition);
+
 	document.body.appendChild(rainDetails.render());
+}
+
+function mockBgMask(edition) {
+	const rainDetails = new RainDetails(edition);
+
+	document.body.appendChild(BgCover.render());
+	rainDetails.decorateBgCoverByRainMask();
+}
+
+function mockEdition(edition) {
+	mockRainDetails(edition);
+	mockBgMask(edition);
+}
+
+function mockRainMaskPosition() {
+	document.querySelector(`.${RAIN.INFO_CLASS}`).getBoundingClientRect = jest.fn(() => ({
+		left: 100,
+		bottom: 100,
+	}));
+}
+
+function getMaskId() {
+	return document.querySelector(`.${BG.COVER_SHAPE_CLASS}`).getAttributeNS(null, 'mask');
 }
 
 describe('tests for RainDetails class', () => {
@@ -39,7 +66,7 @@ describe('tests for RainDetails class', () => {
 
 		it('uptade rain info', () => {
 			// having
-			prepareDOM(rainyEdition);
+			mockRainDetails(rainyEdition);
 			const updatedRainDetails = new RainDetails(sunnyEdition);
 
 			// when
@@ -50,7 +77,7 @@ describe('tests for RainDetails class', () => {
 		});
 		it('update rain day details: from rainy to sunny', () => {
 			// having
-			prepareDOM(rainyEdition);
+			mockRainDetails(rainyEdition);
 			const updatedRainDetails = new RainDetails(sunnyEdition);
 
 			// when
@@ -61,7 +88,7 @@ describe('tests for RainDetails class', () => {
 		});
 		it('update rain day details: from sunny to rainy', () => {
 			// having
-			prepareDOM(sunnyEdition);
+			mockRainDetails(sunnyEdition);
 			const updatedRainDetails = new RainDetails(rainyEdition);
 
 			// when
@@ -72,7 +99,7 @@ describe('tests for RainDetails class', () => {
 		});
 		it('update rain day details: from rainy to rainy', () => {
 			// having
-			prepareDOM(rainyEdition);
+			mockRainDetails(rainyEdition);
 			const updatedRainDetails = new RainDetails(newRainyEdition);
 
 			// when
@@ -83,7 +110,7 @@ describe('tests for RainDetails class', () => {
 		});
 		it('update rain details', () => {
 			// having
-			prepareDOM(rainyEdition);
+			mockRainDetails(rainyEdition);
 			const updatedRainDetails = new RainDetails(sunnyEdition);
 
 			// when
@@ -94,7 +121,7 @@ describe('tests for RainDetails class', () => {
 		});
 	});
 	describe('toggle details dialogbox', () => {
-		beforeAll(() => prepareDOM(rainyEdition));
+		beforeAll(() => mockRainDetails(rainyEdition));
 
 		it('show details dialogbox', () => {
 			// when
@@ -109,6 +136,74 @@ describe('tests for RainDetails class', () => {
 
 			// then
 			expect(document.getElementById(RAIN.DETAILS_ID).classList.contains(DIALOGBOX.VISIBLE_CLASS)).toBeFalsy();
+		});
+	});
+	describe('decorate rain mask', () => {
+		afterEach(() => cleanDOM());
+
+		it('decorate bg cover by yes mask', () => {
+			// when
+			mockEdition(rainyEdition);
+
+			// then
+			expect(getMaskId()).toBe(`url(#${RAIN_INFO_MASK_TYPES.TRUE})`);
+		});
+		it('decorate bg cover by no mask', () => {
+			// when
+			mockEdition(sunnyEdition);
+
+			// then
+			expect(getMaskId()).toBe(`url(#${RAIN_INFO_MASK_TYPES.FALSE})`);
+		});
+	});
+	describe('update rain mask', () => {
+		afterEach(() => cleanDOM());
+
+		it('update bg cover mask to yes', () => {
+			// having
+			mockEdition(sunnyEdition);
+
+			// when
+			const newEditionRainDetails = new RainDetails(rainyEdition);
+			newEditionRainDetails.updateBgCoverByRainMask();
+
+			// then
+			expect(getMaskId()).toBe(`url(#${RAIN_INFO_MASK_TYPES.TRUE})`);
+		});
+		it('update bg cover mask to no', () => {
+			// having
+			mockEdition(rainyEdition);
+
+			// when
+			const newEditionRainDetails = new RainDetails(sunnyEdition);
+			newEditionRainDetails.updateBgCoverByRainMask();
+
+			// then
+			expect(getMaskId()).toBe(`url(#${RAIN_INFO_MASK_TYPES.FALSE})`);
+		});
+		it('do not update mask in case of same mask type', () => {
+			// having
+			mockEdition(rainyEdition);
+
+			// when
+			const newEditionRainDetails = new RainDetails(rainyEdition);
+			newEditionRainDetails.updateBgCoverByRainMask();
+
+			// then
+			expect(getMaskId()).toBe(`url(#${RAIN_INFO_MASK_TYPES.TRUE})`);
+		});
+	});
+	describe('update mask position', () => {
+		it('update mask position', () => {
+			// having
+			mockEdition(rainyEdition);
+
+			// when
+			mockRainMaskPosition();
+			RainDetails.updateBgCoverRainMaskPosition();
+
+			// then
+			expect(document.querySelector(`.${BG.MASK_SHAPE_YES}`).style.transform).toBe('translate(77px, 77px)');
 		});
 	});
 });
