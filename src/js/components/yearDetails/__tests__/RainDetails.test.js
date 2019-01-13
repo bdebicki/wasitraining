@@ -135,20 +135,18 @@ describe('tests for RainDetails class', () => {
 		afterEach(() => cleanDOM());
 
 		it('decorate bg cover by yes mask', () => {
-			prepareDOM(rainyEdition);
-			prepareBgMask(rainyEdition);
+			// when
+			mockRainyEdition(rainyEdition);
 
-			const maskId = document.querySelector(`.${BG.COVER_SHAPE_CLASS}`).getAttributeNS(null, 'mask');
-
-			expect(maskId).toBe(`url(#${RAIN_INFO_MASK_TYPES.TRUE})`);
+			// then
+			expect(getMaskId()).toBe(`url(#${RAIN_INFO_MASK_TYPES.TRUE})`);
 		});
 		it('decorate bg cover by no mask', () => {
-			prepareDOM(sunnyEdition);
-			prepareBgMask(sunnyEdition);
+			// when
+			mockRainyEdition(sunnyEdition);
 
-			const maskId = document.querySelector(`.${BG.COVER_SHAPE_CLASS}`).getAttributeNS(null, 'mask');
-
-			expect(maskId).toBe(`url(#${RAIN_INFO_MASK_TYPES.FALSE})`);
+			// then
+			expect(getMaskId()).toBe(`url(#${RAIN_INFO_MASK_TYPES.FALSE})`);
 		});
 	});
 	describe('update rain mask', () => {
