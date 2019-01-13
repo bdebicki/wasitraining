@@ -37,6 +37,10 @@ export default class Timeline {
 		return addElement('ul', settings);
 	}
 
+	static handleTimelineScroll() {
+		console.log('boczek');
+	}
+
 	renderNavTimeline() {
 		const revertedEditionsOrder = this.reverseSortEditions();
 		const timelineContainer = Timeline.createTimelineContainer(LAYOUT.NAV_TIMELINE_ID);
@@ -55,6 +59,9 @@ export default class Timeline {
 
 		timelineContainer.appendChild(editionsListContainer);
 
+		document.getElementById(LAYOUT.MAIN_CONTAINER_ID)
+			.removeEventListener('mousemove', Timeline.handleTimelineScroll, null);
+
 		return timelineContainer;
 	}
 
@@ -70,6 +77,9 @@ export default class Timeline {
 		});
 
 		timelineContainer.appendChild(editionsListContainer);
+
+		document.getElementById(LAYOUT.MAIN_CONTAINER_ID)
+			.addEventListener('mousemove', Timeline.handleTimelineScroll, null);
 
 		return timelineContainer;
 	}
