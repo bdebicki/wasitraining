@@ -32,6 +32,8 @@ export default class IntroView {
 		document.getElementById(LAYOUT.BG_COVER_ID).remove();
 
 		window.removeEventListener('resize', RainDetails.updateBgCoverRainMaskPosition, null);
+		// document.getElementById(LAYOUT.MAIN_TIMELINE_ID)
+		// 	.addEventListener('mousemove', timelineBlock.handleTimelineScroll, null);
 	}
 
 	render() {
@@ -45,5 +47,7 @@ export default class IntroView {
 			BgVideo.render(),
 			Footer.render(),
 		]);
+		// document.getElementById(LAYOUT.MAIN_TIMELINE_ID)
+		// 	.addEventListener('mousemove', Timeline.handleTimelineScroll, null);
 	}
 }

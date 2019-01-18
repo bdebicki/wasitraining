@@ -7,6 +7,7 @@ export default class Timeline {
 	constructor(data, editionId) {
 		this.data = data;
 		this.editionId = editionId;
+		this.windowWidth = null;
 	}
 
 	reverseSortEditions() {
@@ -37,8 +38,35 @@ export default class Timeline {
 		return addElement('ul', settings);
 	}
 
-	static handleTimelineScroll() {
-		console.log('boczek');
+	static handleTimelineScroll(e) {
+		// if (Timeline.getCursorPosition(e) > Timeline.getTimelineOffset()
+		// 	&& Timeline.getCursorPosition(e) < Timeline.getScreenWidth() - Timeline.getTimelineOffset()
+		// ) {
+		document.getElementById(LAYOUT.MAIN_TIMELINE_ID)
+			.style.transform = `translateX(-${Timeline.calculateXPosition(e)})`;
+		// }
+	}
+
+	static calculateXPosition(e) {
+		const xPosition = (Timeline.getCursorPosition(e) * 100) / Timeline.getScreenWidth();
+
+		return `${xPosition}%`;
+	}
+
+	static getTimelineSize() {
+		return document.querySelector(`.${TIMELINE.MAIN_EDITIONS_CLASS}`).offsetWidth;
+	}
+
+	static getCursorPosition(e) {
+		return e.clientX;
+	}
+
+	static getTimelineOffset() {
+		return document.getElementById(LAYOUT.MAIN_TIMELINE_ID).getBoundingClientRect().left;
+	}
+
+	static getScreenWidth() {
+		return window.innerWidth;
 	}
 
 	renderNavTimeline() {
@@ -60,6 +88,7 @@ export default class Timeline {
 		timelineContainer.appendChild(editionsListContainer);
 
 		document.getElementById(LAYOUT.MAIN_CONTAINER_ID)
+		// document.getElementById(LAYOUT.MAIN_TIMELINE_ID)
 			.removeEventListener('mousemove', Timeline.handleTimelineScroll, null);
 
 		return timelineContainer;
@@ -79,6 +108,7 @@ export default class Timeline {
 		timelineContainer.appendChild(editionsListContainer);
 
 		document.getElementById(LAYOUT.MAIN_CONTAINER_ID)
+		// document.getElementById(LAYOUT.MAIN_TIMELINE_ID)
 			.addEventListener('mousemove', Timeline.handleTimelineScroll, null);
 
 		return timelineContainer;
