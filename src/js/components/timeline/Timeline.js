@@ -39,12 +39,8 @@ export default class Timeline {
 	}
 
 	static handleTimelineScroll(e) {
-		// if (Timeline.getCursorPosition(e) > Timeline.getTimelineOffset()
-		// 	&& Timeline.getCursorPosition(e) < Timeline.getScreenWidth() - Timeline.getTimelineOffset()
-		// ) {
 		document.getElementById(LAYOUT.MAIN_TIMELINE_ID)
-			.style.transform = `translateX(-${Timeline.calculateXPosition(e)})`;
-		// }
+			.style.left = `-${Timeline.calculateXPosition(e)}`;
 	}
 
 	static calculateXPosition(e) {
@@ -53,16 +49,8 @@ export default class Timeline {
 		return `${xPosition}%`;
 	}
 
-	static getTimelineSize() {
-		return document.querySelector(`.${TIMELINE.MAIN_EDITIONS_CLASS}`).offsetWidth;
-	}
-
 	static getCursorPosition(e) {
 		return e.clientX;
-	}
-
-	static getTimelineOffset() {
-		return document.getElementById(LAYOUT.MAIN_TIMELINE_ID).getBoundingClientRect().left;
 	}
 
 	static getScreenWidth() {

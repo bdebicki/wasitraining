@@ -47,7 +47,7 @@ export default class IntroView {
 			BgVideo.render(),
 			Footer.render(),
 		]);
-		// document.getElementById(LAYOUT.MAIN_TIMELINE_ID)
-		// 	.addEventListener('mousemove', Timeline.handleTimelineScroll, null);
+		document.getElementById(LAYOUT.MAIN_TIMELINE_ID)
+			.addEventListener('mousemove', Timeline.handleTimelineScroll, null);
 	}
 }
