@@ -39,22 +39,53 @@ export default class Timeline {
 	}
 
 	static handleTimelineScroll(e) {
-		document.getElementById(LAYOUT.MAIN_TIMELINE_ID)
-			.style.left = `-${Timeline.calculateXPosition(e)}`;
+		const timelineScrolledPosition = Timeline.calculateXPosition(e);
+		const { timelineStart, timelineEnd } = Timeline.getTimelineOffset();
+		const cursorPosition = Timeline.getCursorPosition(e);
+		const timeline = document.querySelector(`.${TIMELINE.MAIN_EDITIONS_CLASS}`);
+		const maxOffset = Timeline.getEditionsWidth() - document.getElementById(LAYOUT.MAIN_TIMELINE_ID).offsetWidth;
+
+		const setPosition = setTimeout(() => {
+			if (cursorPosition <= 0) { // while cursor is before beginning
+				clearTimeout(setPosition);
+				timeline.style.transform = 'translateX(0)';
+			} else if (cursorPosition >= (timelineEnd - timelineStart - 1)) { // while cursor is after timeline
+				clearTimeout(setPosition);
+				timeline.style.transform = `translateX(-${maxOffset}px)`;
+			} else {
+				timeline.style.transform = `translateX(-${timelineScrolledPosition}px)`;
+			}
+		}, 30, true);
+
+		setPosition; // eslint-disable-line no-unused-expressions
 	}
 
 	static calculateXPosition(e) {
-		const xPosition = (Timeline.getCursorPosition(e) * 100) / Timeline.getScreenWidth();
+		const cursorPosition = Timeline.getCursorPosition(e);
+		const timelineContainerWidth = document.getElementById(LAYOUT.MAIN_TIMELINE_ID).offsetWidth;
+		const editionsWidth = Timeline.getEditionsWidth() - timelineContainerWidth;
+		const xPosition = Math.round((editionsWidth * cursorPosition) / timelineContainerWidth);
 
-		return `${xPosition}%`;
+		return xPosition;
+	}
+
+	static getEditionsWidth() {
+		const editionsList = document.querySelectorAll(`.${TIMELINE.MAIN_EDITION_CLASS}`);
+		const editionsLenght = editionsList.length;
+		const editionWidth = editionsList[1].offsetWidth; // first one has extra border on left
+		const beginningBorderSize = 1;
+
+		return editionsLenght * editionWidth + beginningBorderSize;
 	}
 
 	static getCursorPosition(e) {
-		return e.clientX;
+		return e.clientX - Timeline.getTimelineOffset().timelineStart;
 	}
 
-	static getScreenWidth() {
-		return window.innerWidth;
+	static getTimelineOffset() {
+		const { left, right } = document.getElementById(LAYOUT.MAIN_TIMELINE_ID).getBoundingClientRect();
+
+		return { timelineStart: left, timelineEnd: right };
 	}
 
 	renderNavTimeline() {
@@ -75,10 +106,6 @@ export default class Timeline {
 
 		timelineContainer.appendChild(editionsListContainer);
 
-		document.getElementById(LAYOUT.MAIN_CONTAINER_ID)
-		// document.getElementById(LAYOUT.MAIN_TIMELINE_ID)
-			.removeEventListener('mousemove', Timeline.handleTimelineScroll, null);
-
 		return timelineContainer;
 	}
 
@@ -94,10 +121,6 @@ export default class Timeline {
 		});
 
 		timelineContainer.appendChild(editionsListContainer);
-
-		document.getElementById(LAYOUT.MAIN_CONTAINER_ID)
-		// document.getElementById(LAYOUT.MAIN_TIMELINE_ID)
-			.addEventListener('mousemove', Timeline.handleTimelineScroll, null);
 
 		return timelineContainer;
 	}
