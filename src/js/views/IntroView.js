@@ -4,6 +4,7 @@ import VIEW_TYPES from '../enums/viewTypes';
 import Header from '../components/header/Header';
 import Title from '../components/header/Title';
 import Timeline from '../components/timeline/Timeline';
+import TimelineScrolling from '../components/timeline/TimelineScrolling';
 import BgVideo from '../components/background/BgVideo';
 import Footer from '../components/footer/Footer';
 import RainDetails from '../components/yearDetails/RainDetails';
@@ -33,8 +34,10 @@ export default class IntroView {
 
 		window.removeEventListener('resize', RainDetails.updateBgCoverRainMaskPosition, null);
 
-		document.getElementById(LAYOUT.MAIN_TIMELINE_ID)
-			.removeEventListener('mousemove', timelineBlock.handleTimelineScroll, null);
+		// const timelineScrolling = new TimelineScrolling(document.getElementById(LAYOUT.MAIN_TIMELINE_ID));
+		//
+		// document.getElementById(LAYOUT.MAIN_CONTAINER_ID)
+		// 	.addEventListener('mousemove', timelineScrolling.handleScrolling, null);
 	}
 
 	render() {
@@ -48,7 +51,10 @@ export default class IntroView {
 			BgVideo.render(),
 			Footer.render(),
 		]);
-		document.getElementById(LAYOUT.MAIN_TIMELINE_ID)
-			.addEventListener('mousemove', Timeline.handleTimelineScroll, null);
+
+		const timelineScrolling = new TimelineScrolling();
+
+		document.getElementById(LAYOUT.MAIN_CONTAINER_ID)
+			.addEventListener('mousemove', timelineScrolling.handleScrolling, null);
 	}
 }

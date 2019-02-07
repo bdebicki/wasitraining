@@ -7,7 +7,6 @@ export default class Timeline {
 	constructor(data, editionId) {
 		this.data = data;
 		this.editionId = editionId;
-		this.windowWidth = null;
 	}
 
 	reverseSortEditions() {
@@ -38,55 +37,55 @@ export default class Timeline {
 		return addElement('ul', settings);
 	}
 
-	static handleTimelineScroll(e) {
-		const timelineScrolledPosition = Timeline.calculateXPosition(e);
-		const { timelineStart, timelineEnd } = Timeline.getTimelineOffset();
-		const cursorPosition = Timeline.getCursorPosition(e);
-		const timeline = document.querySelector(`.${TIMELINE.MAIN_EDITIONS_CLASS}`);
-		const maxOffset = Timeline.getEditionsWidth() - document.getElementById(LAYOUT.MAIN_TIMELINE_ID).offsetWidth;
-
-		const setPosition = setTimeout(() => {
-			if (cursorPosition <= 0) { // while cursor is before beginning
-				clearTimeout(setPosition);
-				timeline.style.transform = 'translateX(0)';
-			} else if (cursorPosition >= (timelineEnd - timelineStart - 1)) { // while cursor is after timeline
-				clearTimeout(setPosition);
-				timeline.style.transform = `translateX(-${maxOffset}px)`;
-			} else {
-				timeline.style.transform = `translateX(-${timelineScrolledPosition}px)`;
-			}
-		}, 30, true);
-
-		setPosition; // eslint-disable-line no-unused-expressions
-	}
-
-	static calculateXPosition(e) {
-		const cursorPosition = Timeline.getCursorPosition(e);
-		const timelineContainerWidth = document.getElementById(LAYOUT.MAIN_TIMELINE_ID).offsetWidth;
-		const editionsWidth = Timeline.getEditionsWidth() - timelineContainerWidth;
-		const xPosition = Math.round((editionsWidth * cursorPosition) / timelineContainerWidth);
-
-		return xPosition;
-	}
-
-	static getEditionsWidth() {
-		const editionsList = document.querySelectorAll(`.${TIMELINE.MAIN_EDITION_CLASS}`);
-		const editionsLenght = editionsList.length;
-		const editionWidth = editionsList[1].offsetWidth; // first one has extra border on left
-		const beginningBorderSize = 1;
-
-		return editionsLenght * editionWidth + beginningBorderSize;
-	}
-
-	static getCursorPosition(e) {
-		return e.clientX - Timeline.getTimelineOffset().timelineStart;
-	}
-
-	static getTimelineOffset() {
-		const { left, right } = document.getElementById(LAYOUT.MAIN_TIMELINE_ID).getBoundingClientRect();
-
-		return { timelineStart: left, timelineEnd: right };
-	}
+	// static handleTimelineScroll(e) {
+	// 	const timelineScrolledPosition = Timeline.calculateXPosition(e);
+	// 	const { timelineStart, timelineEnd } = Timeline.getTimelineOffset();
+	// 	const cursorPosition = Timeline.getCursorPosition(e);
+	// 	const timeline = document.querySelector(`.${TIMELINE.MAIN_EDITIONS_CLASS}`);
+	// 	const maxOffset = Timeline.getEditionsWidth() - document.getElementById(LAYOUT.MAIN_TIMELINE_ID).offsetWidth;
+	//
+	// 	const setPosition = setTimeout(() => {
+	// 		if (cursorPosition <= 0) { // while cursor is before beginning
+	// 			clearTimeout(setPosition);
+	// 			timeline.style.transform = 'translateX(0)';
+	// 		} else if (cursorPosition >= (timelineEnd - timelineStart - 1)) { // while cursor is after timeline
+	// 			clearTimeout(setPosition);
+	// 			timeline.style.transform = `translateX(-${maxOffset}px)`;
+	// 		} else {
+	// 			timeline.style.transform = `translateX(-${timelineScrolledPosition}px)`;
+	// 		}
+	// 	}, 30, true);
+	//
+	// 	setPosition; // eslint-disable-line no-unused-expressions
+	// }
+	//
+	// static calculateXPosition(e) {
+	// 	const cursorPosition = Timeline.getCursorPosition(e);
+	// 	const timelineContainerWidth = document.getElementById(LAYOUT.MAIN_TIMELINE_ID).offsetWidth;
+	// 	const editionsWidth = Timeline.getEditionsWidth() - timelineContainerWidth;
+	// 	const xPosition = Math.round((editionsWidth * cursorPosition) / timelineContainerWidth);
+	//
+	// 	return xPosition;
+	// }
+	//
+	// static getEditionsWidth() {
+	// 	const editionsList = document.querySelectorAll(`.${TIMELINE.MAIN_EDITION_CLASS}`);
+	// 	const editionsLenght = editionsList.length;
+	// 	const editionWidth = editionsList[1].offsetWidth; // first one has extra border on left
+	// 	const beginningBorderSize = 1;
+	//
+	// 	return editionsLenght * editionWidth + beginningBorderSize;
+	// }
+	//
+	// static getCursorPosition(e) {
+	// 	return e.clientX - Timeline.getTimelineOffset().timelineStart;
+	// }
+	//
+	// static getTimelineOffset() {
+	// 	const { left, right } = document.getElementById(LAYOUT.MAIN_TIMELINE_ID).getBoundingClientRect();
+	//
+	// 	return { timelineStart: left, timelineEnd: right };
+	// }
 
 	renderNavTimeline() {
 		const revertedEditionsOrder = this.reverseSortEditions();
