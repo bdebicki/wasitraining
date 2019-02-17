@@ -11,20 +11,19 @@ export default class TimelineScrolling {
 		this.editionsMaxScroll = this.editionsSize - this.areaSize;
 		this.editionsCurrentScroll = null;
 		this.cursorPosition = null;
-		this.handleScrolling = this.handleScrolling.bind(this);
 	}
 
 	updateScrollingData() {
 
 	}
 
-	handleScrolling(e) {
+	handleScrolling = (e) => {
 		const editionListEl = document.querySelector(`.${TIMELINE.MAIN_EDITIONS_CLASS}`);
 
 		this.handleCursorMove(e);
 		this.setTimelineScroll();
 		editionListEl.style.transform = `translateX(-${this.editionsCurrentScroll}px)`;
-	}
+	};
 
 	handleCursorMove(e) {
 		this.setCursorPosition(e);
