@@ -4,7 +4,6 @@ import VIEW_TYPES from '../enums/viewTypes';
 import Header from '../components/header/Header';
 import Title from '../components/header/Title';
 import Timeline from '../components/timeline/Timeline';
-import TimelineScrolling from '../components/timeline/TimelineScrolling';
 import YearDetails from '../components/yearDetails/YearDetails';
 import RainDetails from '../components/yearDetails/RainDetails';
 import BgCover from '../components/background/BgCover';
@@ -52,11 +51,6 @@ export default class YearView {
 		rainBlock.decorateBgCoverByRainMask();
 
 		window.addEventListener('resize', RainDetails.updateBgCoverRainMaskPosition, null);
-
-		const timelineScrolling = new TimelineScrolling(document.getElementById(LAYOUT.MAIN_TIMELINE_ID));
-
-		document.getElementById(LAYOUT.MAIN_CONTAINER_ID)
-			.addEventListener('mousemove', timelineScrolling.handleScrolling, null);
 	}
 
 	render() {

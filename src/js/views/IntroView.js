@@ -8,7 +8,7 @@ import TimelineScrolling from '../components/timeline/TimelineScrolling';
 import BgVideo from '../components/background/BgVideo';
 import Footer from '../components/footer/Footer';
 import RainDetails from '../components/yearDetails/RainDetails';
-import { updateViewType } from '../utils/updateView';
+import { getViewType, updateViewType } from '../utils/updateView';
 import pushElement from '../utils/pushElement';
 
 export default class IntroView {
@@ -18,6 +18,35 @@ export default class IntroView {
 
 	static updateViewTypeToIntro() {
 		updateViewType(VIEW_TYPES.INTRO);
+	}
+
+	static handleTimelineScrolling() {
+		const isIntroView = () => getViewType() === VIEW_TYPES.INTRO;
+		const timelineScrolling = new TimelineScrolling();
+		timelineScrolling.updateScrollingData();
+
+		const handleTimelineScrollingEvents = (e) => {
+			if (!isIntroView()) {
+				window.removeEventListener('mousemove', handleTimelineScrollingEvents, null);
+
+				return;
+			}
+
+			timelineScrolling.handleScrolling(e);
+		};
+
+		const handleTimelineUpdateScrollingEvents = (e) => {
+			if (!isIntroView()) {
+				window.removeEventListener('mousemove', handleTimelineUpdateScrollingEvents, null);
+
+				return;
+			}
+
+			timelineScrolling.updateScrollingData(e);
+		};
+
+		window.addEventListener('mousemove', handleTimelineScrollingEvents, null);
+		window.addEventListener('resize', handleTimelineUpdateScrollingEvents, null);
 	}
 
 	switchToIntoView() {
@@ -34,10 +63,7 @@ export default class IntroView {
 
 		window.removeEventListener('resize', RainDetails.updateBgCoverRainMaskPosition, null);
 
-		// const timelineScrolling = new TimelineScrolling(document.getElementById(LAYOUT.MAIN_TIMELINE_ID));
-		//
-		// document.getElementById(LAYOUT.MAIN_CONTAINER_ID)
-		// 	.addEventListener('mousemove', timelineScrolling.handleScrolling, null);
+		IntroView.handleTimelineScrolling();
 	}
 
 	render() {
@@ -52,9 +78,6 @@ export default class IntroView {
 			Footer.render(),
 		]);
 
-		const timelineScrolling = new TimelineScrolling();
-
-		document.getElementById(LAYOUT.MAIN_CONTAINER_ID)
-			.addEventListener('mousemove', timelineScrolling.handleScrolling, null);
+		IntroView.handleTimelineScrolling();
 	}
 }

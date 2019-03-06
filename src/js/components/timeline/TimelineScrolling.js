@@ -4,17 +4,20 @@ import TIMELINE from './elementHandlers/timeline';
 export default class TimelineScrolling {
 	constructor() {
 		this.timelineEl = document.getElementById(LAYOUT.MAIN_TIMELINE_ID);
-		this.areaCoords = this.getAreaCoords();
-		this.areaSize = this.getAreaSize();
-		this.editionsSize = TimelineScrolling.getEditionsSize();
+		this.areaCoords = null;
+		this.areaSize = null;
+		this.editionsSize = null;
 		this.editionsMinScroll = 0;
-		this.editionsMaxScroll = this.editionsSize - this.areaSize;
+		this.editionsMaxScroll = null;
 		this.editionsCurrentScroll = null;
 		this.cursorPosition = null;
 	}
 
 	updateScrollingData() {
-
+		this.areaCoords = this.getAreaCoords();
+		this.areaSize = this.getAreaSize();
+		this.editionsSize = TimelineScrolling.getEditionsSize();
+		this.editionsMaxScroll = this.getEditionMaxScroll();
 	}
 
 	handleScrolling = (e) => {
@@ -71,6 +74,11 @@ export default class TimelineScrolling {
 
 	static getCursorPosition(e) {
 		return e.clientX;
+	}
+
+	getEditionMaxScroll() {
+		const { editionsSize, areaSize } = this;
+		return editionsSize - areaSize;
 	}
 
 	getAreaSize() {
