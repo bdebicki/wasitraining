@@ -15,7 +15,7 @@ export default class TimelineScrolling {
 		this.virtualAreaSize = null;
 	}
 
-	updateScrollingData() {
+	setScrollingData() {
 		this.areaCoords = this.getAreaCoords();
 		this.areaSize = this.getAreaSize();
 		this.editionsSize = TimelineScrolling.getEditionsSize();

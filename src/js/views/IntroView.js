@@ -23,7 +23,7 @@ export default class IntroView {
 	static handleTimelineScrolling() {
 		const isIntroView = () => getViewType() === VIEW_TYPES.INTRO;
 		const timelineScrolling = new TimelineScrolling();
-		timelineScrolling.updateScrollingData();
+		timelineScrolling.setScrollingData();
 
 		const handleTimelineScrollingEvents = (e) => {
 			if (!isIntroView()) {
@@ -35,14 +35,14 @@ export default class IntroView {
 			timelineScrolling.handleScrolling(e);
 		};
 
-		const handleTimelineUpdateScrollingEvents = (e) => {
+		const handleTimelineUpdateScrollingEvents = () => {
 			if (!isIntroView()) {
 				window.removeEventListener('mousemove', handleTimelineUpdateScrollingEvents, null);
 
 				return;
 			}
 
-			timelineScrolling.updateScrollingData(e);
+			timelineScrolling.setScrollingData();
 		};
 
 		window.addEventListener('mousemove', handleTimelineScrollingEvents, null);
