@@ -5,12 +5,14 @@ export default class TimelineScrolling {
 	constructor() {
 		this.timelineEl = document.getElementById(LAYOUT.MAIN_TIMELINE_ID);
 		this.areaCoords = null;
+		this.areaOffset = 20;
 		this.areaSize = null;
+		this.cursorPosition = null;
 		this.editionsSize = null;
 		this.editionsMinScroll = 0;
 		this.editionsMaxScroll = null;
 		this.editionsCurrentScroll = null;
-		this.cursorPosition = null;
+		this.virtualAreaSize = null;
 	}
 
 	updateScrollingData() {
@@ -18,6 +20,7 @@ export default class TimelineScrolling {
 		this.areaSize = this.getAreaSize();
 		this.editionsSize = TimelineScrolling.getEditionsSize();
 		this.editionsMaxScroll = this.getEditionMaxScroll();
+		this.virtualAreaSize = this.getVirtualAreaSize();
 	}
 
 	handleScrolling = (e) => {
@@ -40,9 +43,12 @@ export default class TimelineScrolling {
 			editionsMinScroll,
 			editionsMaxScroll,
 			editionsSize,
+			virtualAreaSize,
 		} = this;
 		const { x1, x2 } = areaCoords;
-		const editionsScroll = Math.round(((editionsSize - areaSize) * (cursorPosition - x1)) / areaSize);
+		const editionsScroll = Math.round(
+			((editionsSize - areaSize) * (cursorPosition - x1)) / virtualAreaSize
+		);
 
 		if (cursorPosition <= x1) { // while cursor is before beginning
 			this.editionsCurrentScroll = editionsMinScroll;
@@ -88,10 +94,18 @@ export default class TimelineScrolling {
 	}
 
 	getAreaCoords() {
-		const { timelineEl } = this;
+		const { timelineEl, areaOffset } = this;
 		const { left, right } = timelineEl.getBoundingClientRect();
+		const x1 = left + areaOffset;
+		const x2 = right - areaOffset;
 
-		return { x1: left, x2: right };
+		return { x1, x2 };
+	}
+
+	getVirtualAreaSize() {
+		const { areaOffset, areaSize } = this;
+
+		return areaSize - (2 * areaOffset);
 	}
 
 	static getEditionsSize() {
