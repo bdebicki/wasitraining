@@ -20,10 +20,8 @@ export default class IntroView {
 		updateViewType(VIEW_TYPES.INTRO);
 	}
 
-	static handleTimelineScrolling() {
+	static handleTimelineScrolling(scope) {
 		const isIntroView = () => getViewType() === VIEW_TYPES.INTRO;
-		const timelineScrolling = new TimelineScrolling();
-		timelineScrolling.setScrollingData();
 
 		const handleTimelineScrollingEvents = (e) => {
 			if (!isIntroView()) {
@@ -32,9 +30,8 @@ export default class IntroView {
 				return;
 			}
 
-			timelineScrolling.handleScrolling(e);
+			scope.handleScrolling(e);
 		};
-
 		const handleTimelineUpdateScrollingEvents = () => {
 			if (!isIntroView()) {
 				window.removeEventListener('mousemove', handleTimelineUpdateScrollingEvents, null);
@@ -42,14 +39,14 @@ export default class IntroView {
 				return;
 			}
 
-			timelineScrolling.setScrollingData();
+			scope.setScrollingData();
 		};
 
 		window.addEventListener('mousemove', handleTimelineScrollingEvents, null);
 		window.addEventListener('resize', handleTimelineUpdateScrollingEvents, null);
 	}
 
-	switchToIntoView() {
+	switchToIntoView(e) {
 		const bodyEl = `#${LAYOUT.MAIN_CONTAINER_ID}`;
 		const timelineBlock = new Timeline(this.data);
 
@@ -63,7 +60,11 @@ export default class IntroView {
 
 		window.removeEventListener('resize', RainDetails.updateBgCoverRainMaskPosition, null);
 
-		IntroView.handleTimelineScrolling();
+		const timelineScrolling = new TimelineScrolling();
+		timelineScrolling.setScrollingData();
+		timelineScrolling.setInitialTimelineScroll(e);
+
+		IntroView.handleTimelineScrolling(timelineScrolling);
 	}
 
 	render() {
@@ -78,6 +79,9 @@ export default class IntroView {
 			Footer.render(),
 		]);
 
-		IntroView.handleTimelineScrolling();
+		const timelineScrolling = new TimelineScrolling();
+		timelineScrolling.setScrollingData();
+
+		IntroView.handleTimelineScrolling(timelineScrolling);
 	}
 }

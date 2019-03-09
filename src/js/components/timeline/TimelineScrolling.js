@@ -26,14 +26,10 @@ export default class TimelineScrolling {
 	handleScrolling = (e) => {
 		const editionListEl = document.querySelector(`.${TIMELINE.MAIN_EDITIONS_CLASS}`);
 
-		this.handleCursorMove(e);
+		this.setCursorPosition(e);
 		this.setTimelineScroll();
 		editionListEl.style.transform = `translateX(-${this.editionsCurrentScroll}px)`;
 	};
-
-	handleCursorMove(e) {
-		this.setCursorPosition(e);
-	}
 
 	setTimelineScroll() {
 		const {
@@ -57,6 +53,10 @@ export default class TimelineScrolling {
 		} else {
 			this.editionsCurrentScroll = editionsScroll;
 		}
+	}
+
+	setInitialTimelineScroll(e) {
+		this.handleScrolling(e);
 	}
 
 	setCursorPosition(e) {
