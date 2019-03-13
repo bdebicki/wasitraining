@@ -20,7 +20,7 @@ export default class IntroView {
 		updateViewType(VIEW_TYPES.INTRO);
 	}
 
-	static handleTimelineScrolling(scope) {
+	static handleTimelineScrollingEvents(scope) {
 		const isIntroView = () => getViewType() === VIEW_TYPES.INTRO;
 
 		const handleTimelineScrollingEvents = (e) => {
@@ -32,6 +32,15 @@ export default class IntroView {
 
 			scope.handleScrolling(e);
 		};
+		const handleWindowInEvent = () => {
+			if (!isIntroView()) {
+				document.removeEventListener('mouseenter', handleWindowInEvent, null);
+
+				return;
+			}
+
+			scope.setTimelineAnimation();
+		};
 		const handleTimelineUpdateScrollingEvents = () => {
 			if (!isIntroView()) {
 				window.removeEventListener('mousemove', handleTimelineUpdateScrollingEvents, null);
@@ -42,6 +51,7 @@ export default class IntroView {
 			scope.setScrollingData();
 		};
 
+		document.addEventListener('mouseenter', handleWindowInEvent, null);
 		window.addEventListener('mousemove', handleTimelineScrollingEvents, null);
 		window.addEventListener('resize', handleTimelineUpdateScrollingEvents, null);
 	}
@@ -64,7 +74,7 @@ export default class IntroView {
 		timelineScrolling.setScrollingData();
 		timelineScrolling.setInitialTimelineScroll(e);
 
-		IntroView.handleTimelineScrolling(timelineScrolling);
+		IntroView.handleTimelineScrollingEvents(timelineScrolling);
 	}
 
 	render() {
@@ -81,7 +91,8 @@ export default class IntroView {
 
 		const timelineScrolling = new TimelineScrolling();
 		timelineScrolling.setScrollingData();
+		timelineScrolling.setTimelineAnimation();
 
-		IntroView.handleTimelineScrolling(timelineScrolling);
+		IntroView.handleTimelineScrollingEvents(timelineScrolling);
 	}
 }

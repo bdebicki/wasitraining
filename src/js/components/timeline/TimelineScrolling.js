@@ -11,7 +11,8 @@ export default class TimelineScrolling {
 		this.editionsSize = null;
 		this.editionsMinScroll = 0;
 		this.editionsMaxScroll = null;
-		this.editionsCurrentScroll = null;
+		// this.editionsCurrentScroll = null;
+		this.editionsNewScroll = null;
 		this.virtualAreaSize = null;
 	}
 
@@ -28,7 +29,7 @@ export default class TimelineScrolling {
 
 		this.setCursorPosition(e);
 		this.setTimelineScroll();
-		editionListEl.style.transform = `translateX(-${this.editionsCurrentScroll}px)`;
+		editionListEl.style.transform = `translateX(-${this.editionsNewScroll}px)`;
 	};
 
 	setTimelineScroll() {
@@ -47,11 +48,11 @@ export default class TimelineScrolling {
 		);
 
 		if (cursorPosition <= x1) { // while cursor is before beginning
-			this.editionsCurrentScroll = editionsMinScroll;
+			this.editionsNewScroll = editionsMinScroll;
 		} else if (cursorPosition >= x2) { // while cursor is after timeline
-			this.editionsCurrentScroll = editionsMaxScroll;
+			this.editionsNewScroll = editionsMaxScroll;
 		} else {
-			this.editionsCurrentScroll = editionsScroll;
+			this.editionsNewScroll = editionsScroll;
 		}
 	}
 
@@ -63,19 +64,46 @@ export default class TimelineScrolling {
 		const newCursorPosition = TimelineScrolling.getCursorPosition(e);
 		const { x1, x2 } = this.areaCoords;
 		const {
-			editionsCurrentScroll,
+			editionsNewScroll,
 			editionsMinScroll,
 			editionsMaxScroll,
 		} = this;
 
 		if (this.cursorPosition === newCursorPosition
-			|| (newCursorPosition <= x1 && editionsCurrentScroll === editionsMinScroll)
-			|| (newCursorPosition >= x2 && editionsCurrentScroll === editionsMaxScroll)
+			|| (newCursorPosition <= x1 && editionsNewScroll === editionsMinScroll)
+			|| (newCursorPosition >= x2 && editionsNewScroll === editionsMaxScroll)
 		) {
 			return;
 		}
 
 		this.cursorPosition = newCursorPosition;
+	}
+
+	// getPositionDelta() {
+	// 	const { editionsCurrentScroll, editionsNewScroll } = this;
+	//
+	// 	if (editionsCurrentScroll === editionsNewScroll) {
+	// 		return 0;
+	// 	}
+	//
+	// 	if (editionsCurrentScroll > editionsNewScroll) {
+	// 		return editionsCurrentScroll - editionsNewScroll;
+	// 	}
+	//
+	// 	return editionsNewScroll - editionsCurrentScroll;
+	// }
+
+	setTimelineAnimation() {
+		const { editionsNewScroll } = this;
+		const defaultAnimationTime = 0.2;
+		const editionListEl = document.querySelector(`.${TIMELINE.MAIN_EDITIONS_CLASS}`);
+		const transitionType = (time) => `transform ${time}s ease-out`;
+		const animationTime = () => ((defaultAnimationTime * editionsNewScroll) / 430).toFixed(2);
+		const afterAnimation = () => { editionListEl.style.transition = transitionType(0); };
+
+		editionListEl.addEventListener('transitionend', afterAnimation, null);
+
+		editionListEl.style.transition = transitionType(animationTime());
 	}
 
 	static getCursorPosition(e) {
