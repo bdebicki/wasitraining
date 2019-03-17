@@ -48,7 +48,7 @@ export default class IntroView {
 				return;
 			}
 
-			scope.setCurrentScroll();
+			scope.setCurrentShift();
 		};
 		const handleTimelineUpdateScrollingEvents = () => {
 			if (!isIntroView()) {

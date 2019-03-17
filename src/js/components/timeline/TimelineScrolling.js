@@ -9,11 +9,11 @@ export default class TimelineScrolling {
 		this.areaSize = null;
 		this.cursorPosition = null;
 		this.editionsSize = null;
-		this.editionsMinScroll = 0;
-		this.editionsMaxScroll = null;
-		this.editionsCurrentScroll = 0;
-		this.editionsNewScroll = 0;
-		this.editionsScrollDelta = 0;
+		this.editionsMinShift = 0;
+		this.editionsMaxShift = null;
+		this.editionsCurrentShift = 0;
+		this.editionsNewShift = 0;
+		this.editionsShiftDelta = 0;
 		this.virtualAreaSize = null;
 	}
 
@@ -21,7 +21,7 @@ export default class TimelineScrolling {
 		this.areaCoords = this.getAreaCoords();
 		this.areaSize = this.getAreaSize();
 		this.editionsSize = TimelineScrolling.getEditionsSize();
-		this.editionsMaxScroll = this.getEditionMaxScroll();
+		this.editionsMaxShift = this.getEditionMaxShift();
 		this.virtualAreaSize = this.getVirtualAreaSize();
 	}
 
@@ -34,51 +34,51 @@ export default class TimelineScrolling {
 		}
 
 		this.setCursorPosition(newCursorPosition);
-		this.setTimelineScroll();
-		editionListEl.style.transform = `translateX(-${this.editionsNewScroll}px)`;
+		this.setTimelineShift();
+		editionListEl.style.transform = `translateX(-${this.editionsNewShift}px)`;
 	};
 
 	hasCursorPositionChanged(cursorPosition) {
 		const { x1, x2 } = this.areaCoords;
 		const {
-			editionsNewScroll,
-			editionsMinScroll,
-			editionsMaxScroll,
+			editionsNewShift,
+			editionsMinShift,
+			editionsMaxShift,
 		} = this;
 
 		return !(this.cursorPosition === cursorPosition
-			|| (cursorPosition <= x1 && editionsNewScroll === editionsMinScroll)
-			|| (cursorPosition >= x2 && editionsNewScroll === editionsMaxScroll)
+			|| (cursorPosition <= x1 && editionsNewShift === editionsMinShift)
+			|| (cursorPosition >= x2 && editionsNewShift === editionsMaxShift)
 		);
 	}
 
-	setTimelineScroll() {
+	setTimelineShift() {
 		const {
 			areaCoords,
 			areaSize,
 			cursorPosition,
-			editionsMinScroll,
-			editionsMaxScroll,
+			editionsMinShift,
+			editionsMaxShift,
 			editionsSize,
 			virtualAreaSize,
 		} = this;
 		const { x1, x2 } = areaCoords;
-		const editionsScroll = Math.round(
+		const editionsShift = Math.round(
 			((editionsSize - areaSize) * (cursorPosition - x1)) / virtualAreaSize
 		);
 
 		if (cursorPosition <= x1) { // while cursor is before beginning
-			this.editionsNewScroll = editionsMinScroll;
+			this.editionsNewShift = editionsMinShift;
 		} else if (cursorPosition >= x2) { // while cursor is after timeline
-			this.editionsNewScroll = editionsMaxScroll;
+			this.editionsNewShift = editionsMaxShift;
 		} else {
-			this.editionsNewScroll = editionsScroll;
+			this.editionsNewShift = editionsShift;
 		}
 
-		this.getPositionDelta();
+		this.getShiftDelta();
 	}
 
-	setInitialTimelineScroll(e) {
+	setInitialTimelineShift(e) {
 		this.handleScrolling(e);
 	}
 
@@ -86,28 +86,28 @@ export default class TimelineScrolling {
 		this.cursorPosition = newCursorPosition;
 	}
 
-	setCurrentScroll() {
-		this.editionsCurrentScroll = this.editionsNewScroll;
+	setCurrentShift() {
+		this.editionsCurrentShift = this.editionsNewShift;
 	}
 
-	getPositionDelta() {
-		const { editionsCurrentScroll, editionsNewScroll } = this;
+	getShiftDelta() {
+		const { editionsCurrentShift, editionsNewShift } = this;
 
-		if (editionsCurrentScroll === editionsNewScroll) {
-			this.editionsScrollDelta = 0;
-		} else if (editionsCurrentScroll > editionsNewScroll) {
-			this.editionsScrollDelta = editionsCurrentScroll - editionsNewScroll;
+		if (editionsCurrentShift === editionsNewShift) {
+			this.editionsShiftDelta = 0;
+		} else if (editionsCurrentShift > editionsNewShift) {
+			this.editionsShiftDelta = editionsCurrentShift - editionsNewShift;
 		} else {
-			this.editionsScrollDelta = editionsNewScroll - editionsCurrentScroll;
+			this.editionsShiftDelta = editionsNewShift - editionsCurrentShift;
 		}
 	}
 
 	setTimelineAnimation() {
-		const { editionsScrollDelta } = this;
+		const { editionsShiftDelta } = this;
 		const defaultAnimationTime = 0.2;
 		const editionListEl = document.querySelector(`.${TIMELINE.MAIN_EDITIONS_CLASS}`);
 		const transitionType = (time) => `transform ${time}s ease-out`;
-		const animationTime = () => ((defaultAnimationTime * editionsScrollDelta) / 430).toFixed(2);
+		const animationTime = () => ((defaultAnimationTime * editionsShiftDelta) / 430).toFixed(2);
 		const afterAnimation = () => { editionListEl.style.transition = transitionType(0); };
 
 		editionListEl.addEventListener('transitionend', afterAnimation, null);
@@ -119,7 +119,7 @@ export default class TimelineScrolling {
 		return e.clientX;
 	}
 
-	getEditionMaxScroll() {
+	getEditionMaxShift() {
 		const { editionsSize, areaSize } = this;
 		return editionsSize - areaSize;
 	}
