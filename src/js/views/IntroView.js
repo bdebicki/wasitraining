@@ -41,9 +41,18 @@ export default class IntroView {
 
 			scope.setTimelineAnimation();
 		};
+		const handleWindowOutEvent = () => {
+			if (!isIntroView()) {
+				document.removeEventListener('mouseleave', handleWindowOutEvent, null);
+
+				return;
+			}
+
+			scope.setCurrentScroll();
+		};
 		const handleTimelineUpdateScrollingEvents = () => {
 			if (!isIntroView()) {
-				window.removeEventListener('mousemove', handleTimelineUpdateScrollingEvents, null);
+				window.removeEventListener('resize', handleTimelineUpdateScrollingEvents, null);
 
 				return;
 			}
@@ -51,6 +60,7 @@ export default class IntroView {
 			scope.setScrollingData();
 		};
 
+		document.addEventListener('mouseleave', handleWindowOutEvent, null);
 		document.addEventListener('mouseenter', handleWindowInEvent, null);
 		window.addEventListener('mousemove', handleTimelineScrollingEvents, null);
 		window.addEventListener('resize', handleTimelineUpdateScrollingEvents, null);

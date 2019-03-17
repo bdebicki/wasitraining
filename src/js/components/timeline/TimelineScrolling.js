@@ -11,8 +11,9 @@ export default class TimelineScrolling {
 		this.editionsSize = null;
 		this.editionsMinScroll = 0;
 		this.editionsMaxScroll = null;
-		// this.editionsCurrentScroll = null;
-		this.editionsNewScroll = null;
+		this.editionsCurrentScroll = 0;
+		this.editionsNewScroll = 0;
+		this.editionsScrollDelta = 0;
 		this.virtualAreaSize = null;
 	}
 
@@ -26,11 +27,30 @@ export default class TimelineScrolling {
 
 	handleScrolling = (e) => {
 		const editionListEl = document.querySelector(`.${TIMELINE.MAIN_EDITIONS_CLASS}`);
+		const newCursorPosition = TimelineScrolling.getCursorPosition(e);
 
-		this.setCursorPosition(e);
+		if (!this.hasCursorPositionChanged(newCursorPosition)) {
+			return;
+		}
+
+		this.setCursorPosition(newCursorPosition);
 		this.setTimelineScroll();
 		editionListEl.style.transform = `translateX(-${this.editionsNewScroll}px)`;
 	};
+
+	hasCursorPositionChanged(cursorPosition) {
+		const { x1, x2 } = this.areaCoords;
+		const {
+			editionsNewScroll,
+			editionsMinScroll,
+			editionsMaxScroll,
+		} = this;
+
+		return !(this.cursorPosition === cursorPosition
+			|| (cursorPosition <= x1 && editionsNewScroll === editionsMinScroll)
+			|| (cursorPosition >= x2 && editionsNewScroll === editionsMaxScroll)
+		);
+	}
 
 	setTimelineScroll() {
 		const {
@@ -54,51 +74,40 @@ export default class TimelineScrolling {
 		} else {
 			this.editionsNewScroll = editionsScroll;
 		}
+
+		this.getPositionDelta();
 	}
 
 	setInitialTimelineScroll(e) {
 		this.handleScrolling(e);
 	}
 
-	setCursorPosition(e) {
-		const newCursorPosition = TimelineScrolling.getCursorPosition(e);
-		const { x1, x2 } = this.areaCoords;
-		const {
-			editionsNewScroll,
-			editionsMinScroll,
-			editionsMaxScroll,
-		} = this;
-
-		if (this.cursorPosition === newCursorPosition
-			|| (newCursorPosition <= x1 && editionsNewScroll === editionsMinScroll)
-			|| (newCursorPosition >= x2 && editionsNewScroll === editionsMaxScroll)
-		) {
-			return;
-		}
-
+	setCursorPosition(newCursorPosition) {
 		this.cursorPosition = newCursorPosition;
 	}
 
-	// getPositionDelta() {
-	// 	const { editionsCurrentScroll, editionsNewScroll } = this;
-	//
-	// 	if (editionsCurrentScroll === editionsNewScroll) {
-	// 		return 0;
-	// 	}
-	//
-	// 	if (editionsCurrentScroll > editionsNewScroll) {
-	// 		return editionsCurrentScroll - editionsNewScroll;
-	// 	}
-	//
-	// 	return editionsNewScroll - editionsCurrentScroll;
-	// }
+	setCurrentScroll() {
+		this.editionsCurrentScroll = this.editionsNewScroll;
+	}
+
+	getPositionDelta() {
+		const { editionsCurrentScroll, editionsNewScroll } = this;
+
+		if (editionsCurrentScroll === editionsNewScroll) {
+			this.editionsScrollDelta = 0;
+		} else if (editionsCurrentScroll > editionsNewScroll) {
+			this.editionsScrollDelta = editionsCurrentScroll - editionsNewScroll;
+		} else {
+			this.editionsScrollDelta = editionsNewScroll - editionsCurrentScroll;
+		}
+	}
 
 	setTimelineAnimation() {
-		const { editionsNewScroll } = this;
+		const { editionsScrollDelta } = this;
 		const defaultAnimationTime = 0.2;
 		const editionListEl = document.querySelector(`.${TIMELINE.MAIN_EDITIONS_CLASS}`);
 		const transitionType = (time) => `transform ${time}s ease-out`;
-		const animationTime = () => ((defaultAnimationTime * editionsNewScroll) / 430).toFixed(2);
+		const animationTime = () => ((defaultAnimationTime * editionsScrollDelta) / 430).toFixed(2);
 		const afterAnimation = () => { editionListEl.style.transition = transitionType(0); };
 
 		editionListEl.addEventListener('transitionend', afterAnimation, null);
