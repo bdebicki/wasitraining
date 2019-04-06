@@ -86,7 +86,7 @@ export default class TimelineScrolling {
 		this.cursorPosition = newCursorPosition;
 	}
 
-	setCurrentShift() {
+	setCurrentShift() { // bez tego działa poprawnie
 		this.editionsCurrentShift = this.editionsNewShift;
 	}
 
@@ -100,6 +100,10 @@ export default class TimelineScrolling {
 		} else {
 			this.editionsShiftDelta = editionsNewShift - editionsCurrentShift;
 		}
+
+		console.log('editionsCurrentScroll', editionsCurrentShift);
+		console.log('editionsNewScroll', editionsNewShift);
+		console.log('editionsScrollDelta', this.editionsShiftDelta);
 	}
 
 	setTimelineAnimation() {
@@ -108,11 +112,16 @@ export default class TimelineScrolling {
 		const editionListEl = document.querySelector(`.${TIMELINE.MAIN_EDITIONS_CLASS}`);
 		const transitionType = (time) => `transform ${time}s ease-out`;
 		const animationTime = () => ((defaultAnimationTime * editionsShiftDelta) / 430).toFixed(2);
+		// const correctedAnimationTime = () => (animationTime() < 0.1) ? 0.1 : animationTime;
 		const afterAnimation = () => { editionListEl.style.transition = transitionType(0); };
 
 		editionListEl.addEventListener('transitionend', afterAnimation, null);
 
 		editionListEl.style.transition = transitionType(animationTime());
+
+		console.clear();
+		console.log('===================');
+		console.log('animationTime', animationTime());
 	}
 
 	static getCursorPosition(e) {
