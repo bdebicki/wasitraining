@@ -57,4 +57,8 @@ describe('intro view tests', () => {
 		expect(document.getElementById(LAYOUT.YEAR_CONTAINER_ID)).toBeFalsy();
 		expect(document.getElementById(LAYOUT.BG_COVER_ID)).toBeFalsy();
 	});
+
+	describe('check does tomeline scrolling events behave correctly', () => {
+		// handleTimelineScrollingEvents
+	});
 });
