@@ -40,7 +40,7 @@ describe('intro view tests', () => {
 		expect(document.getElementById(LAYOUT.BG_VIDEO_ID)).toBeTruthy();
 		expect(document.getElementById(LAYOUT.FOOTER_ID)).toBeTruthy();
 	});
-	it('update view to intro', () => {
+	xit('update view to intro', () => {
 		// having
 		mockEditionView();
 
