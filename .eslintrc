@@ -76,6 +76,7 @@
         "ignorePattern": "import .* from .*;$"
       }
     ],
+    "import/no-cycle": [0],
 
     ////////// ECMAScript 6 //////////
 
