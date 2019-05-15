@@ -100,10 +100,6 @@ export default class TimelineScrolling {
 		} else {
 			this.editionsShiftDelta = editionsNewShift - editionsCurrentShift;
 		}
-
-		console.log('editionsCurrentScroll', editionsCurrentShift);
-		console.log('editionsNewScroll', editionsNewShift);
-		console.log('editionsScrollDelta', this.editionsShiftDelta);
 	}
 
 	setTimelineAnimation() {
@@ -118,10 +114,6 @@ export default class TimelineScrolling {
 		editionListEl.addEventListener('transitionend', afterAnimation, null);
 
 		editionListEl.style.transition = transitionType(animationTime());
-
-		console.clear();
-		console.log('===================');
-		console.log('animationTime', animationTime());
 	}
 
 	static getCursorPosition(e) {
