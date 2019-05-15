@@ -82,7 +82,7 @@ export default class IntroView {
 
 		const timelineScrolling = new TimelineScrolling();
 		timelineScrolling.setScrollingData();
-		timelineScrolling.setInitialTimelineScroll(e);
+		timelineScrolling.setInitialTimelineShift(e);
 
 		IntroView.handleTimelineScrollingEvents(timelineScrolling);
 	}
