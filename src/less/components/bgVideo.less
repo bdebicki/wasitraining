@@ -8,7 +8,7 @@
 	z-index: @bgVideoZindex;
 	overflow: hidden;
 
-	//@supports not (object-fit: cover) { // temporary turned off video for development
+	@supports not (object-fit: cover) { // temporary turned off video for development
 		&:after {
 			.strechPosition();
 			content: '';
@@ -21,11 +21,11 @@
 				filter: blur(8px);
 			}
 		}
-	//}
+	}
 
 	@supports (object-fit: cover) {
 		.bgVideo__video {
-			display: none; // temporary hide video for development
+			//display: none; // temporary hide video for development
 			opacity: @videoOpacityIntro;
 			object-fit: cover;
 			width: 100%;

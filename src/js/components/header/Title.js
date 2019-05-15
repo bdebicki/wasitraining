@@ -19,7 +19,7 @@ export default class Title {
 				.then((response) => response.json())
 				.then((data) => {
 					const intro = new IntroView(data);
-					intro.switchToIntoView();
+					intro.switchToIntoView(e);
 				})
 				.catch((error) => {
 					console.log(error); // eslint-disable-line no-console
